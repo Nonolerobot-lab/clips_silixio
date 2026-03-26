@@ -1,8 +1,59 @@
 {
-  "date": "En attente",
-  "generated_at": "",
-  "total_clips": 0,
-  "streamers": [],
-  "clips": [],
-  "message": "Le pipeline n'a pas encore généré de clips. Lance le script et les clips apparaîtront ici."
+  "date": "2026-03-26 (TEST)",
+  "generated_at": "2026-03-26T21:23:21",
+  "total_clips": 3,
+  "streamers": [
+    "test_streamer"
+  ],
+  "use_iframe": false,
+  "clips": [
+    {
+      "filename": "clip_001_test_score95.mp4",
+      "streamer": "test_streamer",
+      "timestamp": "01:23:45",
+      "score": 95,
+      "sources": [
+        "audio",
+        "chat",
+        "ai"
+      ],
+      "ai_category": "clutch",
+      "text": "OH MON DIEU IL L A EU !!",
+      "drive_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "drive_view_url": "",
+      "chat_clip_url": "",
+      "size_mb": 1.5
+    },
+    {
+      "filename": "clip_002_test_score82.mp4",
+      "streamer": "test_streamer",
+      "timestamp": "02:10:30",
+      "score": 82,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "kill_streak",
+      "text": "Triple kill incroyable",
+      "drive_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "drive_view_url": "",
+      "chat_clip_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "size_mb": 2.1
+    },
+    {
+      "filename": "clip_003_test_score71.mp4",
+      "streamer": "test_streamer",
+      "timestamp": "03:45:12",
+      "score": 71,
+      "sources": [
+        "video"
+      ],
+      "ai_category": "victory_royale",
+      "text": "Victory Royale !",
+      "drive_url": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "drive_view_url": "",
+      "chat_clip_url": "",
+      "size_mb": 1.8
+    }
+  ]
 }
