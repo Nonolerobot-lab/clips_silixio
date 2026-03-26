@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clips Silixio — Review Tinder</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a1a;
+            color: #e0e0e0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* === TOP BAR === */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+            background: #12122a;
+            border-bottom: 1px solid #2a2a4a;
+            flex-shrink: 0;
+            z-index: 10;
+        }
+        .top-bar .title {
+            font-size: 0.9em;
+            color: #9b59b6;
+            font-weight: 600;
+        }
+        .top-bar .counter {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+        }
+        .top-bar .counter .current { color: #9b59b6; font-size: 1.3em; }
+        .top-bar .export-btn {
+            background: #9b59b6;
+            color: #fff;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        .top-bar .export-btn:hover { background: #8e44ad; }
+
+        /* === PROGRESS BAR === */
+        .progress-bar {
+            height: 4px;
+            background: #1a1a3a;
+            flex-shrink: 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #9b59b6, #3498db);
+            transition: width 0.3s ease;
+            border-radius: 0 2px 2px 0;
+        }
+
+        /* === MINIMAP === */
+        .minimap {
+            display: flex;
+            justify-content: center;
+            gap: 3px;
+            padding: 6px 20px 0;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+        .minimap .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+            transition: all 0.15s;
+            border: 2px solid transparent;
+        }
+        .minimap .dot:hover { transform: scale(1.3); }
+        .minimap .dot.current { border-color: #fff; transform: scale(1.3); }
+        .minimap .dot.fb-good { background: #2ecc71; }
+        .minimap .dot.fb-passable { background: #3498db; }
+        .minimap .dot.fb-bad { background: #e74c3c; }
+        .minimap .dot.fb-bad_framing { background: #f39c12; }
+
+        /* === MAIN AREA === */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            position: relative;
+            min-height: 0;
+        }
+
+        /* === VIDEO === */
+        .video-container {
+            flex: 1;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 0;
+        }
+        .video-container video,
+        .video-container iframe {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 12px;
+            background: #000;
+        }
+        .video-container iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+        }
+
+        /* === CLIP INFO OVERLAY === */
+        .clip-info-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.8em;
+            backdrop-filter: blur(10px);
+            pointer-events: none;
+        }
+        .clip-info-overlay .timestamp { color: #3498db; font-family: monospace; font-size: 1.1em; }
+        .clip-info-overlay .score { color: #2ecc71; font-weight: bold; margin-left: 10px; }
+        .clip-info-overlay .category {
+            background: #f1c40f22; color: #f1c40f; padding: 2px 8px;
+            border-radius: 4px; font-size: 0.85em; margin-left: 8px;
+        }
+        .clip-info-overlay .sources { color: #e67e22; font-size: 0.85em; margin-top: 4px; }
+        .clip-info-overlay .text { color: #aaa; font-style: italic; font-size: 0.85em; margin-top: 2px; max-width: 400px; }
+
+        /* Feedback badge */
+        .current-feedback {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9em;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+        .current-feedback.show { display: block; }
+        .current-feedback.fb-good { background: rgba(46,204,113,0.3); color: #2ecc71; border: 1px solid #2ecc71; }
+        .current-feedback.fb-passable { background: rgba(52,152,219,0.3); color: #3498db; border: 1px solid #3498db; }
+        .current-feedback.fb-bad { background: rgba(231,76,60,0.3); color: #e74c3c; border: 1px solid #e74c3c; }
+        .current-feedback.fb-bad_framing { background: rgba(243,156,18,0.3); color: #f39c12; border: 1px solid #f39c12; }
+
+        /* === BOTTOM PANEL === */
+        .bottom-panel {
+            flex-shrink: 0;
+            padding: 12px 20px 16px;
+            background: #12122a;
+            border-top: 1px solid #2a2a4a;
+        }
+
+        .feedback-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .fb-btn {
+            flex: 1;
+            max-width: 200px;
+            padding: 14px 10px;
+            border: 2px solid #333;
+            background: #1a1a3a;
+            color: #ccc;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.15s;
+            text-align: center;
+        }
+        .fb-btn .shortcut {
+            display: block;
+            font-size: 0.7em;
+            color: #666;
+            margin-top: 2px;
+            font-weight: normal;
+        }
+        .fb-btn:hover { transform: translateY(-2px); }
+        .fb-btn.fb-good:hover, .fb-btn.fb-good.active {
+            background: #2ecc71; color: #fff; border-color: #2ecc71;
+        }
+        .fb-btn.fb-passable:hover, .fb-btn.fb-passable.active {
+            background: #3498db; color: #fff; border-color: #3498db;
+        }
+        .fb-btn.fb-bad:hover, .fb-btn.fb-bad.active {
+            background: #e74c3c; color: #fff; border-color: #e74c3c;
+        }
+        .fb-btn.fb-framing:hover, .fb-btn.fb-framing.active {
+            background: #f39c12; color: #fff; border-color: #f39c12;
+        }
+
+        /* Options row */
+        .options-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .chat-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: #1a1a3a;
+            border: 1px solid #333;
+            transition: all 0.15s;
+            font-size: 0.9em;
+        }
+        .chat-toggle:hover { border-color: #9b59b6; }
+        .chat-toggle.active { background: #9b59b6; border-color: #9b59b6; color: #fff; }
+        .chat-toggle.disabled { opacity: 0.3; cursor: not-allowed; }
+        .chat-toggle .shortcut { font-size: 0.7em; color: #666; margin-left: 4px; }
+        .chat-toggle.active .shortcut { color: #ddd; }
+
+        .dl-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: #1a1a3a;
+            border: 1px solid #333;
+            color: #ccc;
+            cursor: pointer;
+            font-size: 0.9em;
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+        .dl-btn:hover { border-color: #2ecc71; color: #2ecc71; }
+        .dl-btn .shortcut { font-size: 0.7em; color: #666; }
+        .dl-btn.disabled { opacity: 0.3; cursor: not-allowed; pointer-events: none; }
+
+        .nav-btn {
+            background: #1a1a3a;
+            border: 1px solid #333;
+            color: #ccc;
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.15s;
+        }
+        .nav-btn:hover { border-color: #9b59b6; color: #fff; }
+        .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        .nav-btn .shortcut { font-size: 0.7em; color: #666; }
+
+        /* === STATS BAR === */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 8px;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .stats-bar .stat { display: flex; align-items: center; gap: 4px; }
+        .stats-bar .sdot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+        .stats-bar .sdot-good { background: #2ecc71; }
+        .stats-bar .sdot-passable { background: #3498db; }
+        .stats-bar .sdot-bad { background: #e74c3c; }
+        .stats-bar .sdot-framing { background: #f39c12; }
+        .stats-bar .sdot-pending { background: #555; }
+
+        /* === DONE SCREEN === */
+        .done-screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+        }
+        .done-screen.show { display: flex; }
+        .done-screen h2 { font-size: 2em; color: #2ecc71; margin-bottom: 10px; }
+        .done-screen .done-stats { font-size: 1.2em; color: #aaa; margin-bottom: 30px; }
+        .done-screen .done-btn {
+            background: #9b59b6;
+            color: #fff;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .done-screen .done-btn:hover { background: #8e44ad; }
+
+        /* === MESSAGE SCREEN (no clips) === */
+        .message-screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+        }
+        .message-screen.show { display: flex; }
+        .message-screen h2 { font-size: 1.5em; color: #9b59b6; margin-bottom: 10px; }
+        .message-screen p { color: #888; font-size: 1.1em; max-width: 500px; }
+
+        /* Animations */
+        .swipe-left { animation: swipeLeft 0.25s ease-out; }
+        .swipe-right { animation: swipeRight 0.25s ease-out; }
+        @keyframes swipeLeft {
+            0% { opacity: 1; transform: translateX(0); }
+            100% { opacity: 0; transform: translateX(-60px); }
+        }
+        @keyframes swipeRight {
+            0% { opacity: 1; transform: translateX(0); }
+            100% { opacity: 0; transform: translateX(60px); }
+        }
+        .fade-in { animation: fadeIn 0.2s ease-in; }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="title" id="pageTitle">Clips du ...</div>
+        <div class="counter"><span class="current" id="currentNum">0</span> / <span id="totalNum">0</span></div>
+        <button class="export-btn" onclick="exportFeedback()">Exporter feedback</button>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+    </div>
+
+    <!-- MINIMAP -->
+    <div class="minimap" id="minimap"></div>
+
+    <!-- MAIN -->
+    <div class="main" id="mainArea">
+        <div class="video-container" id="videoContainer">
+            <video id="player" controls autoplay></video>
+            <div class="clip-info-overlay" id="clipInfo"></div>
+            <div class="current-feedback" id="currentFeedback"></div>
+        </div>
+
+        <!-- MESSAGE SCREEN (no clips yet) -->
+        <div class="message-screen" id="messageScreen">
+            <h2 id="messageTitle">Chargement...</h2>
+            <p id="messageText"></p>
+        </div>
+
+        <!-- DONE SCREEN -->
+        <div class="done-screen" id="doneScreen">
+            <h2>Review terminee !</h2>
+            <div class="done-stats" id="doneStats"></div>
+            <button class="done-btn" onclick="exportFeedback()">Telecharger le feedback JSON</button>
+        </div>
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="bottom-panel" id="bottomPanel">
+        <div class="feedback-row">
+            <button class="fb-btn fb-good" onclick="rate('good')">
+                Bon<span class="shortcut">1</span>
+            </button>
+            <button class="fb-btn fb-passable" onclick="rate('passable')">
+                Passable<span class="shortcut">2</span>
+            </button>
+            <button class="fb-btn fb-bad" onclick="rate('bad')">
+                Mauvais<span class="shortcut">3</span>
+            </button>
+            <button class="fb-btn fb-framing" onclick="rate('bad_framing')">
+                Mal cadre<span class="shortcut">4</span>
+            </button>
+        </div>
+
+        <div class="options-row">
+            <button class="nav-btn" id="btnPrev" onclick="navigate(-1)">
+                &#8592; Precedent <span class="shortcut">&#8592;</span>
+            </button>
+            <a class="dl-btn" id="dlClipBtn" onclick="downloadClip()">
+                &#128229; Telecharger <span class="shortcut">D</span>
+            </a>
+            <div class="chat-toggle" id="chatToggle" onclick="toggleChat()">
+                &#128172; Inclure le chat <span class="shortcut">C</span>
+            </div>
+            <a class="dl-btn" id="dlChatBtn" onclick="downloadChat()" style="display:none">
+                &#128172; Telecharger chat
+            </a>
+            <button class="nav-btn" id="btnNext" onclick="navigate(1)">
+                Suivant &#8594; <span class="shortcut">&#8594;</span>
+            </button>
+        </div>
+
+        <div class="stats-bar" id="statsBar">
+            <div class="stat"><span class="sdot sdot-good"></span><span id="statGood">0</span> bons</div>
+            <div class="stat"><span class="sdot sdot-passable"></span><span id="statPassable">0</span> passables</div>
+            <div class="stat"><span class="sdot sdot-bad"></span><span id="statBad">0</span> mauvais</div>
+            <div class="stat"><span class="sdot sdot-framing"></span><span id="statFraming">0</span> mal cadres</div>
+            <div class="stat"><span class="sdot sdot-pending"></span><span id="statPending">0</span> restants</div>
+        </div>
+    </div>
+
+    <script>
+        // === STATE ===
+        let MANIFEST = null;
+        let CLIPS = [];
+        let TOTAL = 0;
+        let feedback = {};
+        let chatFlags = {};
+        let downloads = {};
+        let currentIndex = 0;
+        let useIframe = false;
+
+        // === INIT ===
+        init();
+
+        async function init() {
+            try {
+                const resp = await fetch('manifest.json?' + Date.now());
+                if (!resp.ok) throw new Error('manifest.json introuvable');
+                MANIFEST = await resp.json();
+            } catch (e) {
+                showMessage('Erreur', 'Impossible de charger manifest.json : ' + e.message);
+                return;
+            }
+
+            if (!MANIFEST.clips || MANIFEST.clips.length === 0) {
+                showMessage(
+                    MANIFEST.message || 'Aucun clip disponible',
+                    'Le pipeline n\'a pas encore genere de clips. Lance le script et les clips apparaitront ici.'
+                );
+                return;
+            }
+
+            CLIPS = MANIFEST.clips;
+            TOTAL = CLIPS.length;
+            useIframe = MANIFEST.use_iframe || false;
+
+            // UI
+            document.getElementById('pageTitle').textContent = 'Clips du ' + (MANIFEST.date || '?');
+            document.getElementById('totalNum').textContent = TOTAL;
+            document.getElementById('statPending').textContent = TOTAL;
+
+            buildMinimap();
+            loadClip(0);
+        }
+
+        function showMessage(title, text) {
+            document.getElementById('videoContainer').style.display = 'none';
+            document.getElementById('bottomPanel').style.display = 'none';
+            const ms = document.getElementById('messageScreen');
+            ms.classList.add('show');
+            document.getElementById('messageTitle').textContent = title;
+            document.getElementById('messageText').textContent = text;
+        }
+
+        // === CORE ===
+        function loadClip(idx) {
+            if (idx < 0 || idx >= TOTAL) return;
+            currentIndex = idx;
+
+            const clip = CLIPS[idx];
+            const container = document.getElementById('videoContainer');
+
+            // Ensure video container visible, done hidden
+            container.style.display = 'flex';
+            document.getElementById('doneScreen').classList.remove('show');
+
+            // Animation
+            container.classList.remove('fade-in');
+            void container.offsetWidth;
+            container.classList.add('fade-in');
+
+            // Video — use <video> or <iframe> based on manifest setting
+            const playerEl = document.getElementById('player');
+            if (useIframe) {
+                // Switch to iframe mode
+                const fileId = extractFileId(clip.drive_url);
+                if (fileId) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = 'https://drive.google.com/file/d/' + fileId + '/preview';
+                    iframe.allow = 'autoplay';
+                    iframe.id = 'player';
+                    playerEl.replaceWith(iframe);
+                }
+            } else {
+                // Ensure we have a <video> element
+                if (playerEl.tagName !== 'VIDEO') {
+                    const video = document.createElement('video');
+                    video.id = 'player';
+                    video.controls = true;
+                    video.autoplay = true;
+                    playerEl.replaceWith(video);
+                }
+                const player = document.getElementById('player');
+                player.src = clip.drive_url || '';
+                player.play().catch(() => {});
+            }
+
+            // Info overlay
+            let infoHtml = '<span class="timestamp">' + escHtml(clip.timestamp || '') + '</span>';
+            if (clip.score) infoHtml += '<span class="score">Score: ' + clip.score + '</span>';
+            if (clip.ai_category) infoHtml += '<span class="category">' + escHtml(clip.ai_category) + '</span>';
+            if (clip.sources && clip.sources.length) infoHtml += '<div class="sources">' + escHtml(clip.sources.join(', ')) + '</div>';
+            if (clip.text) infoHtml += '<div class="text">"' + escHtml(clip.text.substring(0, 100)) + '"</div>';
+            document.getElementById('clipInfo').innerHTML = infoHtml;
+
+            // Counter
+            document.getElementById('currentNum').textContent = idx + 1;
+
+            // Progress
+            updateProgress();
+
+            // Nav
+            document.getElementById('btnPrev').disabled = (idx === 0);
+
+            // Feedback badge
+            updateCurrentFeedback(clip.filename);
+
+            // Chat toggle
+            const chatToggle = document.getElementById('chatToggle');
+            const dlChatBtn = document.getElementById('dlChatBtn');
+            if (!clip.chat_clip_url) {
+                chatToggle.classList.add('disabled');
+                chatToggle.classList.remove('active');
+                dlChatBtn.style.display = 'none';
+            } else {
+                chatToggle.classList.remove('disabled');
+                if (chatFlags[clip.filename]) {
+                    chatToggle.classList.add('active');
+                    dlChatBtn.style.display = 'flex';
+                } else {
+                    chatToggle.classList.remove('active');
+                    dlChatBtn.style.display = 'none';
+                }
+            }
+
+            // Feedback button highlight
+            document.querySelectorAll('.fb-btn').forEach(btn => btn.classList.remove('active'));
+            const fb = feedback[clip.filename];
+            if (fb) {
+                const mapping = { good: 'fb-good', passable: 'fb-passable', bad: 'fb-bad', bad_framing: 'fb-framing' };
+                const sel = mapping[fb];
+                if (sel) document.querySelector('.fb-btn.' + sel)?.classList.add('active');
+            }
+
+            updateMinimap();
+            updateStats();
+        }
+
+        function rate(value) {
+            const clip = CLIPS[currentIndex];
+            const prev = feedback[clip.filename];
+
+            if (prev === value) {
+                delete feedback[clip.filename];
+            } else {
+                feedback[clip.filename] = value;
+            }
+
+            updateCurrentFeedback(clip.filename);
+            updateMinimap();
+            updateStats();
+
+            // Button highlight
+            document.querySelectorAll('.fb-btn').forEach(btn => btn.classList.remove('active'));
+            if (feedback[clip.filename]) {
+                const mapping = { good: 'fb-good', passable: 'fb-passable', bad: 'fb-bad', bad_framing: 'fb-framing' };
+                const sel = mapping[feedback[clip.filename]];
+                if (sel) document.querySelector('.fb-btn.' + sel)?.classList.add('active');
+            }
+
+            // Auto-advance after 400ms
+            if (feedback[clip.filename]) {
+                setTimeout(() => {
+                    if (currentIndex < TOTAL - 1) {
+                        navigate(1);
+                    } else {
+                        showDone();
+                    }
+                }, 400);
+            }
+        }
+
+        function navigate(delta) {
+            const next = currentIndex + delta;
+            if (next >= 0 && next < TOTAL) {
+                const container = document.getElementById('videoContainer');
+                container.classList.add(delta > 0 ? 'swipe-left' : 'swipe-right');
+                setTimeout(() => {
+                    container.classList.remove('swipe-left', 'swipe-right');
+                    loadClip(next);
+                }, 200);
+            } else if (next >= TOTAL) {
+                showDone();
+            }
+        }
+
+        function toggleChat() {
+            const clip = CLIPS[currentIndex];
+            if (!clip.chat_clip_url) return;
+
+            chatFlags[clip.filename] = !chatFlags[clip.filename];
+            document.getElementById('chatToggle').classList.toggle('active');
+
+            // Show/hide chat download button
+            const dlChatBtn = document.getElementById('dlChatBtn');
+            dlChatBtn.style.display = chatFlags[clip.filename] ? 'flex' : 'none';
+        }
+
+        function downloadClip() {
+            const clip = CLIPS[currentIndex];
+            if (clip.drive_url) {
+                downloads[clip.filename] = true;
+                window.open(clip.drive_url, '_blank');
+            }
+        }
+
+        function downloadChat() {
+            const clip = CLIPS[currentIndex];
+            if (clip.chat_clip_url) {
+                window.open(clip.chat_clip_url, '_blank');
+            }
+        }
+
+        // === UI UPDATES ===
+        function updateCurrentFeedback(filename) {
+            const el = document.getElementById('currentFeedback');
+            const fb = feedback[filename];
+            el.className = 'current-feedback';
+            if (fb) {
+                const labels = { good: 'Bon', passable: 'Passable', bad: 'Mauvais', bad_framing: 'Mal cadre' };
+                el.textContent = labels[fb] || fb;
+                el.classList.add('show', 'fb-' + fb);
+            }
+        }
+
+        function updateProgress() {
+            const rated = Object.keys(feedback).length;
+            document.getElementById('progressFill').style.width = (rated / TOTAL * 100) + '%';
+        }
+
+        function updateStats() {
+            const vals = Object.values(feedback);
+            document.getElementById('statGood').textContent = vals.filter(v => v === 'good').length;
+            document.getElementById('statPassable').textContent = vals.filter(v => v === 'passable').length;
+            document.getElementById('statBad').textContent = vals.filter(v => v === 'bad').length;
+            document.getElementById('statFraming').textContent = vals.filter(v => v === 'bad_framing').length;
+            document.getElementById('statPending').textContent = TOTAL - vals.length;
+            updateProgress();
+        }
+
+        // === MINIMAP ===
+        function buildMinimap() {
+            const mm = document.getElementById('minimap');
+            mm.innerHTML = '';
+            for (let i = 0; i < TOTAL; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                dot.title = 'Clip ' + (i + 1) + ' — ' + (CLIPS[i].streamer || '') + ' ' + (CLIPS[i].timestamp || '');
+                dot.onclick = () => loadClip(i);
+                mm.appendChild(dot);
+            }
+        }
+
+        function updateMinimap() {
+            const dots = document.querySelectorAll('.minimap .dot');
+            dots.forEach((dot, i) => {
+                dot.className = 'dot';
+                const fb = feedback[CLIPS[i].filename];
+                if (fb) dot.classList.add('fb-' + fb);
+                if (i === currentIndex) dot.classList.add('current');
+            });
+        }
+
+        // === DONE ===
+        function showDone() {
+            document.getElementById('videoContainer').style.display = 'none';
+            const done = document.getElementById('doneScreen');
+            done.classList.add('show');
+
+            const vals = Object.values(feedback);
+            const g = vals.filter(v => v === 'good').length;
+            const p = vals.filter(v => v === 'passable').length;
+            const b = vals.filter(v => v === 'bad').length;
+            const f = vals.filter(v => v === 'bad_framing').length;
+            const rest = TOTAL - vals.length;
+
+            document.getElementById('doneStats').innerHTML =
+                g + ' bons, ' + p + ' passables, ' + b + ' mauvais, ' + f + ' mal cadres' +
+                (rest > 0 ? '<br>' + rest + ' clips non evalues' : '');
+        }
+
+        // === EXPORT ===
+        function exportFeedback() {
+            const data = {
+                vod_date: MANIFEST.date || '',
+                exported_at: new Date().toISOString(),
+                total_clips: TOTAL,
+                feedback: {},
+                chat_requests: {},
+                downloads: {},
+                summary: {
+                    good: 0, passable: 0, bad: 0, bad_framing: 0, not_rated: 0,
+                },
+            };
+
+            CLIPS.forEach(clip => {
+                const fb = feedback[clip.filename] || null;
+                data.feedback[clip.filename] = fb;
+                if (fb) data.summary[fb]++;
+                else data.summary.not_rated++;
+                if (chatFlags[clip.filename]) {
+                    data.chat_requests[clip.filename] = true;
+                }
+                if (downloads[clip.filename]) {
+                    data.downloads[clip.filename] = true;
+                }
+            });
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'feedback_' + (MANIFEST.date || 'clips') + '.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // === HELPERS ===
+        function escHtml(s) {
+            const div = document.createElement('div');
+            div.textContent = s;
+            return div.innerHTML;
+        }
+
+        function extractFileId(url) {
+            if (!url) return null;
+            const match = url.match(/[?&]id=([^&]+)/);
+            return match ? match[1] : null;
+        }
+
+        // === KEYBOARD ===
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            if (!CLIPS.length) return;
+
+            switch(e.key) {
+                case '1': rate('good'); break;
+                case '2': rate('passable'); break;
+                case '3': rate('bad'); break;
+                case '4': rate('bad_framing'); break;
+                case 'c':
+                case 'C': toggleChat(); break;
+                case 'd':
+                case 'D': downloadClip(); break;
+                case 'ArrowRight': navigate(1); break;
+                case 'ArrowLeft': navigate(-1); break;
+                case ' ':
+                    e.preventDefault();
+                    const p = document.getElementById('player');
+                    if (p && p.tagName === 'VIDEO') {
+                        p.paused ? p.play() : p.pause();
+                    }
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
