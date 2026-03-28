@@ -1,1672 +1,1599 @@
 {
   "date": "2026-03-28",
-  "generated_at": "2026-03-28T11:41:00",
-  "total_clips": 98,
+  "generated_at": "2026-03-28T18:26:06",
+  "total_clips": 95,
   "streamers": [
-    "artskill",
-    "kurama",
-    "kyzen",
+    "talmo",
+    "wazz",
     "buzzftn",
-    "leothecrack",
-    "mayucca",
-    "revenja"
+    "jolavanille",
+    "nikof",
+    "unknown"
   ],
   "use_iframe": true,
   "clips": [
     {
-      "filename": "clip_001_04-57-52_score100_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
+      "filename": "clip_001_00-51-29_score100_1hl_ai+chat.mp4",
+      "streamer": "wazz",
       "timestamp": "",
       "score": 100,
       "sources": [
-        "chat",
         "whisper",
         "ai",
-        "audio",
-        "chat_content"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Discussion about the number of goals and assists in a game between the streamer and chat members | Oui le Moms, oui le top 1 bébé | Oui le top 1 bébé | Après ce magnifique top 1, en vrai, on les dépouille ou pas du tout? | J'ai dit de toute façon, il faut donner du crédial au franchise qui top 1 des trucs comme ça mon frère",
-      "drive_url": "https://drive.google.com/uc?id=1oYIJd2S4weVO0QjaqMEXajTfUJIhP_tz&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1oYIJd2S4weVO0QjaqMEXajTfUJIhP_tz/view",
-      "chat_clip_url": "",
-      "size_mb": 53.5
-    },
-    {
-      "filename": "clip_001_03-45-44_score100_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 100,
-      "sources": [
-        "audio",
-        "chat",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Putain, on a raté le top-up. | Mais c'est pas possible !",
-      "drive_url": "https://drive.google.com/uc?id=1U_RdVlQex46qgtfBhEPSiHT1iPOCj0iM&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1U_RdVlQex46qgtfBhEPSiHT1iPOCj0iM/view",
-      "chat_clip_url": "",
-      "size_mb": 24.9
-    },
-    {
-      "filename": "clip_002_03-51-50_score100_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 100,
-      "sources": [
-        "ai",
-        "whisper",
-        "audio",
         "chat"
       ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Pour les 5, 7, 8, let's go.",
-      "drive_url": "https://drive.google.com/uc?id=18t1bhHRsaBRA0C8UXgKQlrDJzJfezskm&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/18t1bhHRsaBRA0C8UXgKQlrDJzJfezskm/view",
-      "chat_clip_url": "",
-      "size_mb": 24.0
+      "ai_category": "hype_cast",
+      "ai_summary": "Clutch 1v3 incroyable avec réaction du chat",
+      "text": "Clutch 1v3 incroyable avec réaction du chat | Ça s'est bien passé donc GG.",
+      "drive_url": "https://drive.google.com/uc?id=1_R6wSJoYUWmO2_TFaCUSUJposjFb6ppb&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1_R6wSJoYUWmO2_TFaCUSUJposjFb6ppb/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1s_tbcpyUYRqbUDbQnI8Z3Wr00pg1_RBf&export=download",
+      "size_mb": 70.7
     },
     {
-      "filename": "clip_003_06-39-45_score100_1hl_ai+audio.mp4",
-      "streamer": "revenja",
+      "filename": "clip_001_01-55-46_score100_1hl_ai+audio.mp4",
+      "streamer": "nikof",
       "timestamp": "",
       "score": 100,
       "sources": [
+        "whisper",
         "ai",
         "chat",
         "audio",
-        "whisper"
+        "twitch_clips"
       ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Et merci Zeira, putain t'as trouvé de la twit, Zeira | classification echouee | Merci Zeira pour le sept et trois pour les 14 mois d'abonnement, let's go et merci wake up pour le pride pour les 5 mois d'abonnement",
-      "drive_url": "https://drive.google.com/uc?id=1XcxeC2O8MJr6eYvgx_d1BShQwFLpW4Gc&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1XcxeC2O8MJr6eYvgx_d1BShQwFLpW4Gc/view",
-      "chat_clip_url": "",
-      "size_mb": 23.9
+      "ai_category": "hype_cast",
+      "ai_summary": "Clutch 1v3 incroyable avec réaction du chat",
+      "text": "Clutch 1v3 incroyable avec réaction du chat | putain la vieille maladie de la tempête qui du coup l'empêche de poursuivre | très bel game très mot de clutch après un peu de luck",
+      "drive_url": "https://drive.google.com/uc?id=1dzlSRYyy-NBvBj_QEUvlU1hu-Lznq2hO&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1dzlSRYyy-NBvBj_QEUvlU1hu-Lznq2hO/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1L9Sce2p8_Omxoyp_jXnZf-wIPev3i2Y2&export=download",
+      "size_mb": 157.5
     },
     {
-      "filename": "clip_002_00-39-32_score98_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
+      "filename": "clip_002_02-05-01_score96_1hl_ai+chat.mp4",
+      "streamer": "nikof",
       "timestamp": "",
-      "score": 97.7,
+      "score": 95.6,
       "sources": [
-        "ai",
-        "audio",
         "whisper",
-        "chat_content"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Il est trop fort, en vrai. La même chose qu'il est trop fort. | classification echouee | Oh, là, là, là, là, là, l'autre, il reprend un kill derrière. 312 maths encore. | The streamer provides an analysis of his gameplay and discusses the skills of other players",
-      "drive_url": "https://drive.google.com/uc?id=1UPV3phmMvXJFGqDomv5EhbH7x4eNFbPz&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1UPV3phmMvXJFGqDomv5EhbH7x4eNFbPz/view",
-      "chat_clip_url": "",
-      "size_mb": 53.8
-    },
-    {
-      "filename": "clip_004_00-59-33_score94_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 94.2,
-      "sources": [
-        "video",
-        "audio",
         "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "merci la quintage pour le critère, les 10 critères, les 49 gg, | classification echouee | victory_royale | et salut, à ça, salut, au jirou, toi tu gras une étape dans tous les, sur toutes les chaînes, toi, c'est pas possible,",
-      "drive_url": "https://drive.google.com/uc?id=1V2-jHF9NFqnk5O-nmj_GgIH5ABhzNYRV&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1V2-jHF9NFqnk5O-nmj_GgIH5ABhzNYRV/view",
-      "chat_clip_url": "",
-      "size_mb": 25.1
-    },
-    {
-      "filename": "clip_002_01-15-48_score98_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 91.4,
-      "sources": [
-        "audio",
         "chat",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "hype_moment",
-      "ai_summary": "",
-      "text": "Le streamer montre une forte réaction avec des cris de hype et exclamations, le chat explose en réactions positives, il y a un débat animé sur les signatures de contrat de joueurs Fortnite | Oh my god",
-      "drive_url": "https://drive.google.com/uc?id=1_2cs66DXF8IUiphD9wy40DywN72sA4dU&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1_2cs66DXF8IUiphD9wy40DywN72sA4dU/view",
-      "chat_clip_url": "",
-      "size_mb": 54.0
-    },
-    {
-      "filename": "clip_009_06-19-20_score78_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
-      "timestamp": "",
-      "score": 89.4,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper",
-        "fail"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Mais non, j'arrive à le plier. | classification echouee | Mais non, je visse pas avec l'endette.",
-      "drive_url": "https://drive.google.com/uc?id=1NVZJPhs-Z2vHnQUhKoO25Abg5-Qz-g5H&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1NVZJPhs-Z2vHnQUhKoO25Abg5-Qz-g5H/view",
-      "chat_clip_url": "",
-      "size_mb": 24.6
-    },
-    {
-      "filename": "clip_001_03-17-38_score88_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
-      "timestamp": "",
-      "score": 88.3,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
+        "twitch_clips"
       ],
       "ai_category": "funny_fail",
-      "ai_summary": "",
-      "text": "Le streamer semble en colère et utilise des expressions fortes, les viewers réagissent avec des émoticônes humoristiques, il y a un sentiment de faille dans la conversation. | Qui est directement sous le clutch.",
-      "drive_url": "https://drive.google.com/uc?id=1gAyPwOauC4UDMIxAwkfwi2ey4OOr22si&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1gAyPwOauC4UDMIxAwkfwi2ey4OOr22si/view",
-      "chat_clip_url": "",
-      "size_mb": 31.0
+      "ai_summary": "Rire du streamer en voyant un kill raté, chat en délire",
+      "text": "Rire du streamer en voyant un kill raté, chat en délire | Non non non non non non non non non non non on ne prend pas pour un con là | Mais j'ai juste rigolé une seconde un kill tous ces...",
+      "drive_url": "https://drive.google.com/uc?id=1R5mZ1iFxrT1PHPFpwMnUHTmHNr4E7BXr&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1R5mZ1iFxrT1PHPFpwMnUHTmHNr4E7BXr/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1jTW7QtAzjnzSVd2r6wIsHScBSbEjpU33&export=download",
+      "size_mb": 156.7
     },
     {
-      "filename": "clip_001_01-11-01_score89_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
+      "filename": "clip_002_02-48-09_score97_1hl_ai+chat.mp4",
+      "streamer": "wazz",
       "timestamp": "",
-      "score": 86.8,
+      "score": 77.8,
       "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "faire il laisser ça être entre eux je vous petite ils sont sous moi il y en a un contre moi | classification echouee",
-      "drive_url": "https://drive.google.com/uc?id=1r7WFT3lJ3eJR67pRDhbwOwAG3WQlm2l3&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1r7WFT3lJ3eJR67pRDhbwOwAG3WQlm2l3/view",
-      "chat_clip_url": "",
-      "size_mb": 24.5
-    },
-    {
-      "filename": "clip_003_01-10-10_score93_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 86.4,
-      "sources": [
-        "audio",
-        "ai",
         "whisper",
-        "chat_content"
-      ],
-      "ai_category": "hype_moment",
-      "ai_summary": "",
-      "text": "Le streamer parle avec passion et hausse le ton, il y a des cris de hype dans le chat Twitch, il y a une analyse excitee sur un joueur (Shark) et un débat animé entre les viewers | The streamer and chat discuss who the best Fortnite player currently is. | Il me dégoûte, en vrai, lui, ce gros bâtard de merde.",
-      "drive_url": "https://drive.google.com/uc?id=1-pLFRknH4y3Vwn_Uq-j5iClp8zvx1uB5&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1-pLFRknH4y3Vwn_Uq-j5iClp8zvx1uB5/view",
-      "chat_clip_url": "",
-      "size_mb": 54.2
-    },
-    {
-      "filename": "clip_005_05-39-39_score86_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 85.7,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "C'est pas forcément simple de réussir à aller chercher justement ce petit clutch | classification echouee | Akira qui s'occupe de terminer le kill, pour la main qui s'occupe de justement continuer de faire des extents pour prendre de l'avance",
-      "drive_url": "https://drive.google.com/uc?id=1heV9ZH9UhJHQuiTNtMEP61KfETzyk9Q1&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1heV9ZH9UhJHQuiTNtMEP61KfETzyk9Q1/view",
-      "chat_clip_url": "",
-      "size_mb": 24.8
-    },
-    {
-      "filename": "clip_006_04-18-39_score85_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 85.1,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "oh la prédite pour récupérer le double kill j'adore parce que aujourd'hui | classification echouee | obligé de m'envoyer. Ok on a récupéré le petit double kill juste avant avec la",
-      "drive_url": "https://drive.google.com/uc?id=15_yY30ttrj6VQamndvit3EXfqezZHVuY&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/15_yY30ttrj6VQamndvit3EXfqezZHVuY/view",
-      "chat_clip_url": "",
-      "size_mb": 24.2
-    },
-    {
-      "filename": "clip_007_07-13-58_score85_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 85.0,
-      "sources": [
-        "audio",
         "ai",
         "chat"
       ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee",
-      "drive_url": "https://drive.google.com/uc?id=1GpSbr6JQtH-rm6zHaPDYaeeDupk5MKvr&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1GpSbr6JQtH-rm6zHaPDYaeeDupk5MKvr/view",
-      "chat_clip_url": "",
-      "size_mb": 24.4
+      "ai_category": "hype_cast",
+      "ai_summary": "Qualification finale avec réaction du chat explosif",
+      "text": "un top 11 en game 3 | Qualification finale avec réaction du chat explosif | dans la dernière game comme d'hab le top 1 se qualifie",
+      "drive_url": "https://drive.google.com/uc?id=1nN6dPzemdjdIkLvE-Hz__dXs7svop8TO&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1nN6dPzemdjdIkLvE-Hz__dXs7svop8TO/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1ov4SZWXOUkk3NOoVUG9f7-fgKKVuN2ap&export=download",
+      "size_mb": 99.1
     },
     {
-      "filename": "clip_008_06-15-39_score84_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 84.4,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Du coup, au premier game, c'était Sky scroll qu'on fait top 1.",
-      "drive_url": "https://drive.google.com/uc?id=1MJutl3WlHw0kUwtR04yFDhcoEbMXGcju&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1MJutl3WlHw0kUwtR04yFDhcoEbMXGcju/view",
-      "chat_clip_url": "",
-      "size_mb": 23.9
-    },
-    {
-      "filename": "clip_002_05-20-07_score87_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
-      "timestamp": "",
-      "score": 84.3,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "craque moi aussi c'est tout seul gg ski blanc ou l'autre moi aussi je suis craque l'autre le ski | classification echouee | blanc est craque je suis tranquille mais non je suis tranquille on récupère ton surchild il est peut-être",
-      "drive_url": "https://drive.google.com/uc?id=1lATjB1nYb9KcHOtC49zykaqpafx629KM&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1lATjB1nYb9KcHOtC49zykaqpafx629KM/view",
-      "chat_clip_url": "",
-      "size_mb": 24.2
-    },
-    {
-      "filename": "clip_003_05-22-17_score84_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
-      "timestamp": "",
-      "score": 84.2,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | GG, ça va.",
-      "drive_url": "https://drive.google.com/uc?id=1RFzrT66x8tfMJVxURJn-u_QyKrV6B_PJ&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1RFzrT66x8tfMJVxURJn-u_QyKrV6B_PJ/view",
-      "chat_clip_url": "",
-      "size_mb": 24.4
-    },
-    {
-      "filename": "clip_001_03-27-02_score84_1hl_ai+audio.mp4",
-      "streamer": "kurama",
-      "timestamp": "",
-      "score": 84.1,
-      "sources": [
-        "ai",
-        "whisper",
-        "audio"
-      ],
-      "ai_category": "epic_play",
-      "ai_summary": "Clutch 1v3 avec réaction du chat",
-      "text": "Clutch 1v3 avec réaction du chat | WOOOOW",
-      "drive_url": "https://drive.google.com/uc?id=1r796I7Q8tDrJ3-CM-89hKdUK490VunjC&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1r796I7Q8tDrJ3-CM-89hKdUK490VunjC/view",
-      "chat_clip_url": "",
-      "size_mb": 24.1
-    },
-    {
-      "filename": "clip_009_03-09-59_score84_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 83.7,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "On récupéré le kill, je pense. | classification echouee | Oh putain, il y a un HP pile poil.",
-      "drive_url": "https://drive.google.com/uc?id=1aohPsmwj_G3o0qOhtglnJOfxnrHZpuK1&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1aohPsmwj_G3o0qOhtglnJOfxnrHZpuK1/view",
-      "chat_clip_url": "",
-      "size_mb": 24.3
-    },
-    {
-      "filename": "clip_010_04-11-24_score83_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 83.3,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Ça permet de terminer un champion.",
-      "drive_url": "https://drive.google.com/uc?id=1OVNSoEZxphOTdU-r_QSdeQnJ0eug7oic&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1OVNSoEZxphOTdU-r_QSdeQnJ0eug7oic/view",
-      "chat_clip_url": "",
-      "size_mb": 24.7
-    },
-    {
-      "filename": "clip_011_02-56-03_score83_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 82.9,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "On récupère le kill. | classification echouee | Magnifique, le kill. | On récupère encore 16 kills pour le duo.",
-      "drive_url": "https://drive.google.com/uc?id=1rSzx0jSXcMROdBcoPJ1mXnNqP5fyM6sX&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1rSzx0jSXcMROdBcoPJ1mXnNqP5fyM6sX/view",
-      "chat_clip_url": "",
-      "size_mb": 24.7
-    },
-    {
-      "filename": "clip_012_03-20-22_score82_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 82.3,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Même si car récupérer un kill encore une fois. | classification echouee | Ils vont faire 20 kills. | On a encore récupéré un kill. | On va faire 2 points 21 kills. | T'as pas 21 kills.",
-      "drive_url": "https://drive.google.com/uc?id=12EsaCI1s5NDdx9TZWTQs4IGswjXacuU_&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/12EsaCI1s5NDdx9TZWTQs4IGswjXacuU_/view",
-      "chat_clip_url": "",
-      "size_mb": 24.8
-    },
-    {
-      "filename": "clip_004_03-07-37_score84_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
-      "timestamp": "",
-      "score": 82.2,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Il est mort.",
-      "drive_url": "https://drive.google.com/uc?id=1F5KZTvRUszb-DM-e_isWmFEXUU-Od9k_&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1F5KZTvRUszb-DM-e_isWmFEXUU-Od9k_/view",
-      "chat_clip_url": "",
-      "size_mb": 24.3
-    },
-    {
-      "filename": "clip_013_03-39-16_score82_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 82.1,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | le 27. Quoi, il n'a pas récupéré le kill. C'est un tout les dégâts qu'on a mis dessus. | C'est vraiment douce, il n'y a pas le kill dessus. C'était fréquil. | mal de 5. C'est 18 joueurs en vie pour l'instant. On a le kill plus les 3 grosses.",
-      "drive_url": "https://drive.google.com/uc?id=1-G_T2RrlkuiZm2rMD1PpHvTHuSPwHVnr&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1-G_T2RrlkuiZm2rMD1PpHvTHuSPwHVnr/view",
-      "chat_clip_url": "",
-      "size_mb": 24.2
-    },
-    {
-      "filename": "clip_014_01-56-08_score82_1hl_ai+audio.mp4",
-      "streamer": "revenja",
-      "timestamp": "",
-      "score": 82.0,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Ta gueule, putain. | classification echouee | Putain. | GG.",
-      "drive_url": "https://drive.google.com/uc?id=191CcOETJnCmQKaLKv4aEFQrqO_yMaGLR&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/191CcOETJnCmQKaLKv4aEFQrqO_yMaGLR/view",
-      "chat_clip_url": "",
-      "size_mb": 24.8
-    },
-    {
-      "filename": "clip_005_02-14-02_score82_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
-      "timestamp": "",
-      "score": 81.3,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Mais non, mais j'ai cru qu'il était mort, j'ai arrêté de tirer.",
-      "drive_url": "https://drive.google.com/uc?id=1DE0cAbDcnoKfANw7G8M1X3-DqFVxuq8s&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1DE0cAbDcnoKfANw7G8M1X3-DqFVxuq8s/view",
-      "chat_clip_url": "",
-      "size_mb": 23.8
-    },
-    {
-      "filename": "clip_006_03-12-46_score81_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
-      "timestamp": "",
-      "score": 81.1,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "que celui qui l'art sur dessus là il est mort à il est mort direct il y a un peu finir | classification echouee",
-      "drive_url": "https://drive.google.com/uc?id=1tfOpMFZHX3AdrBoaGLQXqRRQZ6gvdaV6&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1tfOpMFZHX3AdrBoaGLQXqRRQZ6gvdaV6/view",
-      "chat_clip_url": "",
-      "size_mb": 23.7
-    },
-    {
-      "filename": "clip_001_00-53-32_score82_1hl_ai+audio.mp4",
-      "streamer": "kyzen",
-      "timestamp": "",
-      "score": 80.9,
-      "sources": [
-        "whisper",
-        "ai",
-        "audio"
-      ],
-      "ai_category": "epic_play",
-      "ai_summary": "Impressive 1v3 clutch with chat reactions",
-      "text": "Let's go. | Impressive 1v3 clutch with chat reactions",
-      "drive_url": "https://drive.google.com/uc?id=1D5x7Mocin7IjX13aHTGbkbX1lLHit5H1&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1D5x7Mocin7IjX13aHTGbkbX1lLHit5H1/view",
-      "chat_clip_url": "",
-      "size_mb": 26.7
-    },
-    {
-      "filename": "clip_001_03-17-46_score88_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
-      "timestamp": "",
-      "score": 80.3,
-      "sources": [
-        "audio",
-        "ai",
-        "chat"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee",
-      "drive_url": "https://drive.google.com/uc?id=1lbvOf2Gee2FxwUk2bmf76RI5PveTZwqE&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1lbvOf2Gee2FxwUk2bmf76RI5PveTZwqE/view",
-      "chat_clip_url": "",
-      "size_mb": 31.4
-    },
-    {
-      "filename": "clip_001_02-46-38_score81_1hl_ai+audio.mp4",
-      "streamer": "kyzen",
-      "timestamp": "",
-      "score": 80.2,
-      "sources": [
-        "whisper",
-        "ai",
-        "audio"
-      ],
-      "ai_category": "epic_play",
-      "ai_summary": "Impressive 1v3 clutch with chat reaction",
-      "text": "Let's go ! | Impressive 1v3 clutch with chat reaction",
-      "drive_url": "https://drive.google.com/uc?id=1myhz06o3BNPAmsJMkPyU_iGB7Nn8x90P&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1myhz06o3BNPAmsJMkPyU_iGB7Nn8x90P/view",
-      "chat_clip_url": "",
-      "size_mb": 24.9
-    },
-    {
-      "filename": "clip_003_04-36-27_score91_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 79.8,
-      "sources": [
-        "ai",
-        "whisper",
-        "chat_content"
-      ],
-      "ai_category": "hype_moment",
-      "ai_summary": "",
-      "text": "Non, mais non, Maxo. | Le streamer montre une forte réaction à l'annonce de Kourama qui signe chez Mute et y a des cris de hype du chat Twitch, indiquant un moment d'excitation collective | The streamer discusses a drama involving another player sharing false information about the streamer's whereabouts and attending events without him. | Putain, genre.",
-      "drive_url": "https://drive.google.com/uc?id=19j6w-XGJsejZp1J4DNKrnPEtyuAWB6UV&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/19j6w-XGJsejZp1J4DNKrnPEtyuAWB6UV/view",
-      "chat_clip_url": "",
-      "size_mb": 54.1
-    },
-    {
-      "filename": "clip_007_04-58-21_score81_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
-      "timestamp": "",
-      "score": 79.7,
-      "sources": [
-        "ai",
-        "audio",
-        "video"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | victory_royale",
-      "drive_url": "https://drive.google.com/uc?id=1fVJUcHZBZCVFE3DzRIIU0bze41sTcKu2&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1fVJUcHZBZCVFE3DzRIIU0bze41sTcKu2/view",
-      "chat_clip_url": "",
-      "size_mb": 24.4
-    },
-    {
-      "filename": "clip_002_02-08-21_score80_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
-      "timestamp": "",
-      "score": 79.0,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Nooooooooooo | classification echouee",
-      "drive_url": "https://drive.google.com/uc?id=1Q0_fEzYyCWV6yY2Y-smJF85P_suYRE6E&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1Q0_fEzYyCWV6yY2Y-smJF85P_suYRE6E/view",
-      "chat_clip_url": "",
-      "size_mb": 32.4
-    },
-    {
-      "filename": "clip_004_00-31-52_score86_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 78.5,
-      "sources": [
-        "ai",
-        "whisper",
-        "chat_content"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "A deux doigts de voir un gros gros gros top 1 | classification echouee | Discussion about the perceived overuse of boosting in Fortnite games by a player named Malibuqa",
-      "drive_url": "https://drive.google.com/uc?id=1YMqRTkvLri1suTtCQ3o0FmA27KG3UXSX&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1YMqRTkvLri1suTtCQ3o0FmA27KG3UXSX/view",
-      "chat_clip_url": "",
-      "size_mb": 53.7
-    },
-    {
-      "filename": "clip_008_05-41-58_score80_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
-      "timestamp": "",
-      "score": 78.0,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Oh my God, ce qu'il est, c'est bon.",
-      "drive_url": "https://drive.google.com/uc?id=1W3LOXjSAw7xupLMBdeD_pkEUdbxXy7-T&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1W3LOXjSAw7xupLMBdeD_pkEUdbxXy7-T/view",
-      "chat_clip_url": "",
-      "size_mb": 24.7
-    },
-    {
-      "filename": "clip_010_07-30-20_score78_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
+      "filename": "clip_001_01-55-46_score78_1hl_ai+audio.mp4",
+      "streamer": "unknown",
       "timestamp": "",
       "score": 77.5,
       "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Oh putain, ça me soulait. | classification echouee | Oh putain.",
-      "drive_url": "https://drive.google.com/uc?id=1lpp92kjsxzq_rkZucW1ERR8iSCp1lCaj&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1lpp92kjsxzq_rkZucW1ERR8iSCp1lCaj/view",
-      "chat_clip_url": "",
-      "size_mb": 24.1
-    },
-    {
-      "filename": "clip_002_00-14-53_score80_1hl_ai+audio.mp4",
-      "streamer": "kyzen",
-      "timestamp": "",
-      "score": 77.0,
-      "sources": [
-        "ai",
         "whisper",
+        "ai",
         "audio"
       ],
       "ai_category": "epic_play",
-      "ai_summary": "Impressive clutch 1v3 with chat reaction",
-      "text": "Impressive clutch 1v3 with chat reaction | only playing because of jet come on yes it's not my fault it's not jet diff she's just too good",
-      "drive_url": "https://drive.google.com/uc?id=1UECZGaZ0LTbiAk4C4R_RQBXeU8ZY0g5j&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1UECZGaZ0LTbiAk4C4R_RQBXeU8ZY0g5j/view",
+      "ai_summary": "Clutch 1v2 avec récupération de mats et box",
+      "text": "Clutch 1v2 avec récupération de mats et box | putain la vieille maladie de la tempête qui du coup l'empêche de poursuivre | très bel game très mot de clutch après un peu de luck",
+      "drive_url": "https://drive.google.com/uc?id=1b4UaJEetMk81ky8nbRZICLRAbriHUvez&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1b4UaJEetMk81ky8nbRZICLRAbriHUvez/view",
       "chat_clip_url": "",
-      "size_mb": 25.4
+      "size_mb": 109.6
     },
     {
-      "filename": "clip_002_02-08-21_score84_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
-      "timestamp": "",
-      "score": 76.9,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Ah non non non non ! | Mais non...",
-      "drive_url": "https://drive.google.com/uc?id=1ypb0aJQL24YtTwQRwFJDdB9NBPV60XgH&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1ypb0aJQL24YtTwQRwFJDdB9NBPV60XgH/view",
-      "chat_clip_url": "",
-      "size_mb": 32.4
-    },
-    {
-      "filename": "clip_004_04-36-23_score92_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
+      "filename": "clip_001_01-04-13_score77_1hl_ai+audio.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 76.7,
       "sources": [
+        "whisper",
         "audio",
+        "ai"
+      ],
+      "ai_category": "funny_fail",
+      "ai_summary": "Fail absurde avec pioche et réaction comique",
+      "text": "Fail absurde avec pioche et réaction comique | Ah bah gg",
+      "drive_url": "https://drive.google.com/uc?id=1sl1fI_pnD5015xlwo6t9x1VUbYweJ08h&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1sl1fI_pnD5015xlwo6t9x1VUbYweJ08h/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=17hSbDWYaZaQOkNWoWo_SJvjlWfVWPuDA&export=download",
+      "size_mb": 77.9
+    },
+    {
+      "filename": "clip_003_02-22-06_score87_1hl_ai+audio.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 74.8,
+      "sources": [
+        "whisper",
+        "ai",
+        "chat"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Débat sur l'histoire du son d'enfant net dans Fortnite",
+      "text": "Oh putain c'est le truc à mettre | Débat sur l'histoire du son d'enfant net dans Fortnite",
+      "drive_url": "https://drive.google.com/uc?id=1mf0rW4Llnn52lxBTK1PrfvCaJqw8XnyI&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1mf0rW4Llnn52lxBTK1PrfvCaJqw8XnyI/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1i7KGKF-x89BbjPvgPpBb7MOgpJmL8GCX&export=download",
+      "size_mb": 159.5
+    },
+    {
+      "filename": "clip_002_00-45-26_score74_1hl_ai+audio.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 74.1,
+      "sources": [
+        "whisper",
+        "ai",
+        "audio"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Kalina critique sa propre game en VOD review traumatique",
+      "text": "Kalina critique sa propre game en VOD review traumatique | oh my god",
+      "drive_url": "https://drive.google.com/uc?id=1TocToie8agj9x2sBhuNAcBDWD-kIQ2MS&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1TocToie8agj9x2sBhuNAcBDWD-kIQ2MS/view",
+      "chat_clip_url": "",
+      "size_mb": 124.2
+    },
+    {
+      "filename": "clip_001_03-34-28_score74_1hl_ai+chat.mp4",
+      "streamer": "wazz",
+      "timestamp": "",
+      "score": 73.9,
+      "sources": [
         "chat",
         "ai",
         "whisper"
       ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Merci Dinox t'es un putain de bon mon frère | Oh vous êtes des ordures le chat c'est incroyable",
-      "drive_url": "https://drive.google.com/uc?id=1eqGJ-B5tEBbAfxz8snxyh8D0VNZUxW6s&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1eqGJ-B5tEBbAfxz8snxyh8D0VNZUxW6s/view",
+      "ai_category": "hype_cast",
+      "ai_summary": "Qualification incroyable de Pixie avec réaction du chat",
+      "text": "pas besoin d'aller chercher plus loin, OMG les gars, attends j'ai pas entendu, mon casque qui a coupé, | Qualification incroyable de Pixie avec réaction du chat | qui s'est fait ban, mais non, ah non qui c'est bon, ouais je les vois, je les vois. Let's go mais",
+      "drive_url": "https://drive.google.com/uc?id=1_UVdflyquqxCH2sZ-TEfwCQgsklJxdsZ&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1_UVdflyquqxCH2sZ-TEfwCQgsklJxdsZ/view",
       "chat_clip_url": "",
-      "size_mb": 54.1
+      "size_mb": 5.2
     },
     {
-      "filename": "clip_011_02-26-25_score77_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
+      "filename": "clip_002_00-52-14_score74_1hl_ai+audio.mp4",
+      "streamer": "talmo",
       "timestamp": "",
-      "score": 76.7,
+      "score": 71.8,
       "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Mais non, elle a bien joué. | classification echouee",
-      "drive_url": "https://drive.google.com/uc?id=1YrtK1elJk2pNpND9pWHd8ScRx7d1ybcJ&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1YrtK1elJk2pNpND9pWHd8ScRx7d1ybcJ/view",
-      "chat_clip_url": "",
-      "size_mb": 24.3
-    },
-    {
-      "filename": "clip_003_01-09-29_score79_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
-      "timestamp": "",
-      "score": 76.6,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | mais putain mais qu'elle en flure",
-      "drive_url": "https://drive.google.com/uc?id=1QgtWKGehvrezlOzfOErD2s4k_9-BgI8z&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1QgtWKGehvrezlOzfOErD2s4k_9-BgI8z/view",
-      "chat_clip_url": "",
-      "size_mb": 32.4
-    },
-    {
-      "filename": "clip_012_04-27-10_score76_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
-      "timestamp": "",
-      "score": 75.9,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Wow, 40, 30, quatre. | C'est quoi, condition que l'on finit le kill.",
-      "drive_url": "https://drive.google.com/uc?id=17QfLcaFlSBcPvmH-eVpdTZSiuDVgBEIw&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/17QfLcaFlSBcPvmH-eVpdTZSiuDVgBEIw/view",
-      "chat_clip_url": "",
-      "size_mb": 23.5
-    },
-    {
-      "filename": "clip_013_06-10-38_score76_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
-      "timestamp": "",
-      "score": 75.8,
-      "sources": [
-        "ai",
-        "audio",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Ah, putain, c'est encore les capotes de talor avec les cheveux sur le côté, là.",
-      "drive_url": "https://drive.google.com/uc?id=1YC3QgQAcXlb3eTowXhBR7dHYO6dgGdvZ&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1YC3QgQAcXlb3eTowXhBR7dHYO6dgGdvZ/view",
-      "chat_clip_url": "",
-      "size_mb": 24.9
-    },
-    {
-      "filename": "clip_003_03-20-00_score81_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
-      "timestamp": "",
-      "score": 75.4,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "top putain la game | classification echouee",
-      "drive_url": "https://drive.google.com/uc?id=1X5ANtLIG1FqZ1wSDtXoNB2PaNxbyTbJL&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1X5ANtLIG1FqZ1wSDtXoNB2PaNxbyTbJL/view",
-      "chat_clip_url": "",
-      "size_mb": 31.2
-    },
-    {
-      "filename": "clip_002_01-47-18_score73_1hl_ai+audio.mp4",
-      "streamer": "kurama",
-      "timestamp": "",
-      "score": 73.1,
-      "sources": [
-        "ai",
         "whisper",
-        "audio"
+        "audio",
+        "ai"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Débat sur un drama Minecraft avec le chat",
+      "text": "Débat sur un drama Minecraft avec le chat | Il est mort",
+      "drive_url": "https://drive.google.com/uc?id=1_-12k9YhjTGlJqrNjEuuDkfpYlzEobUd&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1_-12k9YhjTGlJqrNjEuuDkfpYlzEobUd/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1ExseMxyBout_wsm2zGbRXtU3t3DeT7l7&export=download",
+      "size_mb": 89.7
+    },
+    {
+      "filename": "clip_002_01-56-26_score70_1hl_ai+chat.mp4",
+      "streamer": "wazz",
+      "timestamp": "",
+      "score": 69.8,
+      "sources": [
+        "chat",
+        "ai",
+        "whisper"
+      ],
+      "ai_category": "hype_cast",
+      "ai_summary": "Clutch 1v3 incroyable avec réaction du chat",
+      "text": "On avait 16 kills ou pas ? | Clutch 1v3 incroyable avec réaction du chat | Ah mais non mais d'accord, | Magnifique. | 15 kills.",
+      "drive_url": "https://drive.google.com/uc?id=1Nya32yqdFaFTEIcA_d7YZIHmdpYet_Ch&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1Nya32yqdFaFTEIcA_d7YZIHmdpYet_Ch/view",
+      "chat_clip_url": "",
+      "size_mb": 65.7
+    },
+    {
+      "filename": "clip_001_03-17-46_score70_1hl_ai+audio.mp4",
+      "streamer": "buzzftn",
+      "timestamp": "",
+      "score": 69.7,
+      "sources": [
+        "whisper",
+        "audio",
+        "ai"
       ],
       "ai_category": "epic_play",
-      "ai_summary": "Impressive 1v3 clutch with chat reaction",
-      "text": "Impressive 1v3 clutch with chat reaction | Putain, c'est chaud !",
-      "drive_url": "https://drive.google.com/uc?id=1SVYTekCLjzVGIXLmVEs2o2PI9E-u5N_w&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1SVYTekCLjzVGIXLmVEs2o2PI9E-u5N_w/view",
-      "chat_clip_url": "",
-      "size_mb": 24.1
+      "ai_summary": "Clutch solo Yamal en solo avec réaction du chat",
+      "text": "Clutch solo Yamal en solo avec réaction du chat | Qui est directement solo clutch",
+      "drive_url": "https://drive.google.com/uc?id=1IYYqxBRdICSPV9cUZ_cIWMeuscsg8rpV&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1IYYqxBRdICSPV9cUZ_cIWMeuscsg8rpV/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1T3_i5VAiDVA7ATiTfrY1rs92wxh5o1me&export=download",
+      "size_mb": 51.8
     },
     {
-      "filename": "clip_004_02-16-37_score77_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_003_02-19-27_score78_1hl_ai+chat.mp4",
+      "streamer": "wazz",
       "timestamp": "",
-      "score": 72.0,
+      "score": 69.4,
       "sources": [
+        "whisper",
         "audio",
         "ai",
-        "whisper"
+        "twitch_clips"
       ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Ah là, il en prend la épibo mon nom, surbedo merde.",
-      "drive_url": "https://drive.google.com/uc?id=1iKuncf-VYOy4mDaL1pXJExKP4cAzUPqv&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1iKuncf-VYOy4mDaL1pXJExKP4cAzUPqv/view",
-      "chat_clip_url": "",
-      "size_mb": 32.2
+      "ai_category": "hype_cast",
+      "ai_summary": "Clutch solo incroyable avec réaction du chat",
+      "text": "GG à eux, en tout cas. | Clutch solo incroyable avec réaction du chat | GG, les gars. | Incroyable.",
+      "drive_url": "https://drive.google.com/uc?id=1SgU3Wucjn96B4GfEVte7fc2qHro40igv&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1SgU3Wucjn96B4GfEVte7fc2qHro40igv/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1FABT763IO6hfyV1aDLm1axbjkzlA86Zi&export=download",
+      "size_mb": 75.0
     },
     {
-      "filename": "clip_004_03-14-26_score81_1hl_ai+audio.mp4",
+      "filename": "clip_003_00-46-31_score72_1hl_ai+audio.mp4",
+      "streamer": "talmo",
+      "timestamp": "",
+      "score": 67.8,
+      "sources": [
+        "whisper",
+        "audio",
+        "ai"
+      ],
+      "ai_category": "funny_talk",
+      "ai_summary": "Délire vocal sur Minecraft et Street Workout",
+      "text": "Vas-y let's go! | Délire vocal sur Minecraft et Street Workout",
+      "drive_url": "https://drive.google.com/uc?id=1WwF-DOwluQzm35olPpAsbu-jmN9Le3BD&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1WwF-DOwluQzm35olPpAsbu-jmN9Le3BD/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1aqy0iHWBaUNU0zLo_7i8IatKqZXPqXPi&export=download",
+      "size_mb": 82.8
+    },
+    {
+      "filename": "clip_004_01-02-07_score72_1hl_ai+audio.mp4",
+      "streamer": "talmo",
+      "timestamp": "",
+      "score": 66.3,
+      "sources": [
+        "whisper",
+        "audio",
+        "ai"
+      ],
+      "ai_category": "funny_talk",
+      "ai_summary": "Blague sur 'skibiditantafruit' et débat sur les jeux",
+      "text": "Blague sur 'skibiditantafruit' et débat sur les jeux | Ouais mais non j'ai changé mon blaze",
+      "drive_url": "https://drive.google.com/uc?id=10rDJMYk83s2FgHNY6ewZWb-bI4qGccbe&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/10rDJMYk83s2FgHNY6ewZWb-bI4qGccbe/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=17LufEJRPGZNeVDU16tnXGCPrBepIH-9k&export=download",
+      "size_mb": 91.5
+    },
+    {
+      "filename": "clip_002_04-11-55_score67_1hl_ai+audio.mp4",
       "streamer": "buzzftn",
       "timestamp": "",
-      "score": 71.6,
+      "score": 66.3,
       "sources": [
+        "whisper",
         "audio",
-        "ai",
-        "whisper"
+        "chat_content",
+        "ai"
       ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "C'est incroyable. | classification echouee",
-      "drive_url": "https://drive.google.com/uc?id=1aABXueYqQrtmV8BXygmH-lYxBlCMOs-3&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1aABXueYqQrtmV8BXygmH-lYxBlCMOs-3/view",
+      "ai_category": "funny_fail",
+      "ai_summary": "Fail drôle avec réaction du chat 'wwww' et 'gg'",
+      "text": "Fail drôle avec réaction du chat 'wwww' et 'gg' | Blague sur 'floki il met des calecons lapin' et 'freegun smr' avec réaction du chat | Allez mon bouche let's go",
+      "drive_url": "https://drive.google.com/uc?id=1vy74DONQAbMjPqwY9qsGEC9802XjhXTT&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1vy74DONQAbMjPqwY9qsGEC9802XjhXTT/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1kklaHrxN8Twrbl0J-E3ZYF8eHtrU8qtg&export=download",
+      "size_mb": 53.6
+    },
+    {
+      "filename": "clip_003_01-59-09_score66_1hl_ai+audio.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 65.5,
+      "sources": [
+        "whisper",
+        "ai",
+        "audio"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Clément mute la pub volontairement pour éviter les interruptions",
+      "text": "voilà c'est impossible | Clément mute la pub volontairement pour éviter les interruptions",
+      "drive_url": "https://drive.google.com/uc?id=1rFSjX7s4kAEhdKeTKxxFhN4HEWtzGZ9_&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1rFSjX7s4kAEhdKeTKxxFhN4HEWtzGZ9_/view",
       "chat_clip_url": "",
+      "size_mb": 96.9
+    },
+    {
+      "filename": "clip_004_01-20-55_score69_1hl_ai+audio.mp4",
+      "streamer": "wazz",
+      "timestamp": "",
+      "score": 63.8,
+      "sources": [
+        "whisper",
+        "audio",
+        "ai"
+      ],
+      "ai_category": "hype_cast",
+      "ai_summary": "Clutch solo 400 sous avec réaction du chat",
+      "text": "Clutch solo 400 sous avec réaction du chat | Parce que 450 en dessous en solo clutch.",
+      "drive_url": "https://drive.google.com/uc?id=1oJkI3mT-K71TRuHxS9FvCHkUg2Wb-CrE&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1oJkI3mT-K71TRuHxS9FvCHkUg2Wb-CrE/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1LXmVyaprptBfD9Hp2yZCkn3pI53DwO7W&export=download",
+      "size_mb": 29.4
+    },
+    {
+      "filename": "clip_003_01-19-36_score66_1hl_ai+audio.mp4",
+      "streamer": "buzzftn",
+      "timestamp": "",
+      "score": 63.2,
+      "sources": [
+        "whisper",
+        "audio",
+        "ai"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Débat animé sur les kills et le troll du chat",
+      "text": "Débat animé sur les kills et le troll du chat | Le solo il est en train de faire le clutch et l'année ça se voit direct",
+      "drive_url": "https://drive.google.com/uc?id=1FHY_DKyLNwTyPCllvVCnenkKOk2ql9Ud&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1FHY_DKyLNwTyPCllvVCnenkKOk2ql9Ud/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1Coe39ZAse7zwFQdARnH2uAunhwhPKwby&export=download",
       "size_mb": 31.6
     },
     {
-      "filename": "clip_003_03-07-42_score71_1hl_ai+audio.mp4",
-      "streamer": "kurama",
-      "timestamp": "",
-      "score": 71.4,
-      "sources": [
-        "whisper",
-        "ai",
-        "audio"
-      ],
-      "ai_category": "epic_play",
-      "ai_summary": "Impressive 1v3 clutch with chat reaction",
-      "text": "Il y a 8000 mèches, il m'aoulé tout de ta gueule pour un putain de caon de merde ! | Impressive 1v3 clutch with chat reaction",
-      "drive_url": "https://drive.google.com/uc?id=1BtSyyBSH9cV_SarGKadAQM7Ga0Z4Hxst&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1BtSyyBSH9cV_SarGKadAQM7Ga0Z4Hxst/view",
-      "chat_clip_url": "",
-      "size_mb": 24.0
-    },
-    {
-      "filename": "clip_005_00-23-18_score78_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
-      "timestamp": "",
-      "score": 71.1,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Oh non ! Mais putain ! | classification echouee",
-      "drive_url": "https://drive.google.com/uc?id=1u-lfczQEAh8jC-oa5FhyF0huFC1tlk_2&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1u-lfczQEAh8jC-oa5FhyF0huFC1tlk_2/view",
-      "chat_clip_url": "",
-      "size_mb": 31.0
-    },
-    {
-      "filename": "clip_005_03-20-00_score77_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
-      "timestamp": "",
-      "score": 70.0,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Ouais, je sais trop bien, elle a le kill en plus. | Ma mère, elle a le kill les gars. | Je crois qu'elle a le kill si j'ai pas de la merde.",
-      "drive_url": "https://drive.google.com/uc?id=1qRlkvjYwmDBCpapUimtwBDi6soYwhBTS&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1qRlkvjYwmDBCpapUimtwBDi6soYwhBTS/view",
-      "chat_clip_url": "",
-      "size_mb": 31.2
-    },
-    {
-      "filename": "clip_005_00-11-45_score80_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 69.9,
-      "sources": [
-        "ai",
-        "whisper",
-        "chat_content"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Putain, l'époque où Remz voulait la gérer, | classification echouee | The streamer and chat discuss the popularity of various Fortnite players and reminisce about past events",
-      "drive_url": "https://drive.google.com/uc?id=134DXgbsRKO8LqJw-8yGO3uzxLNhIArQC&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/134DXgbsRKO8LqJw-8yGO3uzxLNhIArQC/view",
-      "chat_clip_url": "",
-      "size_mb": 54.4
-    },
-    {
-      "filename": "clip_005_00-41-41_score84_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 69.9,
-      "sources": [
-        "ai",
-        "whisper",
-        "chat_content"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Streamer discusses euthanasia and its potential legality in France with chat users | Après, je préfère sauter en... Ah oui, c'est vrai, putain!",
-      "drive_url": "https://drive.google.com/uc?id=1kN-wX2bJDjPPEa3w9zBRKYjK9PcGeF8i&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1kN-wX2bJDjPPEa3w9zBRKYjK9PcGeF8i/view",
-      "chat_clip_url": "",
-      "size_mb": 55.6
-    },
-    {
-      "filename": "clip_006_00-41-42_score78_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 69.9,
-      "sources": [
-        "ai",
-        "whisper",
-        "chat_content"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "l'impression qu'il sent la merde quand il fait que lui c'est chaud ça rasse en vrai poda ça découpe | classification echouee | Discussion about organizing a tournament with cash prize and payment for bootcamp",
-      "drive_url": "https://drive.google.com/uc?id=1XtFylDP8kGxSFcprONA9f961jPU40SBu&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1XtFylDP8kGxSFcprONA9f961jPU40SBu/view",
-      "chat_clip_url": "",
-      "size_mb": 54.6
-    },
-    {
-      "filename": "clip_006_03-53-52_score84_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 69.9,
-      "sources": [
-        "ai",
-        "whisper",
-        "chat_content"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | The streamer and chat have a discussion about the performance of another player | Il y a vraiment la merde | Il n'y a pas pu la merde mais il n'était vraiment pas top",
-      "drive_url": "https://drive.google.com/uc?id=1DidpPsK_ugS6t4t98a6YPQDlkehhkYKl&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1DidpPsK_ugS6t4t98a6YPQDlkehhkYKl/view",
-      "chat_clip_url": "",
-      "size_mb": 54.0
-    },
-    {
-      "filename": "clip_007_00-09-52_score82_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 69.9,
-      "sources": [
-        "ai",
-        "whisper",
-        "chat_content"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "Ah merde | classification echouee | Discussion about the performance of a player and the role of an IGL (In-Game Leader) in Fortnite gameplay",
-      "drive_url": "https://drive.google.com/uc?id=1qGgw0wsthYfq9Qi3DIs_L0m-EVoy4MkI&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1qGgw0wsthYfq9Qi3DIs_L0m-EVoy4MkI/view",
-      "chat_clip_url": "",
-      "size_mb": 53.8
-    },
-    {
-      "filename": "clip_004_04-58-57_score67_1hl_ai+audio.mp4",
-      "streamer": "kurama",
-      "timestamp": "",
-      "score": 66.9,
-      "sources": [
-        "whisper",
-        "ai",
-        "audio"
-      ],
-      "ai_category": "epic_play",
-      "ai_summary": "Impressive clutch against multiple opponents with chat reactions",
-      "text": "Le Tour reste qui est trop fort. | Impressive clutch against multiple opponents with chat reactions",
-      "drive_url": "https://drive.google.com/uc?id=1cv3zONXk7RSVDKp8s4FUbMwS8kzEoRdJ&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1cv3zONXk7RSVDKp8s4FUbMwS8kzEoRdJ/view",
-      "chat_clip_url": "",
-      "size_mb": 24.0
-    },
-    {
-      "filename": "clip_002_01-41-00_score82_1hl_ai+audio.mp4",
-      "streamer": "kyzen",
-      "timestamp": "",
-      "score": 64.8,
-      "sources": [
-        "whisper",
-        "ai",
-        "audio"
-      ],
-      "ai_category": "drama_debate",
-      "ai_summary": "Animé débat entre streamer et ses équipiers sur leur stratégie de jeu",
-      "text": "Just staying and waiting for kills. | Animé débat entre streamer et ses équipiers sur leur stratégie de jeu | Yes. | I kill one.",
-      "drive_url": "https://drive.google.com/uc?id=1LH80O16VFrJ8kHhu6nAMUSyr-77_VGkK&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1LH80O16VFrJ8kHhu6nAMUSyr-77_VGkK/view",
-      "chat_clip_url": "",
-      "size_mb": 24.9
-    },
-    {
-      "filename": "clip_007_01-17-02_score77_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 63.5,
-      "sources": [
-        "audio",
-        "ai",
-        "whisper"
-      ],
-      "ai_category": "unknown",
-      "ai_summary": "",
-      "text": "classification echouee | Dernier clutch | Insane",
-      "drive_url": "https://drive.google.com/uc?id=1nP_anGLJ9BaSLD8yWwd8O4LMYDfmg8b1&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1nP_anGLJ9BaSLD8yWwd8O4LMYDfmg8b1/view",
-      "chat_clip_url": "",
-      "size_mb": 55.3
-    },
-    {
-      "filename": "clip_001_01-30-59_score63_1hl_ai+audio.mp4",
-      "streamer": "artskill",
+      "filename": "clip_004_02-11-11_score78_1hl_ai+audio.mp4",
+      "streamer": "nikof",
       "timestamp": "",
       "score": 63.0,
       "sources": [
-        "ai",
         "whisper",
+        "ai",
+        "chat"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Anecdote traumatisante sur Kalina et son top 1",
+      "text": "du top 1 de Kalina les gars | Anecdote traumatisante sur Kalina et son top 1",
+      "drive_url": "https://drive.google.com/uc?id=1YU_ZxO7QcGflfOqhgxFjOSyswRaSKyZW&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1YU_ZxO7QcGflfOqhgxFjOSyswRaSKyZW/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1GLoOTDuJ7qOCZ-kg31x2bLzKGGDrPtzG&export=download",
+      "size_mb": 168.2
+    },
+    {
+      "filename": "clip_004_03-16-45_score63_1hl_ai+audio.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 62.8,
+      "sources": [
+        "whisper",
+        "ai",
         "audio"
       ],
       "ai_category": "drama_debate",
-      "ai_summary": "Analyse détaillée des joueurs de Fortnite et leurs performances",
-      "text": "Analyse détaillée des joueurs de Fortnite et leurs performances | 200 euros chacun, là, en top 1.",
-      "drive_url": "https://drive.google.com/uc?id=1GDxn_-Zurm02nYiqw5o-aRgpaxpgO6bm&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1GDxn_-Zurm02nYiqw5o-aRgpaxpgO6bm/view",
+      "ai_summary": "Débat sur les agences et réputation des joueurs",
+      "text": "Débat sur les agences et réputation des joueurs | ils peuvent clutch.",
+      "drive_url": "https://drive.google.com/uc?id=1eny5CKochYWkaq4q8IvgEUbEx3IZwIWU&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1eny5CKochYWkaq4q8IvgEUbEx3IZwIWU/view",
       "chat_clip_url": "",
+      "size_mb": 120.3
+    },
+    {
+      "filename": "clip_005_00-28-10_score68_1hl_ai+audio.mp4",
+      "streamer": "talmo",
+      "timestamp": "",
+      "score": 61.7,
+      "sources": [
+        "whisper",
+        "audio",
+        "ai"
+      ],
+      "ai_category": "funny_fail",
+      "ai_summary": "Streameur troll avec des pommes et réaction absurde du chat",
+      "text": "Salut Skykiller | Streameur troll avec des pommes et réaction absurde du chat | Let's go let's go let's go let's go",
+      "drive_url": "https://drive.google.com/uc?id=1CAL8WddiPNqkLpyUhPnnqW7ndtFVpiEB&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1CAL8WddiPNqkLpyUhPnnqW7ndtFVpiEB/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1GYuUId2SPsJYh79oItd5WM8qb6SZA-rh&export=download",
+      "size_mb": 91.1
+    },
+    {
+      "filename": "clip_006_00-08-59_score68_1hl_ai+audio.mp4",
+      "streamer": "talmo",
+      "timestamp": "",
+      "score": 59.3,
+      "sources": [
+        "whisper",
+        "audio",
+        "ai"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Débat animé sur le brain et les erreurs de jeu",
+      "text": "Débat animé sur le brain et les erreurs de jeu | Non non non | Je suis mort tout seul",
+      "drive_url": "https://drive.google.com/uc?id=1xrh_tDtET1tyOlsM_2OM_r3Hi3m6T3Ki&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1xrh_tDtET1tyOlsM_2OM_r3Hi3m6T3Ki/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=15wEqQxfR4z3wUcMlzlQsDXrAOw9xm3yP&export=download",
+      "size_mb": 93.3
+    },
+    {
+      "filename": "clip_005_02-53-06_score75_1hl_ai+chat.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 58.7,
+      "sources": [
+        "whisper",
+        "ai",
+        "audio"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Débat sur la réputation des joueurs français et leur stratégie",
+      "text": "Débat sur la réputation des joueurs français et leur stratégie | Ils peuvent clutch",
+      "drive_url": "https://drive.google.com/uc?id=1YK4X66ps69bWn-aumK0-1N09XWjrTqYz&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1YK4X66ps69bWn-aumK0-1N09XWjrTqYz/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1dflMknSxM5dhxWYPkVT_QPq2VT1LW6ub&export=download",
+      "size_mb": 156.6
+    },
+    {
+      "filename": "clip_001_00-54-18_score58_1hl_ai+audio.mp4",
+      "streamer": "jolavanille",
+      "timestamp": "",
+      "score": 58.3,
+      "sources": [
+        "whisper",
+        "audio",
+        "ai"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Débat sur les pubs et la famille Mathis avec réactions du chat",
+      "text": "Faites comme Miro bordel | Débat sur les pubs et la famille Mathis avec réactions du chat",
+      "drive_url": "https://drive.google.com/uc?id=15iq8JRbaq8AW9SC1a7RQvRznhxFyCYSi&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/15iq8JRbaq8AW9SC1a7RQvRznhxFyCYSi/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1m5HJoQkfbK9Llc3qAH-JOggkvIdnl95E&export=download",
       "size_mb": 55.4
     },
     {
-      "filename": "clip_002_01-15-54_score62_1hl_ai+audio.mp4",
-      "streamer": "artskill",
+      "filename": "clip_006_02-29-44_score66_1hl_ai+audio.mp4",
+      "streamer": "nikof",
       "timestamp": "",
-      "score": 62.5,
+      "score": 57.4,
       "sources": [
-        "ai",
         "whisper",
+        "ai",
         "audio"
       ],
       "ai_category": "drama_debate",
-      "ai_summary": "Débat passionné entre le caster et les viewers sur son style de jeu et sa confiance en soi",
-      "text": "Débat passionné entre le caster et les viewers sur son style de jeu et sa confiance en soi | Si vous avez raté la première game, même si Skyjump ils ont fait top 1 sur la première.",
-      "drive_url": "https://drive.google.com/uc?id=1h8Jdg4k418KVmvfc7WcdIxqFsi8V6Znk&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1h8Jdg4k418KVmvfc7WcdIxqFsi8V6Znk/view",
-      "chat_clip_url": "",
-      "size_mb": 54.5
+      "ai_summary": "Débat sur Poda et rumeurs de jeu",
+      "text": "Akira qui vient de tomber il y a Kouama en clutch | Débat sur Poda et rumeurs de jeu | bon je pense que c'est des infos de merde encore",
+      "drive_url": "https://drive.google.com/uc?id=16bHETwOQbXdtuw5zZuTGFphi-joUq5IZ&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/16bHETwOQbXdtuw5zZuTGFphi-joUq5IZ/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1YhZxDzIKd9fVa77DqKNTBy2WIkhdtgs7&export=download",
+      "size_mb": 143.3
     },
     {
-      "filename": "clip_003_00-37-48_score77_1hl_ai+audio.mp4",
-      "streamer": "kyzen",
+      "filename": "clip_004_04-07-15_score65_1hl_ai+audio.mp4",
+      "streamer": "buzzftn",
       "timestamp": "",
-      "score": 60.0,
-      "sources": [
-        "ai",
-        "whisper",
-        "audio"
-      ],
-      "ai_category": "funny_talk",
-      "ai_summary": "Streamer discutant de bière et de TikTok avec ses spectateurs",
-      "text": "Streamer discutant de bière et de TikTok avec ses spectateurs | Let's go ! | Let's go again.",
-      "drive_url": "https://drive.google.com/uc?id=1_ONmPLiT7oII9zRcz1PGv5zeYeMOAc5v&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1_ONmPLiT7oII9zRcz1PGv5zeYeMOAc5v/view",
-      "chat_clip_url": "",
-      "size_mb": 26.2
-    },
-    {
-      "filename": "clip_005_04-45-22_score58_1hl_ai+audio.mp4",
-      "streamer": "kurama",
-      "timestamp": "",
-      "score": 58.0,
+      "score": 57.1,
       "sources": [
         "whisper",
-        "ai",
-        "audio"
+        "chat",
+        "ai"
       ],
       "ai_category": "funny_talk",
-      "ai_summary": "Délires vocaux drôles hors gameplay",
-      "text": "Yes, ça a! | Délires vocaux drôles hors gameplay | Yes!",
-      "drive_url": "https://drive.google.com/uc?id=1V4KWgsyPc-sKPm0-IY7XmHhl60j3tQmZ&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1V4KWgsyPc-sKPm0-IY7XmHhl60j3tQmZ/view",
-      "chat_clip_url": "",
-      "size_mb": 23.8
+      "ai_summary": "Discussion absurde sur les calçons et chaussettes avec réactions du chat",
+      "text": "Discussion absurde sur les calçons et chaussettes avec réactions du chat | Putain sa vie dans le chat",
+      "drive_url": "https://drive.google.com/uc?id=1cZzkRb3PDtywUQ-Fw8PUq-G9sUUH07kL&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1cZzkRb3PDtywUQ-Fw8PUq-G9sUUH07kL/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1FiNqtTBWAN-t2DzICfuIqbn9To05fE4p&export=download",
+      "size_mb": 28.3
     },
     {
-      "filename": "clip_006_03-23-23_score54_1hl_ai+audio.mp4",
-      "streamer": "kurama",
+      "filename": "clip_005_01-09-30_score63_1hl_ai+audio.mp4",
+      "streamer": "buzzftn",
       "timestamp": "",
-      "score": 54.2,
-      "sources": [
-        "ai",
-        "whisper",
-        "audio"
-      ],
-      "ai_category": "funny_talk",
-      "ai_summary": "Délires vocaux Discord avec les potes",
-      "text": "Délires vocaux Discord avec les potes | Là, t'es un mal-merde.",
-      "drive_url": "https://drive.google.com/uc?id=1BAsKhZH_e0lkbKqmKQI1zQWduPUFv4wz&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1BAsKhZH_e0lkbKqmKQI1zQWduPUFv4wz/view",
-      "chat_clip_url": "",
-      "size_mb": 24.1
-    },
-    {
-      "filename": "clip_003_00-46-21_score72_1hl_ai+audio.mp4",
-      "streamer": "kyzen",
-      "timestamp": "",
-      "score": 52.8,
+      "score": 56.6,
       "sources": [
         "whisper",
-        "ai",
-        "audio"
+        "audio",
+        "ai"
       ],
-      "ai_category": "funny_talk",
-      "ai_summary": "Streamer en français bizarre et incompréhensible avec réaction du chat",
-      "text": "Merci, merci Valorant de me donner une victoire enfin. Oh, non, il est retour. | Streamer en français bizarre et incompréhensible avec réaction du chat | Yes.",
-      "drive_url": "https://drive.google.com/uc?id=1pd8xqlNWJIiaaYnnO550SL_x7GWjzQzu&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1pd8xqlNWJIiaaYnnO550SL_x7GWjzQzu/view",
-      "chat_clip_url": "",
-      "size_mb": 25.8
+      "ai_category": "funny_fail",
+      "ai_summary": "Momo manque un kill, réaction du chat 'WWW' et blague sur les poules",
+      "text": "La vie de ma mère c'est trop fort les pizzas | Momo manque un kill, réaction du chat 'WWW' et blague sur les poules",
+      "drive_url": "https://drive.google.com/uc?id=1UUWzI6yKuT-u_NdzfZLArtT_G0vZLTvl&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1UUWzI6yKuT-u_NdzfZLArtT_G0vZLTvl/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1EfA9gORQ-a041SMvV56hThP2s6_TYnaP&export=download",
+      "size_mb": 49.8
     },
     {
-      "filename": "clip_015_03-28-05_score52_1hl_ai+audio.mp4",
-      "streamer": "revenja",
+      "filename": "clip_006_02-08-21_score62_1hl_ai+audio.mp4",
+      "streamer": "buzzftn",
       "timestamp": "",
-      "score": 52.0,
+      "score": 55.7,
+      "sources": [
+        "whisper",
+        "audio",
+        "ai"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Clash sur le ban d'airserbia avec le chat",
+      "text": "Oh la la | Clash sur le ban d'airserbia avec le chat | Magnifique",
+      "drive_url": "https://drive.google.com/uc?id=1PK6lckO4h3W8ecGcitjpuXwF7omVc7yx&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1PK6lckO4h3W8ecGcitjpuXwF7omVc7yx/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1jk9-p61U0lpTV9XpBJjRf509dutFLEHl&export=download",
+      "size_mb": 46.2
+    },
+    {
+      "filename": "clip_005_02-35-02_score67_1hl_ai+audio.mp4",
+      "streamer": "wazz",
+      "timestamp": "",
+      "score": 51.2,
+      "sources": [
+        "whisper",
+        "audio",
+        "ai"
+      ],
+      "ai_category": "drama_debate",
+      "ai_summary": "Discussion sur les règles de qualification en chat",
+      "text": "Discussion sur les règles de qualification en chat | Déjà, un premier beau top-1 de la part de Minori, franchement, GG à lui et son teammate aussi.",
+      "drive_url": "https://drive.google.com/uc?id=1qO9mBeNZSJXS9OyvQRQHjZ5fVDRhGoet&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1qO9mBeNZSJXS9OyvQRQHjZ5fVDRhGoet/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=18X_QbAgcyJk-TCHHcpwv2vPJHSbaFuow&export=download",
+      "size_mb": 187.9
+    },
+    {
+      "filename": "clip_005_01-25-48_score44_1hl_audio+context.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 43.7,
       "sources": [
         "audio",
-        "ai",
-        "whisper"
+        "video",
+        "context"
       ],
-      "ai_category": "boring_routine",
+      "ai_category": "",
       "ai_summary": "",
-      "text": "Le streamer discute avec les autres joueurs sur des sujets non liés à la partie en cours, il n'y a pas de kills, de clutchs ou de moments hype | Donc si haut dans la même game que pu, il vient de le vendre dans la kill-feel.",
-      "drive_url": "https://drive.google.com/uc?id=1wfWnDySi-XxMRgZSsw85ljQHPiJUB_pD&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1wfWnDySi-XxMRgZSsw85ljQHPiJUB_pD/view",
+      "text": "Discussion de classement sans action | victory_royale",
+      "drive_url": "https://drive.google.com/uc?id=1M546OXkVRpPfHO4xvIRHf4LwaK6noiEX&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1M546OXkVRpPfHO4xvIRHf4LwaK6noiEX/view",
       "chat_clip_url": "",
-      "size_mb": 24.2
+      "size_mb": 110.6
     },
     {
-      "filename": "clip_014_01-32-33_score50_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
+      "filename": "clip_007_01-26-15_score66_1hl_ai+audio.mp4",
+      "streamer": "talmo",
       "timestamp": "",
-      "score": 50.5,
+      "score": 42.7,
       "sources": [
-        "ai",
+        "whisper",
         "audio",
-        "whisper"
+        "ai"
       ],
-      "ai_category": "boring_routine",
-      "ai_summary": "",
-      "text": "Ça sent le but, si qu'on soit jamais en 1v2 ou 1v1. | Le streamer discute de la durée du rechargement de son arme sans aucune réaction notable des viewers, indiquant un gameplay normal et sans intérêt pour le contenu",
-      "drive_url": "https://drive.google.com/uc?id=14_eDiAipEKmwQn64AsUgL9ceYkDkvqSS&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/14_eDiAipEKmwQn64AsUgL9ceYkDkvqSS/view",
-      "chat_clip_url": "",
-      "size_mb": 24.4
+      "ai_category": "drama_debate",
+      "ai_summary": "Débat sur les stats de jeu et réactions du chat",
+      "text": "Ça craint sa mère toi t'as combien là | Débat sur les stats de jeu et réactions du chat",
+      "drive_url": "https://drive.google.com/uc?id=1R_AyPaq830mrNiv8-x9TR0sHnXElIlXW&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1R_AyPaq830mrNiv8-x9TR0sHnXElIlXW/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1qWhDv0I6aZ3zUUOqNg9Mf8mOOqgDjIIA&export=download",
+      "size_mb": 79.9
     },
     {
-      "filename": "clip_007_05-23-45_score47_1hl_ai+audio.mp4",
-      "streamer": "kurama",
+      "filename": "clip_006_03-26-41_score40_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
       "timestamp": "",
-      "score": 46.8,
+      "score": 40.1,
       "sources": [
-        "ai",
         "whisper",
         "audio"
       ],
-      "ai_category": "funny_talk",
-      "ai_summary": "Streamer en délire vocal hors gameplay",
-      "text": "Streamer en délire vocal hors gameplay | Ahh",
-      "drive_url": "https://drive.google.com/uc?id=1Ez4G25vdO35lLFPJ3fTbZYlrBjleUDj4&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1Ez4G25vdO35lLFPJ3fTbZYlrBjleUDj4/view",
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Analyse des stats sans réaction forte | Pas insane, pas nul.",
+      "drive_url": "https://drive.google.com/uc?id=16jPY4VhpuL4PMG3C6dJ47v4vRKdaKoq3&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/16jPY4VhpuL4PMG3C6dJ47v4vRKdaKoq3/view",
       "chat_clip_url": "",
-      "size_mb": 24.0
+      "size_mb": 17.2
     },
     {
-      "filename": "clip_015_07-55-48_score47_1hl_ai+audio.mp4",
-      "streamer": "mayucca",
+      "filename": "clip_007_00-27-56_score37_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
       "timestamp": "",
-      "score": 46.6,
+      "score": 37.4,
       "sources": [
-        "ai",
-        "audio",
-        "whisper"
+        "whisper",
+        "audio"
       ],
-      "ai_category": "boring_routine",
+      "ai_category": "",
       "ai_summary": "",
-      "text": "Wow. | Le streamer parle de fabrication d'objets et de son inventaire, ce qui est une phase normale du jeu sans aucune action ou réaction intéressante",
-      "drive_url": "https://drive.google.com/uc?id=1ZIjqTNwsGTomkzsIHNdbEFSxwh23l7uH&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1ZIjqTNwsGTomkzsIHNdbEFSxwh23l7uH/view",
+      "text": "ça va être terrifiant oh la la non non non non | Discussion sur les spawns sans action",
+      "drive_url": "https://drive.google.com/uc?id=1I3rwFgHil0ANvM_McJjDHVoEIdMPqVCF&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1I3rwFgHil0ANvM_McJjDHVoEIdMPqVCF/view",
       "chat_clip_url": "",
-      "size_mb": 24.6
+      "size_mb": 130.5
     },
     {
-      "filename": "clip_004_00-41-51_score52_1hl_ai+audio.mp4",
-      "streamer": "kyzen",
+      "filename": "clip_008_00-07-11_score37_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 37.0,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Discussion banale sur le tournoi sans action | Wow",
+      "drive_url": "https://drive.google.com/uc?id=1AQm_mee2fNOdVQb1u39p6Y8fHeEm28UD&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1AQm_mee2fNOdVQb1u39p6Y8fHeEm28UD/view",
+      "chat_clip_url": "",
+      "size_mb": 109.8
+    },
+    {
+      "filename": "clip_009_01-35-56_score37_1hl_audio+context.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 36.9,
+      "sources": [
+        "whisper",
+        "audio",
+        "context"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "la gueule | Discussion stratégique sans action | top 15 top 16 j'ai l'impression",
+      "drive_url": "https://drive.google.com/uc?id=17-XFuomVJrrRXbsmFC4QE95tlCOjUzeN&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/17-XFuomVJrrRXbsmFC4QE95tlCOjUzeN/view",
+      "chat_clip_url": "",
+      "size_mb": 103.9
+    },
+    {
+      "filename": "clip_010_00-39-19_score36_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 36.1,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "mais bref, oh merde ce tâche | Explication des dates FNCS sans réaction",
+      "drive_url": "https://drive.google.com/uc?id=13-BZFXJNUbptBSY1ar-e3UsDZhSHGZu0&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/13-BZFXJNUbptBSY1ar-e3UsDZhSHGZu0/view",
+      "chat_clip_url": "",
+      "size_mb": 120.8
+    },
+    {
+      "filename": "clip_009_03-16-45_score59_1hl_ai+audio.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 36.0,
+      "sources": [
+        "whisper",
+        "audio",
+        "twitch_clips"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "allez merde tâche 21 remains 5 kills on est en solo clutch | allez mon merde tâche",
+      "drive_url": "https://drive.google.com/uc?id=1U0Q0eumQ3KVbuv82fI79C1Ez6mEqpTAB&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1U0Q0eumQ3KVbuv82fI79C1Ez6mEqpTAB/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1HX2g_hHLC6Wn7auB4BvXEL5QIv77i16i&export=download",
+      "size_mb": 162.4
+    },
+    {
+      "filename": "clip_011_03-03-33_score36_1hl_audio+context.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 36.0,
+      "sources": [
+        "whisper",
+        "audio",
+        "context"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "de gratter un petit kill | Ah, ça n'a pas de kill, Marius.",
+      "drive_url": "https://drive.google.com/uc?id=1if1oaS_GdxJQyNT7O-ZPnIArkBMYx2yl&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1if1oaS_GdxJQyNT7O-ZPnIArkBMYx2yl/view",
+      "chat_clip_url": "",
+      "size_mb": 106.2
+    },
+    {
+      "filename": "clip_017_00-27-38_score35_1hl_audio+whisper.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 35.8,
+      "sources": [
+        "whisper",
+        "audio",
+        "fail"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Oh non non non",
+      "drive_url": "https://drive.google.com/uc?id=1ExLO4XYbiZVXWKhZ4y5dTWqpRaiJoPD9&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1ExLO4XYbiZVXWKhZ4y5dTWqpRaiJoPD9/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1xA3euTajkBxCBxDzviRsxiIpfAAyeTkV&export=download",
+      "size_mb": 183.9
+    },
+    {
+      "filename": "clip_012_00-59-20_score35_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 35.2,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Discussion banale sur les sub et les vidéos | non non non",
+      "drive_url": "https://drive.google.com/uc?id=1oDx7XGEzoPdylM-f3svmoxaC0AbzDLse&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1oDx7XGEzoPdylM-f3svmoxaC0AbzDLse/view",
+      "chat_clip_url": "",
+      "size_mb": 126.3
+    },
+    {
+      "filename": "clip_007_00-44-30_score63_1hl_ai+chat.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 35.0,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "c'est ponton pitoresque oh la la la | ça va être terrifiant oh la la non non non non",
+      "drive_url": "https://drive.google.com/uc?id=1by0dEAkxQAHK9HNiIPxppzVpnjMMdOAD&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1by0dEAkxQAHK9HNiIPxppzVpnjMMdOAD/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1wnbok0bZs7qKNNyyIFHPc8sQPs3j1J5C&export=download",
+      "size_mb": 142.5
+    },
+    {
+      "filename": "clip_008_03-28-50_score62_1hl_ai+audio.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 34.6,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Pas insane",
+      "drive_url": "https://drive.google.com/uc?id=1KuFPj9jsvIKyp_FW3iyvgU5dhGIFOA5H&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1KuFPj9jsvIKyp_FW3iyvgU5dhGIFOA5H/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=13xlFML_MGrVNNNp8dBEs7USsFQNJYGzC&export=download",
+      "size_mb": 25.1
+    },
+    {
+      "filename": "clip_013_03-28-50_score34_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 34.5,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Discussion sur les stats sans action | Franchement, demain il claque un top 1, c'est comme dame.",
+      "drive_url": "https://drive.google.com/uc?id=1zecITrVrKWNxqi4QDo4xB2gUX9NckV1v&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1zecITrVrKWNxqi4QDo4xB2gUX9NckV1v/view",
+      "chat_clip_url": "",
+      "size_mb": 19.4
+    },
+    {
+      "filename": "clip_014_00-47-46_score34_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 34.0,
+      "sources": [
+        "whisper",
+        "audio",
+        "context"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Oui, kill! | 7 kills sur Wooks.",
+      "drive_url": "https://drive.google.com/uc?id=16ulNNhcGU07N7MpgJU4Ik1S5PpK3QNY7&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/16ulNNhcGU07N7MpgJU4Ik1S5PpK3QNY7/view",
+      "chat_clip_url": "",
+      "size_mb": 118.9
+    },
+    {
+      "filename": "clip_015_02-20-35_score34_1hl_audio+context.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 34.0,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Discussion banale sur le gameplay et les retours | un p'tit kill hein, chimie pour la game du côté d'Akira",
+      "drive_url": "https://drive.google.com/uc?id=14owFjlAytSd1z0T2ZqbIEtXa4VYQnkIS&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/14owFjlAytSd1z0T2ZqbIEtXa4VYQnkIS/view",
+      "chat_clip_url": "",
+      "size_mb": 124.5
+    },
+    {
+      "filename": "clip_010_02-47-56_score58_1hl_ai+audio.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 33.9,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "voilà c'est impossible",
+      "drive_url": "https://drive.google.com/uc?id=1UbSNlVhc5rd1leJU8awzYwZbAIy8kdce&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1UbSNlVhc5rd1leJU8awzYwZbAIy8kdce/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1S_VaFWVTbFqiug1ArEd1Het-iK2YfeTi&export=download",
+      "size_mb": 142.6
+    },
+    {
+      "filename": "clip_011_01-26-56_score57_1hl_ai+audio.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 33.2,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "super bon ça là il a pas raté attention quand même | 11 kills pour le monde du côté d'akira et kurama | attention oh qu'est ce qu'il se passe d'où on prend les balles je comprends pas",
+      "drive_url": "https://drive.google.com/uc?id=1G-0r_fREtno53U6czWHJJUTLBWIQEoKw&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1G-0r_fREtno53U6czWHJJUTLBWIQEoKw/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1wUWDpg2IWMexLXdJFBiuksOX9n7V3T3n&export=download",
+      "size_mb": 160.8
+    },
+    {
+      "filename": "clip_016_02-42-22_score33_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 32.9,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "là, j'en ai marre de voir des top 10 | Discussion sur le mid-game sans action | c'est pas insane.",
+      "drive_url": "https://drive.google.com/uc?id=194UfsZBTO4hDgIpnGc3mM9OaDyugtytn&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/194UfsZBTO4hDgIpnGc3mM9OaDyugtytn/view",
+      "chat_clip_url": "",
+      "size_mb": 119.9
+    },
+    {
+      "filename": "clip_012_00-07-01_score56_1hl_ai+audio.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 32.8,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "On va falloir faire attention",
+      "drive_url": "https://drive.google.com/uc?id=1kFcApbFuldMVODu3CZIsBfDOS109gwFA&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1kFcApbFuldMVODu3CZIsBfDOS109gwFA/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1ZVcb-4ZEHBR15EAi7GEUEbAwAC34VhI5&export=download",
+      "size_mb": 154.1
+    },
+    {
+      "filename": "clip_013_00-51-21_score38_1hl_audio+twitch_clips.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 32.4,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Des top 10 et des trucs comme ça | C'est pas insane",
+      "drive_url": "https://drive.google.com/uc?id=1pjt87e5KXB_qCxPiZlYQm12RAAskvbXI&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1pjt87e5KXB_qCxPiZlYQm12RAAskvbXI/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1QwKhH1TDwz9cZB0H5ErvFV2IGpFv7zh2&export=download",
+      "size_mb": 175.5
+    },
+    {
+      "filename": "clip_014_01-44-03_score36_1hl_audio+twitch_clips.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 31.8,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Mais non ça va",
+      "drive_url": "https://drive.google.com/uc?id=1VfPPD7Z_qOUYyuKUIj2dxOdIoQ3hbd_l&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1VfPPD7Z_qOUYyuKUIj2dxOdIoQ3hbd_l/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1W-7yJLHTgFZhXLcNG-13jSQOYLBUHWur&export=download",
+      "size_mb": 159.7
+    },
+    {
+      "filename": "clip_006_01-48-07_score65_1hl_ai+audio.mp4",
+      "streamer": "wazz",
+      "timestamp": "",
+      "score": 31.7,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "bah c'est parti oh putain le timing que j'ai | let's go",
+      "drive_url": "https://drive.google.com/uc?id=1AfRtytznLfRwhiobddcfW44Y_8EYiAc8&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1AfRtytznLfRwhiobddcfW44Y_8EYiAc8/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1ozdgw_gGdcfWqZlv7Ve0-TE-TNbcRWh_&export=download",
+      "size_mb": 212.5
+    },
+    {
+      "filename": "clip_015_03-20-20_score36_1hl_audio+fail.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 31.5,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "ah oui quand même c'est énorme | c'est 32 shields mais attend mais c'est c'est pure beau énorme",
+      "drive_url": "https://drive.google.com/uc?id=1P_WLrUUsO5FAZV8uPZScFWF3DTj7mWVi&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1P_WLrUUsO5FAZV8uPZScFWF3DTj7mWVi/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1VBkkjyeZOpoA6ohIm-XjK9dYojup8hEC&export=download",
+      "size_mb": 166.0
+    },
+    {
+      "filename": "clip_016_00-39-19_score35_1hl_audio+twitch_clips.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 31.3,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "c'est chaud il a de quoi s'il | là il récupère du kill il récupère du point de top",
+      "drive_url": "https://drive.google.com/uc?id=1N9oRNAOQ30j-uNb1sOwXRPg4psBM5BDm&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1N9oRNAOQ30j-uNb1sOwXRPg4psBM5BDm/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1nWmeGpUIsOxRExJWsSTY-uTMHw89GQD9&export=download",
+      "size_mb": 166.7
+    },
+    {
+      "filename": "clip_018_03-26-41_score35_1hl_audio+whisper.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 30.6,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "14 kills | Là on peut vraiment claquer une game énorme",
+      "drive_url": "https://drive.google.com/uc?id=1f_tv3YsROEqgBQ3MnGhmqQAD1auEnQn3&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1f_tv3YsROEqgBQ3MnGhmqQAD1auEnQn3/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1uwaR-gH0YdKY9_I_VfF8v9mlzBPt8ntp&export=download",
+      "size_mb": 25.0
+    },
+    {
+      "filename": "clip_017_02-27-51_score30_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 30.5,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Va chercher du kill,",
+      "drive_url": "https://drive.google.com/uc?id=1Rt03G_hbTG1Lc2TRzbihPcA8sSdSrPba&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1Rt03G_hbTG1Lc2TRzbihPcA8sSdSrPba/view",
+      "chat_clip_url": "",
+      "size_mb": 127.4
+    },
+    {
+      "filename": "clip_019_00-59-20_score34_1hl_audio+whisper.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 30.2,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "qui vient de la merde non",
+      "drive_url": "https://drive.google.com/uc?id=1FpLxQf2548uMPrHgbCUbUmVpTsFBGQ52&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1FpLxQf2548uMPrHgbCUbUmVpTsFBGQ52/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1o-CA4kETtStmHEaAiP4hRz6ya12R37lT&export=download",
+      "size_mb": 168.7
+    },
+    {
+      "filename": "clip_018_02-47-56_score30_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 30.1,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "gg,",
+      "drive_url": "https://drive.google.com/uc?id=1vMEuv7GbZUK4I1em8YdQcExha0wE-63N&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1vMEuv7GbZUK4I1em8YdQcExha0wE-63N/view",
+      "chat_clip_url": "",
+      "size_mb": 101.6
+    },
+    {
+      "filename": "clip_020_03-23-38_score34_1hl_audio+whisper.mp4",
+      "streamer": "nikof",
+      "timestamp": "",
+      "score": 30.0,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Putain quand même",
+      "drive_url": "https://drive.google.com/uc?id=1rXW3byme-_g0xk2MYzehNO2c2Hkrxq1s&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1rXW3byme-_g0xk2MYzehNO2c2Hkrxq1s/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1_NfmqLjUZ3iu00eA1v5QkvC82AnafdWa&export=download",
+      "size_mb": 172.3
+    },
+    {
+      "filename": "clip_019_00-16-18_score30_1hl_audio+whisper.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 30.0,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "ah oui quand même c'est énorme | c'est 32 shields mais attend mais c'est c'est pure beau énorme",
+      "drive_url": "https://drive.google.com/uc?id=1Hm_IuLOxCQauCqQ6BImOwMaMDZMgComz&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1Hm_IuLOxCQauCqQ6BImOwMaMDZMgComz/view",
+      "chat_clip_url": "",
+      "size_mb": 116.4
+    },
+    {
+      "filename": "clip_007_00-44-55_score64_1hl_ai+audio.mp4",
+      "streamer": "wazz",
+      "timestamp": "",
+      "score": 29.9,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Ah Diarrache bait qui a fait un kill en haut à gauche.",
+      "drive_url": "https://drive.google.com/uc?id=1myNRJWbL-GjDkmCJlwGBcoS0PUK64QWN&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1myNRJWbL-GjDkmCJlwGBcoS0PUK64QWN/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1TFELDwXi7QJlj2_mgWLYNRbd89wMxWgM&export=download",
+      "size_mb": 188.0
+    },
+    {
+      "filename": "clip_020_01-44-03_score29_1hl_audio+context.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "score": 29.4,
+      "sources": [
+        "whisper",
+        "audio",
+        "context"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "allez merde tâche 21 remains 5 kills on est en solo clutch | allez mon merde tâche",
+      "drive_url": "https://drive.google.com/uc?id=1lDROiZ0eW_d55Y5zsdidITemvTEhW2om&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1lDROiZ0eW_d55Y5zsdidITemvTEhW2om/view",
+      "chat_clip_url": "",
+      "size_mb": 110.6
+    },
+    {
+      "filename": "clip_008_00-26-32_score53_1hl_ai+chat.mp4",
+      "streamer": "wazz",
+      "timestamp": "",
+      "score": 28.7,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "oh merde",
+      "drive_url": "https://drive.google.com/uc?id=1R_JpflZzVWpImozmpHb7vR3nCTGMxMRe&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1R_JpflZzVWpImozmpHb7vR3nCTGMxMRe/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1bfXTlqAYAHvjXp3w8To4ib9s4iNS-JuD&export=download",
+      "size_mb": 19.2
+    },
+    {
+      "filename": "clip_008_00-32-42_score63_1hl_ai+audio.mp4",
+      "streamer": "talmo",
+      "timestamp": "",
+      "score": 28.5,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Oh les gars mais à l'époque on pensait tellement que c'était de la merde alors que c'était le prime genre",
+      "drive_url": "https://drive.google.com/uc?id=13cNJ9Y6pi1zaTlAPybU4u4q4EdwOoDqw&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/13cNJ9Y6pi1zaTlAPybU4u4q4EdwOoDqw/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=16VOwhK01ZTpCyYfMB33CprzUNT65VnIi&export=download",
+      "size_mb": 89.3
+    },
+    {
+      "filename": "clip_009_02-01-22_score62_1hl_ai+audio.mp4",
+      "streamer": "talmo",
+      "timestamp": "",
+      "score": 27.6,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Ah si tu veux une victoire",
+      "drive_url": "https://drive.google.com/uc?id=1W4_M0WwdzvaObflqv9zieRMQ33uL6TVP&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1W4_M0WwdzvaObflqv9zieRMQ33uL6TVP/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1Mi1HqrIDAWzlRyzCfCiAwOKoOrx3dXxk&export=download",
+      "size_mb": 89.8
+    },
+    {
+      "filename": "clip_009_00-54-05_score51_1hl_ai+audio.mp4",
+      "streamer": "wazz",
+      "timestamp": "",
+      "score": 27.4,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "qu'il y a un problème c'est pas possible techniquement d'avoir le pire à | vérifier des derniers avec trois fois zéro donc on peut vérifier les kills les",
+      "drive_url": "https://drive.google.com/uc?id=1axHIZO8XoZaCXQFE1zEqUaP_Z6X2Yp_W&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1axHIZO8XoZaCXQFE1zEqUaP_Z6X2Yp_W/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=11XEL62ru4pceVQZobnHhsxVpeYbDTcOa&export=download",
+      "size_mb": 16.0
+    },
+    {
+      "filename": "clip_010_01-43-58_score37_1hl_audio+fail.mp4",
+      "streamer": "wazz",
+      "timestamp": "",
+      "score": 27.2,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Oh la la les gars.",
+      "drive_url": "https://drive.google.com/uc?id=1GV3WJkcxjh_Nio6SSBNnRvjR6UxoHXTn&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1GV3WJkcxjh_Nio6SSBNnRvjR6UxoHXTn/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1ehKZpGFmTwEIUT8dVWfGC0j0h3Dt8IYo&export=download",
+      "size_mb": 203.9
+    },
+    {
+      "filename": "clip_011_02-25-13_score32_1hl_audio+whisper.mp4",
+      "streamer": "wazz",
+      "timestamp": "",
+      "score": 26.8,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Ça va être incroyable Claude.",
+      "drive_url": "https://drive.google.com/uc?id=1XIBZLTFtpB-XNX0Mj1VB-FyFiLoITbF_&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1XIBZLTFtpB-XNX0Mj1VB-FyFiLoITbF_/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1mJDj9WNoFMfsfKTQl6h16tsD8MWyvljU&export=download",
+      "size_mb": 81.6
+    },
+    {
+      "filename": "clip_010_01-23-33_score61_1hl_ai+audio.mp4",
+      "streamer": "talmo",
+      "timestamp": "",
+      "score": 25.9,
+      "sources": [
+        "whisper",
+        "audio"
+      ],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "Attention là, on est dans une situation de merde. | On est dans une situation de merde.",
+      "drive_url": "https://drive.google.com/uc?id=112SdrF4mJ2tTirTHGZ30LfCgZmIG--lv&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/112SdrF4mJ2tTirTHGZ30LfCgZmIG--lv/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1irXrQRYnGwmIt4f8Tv3FI_fsoOLIJGhP&export=download",
+      "size_mb": 90.2
+    },
+    {
+      "filename": "clip_011_01-11-33_score59_1hl_ai+audio.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1F5f3hGxKmag29lcHcXbz1XekMnKGaLUD&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1F5f3hGxKmag29lcHcXbz1XekMnKGaLUD/view",
-      "chat_clip_url": "",
-      "size_mb": 37.7
+      "drive_url": "https://drive.google.com/uc?id=15grTpiO9HJkPvFYIxAK50HNNYu3i_oXK&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/15grTpiO9HJkPvFYIxAK50HNNYu3i_oXK/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1A4fkvmt0aDtDwvbQXBjK1dsfXC7kdq7r&export=download",
+      "size_mb": 88.6
     },
     {
-      "filename": "clip_004_01-41-00_score65_1hl_ai+audio.mp4",
-      "streamer": "kyzen",
+      "filename": "clip_012_02-06-39_score43_1hl_ai+audio.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1qVcTj0VkAhFGiLhKSEhXeEC6IGzCK2oi&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1qVcTj0VkAhFGiLhKSEhXeEC6IGzCK2oi/view",
-      "chat_clip_url": "",
-      "size_mb": 24.9
+      "drive_url": "https://drive.google.com/uc?id=1nySb456WcpMgDMslIHFt1ISoWSKuDbZU&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1nySb456WcpMgDMslIHFt1ISoWSKuDbZU/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1zDPe3PcI9HZFcF_sIsjr-hdm4QJFkHsY&export=download",
+      "size_mb": 78.4
     },
     {
-      "filename": "clip_005_00-53-32_score60_1hl_ai+audio.mp4",
-      "streamer": "kyzen",
+      "filename": "clip_013_01-17-42_score43_1hl_ai+audio.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=145EFovwKyiVrvhHVClkzuw9hZmCK1pja&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/145EFovwKyiVrvhHVClkzuw9hZmCK1pja/view",
-      "chat_clip_url": "",
-      "size_mb": 26.7
+      "drive_url": "https://drive.google.com/uc?id=1wRWFc1wS6c_QSx03JPLB6C79gia54QMD&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1wRWFc1wS6c_QSx03JPLB6C79gia54QMD/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1SVvZ77G6_HN7FAIkkVIVjQtaQQRjh9TM&export=download",
+      "size_mb": 102.6
     },
     {
-      "filename": "clip_006_02-53-15_score53_1hl_ai+audio.mp4",
-      "streamer": "kyzen",
+      "filename": "clip_014_02-15-07_score29_1hl_audio+whisper.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1swIQrC0zeOJ_U8Dv3kZwr2fNqp8QJPgs&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1swIQrC0zeOJ_U8Dv3kZwr2fNqp8QJPgs/view",
-      "chat_clip_url": "",
-      "size_mb": 24.5
+      "drive_url": "https://drive.google.com/uc?id=1tBU0_ZDo6mjeFWboVS64dBDE_TCR_v3w&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1tBU0_ZDo6mjeFWboVS64dBDE_TCR_v3w/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1oqlWA2KlsJDLlAF_oFHYiKylVgO_Hk54&export=download",
+      "size_mb": 100.2
     },
     {
-      "filename": "clip_006_02-16-37_score78_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_015_01-32-15_score28_1hl_audio+whisper.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1M5v9LDA0ZIjiFpzmqPns_qvr053QOlBW&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1M5v9LDA0ZIjiFpzmqPns_qvr053QOlBW/view",
-      "chat_clip_url": "",
-      "size_mb": 32.2
+      "drive_url": "https://drive.google.com/uc?id=1mhOl6b1UHSZgYl0d_PFUvhrHTNgEYutQ&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1mhOl6b1UHSZgYl0d_PFUvhrHTNgEYutQ/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=15hwHlHrOeR81oOENGFCTp9yntzvbDYQ8&export=download",
+      "size_mb": 92.2
     },
     {
-      "filename": "clip_006_02-56-23_score75_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_016_02-20-52_score28_1hl_audio+whisper.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1uj56aePKZA7saltZnovLJPHq7cayzAlG&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1uj56aePKZA7saltZnovLJPHq7cayzAlG/view",
-      "chat_clip_url": "",
-      "size_mb": 32.2
+      "drive_url": "https://drive.google.com/uc?id=1tHyszsADYcEuWykRG6j1gMo_G_eJ4xaQ&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1tHyszsADYcEuWykRG6j1gMo_G_eJ4xaQ/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1WnePOXEHTWxDVfpSxmhTN96vnb-AbHi4&export=download",
+      "size_mb": 81.1
     },
     {
-      "filename": "clip_007_03-49-18_score72_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_017_00-35-13_score28_1hl_audio+whisper.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1jj3zPivNNGScC6jbaxvLo92PH_Rjo-TW&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1jj3zPivNNGScC6jbaxvLo92PH_Rjo-TW/view",
-      "chat_clip_url": "",
-      "size_mb": 31.2
+      "drive_url": "https://drive.google.com/uc?id=1h6WThRFkey-7xkiYVuke3TVxGSNAXmF7&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1h6WThRFkey-7xkiYVuke3TVxGSNAXmF7/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1M_sgU8cE8vB_eC8xJwfP53ceqlKpI7W1&export=download",
+      "size_mb": 114.7
     },
     {
-      "filename": "clip_007_03-49-18_score76_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_018_00-39-17_score27_1hl_audio+whisper.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1z04u86Ut2UG_bC2DWW35Uob_40nCQYAf&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1z04u86Ut2UG_bC2DWW35Uob_40nCQYAf/view",
-      "chat_clip_url": "",
-      "size_mb": 31.2
+      "drive_url": "https://drive.google.com/uc?id=1vay3gIBko4LytPV32InmQAlFDlsBmdWg&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1vay3gIBko4LytPV32InmQAlFDlsBmdWg/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1B8IDcj-ryk7XhBwJBvD1bAKErlhc_Fkl&export=download",
+      "size_mb": 97.5
     },
     {
-      "filename": "clip_008_00-10-11_score76_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_019_00-18-42_score26_1hl_audio+whisper.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1R5H-w7XwPchiaWKd0qjXOXJUptKbbhbG&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1R5H-w7XwPchiaWKd0qjXOXJUptKbbhbG/view",
-      "chat_clip_url": "",
-      "size_mb": 32.4
+      "drive_url": "https://drive.google.com/uc?id=1swCnRJ80HB_80xd0K2rmTistIRMvygKP&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1swCnRJ80HB_80xd0K2rmTistIRMvygKP/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=11pAqIR2xQwr12f_zVs4Tl9rj3F1obtgT&export=download",
+      "size_mb": 92.7
     },
     {
-      "filename": "clip_008_00-37-49_score72_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_020_01-36-49_score26_1hl_audio+whisper.mp4",
+      "streamer": "talmo",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1oyy1lrPIA--NKlurblVYW9iEQ65P0dvL&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1oyy1lrPIA--NKlurblVYW9iEQ65P0dvL/view",
-      "chat_clip_url": "",
-      "size_mb": 32.2
+      "drive_url": "https://drive.google.com/uc?id=1P0dH7Y9zUZri0NtpCZKMTydKAyOB2G2y&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1P0dH7Y9zUZri0NtpCZKMTydKAyOB2G2y/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1jAzZxLmsNAvpM3FLJ-OzkPGriZwkl2N_&export=download",
+      "size_mb": 66.8
     },
     {
-      "filename": "clip_009_00-10-09_score71_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_012_01-06-47_score30_1hl_audio+whisper.mp4",
+      "streamer": "wazz",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1WKydd-7nz_7alBnG6-btLpZBFymxVr8_&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1WKydd-7nz_7alBnG6-btLpZBFymxVr8_/view",
-      "chat_clip_url": "",
-      "size_mb": 32.4
+      "drive_url": "https://drive.google.com/uc?id=1Axo5madU2CPkATCndm_7VJR_EaLk6XjC&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1Axo5madU2CPkATCndm_7VJR_EaLk6XjC/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=18ZQxwCY26IKRWw6pUlBFx3luDZUGl4FD&export=download",
+      "size_mb": 153.7
     },
     {
-      "filename": "clip_009_01-58-29_score74_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_013_00-47-48_score30_1hl_audio+whisper.mp4",
+      "streamer": "wazz",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=18wt9iEupTVwo8RwS-XWRrSaTaPWye8se&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/18wt9iEupTVwo8RwS-XWRrSaTaPWye8se/view",
-      "chat_clip_url": "",
-      "size_mb": 32.2
+      "drive_url": "https://drive.google.com/uc?id=1jWRAN5ebyxQBQC6FY1jOVvOEbL7lbOSX&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1jWRAN5ebyxQBQC6FY1jOVvOEbL7lbOSX/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1ZvE2ROeyCb8zwzuAmJ5irkRaIXePNEnH&export=download",
+      "size_mb": 171.7
     },
     {
-      "filename": "clip_010_01-24-13_score73_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_014_02-31-29_score29_1hl_audio+whisper.mp4",
+      "streamer": "wazz",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1rugZ4M1H7YwU2KRFwmrXpVjOwJp2uCDF&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1rugZ4M1H7YwU2KRFwmrXpVjOwJp2uCDF/view",
-      "chat_clip_url": "",
-      "size_mb": 32.1
+      "drive_url": "https://drive.google.com/uc?id=19OoGw0pPZ8yJpi0qhEyfiSQweTQ6DMYM&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/19OoGw0pPZ8yJpi0qhEyfiSQweTQ6DMYM/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1-WjVBa1pORZVL76B2OeEsBd6eoMtk-Ia&export=download",
+      "size_mb": 178.8
     },
     {
-      "filename": "clip_010_01-58-29_score70_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_015_02-43-06_score29_1hl_audio+whisper.mp4",
+      "streamer": "wazz",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1ZP9CuvxndHc7czCJG7nMQqW15K6z2Hlz&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1ZP9CuvxndHc7czCJG7nMQqW15K6z2Hlz/view",
-      "chat_clip_url": "",
-      "size_mb": 32.2
+      "drive_url": "https://drive.google.com/uc?id=1GxSlst66fVdMcbLT-tmd80zZOzRTnsz2&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1GxSlst66fVdMcbLT-tmd80zZOzRTnsz2/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1QyOrsiiMV6zbW3Ect4fLYSlLJb2m2JoF&export=download",
+      "size_mb": 199.8
     },
     {
-      "filename": "clip_011_01-19-37_score73_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_016_00-22-44_score28_1hl_audio+whisper.mp4",
+      "streamer": "wazz",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1B9bIaYgmRwdonTJ5ZWYxSF-6neuFwbmM&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1B9bIaYgmRwdonTJ5ZWYxSF-6neuFwbmM/view",
-      "chat_clip_url": "",
-      "size_mb": 32.1
+      "drive_url": "https://drive.google.com/uc?id=1nRO-JHKLTRDLucPaQwzbc_Oa4H0itCzz&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1nRO-JHKLTRDLucPaQwzbc_Oa4H0itCzz/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1ViajIpxcBkQSSNJFfefQMHb2LTAlojFc&export=download",
+      "size_mb": 17.5
     },
     {
-      "filename": "clip_012_03-02-05_score72_1hl_ai+audio.mp4",
-      "streamer": "buzzftn",
+      "filename": "clip_017_01-54-16_score27_1hl_audio+whisper.mp4",
+      "streamer": "wazz",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1VDQO_oywmXBsuKxD0-SgxhChOf6t01Sn&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1VDQO_oywmXBsuKxD0-SgxhChOf6t01Sn/view",
-      "chat_clip_url": "",
-      "size_mb": 32.2
+      "drive_url": "https://drive.google.com/uc?id=1HIYSIkazLOxh_zUxBi9qf3lpmOZKFqM4&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1HIYSIkazLOxh_zUxBi9qf3lpmOZKFqM4/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1Y86dbgQLAdnv2l3hxBc2KcTtGiYDYGnr&export=download",
+      "size_mb": 4.7
     },
     {
-      "filename": "clip_008_00-29-38_score70_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
+      "filename": "clip_018_01-56-46_score27_1hl_audio+whisper.mp4",
+      "streamer": "wazz",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1DA8GpsLWOUc4luPUSwFJkM-JppvTmcK_&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1DA8GpsLWOUc4luPUSwFJkM-JppvTmcK_/view",
-      "chat_clip_url": "",
-      "size_mb": 54.1
-    },
-    {
-      "filename": "clip_008_00-29-38_score75_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 0,
-      "sources": [],
-      "ai_category": "",
-      "ai_summary": "",
-      "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1ZnVKpON9f-oQDIEO61AD_c9JTdMBYiPR&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1ZnVKpON9f-oQDIEO61AD_c9JTdMBYiPR/view",
-      "chat_clip_url": "",
-      "size_mb": 54.1
-    },
-    {
-      "filename": "clip_009_00-35-52_score70_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 0,
-      "sources": [],
-      "ai_category": "",
-      "ai_summary": "",
-      "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1d54JtEWjClOJJOCMJPKFLq3BLSXzLYx3&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1d54JtEWjClOJJOCMJPKFLq3BLSXzLYx3/view",
-      "chat_clip_url": "",
-      "size_mb": 53.8
-    },
-    {
-      "filename": "clip_009_01-31-37_score75_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 0,
-      "sources": [],
-      "ai_category": "",
-      "ai_summary": "",
-      "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1CL44hVNEtvrnrK8akMUhzkC_gbiOSf4J&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1CL44hVNEtvrnrK8akMUhzkC_gbiOSf4J/view",
-      "chat_clip_url": "",
-      "size_mb": 55.5
-    },
-    {
-      "filename": "clip_010_01-31-43_score70_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 0,
-      "sources": [],
-      "ai_category": "",
-      "ai_summary": "",
-      "text": "",
-      "drive_url": "https://drive.google.com/uc?id=14-CRniqn2Siq9h5uag-kwaUuNaIGSvhp&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/14-CRniqn2Siq9h5uag-kwaUuNaIGSvhp/view",
-      "chat_clip_url": "",
-      "size_mb": 55.2
-    },
-    {
-      "filename": "clip_010_03-37-52_score75_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 0,
-      "sources": [],
-      "ai_category": "",
-      "ai_summary": "",
-      "text": "",
-      "drive_url": "https://drive.google.com/uc?id=19UAEhV9sZBol6hMTBeRvhJ61j1GVsU7U&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/19UAEhV9sZBol6hMTBeRvhJ61j1GVsU7U/view",
-      "chat_clip_url": "",
-      "size_mb": 53.5
-    },
-    {
-      "filename": "clip_011_03-37-52_score70_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 0,
-      "sources": [],
-      "ai_category": "",
-      "ai_summary": "",
-      "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1WvLI96hHsefciDQ3b8pLKEVq25qoICeX&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1WvLI96hHsefciDQ3b8pLKEVq25qoICeX/view",
-      "chat_clip_url": "",
-      "size_mb": 53.5
-    },
-    {
-      "filename": "clip_011_03-55-52_score75_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 0,
-      "sources": [],
-      "ai_category": "",
-      "ai_summary": "",
-      "text": "",
-      "drive_url": "https://drive.google.com/uc?id=14QHeE9t6_hLouRPxms4ThQLN7tUaDmO4&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/14QHeE9t6_hLouRPxms4ThQLN7tUaDmO4/view",
-      "chat_clip_url": "",
-      "size_mb": 53.8
-    },
-    {
-      "filename": "clip_012_04-41-51_score75_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 0,
-      "sources": [],
-      "ai_category": "",
-      "ai_summary": "",
-      "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1-jRdxav8QJDSMd-lbC0D4ucgdZy2p6BJ&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1-jRdxav8QJDSMd-lbC0D4ucgdZy2p6BJ/view",
-      "chat_clip_url": "",
-      "size_mb": 54.6
-    },
-    {
-      "filename": "clip_012_04-43-50_score70_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 0,
-      "sources": [],
-      "ai_category": "",
-      "ai_summary": "",
-      "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1I4umN4Cbrvd-jmeKijhF8_a98ZaXJ8hw&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1I4umN4Cbrvd-jmeKijhF8_a98ZaXJ8hw/view",
-      "chat_clip_url": "",
-      "size_mb": 54.4
-    },
-    {
-      "filename": "clip_013_03-44-34_score64_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
-      "timestamp": "",
-      "score": 0,
-      "sources": [],
-      "ai_category": "",
-      "ai_summary": "",
-      "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1pt-9-CRSqhzt5TJR3Dtl74yJuKhSTYUh&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1pt-9-CRSqhzt5TJR3Dtl74yJuKhSTYUh/view",
-      "chat_clip_url": "",
+      "drive_url": "https://drive.google.com/uc?id=1PvvFBzatQRIOsMzMnV6W3tfHm7g6l1c8&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1PvvFBzatQRIOsMzMnV6W3tfHm7g6l1c8/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1VqKZz_9qeqYIsOguaUEqMS9DUNlRnilU&export=download",
       "size_mb": 55.1
     },
     {
-      "filename": "clip_013_05-13-35_score75_1hl_ai+chat_content.mp4",
-      "streamer": "leothecrack",
+      "filename": "clip_019_00-34-23_score27_1hl_audio+whisper.mp4",
+      "streamer": "wazz",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1FTyTZ-F4zkRVU0I8YEoU-2K1J5Ldzxme&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1FTyTZ-F4zkRVU0I8YEoU-2K1J5Ldzxme/view",
-      "chat_clip_url": "",
-      "size_mb": 55.1
+      "drive_url": "https://drive.google.com/uc?id=1ADgQ4htrhkg4kUwuvuHL1DwSxy3PkhEg&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1ADgQ4htrhkg4kUwuvuHL1DwSxy3PkhEg/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1CqOfTqGTkdKuTlUZoxjvgFi3c7f8YmMS&export=download",
+      "size_mb": 186.8
     },
     {
-      "filename": "clip_014_02-37-13_score71_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
+      "filename": "clip_020_01-02-51_score27_1hl_audio+whisper.mp4",
+      "streamer": "wazz",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1srbE5k92rymPxqxJXGT-OZFAkRUoYjJZ&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1srbE5k92rymPxqxJXGT-OZFAkRUoYjJZ/view",
-      "chat_clip_url": "",
-      "size_mb": 55.0
+      "drive_url": "https://drive.google.com/uc?id=13uGoRvXTSXVaPZ8lMpwFG2K5be-5GICd&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/13uGoRvXTSXVaPZ8lMpwFG2K5be-5GICd/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1gsqNOqe55w_wRhVaDCUcuojld-SZhiyQ&export=download",
+      "size_mb": 154.5
     },
     {
-      "filename": "clip_015_03-44-32_score70_1hl_ai+audio.mp4",
-      "streamer": "leothecrack",
+      "filename": "clip_007_01-16-03_score57_1hl_ai+chat.mp4",
+      "streamer": "buzzftn",
       "timestamp": "",
       "score": 0,
       "sources": [],
       "ai_category": "",
       "ai_summary": "",
       "text": "",
-      "drive_url": "https://drive.google.com/uc?id=1yFb_9raprIfyIrnrtYggpc1z3eVJxKmt&export=download",
-      "drive_view_url": "https://drive.google.com/file/d/1yFb_9raprIfyIrnrtYggpc1z3eVJxKmt/view",
-      "chat_clip_url": "",
-      "size_mb": 55.2
+      "drive_url": "https://drive.google.com/uc?id=1ah87TzosW4TI1KDMRVAHFJtKARgoup1P&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1ah87TzosW4TI1KDMRVAHFJtKARgoup1P/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1wgQvEdOi1ebWuMYa9kiV0xAXnBYeb4O_&export=download",
+      "size_mb": 47.4
+    },
+    {
+      "filename": "clip_008_02-16-28_score57_1hl_ai+audio.mp4",
+      "streamer": "buzzftn",
+      "timestamp": "",
+      "score": 0,
+      "sources": [],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "",
+      "drive_url": "https://drive.google.com/uc?id=14Yi6kBwpNC8CpQXaYasEDEnHeXI74qdj&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/14Yi6kBwpNC8CpQXaYasEDEnHeXI74qdj/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1a3xfKKN6v17pTDAluPuKMh7ObHDUZ-W5&export=download",
+      "size_mb": 42.7
+    },
+    {
+      "filename": "clip_009_01-57-10_score57_1hl_ai+audio.mp4",
+      "streamer": "buzzftn",
+      "timestamp": "",
+      "score": 0,
+      "sources": [],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "",
+      "drive_url": "https://drive.google.com/uc?id=1Hynl_s5r0SO8YVWRH6OJS7rKpVQCZa1v&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1Hynl_s5r0SO8YVWRH6OJS7rKpVQCZa1v/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1oi_9f9MpkkoLVtpE96h_M12EXHu6UKPc&export=download",
+      "size_mb": 43.6
+    },
+    {
+      "filename": "clip_010_00-37-49_score56_1hl_ai+audio.mp4",
+      "streamer": "buzzftn",
+      "timestamp": "",
+      "score": 0,
+      "sources": [],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "",
+      "drive_url": "https://drive.google.com/uc?id=1_nt8V1ezMnuUoStjFrURa0rVGFmVJaiP&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1_nt8V1ezMnuUoStjFrURa0rVGFmVJaiP/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1-51S1jjQidNiBtxlWqvDBWjHUoB74Gt0&export=download",
+      "size_mb": 41.3
+    },
+    {
+      "filename": "clip_011_02-46-55_score56_1hl_ai+audio.mp4",
+      "streamer": "buzzftn",
+      "timestamp": "",
+      "score": 0,
+      "sources": [],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "",
+      "drive_url": "https://drive.google.com/uc?id=16i7wnuRqRYcv5okzX4mKLOwNfvGcucRu&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/16i7wnuRqRYcv5okzX4mKLOwNfvGcucRu/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1stmJ3Q7yxHLbtTLmFu8eEKF7jES66b4v&export=download",
+      "size_mb": 50.0
+    },
+    {
+      "filename": "clip_012_02-36-38_score50_1hl_ai+audio.mp4",
+      "streamer": "buzzftn",
+      "timestamp": "",
+      "score": 0,
+      "sources": [],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "",
+      "drive_url": "https://drive.google.com/uc?id=1gk7M_ksDuZvBAECULas1X8HZ7syY-1_Q&export=download",
+      "drive_view_url": "https://drive.google.com/file/d/1gk7M_ksDuZvBAECULas1X8HZ7syY-1_Q/view",
+      "chat_clip_url": "https://drive.google.com/uc?id=1HhoLc3RII7GNq8vJ069suXm7-RMXEzbY&export=download",
+      "size_mb": 50.3
     }
   ]
 }
