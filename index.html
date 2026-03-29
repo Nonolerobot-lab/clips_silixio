@@ -472,7 +472,9 @@
     </div>
 
     <!-- Sprint 32 : CONTEXT SUMMARY -->
-    <div id="contextSummary" style="display:none;padding:6px 20px;background:#1a1a35;border-bottom:1px solid #2a2a4a;font-size:0.8em;color:#aaa;flex-shrink:0;"></div>
+    <div id="contextSummary" style="display:none;padding:8px 20px;background:#1a1a35;border-bottom:1px solid #2a2a4a;font-size:0.82em;color:#ccc;flex-shrink:0;gap:8px;align-items:center;">
+        <span style="color:#9b59b6;font-weight:700;margin-right:8px;">&#129302; R&#233;sum&#233; IA</span><span id="contextSummaryContent"></span>
+    </div>
 
     <!-- MINIMAP -->
     <div class="minimap" id="minimap"></div>
@@ -1101,8 +1103,8 @@
             if (ctx.boosted_clips_count > 0) {
                 html += ` &mdash; <span style="color:#7c7">${ctx.boosted_clips_count} clip${ctx.boosted_clips_count > 1 ? 's' : ''} boost\u00E9${ctx.boosted_clips_count > 1 ? 's' : ''}</span>`;
             }
-            el.innerHTML = html;
-            el.style.display = 'block';
+            document.getElementById('contextSummaryContent').innerHTML = html;
+            el.style.display = 'flex';
         }
 
         // === MINIMAP ===
