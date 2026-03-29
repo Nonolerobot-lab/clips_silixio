@@ -207,12 +207,21 @@
             transition: all 0.15s;
         }
         .chat-video-panel .dl-chat-btn:hover { border-color: #9b59b6; color: #9b59b6; }
-        .chat-video-panel video {
+        .chat-video-panel video,
+        .chat-video-panel iframe {
             width: 100%;
             border-radius: 10px;
             background: #000;
             flex: 1;
             max-height: 100%;
+            border: none;
+        }
+        #chatPlayer {
+            width: 100%;
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+            border-radius: 10px;
         }
 
         /* === CLIP INFO OVERLAY === */
@@ -494,7 +503,7 @@
                     <span>&#128172; Chat Twitch</span>
                     <button class="dl-chat-btn" id="dlChatBtn" onclick="downloadChat()" title="Telecharger la video chat">&#128229; DL</button>
                 </div>
-                <video id="chatPlayer" controls muted></video>
+                <div id="chatPlayer"></div>
             </div>
         </div>
 
@@ -754,11 +763,10 @@
                     }
                 };
 
-                // Sprint 32 : clic sur la video = play/pause
+                // Sprint 32 : clic sur la video = play/pause (chat est un iframe, pas de sync possible)
                 player.onclick = () => {
-                    const chatP = document.getElementById('chatPlayer');
-                    if (player.paused) { player.play(); if (chatP && chatP.src) chatP.play(); }
-                    else { player.pause(); if (chatP && chatP.src) chatP.pause(); }
+                    if (player.paused) player.play();
+                    else player.pause();
                 };
             }
 
@@ -770,18 +778,16 @@
             }
             const chatIsActive = !!(clip.chat_clip_url && chatFlags[clip.filename]);
             if (chatIsActive) {
-                chatPlayer.src = clip.chat_clip_url;
-                chatPlayer.play().catch(() => {});
+                _setChatIframe(chatPlayer, clip.chat_clip_url);
                 chatPanel.classList.remove('hidden', 'no-chat');
             } else if (clip.chat_clip_url) {
                 // Chat dispo mais masque par Silixio
-                chatPlayer.pause();
-                chatPlayer.src = '';
+                _clearChatIframe(chatPlayer);
                 chatPanel.classList.add('hidden');
                 chatPanel.classList.remove('no-chat');
             } else {
                 // Pas de chat pour ce clip
-                chatPlayer.src = '';
+                _clearChatIframe(chatPlayer);
                 chatPanel.classList.add('no-chat');
                 chatPanel.classList.remove('hidden');
             }
@@ -886,6 +892,32 @@
             }
         }
 
+        // === CHAT IFRAME HELPERS ===
+        function _getChatFileId(url) {
+            if (!url) return null;
+            const m = url.match(/[?&]id=([^&]+)/);
+            return m ? m[1] : null;
+        }
+
+        function _setChatIframe(container, chatUrl) {
+            const fileId = _getChatFileId(chatUrl);
+            if (!fileId) return;
+            // Reuse existing iframe if already pointing to same file
+            const existing = container.querySelector('iframe');
+            const previewSrc = 'https://drive.google.com/file/d/' + fileId + '/preview';
+            if (existing && existing.src === previewSrc) return;
+            container.innerHTML = '';
+            const iframe = document.createElement('iframe');
+            iframe.src = previewSrc;
+            iframe.allow = 'autoplay';
+            iframe.style.cssText = 'width:100%;height:100%;border:none;border-radius:10px;background:#000;display:block;';
+            container.appendChild(iframe);
+        }
+
+        function _clearChatIframe(container) {
+            container.innerHTML = '';
+        }
+
         function toggleChat() {
             const clip = CLIPS[currentIndex];
             if (!clip.chat_clip_url) return;
@@ -896,12 +928,10 @@
             const chatPanel = document.getElementById('chatPanel');
             const chatPlayer = document.getElementById('chatPlayer');
             if (chatFlags[clip.filename]) {
-                chatPlayer.src = clip.chat_clip_url;
-                chatPlayer.play().catch(() => {});
+                _setChatIframe(chatPlayer, clip.chat_clip_url);
                 chatPanel.classList.remove('hidden');
             } else {
-                chatPlayer.pause();
-                chatPlayer.src = '';
+                _clearChatIframe(chatPlayer);
                 chatPanel.classList.add('hidden');
             }
 
@@ -1277,11 +1307,9 @@
                 case 'ArrowRight':
                     e.preventDefault();
                     if (e.shiftKey) {
-                        // Shift+Right = avancer de 5s dans la video
+                        // Shift+Right = avancer de 5s dans la video (chat iframe : non controllable)
                         const pFwd = document.getElementById('player');
                         if (pFwd && pFwd.tagName === 'VIDEO') pFwd.currentTime += 5;
-                        const cFwd = document.getElementById('chatPlayer');
-                        if (cFwd && cFwd.src) cFwd.currentTime += 5;
                     } else {
                         navigate(1);
                     }
@@ -1292,20 +1320,16 @@
                         // Shift+Left = reculer de 5s
                         const pBwd = document.getElementById('player');
                         if (pBwd && pBwd.tagName === 'VIDEO') pBwd.currentTime = Math.max(0, pBwd.currentTime - 5);
-                        const cBwd = document.getElementById('chatPlayer');
-                        if (cBwd && cBwd.src) cBwd.currentTime = Math.max(0, cBwd.currentTime - 5);
                     } else {
                         navigate(-1);
                     }
                     break;
                 case ' ':
                     e.preventDefault();
-                    // Sprint 32 : play/pause synchronise video + chat
                     const p = document.getElementById('player');
-                    const cp = document.getElementById('chatPlayer');
                     if (p && p.tagName === 'VIDEO') {
-                        if (p.paused) { p.play(); if (cp && cp.src) cp.play(); }
-                        else { p.pause(); if (cp && cp.src) cp.pause(); }
+                        if (p.paused) p.play();
+                        else p.pause();
                     }
                     break;
             }
