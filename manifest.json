@@ -8,7 +8,7 @@
     "wazz",
     "leothecrack"
   ],
-  "use_iframe": false,
+  "use_iframe": true,
   "context_summary": {
     "active_topics": [
       {
