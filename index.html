@@ -741,20 +741,28 @@
                 // Sprint 33 : fallback vers iframe si la video ne charge pas en 10s
                 let videoLoaded = false;
                 player.onloadeddata = () => { videoLoaded = true; };
-                player.onerror = () => {
-                    if (!videoLoaded) {
-                        // Fallback : essaye le lien Drive view en iframe
-                        const fileId = extractFileId(clip.drive_view_url || clip.drive_url);
-                        if (fileId) {
-                            const iframe = document.createElement('iframe');
-                            iframe.id = 'player';
-                            iframe.src = 'https://drive.google.com/file/d/' + fileId + '/preview';
-                            iframe.allow = 'autoplay';
-                            iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;border-radius:12px;background:#000;';
-                            player.replaceWith(iframe);
-                        }
+
+                function _fallbackToIframe() {
+                    const current = document.getElementById('player');
+                    if (!current || current.tagName !== 'VIDEO') return;
+                    const fileId = extractFileId(clip.drive_view_url || clip.drive_url);
+                    if (fileId) {
+                        const iframe = document.createElement('iframe');
+                        iframe.id = 'player';
+                        iframe.src = 'https://drive.google.com/file/d/' + fileId + '/preview';
+                        iframe.allow = 'autoplay';
+                        iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;border-radius:12px;background:#000;';
+                        current.replaceWith(iframe);
                     }
-                };
+                }
+
+                // Fallback sur erreur (CORS/CORP block)
+                player.onerror = () => { if (!videoLoaded) _fallbackToIframe(); };
+
+                // Fallback apres 10s si la video n'a toujours pas charge (gros fichiers / reseau lent)
+                const _videoFallbackTimer = setTimeout(() => {
+                    if (!videoLoaded) _fallbackToIframe();
+                }, 10000);
 
                 // Sprint 32 : clic sur la video = play/pause
                 player.onclick = () => {
