@@ -492,6 +492,7 @@
                 <div class="iframe-fallback" id="iframeFallback">
                     <p>&#9888; Clip non disponible (timeout ou permissions Drive)</p>
                     <a id="fallbackDriveLink" href="#" target="_blank">&#128279; Ouvrir dans Google Drive</a>
+                    <a id="fallbackTwitchLink" href="#" target="_blank" style="display:none;margin-left:12px">&#127918; Voir sur Twitch</a>
                     <button class="skip-btn" onclick="navigate(1)">Passer au suivant &#8594;</button>
                 </div>
 
@@ -701,20 +702,34 @@
             const fallback = document.getElementById('iframeFallback');
             fallback.classList.remove('show');
 
-            // Video — use <video> ou <iframe> selon manifest
+            // Sprint 34 : strategie video en 3 niveaux
+            // 1. Twitch clip embed (si clip_url dispo — clips-only mode, le plus fiable)
+            // 2. Drive iframe /preview (clips VOD — necessite Google login)
+            // 3. Fallback lien direct
             const playerEl = document.getElementById('player');
-            if (useIframe) {
-                // Mode iframe (Google Drive preview)
-                const fileId = extractFileId(clip.drive_url);
+            const clipSlug = extractTwitchClipSlug(clip.clip_url);
+
+            if (clipSlug) {
+                // Mode 1 : Twitch clip embed (clips-only) — toujours fiable
+                const iframe = document.createElement('iframe');
+                iframe.id = 'player';
+                iframe.src = 'https://clips.twitch.tv/embed?clip=' + clipSlug + '&parent=' + window.location.hostname + '&autoplay=true';
+                iframe.allow = 'autoplay';
+                iframe.allowFullscreen = true;
+                iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;border-radius:12px;background:#000;';
+                playerEl.replaceWith(iframe);
+
+            } else {
+                // Mode 2 : Drive iframe /preview (clips VOD)
+                const fileId = extractFileId(clip.drive_view_url || clip.drive_url);
                 if (fileId) {
-                    // Construire l'iframe
                     const iframe = document.createElement('iframe');
                     iframe.id = 'player';
                     iframe.src = 'https://drive.google.com/file/d/' + fileId + '/preview';
                     iframe.allow = 'autoplay';
                     iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;border-radius:12px;background:#000;';
 
-                    // Bug 3 : timeout 15s
+                    // Timeout : si Drive ne charge pas en 15s, montre le fallback
                     let loaded = false;
                     iframe.onload = () => {
                         loaded = true;
@@ -728,48 +743,11 @@
                         if (!loaded) {
                             document.getElementById('player').style.display = 'none';
                             const link = document.getElementById('fallbackDriveLink');
-                            link.href = clip.drive_url || '#';
+                            link.href = clip.drive_view_url || clip.drive_url || '#';
                             fallback.classList.add('show');
                         }
                     }, IFRAME_TIMEOUT_MS);
                 }
-            } else {
-                // Mode video direct
-                if (playerEl.tagName !== 'VIDEO') {
-                    const video = document.createElement('video');
-                    video.id = 'player';
-                    video.controls = true;
-                    video.autoplay = true;
-                    playerEl.replaceWith(video);
-                }
-                const player = document.getElementById('player');
-                player.style.display = '';
-                // Sprint 33 : crossorigin anonymous pour les URLs Drive publiques
-                player.crossOrigin = 'anonymous';
-                player.src = clip.drive_url || '';
-                player.play().catch(() => {});
-
-                // Fallback vers iframe Drive si la video ne charge pas (CORS/CORP, gros fichier)
-                player.onerror = () => {
-                    const fileId = extractFileId(clip.drive_view_url || clip.drive_url);
-                    if (fileId) {
-                        const errPlayer = document.getElementById('player');
-                        if (errPlayer) {
-                            const iframe = document.createElement('iframe');
-                            iframe.id = 'player';
-                            iframe.src = 'https://drive.google.com/file/d/' + fileId + '/preview';
-                            iframe.allow = 'autoplay';
-                            iframe.style.cssText = 'width:100%;height:100%;border:none;border-radius:12px;background:#000;position:absolute;top:0;left:0;';
-                            errPlayer.replaceWith(iframe);
-                        }
-                    }
-                };
-
-                // Sprint 32 : clic sur la video = play/pause (chat est un iframe, pas de sync possible)
-                player.onclick = () => {
-                    if (player.paused) player.play();
-                    else player.pause();
-                };
             }
 
             // Chat visible par defaut si disponible (sauf si Silixio l'a explicitement masque)
@@ -1274,6 +1252,14 @@
             if (match) return match[1];
             // Format : ?id=FILE_ID ou &id=FILE_ID
             match = url.match(/[?&]id=([^&]+)/);
+            return match ? match[1] : null;
+        }
+
+        // Sprint 34 : extrait le slug d'un clip Twitch pour l'embed player
+        function extractTwitchClipSlug(url) {
+            if (!url) return null;
+            // Format : https://www.twitch.tv/streamer/clip/SlugName-xxxx
+            const match = url.match(/\/clip\/([^/?&]+)/);
             return match ? match[1] : null;
         }
 
