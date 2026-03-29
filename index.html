@@ -90,6 +90,7 @@
         .minimap .dot.fb-bad_framing     { background: #f39c12; }
         .minimap .dot.fb-bad_audio       { background: #e74c3c; }
         .minimap .dot.fb-duplicate       { background: #3498db; }
+        .minimap .dot.fb-not_relevant     { background: #c0392b; }
         .minimap .dot.fb-off_topic       { background: #9b59b6; }
 
         /* === MAIN AREA === */
@@ -253,6 +254,7 @@
         .current-feedback.fb-not_interesting { background: rgba(149,165,166,0.3); color: #95a5a6; border: 1px solid #95a5a6; }
         .current-feedback.fb-bad_framing  { background: rgba(243,156,18,0.3);  color: #f39c12; border: 1px solid #f39c12; }
         .current-feedback.fb-bad_audio    { background: rgba(231,76,60,0.3);   color: #e74c3c; border: 1px solid #e74c3c; }
+        .current-feedback.fb-not_relevant { background: rgba(192,57,43,0.3);   color: #c0392b; border: 1px solid #c0392b; }
         .current-feedback.fb-duplicate    { background: rgba(52,152,219,0.3);  color: #3498db; border: 1px solid #3498db; }
         .current-feedback.fb-off_topic    { background: rgba(155,89,182,0.3);  color: #9b59b6; border: 1px solid #9b59b6; }
 
@@ -302,6 +304,7 @@
         .fb-btn.fb-not_interesting:hover, .fb-btn.fb-not_interesting.active { background: #95a5a6; color: #fff; border-color: #95a5a6; }
         .fb-btn.fb-bad_framing:hover,     .fb-btn.fb-bad_framing.active     { background: #f39c12; color: #fff; border-color: #f39c12; }
         .fb-btn.fb-bad_audio:hover,       .fb-btn.fb-bad_audio.active       { background: #e74c3c; color: #fff; border-color: #e74c3c; }
+        .fb-btn.fb-not_relevant:hover,    .fb-btn.fb-not_relevant.active    { background: #c0392b; color: #fff; border-color: #c0392b; }
         .fb-btn.fb-duplicate:hover,       .fb-btn.fb-duplicate.active       { background: #3498db; color: #fff; border-color: #3498db; }
         .fb-btn.fb-off_topic:hover,       .fb-btn.fb-off_topic.active       { background: #9b59b6; color: #fff; border-color: #9b59b6; }
 
@@ -382,6 +385,7 @@
         .stats-bar .sdot-not_interesting { background: #95a5a6; }
         .stats-bar .sdot-bad_framing  { background: #f39c12; }
         .stats-bar .sdot-bad_audio    { background: #e74c3c; }
+        .stats-bar .sdot-not_relevant { background: #c0392b; }
         .stats-bar .sdot-duplicate    { background: #3498db; }
         .stats-bar .sdot-off_topic    { background: #9b59b6; }
         .stats-bar .sdot-pending      { background: #555; }
@@ -446,6 +450,9 @@
     <div class="top-bar">
         <div class="title" id="pageTitle">Clips du ...</div>
         <div class="counter"><span class="current" id="currentNum">0</span> / <span id="totalNum">0</span></div>
+        <select id="streamerFilter" onchange="filterByStreamer()" style="background:#1a1a3a;color:#ccc;border:1px solid #333;border-radius:6px;padding:4px 10px;font-size:0.85em;cursor:pointer;">
+            <option value="">Tous les streamers</option>
+        </select>
         <button class="export-btn" onclick="exportFeedback()">Exporter feedback</button>
         <span id="driveUploadStatus" style="font-size:0.75em;color:#555;margin-left:8px"></span>
     </div>
@@ -454,6 +461,9 @@
     <div class="progress-bar">
         <div class="progress-fill" id="progressFill" style="width: 0%"></div>
     </div>
+
+    <!-- Sprint 32 : CONTEXT SUMMARY -->
+    <div id="contextSummary" style="display:none;padding:6px 20px;background:#1a1a35;border-bottom:1px solid #2a2a4a;font-size:0.8em;color:#aaa;flex-shrink:0;"></div>
 
     <!-- MINIMAP -->
     <div class="minimap" id="minimap"></div>
@@ -515,8 +525,11 @@
             <button class="fb-btn fb-not_interesting" onclick="rate('not_interesting')">
                 &#128564; Moment faible<span class="shortcut">3</span>
             </button>
-            <button class="fb-btn fb-bad_framing" onclick="rate('bad_framing')">
+            <button class="fb-btn fb-bad_framing" onclick="showBadFramingSubmenu()">
                 &#9986; Mal cadre<span class="shortcut">4</span>
+            </button>
+            <button class="fb-btn fb-not_relevant" onclick="rate('not_relevant')" style="border-color:#e74c3c33;">
+                &#10060; Pas pertinent<span class="shortcut">S</span>
             </button>
             <button class="fb-btn fb-duplicate" onclick="rate('duplicate')">
                 &#128257; Doublon<span class="shortcut">5</span>
@@ -543,6 +556,7 @@
             <div class="stat"><span class="sdot sdot-good"></span><span id="statGood">0</span> bons</div>
             <div class="stat"><span class="sdot sdot-not_interesting"></span><span id="statNotInteresting">0</span> faibles</div>
             <div class="stat"><span class="sdot sdot-bad_framing"></span><span id="statBadFraming">0</span> mal cadres</div>
+            <div class="stat"><span class="sdot sdot-not_relevant"></span><span id="statNotRelevant">0</span> pas pertinents</div>
             <div class="stat"><span class="sdot sdot-duplicate"></span><span id="statDuplicate">0</span> doublons</div>
             <div class="stat"><span class="sdot sdot-pending"></span><span id="statPending">0</span> restants</div>
         </div>
@@ -621,7 +635,8 @@
                 return;
             }
 
-            CLIPS = MANIFEST.clips;
+            ALL_CLIPS = MANIFEST.clips;
+            CLIPS = [...ALL_CLIPS];
             TOTAL = CLIPS.length;
             useIframe = MANIFEST.use_iframe || false;
 
@@ -631,6 +646,10 @@
             document.getElementById('statPending').textContent = TOTAL;
 
             buildMinimap();
+            buildStreamerFilter();
+
+            // Sprint 32 : affiche le resume contextuel
+            renderContextSummary();
 
             // Bug 1 : restaurer la progression sauvegardee
             restoreProgress();
@@ -714,8 +733,35 @@
                 }
                 const player = document.getElementById('player');
                 player.style.display = '';
+                // Sprint 33 : crossorigin anonymous pour les URLs Drive publiques
+                player.crossOrigin = 'anonymous';
                 player.src = clip.drive_url || '';
                 player.play().catch(() => {});
+
+                // Sprint 33 : fallback vers iframe si la video ne charge pas en 10s
+                let videoLoaded = false;
+                player.onloadeddata = () => { videoLoaded = true; };
+                player.onerror = () => {
+                    if (!videoLoaded) {
+                        // Fallback : essaye le lien Drive view en iframe
+                        const fileId = extractFileId(clip.drive_view_url || clip.drive_url);
+                        if (fileId) {
+                            const iframe = document.createElement('iframe');
+                            iframe.id = 'player';
+                            iframe.src = 'https://drive.google.com/file/d/' + fileId + '/preview';
+                            iframe.allow = 'autoplay';
+                            iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;border-radius:12px;background:#000;';
+                            player.replaceWith(iframe);
+                        }
+                    }
+                };
+
+                // Sprint 32 : clic sur la video = play/pause
+                player.onclick = () => {
+                    const chatP = document.getElementById('chatPlayer');
+                    if (player.paused) { player.play(); if (chatP && chatP.src) chatP.play(); }
+                    else { player.pause(); if (chatP && chatP.src) chatP.pause(); }
+                };
             }
 
             // Chat visible par defaut si disponible (sauf si Silixio l'a explicitement masque)
@@ -742,12 +788,28 @@
                 chatPanel.classList.remove('hidden');
             }
 
-            // Info overlay
+            // Sprint 32 : panneau info clip enrichi
+            const categoryFR = {
+                'funny_fail': '\ud83d\ude02 Dr\u00f4le', 'epic_play': '\ud83c\udfae Gameplay \u00e9pique',
+                'hype_cast': '\ud83d\udd25 Hype cast', 'drama_debate': '\ud83d\udcac D\u00e9bat',
+                'victory': '\ud83c\udfc6 Victoire', 'funny_talk': '\ud83d\ude04 Dr\u00f4le (hors jeu)',
+                'trash': '\ud83d\udeab Pas int\u00e9ressant',
+            };
+            const scoreColor = clip.score >= 70 ? '#2ecc71' : clip.score >= 50 ? '#f1c40f' : '#e74c3c';
+            const nSources = (clip.sources || []).length;
+            const hasTwitchClips = (clip.sources || []).includes('twitch_clips');
+            let badge = '';
+            if (hasTwitchClips) badge = '<span style="color:#2ecc71;font-size:0.85em;margin-left:8px;">\ud83d\udfe2 Clipp\u00e9 par les viewers</span>';
+            else if (nSources >= 3) badge = '<span style="color:#2ecc71;font-size:0.85em;margin-left:8px;">\ud83d\udfe2 Confirm\u00e9</span>';
+            else if (nSources <= 1) badge = '<span style="color:#f1c40f;font-size:0.85em;margin-left:8px;">\ud83d\udfe1 Signal faible</span>';
+
             let infoHtml = '<span class="timestamp">' + escHtml(clip.timestamp || '') + '</span>';
-            if (clip.score) infoHtml += '<span class="score">Score: ' + clip.score + '</span>';
-            if (clip.ai_category) infoHtml += '<span class="category">' + escHtml(clip.ai_category) + '</span>';
-            if (clip.sources && clip.sources.length) infoHtml += '<div class="sources">' + escHtml(clip.sources.join(', ')) + '</div>';
-            if (clip.text) infoHtml += '<div class="text">"' + escHtml(clip.text.substring(0, 100)) + '"</div>';
+            infoHtml += '<span class="score" style="color:' + scoreColor + ';">' + Math.round(clip.score || 0) + '</span>';
+            infoHtml += badge;
+            if (clip.ai_category) infoHtml += '<span class="category">' + (categoryFR[clip.ai_category] || escHtml(clip.ai_category)) + '</span>';
+            if (clip.streamer) infoHtml += '<div style="color:#9b59b6;font-size:0.85em;margin-top:2px;">' + escHtml(clip.streamer) + '</div>';
+            if (clip.ai_summary) infoHtml += '<div class="text">' + escHtml(clip.ai_summary) + '</div>';
+            else if (clip.text) infoHtml += '<div class="text">"' + escHtml(clip.text.substring(0, 100)) + '"</div>';
             document.getElementById('clipInfo').innerHTML = infoHtml;
 
             // Counter
@@ -879,7 +941,8 @@
             top:             '&#128293; Top',
             good:            '&#9989; Bon',
             not_interesting: '&#128564; Moment faible',
-            bad_framing:     '&#9986; Mal cadré',
+            bad_framing:     '&#9986; Mal cadr\u00e9',
+            not_relevant:    '&#10060; Pas pertinent',
             duplicate:       '&#128257; Doublon',
         };
 
@@ -912,9 +975,106 @@
             document.getElementById('statGood').textContent         = count('good');
             document.getElementById('statNotInteresting').textContent = count('not_interesting');
             document.getElementById('statBadFraming').textContent   = count('bad_framing');
+            document.getElementById('statNotRelevant').textContent  = count('not_relevant');
             document.getElementById('statDuplicate').textContent    = count('duplicate');
             document.getElementById('statPending').textContent      = TOTAL - vals.length;
             updateProgress();
+        }
+
+        // === Sprint 32 : FILTRE PAR STREAMER ===
+        let ALL_CLIPS = [];  // copie originale non filtree
+        function buildStreamerFilter() {
+            const streamers = [...new Set(ALL_CLIPS.map(c => c.streamer).filter(Boolean))].sort();
+            const sel = document.getElementById('streamerFilter');
+            streamers.forEach(s => {
+                const n = ALL_CLIPS.filter(c => c.streamer === s).length;
+                const opt = document.createElement('option');
+                opt.value = s;
+                opt.textContent = s + ' (' + n + ')';
+                sel.appendChild(opt);
+            });
+        }
+        function filterByStreamer() {
+            const val = document.getElementById('streamerFilter').value;
+            if (val) {
+                CLIPS = ALL_CLIPS.filter(c => c.streamer === val);
+            } else {
+                CLIPS = [...ALL_CLIPS];
+            }
+            TOTAL = CLIPS.length;
+            currentIndex = 0;
+            feedback = {};  // reset feedback on filter change
+            document.getElementById('totalNum').textContent = TOTAL;
+            buildMinimap();
+            updateStats();
+            loadClip(0);
+        }
+
+        // === Sprint 32 : SOUS-CATEGORIES MAL CADRE ===
+        let pendingBadFraming = false;
+        function showBadFramingSubmenu() {
+            pendingBadFraming = true;
+            const clip = CLIPS[currentIndex];
+            // Mini-menu temporaire
+            const html = '<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);' +
+                'background:#1a1a3a;border:2px solid #f39c12;border-radius:12px;padding:20px;z-index:100;' +
+                'display:flex;flex-direction:column;gap:8px;min-width:250px;" id="badFramingMenu">' +
+                '<div style="color:#f39c12;font-weight:bold;margin-bottom:4px;">Mal cadr\u00e9 — pourquoi ?</div>' +
+                '<button onclick="rateBadFraming(\'too_early\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#9199; Trop t\u00f4t <span style="color:#666;font-size:0.8em;">(A)</span></button>' +
+                '<button onclick="rateBadFraming(\'too_late\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#9200; Trop tard <span style="color:#666;font-size:0.8em;">(Z)</span></button>' +
+                '<button onclick="rateBadFraming(\'too_short\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#9986; Trop court <span style="color:#666;font-size:0.8em;">(E)</span></button>' +
+                '<button onclick="rateBadFraming(\'too_long\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#128340; Trop long <span style="color:#666;font-size:0.8em;">(R)</span></button>' +
+                '<button onclick="closeBadFramingMenu()" style="padding:8px;background:#333;color:#888;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.8em;">Annuler (Echap)</button>' +
+                '</div>';
+            const overlay = document.createElement('div');
+            overlay.id = 'badFramingOverlay';
+            overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:99;';
+            overlay.onclick = closeBadFramingMenu;
+            document.body.appendChild(overlay);
+            overlay.insertAdjacentHTML('afterend', html);
+        }
+        function rateBadFraming(subtype) {
+            const clip = CLIPS[currentIndex];
+            feedback[clip.filename] = 'bad_framing';
+            // Stocke la sous-categorie dans un objet separe
+            if (!window.badFramingDetails) window.badFramingDetails = {};
+            window.badFramingDetails[clip.filename] = subtype;
+            closeBadFramingMenu();
+            updateCurrentFeedback(clip.filename);
+            highlightFeedbackBtn('bad_framing');
+            updateMinimap();
+            updateStats();
+            saveProgress();
+            setTimeout(() => {
+                if (currentIndex < TOTAL - 1) navigate(1); else showDone();
+            }, 400);
+        }
+        function closeBadFramingMenu() {
+            pendingBadFraming = false;
+            const menu = document.getElementById('badFramingMenu');
+            const overlay = document.getElementById('badFramingOverlay');
+            if (menu) menu.remove();
+            if (overlay) overlay.remove();
+        }
+
+        // === Sprint 32 : CONTEXT SUMMARY ===
+        function renderContextSummary() {
+            const el = document.getElementById('contextSummary');
+            const ctx = MANIFEST.context_summary;
+            if (!ctx || !ctx.active_topics || ctx.active_topics.length === 0) return;
+
+            const typeEmoji = {competition: '\u{1F3C6}', rumeur: '\u{1F4AC}', resultat: '\u{1F4CA}', news: '\u{1F4F0}', manual: '\u{1F4CC}'};
+            const parts = ctx.active_topics.map(t => {
+                const emoji = typeEmoji[t.type] || '\u{1F4CC}';
+                return `${emoji} <strong>${t.text}</strong> <span style="color:#666">(${t.type}, \u00D7${t.boost})</span>`;
+            });
+
+            let html = parts.join(' &middot; ');
+            if (ctx.boosted_clips_count > 0) {
+                html += ` &mdash; <span style="color:#7c7">${ctx.boosted_clips_count} clip${ctx.boosted_clips_count > 1 ? 's' : ''} boost\u00E9${ctx.boosted_clips_count > 1 ? 's' : ''}</span>`;
+            }
+            el.innerHTML = html;
+            el.style.display = 'block';
         }
 
         // === MINIMAP ===
@@ -950,12 +1110,47 @@
             const count = v => vals.filter(x => x === v).length;
             const rest = TOTAL - vals.length;
 
+            // Sprint 32 : stats de session enrichies
+            const good_total = count('top') + count('good');
+            const bad_total = count('not_interesting') + count('not_relevant');
+            const precision = vals.length > 0 ? Math.round(good_total / vals.length * 100) : 0;
+
+            // Stats par source : % de "bon" pour chaque source
+            let sourceStats = '';
+            const sourceMap = {};
+            ALL_CLIPS.forEach(clip => {
+                const fb = feedback[clip.filename];
+                if (!fb) return;
+                const isGood = (fb === 'top' || fb === 'good');
+                (clip.sources || []).forEach(src => {
+                    if (!sourceMap[src]) sourceMap[src] = {good: 0, total: 0};
+                    sourceMap[src].total++;
+                    if (isGood) sourceMap[src].good++;
+                });
+            });
+            const sortedSources = Object.entries(sourceMap)
+                .map(([src, s]) => ({src, pct: Math.round(s.good / s.total * 100), total: s.total}))
+                .filter(s => s.total >= 3)
+                .sort((a, b) => b.pct - a.pct);
+            if (sortedSources.length > 0) {
+                sourceStats = '<br><span style="font-size:0.85em;color:#888;">Sources : ' +
+                    sortedSources.map(s => {
+                        const color = s.pct >= 60 ? '#2ecc71' : s.pct >= 40 ? '#f1c40f' : '#e74c3c';
+                        return '<span style="color:' + color + ';">' + s.src + ' ' + s.pct + '%</span>';
+                    }).join(' \u00b7 ') + '</span>';
+            }
+
             document.getElementById('doneStats').innerHTML =
+                '<span style="font-size:1.3em;color:' + (precision >= 60 ? '#2ecc71' : '#f1c40f') + ';">' +
+                    good_total + '/' + vals.length + ' bons (' + precision + '% de pr\u00e9cision)' +
+                '</span><br>' +
                 '&#128293; Top : ' + count('top') + ' &nbsp;|&nbsp; ' +
                 '&#9989; Bons : ' + count('good') + '<br>' +
                 '&#128564; Moments faibles : ' + count('not_interesting') + ' &nbsp;|&nbsp; ' +
+                '&#10060; Pas pertinents : ' + count('not_relevant') + ' &nbsp;|&nbsp; ' +
                 '&#9986; Mal cadres : ' + count('bad_framing') + ' &nbsp;|&nbsp; ' +
                 '&#128257; Doublons : ' + count('duplicate') +
+                sourceStats +
                 (rest > 0 ? '<br><span style="color:#888;font-size:0.9em">' + rest + ' clips non evalues</span>' : '');
         }
 
@@ -980,9 +1175,11 @@
                 data.feedback[clip.filename] = {
                     verdict: fb,
                     displayed_label: displayedLabel ? displayedLabel.replace(/&#\d+;|\u[0-9a-f]{4}/gi, '').trim() : null,
+                    bad_framing_detail: (window.badFramingDetails || {})[clip.filename] || null,
                     score: clip.score || null,
                     sources: clip.sources || [],
                     ai_category: clip.ai_category || null,
+                    ai_summary: clip.ai_summary || null,
                     timestamp: clip.timestamp || null,
                     streamer: clip.streamer || null,
                 };
@@ -1055,23 +1252,62 @@
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
             if (!CLIPS.length) return;
 
+            // Sprint 32 : sous-menu mal cadre (A/Z/E/R/Escape)
+            if (pendingBadFraming) {
+                switch(e.key.toLowerCase()) {
+                    case 'a': rateBadFraming('too_early'); break;
+                    case 'z': rateBadFraming('too_late'); break;
+                    case 'e': rateBadFraming('too_short'); break;
+                    case 'r': rateBadFraming('too_long'); break;
+                    case 'escape': closeBadFramingMenu(); break;
+                }
+                return;
+            }
+
             switch(e.key) {
                 case '1': rate('top'); break;
                 case '2': rate('good'); break;
                 case '3': rate('not_interesting'); break;
-                case '4': rate('bad_framing'); break;
+                case '4': showBadFramingSubmenu(); break;
                 case '5': rate('duplicate'); break;
+                case 's':
+                case 'S': rate('not_relevant'); break;
                 case 'c':
                 case 'C': toggleChat(); break;
                 case 'd':
                 case 'D': downloadClip(); break;
-                case 'ArrowRight': navigate(1); break;
-                case 'ArrowLeft': navigate(-1); break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    if (e.shiftKey) {
+                        // Shift+Right = avancer de 5s dans la video
+                        const pFwd = document.getElementById('player');
+                        if (pFwd && pFwd.tagName === 'VIDEO') pFwd.currentTime += 5;
+                        const cFwd = document.getElementById('chatPlayer');
+                        if (cFwd && cFwd.src) cFwd.currentTime += 5;
+                    } else {
+                        navigate(1);
+                    }
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    if (e.shiftKey) {
+                        // Shift+Left = reculer de 5s
+                        const pBwd = document.getElementById('player');
+                        if (pBwd && pBwd.tagName === 'VIDEO') pBwd.currentTime = Math.max(0, pBwd.currentTime - 5);
+                        const cBwd = document.getElementById('chatPlayer');
+                        if (cBwd && cBwd.src) cBwd.currentTime = Math.max(0, cBwd.currentTime - 5);
+                    } else {
+                        navigate(-1);
+                    }
+                    break;
                 case ' ':
                     e.preventDefault();
+                    // Sprint 32 : play/pause synchronise video + chat
                     const p = document.getElementById('player');
+                    const cp = document.getElementById('chatPlayer');
                     if (p && p.tagName === 'VIDEO') {
-                        p.paused ? p.play() : p.pause();
+                        if (p.paused) { p.play(); if (cp && cp.src) cp.play(); }
+                        else { p.pause(); if (cp && cp.src) cp.pause(); }
                     }
                     break;
             }
