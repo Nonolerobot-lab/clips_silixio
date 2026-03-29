@@ -488,12 +488,14 @@
             <div class="main-video-panel" id="mainVideoPanel">
                 <video id="player" controls autoplay></video>
 
-                <!-- iframe fallback (Bug 3) -->
+                <!-- Sprint 34 : fallback ameliore — lien Drive + download + skip -->
                 <div class="iframe-fallback" id="iframeFallback">
-                    <p>&#9888; Clip non disponible (timeout ou permissions Drive)</p>
-                    <a id="fallbackDriveLink" href="#" target="_blank">&#128279; Ouvrir dans Google Drive</a>
-                    <a id="fallbackTwitchLink" href="#" target="_blank" style="display:none;margin-left:12px">&#127918; Voir sur Twitch</a>
-                    <button class="skip-btn" onclick="navigate(1)">Passer au suivant &#8594;</button>
+                    <p>&#9888; Preview lente — le clip est peut-etre en cours de traitement par Drive</p>
+                    <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;justify-content:center">
+                        <a id="fallbackDriveLink" href="#" target="_blank" style="padding:8px 16px;background:#4285f4;color:#fff;border-radius:6px;text-decoration:none">&#128279; Ouvrir dans Drive</a>
+                        <a id="fallbackDownloadLink" href="#" target="_blank" style="padding:8px 16px;background:#34a853;color:#fff;border-radius:6px;text-decoration:none">&#11015; Telecharger</a>
+                        <button class="skip-btn" onclick="navigate(1)">Passer &#8594;</button>
+                    </div>
                 </div>
 
                 <div class="clip-info-overlay" id="clipInfo"></div>
@@ -742,8 +744,8 @@
                     iframeTimer = setTimeout(() => {
                         if (!loaded) {
                             document.getElementById('player').style.display = 'none';
-                            const link = document.getElementById('fallbackDriveLink');
-                            link.href = clip.drive_view_url || clip.drive_url || '#';
+                            document.getElementById('fallbackDriveLink').href = clip.drive_view_url || '#';
+                            document.getElementById('fallbackDownloadLink').href = clip.drive_url || '#';
                             fallback.classList.add('show');
                         }
                     }, IFRAME_TIMEOUT_MS);
