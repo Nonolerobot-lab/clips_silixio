@@ -705,9 +705,9 @@
             fallback.classList.remove('show');
 
             // Sprint 34 : strategie video en 3 niveaux
-            // 1. Twitch clip embed (si clip_url dispo — clips-only mode, le plus fiable)
-            // 2. Drive iframe /preview (clips VOD — necessite Google login)
-            // 3. Fallback lien direct
+            // 1. Twitch clip embed (si clip_url dispo — clips-only mode)
+            // 2. Cloudflare proxy <video> tag (clips VOD — contourne CORP Drive)
+            // 3. Drive iframe /preview (fallback)
             const playerEl = document.getElementById('player');
             const clipSlug = extractTwitchClipSlug(clip.clip_url);
 
@@ -721,8 +721,36 @@
                 iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;border-radius:12px;background:#000;';
                 playerEl.replaceWith(iframe);
 
+            } else if (clip.video_url) {
+                // Mode 2 : Cloudflare proxy — video directe dans <video> tag
+                if (playerEl.tagName !== 'VIDEO') {
+                    const video = document.createElement('video');
+                    video.id = 'player';
+                    video.controls = true;
+                    video.autoplay = true;
+                    video.preload = 'auto';
+                    playerEl.replaceWith(video);
+                }
+                const player = document.getElementById('player');
+                player.style.display = '';
+                player.src = clip.video_url;
+                player.play().catch(() => {});
+
+                // Fallback si le proxy echoue
+                player.onerror = () => {
+                    document.getElementById('fallbackDriveLink').href = clip.drive_view_url || '#';
+                    document.getElementById('fallbackDownloadLink').href = clip.drive_url || '#';
+                    fallback.classList.add('show');
+                    player.style.display = 'none';
+                };
+
+                // Clic = play/pause
+                player.onclick = () => {
+                    if (player.paused) player.play(); else player.pause();
+                };
+
             } else {
-                // Mode 2 : Drive iframe /preview (clips VOD)
+                // Mode 3 : Drive iframe /preview (dernier recours)
                 const fileId = extractFileId(clip.drive_view_url || clip.drive_url);
                 if (fileId) {
                     const iframe = document.createElement('iframe');
@@ -731,7 +759,6 @@
                     iframe.allow = 'autoplay';
                     iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;border-radius:12px;background:#000;';
 
-                    // Timeout : si Drive ne charge pas en 15s, montre le fallback
                     let loaded = false;
                     iframe.onload = () => {
                         loaded = true;
