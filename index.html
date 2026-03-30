@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clips Silixio — Review Tinder</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -437,52 +436,6 @@
         .message-screen h2 { font-size: 1.5em; color: #9b59b6; margin-bottom: 10px; }
         .message-screen p { color: #888; font-size: 1.1em; max-width: 500px; }
 
-        /* === CHAT DL COCHE === */
-        .chat-dl-coche {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 7px 12px;
-            border-radius: 8px;
-            background: #1a1a3a;
-            border: 1px solid #333;
-            color: #ccc;
-            cursor: pointer;
-            font-size: 0.85em;
-            transition: all 0.15s;
-            user-select: none;
-        }
-        .chat-dl-coche:hover { border-color: #3498db; }
-        .chat-dl-coche.disabled { opacity: 0.3; cursor: not-allowed; pointer-events: none; }
-        .chat-dl-coche input[type="checkbox"] { cursor: pointer; accent-color: #3498db; margin: 0; }
-
-        /* === SELECTION BAR === */
-        .selection-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            margin-top: 6px;
-            flex-wrap: wrap;
-        }
-        .selection-count { font-size: 0.78em; color: #888; }
-        .dl-selection-btn {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            border-radius: 8px;
-            background: #0a1a10;
-            border: 1px solid #2ecc71;
-            color: #2ecc71;
-            cursor: pointer;
-            font-size: 0.82em;
-            font-weight: 600;
-            transition: all 0.15s;
-        }
-        .dl-selection-btn:hover { background: #1a3a20; }
-        .dl-selection-btn:disabled { opacity: 0.35; cursor: not-allowed; pointer-events: none; }
-
         /* Animations */
         .swipe-left { animation: swipeLeft 0.25s ease-out; }
         .swipe-right { animation: swipeRight 0.25s ease-out; }
@@ -607,10 +560,6 @@
             <div class="chat-toggle active" id="chatToggle" onclick="toggleChat()">
                 &#128172; Chat <span class="shortcut">C</span>
             </div>
-            <label class="chat-dl-coche" id="chatDlCoche" for="chatDlCheck" title="Inclure le chat overlay dans le t&#233;l&#233;chargement groupé">
-                <input type="checkbox" id="chatDlCheck" onchange="toggleChatDl(this.checked)">
-                &#128228; Chat DL
-            </label>
             <button class="nav-btn" id="btnNext" onclick="navigate(1)">
                 Suivant &#8594; <span class="shortcut">&#8594;</span>
             </button>
@@ -624,11 +573,6 @@
             <div class="stat"><span class="sdot sdot-not_relevant"></span><span id="statNotRelevant">0</span> pas pertinents</div>
             <div class="stat"><span class="sdot sdot-duplicate"></span><span id="statDuplicate">0</span> doublons</div>
             <div class="stat"><span class="sdot sdot-pending"></span><span id="statPending">0</span> restants</div>
-        </div>
-
-        <div class="selection-bar" id="selectionBar">
-            <span class="selection-count" id="selectionCount">0 clip s&#233;lectionn&#233; (0 avec chat)</span>
-            <button class="dl-selection-btn" id="dlSelectionBtn" onclick="downloadSelection()" disabled>&#128230; T&#233;l&#233;charger la s&#233;lection</button>
         </div>
     </div>
 
@@ -645,9 +589,8 @@
         let MANIFEST = null;
         let CLIPS = [];
         let TOTAL = 0;
-        let feedback = {};             // { filename: verdict_string }
-        let chatFlags = {};            // { filename: bool } — affichage chat en review
-        let downloadChatFlags = {};    // { filename: bool } — inclure chat dans le zip sélection
+        let feedback = {};        // { filename: verdict_string }
+        let chatFlags = {};       // { filename: bool }
         let downloads = {};
         let currentIndex = 0;
         let useIframe = false;
@@ -664,7 +607,6 @@
                     currentIndex,
                     feedback,
                     chatFlags,
-                    downloadChatFlags,
                 }));
             } catch (e) {
                 console.warn('localStorage save failed:', e);
@@ -676,9 +618,8 @@
                 const raw = localStorage.getItem(lsKey());
                 if (!raw) return;
                 const saved = JSON.parse(raw);
-                if (saved.feedback)          feedback          = saved.feedback;
-                if (saved.chatFlags)         chatFlags         = saved.chatFlags;
-                if (saved.downloadChatFlags) downloadChatFlags = saved.downloadChatFlags;
+                if (saved.feedback)   feedback   = saved.feedback;
+                if (saved.chatFlags)  chatFlags  = saved.chatFlags;
                 if (typeof saved.currentIndex === 'number' && saved.currentIndex < TOTAL) {
                     currentIndex = saved.currentIndex;
                 }
@@ -727,15 +668,7 @@
             // Bug 1 : restaurer la progression sauvegardee
             restoreProgress();
 
-            // Init downloadChatFlags par défaut (true si chat dispo, false sinon)
-            ALL_CLIPS.forEach(c => {
-                if (!(c.filename in downloadChatFlags)) {
-                    downloadChatFlags[c.filename] = !!c.chat_clip_url;
-                }
-            });
-
             loadClip(currentIndex);
-            updateSelectionCounter();
         }
 
         function showMessage(title, text) {
@@ -854,7 +787,7 @@
             }
             const chatIsActive = !!(clip.chat_clip_url && chatFlags[clip.filename]);
             if (chatIsActive) {
-                _setChatIframe(chatPlayer, clip.chat_clip_url);
+                _setChatIframe(chatPlayer, clip.chat_clip_url, clip.chat_video_url);
                 chatPanel.classList.remove('hidden', 'no-chat');
             } else if (clip.chat_clip_url) {
                 // Chat dispo mais masque par Silixio
@@ -914,17 +847,6 @@
                 chatToggle.classList.toggle('active', !!chatFlags[clip.filename]);
             }
 
-            // Coche chat DL : cochée par défaut si chat dispo, décochée sinon
-            if (!(clip.filename in downloadChatFlags)) {
-                downloadChatFlags[clip.filename] = !!clip.chat_clip_url;
-            }
-            const cocheCoche = document.getElementById('chatDlCoche');
-            const cocheCB = document.getElementById('chatDlCheck');
-            const hasChatDl = !!clip.chat_clip_url;
-            cocheCoche.classList.toggle('disabled', !hasChatDl);
-            cocheCB.disabled = !hasChatDl;
-            cocheCB.checked = hasChatDl && !!downloadChatFlags[clip.filename];
-
             // Feedback button highlight
             highlightFeedbackBtn(feedback[clip.filename]);
 
@@ -949,7 +871,6 @@
             highlightFeedbackBtn(feedback[clip.filename]);
             updateMinimap();
             updateStats();
-            updateSelectionCounter();
 
             // Bug 1 : sauvegarder apres chaque vote
             saveProgress();
@@ -987,10 +908,22 @@
             return m ? m[1] : null;
         }
 
-        function _setChatIframe(container, chatUrl) {
+        function _setChatIframe(container, chatUrl, chatVideoUrl) {
+            // Sprint 35 : si Cloudflare proxy dispo, utilise <video> directement (pas de transcoding Drive)
+            if (chatVideoUrl) {
+                const existing = container.querySelector('video');
+                if (existing && existing.src === chatVideoUrl) return;
+                container.innerHTML = '';
+                const video = document.createElement('video');
+                video.src = chatVideoUrl;
+                video.controls = true;
+                video.style.cssText = 'width:100%;height:100%;border-radius:10px;background:#000;display:block;';
+                container.appendChild(video);
+                return;
+            }
+            // Fallback : Drive /preview iframe
             const fileId = _getChatFileId(chatUrl);
             if (!fileId) return;
-            // Reuse existing iframe if already pointing to same file
             const existing = container.querySelector('iframe');
             const previewSrc = 'https://drive.google.com/file/d/' + fileId + '/preview';
             if (existing && existing.src === previewSrc) return;
@@ -1016,7 +949,7 @@
             const chatPanel = document.getElementById('chatPanel');
             const chatPlayer = document.getElementById('chatPlayer');
             if (chatFlags[clip.filename]) {
-                _setChatIframe(chatPlayer, clip.chat_clip_url);
+                _setChatIframe(chatPlayer, clip.chat_clip_url, clip.chat_video_url);
                 chatPanel.classList.remove('hidden');
             } else {
                 _clearChatIframe(chatPlayer);
@@ -1051,78 +984,6 @@
             }
         }
 
-
-        // === CHAT DL + SELECTION GROUPEE ===
-        function toggleChatDl(val) {
-            const clip = CLIPS[currentIndex];
-            downloadChatFlags[clip.filename] = val;
-            updateSelectionCounter();
-            saveProgress();
-        }
-
-        function updateSelectionCounter() {
-            const selected = CLIPS.filter(c => feedback[c.filename] === 'top' || feedback[c.filename] === 'good');
-            const withChat = selected.filter(c => c.chat_clip_url && downloadChatFlags[c.filename] !== false);
-            const n = selected.length;
-            document.getElementById('selectionCount').textContent =
-                n + ' clip' + (n !== 1 ? 's' : '') + ' s\u00e9lectionn\u00e9' + (n !== 1 ? 's' : '') +
-                ' (' + withChat.length + ' avec chat)';
-            document.getElementById('dlSelectionBtn').disabled = (n === 0);
-        }
-
-        async function downloadSelection() {
-            const selected = CLIPS.filter(c => feedback[c.filename] === 'top' || feedback[c.filename] === 'good');
-            if (selected.length === 0) { alert('Aucun clip Top ou Bon s\u00e9lectionn\u00e9.'); return; }
-
-            const btn = document.getElementById('dlSelectionBtn');
-            btn.disabled = true;
-            const origHtml = btn.innerHTML;
-
-            try {
-                const zip = new JSZip();
-                let done = 0;
-
-                for (const clip of selected) {
-                    btn.innerHTML = '&#8987; ' + (done + 1) + '\u202f/\u202f' + selected.length + '\u2026';
-
-                    // T\u00e9l\u00e9charge la vid\u00e9o clip
-                    const dlUrl = clip.drive_url;
-                    if (dlUrl) {
-                        try {
-                            const resp = await fetch(dlUrl);
-                            if (resp.ok) zip.file(clip.filename, await resp.blob());
-                            else console.warn('HTTP ' + resp.status + ' pour', clip.filename);
-                        } catch (e) { console.warn('Erreur DL clip', clip.filename, e); }
-                    }
-
-                    // T\u00e9l\u00e9charge le chat overlay si la coche est active
-                    if (clip.chat_clip_url && downloadChatFlags[clip.filename]) {
-                        try {
-                            const resp = await fetch(clip.chat_clip_url);
-                            if (resp.ok) zip.file(clip.filename.replace('.mp4', '_chat.mp4'), await resp.blob());
-                            else console.warn('HTTP ' + resp.status + ' pour chat', clip.filename);
-                        } catch (e) { console.warn('Erreur DL chat', clip.filename, e); }
-                    }
-
-                    done++;
-                }
-
-                btn.innerHTML = '&#128230; Compression\u2026';
-                const today = new Date().toISOString().slice(0, 10);
-                const blob = await zip.generateAsync({ type: 'blob' }, meta => {
-                    btn.innerHTML = '&#128230; ' + Math.round(meta.percent) + '\u00a0%\u2026';
-                });
-                triggerDownload(URL.createObjectURL(blob), 'clips_selection_' + today + '.zip');
-
-            } catch (e) {
-                alert('Erreur lors du t\u00e9l\u00e9chargement\u00a0: ' + e.message);
-                console.error(e);
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = origHtml;
-                updateSelectionCounter();
-            }
-        }
 
         // === UI UPDATES ===
         const VERDICT_LABELS = {
@@ -1195,7 +1056,6 @@
             document.getElementById('totalNum').textContent = TOTAL;
             buildMinimap();
             updateStats();
-            updateSelectionCounter();
             loadClip(0);
         }
 
