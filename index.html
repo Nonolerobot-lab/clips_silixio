@@ -471,9 +471,10 @@
         <div class="progress-fill" id="progressFill" style="width: 0%"></div>
     </div>
 
-    <!-- Sprint 32 : CONTEXT SUMMARY -->
-    <div id="contextSummary" style="display:none;padding:8px 20px;background:#1a1a35;border-bottom:1px solid #2a2a4a;font-size:0.82em;color:#ccc;flex-shrink:0;gap:8px;align-items:center;">
+    <!-- Sprint 32 : CONTEXT SUMMARY — Sprint 35 : fermable (une seule fois) -->
+    <div id="contextSummary" style="display:none;padding:8px 20px;background:#1a1a35;border-bottom:1px solid #2a2a4a;font-size:0.82em;color:#ccc;flex-shrink:0;gap:8px;align-items:center;flex-wrap:wrap;">
         <span style="color:#9b59b6;font-weight:700;margin-right:8px;">&#129302; R&#233;sum&#233; IA</span><span id="contextSummaryContent"></span>
+        <button onclick="dismissContextSummary()" title="Fermer" style="margin-left:auto;background:none;border:none;color:#666;cursor:pointer;font-size:1.1em;padding:0 4px;line-height:1;" aria-label="Fermer">&#10005;</button>
     </div>
 
     <!-- MINIMAP -->
@@ -531,22 +532,22 @@
         <!-- 5 boutons de feedback -->
         <div class="feedback-row">
             <button class="fb-btn fb-top" onclick="rate('top')">
-                &#128293; Top<span class="shortcut">1</span>
+                &#128293; Top<span class="shortcut">A</span>
             </button>
             <button class="fb-btn fb-good" onclick="rate('good')">
-                &#9989; Bon<span class="shortcut">2</span>
+                &#9989; Bon<span class="shortcut">Z</span>
             </button>
             <button class="fb-btn fb-not_interesting" onclick="rate('not_interesting')">
-                &#128564; Moment faible<span class="shortcut">3</span>
+                &#128564; Moment faible<span class="shortcut">E</span>
             </button>
             <button class="fb-btn fb-bad_framing" onclick="showBadFramingSubmenu()">
-                &#9986; Mal cadre<span class="shortcut">4</span>
+                &#9986; Mal cadre<span class="shortcut">R</span>
             </button>
             <button class="fb-btn fb-not_relevant" onclick="rate('not_relevant')" style="border-color:#e74c3c33;">
                 &#10060; Pas pertinent<span class="shortcut">S</span>
             </button>
             <button class="fb-btn fb-duplicate" onclick="rate('duplicate')">
-                &#128257; Doublon<span class="shortcut">5</span>
+                &#128257; Doublon<span class="shortcut">T</span>
             </button>
         </div>
 
@@ -557,9 +558,12 @@
             <a class="dl-btn" id="dlClipBtn" onclick="downloadClip()">
                 &#128229; Telecharger clip <span class="shortcut">D</span>
             </a>
-            <div class="chat-toggle active" id="chatToggle" onclick="toggleChat()">
+            <div class="chat-toggle" id="chatToggle" onclick="toggleChat()">
                 &#128172; Chat <span class="shortcut">C</span>
             </div>
+            <button class="dl-btn" id="dlFolderBtn" onclick="downloadFolder()" title="T&#233;l&#233;charger tous les clips Top + Bons">
+                &#128230; S&#233;lection <span class="shortcut"></span>
+            </button>
             <button class="nav-btn" id="btnNext" onclick="navigate(1)">
                 Suivant &#8594; <span class="shortcut">&#8594;</span>
             </button>
@@ -700,6 +704,10 @@
             // Bug 3 : annuler le timer iframe precedent
             if (iframeTimer) { clearTimeout(iframeTimer); iframeTimer = null; }
 
+            // S-02 : detacher les anciens listeners de sync avant de charger le nouveau clip
+            const prevPlayer = document.getElementById('player');
+            if (prevPlayer) _detachChatSync(prevPlayer);
+
             // Cacher le fallback iframe
             const fallback = document.getElementById('iframeFallback');
             fallback.classList.remove('show');
@@ -743,11 +751,8 @@
                     fallback.classList.add('show');
                     player.style.display = 'none';
                 };
-
-                // Clic = play/pause
-                player.onclick = () => {
-                    if (player.paused) player.play(); else player.pause();
-                };
+                // S-05 : pas de onclick custom — les controles natifs <video controls> gerent
+                // le clic correctement. Le conflit onclick vs controls causait "relance au lieu de pause".
 
             } else {
                 // Mode 3 : Drive iframe /preview (dernier recours)
@@ -779,12 +784,10 @@
                 }
             }
 
-            // Chat visible par defaut si disponible (sauf si Silixio l'a explicitement masque)
+            // Sprint 35 : chat desactive par defaut (Silixio l'active manuellement si besoin)
             const chatPanel = document.getElementById('chatPanel');
             const chatPlayer = document.getElementById('chatPlayer');
-            if (clip.chat_clip_url && !(clip.filename in chatFlags)) {
-                chatFlags[clip.filename] = true;
-            }
+            // chatFlags[filename] reste undefined/false par defaut — pas de forcage a true
             const chatIsActive = !!(clip.chat_clip_url && chatFlags[clip.filename]);
             if (chatIsActive) {
                 _setChatIframe(chatPlayer, clip.chat_clip_url, clip.chat_video_url);
@@ -917,8 +920,12 @@
                 const video = document.createElement('video');
                 video.src = chatVideoUrl;
                 video.controls = true;
+                video.autoplay = true;   // S-02 : demarre automatiquement avec le clip principal
+                video.muted = false;
                 video.style.cssText = 'width:100%;height:100%;border-radius:10px;background:#000;display:block;';
                 container.appendChild(video);
+                // S-02 : sync play/pause/seek avec le player principal
+                _attachChatSync(document.getElementById('player'), video);
                 return;
             }
             // Fallback : Drive /preview iframe
@@ -1069,10 +1076,10 @@
                 'background:#1a1a3a;border:2px solid #f39c12;border-radius:12px;padding:20px;z-index:100;' +
                 'display:flex;flex-direction:column;gap:8px;min-width:250px;" id="badFramingMenu">' +
                 '<div style="color:#f39c12;font-weight:bold;margin-bottom:4px;">Mal cadr\u00e9 — pourquoi ?</div>' +
-                '<button onclick="rateBadFraming(\'too_early\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#9199; Trop t\u00f4t <span style="color:#666;font-size:0.8em;">(A)</span></button>' +
-                '<button onclick="rateBadFraming(\'too_late\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#9200; Trop tard <span style="color:#666;font-size:0.8em;">(Z)</span></button>' +
-                '<button onclick="rateBadFraming(\'too_short\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#9986; Trop court <span style="color:#666;font-size:0.8em;">(E)</span></button>' +
-                '<button onclick="rateBadFraming(\'too_long\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#128340; Trop long <span style="color:#666;font-size:0.8em;">(R)</span></button>' +
+                '<button onclick="rateBadFraming(\'too_early\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#9199; Trop t\u00f4t <span style="color:#666;font-size:0.8em;">(1)</span></button>' +
+                '<button onclick="rateBadFraming(\'too_late\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#9200; Trop tard <span style="color:#666;font-size:0.8em;">(2)</span></button>' +
+                '<button onclick="rateBadFraming(\'too_short\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#9986; Trop court <span style="color:#666;font-size:0.8em;">(3)</span></button>' +
+                '<button onclick="rateBadFraming(\'too_long\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;">&#128340; Trop long <span style="color:#666;font-size:0.8em;">(4)</span></button>' +
                 '<button onclick="closeBadFramingMenu()" style="padding:8px;background:#333;color:#888;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.8em;">Annuler (Echap)</button>' +
                 '</div>';
             const overlay = document.createElement('div');
@@ -1106,19 +1113,28 @@
             if (overlay) overlay.remove();
         }
 
-        // === Sprint 32 : CONTEXT SUMMARY ===
+        // === Sprint 32 : CONTEXT SUMMARY — Sprint 35 : fermable + max 5 topics ===
         function renderContextSummary() {
             const el = document.getElementById('contextSummary');
             const ctx = MANIFEST.context_summary;
             if (!ctx || !ctx.active_topics || ctx.active_topics.length === 0) return;
 
-            const typeEmoji = {competition: '\u{1F3C6}', rumeur: '\u{1F4AC}', resultat: '\u{1F4CA}', news: '\u{1F4F0}', manual: '\u{1F4CC}'};
-            const parts = ctx.active_topics.map(t => {
+            // S-04 : ne pas reafficher si Silixio l'a ferme pour cette date
+            try {
+                if (localStorage.getItem('ctx_summary_dismissed_' + (MANIFEST.date || ''))) return;
+            } catch(e) {}
+
+            const typeEmoji = {competition: '\u{1F3C6}', rumeur: '\u{1F4AC}', resultat: '\u{1F4CA}', news: '\u{1F4F0}', manual: '\u{1F4CC}', audience: '\u{1F440}'};
+            // S-04 : limiter a 5 topics max pour eviter que le bandeau occupe tout l'ecran
+            const topTopics = ctx.active_topics.slice(0, 5);
+            const remaining = ctx.active_topics.length - topTopics.length;
+            const parts = topTopics.map(t => {
                 const emoji = typeEmoji[t.type] || '\u{1F4CC}';
-                return `${emoji} <strong>${t.text}</strong> <span style="color:#666">(${t.type}, \u00D7${t.boost})</span>`;
+                return `${emoji} <strong>${t.text}</strong> <span style="color:#666">(\u00D7${t.boost})</span>`;
             });
 
             let html = parts.join(' &middot; ');
+            if (remaining > 0) html += ` <span style="color:#666">&middot; +${remaining} autres</span>`;
             if (ctx.boosted_clips_count > 0) {
                 html += ` &mdash; <span style="color:#7c7">${ctx.boosted_clips_count} clip${ctx.boosted_clips_count > 1 ? 's' : ''} boost\u00E9${ctx.boosted_clips_count > 1 ? 's' : ''}</span>`;
             }
@@ -1304,39 +1320,110 @@
             return match ? match[1] : null;
         }
 
-        // === KEYBOARD ===
+        // === S-02 : SYNC CHAT / PLAYER PRINCIPAL ===
+        // Attache les listeners play/pause/seeked sur le player principal pour
+        // synchroniser la video chat (seulement si les deux sont des <video>).
+        let _chatSyncTarget = null;
+        function _attachChatSync(mainPlayer, chatVideo) {
+            _detachChatSync(mainPlayer); // eviter les doublons
+            if (!mainPlayer || mainPlayer.tagName !== 'VIDEO' || !chatVideo) return;
+            _chatSyncTarget = chatVideo;
+            mainPlayer.addEventListener('pause',  _onMainPause);
+            mainPlayer.addEventListener('play',   _onMainPlay);
+            mainPlayer.addEventListener('seeked', _onMainSeeked);
+        }
+        function _detachChatSync(mainPlayer) {
+            if (!mainPlayer) return;
+            mainPlayer.removeEventListener('pause',  _onMainPause);
+            mainPlayer.removeEventListener('play',   _onMainPlay);
+            mainPlayer.removeEventListener('seeked', _onMainSeeked);
+            _chatSyncTarget = null;
+        }
+        function _onMainPause()  { if (_chatSyncTarget) _chatSyncTarget.pause(); }
+        function _onMainPlay()   { if (_chatSyncTarget) _chatSyncTarget.play().catch(()=>{}); }
+        function _onMainSeeked() {
+            const main = document.getElementById('player');
+            if (_chatSyncTarget && main && main.tagName === 'VIDEO') {
+                _chatSyncTarget.currentTime = main.currentTime;
+            }
+        }
+
+        // === S-01 : DOWNLOAD DOSSIER FINAL (selection top + bons) ===
+        function downloadFolder() {
+            const selection = CLIPS.filter(c => {
+                const fb = feedback[c.filename];
+                return fb === 'top' || fb === 'good';
+            });
+            const targets = selection.length > 0 ? selection : CLIPS;
+            const label = selection.length > 0
+                ? `${selection.length} clips Top/Bons`
+                : `tous les ${targets.length} clips`;
+            const downloadable = targets.filter(c => c.drive_url);
+
+            if (downloadable.length === 0) {
+                alert('Aucun clip disponible au telechargement (drive_url manquant).');
+                return;
+            }
+
+            if (!confirm(`Telecharger ${label} (${downloadable.length} fichiers) ?\nLe navigateur va declencer ${downloadable.length} telechargements.`)) return;
+
+            // Declenche les telechargements avec un delai entre chaque pour eviter
+            // que le navigateur ne bloque la rafale
+            downloadable.forEach((clip, i) => {
+                setTimeout(() => {
+                    const a = document.createElement('a');
+                    a.href = clip.drive_url;
+                    a.download = clip.filename || ('clip_' + (i + 1) + '.mp4');
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    downloads[clip.filename] = true;
+                    // Feedback visuel : met a jour le bouton
+                    const btn = document.getElementById('dlFolderBtn');
+                    if (btn) btn.textContent = `\u2193 ${i+1}/${downloadable.length}`;
+                    if (i === downloadable.length - 1 && btn) {
+                        setTimeout(() => { btn.innerHTML = '&#128230; S&eacute;lection <span class="shortcut"></span>'; }, 2000);
+                    }
+                }, i * 700); // 700ms entre chaque pour ne pas saturer
+            });
+        }
+
+        // === S-04 : CONTEXT SUMMARY — fermeture persistante ===
+        function dismissContextSummary() {
+            document.getElementById('contextSummary').style.display = 'none';
+            try { localStorage.setItem('ctx_summary_dismissed_' + (MANIFEST.date || ''), '1'); } catch(e) {}
+        }
+
+        // === KEYBOARD — S-03 : raccourcis remappes a/z/e/r/s/t ===
         document.addEventListener('keydown', (e) => {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
             if (!CLIPS.length) return;
 
-            // Sprint 32 : sous-menu mal cadre (A/Z/E/R/Escape)
+            // Sous-menu mal cadre : utilise 1/2/3/4 pour eviter le conflit avec a/z/e/r
             if (pendingBadFraming) {
-                switch(e.key.toLowerCase()) {
-                    case 'a': rateBadFraming('too_early'); break;
-                    case 'z': rateBadFraming('too_late'); break;
-                    case 'e': rateBadFraming('too_short'); break;
-                    case 'r': rateBadFraming('too_long'); break;
-                    case 'escape': closeBadFramingMenu(); break;
+                switch(e.key) {
+                    case '1': rateBadFraming('too_early'); break;
+                    case '2': rateBadFraming('too_late'); break;
+                    case '3': rateBadFraming('too_short'); break;
+                    case '4': rateBadFraming('too_long'); break;
+                    case 'Escape': closeBadFramingMenu(); break;
                 }
                 return;
             }
 
             switch(e.key) {
-                case '1': rate('top'); break;
-                case '2': rate('good'); break;
-                case '3': rate('not_interesting'); break;
-                case '4': showBadFramingSubmenu(); break;
-                case '5': rate('duplicate'); break;
-                case 's':
-                case 'S': rate('not_relevant'); break;
-                case 'c':
-                case 'C': toggleChat(); break;
-                case 'd':
-                case 'D': downloadClip(); break;
+                case 'a': case 'A': rate('top'); break;
+                case 'z': case 'Z': rate('good'); break;
+                case 'e': case 'E': rate('not_interesting'); break;
+                case 'r': case 'R': showBadFramingSubmenu(); break;
+                case 's': case 'S': rate('not_relevant'); break;
+                case 't': case 'T': rate('duplicate'); break;
+                case 'c': case 'C': toggleChat(); break;
+                case 'd': case 'D': downloadClip(); break;
                 case 'ArrowRight':
                     e.preventDefault();
                     if (e.shiftKey) {
-                        // Shift+Right = avancer de 5s dans la video (chat iframe : non controllable)
                         const pFwd = document.getElementById('player');
                         if (pFwd && pFwd.tagName === 'VIDEO') pFwd.currentTime += 5;
                     } else {
@@ -1346,7 +1433,6 @@
                 case 'ArrowLeft':
                     e.preventDefault();
                     if (e.shiftKey) {
-                        // Shift+Left = reculer de 5s
                         const pBwd = document.getElementById('player');
                         if (pBwd && pBwd.tagName === 'VIDEO') pBwd.currentTime = Math.max(0, pBwd.currentTime - 5);
                     } else {
