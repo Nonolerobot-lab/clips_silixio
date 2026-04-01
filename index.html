@@ -519,6 +519,19 @@
             <p id="messageText"></p>
         </div>
 
+        <!-- VEILLE RECAP SCREEN -->
+        <div class="done-screen" id="veilleScreen" style="display:none;">
+            <div style="max-width:600px;width:100%;text-align:left;">
+                <h2 style="text-align:center;margin-bottom:20px;">&#129302; Veille IA</h2>
+                <div id="veilleContent" style="font-size:0.92em;line-height:1.8;"></div>
+                <div style="text-align:center;margin-top:28px;">
+                    <button class="done-btn" onclick="dismissVeille()" style="font-size:1em;padding:12px 32px;">
+                        Commencer la review &#8594; <span style="font-size:0.75em;color:#aaa;margin-left:8px;">Espace / &rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- DONE SCREEN -->
         <div class="done-screen" id="doneScreen">
             <h2>Review terminee !</h2>
@@ -666,11 +679,14 @@
             buildMinimap();
             buildStreamerFilter();
 
-            // Sprint 32 : affiche le resume contextuel
+            // Sprint 34 : affiche le resume contextuel (bandeau)
             renderContextSummary();
 
             // Bug 1 : restaurer la progression sauvegardee
             restoreProgress();
+
+            // Sprint 34 : page recap veille avant le premier clip
+            if (showVeilleRecap()) return;  // loadClip sera appele par dismissVeille()
 
             loadClip(currentIndex);
         }
@@ -1113,6 +1129,56 @@
             if (overlay) overlay.remove();
         }
 
+        // === Sprint 34 : VEILLE RECAP SCREEN ===
+        function showVeilleRecap() {
+            const ctx = MANIFEST.context_summary;
+            if (!ctx || !ctx.active_topics || ctx.active_topics.length === 0) return false;
+            // Une seule fois par date
+            try {
+                if (localStorage.getItem('veille_recap_seen_' + (MANIFEST.date || ''))) return false;
+            } catch(e) {}
+
+            const typeEmoji = {competition: '🏆', rumeur: '💬', resultat: '📊', news: '📰', manual: '📌', audience: '👀'};
+            const sourceLabel = {youtube: '📺 YouTube', twitter: '🐦 Twitter', google_news: '📰 Google News', twitter_bookmark: '🔖 Bookmarks'};
+
+            // Groupe par source
+            const bySource = {};
+            for (const t of ctx.active_topics) {
+                const src = t.source || 'autre';
+                if (!bySource[src]) bySource[src] = [];
+                bySource[src].push(t);
+            }
+
+            let html = '';
+            for (const [src, topics] of Object.entries(bySource)) {
+                const label = sourceLabel[src] || src;
+                html += `<div style="margin-bottom:16px;">`;
+                html += `<div style="color:#9b59b6;font-weight:700;margin-bottom:6px;">${label}</div>`;
+                for (const t of topics) {
+                    const emoji = typeEmoji[t.type] || '📌';
+                    html += `<div style="padding:3px 0 3px 12px;border-left:2px solid #2a2a4a;">${emoji} ${escHtml(t.text)}</div>`;
+                }
+                html += `</div>`;
+            }
+            if (ctx.boosted_clips_count > 0) {
+                html += `<div style="margin-top:8px;color:#7c7;">✓ ${ctx.boosted_clips_count} clip${ctx.boosted_clips_count > 1 ? 's' : ''} boosté${ctx.boosted_clips_count > 1 ? 's' : ''} par ces topics</div>`;
+            }
+
+            document.getElementById('veilleContent').innerHTML = html;
+            document.getElementById('videoWrapper').style.display = 'none';
+            document.getElementById('bottomPanel').style.display = 'none';
+            document.getElementById('veilleScreen').style.display = 'flex';
+            return true;
+        }
+
+        function dismissVeille() {
+            try { localStorage.setItem('veille_recap_seen_' + (MANIFEST.date || ''), '1'); } catch(e) {}
+            document.getElementById('veilleScreen').style.display = 'none';
+            document.getElementById('videoWrapper').style.display = 'flex';
+            document.getElementById('bottomPanel').style.display = 'flex';
+            loadClip(currentIndex);
+        }
+
         // === Sprint 32 : CONTEXT SUMMARY — Sprint 35 : fermable + max 5 topics ===
         function renderContextSummary() {
             const el = document.getElementById('contextSummary');
@@ -1349,6 +1415,8 @@
         }
 
         // === S-01 : DOWNLOAD DOSSIER FINAL (selection top + bons) ===
+        // Fix: les URLs Drive bloquent fetch() (CORS) — on génère un fichier .txt
+        // avec toutes les URLs pour téléchargement groupé via outil externe (wget/aria2).
         function downloadFolder() {
             const selection = CLIPS.filter(c => {
                 const fb = feedback[c.filename];
@@ -1365,28 +1433,30 @@
                 return;
             }
 
-            if (!confirm(`Telecharger ${label} (${downloadable.length} fichiers) ?\nLe navigateur va declencer ${downloadable.length} telechargements.`)) return;
+            // Génère un fichier .txt : une ligne par clip (nom\tURL)
+            // Utilisable avec wget -i ou aria2c pour téléchargement groupé
+            const lines = downloadable.map(c =>
+                `${c.filename || 'clip.mp4'}\t${c.drive_url}`
+            ).join('\n');
+            const blob = new Blob([lines], { type: 'text/plain;charset=utf-8' });
+            const objUrl = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = objUrl;
+            a.download = 'clips_selection.txt';
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(objUrl), 1000);
 
-            // Declenche les telechargements avec un delai entre chaque pour eviter
-            // que le navigateur ne bloque la rafale
-            downloadable.forEach((clip, i) => {
-                setTimeout(() => {
-                    const a = document.createElement('a');
-                    a.href = clip.drive_url;
-                    a.download = clip.filename || ('clip_' + (i + 1) + '.mp4');
-                    a.style.display = 'none';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    downloads[clip.filename] = true;
-                    // Feedback visuel : met a jour le bouton
-                    const btn = document.getElementById('dlFolderBtn');
-                    if (btn) btn.textContent = `\u2193 ${i+1}/${downloadable.length}`;
-                    if (i === downloadable.length - 1 && btn) {
-                        setTimeout(() => { btn.innerHTML = '&#128230; S&eacute;lection <span class="shortcut"></span>'; }, 2000);
-                    }
-                }, i * 700); // 700ms entre chaque pour ne pas saturer
-            });
+            // Marque tous les clips comme téléchargés
+            downloadable.forEach(c => { downloads[c.filename] = true; });
+
+            const btn = document.getElementById('dlFolderBtn');
+            if (btn) {
+                btn.textContent = `\u2705 ${downloadable.length} URLs export\u00e9es`;
+                setTimeout(() => { btn.innerHTML = '&#128230; S&eacute;lection <span class="shortcut"></span>'; }, 3000);
+            }
         }
 
         // === S-04 : CONTEXT SUMMARY — fermeture persistante ===
@@ -1399,6 +1469,18 @@
         document.addEventListener('keydown', (e) => {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
             if (!CLIPS.length) return;
+
+            // Fix focus : si la vidéo a le focus (après clic sur player), on le retire
+            // pour que les raccourcis a/z/e/r/s/t reprennent sans recliquer ailleurs
+            if (document.activeElement && document.activeElement.tagName === 'VIDEO') {
+                document.activeElement.blur();
+            }
+
+            // Sprint 34 : Espace ou → pour dismisser l'ecran veille
+            if (document.getElementById('veilleScreen').style.display !== 'none') {
+                if (e.key === ' ' || e.key === 'ArrowRight') { e.preventDefault(); dismissVeille(); }
+                return;
+            }
 
             // Sous-menu mal cadre : utilise 1/2/3/4 pour eviter le conflit avec a/z/e/r
             if (pendingBadFraming) {
@@ -1448,6 +1530,19 @@
                     }
                     break;
             }
+        });
+
+        // Fix focus vidéo : remet le focus sur document.body après clic sur le player
+        // pour que les raccourcis clavier reprennent immédiatement sans clic supplémentaire
+        document.getElementById('player').addEventListener('click', () => {
+            setTimeout(() => { document.body.focus(); }, 50);
+        });
+        // Délègue aussi le blur lors de la mise en pause/play via la barre de contrôles native
+        document.getElementById('player').addEventListener('pause', () => {
+            setTimeout(() => { if (document.activeElement && document.activeElement.tagName === 'VIDEO') document.activeElement.blur(); }, 50);
+        });
+        document.getElementById('player').addEventListener('play', () => {
+            setTimeout(() => { if (document.activeElement && document.activeElement.tagName === 'VIDEO') document.activeElement.blur(); }, 50);
         });
     </script>
 </body>
