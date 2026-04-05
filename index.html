@@ -436,6 +436,180 @@
         .message-screen h2 { font-size: 1.5em; color: #9b59b6; margin-bottom: 10px; }
         .message-screen p { color: #888; font-size: 1.1em; max-width: 500px; }
 
+        /* === Sprint 42 : LANE BADGES === */
+        .lane-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 700;
+            margin-left: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .lane-badge.lane-core    { background: rgba(52,152,219,0.2); color: #3498db; border: 1px solid #3498db44; }
+        .lane-badge.lane-trend   { background: rgba(243,156,18,0.2); color: #f39c12; border: 1px solid #f39c1244; }
+        .lane-badge.lane-explore { background: rgba(155,89,182,0.2); color: #9b59b6; border: 1px solid #9b59b644; }
+
+        /* === Sprint 50 : BESTOF PANEL (collapsible) === */
+        .bestof-panel {
+            display: none;
+            padding: 12px 20px;
+            background: #0f1a20;
+            border-bottom: 1px solid #1a3a2a;
+            flex-shrink: 0;
+            font-size: 0.82em;
+            max-height: 260px;
+            overflow-y: auto;
+        }
+        .bestof-panel.show { display: block; }
+        .bestof-panel .bestof-title {
+            color: #2ecc71;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        .bestof-panel .bestof-yt-title {
+            background: #1a2a1a;
+            border-left: 3px solid #2ecc71;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: #fff;
+            font-weight: 600;
+        }
+        .bestof-panel .bestof-sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+        .bestof-panel .bestof-section {
+            background: #1a2a20;
+            border: 1px solid #2a4a30;
+            border-radius: 6px;
+            padding: 5px 10px;
+            min-width: 140px;
+            max-width: 220px;
+        }
+        .bestof-panel .bestof-section-label {
+            color: #2ecc71;
+            font-weight: 700;
+            font-size: 0.85em;
+        }
+        .bestof-panel .bestof-section-duration {
+            color: #888;
+            font-size: 0.78em;
+        }
+        .bestof-panel .bestof-section-note {
+            color: #aaa;
+            font-size: 0.8em;
+            margin-top: 2px;
+        }
+        .bestof-panel .bestof-note {
+            color: #888;
+            font-style: italic;
+            margin-top: 6px;
+            font-size: 0.8em;
+        }
+
+        /* === Sprint 42 : EDITORIAL PANEL (collapsible) === */
+        .editorial-panel {
+            display: none;
+            padding: 12px 20px;
+            background: #111128;
+            border-bottom: 1px solid #2a2a4a;
+            font-size: 0.88em;
+            color: #ccc;
+            flex-shrink: 0;
+            line-height: 1.6;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .editorial-panel.show { display: block; }
+        .editorial-panel .brief-title {
+            color: #9b59b6;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        /* === Sprint 42 : STORIES PANEL === */
+        .stories-panel {
+            display: none;
+            padding: 12px 20px;
+            background: #0f0f25;
+            border-bottom: 1px solid #2a2a4a;
+            font-size: 0.88em;
+            color: #ccc;
+            flex-shrink: 0;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+        .stories-panel.show { display: block; }
+        .stories-panel .story-card {
+            background: #1a1a35;
+            border: 1px solid #2a2a4a;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 8px;
+        }
+        .stories-panel .story-title {
+            color: #f39c12;
+            font-weight: 700;
+            font-size: 1em;
+            margin-bottom: 4px;
+        }
+        .stories-panel .story-hook {
+            color: #aaa;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 6px;
+        }
+        .stories-panel .story-clips {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .stories-panel .story-clip-tag {
+            background: #2a2a4a;
+            color: #ccc;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .stories-panel .story-clip-tag:hover {
+            background: #f39c12;
+            color: #000;
+        }
+
+        .story-badge {
+            display: inline-block;
+            background: rgba(243,156,18,0.2);
+            color: #f39c12;
+            border: 1px solid #f39c1244;
+            padding: 1px 6px;
+            border-radius: 8px;
+            font-size: 0.7em;
+            font-weight: 700;
+            margin-left: 4px;
+        }
+
+        .veille-toggle-btn {
+            background: #1a1a3a;
+            border: 1px solid #333;
+            color: #ccc;
+            padding: 4px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: all 0.15s;
+        }
+        .veille-toggle-btn:hover { border-color: #9b59b6; color: #9b59b6; }
+        .veille-toggle-btn.active { background: #9b59b6; border-color: #9b59b6; color: #fff; }
+
         /* Animations */
         .swipe-left { animation: swipeLeft 0.25s ease-out; }
         .swipe-right { animation: swipeRight 0.25s ease-out; }
@@ -452,6 +626,32 @@
             0% { opacity: 0; transform: scale(0.98); }
             100% { opacity: 1; transform: scale(1); }
         }
+
+        /* === DATE PICKER (Sprint 51) === */
+        .date-picker {
+            display: none;
+            padding: 5px 20px;
+            background: #0f0f25;
+            border-bottom: 1px solid #2a2a4a;
+            flex-shrink: 0;
+            gap: 6px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .date-picker.show { display: flex; }
+        .date-btn {
+            background: #1a1a3a;
+            color: #9b9bc0;
+            border: 1px solid #2a2a5a;
+            border-radius: 6px;
+            padding: 3px 12px;
+            font-size: 0.78em;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .date-btn:hover { border-color: #9b59b6; color: #e0e0e0; }
+        .date-btn.active { background: #9b59b6; color: #fff; border-color: #9b59b6; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -462,9 +662,15 @@
         <select id="streamerFilter" onchange="filterByStreamer()" style="background:#1a1a3a;color:#ccc;border:1px solid #333;border-radius:6px;padding:4px 10px;font-size:0.85em;cursor:pointer;">
             <option value="">Tous les streamers</option>
         </select>
+        <button class="veille-toggle-btn" id="veilleToggleBtn" onclick="toggleVeille()">&#129302; Veille IA <span style="font-size:0.7em;color:#666;">(V)</span></button>
+        <button class="veille-toggle-btn" id="bestofToggleBtn" onclick="toggleBestof()" style="display:none;border-color:#2ecc7144;color:#2ecc71;">&#127916; Script Best-of</button>
+        <button class="veille-toggle-btn" id="storiesToggleBtn" onclick="toggleStories()" style="display:none;">&#128214; Stories <span id="storiesCount"></span></button>
         <button class="export-btn" onclick="exportFeedback()">Exporter feedback</button>
         <span id="driveUploadStatus" style="font-size:0.75em;color:#555;margin-left:8px"></span>
     </div>
+
+    <!-- Sprint 51 : DATE PICKER multi-jours -->
+    <div class="date-picker" id="datePicker"></div>
 
     <!-- PROGRESS -->
     <div class="progress-bar">
@@ -475,6 +681,23 @@
     <div id="contextSummary" style="display:none;padding:8px 20px;background:#1a1a35;border-bottom:1px solid #2a2a4a;font-size:0.82em;color:#ccc;flex-shrink:0;gap:8px;align-items:center;flex-wrap:wrap;">
         <span style="color:#9b59b6;font-weight:700;margin-right:8px;">&#129302; R&#233;sum&#233; IA</span><span id="contextSummaryContent"></span>
         <button onclick="dismissContextSummary()" title="Fermer" style="margin-left:auto;background:none;border:none;color:#666;cursor:pointer;font-size:1.1em;padding:0 4px;line-height:1;" aria-label="Fermer">&#10005;</button>
+    </div>
+
+    <!-- Sprint 50 : BESTOF PANEL (collapsible) -->
+    <div class="bestof-panel" id="bestofPanel">
+        <div class="bestof-title">&#127916; Script Best-of du jour</div>
+        <div id="bestofContent"></div>
+    </div>
+
+    <!-- Sprint 42 : EDITORIAL PANEL (collapsible) -->
+    <div class="editorial-panel" id="editorialPanel">
+        <div class="brief-title">&#129302; Brief editorial du jour</div>
+        <div id="editorialBrief"></div>
+    </div>
+
+    <!-- Sprint 42 : STORIES PANEL (collapsible) -->
+    <div class="stories-panel" id="storiesPanel">
+        <div id="storiesContent"></div>
     </div>
 
     <!-- MINIMAP -->
@@ -519,18 +742,8 @@
             <p id="messageText"></p>
         </div>
 
-        <!-- VEILLE RECAP SCREEN -->
-        <div class="done-screen" id="veilleScreen" style="display:none;">
-            <div style="max-width:600px;width:100%;text-align:left;">
-                <h2 style="text-align:center;margin-bottom:20px;">&#129302; Veille IA</h2>
-                <div id="veilleContent" style="font-size:0.92em;line-height:1.8;"></div>
-                <div style="text-align:center;margin-top:28px;">
-                    <button class="done-btn" onclick="dismissVeille()" style="font-size:1em;padding:12px 32px;">
-                        Commencer la review &#8594; <span style="font-size:0.75em;color:#aaa;margin-left:8px;">Espace / &rarr;</span>
-                    </button>
-                </div>
-            </div>
-        </div>
+        <!-- Sprint 42 : EDITORIAL PANEL (collapsible, ferme par defaut) -->
+        <!-- Remplace l'ancien veilleScreen plein ecran -->
 
         <!-- DONE SCREEN -->
         <div class="done-screen" id="doneScreen">
@@ -649,6 +862,18 @@
         init();
 
         async function init() {
+            // Sprint 51 : essaie manifests_index.json d'abord, fallback manifest.json
+            try {
+                const idxResp = await fetch('manifests_index.json?' + Date.now());
+                if (idxResp.ok) {
+                    const idx = await idxResp.json();
+                    buildDatePicker(idx);
+                    await loadManifest(idx.latest);
+                    return;
+                }
+            } catch (e) { /* fallback */ }
+
+            // Retro-compat : manifest.json direct
             try {
                 const resp = await fetch('manifest.json?' + Date.now());
                 if (!resp.ok) throw new Error('manifest.json introuvable');
@@ -657,6 +882,53 @@
                 showMessage('Erreur', 'Impossible de charger manifest.json : ' + e.message);
                 return;
             }
+            applyManifest();
+        }
+
+        // Sprint 51 : Construit le sélecteur de dates
+        function buildDatePicker(idx) {
+            const picker = document.getElementById('datePicker');
+            picker.innerHTML = '';
+            (idx.days || []).forEach(day => {
+                const d = new Date(day.date + 'T12:00:00');
+                const label = d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' })
+                    + ' (' + (day.total_clips || '?') + ' clips)';
+                const btn = document.createElement('button');
+                btn.className = 'date-btn' + (day.date === idx.latest ? ' active' : '');
+                btn.textContent = label;
+                btn.dataset.date = day.date;
+                btn.onclick = async () => {
+                    picker.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    await loadManifest(day.date);
+                };
+                picker.appendChild(btn);
+            });
+            picker.classList.add('show');
+        }
+
+        // Sprint 51 : Charge un manifest par date et applique
+        async function loadManifest(date) {
+            const url = date
+                ? ('manifest_' + date + '.json?' + Date.now())
+                : ('manifest.json?' + Date.now());
+            try {
+                const resp = await fetch(url);
+                if (!resp.ok) throw new Error(url + ' introuvable');
+                MANIFEST = await resp.json();
+            } catch (e) {
+                showMessage('Erreur', 'Impossible de charger le manifest : ' + e.message);
+                return;
+            }
+            applyManifest();
+        }
+
+        // Sprint 51 : Applique MANIFEST courant à l'interface (réinitialisé à chaque changement de jour)
+        function applyManifest() {
+            // Reinitialiser l'etat (nouveau jour)
+            currentIndex = 0;
+            feedback = {};
+            chatFlags = {};
 
             if (!MANIFEST.clips || MANIFEST.clips.length === 0) {
                 showMessage(
@@ -682,11 +954,14 @@
             // Sprint 34 : affiche le resume contextuel (bandeau)
             renderContextSummary();
 
-            // Bug 1 : restaurer la progression sauvegardee
-            restoreProgress();
+            // Sprint 42 : initialise le brief editorial (ferme par defaut)
+            renderEditorialBrief();
+            renderStories();
+            // Sprint 50 : initialise le script best-of (ferme par defaut)
+            renderBestofScript();
 
-            // Sprint 34 : page recap veille avant le premier clip
-            if (showVeilleRecap()) return;  // loadClip sera appele par dismissVeille()
+            // Bug 1 : restaurer la progression sauvegardee (clee par date — pas de reset si meme jour)
+            restoreProgress();
 
             loadClip(currentIndex);
         }
@@ -848,9 +1123,20 @@
             if (clip.arc_id && clip.arc_label) {
                 infoHtml += '<span style="background:linear-gradient(135deg,#f9a825,#ff8f00);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:bold;">\ud83c\udfc6 ' + escHtml(clip.arc_label) + ' (' + clip.arc_position + ')</span>';
             }
+            // Sprint 42 : lane badge (core=bleu, trend=orange, explore=violet)
+            const laneCfg = {core: 'lane-core', trend: 'lane-trend', explore: 'lane-explore'};
+            if (clip.lane && laneCfg[clip.lane]) {
+                infoHtml += '<span class="lane-badge ' + laneCfg[clip.lane] + '">' + escHtml(clip.lane) + '</span>';
+            }
             if (clip.streamer) infoHtml += '<div style="color:#9b59b6;font-size:0.85em;margin-top:2px;">' + escHtml(clip.streamer) + '</div>';
             if (clip.ai_summary) infoHtml += '<div class="text">' + escHtml(clip.ai_summary) + '</div>';
             else if (clip.text) infoHtml += '<div class="text">"' + escHtml(clip.text.substring(0, 100)) + '"</div>';
+            // Sprint 46 : score_explanation compact
+            if (clip.score_explanation) infoHtml += '<div style="color:#888;font-size:0.72em;margin-top:3px;font-family:monospace;">' + escHtml(clip.score_explanation) + '</div>';
+            // Sprint 42 : story badge
+            if (clip.in_story) infoHtml += '<span class="story-badge">&#128214; Story</span>';
+            // Sprint 42 : contexte editorial
+            if (clip.editorial_context) infoHtml += '<div style="color:#f39c12;font-size:0.8em;margin-top:2px;">&#128240; ' + escHtml(clip.editorial_context) + '</div>';
             document.getElementById('clipInfo').innerHTML = infoHtml;
 
             // Counter
@@ -1138,54 +1424,205 @@
             if (overlay) overlay.remove();
         }
 
-        // === Sprint 34 : VEILLE RECAP SCREEN ===
-        function showVeilleRecap() {
-            const ctx = MANIFEST.context_summary;
-            if (!ctx || !ctx.active_topics || ctx.active_topics.length === 0) return false;
-            // Une seule fois par date
-            try {
-                if (localStorage.getItem('veille_recap_seen_' + (MANIFEST.date || ''))) return false;
-            } catch(e) {}
+        // === Sprint 50 : BESTOF SCRIPT (panneau collapsible) ===
+        function renderBestofScript() {
+            const panel = document.getElementById('bestofPanel');
+            const contentEl = document.getElementById('bestofContent');
+            const btn = document.getElementById('bestofToggleBtn');
 
-            const typeEmoji = {competition: '🏆', rumeur: '💬', resultat: '📊', news: '📰', manual: '📌', audience: '👀'};
-            const sourceLabel = {youtube: '📺 YouTube', twitter: '🐦 Twitter', google_news: '📰 Google News', twitter_bookmark: '🔖 Bookmarks'};
+            const script = MANIFEST.bestof_script;
+            if (!script || !script.title) return;
 
-            // Groupe par source
-            const bySource = {};
-            for (const t of ctx.active_topics) {
-                const src = t.source || 'autre';
-                if (!bySource[src]) bySource[src] = [];
-                bySource[src].push(t);
-            }
+            // Affiche le bouton
+            if (btn) btn.style.display = '';
 
             let html = '';
-            for (const [src, topics] of Object.entries(bySource)) {
-                const label = sourceLabel[src] || src;
-                html += `<div style="margin-bottom:16px;">`;
-                html += `<div style="color:#9b59b6;font-weight:700;margin-bottom:6px;">${label}</div>`;
-                for (const t of topics) {
-                    const emoji = typeEmoji[t.type] || '📌';
-                    html += `<div style="padding:3px 0 3px 12px;border-left:2px solid #2a2a4a;">${emoji} ${escHtml(t.text)}</div>`;
-                }
-                html += `</div>`;
-            }
-            if (ctx.boosted_clips_count > 0) {
-                html += `<div style="margin-top:8px;color:#7c7;">✓ ${ctx.boosted_clips_count} clip${ctx.boosted_clips_count > 1 ? 's' : ''} boosté${ctx.boosted_clips_count > 1 ? 's' : ''} par ces topics</div>`;
+
+            // Titre YouTube suggere
+            html += '<div class="bestof-yt-title">&#127917; ' + escHtml(script.title) + '</div>';
+
+            // Thumbnail suggestion
+            if (script.thumbnail_suggestion) {
+                html += '<div style="color:#888;font-size:0.8em;margin-bottom:8px;">&#128248; Thumbnail : ' + escHtml(script.thumbnail_suggestion) + '</div>';
             }
 
-            document.getElementById('veilleContent').innerHTML = html;
-            document.getElementById('videoWrapper').style.display = 'none';
-            document.getElementById('bottomPanel').style.display = 'none';
-            document.getElementById('veilleScreen').style.display = 'flex';
-            return true;
+            // Sections
+            if (script.sections && script.sections.length > 0) {
+                html += '<div class="bestof-sections">';
+                script.sections.forEach(function(sec) {
+                    const themeColors = { tournament:'#f39c12', hype:'#e74c3c', funny:'#3498db', talk:'#9b59b6', drama:'#e67e22', mixed:'#7f8c8d' };
+                    const col = themeColors[sec.theme] || '#2ecc71';
+                    html += '<div class="bestof-section" style="border-color:' + col + '44;">';
+                    html += '<div class="bestof-section-label" style="color:' + col + ';">' + escHtml(sec.label) + '</div>';
+                    if (sec.duration_target) html += '<div class="bestof-section-duration">&#9201; ' + escHtml(sec.duration_target) + '</div>';
+                    if (sec.note) html += '<div class="bestof-section-note">' + escHtml(sec.note) + '</div>';
+                    html += '</div>';
+                });
+                html += '</div>';
+            }
+
+            // Stats
+            const totalClips = script.total_clips || 0;
+            const duration = script.total_duration_estimate || '';
+            html += '<div style="color:#666;font-size:0.78em;margin-top:4px;">' + totalClips + ' clips';
+            if (duration) html += ' &bull; ' + escHtml(duration);
+            html += '</div>';
+
+            // Note editoriale
+            if (script.editorial_note) {
+                html += '<div class="bestof-note">&#128221; ' + escHtml(script.editorial_note) + '</div>';
+            }
+
+            contentEl.innerHTML = html;
         }
 
-        function dismissVeille() {
-            try { localStorage.setItem('veille_recap_seen_' + (MANIFEST.date || ''), '1'); } catch(e) {}
-            document.getElementById('veilleScreen').style.display = 'none';
-            document.getElementById('videoWrapper').style.display = 'flex';
-            document.getElementById('bottomPanel').style.display = 'flex';
-            loadClip(currentIndex);
+        function toggleBestof() {
+            const panel = document.getElementById('bestofPanel');
+            const btn = document.getElementById('bestofToggleBtn');
+            panel.classList.toggle('show');
+            btn.classList.toggle('active', panel.classList.contains('show'));
+            // Ferme le panneau editorial si ouvert
+            const editPanel = document.getElementById('editorialPanel');
+            if (editPanel && editPanel.classList.contains('show')) {
+                editPanel.classList.remove('show');
+                const vBtn = document.getElementById('veilleToggleBtn');
+                if (vBtn) vBtn.classList.remove('active');
+            }
+        }
+
+        // === Sprint 42 : EDITORIAL BRIEF (panneau collapsible, ferme par defaut) ===
+        function renderEditorialBrief() {
+            const panel = document.getElementById('editorialPanel');
+            const briefEl = document.getElementById('editorialBrief');
+            const btn = document.getElementById('veilleToggleBtn');
+
+            let html = '';
+
+            // Sprint 43 : plan editorial agent (brief + download_plan + skip_reasons)
+            const plan = MANIFEST.editorial_plan;
+            if (plan && plan.editorial_brief) {
+                html += '<div style="margin-bottom:10px;white-space:pre-line;">' + escHtml(plan.editorial_brief) + '</div>';
+
+                // Download plan avec priorites
+                if (plan.download_plan && plan.download_plan.length > 0) {
+                    html += '<div style="margin-top:8px;border-top:1px solid #2a2a4a;padding-top:6px;">';
+                    html += '<div style="font-weight:bold;color:#9b59b6;font-size:0.9em;margin-bottom:4px;">Plan de download</div>';
+                    const prioColors = {'1': '#e74c3c', '2': '#e67e22', '3': '#95a5a6'};
+                    for (const d of plan.download_plan) {
+                        const prio = String(d.priority || 3);
+                        const color = prioColors[prio] || '#95a5a6';
+                        html += '<div style="padding:3px 0 3px 10px;border-left:3px solid ' + color + ';font-size:0.9em;margin-bottom:3px;">';
+                        html += '<b>' + escHtml(d.streamer || '') + '</b>';
+                        if (d.reason) html += ' — ' + escHtml(d.reason);
+                        if (d.target_moments && d.target_moments.length > 0) {
+                            html += '<div style="font-size:0.85em;color:#999;margin-top:2px;">Moments : ' + d.target_moments.map(escHtml).join(', ') + '</div>';
+                        }
+                        html += '</div>';
+                    }
+                    html += '</div>';
+                }
+
+                // Skip reasons (collapsible)
+                const skips = plan.skip_reasons || {};
+                const skipKeys = Object.keys(skips);
+                if (skipKeys.length > 0) {
+                    html += '<details style="margin-top:6px;font-size:0.85em;color:#888;">';
+                    html += '<summary style="cursor:pointer;">Streamers ignores (' + skipKeys.length + ')</summary>';
+                    for (const s of skipKeys) {
+                        html += '<div style="padding:2px 0 2px 10px;">' + escHtml(s) + ' : ' + escHtml(skips[s]) + '</div>';
+                    }
+                    html += '</details>';
+                }
+            } else {
+                // Fallback Sprint 42 : resume editorial simple
+                const editorial = MANIFEST.editorial_summary || '';
+                if (editorial) {
+                    html += '<div style="margin-bottom:10px;">' + escHtml(editorial) + '</div>';
+                }
+            }
+
+            // Topics actifs (comme avant mais plus compact)
+            const ctx = MANIFEST.context_summary;
+            if (ctx && ctx.active_topics && ctx.active_topics.length > 0) {
+                const typeEmoji = {competition: '\u{1F3C6}', rumeur: '\u{1F4AC}', resultat: '\u{1F4CA}', news: '\u{1F4F0}', manual: '\u{1F4CC}', audience: '\u{1F440}'};
+                html += '<div style="margin-top:6px;border-top:1px solid #2a2a4a;padding-top:6px;">';
+                for (const t of ctx.active_topics.slice(0, 10)) {
+                    const emoji = typeEmoji[t.type] || '\u{1F4CC}';
+                    html += '<div style="padding:2px 0 2px 10px;border-left:2px solid #2a2a4a;font-size:0.9em;">' + emoji + ' ' + escHtml(t.text) + '</div>';
+                }
+                if (ctx.boosted_clips_count > 0) {
+                    html += '<div style="margin-top:4px;color:#7c7;font-size:0.85em;">\u2713 ' + ctx.boosted_clips_count + ' clip' + (ctx.boosted_clips_count > 1 ? 's' : '') + ' boost\u00e9' + (ctx.boosted_clips_count > 1 ? 's' : '') + '</div>';
+                }
+                html += '</div>';
+            }
+
+            if (!html) {
+                // Pas de veille dispo — cache le bouton
+                if (btn) btn.style.display = 'none';
+                return;
+            }
+
+            briefEl.innerHTML = html;
+            // Sprint 42 : ouvert par defaut pour que Silixio ait le contexte avant de trier
+            panel.classList.add('show');
+            if (btn) btn.classList.add('active');
+        }
+
+        function toggleVeille() {
+            const panel = document.getElementById('editorialPanel');
+            const btn = document.getElementById('veilleToggleBtn');
+            panel.classList.toggle('show');
+            btn.classList.toggle('active', panel.classList.contains('show'));
+            // Ferme stories si ouvert
+            if (panel.classList.contains('show')) {
+                document.getElementById('storiesPanel').classList.remove('show');
+                document.getElementById('storiesToggleBtn').classList.remove('active');
+            }
+        }
+
+        // === Sprint 42 : STORIES MULTI-STREAM ===
+        function renderStories() {
+            const stories = MANIFEST.stories || [];
+            const btn = document.getElementById('storiesToggleBtn');
+            if (!stories.length) {
+                btn.style.display = 'none';
+                return;
+            }
+            btn.style.display = '';
+            document.getElementById('storiesCount').textContent = '(' + stories.length + ')';
+
+            let html = '';
+            for (const s of stories) {
+                html += '<div class="story-card">';
+                html += '<div class="story-title">\u{1F4D6} ' + escHtml(s.title || s.topic_text || 'Story') + '</div>';
+                if (s.hook) html += '<div class="story-hook">' + escHtml(s.hook) + '</div>';
+                if (s.narrative_angle) html += '<div style="font-size:0.85em;color:#999;margin-bottom:6px;">' + escHtml(s.narrative_angle) + '</div>';
+                html += '<div class="story-clips">';
+                for (const c of (s.clips || [])) {
+                    html += '<span class="story-clip-tag" onclick="navigateToStoryClip(\'' + escHtml(c.filename || '') + '\')">';
+                    html += escHtml(c.streamer || '?') + ' ' + escHtml(c.timestamp || '');
+                    html += '</span>';
+                }
+                html += '</div></div>';
+            }
+            document.getElementById('storiesContent').innerHTML = html;
+        }
+
+        function toggleStories() {
+            const panel = document.getElementById('storiesPanel');
+            const btn = document.getElementById('storiesToggleBtn');
+            panel.classList.toggle('show');
+            btn.classList.toggle('active', panel.classList.contains('show'));
+            // Ferme veille si ouvert
+            if (panel.classList.contains('show')) {
+                document.getElementById('editorialPanel').classList.remove('show');
+                document.getElementById('veilleToggleBtn').classList.remove('active');
+            }
+        }
+
+        function navigateToStoryClip(filename) {
+            const idx = CLIPS.findIndex(c => c.filename === filename);
+            if (idx >= 0) loadClip(idx);
         }
 
         // === Sprint 32 : CONTEXT SUMMARY — Sprint 35 : fermable + max 5 topics ===
@@ -1345,6 +1782,18 @@
             a.click();
             URL.revokeObjectURL(url);
 
+            // Sprint 45 : confirmation visuelle apres export
+            const btn = document.querySelector('.export-btn');
+            if (btn) {
+                const prevText = btn.textContent;
+                btn.textContent = 'Exporté !';
+                btn.style.background = '#27ae60';
+                setTimeout(() => {
+                    btn.textContent = prevText;
+                    btn.style.background = '';
+                }, 2000);
+            }
+
             // Upload automatique vers Drive via Google Apps Script (si configure)
             if (APPS_SCRIPT_URL) {
                 uploadFeedbackToDrive(data, filename);
@@ -1485,12 +1934,6 @@
                 document.activeElement.blur();
             }
 
-            // Sprint 34 : Espace ou → pour dismisser l'ecran veille
-            if (document.getElementById('veilleScreen').style.display !== 'none') {
-                if (e.key === ' ' || e.key === 'ArrowRight') { e.preventDefault(); dismissVeille(); }
-                return;
-            }
-
             // Sous-menu mal cadre : utilise 1/2/3/4 pour eviter le conflit avec a/z/e/r
             if (pendingBadFraming) {
                 switch(e.key) {
@@ -1510,6 +1953,7 @@
                 case 'r': case 'R': showBadFramingSubmenu(); break;
                 case 's': case 'S': rate('not_relevant'); break;
                 case 't': case 'T': rate('duplicate'); break;
+                case 'v': case 'V': toggleVeille(); break;
                 case 'c': case 'C': toggleChat(); break;
                 case 'd': case 'D': downloadClip(); break;
                 case 'ArrowRight':
