@@ -67,23 +67,34 @@
         /* === MINIMAP === */
         .minimap {
             display: flex;
-            justify-content: center;
+            align-items: center;
+            justify-content: flex-start;
             gap: 3px;
-            padding: 6px 20px 0;
-            flex-wrap: wrap;
+            padding: 4px 20px;
+            flex-wrap: nowrap;
             flex-shrink: 0;
+            height: 30px;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #2a2a4a transparent;
         }
+        .minimap::-webkit-scrollbar { height: 3px; }
+        .minimap::-webkit-scrollbar-track { background: transparent; }
+        .minimap::-webkit-scrollbar-thumb { background: #2a2a5a; border-radius: 2px; }
         .minimap .dot {
             width: 10px;
             height: 10px;
+            flex-shrink: 0;
             border-radius: 50%;
             background: #333;
             cursor: pointer;
             transition: all 0.15s;
             border: 2px solid transparent;
         }
-        .minimap .dot:hover { transform: scale(1.3); }
-        .minimap .dot.current { border-color: #fff; transform: scale(1.3); }
+        /* Dots compacts au-delà de 100 clips */
+        .minimap.compact .dot { width: 6px; height: 6px; }
+        .minimap .dot:hover { transform: scale(1.4); }
+        .minimap .dot.current { border-color: #fff; transform: scale(1.4); }
         .minimap .dot.fb-top       { background: #f1c40f; }
         .minimap .dot.fb-good      { background: #2ecc71; }
         .minimap .dot.fb-not_interesting { background: #95a5a6; }
@@ -244,6 +255,7 @@
         }
         .clip-info-overlay .sources { color: #e67e22; font-size: 0.85em; margin-top: 4px; }
         .clip-info-overlay .text { color: #aaa; font-style: italic; font-size: 0.85em; margin-top: 2px; max-width: 400px; }
+        .clip-info-overlay .why { color: #7a7aaa; font-size: 0.78em; margin-top: 3px; max-width: 420px; line-height: 1.4; }
 
         /* Feedback badge */
         .current-feedback {
@@ -451,6 +463,19 @@
         .lane-badge.lane-trend   { background: rgba(243,156,18,0.2); color: #f39c12; border: 1px solid #f39c1244; }
         .lane-badge.lane-explore { background: rgba(155,89,182,0.2); color: #9b59b6; border: 1px solid #9b59b644; }
 
+        /* === Sprint 59 : COMMUNITY SOURCE BADGE === */
+        .badge-commu {
+            display: inline-block;
+            background: rgba(155,89,182,0.2);
+            color: #9b59b6;
+            border: 1px solid rgba(155,89,182,0.27);
+            padding: 1px 7px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
         /* === Sprint 50 : BESTOF PANEL (collapsible) === */
         .bestof-panel {
             display: none;
@@ -627,6 +652,98 @@
             100% { opacity: 1; transform: scale(1); }
         }
 
+        /* === BRIEF IA MODAL (Sprint 56) === */
+        .brief-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: blur(5px);
+            z-index: 300;
+            align-items: center;
+            justify-content: center;
+        }
+        .brief-modal-overlay.show { display: flex; }
+        .brief-modal {
+            background: #13132a;
+            border: 1px solid #2a2a4a;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 620px;
+            max-height: 78vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 24px 72px rgba(0, 0, 0, 0.9);
+            animation: modalIn 0.2s ease-out;
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.96) translateY(-12px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .brief-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            border-bottom: 1px solid #2a2a4a;
+            flex-shrink: 0;
+        }
+        .brief-modal-header .bm-title {
+            font-weight: 700;
+            color: #9b59b6;
+            font-size: 0.95em;
+            letter-spacing: 0.02em;
+        }
+        .brief-modal-close {
+            background: #1f1f3a;
+            border: 1px solid #3a3a5a;
+            color: #bbb;
+            padding: 6px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.15s;
+        }
+        .brief-modal-close:hover { background: #9b59b6; color: #fff; border-color: #9b59b6; }
+        .brief-modal-body {
+            padding: 16px 20px 20px;
+            overflow-y: auto;
+            flex: 1;
+            font-size: 0.87em;
+            color: #ccc;
+            line-height: 1.65;
+        }
+        .brief-modal-body .bm-section {
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #1e1e3a;
+        }
+        .brief-modal-body .bm-section:last-child { border-bottom: none; margin-bottom: 0; }
+        .brief-modal-body .bm-section-title {
+            font-weight: 700;
+            font-size: 0.82em;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #7070b0;
+            margin-bottom: 8px;
+        }
+        .brief-modal-body .bm-text {
+            white-space: pre-line;
+            color: #ddd;
+        }
+        .brief-modal-body .bm-dl-item {
+            padding: 4px 0 4px 10px;
+            margin-bottom: 4px;
+            font-size: 0.92em;
+        }
+        .brief-modal-body .bm-topic {
+            padding: 3px 0 3px 10px;
+            border-left: 2px solid #2a2a4a;
+            margin-bottom: 3px;
+        }
+
         /* === DATE PICKER (Sprint 51) === */
         .date-picker {
             display: none;
@@ -652,6 +769,16 @@
         }
         .date-btn:hover { border-color: #9b59b6; color: #e0e0e0; }
         .date-btn.active { background: #9b59b6; color: #fff; border-color: #9b59b6; font-weight: 600; }
+
+        /* === SESSION TIMER (Sprint 58) === */
+        #sessionTimer {
+            font-size: 0.78em;
+            font-family: monospace;
+            color: #777;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+            flex-shrink: 0;
+        }
     </style>
 </head>
 <body>
@@ -659,9 +786,11 @@
     <div class="top-bar">
         <div class="title" id="pageTitle">Clips du ...</div>
         <div class="counter"><span class="current" id="currentNum">0</span> / <span id="totalNum">0</span></div>
+        <span id="sessionTimer"></span>
         <select id="streamerFilter" onchange="filterByStreamer()" style="background:#1a1a3a;color:#ccc;border:1px solid #333;border-radius:6px;padding:4px 10px;font-size:0.85em;cursor:pointer;">
             <option value="">Tous les streamers</option>
         </select>
+        <button class="veille-toggle-btn" id="briefModalBtn" onclick="openBriefModal()" style="display:none;">&#128203; Brief IA</button>
         <button class="veille-toggle-btn" id="veilleToggleBtn" onclick="toggleVeille()">&#129302; Veille IA <span style="font-size:0.7em;color:#666;">(V)</span></button>
         <button class="veille-toggle-btn" id="bestofToggleBtn" onclick="toggleBestof()" style="display:none;border-color:#2ecc7144;color:#2ecc71;">&#127916; Script Best-of</button>
         <button class="veille-toggle-btn" id="storiesToggleBtn" onclick="toggleStories()" style="display:none;">&#128214; Stories <span id="storiesCount"></span></button>
@@ -677,10 +806,15 @@
         <div class="progress-fill" id="progressFill" style="width: 0%"></div>
     </div>
 
-    <!-- Sprint 32 : CONTEXT SUMMARY — Sprint 35 : fermable (une seule fois) -->
-    <div id="contextSummary" style="display:none;padding:8px 20px;background:#1a1a35;border-bottom:1px solid #2a2a4a;font-size:0.82em;color:#ccc;flex-shrink:0;gap:8px;align-items:center;flex-wrap:wrap;">
-        <span style="color:#9b59b6;font-weight:700;margin-right:8px;">&#129302; R&#233;sum&#233; IA</span><span id="contextSummaryContent"></span>
-        <button onclick="dismissContextSummary()" title="Fermer" style="margin-left:auto;background:none;border:none;color:#666;cursor:pointer;font-size:1.1em;padding:0 4px;line-height:1;" aria-label="Fermer">&#10005;</button>
+    <!-- Sprint 56 : BRIEF IA MODAL (remplace le bandeau contextSummary) -->
+    <div class="brief-modal-overlay" id="briefModalOverlay" onclick="closeBriefModal()">
+        <div class="brief-modal" onclick="event.stopPropagation()">
+            <div class="brief-modal-header">
+                <span class="bm-title">&#129302; Brief IA du jour</span>
+                <button class="brief-modal-close" onclick="closeBriefModal()">&#10005; Fermer</button>
+            </div>
+            <div class="brief-modal-body" id="briefModalBody"></div>
+        </div>
     </div>
 
     <!-- Sprint 50 : BESTOF PANEL (collapsible) -->
@@ -826,6 +960,14 @@
         let useIframe = false;
         let iframeTimer = null;   // Bug 3 : timeout handle
 
+        // === SESSION TIMER STATE (Sprint 58) ===
+        let timerInterval    = null;  // setInterval handle (display refresh)
+        let activeAccum      = 0;     // ms actifs cumulés (hors pauses)
+        let activeStart      = null;  // Date.now() au dernier réveil, null si inactif
+        let inactivityHandle = null;  // setTimeout handle (60s → pause)
+        let clipStartActiveMs = null; // snapshot getActiveMs() au début du clip courant
+        let clipTimes        = [];    // temps actif par clip, en secondes
+
         // === LOCALSTORAGE HELPERS (Bug 1) ===
         function lsKey() {
             return 'clips_silixio_' + (MANIFEST ? (MANIFEST.date || 'default') : 'default');
@@ -951,8 +1093,8 @@
             buildMinimap();
             buildStreamerFilter();
 
-            // Sprint 34 : affiche le resume contextuel (bandeau)
-            renderContextSummary();
+            // Sprint 56 : affiche le brief IA en modal (remplace le bandeau contextSummary)
+            renderBriefModal();
 
             // Sprint 42 : initialise le brief editorial (ferme par defaut)
             renderEditorialBrief();
@@ -962,6 +1104,9 @@
 
             // Bug 1 : restaurer la progression sauvegardee (clee par date — pas de reset si meme jour)
             restoreProgress();
+
+            // Sprint 58 : reset + démarrage du chrono pour cette session
+            resetSessionTimer();
 
             loadClip(currentIndex);
         }
@@ -978,8 +1123,15 @@
         // === CORE ===
         function loadClip(idx) {
             if (idx < 0 || idx >= TOTAL) return;
-            currentIndex = idx;
 
+            // Sprint 58 : mesurer le temps passé sur le clip précédent
+            if (clipStartActiveMs !== null) {
+                const elapsed = (getActiveMs() - clipStartActiveMs) / 1000;
+                if (elapsed >= 2) clipTimes.push(elapsed); // ignorer navigations < 2s (erreur de clic)
+            }
+            clipStartActiveMs = getActiveMs();
+
+            currentIndex = idx;
             const clip = CLIPS[idx];
             const wrapper = document.getElementById('videoWrapper');
 
@@ -1128,11 +1280,22 @@
             if (clip.lane && laneCfg[clip.lane]) {
                 infoHtml += '<span class="lane-badge ' + laneCfg[clip.lane] + '">' + escHtml(clip.lane) + '</span>';
             }
-            if (clip.streamer) infoHtml += '<div style="color:#9b59b6;font-size:0.85em;margin-top:2px;">' + escHtml(clip.streamer) + '</div>';
+            // Sprint 59 : badge source (COMMU = clip communautaire, sinon streamer normal)
+            if (clip.source_type === 'community') {
+                const communityPseudo = clip.contributor_pseudo ? ' · ' + escHtml(clip.contributor_pseudo) : '';
+                const communitycat    = clip.community_categorie ? ' <span style="color:#888;font-size:0.9em">(' + escHtml(clip.community_categorie) + ')</span>' : '';
+                infoHtml += '<div style="margin-top:3px;">'
+                          + '<span style="background:rgba(155,89,182,0.2);color:#9b59b6;border:1px solid #9b59b644;padding:1px 7px;border-radius:4px;font-size:0.75em;font-weight:700;letter-spacing:0.04em;margin-right:6px;">COMMU</span>'
+                          + '<span style="color:#9b59b6;font-size:0.85em;">' + communityPseudo + communitycat + '</span>'
+                          + '</div>';
+            } else if (clip.streamer) {
+                infoHtml += '<div style="color:#9b59b6;font-size:0.85em;margin-top:2px;">' + escHtml(clip.streamer) + '</div>';
+            }
             if (clip.ai_summary) infoHtml += '<div class="text">' + escHtml(clip.ai_summary) + '</div>';
-            else if (clip.text) infoHtml += '<div class="text">"' + escHtml(clip.text.substring(0, 100)) + '"</div>';
-            // Sprint 46 : score_explanation compact
-            if (clip.score_explanation) infoHtml += '<div style="color:#888;font-size:0.72em;margin-top:3px;font-family:monospace;">' + escHtml(clip.score_explanation) + '</div>';
+            else if (clip.text) infoHtml += '<div class="text">"' + escHtml(clip.text.substring(0, 120)) + '"</div>';
+            // Sprint 57 : explication lisible (remplace score_explanation monospace)
+            const whyHtml = buildClipExplanation(clip);
+            if (whyHtml) infoHtml += '<div class="why">' + whyHtml + '</div>';
             // Sprint 42 : story badge
             if (clip.in_story) infoHtml += '<span class="story-badge">&#128214; Story</span>';
             // Sprint 42 : contexte editorial
@@ -1351,8 +1514,9 @@
         // === Sprint 32 : FILTRE PAR STREAMER ===
         let ALL_CLIPS = [];  // copie originale non filtree
         function buildStreamerFilter() {
-            const streamers = [...new Set(ALL_CLIPS.map(c => c.streamer).filter(Boolean))].sort();
             const sel = document.getElementById('streamerFilter');
+            // Streamers normaux
+            const streamers = [...new Set(ALL_CLIPS.filter(c => c.source_type !== 'community').map(c => c.streamer).filter(Boolean))].sort();
             streamers.forEach(s => {
                 const n = ALL_CLIPS.filter(c => c.streamer === s).length;
                 const opt = document.createElement('option');
@@ -1360,10 +1524,20 @@
                 opt.textContent = s + ' (' + n + ')';
                 sel.appendChild(opt);
             });
+            // Sprint 59 : option clips communautaires si présents
+            const nCommu = ALL_CLIPS.filter(c => c.source_type === 'community').length;
+            if (nCommu > 0) {
+                const opt = document.createElement('option');
+                opt.value = '__community__';
+                opt.textContent = '🟣 Clips communautaires (' + nCommu + ')';
+                sel.appendChild(opt);
+            }
         }
         function filterByStreamer() {
             const val = document.getElementById('streamerFilter').value;
-            if (val) {
+            if (val === '__community__') {
+                CLIPS = ALL_CLIPS.filter(c => c.source_type === 'community');
+            } else if (val) {
                 CLIPS = ALL_CLIPS.filter(c => c.streamer === val);
             } else {
                 CLIPS = [...ALL_CLIPS];
@@ -1563,9 +1737,9 @@
             }
 
             briefEl.innerHTML = html;
-            // Sprint 42 : ouvert par defaut pour que Silixio ait le contexte avant de trier
-            panel.classList.add('show');
-            if (btn) btn.classList.add('active');
+            // Sprint 56 : ne plus ouvrir par defaut — le contenu est dans la modal Brief IA
+            // panel.classList.add('show');
+            // if (btn) btn.classList.add('active');
         }
 
         function toggleVeille() {
@@ -1625,39 +1799,195 @@
             if (idx >= 0) loadClip(idx);
         }
 
-        // === Sprint 32 : CONTEXT SUMMARY — Sprint 35 : fermable + max 5 topics ===
-        function renderContextSummary() {
-            const el = document.getElementById('contextSummary');
-            const ctx = MANIFEST.context_summary;
-            if (!ctx || !ctx.active_topics || ctx.active_topics.length === 0) return;
+        // === Sprint 56 : BRIEF IA MODAL ===
+        // Construit le contenu de la modal et l'affiche.
+        // Contenu : brief editorial + plan de download + topics actifs.
+        // Exclu intentionnellement : tweets, commentaires YouTube (trop de bruit).
+        function renderBriefModal() {
+            const body = document.getElementById('briefModalBody');
+            const btn  = document.getElementById('briefModalBtn');
+            let sections = [];
 
-            // S-04 : ne pas reafficher si Silixio l'a ferme pour cette date
-            try {
-                if (localStorage.getItem('ctx_summary_dismissed_' + (MANIFEST.date || ''))) return;
-            } catch(e) {}
+            // Section 1 : brief editorial IA
+            const plan = MANIFEST.editorial_plan;
+            if (plan && plan.editorial_brief) {
+                let s = '<div class="bm-section">';
+                s += '<div class="bm-section-title">&#128240; Brief du jour</div>';
+                s += '<div class="bm-text">' + escHtml(plan.editorial_brief) + '</div>';
+                s += '</div>';
+                sections.push(s);
 
-            const typeEmoji = {competition: '\u{1F3C6}', rumeur: '\u{1F4AC}', resultat: '\u{1F4CA}', news: '\u{1F4F0}', manual: '\u{1F4CC}', audience: '\u{1F440}'};
-            // S-04 : limiter a 5 topics max pour eviter que le bandeau occupe tout l'ecran
-            const topTopics = ctx.active_topics.slice(0, 5);
-            const remaining = ctx.active_topics.length - topTopics.length;
-            const parts = topTopics.map(t => {
-                const emoji = typeEmoji[t.type] || '\u{1F4CC}';
-                return `${emoji} <strong>${t.text}</strong> <span style="color:#666">(\u00D7${t.boost})</span>`;
-            });
+                // Plan de download (streamers prioritaires)
+                if (plan.download_plan && plan.download_plan.length > 0) {
+                    const prioColors = {'1': '#e74c3c', '2': '#e67e22', '3': '#95a5a6'};
+                    let s2 = '<div class="bm-section">';
+                    s2 += '<div class="bm-section-title">&#128250; Streamers \u00e0 couvrir</div>';
+                    for (const d of plan.download_plan) {
+                        const col = prioColors[String(d.priority || 3)] || '#95a5a6';
+                        s2 += '<div class="bm-dl-item" style="border-left:3px solid ' + col + ';">';
+                        s2 += '<strong>' + escHtml(d.streamer || '') + '</strong>';
+                        if (d.reason) s2 += ' &mdash; ' + escHtml(d.reason);
+                        if (d.target_moments && d.target_moments.length > 0) {
+                            s2 += '<div style="font-size:0.85em;color:#999;margin-top:2px;">Moments : ' + d.target_moments.map(escHtml).join(', ') + '</div>';
+                        }
+                        s2 += '</div>';
+                    }
+                    s2 += '</div>';
+                    sections.push(s2);
+                }
 
-            let html = parts.join(' &middot; ');
-            if (remaining > 0) html += ` <span style="color:#666">&middot; +${remaining} autres</span>`;
-            if (ctx.boosted_clips_count > 0) {
-                html += ` &mdash; <span style="color:#7c7">${ctx.boosted_clips_count} clip${ctx.boosted_clips_count > 1 ? 's' : ''} boost\u00E9${ctx.boosted_clips_count > 1 ? 's' : ''}</span>`;
+                // Streamers ignorés (collapsible)
+                const skips = plan.skip_reasons || {};
+                const skipKeys = Object.keys(skips);
+                if (skipKeys.length > 0) {
+                    let s3 = '<div class="bm-section">';
+                    s3 += '<details style="font-size:0.85em;color:#888;">';
+                    s3 += '<summary style="cursor:pointer;color:#666;">Streamers ignor\u00e9s (' + skipKeys.length + ')</summary>';
+                    s3 += '<div style="margin-top:6px;">';
+                    for (const sk of skipKeys) {
+                        s3 += '<div style="padding:2px 0 2px 10px;">' + escHtml(sk) + ' : ' + escHtml(skips[sk]) + '</div>';
+                    }
+                    s3 += '</div></details></div>';
+                    sections.push(s3);
+                }
+            } else if (MANIFEST.editorial_summary) {
+                // Fallback texte simple
+                let s = '<div class="bm-section">';
+                s += '<div class="bm-section-title">&#128240; Contexte du jour</div>';
+                s += '<div class="bm-text">' + escHtml(MANIFEST.editorial_summary) + '</div>';
+                s += '</div>';
+                sections.push(s);
             }
-            document.getElementById('contextSummaryContent').innerHTML = html;
-            el.style.display = 'flex';
+
+            // Section 2 : topics actifs (compétitions, résultats, rumeurs — PAS tweets ni YT)
+            const ctx = MANIFEST.context_summary;
+            if (ctx && ctx.active_topics && ctx.active_topics.length > 0) {
+                const typeEmoji = {competition: '\u{1F3C6}', rumeur: '\u{1F4AC}', resultat: '\u{1F4CA}', news: '\u{1F4F0}', manual: '\u{1F4CC}', audience: '\u{1F440}'};
+                let s = '<div class="bm-section">';
+                s += '<div class="bm-section-title">&#128270; Topics actifs</div>';
+                for (const t of ctx.active_topics) {
+                    const emoji = typeEmoji[t.type] || '\u{1F4CC}';
+                    s += '<div class="bm-topic">' + emoji + ' ' + escHtml(t.text);
+                    if (t.boost && t.boost > 1) s += ' <span style="color:#555;font-size:0.85em;">\u00d7' + t.boost + '</span>';
+                    s += '</div>';
+                }
+                if (ctx.boosted_clips_count > 0) {
+                    s += '<div style="margin-top:6px;color:#2ecc71;font-size:0.85em;">\u2713 ' + ctx.boosted_clips_count + ' clip' + (ctx.boosted_clips_count > 1 ? 's' : '') + ' boost\u00e9' + (ctx.boosted_clips_count > 1 ? 's' : '') + '</div>';
+                }
+                s += '</div>';
+                sections.push(s);
+            }
+
+            // Section 3 : Résumé de la session (calculé dynamiquement depuis ALL_CLIPS)
+            if (ALL_CLIPS && ALL_CLIPS.length > 0) {
+                const catFR = {
+                    'funny_fail': '😂 Drôle', 'epic_play': '🎮 Gameplay épique',
+                    'hype_cast': '🔥 Hype cast', 'drama_debate': '💬 Débat',
+                    'victory': '🏆 Victoire', 'funny_talk': '😄 Drôle (hors jeu)',
+                    'trash': '🚫 Pas intéressant',
+                };
+                let s = '<div class="bm-section">';
+                s += '<div class="bm-section-title">&#128202; R\u00e9sum\u00e9 de la session</div>';
+
+                // Total + durée estimée
+                const totalDur = ALL_CLIPS.reduce((acc, c) => acc + (c.duration || c.clip_duration || 45), 0);
+                const durMin = Math.round(totalDur / 60);
+                s += '<div style="margin-bottom:10px;color:#ddd;">';
+                s += '<strong>' + ALL_CLIPS.length + ' clips</strong>';
+                s += ' &mdash; <span style="color:#888;">Durée estimée : ~' + durMin + ' min de review</span>';
+                s += '</div>';
+
+                // Répartition par streamer
+                const streamerMap = {};
+                ALL_CLIPS.forEach(c => {
+                    const st = c.streamer || 'Inconnu';
+                    streamerMap[st] = (streamerMap[st] || 0) + 1;
+                });
+                const streamerEntries = Object.entries(streamerMap).sort((a, b) => b[1] - a[1]);
+                s += '<div style="margin-bottom:10px;">';
+                for (const [st, count] of streamerEntries) {
+                    const pct = Math.round(count / ALL_CLIPS.length * 100);
+                    const barW = Math.max(4, Math.round(pct * 1.2)); // max ~120px
+                    s += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;font-size:0.9em;">';
+                    s += '<span style="width:90px;flex-shrink:0;color:#ccc;">' + escHtml(st) + '</span>';
+                    s += '<div style="width:' + barW + 'px;height:4px;background:#9b59b6;border-radius:2px;flex-shrink:0;"></div>';
+                    s += '<span style="color:#888;">' + count + ' clip' + (count > 1 ? 's' : '') + ' (' + pct + '%)</span>';
+                    s += '</div>';
+                }
+                s += '</div>';
+
+                // Répartition par lane
+                const laneCounts = {core: 0, trend: 0, explore: 0};
+                ALL_CLIPS.forEach(c => { if (c.lane && laneCounts[c.lane] !== undefined) laneCounts[c.lane]++; });
+                const laneTotal = laneCounts.core + laneCounts.trend + laneCounts.explore;
+                if (laneTotal > 0) {
+                    s += '<div style="margin-bottom:10px;font-size:0.88em;display:flex;gap:12px;flex-wrap:wrap;">';
+                    s += '<span style="color:#3498db;">CORE : ' + laneCounts.core + '</span>';
+                    s += '<span style="color:#f39c12;">TREND : ' + laneCounts.trend + '</span>';
+                    s += '<span style="color:#9b59b6;">EXPLORE : ' + laneCounts.explore + '</span>';
+                    s += '</div>';
+                }
+
+                // Top 5 clips par score IA
+                const top5 = [...ALL_CLIPS]
+                    .filter(c => c.score > 0)
+                    .sort((a, b) => (b.score || 0) - (a.score || 0))
+                    .slice(0, 5);
+                if (top5.length > 0) {
+                    s += '<div style="margin-top:4px;">';
+                    s += '<div style="font-size:0.8em;color:#555;margin-bottom:5px;text-transform:uppercase;letter-spacing:0.05em;">Top 5 scores IA</div>';
+                    top5.forEach((c, i) => {
+                        const scoreCol = c.score >= 70 ? '#2ecc71' : c.score >= 50 ? '#f1c40f' : '#e74c3c';
+                        s += '<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px;font-size:0.88em;">';
+                        s += '<span style="color:#555;width:14px;">' + (i + 1) + '.</span>';
+                        s += '<span style="color:' + scoreCol + ';font-weight:700;width:28px;">' + Math.round(c.score) + '</span>';
+                        s += '<span style="color:#bbb;">' + escHtml(c.streamer || '?') + '</span>';
+                        s += '<span style="color:#888;font-size:0.85em;">' + escHtml(c.timestamp || '') + '</span>';
+                        if (c.ai_category) s += '<span style="color:#666;font-size:0.82em;">' + escHtml(catFR[c.ai_category] || c.ai_category) + '</span>';
+                        s += '</div>';
+                    });
+                    s += '</div>';
+                }
+
+                s += '</div>';
+                sections.push(s);
+            }
+
+            if (sections.length === 0) {
+                // Rien à afficher — cache le bouton Brief IA
+                if (btn) btn.style.display = 'none';
+                return;
+            }
+
+            body.innerHTML = sections.join('');
+            if (btn) btn.style.display = '';
+
+            // Auto-ouverture si pas encore fermée aujourd'hui
+            try {
+                if (!localStorage.getItem('brief_dismissed_' + (MANIFEST.date || ''))) {
+                    openBriefModal();
+                }
+            } catch(e) {
+                openBriefModal();
+            }
+        }
+
+        function openBriefModal() {
+            document.getElementById('briefModalOverlay').classList.add('show');
+        }
+
+        function closeBriefModal() {
+            document.getElementById('briefModalOverlay').classList.remove('show');
+            // Persiste la fermeture pour ne pas re-ouvrir à chaque clip du même jour
+            try { localStorage.setItem('brief_dismissed_' + (MANIFEST.date || ''), '1'); } catch(e) {}
         }
 
         // === MINIMAP ===
         function buildMinimap() {
             const mm = document.getElementById('minimap');
             mm.innerHTML = '';
+            // Dots compacts au-delà de 100 clips
+            mm.classList.toggle('compact', TOTAL > 100);
             for (let i = 0; i < TOTAL; i++) {
                 const dot = document.createElement('div');
                 dot.className = 'dot';
@@ -1675,6 +2005,11 @@
                 if (fb) dot.classList.add('fb-' + fb);
                 if (i === currentIndex) dot.classList.add('current');
             });
+            // Auto-scroll vers le dot actuel
+            const currentDot = document.querySelector('.minimap .dot.current');
+            if (currentDot) {
+                currentDot.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
         }
 
         // === DONE ===
@@ -1819,6 +2154,71 @@
             }
         }
 
+        // === Sprint 57 : EXPLICATION LISIBLE DU CLIP ===
+        // Construit une phrase de sélection à partir des métadonnées disponibles.
+        // Priorité : clip.why (pipeline) → parse score_explanation → sources brutes.
+        function buildClipExplanation(clip) {
+            const srcFR = {
+                'whisper':      'transcription vocale',
+                'audio':        'pic audio',
+                'video':        'analyse vidéo',
+                'ai':           'IA narrative',
+                'chat':         'activité chat',
+                'chat_content': 'chat Twitch',
+                'context':      'veille IA',
+                'twitch_clips': 'clips viewers',
+                'endgame':      'détection endgame',
+                'fail':         'détection fail',
+            };
+
+            // Option 1 : champ why du pipeline (déjà une phrase)
+            if (clip.why && clip.why.length > 8) {
+                // Nettoyage léger : "Source1 (score: X) — mots-cles: Y + Source2..." → compact
+                let w = clip.why;
+                // Remplace les marqueurs techniques par des tirets lisibles
+                w = w.replace(/ \+ /g, ' · ').replace(/\(score: [\d.]+\)/g, '').replace(/\s{2,}/g, ' ').trim();
+                return escHtml(w);
+            }
+
+            // Option 2 : parser score_explanation "whisper=0.73 (kw) | video=0.82 | ai=0.95 | x1.5"
+            if (clip.score_explanation) {
+                const parts = clip.score_explanation.split('|').map(p => p.trim());
+                const active = [];
+                let bonus = '';
+                for (const part of parts) {
+                    if (/^x[\d.]/.test(part) && part !== 'x1.0') {
+                        bonus = part; // ex: "x1.5"
+                        continue;
+                    }
+                    const m = part.match(/^(\w+)=([\d.]+)(?:\s*\(([^)]*)\))?/);
+                    if (m) {
+                        const src = m[1], score = parseFloat(m[2]), kw = m[3] || '';
+                        if (score >= 0.5 && srcFR[src]) {
+                            let label = srcFR[src];
+                            // Ajoute les mots-clés les plus pertinents (max 2)
+                            if (kw) {
+                                const kwList = kw.split(',').map(k => k.trim()).filter(k => k.length > 1).slice(0, 2);
+                                if (kwList.length) label += ' (' + kwList.join(', ') + ')';
+                            }
+                            active.push(label);
+                        }
+                    }
+                }
+                if (active.length === 0) return null;
+                let txt = 'Sélectionné via ' + active.join(', ');
+                if (bonus) txt += ' — confiance multi-source ' + bonus;
+                return escHtml(txt);
+            }
+
+            // Option 3 : sources brutes uniquement
+            if (clip.sources && clip.sources.length > 0) {
+                const labels = clip.sources.map(s => srcFR[s] || s);
+                return escHtml('Détecté par : ' + labels.join(', '));
+            }
+
+            return null;
+        }
+
         // === HELPERS ===
         function escHtml(s) {
             const div = document.createElement('div');
@@ -1917,11 +2317,7 @@
             }
         }
 
-        // === S-04 : CONTEXT SUMMARY — fermeture persistante ===
-        function dismissContextSummary() {
-            document.getElementById('contextSummary').style.display = 'none';
-            try { localStorage.setItem('ctx_summary_dismissed_' + (MANIFEST.date || ''), '1'); } catch(e) {}
-        }
+        // Sprint 56 : dismissContextSummary supprime — remplacée par closeBriefModal()
 
         // === KEYBOARD — S-03 : raccourcis remappes a/z/e/r/s/t ===
         document.addEventListener('keydown', (e) => {
@@ -1953,7 +2349,7 @@
                 case 'r': case 'R': showBadFramingSubmenu(); break;
                 case 's': case 'S': rate('not_relevant'); break;
                 case 't': case 'T': rate('duplicate'); break;
-                case 'v': case 'V': toggleVeille(); break;
+                case 'v': case 'V': openBriefModal(); break;
                 case 'c': case 'C': toggleChat(); break;
                 case 'd': case 'D': downloadClip(); break;
                 case 'ArrowRight':
@@ -1984,6 +2380,86 @@
                     break;
             }
         });
+
+        // === SESSION TIMER (Sprint 58) ===
+
+        function getActiveMs() {
+            return activeStart !== null
+                ? activeAccum + (Date.now() - activeStart)
+                : activeAccum;
+        }
+
+        function _fmtTime(ms) {
+            const s = Math.floor(ms / 1000);
+            const m = Math.floor(s / 60);
+            const h = Math.floor(m / 60);
+            const ss = String(s % 60).padStart(2, '0');
+            const mm = String(m % 60).padStart(2, '0');
+            return h > 0 ? (h + ':' + mm + ':' + ss) : (mm + ':' + ss);
+        }
+
+        function _fmtRemaining(sec) {
+            if (sec < 90) return '~' + Math.round(sec) + 's';
+            const m = Math.round(sec / 60);
+            if (m < 60) return '~' + m + 'min';
+            const h = Math.floor(m / 60), rm = m % 60;
+            return '~' + h + 'h' + (rm > 0 ? rm + 'min' : '');
+        }
+
+        function updateTimerDisplay() {
+            const el = document.getElementById('sessionTimer');
+            if (!el) return;
+            const ms = getActiveMs();
+            const active = activeStart !== null;
+            let txt = (active ? '\u23f1' : '\u23f8') + '\u00a0' + _fmtTime(ms);
+
+            // Estimation dynamique à partir de 10 clips mesurés
+            if (clipTimes.length >= 10 && TOTAL > 0) {
+                const recent = clipTimes.slice(-20); // fenêtre glissante 20 clips
+                const avg = recent.reduce((a, b) => a + b, 0) / recent.length;
+                const remaining = Math.max(0, TOTAL - currentIndex - 1) * avg;
+                if (remaining > 30) txt += ' \u00b7 ' + _fmtRemaining(remaining) + ' restantes';
+            }
+
+            el.textContent = txt;
+            el.style.color = active ? '#888' : '#555';
+        }
+
+        function onTimerActivity() {
+            if (activeStart === null) {
+                activeStart = Date.now(); // reprise d'activité
+            }
+            if (inactivityHandle) clearTimeout(inactivityHandle);
+            inactivityHandle = setTimeout(onTimerInactive, 60_000);
+        }
+
+        function onTimerInactive() {
+            if (activeStart !== null) {
+                activeAccum += Date.now() - activeStart;
+                activeStart = null;
+            }
+            inactivityHandle = null;
+            updateTimerDisplay(); // met à jour l'icône ⏸ immédiatement
+        }
+
+        function resetSessionTimer() {
+            if (timerInterval)    clearInterval(timerInterval);
+            if (inactivityHandle) clearTimeout(inactivityHandle);
+            activeAccum      = 0;
+            activeStart      = Date.now(); // commence actif
+            inactivityHandle = setTimeout(onTimerInactive, 60_000);
+            clipStartActiveMs = null;
+            clipTimes        = [];
+            timerInterval    = setInterval(updateTimerDisplay, 1000);
+            updateTimerDisplay();
+        }
+
+        // Listeners d'activité — setup une seule fois au chargement de la page
+        ;(function _setupTimerListeners() {
+            ['mousemove', 'keydown', 'click', 'touchstart'].forEach(evt => {
+                document.addEventListener(evt, onTimerActivity, { passive: true });
+            });
+        })();
 
         // Fix focus vidéo : remet le focus sur document.body après clic sur le player
         // pour que les raccourcis clavier reprennent immédiatement sans clic supplémentaire
