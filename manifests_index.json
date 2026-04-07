@@ -1,15 +1,16 @@
 {
   "days": [
     {
-      "date": "2026-04-04",
-      "total_clips": 467,
+      "date": "2026-04-07",
+      "total_clips": 126,
       "streamers": [
         "buzzftn",
+        "jolavanille",
+        "leothecrack",
         "nikof",
-        "wazz",
-        "clips"
+        "wazz"
       ]
     }
   ],
-  "latest": "2026-04-04"
+  "latest": "2026-04-07"
 }
