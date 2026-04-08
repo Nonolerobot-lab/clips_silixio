@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Logo Clips Silixio</title>
+  <desc id="desc">Icône Dentoz avec un D jaune sur fond bleu nuit.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081440"/>
+      <stop offset="55%" stop-color="#0B1B52"/>
+      <stop offset="100%" stop-color="#0D2070"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)"/>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="none" stroke="#FFD800" stroke-width="6"/>
+  <path d="M36 24H68C89 24 104 40 104 64C104 88 89 104 68 104H36V24Z" fill="#FFD800"/>
+  <path d="M52 40H65C78 40 86 49 86 64C86 79 78 88 65 88H52V40Z" fill="#0B1632"/>
+  <path d="M90 19H109L95 38H76Z" fill="#FFFFFF" opacity="0.92"/>
+</svg>
