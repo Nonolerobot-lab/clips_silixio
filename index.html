@@ -1715,20 +1715,7 @@
                 }
             }
 
-            // Topics actifs (comme avant mais plus compact)
-            const ctx = MANIFEST.context_summary;
-            if (ctx && ctx.active_topics && ctx.active_topics.length > 0) {
-                const typeEmoji = {competition: '\u{1F3C6}', rumeur: '\u{1F4AC}', resultat: '\u{1F4CA}', news: '\u{1F4F0}', manual: '\u{1F4CC}', audience: '\u{1F440}'};
-                html += '<div style="margin-top:6px;border-top:1px solid #2a2a4a;padding-top:6px;">';
-                for (const t of ctx.active_topics.slice(0, 10)) {
-                    const emoji = typeEmoji[t.type] || '\u{1F4CC}';
-                    html += '<div style="padding:2px 0 2px 10px;border-left:2px solid #2a2a4a;font-size:0.9em;">' + emoji + ' ' + escHtml(t.text) + '</div>';
-                }
-                if (ctx.boosted_clips_count > 0) {
-                    html += '<div style="margin-top:4px;color:#7c7;font-size:0.85em;">\u2713 ' + ctx.boosted_clips_count + ' clip' + (ctx.boosted_clips_count > 1 ? 's' : '') + ' boost\u00e9' + (ctx.boosted_clips_count > 1 ? 's' : '') + '</div>';
-                }
-                html += '</div>';
-            }
+            // Topics actifs retires — pas utile pour Silixio
 
             if (!html) {
                 // Pas de veille dispo — cache le bouton
@@ -1859,24 +1846,7 @@
                 sections.push(s);
             }
 
-            // Section 2 : topics actifs (compétitions, résultats, rumeurs — PAS tweets ni YT)
-            const ctx = MANIFEST.context_summary;
-            if (ctx && ctx.active_topics && ctx.active_topics.length > 0) {
-                const typeEmoji = {competition: '\u{1F3C6}', rumeur: '\u{1F4AC}', resultat: '\u{1F4CA}', news: '\u{1F4F0}', manual: '\u{1F4CC}', audience: '\u{1F440}'};
-                let s = '<div class="bm-section">';
-                s += '<div class="bm-section-title">&#128270; Topics actifs</div>';
-                for (const t of ctx.active_topics) {
-                    const emoji = typeEmoji[t.type] || '\u{1F4CC}';
-                    s += '<div class="bm-topic">' + emoji + ' ' + escHtml(t.text);
-                    if (t.boost && t.boost > 1) s += ' <span style="color:#555;font-size:0.85em;">\u00d7' + t.boost + '</span>';
-                    s += '</div>';
-                }
-                if (ctx.boosted_clips_count > 0) {
-                    s += '<div style="margin-top:6px;color:#2ecc71;font-size:0.85em;">\u2713 ' + ctx.boosted_clips_count + ' clip' + (ctx.boosted_clips_count > 1 ? 's' : '') + ' boost\u00e9' + (ctx.boosted_clips_count > 1 ? 's' : '') + '</div>';
-                }
-                s += '</div>';
-                sections.push(s);
-            }
+            // Section 2 : topics actifs retires — pas utile pour Silixio
 
             // Section 3 : Résumé de la session (calculé dynamiquement depuis ALL_CLIPS)
             if (ALL_CLIPS && ALL_CLIPS.length > 0) {
