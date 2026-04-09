@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clips Silixio — Review Tinder</title>
-    <meta name="theme-color" content="#0a0a1a">
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-    <link rel="shortcut icon" href="./favicon.svg">
-    <link rel="apple-touch-icon" href="./favicon.svg">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -800,6 +796,11 @@
         <button class="veille-toggle-btn" id="storiesToggleBtn" onclick="toggleStories()" style="display:none;">&#128214; Stories <span id="storiesCount"></span></button>
         <button class="export-btn" onclick="exportFeedback()">Exporter feedback</button>
         <span id="driveUploadStatus" style="font-size:0.75em;color:#555;margin-left:8px"></span>
+        <!-- Fix 2026-04-09 : indicateur clips masques apres export + toggle restore -->
+        <span id="hiddenClipsInfo" style="font-size:0.75em;color:#888;margin-left:12px;display:none;">
+            <span id="hiddenClipsCount">0</span> clips masqués
+            <button class="veille-toggle-btn" onclick="restoreHiddenClips()" style="margin-left:6px;padding:2px 8px;font-size:0.9em;">Réafficher</button>
+        </span>
     </div>
 
     <!-- Sprint 51 : DATE PICKER multi-jours -->
@@ -963,6 +964,8 @@
         let currentIndex = 0;
         let useIframe = false;
         let iframeTimer = null;   // Bug 3 : timeout handle
+        // Fix 2026-04-09 : clips masques apres export (Silixio trie par lots)
+        let exportedClips = {};   // { filename: true } — clips deja exportes, masques du tri
 
         // === SESSION TIMER STATE (Sprint 58) ===
         let timerInterval    = null;  // setInterval handle (display refresh)
@@ -983,6 +986,7 @@
                     currentIndex,
                     feedback,
                     chatFlags,
+                    exportedClips, // Fix 2026-04-09 : persiste les clips masques apres export
                 }));
             } catch (e) {
                 console.warn('localStorage save failed:', e);
@@ -996,6 +1000,7 @@
                 const saved = JSON.parse(raw);
                 if (saved.feedback)   feedback   = saved.feedback;
                 if (saved.chatFlags)  chatFlags  = saved.chatFlags;
+                if (saved.exportedClips) exportedClips = saved.exportedClips; // Fix 2026-04-09
                 if (typeof saved.currentIndex === 'number' && saved.currentIndex < TOTAL) {
                     currentIndex = saved.currentIndex;
                 }
@@ -1075,6 +1080,7 @@
             currentIndex = 0;
             feedback = {};
             chatFlags = {};
+            exportedClips = {}; // Fix 2026-04-09 : reset puis restore depuis localStorage
 
             if (!MANIFEST.clips || MANIFEST.clips.length === 0) {
                 showMessage(
@@ -1085,14 +1091,24 @@
             }
 
             ALL_CLIPS = MANIFEST.clips;
-            CLIPS = [...ALL_CLIPS];
+
+            // Bug 1 : restaurer la progression sauvegardee (clee par date — pas de reset si meme jour)
+            // Fix 2026-04-09 : restoreProgress doit etre appele AVANT le filtrage pour recuperer exportedClips
+            restoreProgress();
+
+            // Fix 2026-04-09 : filtre les clips deja exportes (Silixio en a deja trie une partie)
+            CLIPS = ALL_CLIPS.filter(c => !exportedClips[c.filename]);
             TOTAL = CLIPS.length;
             useIframe = MANIFEST.use_iframe || false;
+
+            // Valide l'index restaure apres le filtrage
+            if (currentIndex >= TOTAL) currentIndex = 0;
 
             // UI
             document.getElementById('pageTitle').textContent = 'Clips du ' + (MANIFEST.date || '?');
             document.getElementById('totalNum').textContent = TOTAL;
             document.getElementById('statPending').textContent = TOTAL;
+            updateHiddenClipsIndicator();
 
             buildMinimap();
             buildStreamerFilter();
@@ -1105,9 +1121,6 @@
             renderStories();
             // Sprint 50 : initialise le script best-of (ferme par defaut)
             renderBestofScript();
-
-            // Bug 1 : restaurer la progression sauvegardee (clee par date — pas de reset si meme jour)
-            restoreProgress();
 
             // Sprint 58 : reset + démarrage du chrono pour cette session
             resetSessionTimer();
@@ -1546,9 +1559,12 @@
             } else {
                 CLIPS = [...ALL_CLIPS];
             }
+            // Fix 2026-04-09 : retire aussi les clips deja exportes du filtre streamer
+            CLIPS = CLIPS.filter(c => !exportedClips[c.filename]);
             TOTAL = CLIPS.length;
             currentIndex = 0;
-            feedback = {};  // reset feedback on filter change
+            // Fix 2026-04-09 : NE PAS reset feedback (sinon les clips notes redeviennent "pas notes"
+            // et ne peuvent plus etre masques lors du prochain export)
             document.getElementById('totalNum').textContent = TOTAL;
             buildMinimap();
             updateStats();
@@ -2107,6 +2123,89 @@
             if (APPS_SCRIPT_URL) {
                 uploadFeedbackToDrive(data, filename);
             }
+
+            // Fix 2026-04-09 : demande si on masque les clips notes (permet a Silixio
+            // de trier en plusieurs pauses : exporte 100 clips → ne voit plus que les 200 restants)
+            hideRatedClipsAfterExport();
+        }
+
+        // Fix 2026-04-09 : masque les clips notes apres un export (Silixio trie par lots)
+        function hideRatedClipsAfterExport() {
+            const ratedFilenames = Object.keys(feedback).filter(fn => feedback[fn]);
+            if (ratedFilenames.length === 0) {
+                alert('Aucun clip note — rien a masquer.\nNotez des clips avant d\u0027exporter.');
+                return;
+            }
+
+            const n = ratedFilenames.length;
+            const remaining = CLIPS.filter(c => !feedback[c.filename]).length;
+            const msg = `${n} clip(s) note(s) exporte(s).\n\n` +
+                        `Voulez-vous les masquer du tri pour ne plus voir que les ${remaining} clips restants ?\n\n` +
+                        `(Ils restent accessibles via "Reafficher" en haut a droite.)`;
+            if (!confirm(msg)) return;
+
+            // Marque chaque clip note comme exporte
+            ratedFilenames.forEach(fn => { exportedClips[fn] = true; });
+
+            // Retire les clips exportes de la vue courante
+            const currentFilename = CLIPS[currentIndex] ? CLIPS[currentIndex].filename : null;
+            CLIPS = ALL_CLIPS.filter(c => !exportedClips[c.filename]);
+            TOTAL = CLIPS.length;
+
+            // Repositionne currentIndex sur le prochain clip restant (ou 0 si la liste est vide)
+            if (TOTAL === 0) {
+                currentIndex = 0;
+                showMessage(
+                    'Tous les clips sont traites !',
+                    'Vous avez note et exporte tous les clips du jour. Bien joue !'
+                );
+                saveProgress();
+                updateHiddenClipsIndicator();
+                return;
+            }
+            // Essaie de retrouver le clip courant, sinon avance au suivant
+            const newIdx = currentFilename ? CLIPS.findIndex(c => c.filename === currentFilename) : -1;
+            currentIndex = newIdx >= 0 ? newIdx : 0;
+
+            // Refresh UI
+            document.getElementById('totalNum').textContent = TOTAL;
+            buildMinimap();
+            updateStats();
+            updateHiddenClipsIndicator();
+            loadClip(currentIndex);
+            saveProgress();
+        }
+
+        // Fix 2026-04-09 : affiche le nombre de clips masques + bouton Reafficher
+        function updateHiddenClipsIndicator() {
+            const hiddenCount = Object.keys(exportedClips).filter(fn => exportedClips[fn]).length;
+            const el = document.getElementById('hiddenClipsInfo');
+            if (!el) return;
+            if (hiddenCount > 0) {
+                el.style.display = 'inline';
+                document.getElementById('hiddenClipsCount').textContent = hiddenCount;
+            } else {
+                el.style.display = 'none';
+            }
+        }
+
+        // Fix 2026-04-09 : reaffiche les clips masques (si Silixio veut en revoir un)
+        function restoreHiddenClips() {
+            const hiddenCount = Object.keys(exportedClips).filter(fn => exportedClips[fn]).length;
+            if (hiddenCount === 0) return;
+            if (!confirm(`Reafficher les ${hiddenCount} clip(s) masque(s) ?`)) return;
+
+            exportedClips = {};
+            CLIPS = [...ALL_CLIPS];
+            TOTAL = CLIPS.length;
+            currentIndex = 0;
+
+            document.getElementById('totalNum').textContent = TOTAL;
+            buildMinimap();
+            updateStats();
+            updateHiddenClipsIndicator();
+            loadClip(0);
+            saveProgress();
         }
 
         async function uploadFeedbackToDrive(data, filename) {
