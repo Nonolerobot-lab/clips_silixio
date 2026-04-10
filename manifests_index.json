@@ -11,8 +11,16 @@
     },
     {
       "date": "2026-04-07",
-      "total_clips": 0,
-      "streamers": []
+      "total_clips": 121,
+      "streamers": [
+        "jolavanille",
+        "leothecrack",
+        "nikof",
+        "skite",
+        "wazz",
+        "clix",
+        "community"
+      ]
     }
   ],
   "latest": "2026-04-09"
