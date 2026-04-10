@@ -148,6 +148,89 @@
             aspect-ratio: 16/9;
             border: none;
         }
+        .peak-guide {
+            position: absolute;
+            left: 18px;
+            right: 18px;
+            bottom: 56px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: rgba(8, 8, 20, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            z-index: 5;
+            display: none;
+            gap: 8px;
+            flex-direction: column;
+        }
+        .peak-guide.show { display: flex; }
+        .peak-guide-track {
+            position: relative;
+            height: 6px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+        }
+        .peak-guide-entry,
+        .peak-guide-marker {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 999px;
+        }
+        .peak-guide-entry {
+            width: 10px;
+            height: 10px;
+            background: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.16);
+            display: none;
+        }
+        .peak-guide-marker {
+            width: 12px;
+            height: 12px;
+            background: #f1c40f;
+            box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.18);
+        }
+        .peak-guide-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .peak-guide-text {
+            color: #d7d7dd;
+            font-size: 0.82em;
+            line-height: 1.35;
+        }
+        .peak-guide-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .peak-guide-btn {
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.06);
+            color: #f3f3f6;
+            cursor: pointer;
+            font-size: 0.78em;
+            transition: all 0.15s;
+        }
+        .peak-guide-btn:hover { border-color: #f1c40f; color: #fff; }
+        .peak-guide-btn.entry:hover { border-color: #3498db; }
+        .peak-guide-btn:disabled {
+            opacity: 0.45;
+            cursor: default;
+        }
+        .clip-info-overlay .peak-meta {
+            color: #c9c9d1;
+            font-size: 0.8em;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+        .clip-info-overlay .peak-meta strong { color: #f1c40f; }
 
         /* === IFRAME FALLBACK (Bug 3) === */
         .iframe-fallback {
@@ -235,17 +318,13 @@
             border-radius: 10px;
         }
 
-        /* === CLIP INFO OVERLAY === */
+        /* === CLIP INFO (sous la vidéo, dans le bottom panel) === */
         .clip-info-overlay {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0,0,0,0.7);
-            padding: 8px 14px;
+            background: rgba(0,0,0,0.4);
+            padding: 6px 14px;
             border-radius: 8px;
             font-size: 0.8em;
-            backdrop-filter: blur(10px);
-            pointer-events: none;
+            margin-bottom: 6px;
         }
         .clip-info-overlay .timestamp { color: #3498db; font-family: monospace; font-size: 1.1em; }
         .clip-info-overlay .score { color: #2ecc71; font-weight: bold; margin-left: 10px; }
@@ -861,8 +940,20 @@
                     </div>
                 </div>
 
-                <div class="clip-info-overlay" id="clipInfo"></div>
                 <div class="current-feedback" id="currentFeedback"></div>
+                <div class="peak-guide" id="peakGuide">
+                    <div class="peak-guide-track">
+                        <div class="peak-guide-entry" id="peakGuideEntry"></div>
+                        <div class="peak-guide-marker" id="peakGuideMarker"></div>
+                    </div>
+                    <div class="peak-guide-meta">
+                        <div class="peak-guide-text" id="peakGuideText"></div>
+                        <div class="peak-guide-actions">
+                            <button class="peak-guide-btn entry" id="peakEntryBtn" onclick="jumpToEntrySuggestion()">Entrée suggérée</button>
+                            <button class="peak-guide-btn" id="peakJumpBtn" onclick="jumpToPeak()">Aller au pic</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Chat video panel — visible par defaut si disponible -->
@@ -894,6 +985,7 @@
 
     <!-- BOTTOM -->
     <div class="bottom-panel" id="bottomPanel">
+        <div class="clip-info-overlay" id="clipInfo"></div>
         <!-- 5 boutons de feedback -->
         <div class="feedback-row">
             <button class="fb-btn fb-top" onclick="rate('top')">
@@ -974,6 +1066,73 @@
         let inactivityHandle = null;  // setTimeout handle (60s → pause)
         let clipStartActiveMs = null; // snapshot getActiveMs() au début du clip courant
         let clipTimes        = [];    // temps actif par clip, en secondes
+
+        // Sprint 60 : formatte une date ISO "YYYY-MM-DD" en francais lisible
+        // "2026-04-08" -> "8 avril 2026"
+        function formatDateFR(isoDate) {
+            if (!isoDate) return '?';
+            try {
+                const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(isoDate);
+                if (!m) return isoDate;
+                const year = parseInt(m[1], 10);
+                const month = parseInt(m[2], 10) - 1;
+                const day = parseInt(m[3], 10);
+                const dt = new Date(year, month, day);
+                return dt.toLocaleDateString('fr-FR', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                });
+            } catch (e) {
+                return isoDate;
+            }
+        }
+
+        function getClipStateKey(clip) {
+            if (!clip) return '';
+            if (clip.feedback_key) return clip.feedback_key;
+            if (clip.clip_id) return clip.clip_id;
+            const streamer = (clip.streamer || 'unknown').toLowerCase();
+            return streamer + '::' + (clip.filename || '');
+        }
+
+        function getClipRef(clip) {
+            if (!clip) return '';
+            return clip.clip_id || clip.feedback_key || clip.filename || '';
+        }
+
+        function isCommunityClip(clip) {
+            const sourceType = String((clip && clip.source_type) || '');
+            return sourceType === 'community' || sourceType.startsWith('community_');
+        }
+
+        function remapStateKeys(state, keyMap) {
+            const out = {};
+            Object.entries(state || {}).forEach(([key, value]) => {
+                out[keyMap[key] || key] = value;
+            });
+            return out;
+        }
+
+        function migrateLegacyStateKeys() {
+            const keyMap = {};
+            const perFilename = {};
+            ALL_CLIPS.forEach(clip => {
+                const filename = clip.filename || '';
+                if (!filename) return;
+                if (!perFilename[filename]) perFilename[filename] = [];
+                perFilename[filename].push(getClipStateKey(clip));
+            });
+            Object.entries(perFilename).forEach(([filename, keys]) => {
+                if (keys.length === 1) keyMap[filename] = keys[0];
+            });
+            feedback = remapStateKeys(feedback, keyMap);
+            chatFlags = remapStateKeys(chatFlags, keyMap);
+            exportedClips = remapStateKeys(exportedClips, keyMap);
+            if (window.badFramingDetails) {
+                window.badFramingDetails = remapStateKeys(window.badFramingDetails, keyMap);
+            }
+        }
 
         // === LOCALSTORAGE HELPERS (Bug 1) ===
         function lsKey() {
@@ -1090,22 +1249,27 @@
                 return;
             }
 
-            ALL_CLIPS = MANIFEST.clips;
+            ALL_CLIPS = (MANIFEST.clips || []).map(clip => {
+                const normalized = Object.assign({}, clip);
+                normalized.feedback_key = getClipStateKey(normalized);
+                return normalized;
+            });
 
             // Bug 1 : restaurer la progression sauvegardee (clee par date — pas de reset si meme jour)
             // Fix 2026-04-09 : restoreProgress doit etre appele AVANT le filtrage pour recuperer exportedClips
             restoreProgress();
+            migrateLegacyStateKeys();
 
             // Fix 2026-04-09 : filtre les clips deja exportes (Silixio en a deja trie une partie)
-            CLIPS = ALL_CLIPS.filter(c => !exportedClips[c.filename]);
+            CLIPS = ALL_CLIPS.filter(c => !exportedClips[getClipStateKey(c)]);
             TOTAL = CLIPS.length;
             useIframe = MANIFEST.use_iframe || false;
 
             // Valide l'index restaure apres le filtrage
             if (currentIndex >= TOTAL) currentIndex = 0;
 
-            // UI
-            document.getElementById('pageTitle').textContent = 'Clips du ' + (MANIFEST.date || '?');
+            // UI — Sprint 60 : affichage en francais "Clips du 8 avril 2026"
+            document.getElementById('pageTitle').textContent = 'Clips du ' + formatDateFR(MANIFEST.date);
             document.getElementById('totalNum').textContent = TOTAL;
             document.getElementById('statPending').textContent = TOTAL;
             updateHiddenClipsIndicator();
@@ -1135,6 +1299,86 @@
             ms.classList.add('show');
             document.getElementById('messageTitle').textContent = title;
             document.getElementById('messageText').textContent = text;
+        }
+
+        function formatClipOffset(sec) {
+            const total = Math.max(0, Math.round(Number(sec || 0)));
+            const m = Math.floor(total / 60);
+            const s = String(total % 60).padStart(2, '0');
+            return m + ':' + s;
+        }
+
+        function seekPlayerToClipOffset(sec) {
+            const player = document.getElementById('player');
+            if (!player || player.tagName !== 'VIDEO') return false;
+            const target = Math.max(0, Number(sec || 0));
+            try {
+                player.currentTime = target;
+                player.play().catch(() => {});
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function updatePeakGuide(clip) {
+            const guide = document.getElementById('peakGuide');
+            const marker = document.getElementById('peakGuideMarker');
+            const entry = document.getElementById('peakGuideEntry');
+            const text = document.getElementById('peakGuideText');
+            const peakBtn = document.getElementById('peakJumpBtn');
+            const entryBtn = document.getElementById('peakEntryBtn');
+
+            if (!guide || !marker || !entry || !text || !peakBtn || !entryBtn) return;
+
+            const duration = Number(clip.clip_duration || clip.duration || 0);
+            const peak = Number(clip.peak_in_clip_sec);
+            const entrySuggestion = clip.entry_suggestion_sec;
+            const hasMarker = !!clip.has_peak_marker && duration > 0 && Number.isFinite(peak);
+
+            if (!hasMarker) {
+                guide.classList.remove('show');
+                return;
+            }
+
+            const clampPct = (value) => Math.max(0, Math.min(100, (value / duration) * 100));
+            marker.style.left = clampPct(peak) + '%';
+            const hasEntry = clip.peak_strategy === 'action' && entrySuggestion !== null && entrySuggestion !== undefined;
+            entry.style.display = hasEntry ? 'block' : 'none';
+            if (hasEntry) {
+                entry.style.left = clampPct(Number(entrySuggestion)) + '%';
+            }
+
+            const player = document.getElementById('player');
+            const canSeek = !!(player && player.tagName === 'VIDEO');
+            peakBtn.disabled = !canSeek;
+            entryBtn.disabled = !canSeek;
+            entryBtn.style.display = hasEntry ? '' : 'none';
+
+            let summary = '<strong>Pic</strong> à ' + formatClipOffset(peak);
+            if (hasEntry) {
+                summary += ' · entrée suggérée ' + formatClipOffset(entrySuggestion);
+            } else {
+                summary += ' · repère visuel';
+            }
+            if (!canSeek) {
+                summary += ' · saut précis indisponible sur ce lecteur';
+            }
+
+            text.innerHTML = summary;
+            guide.classList.add('show');
+        }
+
+        function jumpToPeak() {
+            const clip = CLIPS[currentIndex];
+            if (!clip || clip.peak_in_clip_sec === undefined || clip.peak_in_clip_sec === null) return;
+            seekPlayerToClipOffset(clip.peak_in_clip_sec);
+        }
+
+        function jumpToEntrySuggestion() {
+            const clip = CLIPS[currentIndex];
+            if (!clip || clip.entry_suggestion_sec === undefined || clip.entry_suggestion_sec === null) return;
+            seekPlayerToClipOffset(clip.entry_suggestion_sec);
         }
 
         // === CORE ===
@@ -1253,7 +1497,8 @@
             const chatPanel = document.getElementById('chatPanel');
             const chatPlayer = document.getElementById('chatPlayer');
             // chatFlags[filename] reste undefined/false par defaut — pas de forcage a true
-            const chatIsActive = !!(clip.chat_clip_url && chatFlags[clip.filename]);
+            const clipKey = getClipStateKey(clip);
+            const chatIsActive = !!(clip.chat_clip_url && chatFlags[clipKey]);
             if (chatIsActive) {
                 _setChatIframe(chatPlayer, clip.chat_clip_url, clip.chat_video_url);
                 chatPanel.classList.remove('hidden', 'no-chat');
@@ -1297,19 +1542,24 @@
             if (clip.lane && laneCfg[clip.lane]) {
                 infoHtml += '<span class="lane-badge ' + laneCfg[clip.lane] + '">' + escHtml(clip.lane) + '</span>';
             }
-            // Sprint 59 : badge source (COMMU = clip communautaire, sinon streamer normal)
-            if (clip.source_type === 'community') {
+            // Sprint 59 : badge source (COMMU PRO/OWN = clip communautaire, sinon streamer normal)
+            if (isCommunityClip(clip)) {
                 const communityPseudo = clip.contributor_pseudo ? ' · ' + escHtml(clip.contributor_pseudo) : '';
                 const communitycat    = clip.community_categorie ? ' <span style="color:#888;font-size:0.9em">(' + escHtml(clip.community_categorie) + ')</span>' : '';
+                const communityType = String(clip.community_type || 'pro').toUpperCase();
+                const sourceStreamer = clip.community_source_streamer ? ' · ' + escHtml(clip.community_source_streamer) : '';
+                const followerText = clip.community_source_followers ? ' (' + Math.round(clip.community_source_followers).toLocaleString('fr-FR') + ' followers)' : '';
                 infoHtml += '<div style="margin-top:3px;">'
-                          + '<span style="background:rgba(155,89,182,0.2);color:#9b59b6;border:1px solid #9b59b644;padding:1px 7px;border-radius:4px;font-size:0.75em;font-weight:700;letter-spacing:0.04em;margin-right:6px;">COMMU</span>'
-                          + '<span style="color:#9b59b6;font-size:0.85em;">' + communityPseudo + communitycat + '</span>'
+                          + '<span style="background:rgba(155,89,182,0.2);color:#9b59b6;border:1px solid #9b59b644;padding:1px 7px;border-radius:4px;font-size:0.75em;font-weight:700;letter-spacing:0.04em;margin-right:6px;">COMMU ' + escHtml(communityType) + '</span>'
+                          + '<span style="color:#9b59b6;font-size:0.85em;">' + communityPseudo + communitycat + sourceStreamer + followerText + '</span>'
                           + '</div>';
             } else if (clip.streamer) {
                 infoHtml += '<div style="color:#9b59b6;font-size:0.85em;margin-top:2px;">' + escHtml(clip.streamer) + '</div>';
             }
             if (clip.ai_summary) infoHtml += '<div class="text">' + escHtml(clip.ai_summary) + '</div>';
             else if (clip.text) infoHtml += '<div class="text">"' + escHtml(clip.text.substring(0, 120)) + '"</div>';
+            const peakHintHtml = buildPeakHint(clip);
+            if (peakHintHtml) infoHtml += '<div class="peak-meta">' + peakHintHtml + '</div>';
             // Sprint 57 : explication lisible (remplace score_explanation monospace)
             const whyHtml = buildClipExplanation(clip);
             if (whyHtml) infoHtml += '<div class="why">' + whyHtml + '</div>';
@@ -1318,6 +1568,7 @@
             // Sprint 42 : contexte editorial
             if (clip.editorial_context) infoHtml += '<div style="color:#f39c12;font-size:0.8em;margin-top:2px;">&#128240; ' + escHtml(clip.editorial_context) + '</div>';
             document.getElementById('clipInfo').innerHTML = infoHtml;
+            updatePeakGuide(clip);
 
             // Counter
             document.getElementById('currentNum').textContent = idx + 1;
@@ -1329,7 +1580,7 @@
             document.getElementById('btnPrev').disabled = (idx === 0);
 
             // Feedback badge
-            updateCurrentFeedback(clip.filename);
+            updateCurrentFeedback(clipKey);
 
             // Chat toggle button state
             const chatToggle = document.getElementById('chatToggle');
@@ -1338,11 +1589,11 @@
                 chatToggle.classList.remove('active');
             } else {
                 chatToggle.classList.remove('disabled');
-                chatToggle.classList.toggle('active', !!chatFlags[clip.filename]);
+                chatToggle.classList.toggle('active', !!chatFlags[clipKey]);
             }
 
             // Feedback button highlight
-            highlightFeedbackBtn(feedback[clip.filename]);
+            highlightFeedbackBtn(feedback[clipKey]);
 
             updateMinimap();
             updateStats();
@@ -1353,16 +1604,17 @@
 
         function rate(value) {
             const clip = CLIPS[currentIndex];
-            const prev = feedback[clip.filename];
+            const clipKey = getClipStateKey(clip);
+            const prev = feedback[clipKey];
 
             if (prev === value) {
-                delete feedback[clip.filename];
+                delete feedback[clipKey];
             } else {
-                feedback[clip.filename] = value;
+                feedback[clipKey] = value;
             }
 
-            updateCurrentFeedback(clip.filename);
-            highlightFeedbackBtn(feedback[clip.filename]);
+            updateCurrentFeedback(clipKey);
+            highlightFeedbackBtn(feedback[clipKey]);
             updateMinimap();
             updateStats();
 
@@ -1370,7 +1622,7 @@
             saveProgress();
 
             // Auto-avance apres 400ms
-            if (feedback[clip.filename]) {
+            if (feedback[clipKey]) {
                 setTimeout(() => {
                     if (currentIndex < TOTAL - 1) {
                         navigate(1);
@@ -1441,12 +1693,13 @@
             const clip = CLIPS[currentIndex];
             if (!clip.chat_clip_url) return;
 
-            chatFlags[clip.filename] = !chatFlags[clip.filename];
-            document.getElementById('chatToggle').classList.toggle('active', chatFlags[clip.filename]);
+            const clipKey = getClipStateKey(clip);
+            chatFlags[clipKey] = !chatFlags[clipKey];
+            document.getElementById('chatToggle').classList.toggle('active', chatFlags[clipKey]);
 
             const chatPanel = document.getElementById('chatPanel');
             const chatPlayer = document.getElementById('chatPlayer');
-            if (chatFlags[clip.filename]) {
+            if (chatFlags[clipKey]) {
                 _setChatIframe(chatPlayer, clip.chat_clip_url, clip.chat_video_url);
                 chatPanel.classList.remove('hidden');
             } else {
@@ -1477,7 +1730,7 @@
         function downloadClip() {
             const clip = CLIPS[currentIndex];
             if (clip.drive_url) {
-                downloads[clip.filename] = true;
+                downloads[getClipStateKey(clip)] = true;
                 triggerDownload(clip.drive_url, clip.filename);
             }
         }
@@ -1493,9 +1746,9 @@
             duplicate:       '&#128257; Doublon',
         };
 
-        function updateCurrentFeedback(filename) {
+        function updateCurrentFeedback(feedbackKey) {
             const el = document.getElementById('currentFeedback');
-            const fb = feedback[filename];
+            const fb = feedback[feedbackKey];
             el.className = 'current-feedback';
             if (fb) {
                 el.innerHTML = VERDICT_LABELS[fb] || fb;
@@ -1532,8 +1785,10 @@
         let ALL_CLIPS = [];  // copie originale non filtree
         function buildStreamerFilter() {
             const sel = document.getElementById('streamerFilter');
+            const currentValue = sel.value;
+            sel.innerHTML = '<option value="">Tous les streamers</option>';
             // Streamers normaux
-            const streamers = [...new Set(ALL_CLIPS.filter(c => c.source_type !== 'community').map(c => c.streamer).filter(Boolean))].sort();
+            const streamers = [...new Set(ALL_CLIPS.filter(c => !isCommunityClip(c)).map(c => c.streamer).filter(Boolean))].sort();
             streamers.forEach(s => {
                 const n = ALL_CLIPS.filter(c => c.streamer === s).length;
                 const opt = document.createElement('option');
@@ -1542,25 +1797,28 @@
                 sel.appendChild(opt);
             });
             // Sprint 59 : option clips communautaires si présents
-            const nCommu = ALL_CLIPS.filter(c => c.source_type === 'community').length;
+            const nCommu = ALL_CLIPS.filter(c => isCommunityClip(c)).length;
             if (nCommu > 0) {
                 const opt = document.createElement('option');
                 opt.value = '__community__';
                 opt.textContent = '🟣 Clips communautaires (' + nCommu + ')';
                 sel.appendChild(opt);
             }
+            if ([...sel.options].some(opt => opt.value === currentValue)) {
+                sel.value = currentValue;
+            }
         }
         function filterByStreamer() {
             const val = document.getElementById('streamerFilter').value;
             if (val === '__community__') {
-                CLIPS = ALL_CLIPS.filter(c => c.source_type === 'community');
+                CLIPS = ALL_CLIPS.filter(c => isCommunityClip(c));
             } else if (val) {
                 CLIPS = ALL_CLIPS.filter(c => c.streamer === val);
             } else {
                 CLIPS = [...ALL_CLIPS];
             }
             // Fix 2026-04-09 : retire aussi les clips deja exportes du filtre streamer
-            CLIPS = CLIPS.filter(c => !exportedClips[c.filename]);
+            CLIPS = CLIPS.filter(c => !exportedClips[getClipStateKey(c)]);
             TOTAL = CLIPS.length;
             currentIndex = 0;
             // Fix 2026-04-09 : NE PAS reset feedback (sinon les clips notes redeviennent "pas notes"
@@ -1596,12 +1854,13 @@
         }
         function rateBadFraming(subtype) {
             const clip = CLIPS[currentIndex];
-            feedback[clip.filename] = 'bad_framing';
+            const clipKey = getClipStateKey(clip);
+            feedback[clipKey] = 'bad_framing';
             // Stocke la sous-categorie dans un objet separe
             if (!window.badFramingDetails) window.badFramingDetails = {};
-            window.badFramingDetails[clip.filename] = subtype;
+            window.badFramingDetails[clipKey] = subtype;
             closeBadFramingMenu();
-            updateCurrentFeedback(clip.filename);
+            updateCurrentFeedback(clipKey);
             highlightFeedbackBtn('bad_framing');
             updateMinimap();
             updateStats();
@@ -1780,7 +2039,7 @@
                 if (s.narrative_angle) html += '<div style="font-size:0.85em;color:#999;margin-bottom:6px;">' + escHtml(s.narrative_angle) + '</div>';
                 html += '<div class="story-clips">';
                 for (const c of (s.clips || [])) {
-                    html += '<span class="story-clip-tag" onclick="navigateToStoryClip(\'' + escHtml(c.filename || '') + '\')">';
+                    html += '<span class="story-clip-tag" onclick="navigateToStoryClip(\'' + escHtml(c.clip_id || c.feedback_key || c.filename || '') + '\')">';
                     html += escHtml(c.streamer || '?') + ' ' + escHtml(c.timestamp || '');
                     html += '</span>';
                 }
@@ -1801,8 +2060,10 @@
             }
         }
 
-        function navigateToStoryClip(filename) {
-            const idx = CLIPS.findIndex(c => c.filename === filename);
+        function navigateToStoryClip(clipRef) {
+            const idx = CLIPS.findIndex(c =>
+                c.clip_id === clipRef || c.feedback_key === clipRef || c.filename === clipRef
+            );
             if (idx >= 0) loadClip(idx);
         }
 
@@ -1991,7 +2252,7 @@
             const dots = document.querySelectorAll('.minimap .dot');
             dots.forEach((dot, i) => {
                 dot.className = 'dot';
-                const fb = feedback[CLIPS[i].filename];
+                const fb = feedback[getClipStateKey(CLIPS[i])];
                 if (fb) dot.classList.add('fb-' + fb);
                 if (i === currentIndex) dot.classList.add('current');
             });
@@ -2021,7 +2282,7 @@
             let sourceStats = '';
             const sourceMap = {};
             ALL_CLIPS.forEach(clip => {
-                const fb = feedback[clip.filename];
+                const fb = feedback[getClipStateKey(clip)];
                 if (!fb) return;
                 const isGood = (fb === 'top' || fb === 'good');
                 (clip.sources || []).forEach(src => {
@@ -2071,24 +2332,33 @@
                 },
             };
             CLIPS.forEach(clip => {
-                const fb = feedback[clip.filename] || null;
+                const clipKey = getClipStateKey(clip);
+                const fb = feedback[clipKey] || null;
                 // Stocker le verdict + ai_category pour l'auto-tune
                 let displayedLabel = fb ? (VERDICT_LABELS[fb] || fb) : null;
-                data.feedback[clip.filename] = {
+                data.feedback[clipKey] = {
                     verdict: fb,
+                    clip_id: clip.clip_id || null,
+                    clip_file: clip.clip_file || clip.filename || null,
+                    filename: clip.filename || null,
+                    feedback_key: clipKey,
                     displayed_label: displayedLabel ? displayedLabel.replace(/&#\d+;|\u[0-9a-f]{4}/gi, '').trim() : null,
-                    bad_framing_detail: (window.badFramingDetails || {})[clip.filename] || null,
+                    bad_framing_detail: (window.badFramingDetails || {})[clipKey] || null,
                     score: clip.score || null,
                     sources: clip.sources || [],
                     ai_category: clip.ai_category || null,
                     ai_summary: clip.ai_summary || null,
                     timestamp: clip.timestamp || null,
                     streamer: clip.streamer || null,
+                    clip_duration_sec: clip.clip_duration || clip.duration || null,
+                    peak_in_clip_sec: clip.peak_in_clip_sec ?? null,
+                    peak_strategy: clip.peak_strategy || null,
+                    entry_suggestion_sec: clip.entry_suggestion_sec ?? null,
                 };
                 if (fb) data.summary[fb] = (data.summary[fb] || 0) + 1;
                 else data.summary.not_rated++;
-                if (chatFlags[clip.filename]) data.chat_requests[clip.filename] = true;
-                if (downloads[clip.filename]) data.downloads[clip.filename] = true;
+                if (chatFlags[clipKey]) data.chat_requests[clipKey] = true;
+                if (downloads[clipKey]) data.downloads[clipKey] = true;
             });
             return data;
         }
@@ -2138,7 +2408,7 @@
             }
 
             const n = ratedFilenames.length;
-            const remaining = CLIPS.filter(c => !feedback[c.filename]).length;
+            const remaining = CLIPS.filter(c => !feedback[getClipStateKey(c)]).length;
             const msg = `${n} clip(s) note(s) exporte(s).\n\n` +
                         `Voulez-vous les masquer du tri pour ne plus voir que les ${remaining} clips restants ?\n\n` +
                         `(Ils restent accessibles via "Reafficher" en haut a droite.)`;
@@ -2148,8 +2418,8 @@
             ratedFilenames.forEach(fn => { exportedClips[fn] = true; });
 
             // Retire les clips exportes de la vue courante
-            const currentFilename = CLIPS[currentIndex] ? CLIPS[currentIndex].filename : null;
-            CLIPS = ALL_CLIPS.filter(c => !exportedClips[c.filename]);
+            const currentFilename = CLIPS[currentIndex] ? getClipStateKey(CLIPS[currentIndex]) : null;
+            CLIPS = ALL_CLIPS.filter(c => !exportedClips[getClipStateKey(c)]);
             TOTAL = CLIPS.length;
 
             // Repositionne currentIndex sur le prochain clip restant (ou 0 si la liste est vide)
@@ -2164,7 +2434,7 @@
                 return;
             }
             // Essaie de retrouver le clip courant, sinon avance au suivant
-            const newIdx = currentFilename ? CLIPS.findIndex(c => c.filename === currentFilename) : -1;
+            const newIdx = currentFilename ? CLIPS.findIndex(c => getClipStateKey(c) === currentFilename) : -1;
             currentIndex = newIdx >= 0 ? newIdx : 0;
 
             // Refresh UI
@@ -2230,6 +2500,22 @@
         // === Sprint 57 : EXPLICATION LISIBLE DU CLIP ===
         // Construit une phrase de sélection à partir des métadonnées disponibles.
         // Priorité : clip.why (pipeline) → parse score_explanation → sources brutes.
+        function buildPeakHint(clip) {
+            const hasMarker = !!clip.has_peak_marker;
+            const peak = clip.peak_in_clip_sec;
+            if (!hasMarker || peak === undefined || peak === null) return null;
+
+            let txt = '&#127919; Pic à <strong>' + escHtml(formatClipOffset(peak)) + '</strong>';
+            if (clip.peak_strategy === 'action' &&
+                    clip.entry_suggestion_sec !== undefined &&
+                    clip.entry_suggestion_sec !== null) {
+                txt += ' · entrée suggérée ' + escHtml(formatClipOffset(clip.entry_suggestion_sec));
+            } else {
+                txt += ' · clip narratif, repère seulement';
+            }
+            return txt;
+        }
+
         function buildClipExplanation(clip) {
             const srcFR = {
                 'whisper':      'transcription vocale',
@@ -2350,7 +2636,7 @@
         // avec toutes les URLs pour téléchargement groupé via outil externe (wget/aria2).
         function downloadFolder() {
             const selection = CLIPS.filter(c => {
-                const fb = feedback[c.filename];
+                const fb = feedback[getClipStateKey(c)];
                 return fb === 'top' || fb === 'good';
             });
             const targets = selection.length > 0 ? selection : CLIPS;
@@ -2381,7 +2667,7 @@
             setTimeout(() => URL.revokeObjectURL(objUrl), 1000);
 
             // Marque tous les clips comme téléchargés
-            downloadable.forEach(c => { downloads[c.filename] = true; });
+            downloadable.forEach(c => { downloads[getClipStateKey(c)] = true; });
 
             const btn = document.getElementById('dlFolderBtn');
             if (btn) {
