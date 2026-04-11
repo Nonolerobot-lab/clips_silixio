@@ -127,6 +127,18 @@
             min-height: 0;
         }
 
+        /* === MAIN COLUMN: video panel + peak guide en colonne ===
+           Sprint 60 fix : avant ce fix, .peak-guide etait position:absolute
+           bottom:56px DANS .main-video-panel — il chevauchait la timeline
+           native du player video. Solution : extraire le peak-guide du flex
+           centre et le placer en position normale SOUS la video. */
+        .main-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            gap: 8px;
+        }
         /* === MAIN VIDEO PANEL === */
         .main-video-panel {
             flex: 1;
@@ -135,6 +147,7 @@
             align-items: center;
             justify-content: center;
             min-width: 0;
+            min-height: 0;
         }
         .main-video-panel video,
         .main-video-panel iframe {
@@ -149,16 +162,13 @@
             border: none;
         }
         .peak-guide {
-            position: absolute;
-            left: 18px;
-            right: 18px;
-            bottom: 56px;
+            /* Sprint 60 fix : flow normal sous la video, plus de position absolute */
+            flex: 0 0 auto;
             padding: 10px 12px;
             border-radius: 10px;
             background: rgba(8, 8, 20, 0.82);
             border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(8px);
-            z-index: 5;
             display: none;
             gap: 8px;
             flex-direction: column;
@@ -926,21 +936,26 @@
         <!-- VIDEO WRAPPER: main video + chat panel side by side -->
         <div class="video-wrapper" id="videoWrapper">
 
-            <!-- Main video panel -->
-            <div class="main-video-panel" id="mainVideoPanel">
-                <video id="player" controls autoplay></video>
+            <!-- Main column : video + peak-guide en colonne (Sprint 60 fix) -->
+            <div class="main-column">
+                <!-- Main video panel -->
+                <div class="main-video-panel" id="mainVideoPanel">
+                    <video id="player" controls autoplay></video>
 
-                <!-- Sprint 34 : fallback ameliore — lien Drive + download + skip -->
-                <div class="iframe-fallback" id="iframeFallback">
-                    <p>&#9888; Preview lente — le clip est peut-etre en cours de traitement par Drive</p>
-                    <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;justify-content:center">
-                        <a id="fallbackDriveLink" href="#" target="_blank" style="padding:8px 16px;background:#4285f4;color:#fff;border-radius:6px;text-decoration:none">&#128279; Ouvrir dans Drive</a>
-                        <a id="fallbackDownloadLink" href="#" target="_blank" style="padding:8px 16px;background:#34a853;color:#fff;border-radius:6px;text-decoration:none">&#11015; Telecharger</a>
-                        <button class="skip-btn" onclick="navigate(1)">Passer &#8594;</button>
+                    <!-- Sprint 34 : fallback ameliore — lien Drive + download + skip -->
+                    <div class="iframe-fallback" id="iframeFallback">
+                        <p>&#9888; Preview lente — le clip est peut-etre en cours de traitement par Drive</p>
+                        <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;justify-content:center">
+                            <a id="fallbackDriveLink" href="#" target="_blank" style="padding:8px 16px;background:#4285f4;color:#fff;border-radius:6px;text-decoration:none">&#128279; Ouvrir dans Drive</a>
+                            <a id="fallbackDownloadLink" href="#" target="_blank" style="padding:8px 16px;background:#34a853;color:#fff;border-radius:6px;text-decoration:none">&#11015; Telecharger</a>
+                            <button class="skip-btn" onclick="navigate(1)">Passer &#8594;</button>
+                        </div>
                     </div>
+
+                    <div class="current-feedback" id="currentFeedback"></div>
                 </div>
 
-                <div class="current-feedback" id="currentFeedback"></div>
+                <!-- Peak guide : sous la video, plus en absolute -->
                 <div class="peak-guide" id="peakGuide">
                     <div class="peak-guide-track">
                         <div class="peak-guide-entry" id="peakGuideEntry"></div>
