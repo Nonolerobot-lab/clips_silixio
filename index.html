@@ -328,13 +328,14 @@
             border-radius: 10px;
         }
 
-        /* === CLIP INFO (sous la vidéo, dans le bottom panel) === */
+        /* === CLIP INFO (a gauche des boutons feedback dans le bottom panel) === */
         .clip-info-overlay {
             background: rgba(0,0,0,0.4);
             padding: 6px 14px;
             border-radius: 8px;
             font-size: 0.8em;
             margin-bottom: 6px;
+            min-width: 0;  /* Sprint 60 fix : autorise le shrink dans le flex parent */
         }
         .clip-info-overlay .timestamp { color: #3498db; font-family: monospace; font-size: 1.1em; }
         .clip-info-overlay .score { color: #2ecc71; font-weight: bold; margin-left: 10px; }
@@ -343,8 +344,8 @@
             border-radius: 4px; font-size: 0.85em; margin-left: 8px;
         }
         .clip-info-overlay .sources { color: #e67e22; font-size: 0.85em; margin-top: 4px; }
-        .clip-info-overlay .text { color: #aaa; font-style: italic; font-size: 0.85em; margin-top: 2px; max-width: 400px; }
-        .clip-info-overlay .why { color: #7a7aaa; font-size: 0.78em; margin-top: 3px; max-width: 420px; line-height: 1.4; }
+        .clip-info-overlay .text { color: #aaa; font-style: italic; font-size: 0.85em; margin-top: 2px; }
+        .clip-info-overlay .why { color: #7a7aaa; font-size: 0.78em; margin-top: 3px; line-height: 1.4; }
 
         /* Feedback badge */
         .current-feedback {
@@ -376,6 +377,35 @@
             border-top: 1px solid #2a2a4a;
         }
 
+        /* Sprint 60 fix : layout horizontal info clip / boutons feedback
+           pour gagner de la hauteur verticale (le bloc info prenait toute la
+           largeur en haut, ecrasant la video). */
+        .feedback-with-info {
+            display: flex;
+            gap: 14px;
+            align-items: stretch;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+        .feedback-with-info .clip-info-overlay {
+            flex: 0 1 38%;
+            min-width: 280px;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .feedback-with-info .feedback-row {
+            flex: 1 1 auto;
+            min-width: 0;
+            margin-bottom: 0;
+        }
+        @media (max-width: 900px) {
+            .feedback-with-info .clip-info-overlay {
+                flex: 1 1 100%;
+            }
+        }
+
         .feedback-row {
             display: flex;
             gap: 6px;
@@ -386,15 +416,15 @@
         /* Boutons principaux (row 1) */
         .fb-btn {
             flex: 1;
-            min-width: 90px;
-            max-width: 160px;
-            padding: 10px 8px;
+            min-width: 78px;
+            max-width: 140px;
+            padding: 10px 6px;
             border: 2px solid #333;
             background: #1a1a3a;
             color: #ccc;
             border-radius: 10px;
             cursor: pointer;
-            font-size: 0.88em;
+            font-size: 0.85em;
             font-weight: 600;
             transition: all 0.15s;
             text-align: center;
@@ -1000,27 +1030,31 @@
 
     <!-- BOTTOM -->
     <div class="bottom-panel" id="bottomPanel">
-        <div class="clip-info-overlay" id="clipInfo"></div>
-        <!-- 5 boutons de feedback -->
-        <div class="feedback-row">
-            <button class="fb-btn fb-top" onclick="rate('top')">
-                &#128293; Top<span class="shortcut">A</span>
-            </button>
-            <button class="fb-btn fb-good" onclick="rate('good')">
-                &#9989; Bon<span class="shortcut">Z</span>
-            </button>
-            <button class="fb-btn fb-not_interesting" onclick="rate('not_interesting')">
-                &#128564; Moment faible<span class="shortcut">E</span>
-            </button>
-            <button class="fb-btn fb-bad_framing" onclick="showBadFramingSubmenu()">
-                &#9986; Mal cadre<span class="shortcut">R</span>
-            </button>
-            <button class="fb-btn fb-not_relevant" onclick="rate('not_relevant')" style="border-color:#e74c3c33;">
-                &#10060; Pas pertinent<span class="shortcut">S</span>
-            </button>
-            <button class="fb-btn fb-duplicate" onclick="rate('duplicate')">
-                &#128257; Doublon<span class="shortcut">T</span>
-            </button>
+        <!-- Sprint 60 fix : info clip a gauche + boutons feedback a droite
+             pour gagner de la hauteur verticale (la video prend plus de place) -->
+        <div class="feedback-with-info">
+            <div class="clip-info-overlay" id="clipInfo"></div>
+            <!-- 5 boutons de feedback -->
+            <div class="feedback-row">
+                <button class="fb-btn fb-top" onclick="rate('top')">
+                    &#128293; Top<span class="shortcut">A</span>
+                </button>
+                <button class="fb-btn fb-good" onclick="rate('good')">
+                    &#9989; Bon<span class="shortcut">Z</span>
+                </button>
+                <button class="fb-btn fb-not_interesting" onclick="rate('not_interesting')">
+                    &#128564; Moment faible<span class="shortcut">E</span>
+                </button>
+                <button class="fb-btn fb-bad_framing" onclick="showBadFramingSubmenu()">
+                    &#9986; Mal cadre<span class="shortcut">R</span>
+                </button>
+                <button class="fb-btn fb-not_relevant" onclick="rate('not_relevant')" style="border-color:#e74c3c33;">
+                    &#10060; Pas pertinent<span class="shortcut">S</span>
+                </button>
+                <button class="fb-btn fb-duplicate" onclick="rate('duplicate')">
+                    &#128257; Doublon<span class="shortcut">T</span>
+                </button>
+            </div>
         </div>
 
         <div class="options-row">
