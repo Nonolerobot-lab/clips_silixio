@@ -1484,7 +1484,6 @@
 
             } else if (clip.video_url) {
                 // Mode 2 : Cloudflare proxy — video directe dans <video> tag
-                // Sprint 38 : optimisation latence — reutilise le <video>, poster, playsInline
                 if (playerEl.tagName !== 'VIDEO') {
                     const video = document.createElement('video');
                     video.id = 'player';
@@ -1494,7 +1493,7 @@
                     video.playsInline = true;
                     playerEl.replaceWith(video);
                 }
-                const player = document.getElementById('player');
+                let player = document.getElementById('player');
                 player.style.display = '';
                 if (clip.thumbnail_url) {
                     player.poster = clip.thumbnail_url;
