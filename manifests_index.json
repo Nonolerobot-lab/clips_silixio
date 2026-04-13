@@ -1,6 +1,21 @@
 {
   "days": [
     {
+      "date": "2026-04-13",
+      "total_clips": 140,
+      "streamers": [
+        "buzzftn",
+        "leothecrack",
+        "wazz",
+        "vadeal",
+        "aussieantics",
+        "clix",
+        "mongraal",
+        "pinqeu",
+        "community"
+      ]
+    },
+    {
       "date": "2026-04-11",
       "total_clips": 76,
       "streamers": [
@@ -55,5 +70,5 @@
       ]
     }
   ],
-  "latest": "2026-04-11"
+  "latest": "2026-04-13"
 }
