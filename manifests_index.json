@@ -1,5 +1,10 @@
 {
+  "latest": "2026-04-14",
   "days": [
+    {
+      "date": "BENCHMARK",
+      "label": "\ud83c\udfaf Benchmark Gold"
+    },
     {
       "date": "2026-04-14",
       "total_clips": 166,
@@ -131,6 +136,5 @@
         "community"
       ]
     }
-  ],
-  "latest": "2026-04-14"
+  ]
 }
