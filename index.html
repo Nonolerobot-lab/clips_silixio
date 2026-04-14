@@ -1108,6 +1108,9 @@
         // Fix 2026-04-09 : clips masques apres export (Silixio trie par lots)
         let exportedClips = {};   // { filename: true } — clips deja exportes, masques du tri
 
+        // === PRELOAD STATE (Sprint 64) ===
+        let _preloaded = null;    // { idx: number, video: HTMLVideoElement } | null
+
         // === SESSION TIMER STATE (Sprint 58) ===
         let timerInterval    = null;  // setInterval handle (display refresh)
         let activeAccum      = 0;     // ms actifs cumulés (hors pauses)
@@ -1484,21 +1487,34 @@
 
             } else if (clip.video_url) {
                 // Mode 2 : Cloudflare proxy — video directe dans <video> tag
-                if (playerEl.tagName !== 'VIDEO') {
-                    const video = document.createElement('video');
-                    video.id = 'player';
-                    video.controls = true;
-                    video.autoplay = true;
-                    video.preload = 'auto';
-                    video.playsInline = true;
-                    playerEl.replaceWith(video);
+                let player;
+                // Sprint 64 : utiliser le clip pré-chargé si disponible (transition instantanée)
+                if (_preloaded && _preloaded.idx === idx) {
+                    player = _preloaded.video;
+                    player.id = 'player';
+                    player.controls = true;
+                    player.autoplay = true;
+                    player.playsInline = true;
+                    playerEl.replaceWith(player);
+                    _preloaded = null; // consommé
+                } else {
+                    _clearPreload(); // le pré-chargement ne correspond plus
+                    if (playerEl.tagName !== 'VIDEO') {
+                        const video = document.createElement('video');
+                        video.id = 'player';
+                        video.controls = true;
+                        video.autoplay = true;
+                        video.preload = 'auto';
+                        video.playsInline = true;
+                        playerEl.replaceWith(video);
+                    }
+                    player = document.getElementById('player');
+                    player.src = clip.video_url;
                 }
-                let player = document.getElementById('player');
                 player.style.display = '';
                 if (clip.thumbnail_url) {
                     player.poster = clip.thumbnail_url;
                 }
-                player.src = clip.video_url;
                 player.play().catch(() => {});
 
                 // Fallback si le proxy echoue
@@ -1648,6 +1664,9 @@
 
             // Bug 1 : sauvegarder la position
             saveProgress();
+
+            // Sprint 64 : pré-charger le clip suivant en arrière-plan
+            _preloadNext(idx);
         }
 
         function rate(value) {
@@ -1756,6 +1775,39 @@
             }
 
             saveProgress();
+        }
+
+        // === PRELOAD HELPERS (Sprint 64) ===
+        // Pré-charge la vidéo du clip suivant en arrière-plan pour navigation instantanée
+        function _preloadNext(fromIdx) {
+            const nextIdx = fromIdx + 1;
+            // Déjà pré-chargé pour ce clip
+            if (_preloaded && _preloaded.idx === nextIdx) return;
+            // Nettoyer l'ancien pré-chargement
+            _clearPreload();
+            // Hors limites
+            if (nextIdx >= TOTAL) return;
+
+            const clip = CLIPS[nextIdx];
+            // Pré-charge uniquement les vidéos Cloudflare proxy (Mode 2)
+            // Twitch embeds (Mode 1) et Drive iframes (Mode 3) ne sont pas pré-chargeables
+            const clipSlug = extractTwitchClipSlug(clip.clip_url);
+            if (clipSlug || !clip.video_url) return;
+
+            const video = document.createElement('video');
+            video.preload = 'auto';
+            video.src = clip.video_url;
+            if (clip.thumbnail_url) video.poster = clip.thumbnail_url;
+            // Pas d'autoplay — on buffer juste les données
+
+            _preloaded = { idx: nextIdx, video: video };
+        }
+
+        function _clearPreload() {
+            if (!_preloaded) return;
+            _preloaded.video.removeAttribute('src');
+            _preloaded.video.load(); // libère le buffer navigateur
+            _preloaded = null;
         }
 
         function downloadChat() {
@@ -1869,6 +1921,7 @@
             CLIPS = CLIPS.filter(c => !exportedClips[getClipStateKey(c)]);
             TOTAL = CLIPS.length;
             currentIndex = 0;
+            _clearPreload(); // Sprint 64 : la liste a changé, le pré-chargement n'est plus valide
             // Fix 2026-04-09 : NE PAS reset feedback (sinon les clips notes redeviennent "pas notes"
             // et ne peuvent plus etre masques lors du prochain export)
             document.getElementById('totalNum').textContent = TOTAL;
