@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Clips Silixio — Review Tinder</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1090,7 +1091,13 @@
         // === CONFIG ===
         // URL du Google Apps Script pour l'upload automatique du feedback vers Drive.
         // Laisser vide ('') pour desactiver l'upload automatique (telechargement local seulement).
-        const APPS_SCRIPT_URL = '';
+        // Phase 3.1 bis (2026-04-14) : Google Apps Script déployé sur contactdentoz@gmail.com
+        // qui écrit dans DRIVE_FEEDBACK_FOLDER_ID = 12rjhJddxWfd8ndMkAPhgCI1seEp5kj7R.
+        // Supporte 3 formats POST (cf. google_apps_script_feedback.js).
+        // Flow complet : Silixio trie → exportFeedback() / autoSaveFeedback() / beforeunload
+        //   → POST ici → Apps Script écrit le JSON dans le Drive feedback
+        //   → auto_tune.py l'ingère au prochain run.
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzb3Ms9hA3CGad76aQWqCHkvOeS4kyBUBH5SaM1g-NkYy3i0C6lYaSfR6Bh0sWjQmNxtA/exec';
 
         // Timeout iframe en ms (Bug 3)
         const IFRAME_TIMEOUT_MS = 15000;
@@ -1123,6 +1130,10 @@
         // "2026-04-08" -> "8 avril 2026"
         function formatDateFR(isoDate) {
             if (!isoDate) return '?';
+            // Phase 3 gold (2026-04-14) : mode benchmark — affichage dédié
+            if (isoDate === 'BENCHMARK' || isoDate.startsWith('BENCHMARK')) {
+                return 'Benchmark Gold';
+            }
             try {
                 const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(isoDate);
                 if (!m) return isoDate;
@@ -1191,6 +1202,26 @@
             return 'clips_silixio_' + (MANIFEST ? (MANIFEST.date || 'default') : 'default');
         }
 
+        // Phase 3.1 bis (2026-04-14) : auto-save Drive toutes les N votes
+        // + beforeunload (sendBeacon). Sécurise le feedback si Silixio oublie
+        // de cliquer "Exporter" avant de fermer la page.
+        const AUTO_SAVE_EVERY_N_VOTES = 20;
+        let _lastFeedbackCount = 0;
+        let _votesSinceLastAutoSave = 0;
+
+        function autoSaveFeedback() {
+            if (!APPS_SCRIPT_URL) return;  // rien à faire si endpoint pas configuré
+            if (!MANIFEST || !feedback || Object.keys(feedback).length === 0) return;
+            const data = buildFeedbackData();
+            const filename = 'feedback_' + (MANIFEST.date || 'clips') + '_autosave.json';
+            // Fire-and-forget : on ne bloque pas l'UI, on ne montre pas d'erreur
+            fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ filename, content: JSON.stringify(data, null, 2) }),
+            }).catch(e => console.warn('Auto-save Drive (silencieux):', e.message));
+        }
+
         function saveProgress() {
             try {
                 localStorage.setItem(lsKey(), JSON.stringify({
@@ -1202,7 +1233,38 @@
             } catch (e) {
                 console.warn('localStorage save failed:', e);
             }
+
+            // Phase 3.1 bis : trigger auto-save tous les AUTO_SAVE_EVERY_N_VOTES votes
+            const currentCount = feedback ? Object.keys(feedback).length : 0;
+            if (currentCount > _lastFeedbackCount) {
+                _votesSinceLastAutoSave += (currentCount - _lastFeedbackCount);
+                _lastFeedbackCount = currentCount;
+                if (_votesSinceLastAutoSave >= AUTO_SAVE_EVERY_N_VOTES) {
+                    _votesSinceLastAutoSave = 0;
+                    autoSaveFeedback();
+                }
+            }
         }
+
+        // Phase 3.1 bis : envoi de sauvegarde au moment de fermer la page.
+        // sendBeacon est garanti d'être envoyé même pendant un unload (contrairement
+        // à fetch qui peut être annulé). L'endpoint Apps Script reçoit le même format
+        // que l'export manuel — il peut juste le dédupliquer côté Drive par date.
+        window.addEventListener('beforeunload', () => {
+            if (!APPS_SCRIPT_URL || !MANIFEST) return;
+            if (!feedback || Object.keys(feedback).length === 0) return;
+            const data = buildFeedbackData();
+            const filename = 'feedback_' + (MANIFEST.date || 'clips') + '_beforeunload.json';
+            const payload = JSON.stringify({ filename, content: JSON.stringify(data, null, 2) });
+            try {
+                navigator.sendBeacon(
+                    APPS_SCRIPT_URL,
+                    new Blob([payload], { type: 'application/json' })
+                );
+            } catch (e) {
+                // silent : beforeunload ne peut pas bloquer
+            }
+        });
 
         function restoreProgress() {
             try {
@@ -1224,6 +1286,21 @@
         init();
 
         async function init() {
+            // Phase 3 gold (2026-04-14) : support ?date=BENCHMARK dans l'URL.
+            // L'interface Silixio normale n'affiche PAS le benchmark dans le date picker
+            // (manifest_BENCHMARK.json n'est pas dans manifests_index.json). Le mode
+            // n'est accessible qu'en tapant l'URL ?date=BENCHMARK directement, ce qui
+            // évite de polluer le workflow de review quotidien.
+            const urlParams = new URLSearchParams(window.location.search);
+            const forcedDate = urlParams.get('date');
+            if (forcedDate) {
+                // Masque le date picker en mode benchmark
+                const picker = document.getElementById('datePicker');
+                if (picker) picker.style.display = 'none';
+                await loadManifest(forcedDate);
+                return;
+            }
+
             // Sprint 51 : essaie manifests_index.json d'abord, fallback manifest.json
             try {
                 const idxResp = await fetch('manifests_index.json?' + Date.now());
@@ -1469,24 +1546,18 @@
             fallback.classList.remove('show');
 
             // Sprint 34 : strategie video en 3 niveaux
-            // 1. Twitch clip embed (si clip_url dispo — clips-only mode)
-            // 2. Cloudflare proxy <video> tag (clips VOD — contourne CORP Drive)
-            // 3. Drive iframe /preview (fallback)
+            // Phase 4 (2026-04-15) : inversion priorité player — video_url d'abord.
+            // Raison : le <video> Drive montre le burn du nom streamer haut-gauche
+            // (Sprint 42), ce que l'iframe Twitch masquait. Et robustesse : si le
+            // streamer supprime son clip Twitch, on a toujours le MP4 Drive.
+            // 1. Cloudflare proxy <video> tag (priorité : MP4 Drive, burn visible)
+            // 2. Twitch clip embed (fallback si video_url absent)
+            // 3. Drive iframe /preview (dernier recours)
             const playerEl = document.getElementById('player');
             const clipSlug = extractTwitchClipSlug(clip.clip_url);
 
-            if (clipSlug) {
-                // Mode 1 : Twitch clip embed (clips-only) — toujours fiable
-                const iframe = document.createElement('iframe');
-                iframe.id = 'player';
-                iframe.src = 'https://clips.twitch.tv/embed?clip=' + clipSlug + '&parent=' + window.location.hostname + '&autoplay=true';
-                iframe.allow = 'autoplay';
-                iframe.allowFullscreen = true;
-                iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;border-radius:12px;background:#000;';
-                playerEl.replaceWith(iframe);
-
-            } else if (clip.video_url) {
-                // Mode 2 : Cloudflare proxy — video directe dans <video> tag
+            if (clip.video_url) {
+                // Mode 1 : Cloudflare proxy — video directe dans <video> tag
                 let player;
                 // Sprint 64 : utiliser le clip pré-chargé si disponible (transition instantanée)
                 if (_preloaded && _preloaded.idx === idx) {
@@ -1494,7 +1565,9 @@
                     player.id = 'player';
                     player.controls = true;
                     player.autoplay = true;
+                    player.muted = false;
                     player.playsInline = true;
+                    player.style.cssText = '';
                     playerEl.replaceWith(player);
                     _preloaded = null; // consommé
                 } else {
@@ -1526,6 +1599,16 @@
                 };
                 // S-05 : pas de onclick custom — les controles natifs <video controls> gerent
                 // le clic correctement. Le conflit onclick vs controls causait "relance au lieu de pause".
+
+            } else if (clipSlug) {
+                // Mode 2 (fallback) : Twitch clip embed (uniquement si video_url absent)
+                const iframe = document.createElement('iframe');
+                iframe.id = 'player';
+                iframe.src = 'https://clips.twitch.tv/embed?clip=' + clipSlug + '&parent=' + window.location.hostname + '&autoplay=true';
+                iframe.allow = 'autoplay';
+                iframe.allowFullscreen = true;
+                iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;border-radius:12px;background:#000;';
+                playerEl.replaceWith(iframe);
 
             } else {
                 // Mode 3 : Drive iframe /preview (dernier recours)
@@ -1781,24 +1864,21 @@
         // Pré-charge la vidéo du clip suivant en arrière-plan pour navigation instantanée
         function _preloadNext(fromIdx) {
             const nextIdx = fromIdx + 1;
-            // Déjà pré-chargé pour ce clip
             if (_preloaded && _preloaded.idx === nextIdx) return;
-            // Nettoyer l'ancien pré-chargement
             _clearPreload();
-            // Hors limites
             if (nextIdx >= TOTAL) return;
 
             const clip = CLIPS[nextIdx];
-            // Pré-charge uniquement les vidéos Cloudflare proxy (Mode 2)
-            // Twitch embeds (Mode 1) et Drive iframes (Mode 3) ne sont pas pré-chargeables
             const clipSlug = extractTwitchClipSlug(clip.clip_url);
             if (clipSlug || !clip.video_url) return;
 
             const video = document.createElement('video');
             video.preload = 'auto';
+            video.muted = true;
             video.src = clip.video_url;
-            if (clip.thumbnail_url) video.poster = clip.thumbnail_url;
-            // Pas d'autoplay — on buffer juste les données
+            // Attacher au DOM caché — les navigateurs ne chargent pas les éléments détachés
+            video.style.cssText = 'position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;z-index:-1;';
+            document.body.appendChild(video);
 
             _preloaded = { idx: nextIdx, video: video };
         }
@@ -1806,7 +1886,8 @@
         function _clearPreload() {
             if (!_preloaded) return;
             _preloaded.video.removeAttribute('src');
-            _preloaded.video.load(); // libère le buffer navigateur
+            _preloaded.video.load();
+            if (_preloaded.video.parentNode) _preloaded.video.parentNode.removeChild(_preloaded.video);
             _preloaded = null;
         }
 
