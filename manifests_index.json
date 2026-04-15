@@ -1,9 +1,38 @@
 {
-  "latest": "2026-04-14",
   "days": [
     {
-      "date": "BENCHMARK",
-      "label": "\ud83c\udfaf Benchmark Gold"
+      "date": "2026-04-15",
+      "total_clips": 181,
+      "streamers": [
+        "nikof",
+        "clix",
+        "rezonfn",
+        "eomzo",
+        "revenja",
+        "aussieantics",
+        "kurama_203",
+        "werexeu",
+        "mongraal",
+        "vadeal",
+        "stizo_",
+        "coachboop",
+        "kalutwick",
+        "asianjeff",
+        "risezd",
+        "leothecrack",
+        "astralsq",
+        "akiiral2",
+        "podasai",
+        "talmo",
+        "community",
+        "muzz",
+        "wazz",
+        "buzzftn",
+        "skite",
+        "peterbot",
+        "mrsavage",
+        "jolavanille"
+      ]
     },
     {
       "date": "2026-04-14",
@@ -136,5 +165,6 @@
         "community"
       ]
     }
-  ]
+  ],
+  "latest": "2026-04-15"
 }
