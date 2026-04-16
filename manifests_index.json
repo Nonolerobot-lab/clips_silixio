@@ -1,6 +1,46 @@
 {
   "days": [
     {
+      "date": "2026-04-16",
+      "total_clips": 387,
+      "streamers": [
+        "buzzftn",
+        "malibuca",
+        "clix",
+        "revenja",
+        "wazz",
+        "risezd",
+        "mongraal",
+        "venofn",
+        "muzz",
+        "kurama_203",
+        "nikof",
+        "leothecrack",
+        "stizo_",
+        "skite",
+        "momsyfnv2",
+        "coachboop",
+        "mrsavage",
+        "rezonfn",
+        "peterbot",
+        "k1ng",
+        "aussieantics",
+        "podasai",
+        "shinolafrite",
+        "vadeal",
+        "cringefn",
+        "eomzo",
+        "werexeu",
+        "asianjeff",
+        "kalutwick",
+        "flickzyv2",
+        "shxrkfnbr",
+        "astralsq",
+        "akiiral2",
+        "noahreyli"
+      ]
+    },
+    {
       "date": "2026-04-15",
       "total_clips": 181,
       "streamers": [
@@ -166,5 +206,5 @@
       ]
     }
   ],
-  "latest": "2026-04-15"
+  "latest": "2026-04-16"
 }
