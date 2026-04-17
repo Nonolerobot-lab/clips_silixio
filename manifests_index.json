@@ -1,9 +1,30 @@
 {
-  "latest": "2026-04-16",
   "days": [
     {
-      "date": "BENCHMARK",
-      "label": "🎯 Benchmark Gold"
+      "date": "2026-04-17",
+      "total_clips": 82,
+      "streamers": [
+        "mrsavage",
+        "stizo_",
+        "coachboop",
+        "leothecrack",
+        "wazz",
+        "clix",
+        "aussieantics",
+        "nikof",
+        "rezonfn",
+        "kirillianfn1",
+        "kalutwick",
+        "khanada_",
+        "vadeal",
+        "momsyfnv2",
+        "revenja",
+        "buzzftn",
+        "eomzo",
+        "skite",
+        "asianjeff",
+        "clement_ttt"
+      ]
     },
     {
       "date": "2026-04-16",
@@ -167,6 +188,50 @@
         "vadeal",
         "community"
       ]
+    },
+    {
+      "date": "2026-04-10",
+      "total_clips": 59,
+      "streamers": [
+        "buzzftn",
+        "leothecrack",
+        "clix",
+        "community"
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "total_clips": 102,
+      "streamers": [
+        "leothecrack",
+        "skite",
+        "wazz",
+        "clix"
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "total_clips": 39,
+      "streamers": [
+        "buzzftn",
+        "leothecrack",
+        "aussieantics",
+        "community"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "total_clips": 121,
+      "streamers": [
+        "jolavanille",
+        "leothecrack",
+        "nikof",
+        "skite",
+        "wazz",
+        "clix",
+        "community"
+      ]
     }
-  ]
+  ],
+  "latest": "2026-04-17"
 }
