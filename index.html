@@ -889,16 +889,6 @@
         }
         .date-btn:hover { border-color: #9b59b6; color: #e0e0e0; }
         .date-btn.active { background: #9b59b6; color: #fff; border-color: #9b59b6; font-weight: 600; }
-        /* Sprint 69 : onglet "En retard" distinct (orange/ambre) pour signaler les clips orphelins
-           des runs precedentes. Disparait quand manifest_BACKLOG.json n'existe plus dans l'index. */
-        .date-btn.backlog {
-            background: #3a2a10;
-            color: #f39c12;
-            border-color: #8b5a1c;
-            font-weight: 600;
-        }
-        .date-btn.backlog:hover { border-color: #f39c12; color: #ffbf57; }
-        .date-btn.backlog.active { background: #f39c12; color: #1a1005; border-color: #f39c12; }
 
         /* === SESSION TIMER (Sprint 58) === */
         #sessionTimer {
@@ -1144,10 +1134,6 @@
             if (isoDate === 'BENCHMARK' || isoDate.startsWith('BENCHMARK')) {
                 return 'Benchmark Gold';
             }
-            // Sprint 69 : BACKLOG = clips orphelins en retard (todo-queue permanente)
-            if (isoDate === 'BACKLOG') {
-                return 'Clips en retard';
-            }
             try {
                 const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(isoDate);
                 if (!m) return isoDate;
@@ -1339,30 +1325,17 @@
         }
 
         // Sprint 51 : Construit le sélecteur de dates
-        // Sprint 69 : supporte une entree "BACKLOG" distincte (clips en retard des runs
-        // precedentes non livres). Affichee en ambre pour se demarquer des jours.
         function buildDatePicker(idx) {
             const picker = document.getElementById('datePicker');
             picker.innerHTML = '';
             (idx.days || []).forEach(day => {
+                const d = new Date(day.date + 'T12:00:00');
+                const label = d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' })
+                    + ' (' + (day.total_clips || '?') + ' clips)';
                 const btn = document.createElement('button');
-                btn.dataset.date = day.date;
-                let cls = 'date-btn';
-                let label;
-                if (day.date === 'BACKLOG') {
-                    // Sprint 69 : onglet clips en retard (todo-queue orphelins)
-                    cls += ' backlog';
-                    const n = (day.total_clips !== undefined && day.total_clips !== null)
-                        ? day.total_clips : '?';
-                    label = '\u23F3 En retard (' + n + ')'; // ⏳
-                } else {
-                    const d = new Date(day.date + 'T12:00:00');
-                    label = d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' })
-                        + ' (' + (day.total_clips || '?') + ' clips)';
-                }
-                if (day.date === idx.latest) cls += ' active';
-                btn.className = cls;
+                btn.className = 'date-btn' + (day.date === idx.latest ? ' active' : '');
                 btn.textContent = label;
+                btn.dataset.date = day.date;
                 btn.onclick = async () => {
                     picker.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
@@ -1425,13 +1398,7 @@
             if (currentIndex >= TOTAL) currentIndex = 0;
 
             // UI — Sprint 60 : affichage en francais "Clips du 8 avril 2026"
-            // Sprint 69 : titre dedie pour BACKLOG (pas de "Clips du Clips en retard")
-            const titleEl = document.getElementById('pageTitle');
-            if (MANIFEST.date === 'BACKLOG') {
-                titleEl.textContent = '\u23F3 Clips en retard'; // ⏳
-            } else {
-                titleEl.textContent = 'Clips du ' + formatDateFR(MANIFEST.date);
-            }
+            document.getElementById('pageTitle').textContent = 'Clips du ' + formatDateFR(MANIFEST.date);
             document.getElementById('totalNum').textContent = TOTAL;
             document.getElementById('statPending').textContent = TOTAL;
             updateHiddenClipsIndicator();
