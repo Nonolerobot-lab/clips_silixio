@@ -28,45 +28,37 @@
     },
     {
       "date": "2026-04-16",
-      "total_clips": 335,
+      "total_clips": 168,
       "streamers": [
+        "asianjeff",
+        "aussieantics",
         "buzzftn",
-        "leothecrack",
-        "nikof",
-        "wazz",
-        "stizo_",
+        "clement_ttt",
         "clix",
-        "muzz",
+        "coachboop",
         "eomzo",
-        "risezd",
-        "venofn",
+        "k1ng",
+        "kalutwick",
+        "khanada_",
         "kirillianfn1",
+        "kurama_203",
+        "leothecrack",
+        "momsyfnv2",
+        "mongraal",
+        "mrsavage",
+        "muzz",
+        "nikof",
+        "peterbot",
+        "podasai",
         "revenja",
         "rezonfn",
+        "risezd",
         "skite",
-        "coachboop",
-        "aussieantics",
-        "kurama_203",
-        "mongraal",
-        "asianjeff",
-        "clement_ttt",
-        "peterbot",
-        "mrsavage",
-        "vicotryona",
-        "malibuca",
-        "momsyfnv2",
-        "k1ng",
-        "podasai",
-        "shinolafrite",
+        "stizo_",
         "vadeal",
-        "cringefn",
-        "werexeu",
-        "kalutwick",
-        "flickzyv2",
-        "shxrkfnbr",
-        "astralsq",
-        "akiiral2",
-        "noahreyli"
+        "venofn",
+        "vicotryona",
+        "wazz"
       ]
     },
     {
@@ -186,49 +178,6 @@
         "jolavanille",
         "leothecrack",
         "vadeal",
-        "community"
-      ]
-    },
-    {
-      "date": "2026-04-10",
-      "total_clips": 59,
-      "streamers": [
-        "buzzftn",
-        "leothecrack",
-        "clix",
-        "community"
-      ]
-    },
-    {
-      "date": "2026-04-09",
-      "total_clips": 102,
-      "streamers": [
-        "leothecrack",
-        "skite",
-        "wazz",
-        "clix"
-      ]
-    },
-    {
-      "date": "2026-04-08",
-      "total_clips": 39,
-      "streamers": [
-        "buzzftn",
-        "leothecrack",
-        "aussieantics",
-        "community"
-      ]
-    },
-    {
-      "date": "2026-04-07",
-      "total_clips": 121,
-      "streamers": [
-        "jolavanille",
-        "leothecrack",
-        "nikof",
-        "skite",
-        "wazz",
-        "clix",
         "community"
       ]
     }
