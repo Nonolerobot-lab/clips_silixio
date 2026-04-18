@@ -1,0 +1,129 @@
+{
+  "date": "BACKLOG",
+  "generated_at": "2026-04-18T20:58:15",
+  "total_clips": 1,
+  "streamers": [
+    "unknown"
+  ],
+  "use_iframe": true,
+  "context_summary": {
+    "active_topics": [
+      {
+        "text": "Audience demande Pixx (19 mentions YouTube)",
+        "type": "audience",
+        "boost": 1.15,
+        "source": "youtube"
+      },
+      {
+        "text": "Dans best-of Dentoz recemment : leothecrack",
+        "type": "audience",
+        "boost": 1.2,
+        "source": "youtube"
+      }
+    ],
+    "boosted_clips_count": 0
+  },
+  "editorial_summary": "**BRIEF EDITORIAL - Fortnite Best of**  \n\n**1. EVENEMENTS CLES** : La **Solo Victory Cup** et la **Solo Cash Cup** dominent les discussions, avec des résultats marquants comme MomsyFN (200$) et Tylio77 (20 kills). La **FNCS** revient aussi avec la grande finale en approche.  \n\n**2. STREAMERS A SURVEILLER** : **MomsyFN** (victoire Solo Cash Cup), **Wowa.unc & c40ME** (Duos Ranked Cup), **werzzfn** (clutch viral), et **Prоxо + Arrzii** (S40 Rankedcupduoszb Eu) méritent une couverture immédiate pour leurs performances et buzz.  \n\n**3. POTENTIEL BEST-OF** : Les **résultats de tournois** (ex: Solo Victory Cup, Solo Cash Cup) et les **clutch viraux** (ex: Werex) ont le plus de potentiel pour engager l’audience.  \n\n**4. SOURCES** : Les **résultats de tournois** et les **tweets de joueurs** (ex: @Revenja_, @JoLaVanille) sont les plus fiables. Les rumeurs et replies Twitter génèrent du bruit mais restent utiles pour anticiper les annonces.",
+  "editorial_plan": {
+    "editorial_brief": "- TOURNOIS : FNCS Major 1\n- ORGS : Gentle Mates, Havok\n- BUZZ : MariusCOW (Top 1, 1v2, 1v64), Suppression spawn Tip Top Terrace, Buzz (Top 1 sans armes)\n- AUDIENCE : Clips drôles/insultes, Best of de Buzz, Clips de gameplay intense\n- ACTION : Prioriser les moments de clutch/high-stakes de MariusCOW et les réactions au drama FNCS",
+    "download_plan": [
+      {
+        "streamer": "leothecrack",
+        "mode": "vod+clips",
+        "priority": 1,
+        "reason": "PRIORITY_STREAMERS (rendement 35%)",
+        "target_moments": [],
+        "related_events": []
+      },
+      {
+        "streamer": "jolavanille",
+        "mode": "vod+clips",
+        "priority": 1,
+        "reason": "PRIORITY_STREAMERS (rendement 32%)",
+        "target_moments": [],
+        "related_events": []
+      },
+      {
+        "streamer": "nikof",
+        "mode": "vod+clips",
+        "priority": 2,
+        "reason": "PRIORITY_STREAMERS (rendement 31%)",
+        "target_moments": [],
+        "related_events": []
+      },
+      {
+        "streamer": "buzzftn",
+        "mode": "vod+clips",
+        "priority": 2,
+        "reason": "PRIORITY_STREAMERS (rendement 24%)",
+        "target_moments": [],
+        "related_events": []
+      },
+      {
+        "streamer": "wazz",
+        "mode": "vod+clips",
+        "priority": 2,
+        "reason": "PRIORITY_STREAMERS (rendement 21%)",
+        "target_moments": [],
+        "related_events": []
+      }
+    ],
+    "skip_reasons": {
+      "skite": "Hors ligne (derniere VOD il y a 173.0h)"
+    }
+  },
+  "stories": [],
+  "bestof_script": null,
+  "clips": [
+    {
+      "filename": "clip_00-10-00_montage.mp4",
+      "clip_file": "clip_00-10-00_montage.mp4",
+      "clip_id": "",
+      "feedback_key": "unknown::clip_00-10-00_montage.mp4",
+      "streamer": "unknown",
+      "timestamp": "",
+      "timestamp_sec": null,
+      "score": 0,
+      "sources": [],
+      "ai_category": "",
+      "ai_summary": "",
+      "text": "",
+      "why": "",
+      "score_explanation": "",
+      "lane": "",
+      "ai_verdict": "",
+      "start_sec": null,
+      "end_sec": null,
+      "duration_sec": null,
+      "duration": null,
+      "n_highlights": 1,
+      "in_story": false,
+      "source_type": "",
+      "contributor_pseudo": "",
+      "community_categorie": "",
+      "community_type": "",
+      "community_requested_type": "",
+      "community_source_streamer": "",
+      "community_source_followers": 0,
+      "clip_duration": null,
+      "clip_start_sec": null,
+      "clip_end_sec": null,
+      "peak_abs_sec": null,
+      "peak_in_clip_sec": null,
+      "peak_source": "",
+      "peak_category": "",
+      "peak_strategy": "",
+      "has_peak_marker": false,
+      "entry_suggestion_sec": null,
+      "clip_url": "",
+      "video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1_GRYkGkpGk4A3SdOHo1r-ImPXo84GjFb",
+      "drive_url": "https://drive.usercontent.google.com/download?id=1_GRYkGkpGk4A3SdOHo1r-ImPXo84GjFb&export=download&confirm=t",
+      "drive_view_url": "https://drive.google.com/file/d/1_GRYkGkpGk4A3SdOHo1r-ImPXo84GjFb/view",
+      "chat_clip_url": "",
+      "size_mb": 71.4,
+      "arc_id": null,
+      "arc_position": 0,
+      "arc_label": ""
+    }
+  ]
+}
