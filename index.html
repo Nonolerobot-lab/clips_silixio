@@ -348,6 +348,67 @@
         .clip-info-overlay .text { color: #aaa; font-style: italic; font-size: 0.85em; margin-top: 2px; }
         .clip-info-overlay .why { color: #7a7aaa; font-size: 0.78em; margin-top: 3px; line-height: 1.4; }
 
+        /* === Sprint 73.3 : 5 axes qualite editoriale === */
+        .axes-row {
+            display: flex;
+            gap: 5px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .axis-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 7px;
+            border-radius: 5px;
+            font-size: 0.78em;
+            font-weight: 600;
+            border: 1px solid transparent;
+            background: rgba(30,30,60,0.55);
+            cursor: help;
+            transition: transform 0.1s, box-shadow 0.1s;
+            position: relative;
+        }
+        .axis-badge:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.35); }
+        .axis-badge .ax-label { letter-spacing: 0.04em; font-size: 0.82em; opacity: 0.85; }
+        .axis-badge .ax-val { font-family: monospace; font-weight: 700; }
+        .axis-badge.low    { opacity: 0.55; }
+        .axis-badge.mid    { opacity: 0.85; }
+        .axis-badge.high   { opacity: 1.0; }
+        .axis-badge[data-conf="low"] .ax-val::after { content: "·"; color: #888; margin-left: 2px; }
+
+        .axis-badge.ax-moment      { color: #ff7043; border-color: #ff704355; }
+        .axis-badge.ax-editorial   { color: #42a5f5; border-color: #42a5f555; }
+        .axis-badge.ax-cut_quality { color: #ab47bc; border-color: #ab47bc55; }
+        .axis-badge.ax-uniqueness  { color: #66bb6a; border-color: #66bb6a55; }
+        .axis-badge.ax-crowd       { color: #ffca28; border-color: #ffca2855; }
+
+        /* Tooltip custom sur axes */
+        .axis-badge .ax-tooltip {
+            position: absolute;
+            bottom: calc(100% + 6px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #161633;
+            color: #eaeaf7;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.82em;
+            font-weight: 500;
+            white-space: nowrap;
+            border: 1px solid #3a3a6a;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.12s;
+            z-index: 10;
+        }
+        .axis-badge:hover .ax-tooltip { opacity: 1; }
+        .axis-badge .ax-tooltip .tt-title { color: #fff; font-weight: 700; }
+        .axis-badge .ax-tooltip .tt-conf  { color: #8fa0b6; font-size: 0.9em; margin-left: 6px; }
+        .axis-badge .ax-tooltip .tt-desc  { color: #a0a0c0; display: block; margin-top: 2px; font-weight: 400; font-size: 0.88em; }
+
         /* Feedback badge */
         .current-feedback {
             position: absolute;
@@ -1743,6 +1804,9 @@
             // Sprint 57 : explication lisible (remplace score_explanation monospace)
             const whyHtml = buildClipExplanation(clip);
             if (whyHtml) infoHtml += '<div class="why">' + whyHtml + '</div>';
+            // Sprint 73.3 : 5 badges axes qualite editoriale (moment/editorial/cut/unique/crowd)
+            const axesHtml = buildAxesBadges(clip);
+            if (axesHtml) infoHtml += axesHtml;
             // Sprint 42 : story badge
             if (clip.in_story) infoHtml += '<span class="story-badge">&#128214; Story</span>';
             // Sprint 42 : contexte editorial
@@ -1893,8 +1957,12 @@
             saveProgress();
         }
 
-        // === PRELOAD HELPERS (Sprint 64) ===
-        // Pré-charge la vidéo du clip suivant en arrière-plan pour navigation instantanée
+        // === PRELOAD HELPERS (Sprint 64 + Sprint 73.3 fix) ===
+        // Pré-charge la vidéo du clip suivant en arrière-plan pour navigation instantanée.
+        // Sprint 73.3 fix : retire la garde `clipSlug ||` qui empechait le preload des
+        // que le clip avait un slug Twitch. Depuis Phase 4 (2026-04-15), le lecteur
+        // prefere video_url (MP4 Drive) meme en presence d'un slug Twitch — donc
+        // on peut preloader des que video_url est disponible, quel que soit le slug.
         function _preloadNext(fromIdx) {
             const nextIdx = fromIdx + 1;
             if (_preloaded && _preloaded.idx === nextIdx) return;
@@ -1902,8 +1970,9 @@
             if (nextIdx >= TOTAL) return;
 
             const clip = CLIPS[nextIdx];
-            const clipSlug = extractTwitchClipSlug(clip.clip_url);
-            if (clipSlug || !clip.video_url) return;
+            // On ne preload que si video_url est dispo (Mode 1 dans loadClip)
+            // L'iframe Twitch (Mode 2) et l'iframe Drive (Mode 3) ne sont pas preloadables
+            if (!clip.video_url) return;
 
             const video = document.createElement('video');
             video.preload = 'auto';
@@ -2791,6 +2860,54 @@
             }
 
             return null;
+        }
+
+        // === Sprint 73.3 : badges 5 axes qualite editoriale ===
+        // Rend 5 badges compacts (Moment / Editorial / Cut / Unique / Crowd) avec
+        // tooltip explicatif au survol. Non destructif — si axes absents, return ''.
+        const AXIS_META = {
+            moment:      { label: 'Moment',   short: 'MOM',  desc: 'Intensité (réaction vocale + preuve gameplay visuelle)' },
+            editorial:   { label: 'Editorial', short: 'EDT', desc: 'Clipabilité narrative (catégorie IA + verdict + pertinence)' },
+            cut_quality: { label: 'Découpe',  short: 'CUT',  desc: 'Qualité de coupe (pic bien placé, durée adaptée)' },
+            uniqueness:  { label: 'Unique',   short: 'UNI',  desc: 'Non-redondance intra-VOD (diversité des sources)' },
+            crowd:       { label: 'Foule',    short: 'CRD',  desc: 'Signal crowd (chat Twitch + clips viewers)' },
+        };
+        const AXIS_ORDER = ['moment', 'editorial', 'cut_quality', 'uniqueness', 'crowd'];
+
+        function buildAxesBadges(clip) {
+            if (!clip.axes || typeof clip.axes !== 'object') return '';
+            const conf = clip.axis_confidence || {};
+            const parts = [];
+            for (const axis of AXIS_ORDER) {
+                const v = clip.axes[axis];
+                if (v === undefined || v === null) continue;
+                const val = Math.round(v);
+                const meta = AXIS_META[axis];
+                const c = typeof conf[axis] === 'number' ? conf[axis] : null;
+                // Intensite visuelle selon score
+                let tier = 'low';
+                if (val >= 65) tier = 'high';
+                else if (val >= 40) tier = 'mid';
+                // Tooltip : nom + valeur + confidence + description
+                const confTxt = c !== null
+                    ? '<span class="tt-conf">confiance ' + Math.round(c * 100) + '%</span>'
+                    : '';
+                const confAttr = c !== null && c < 0.5 ? ' data-conf="low"' : '';
+                const tooltip = '<span class="ax-tooltip">'
+                    + '<span class="tt-title">' + escHtml(meta.label) + ' · ' + val + '/100</span>'
+                    + confTxt
+                    + '<span class="tt-desc">' + escHtml(meta.desc) + '</span>'
+                    + '</span>';
+                parts.push(
+                    '<span class="axis-badge ax-' + axis + ' ' + tier + '"' + confAttr + '>'
+                    + '<span class="ax-label">' + meta.short + '</span>'
+                    + '<span class="ax-val">' + val + '</span>'
+                    + tooltip
+                    + '</span>'
+                );
+            }
+            if (parts.length === 0) return '';
+            return '<div class="axes-row">' + parts.join('') + '</div>';
         }
 
         // === HELPERS ===
