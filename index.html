@@ -1792,12 +1792,16 @@
                 player.play().catch(() => {});
 
                 // Fallback si le proxy echoue
-                // Audit 2026-04-19 : Drive renvoie aleatoirement une page de confirmation
-                // ~40% du temps (flakiness). 1 retry cache-busted suffit dans ~58% des cas
-                // (couverture totale = Worker fix + retry). _r pour forcer le worker a refetch.
+                // Audit 2026-04-19 : Drive renvoie aleatoirement une page de quota
+                // ~12% du temps. 1 retry cache-busted couvre la flakiness restante.
+                // ATTENTION : ignorer MEDIA_ERR_ABORTED (declenche par player.src = X)
+                // sinon on tombe en fallback prematurement sur les clips qui marchaient.
                 let _retried = false;
                 player.onerror = () => {
-                    if (!_retried) {
+                    const code = player.error && player.error.code;
+                    // 1=ABORTED, 2=NETWORK, 3=DECODE, 4=SRC_NOT_SUPPORTED
+                    if (code === 1) return; // ignore les abort (changement de src, navigation)
+                    if (!_retried && (code === 2 || code === 4)) {
                         _retried = true;
                         const sep = clip.video_url.includes('?') ? '&' : '?';
                         player.src = clip.video_url + sep + '_r=1';
