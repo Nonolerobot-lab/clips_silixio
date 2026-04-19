@@ -1792,7 +1792,18 @@
                 player.play().catch(() => {});
 
                 // Fallback si le proxy echoue
+                // Audit 2026-04-19 : Drive renvoie aleatoirement une page de confirmation
+                // ~40% du temps (flakiness). 1 retry cache-busted suffit dans ~58% des cas
+                // (couverture totale = Worker fix + retry). _r pour forcer le worker a refetch.
+                let _retried = false;
                 player.onerror = () => {
+                    if (!_retried) {
+                        _retried = true;
+                        const sep = clip.video_url.includes('?') ? '&' : '?';
+                        player.src = clip.video_url + sep + '_r=1';
+                        player.play().catch(() => {});
+                        return;
+                    }
                     document.getElementById('fallbackDriveLink').href = clip.drive_view_url || '#';
                     document.getElementById('fallbackDownloadLink').href = clip.drive_url || '#';
                     fallback.classList.add('show');
