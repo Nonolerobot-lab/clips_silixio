@@ -510,6 +510,57 @@
         .fb-btn.fb-duplicate:hover,       .fb-btn.fb-duplicate.active       { background: #3498db; color: #fff; border-color: #3498db; }
         .fb-btn.fb-off_topic:hover,       .fb-btn.fb-off_topic.active       { background: #9b59b6; color: #fff; border-color: #9b59b6; }
 
+        /* === Sprint 80 : axes-rate row (moment / cut / redundancy) ===
+           Rangee compacte sous les verdicts legacy. Chaque axe a 2 boutons
+           (+ / -). Les raccourcis legacy (a/z/e/r/s/t) restent actifs. */
+        .axes-rate-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 6px;
+            flex-wrap: wrap;
+            font-size: 0.75em;
+            color: #8a8ab8;
+        }
+        .axes-rate-row .ax-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 8px;
+            border: 1px solid #2a2a4a;
+            border-radius: 8px;
+            background: #11112a;
+        }
+        .axes-rate-row .ax-group .ax-name {
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: #a0a0c0;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+        .axes-rate-row .ax-btn {
+            border: 1px solid #333;
+            background: #1a1a3a;
+            color: #bbb;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: all 0.12s;
+            font-weight: 600;
+        }
+        .axes-rate-row .ax-btn:hover { transform: translateY(-1px); }
+        .axes-rate-row .ax-btn.ax-pos.active  { background: #2ecc71; color: #fff; border-color: #2ecc71; }
+        .axes-rate-row .ax-btn.ax-neg.active  { background: #c0392b; color: #fff; border-color: #c0392b; }
+        .axes-rate-row .ax-btn.ax-warn.active { background: #f39c12; color: #fff; border-color: #f39c12; }
+        .axes-rate-row .ax-btn.ax-dup.active  { background: #3498db; color: #fff; border-color: #3498db; }
+        .axes-rate-row .ax-shortcut {
+            font-size: 0.7em;
+            color: #666;
+            margin-left: 3px;
+        }
+        .axes-rate-row .ax-btn.active .ax-shortcut { color: #eee; }
 
         /* Options row */
         .options-row {
@@ -1129,6 +1180,53 @@
             </div>
         </div>
 
+        <!-- Sprint 80 : saisie explicite par axe (moment / cut / redundancy)
+             Les raccourcis legacy (a/z/e/r/s/t) restent actifs en surcouche. -->
+        <div class="axes-rate-row" id="axesRateRow">
+            <div class="ax-group" title="Qualite du moment detecte">
+                <span class="ax-name">Moment</span>
+                <button class="ax-btn ax-pos" data-axis="moment_quality" data-value="bon"
+                        onclick="rateAxis('moment_quality','bon')"
+                        title="Le moment est bon (raccourci: 7)">
+                    &#128293; bon<span class="ax-shortcut">7</span>
+                </button>
+                <button class="ax-btn ax-neg" data-axis="moment_quality" data-value="mauvais"
+                        onclick="rateAxis('moment_quality','mauvais')"
+                        title="Le moment est faible (raccourci: 8)">
+                    &#128078; faible<span class="ax-shortcut">8</span>
+                </button>
+            </div>
+            <div class="ax-group" title="Qualite de la decoupe (timing, duree, cadrage)">
+                <span class="ax-name">Cut</span>
+                <button class="ax-btn ax-pos" data-axis="cut_quality" data-value="bon"
+                        onclick="rateAxis('cut_quality','bon')"
+                        title="La decoupe est correcte (raccourci: J)">
+                    &#9989; ok<span class="ax-shortcut">J</span>
+                </button>
+                <button class="ax-btn ax-warn" data-axis="cut_quality" data-value="mal_cadre"
+                        onclick="rateAxis('cut_quality','mal_cadre')"
+                        title="La decoupe est mauvaise (raccourci: K)">
+                    &#9986; mal<span class="ax-shortcut">K</span>
+                </button>
+            </div>
+            <div class="ax-group" title="Redondance dans le best-of final">
+                <span class="ax-name">Unique</span>
+                <button class="ax-btn ax-pos" data-axis="redundancy" data-value="unique"
+                        onclick="rateAxis('redundancy','unique')"
+                        title="Clip unique dans le best-of (raccourci: U)">
+                    &#127775; unique<span class="ax-shortcut">U</span>
+                </button>
+                <button class="ax-btn ax-dup" data-axis="redundancy" data-value="duplicate"
+                        onclick="rateAxis('redundancy','duplicate')"
+                        title="Clip redondant / doublon (raccourci: I)">
+                    &#128257; doublon<span class="ax-shortcut">I</span>
+                </button>
+            </div>
+            <span id="axesRateHint" style="opacity:0.6;font-size:0.9em;">
+                Axes explicites (optionnels). Les raccourcis Top/Bon/... remplissent aussi les axes automatiquement.
+            </span>
+        </div>
+
         <div class="options-row">
             <button class="nav-btn" id="btnPrev" onclick="navigate(-1)">
                 &#8592; Precedent <span class="shortcut">&#8592;</span>
@@ -1178,6 +1276,11 @@
         let CLIPS = [];
         let TOTAL = 0;
         let feedback = {};        // { filename: verdict_string }
+        // Sprint 80 : saisie multi-dimensionnelle (axes explicites)
+        // axesFeedback[clipKey] = { moment_quality, cut_quality, redundancy }
+        // Toute valeur absente = non-renseignee. Peut coexister avec feedback[clipKey]
+        // (le mapping legacy->axes est applique a l'export si les axes ne sont pas saisis).
+        let axesFeedback = {};
         let chatFlags = {};       // { filename: bool }
         let downloads = {};
         let currentIndex = 0;
@@ -1265,6 +1368,7 @@
                 if (keys.length === 1) keyMap[filename] = keys[0];
             });
             feedback = remapStateKeys(feedback, keyMap);
+            axesFeedback = remapStateKeys(axesFeedback, keyMap); // Sprint 80
             chatFlags = remapStateKeys(chatFlags, keyMap);
             exportedClips = remapStateKeys(exportedClips, keyMap);
             if (window.badFramingDetails) {
@@ -1302,6 +1406,7 @@
                 localStorage.setItem(lsKey(), JSON.stringify({
                     currentIndex,
                     feedback,
+                    axesFeedback, // Sprint 80 : axes explicites
                     chatFlags,
                     exportedClips, // Fix 2026-04-09 : persiste les clips masques apres export
                 }));
@@ -1346,8 +1451,9 @@
                 const raw = localStorage.getItem(lsKey());
                 if (!raw) return;
                 const saved = JSON.parse(raw);
-                if (saved.feedback)   feedback   = saved.feedback;
-                if (saved.chatFlags)  chatFlags  = saved.chatFlags;
+                if (saved.feedback)      feedback      = saved.feedback;
+                if (saved.axesFeedback)  axesFeedback  = saved.axesFeedback; // Sprint 80
+                if (saved.chatFlags)     chatFlags     = saved.chatFlags;
                 if (saved.exportedClips) exportedClips = saved.exportedClips; // Fix 2026-04-09
                 if (typeof saved.currentIndex === 'number' && saved.currentIndex < TOTAL) {
                     currentIndex = saved.currentIndex;
@@ -1455,6 +1561,7 @@
             // Reinitialiser l'etat (nouveau jour)
             currentIndex = 0;
             feedback = {};
+            axesFeedback = {}; // Sprint 80 : axes explicites
             chatFlags = {};
             exportedClips = {}; // Fix 2026-04-09 : reset puis restore depuis localStorage
 
@@ -1838,6 +1945,8 @@
 
             // Feedback button highlight
             highlightFeedbackBtn(feedback[clipKey]);
+            // Sprint 80 : refresh axis buttons (moment / cut / redundancy)
+            refreshAxisButtons(clipKey);
 
             updateMinimap();
             updateStats();
@@ -1849,6 +1958,41 @@
             _preloadNext(idx);
         }
 
+        // Sprint 80 : mapping verdict legacy -> axes explicites (miroir de
+        // feedback._verdict_to_axes cote Python). Quand l'utilisateur clique un
+        // verdict legacy sans avoir saisi d'axes, on pre-remplit les axes.
+        // Si les axes ont deja ete saisis explicitement, on ne les ecrase pas.
+        const LEGACY_TO_AXES = {
+            top:             { moment_quality: 'bon',     cut_quality: 'bon',       redundancy: 'unique' },
+            good:            { moment_quality: 'bon',     cut_quality: 'bon',       redundancy: 'unique' },
+            passable:        { moment_quality: 'bon',     cut_quality: 'bon',       redundancy: 'unique' },
+            not_interesting: { moment_quality: 'mauvais', cut_quality: '',          redundancy: '' },
+            not_relevant:    { moment_quality: 'mauvais', cut_quality: '',          redundancy: '' },
+            bad:             { moment_quality: 'mauvais', cut_quality: '',          redundancy: '' },
+            bad_framing:     { moment_quality: '',        cut_quality: 'mal_cadre', redundancy: '' },
+            duplicate:       { moment_quality: '',        cut_quality: '',          redundancy: 'duplicate' },
+        };
+
+        function _applyLegacyAxes(clipKey, verdict) {
+            const mapping = LEGACY_TO_AXES[verdict];
+            if (!mapping) return;
+            // Ne pas ecraser les saisies explicites si deja presentes
+            const existing = axesFeedback[clipKey] || {};
+            const merged = Object.assign({}, existing);
+            for (const axis of ['moment_quality', 'cut_quality', 'redundancy']) {
+                if (merged[axis]) continue;              // saisie explicite conservee
+                if (!mapping[axis]) continue;            // le mapping ne dit rien
+                merged[axis] = mapping[axis];
+            }
+            if (Object.keys(merged).length > 0) {
+                axesFeedback[clipKey] = merged;
+            }
+        }
+
+        function _clearAxes(clipKey) {
+            delete axesFeedback[clipKey];
+        }
+
         function rate(value) {
             const clip = CLIPS[currentIndex];
             const clipKey = getClipStateKey(clip);
@@ -1856,12 +2000,18 @@
 
             if (prev === value) {
                 delete feedback[clipKey];
+                // Sprint 80 : retrait du verdict legacy -> on vide aussi les axes
+                // derivables, sauf si l'utilisateur a saisi explicitement un axe
+                // qu'il veut garder (on part du principe que delete == reset complet).
+                _clearAxes(clipKey);
             } else {
                 feedback[clipKey] = value;
+                _applyLegacyAxes(clipKey, value);
             }
 
             updateCurrentFeedback(clipKey);
             highlightFeedbackBtn(feedback[clipKey]);
+            refreshAxisButtons(clipKey);
             updateMinimap();
             updateStats();
 
@@ -1878,6 +2028,44 @@
                     }
                 }, 400);
             }
+        }
+
+        // Sprint 80 : saisie explicite par axe. Valeur cliquee deja active -> clear.
+        // Ne declenche PAS d'auto-avance (Silixio peut cumuler plusieurs axes).
+        function rateAxis(axis, value) {
+            const clip = CLIPS[currentIndex];
+            if (!clip) return;
+            const clipKey = getClipStateKey(clip);
+            const existing = axesFeedback[clipKey] || {};
+            const prev = existing[axis];
+
+            const merged = Object.assign({}, existing);
+            if (prev === value) {
+                delete merged[axis];
+            } else {
+                merged[axis] = value;
+            }
+
+            if (Object.keys(merged).length === 0) {
+                delete axesFeedback[clipKey];
+            } else {
+                axesFeedback[clipKey] = merged;
+            }
+
+            refreshAxisButtons(clipKey);
+            updateMinimap();
+            updateStats();
+            saveProgress();
+        }
+
+        function refreshAxisButtons(clipKey) {
+            const state = axesFeedback[clipKey] || {};
+            document.querySelectorAll('.axes-rate-row .ax-btn').forEach(btn => {
+                const axis = btn.getAttribute('data-axis');
+                const val  = btn.getAttribute('data-value');
+                if (state[axis] === val) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
         }
 
         function navigate(delta) {
@@ -2140,12 +2328,15 @@
             const clip = CLIPS[currentIndex];
             const clipKey = getClipStateKey(clip);
             feedback[clipKey] = 'bad_framing';
+            // Sprint 80 : derive cut_quality=mal_cadre automatiquement (sans ecraser une saisie explicite)
+            _applyLegacyAxes(clipKey, 'bad_framing');
             // Stocke la sous-categorie dans un objet separe
             if (!window.badFramingDetails) window.badFramingDetails = {};
             window.badFramingDetails[clipKey] = subtype;
             closeBadFramingMenu();
             updateCurrentFeedback(clipKey);
             highlightFeedbackBtn('bad_framing');
+            refreshAxisButtons(clipKey);
             updateMinimap();
             updateStats();
             saveProgress();
@@ -2604,6 +2795,9 @@
         // === EXPORT ===
         function buildFeedbackData() {
             const data = {
+                // Sprint 80 : schema_version bump pour signaler la presence
+                // explicite des axes + compat lecteur legacy qui l'ignorera.
+                schema_version: 2,
                 vod_date: MANIFEST.date || '',
                 exported_at: new Date().toISOString(),
                 total_clips: TOTAL,
@@ -2614,12 +2808,32 @@
                     top: 0, good: 0, not_interesting: 0, bad_framing: 0,
                     duplicate: 0, not_rated: 0,
                 },
+                // Sprint 80 : compteurs d'axes au top-level (pour aper\u00e7u rapide)
+                axes_summary: {
+                    moment_bon: 0, moment_mauvais: 0,
+                    cut_bon: 0, cut_mal_cadre: 0,
+                    unique: 0, duplicate: 0,
+                },
             };
             CLIPS.forEach(clip => {
                 const clipKey = getClipStateKey(clip);
                 const fb = feedback[clipKey] || null;
                 // Stocker le verdict + ai_category pour l'auto-tune
                 let displayedLabel = fb ? (VERDICT_LABELS[fb] || fb) : null;
+
+                // Sprint 80 : axes explicites. Merge des saisies utilisateur avec
+                // le mapping derive du verdict legacy. Les saisies explicites
+                // ont priorite (ne sont jamais ecrasees par le mapping).
+                const explicitAxes = axesFeedback[clipKey] || {};
+                const derivedAxes = fb ? (LEGACY_TO_AXES[fb] || {}) : {};
+                const mergedAxes = {
+                    moment_quality: explicitAxes.moment_quality || derivedAxes.moment_quality || '',
+                    cut_quality:    explicitAxes.cut_quality    || derivedAxes.cut_quality    || '',
+                    redundancy:     explicitAxes.redundancy     || derivedAxes.redundancy     || '',
+                };
+                // Liste des axes saisis de maniere explicite (vs derivee du verdict)
+                const axesExplicitList = Object.keys(explicitAxes).filter(k => !!explicitAxes[k]);
+
                 data.feedback[clipKey] = {
                     verdict: fb,
                     clip_id: clip.clip_id || null,
@@ -2638,11 +2852,32 @@
                     peak_in_clip_sec: clip.peak_in_clip_sec ?? null,
                     peak_strategy: clip.peak_strategy || null,
                     entry_suggestion_sec: clip.entry_suggestion_sec ?? null,
+                    // Sprint 80 : axes explicites (moment_quality / cut_quality / redundancy)
+                    moment_quality: mergedAxes.moment_quality || '',
+                    cut_quality:    mergedAxes.cut_quality    || '',
+                    redundancy:     mergedAxes.redundancy     || '',
+                    // Liste des axes reellement saisis par l'utilisateur (vs
+                    // derives du verdict legacy). Permet a feedback.py de
+                    // prioriser la saisie explicite.
+                    axes_explicit: axesExplicitList,
+                    // Sprint 73 : snapshot des sous-scores du clip (si presents
+                    // dans le manifest). Sert de feature pour le dataset Sprint 75.
+                    axes_scores: clip.axes || null,
+                    axis_confidence: clip.axis_confidence || null,
+                    profile_type: clip.profile_type || null,
                 };
                 if (fb) data.summary[fb] = (data.summary[fb] || 0) + 1;
                 else data.summary.not_rated++;
                 if (chatFlags[clipKey]) data.chat_requests[clipKey] = true;
                 if (downloads[clipKey]) data.downloads[clipKey] = true;
+
+                // Sprint 80 : compteurs globaux d'axes
+                if (mergedAxes.moment_quality === 'bon')       data.axes_summary.moment_bon++;
+                if (mergedAxes.moment_quality === 'mauvais')   data.axes_summary.moment_mauvais++;
+                if (mergedAxes.cut_quality === 'bon')          data.axes_summary.cut_bon++;
+                if (mergedAxes.cut_quality === 'mal_cadre')    data.axes_summary.cut_mal_cadre++;
+                if (mergedAxes.redundancy === 'unique')        data.axes_summary.unique++;
+                if (mergedAxes.redundancy === 'duplicate')     data.axes_summary.duplicate++;
             });
             return data;
         }
@@ -3040,6 +3275,13 @@
                 case 'r': case 'R': showBadFramingSubmenu(); break;
                 case 's': case 'S': rate('not_relevant'); break;
                 case 't': case 'T': rate('duplicate'); break;
+                // Sprint 80 : axes explicites (moment / cut / redundancy)
+                case '7':           rateAxis('moment_quality', 'bon'); break;
+                case '8':           rateAxis('moment_quality', 'mauvais'); break;
+                case 'j': case 'J': rateAxis('cut_quality', 'bon'); break;
+                case 'k': case 'K': rateAxis('cut_quality', 'mal_cadre'); break;
+                case 'u': case 'U': rateAxis('redundancy', 'unique'); break;
+                case 'i': case 'I': rateAxis('redundancy', 'duplicate'); break;
                 case 'v': case 'V': openBriefModal(); break;
                 case 'c': case 'C': toggleChat(); break;
                 case 'd': case 'D': downloadClip(); break;
