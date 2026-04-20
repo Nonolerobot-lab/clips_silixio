@@ -1,6 +1,48 @@
 {
   "days": [
     {
+      "date": "BACKLOG",
+      "label": "⏳ Clips en retard",
+      "total_clips": 40,
+      "streamers": [
+        "[4-5-26] jolavanille - le jour j solo cash cup = bureau exploser  😡🏆 ｜ (!don)",
+        "[4-6-26] nikof - cast fncs major 1 play in jour 1 #m8win !format !planning",
+        "[4-8-26] peterbot - dominating fncs opens day 2 ｜ !socials !code !map !offline"
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "total_clips": 192,
+      "streamers": [
+        "akiiral2",
+        "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "clix",
+        "coachboop",
+        "community",
+        "jannisz",
+        "jolavanille",
+        "k1ng",
+        "kalutwick",
+        "khanada_",
+        "kurama_203",
+        "leothecrack",
+        "momsyfnv2",
+        "mrsavage",
+        "nikof",
+        "noahreyli",
+        "podasai",
+        "revenja",
+        "rezonfn",
+        "risezd",
+        "stizo_",
+        "vadeal",
+        "wazz",
+        "zetfartv"
+      ]
+    },
+    {
       "date": "2026-04-18",
       "total_clips": 224,
       "streamers": [
@@ -122,84 +164,7 @@
         "peterbot",
         "pixiefnbr1"
       ]
-    },
-    {
-      "date": "2026-04-14",
-      "total_clips": 166,
-      "streamers": [
-        "leothecrack",
-        "wazz",
-        "aussieantics",
-        "mongraal",
-        "eomzo",
-        "risezd",
-        "emxxrrr",
-        "rezonfn",
-        "coachboop",
-        "muzz",
-        "khanada_",
-        "revenja",
-        "stizo_",
-        "clix",
-        "clement_ttt",
-        "asianjeff",
-        "fnmoneymaker",
-        "skite",
-        "flokito_",
-        "buzzftn",
-        "noahreyli",
-        "swizzy281_",
-        "vadeal",
-        "venofn",
-        "mrsavage",
-        "ajerss",
-        "peterbot",
-        "astralsq",
-        "community"
-      ]
-    },
-    {
-      "date": "2026-04-13",
-      "total_clips": 337,
-      "streamers": [
-        "kurama_203",
-        "rezonfn",
-        "clix",
-        "muzz",
-        "aussieantics",
-        "mongraal",
-        "khanada_",
-        "vadeal",
-        "swizzy281_",
-        "leothecrack",
-        "buzzftn",
-        "flokito_",
-        "akiiral2",
-        "eomzo",
-        "wazz",
-        "podasai",
-        "pinqeu",
-        "revenja",
-        "kirillianfn1",
-        "emxxrrr",
-        "fnmoneymaker",
-        "noahreyli",
-        "skite",
-        "stizo_",
-        "clement_ttt",
-        "cringefn",
-        "coachboop",
-        "k1ng",
-        "momsyfnv2",
-        "venofn",
-        "cooper",
-        "peterbot",
-        "asianjeff",
-        "mrsavage",
-        "amar",
-        "community"
-      ]
     }
   ],
-  "latest": "2026-04-18"
+  "latest": "2026-04-19"
 }
