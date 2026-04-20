@@ -1300,6 +1300,13 @@
         let clipStartActiveMs = null; // snapshot getActiveMs() au début du clip courant
         let clipTimes        = [];    // temps actif par clip, en secondes
 
+        // === SESSION TIMING EXPORT (Sprint V2.0.3) ===
+        // Capture par-clip pour l'export feedback. Alimente la baseline V1 du KPI
+        // "temps review -30%" mesuré en V2.4 contre le Monteur Pack.
+        let sessionStartIso       = null; // ISO de resetSessionTimer()
+        let inactivityPauseCount  = 0;    // nb de basculements actif → pause depuis reset
+        let clipVerdictTimings    = {};   // { clipKey: {time_to_verdict_sec, verdict, clip_id, clip_file, streamer} }
+
         // Sprint 60 : formatte une date ISO "YYYY-MM-DD" en francais lisible
         // "2026-04-08" -> "8 avril 2026"
         function formatDateFR(isoDate) {
@@ -2008,6 +2015,23 @@
             delete axesFeedback[clipKey];
         }
 
+        // Sprint V2.0.3 : enregistre le temps écoulé entre l'affichage du clip et son premier verdict.
+        // Idempotent : seule la première décision est capturée (toggle/refinement ne réécrit pas).
+        function recordClipVerdictTiming(clipKey, verdict, clip) {
+            if (!clipKey || !verdict) return;
+            if (clipVerdictTimings[clipKey]) return;
+            if (clipStartActiveMs === null) return;
+            const timeSec = (getActiveMs() - clipStartActiveMs) / 1000;
+            if (timeSec < 0.5) return;
+            clipVerdictTimings[clipKey] = {
+                clip_id: (clip && clip.clip_id) || null,
+                clip_file: (clip && (clip.clip_file || clip.filename)) || null,
+                streamer: (clip && clip.streamer) || null,
+                time_to_verdict_sec: Math.round(timeSec * 10) / 10,
+                verdict,
+            };
+        }
+
         function rate(value) {
             const clip = CLIPS[currentIndex];
             const clipKey = getClipStateKey(clip);
@@ -2022,6 +2046,7 @@
             } else {
                 feedback[clipKey] = value;
                 _applyLegacyAxes(clipKey, value);
+                recordClipVerdictTiming(clipKey, value, clip);
             }
 
             updateCurrentFeedback(clipKey);
@@ -2345,6 +2370,7 @@
             feedback[clipKey] = 'bad_framing';
             // Sprint 80 : derive cut_quality=mal_cadre automatiquement (sans ecraser une saisie explicite)
             _applyLegacyAxes(clipKey, 'bad_framing');
+            recordClipVerdictTiming(clipKey, 'bad_framing', clip);
             // Stocke la sous-categorie dans un objet separe
             if (!window.badFramingDetails) window.badFramingDetails = {};
             window.badFramingDetails[clipKey] = subtype;
@@ -2894,6 +2920,39 @@
                 if (mergedAxes.redundancy === 'unique')        data.axes_summary.unique++;
                 if (mergedAxes.redundancy === 'duplicate')     data.axes_summary.duplicate++;
             });
+
+            // Sprint V2.0.3 : bloc session_timing pour baseline KPI "temps review -30%" V2.4
+            const perClipEntries = Object.keys(clipVerdictTimings).map(clipKey => {
+                const t = clipVerdictTimings[clipKey];
+                return {
+                    clip_id: t.clip_id,
+                    clip_file: t.clip_file,
+                    streamer: t.streamer,
+                    verdict: t.verdict,
+                    time_to_verdict_sec: t.time_to_verdict_sec,
+                };
+            });
+            const totalActiveSec = Math.round(getActiveMs() / 1000);
+            const sessionStartMs = sessionStartIso ? new Date(sessionStartIso).getTime() : null;
+            const totalElapsedSec = sessionStartMs
+                ? Math.round((Date.now() - sessionStartMs) / 1000)
+                : totalActiveSec;
+            const avgSecPerClip = perClipEntries.length > 0
+                ? Math.round(
+                    (perClipEntries.reduce((s, e) => s + (e.time_to_verdict_sec || 0), 0) / perClipEntries.length) * 10
+                  ) / 10
+                : 0;
+            data.session_timing = {
+                total_active_seconds: totalActiveSec,
+                total_elapsed_seconds: totalElapsedSec,
+                inactivity_pauses_count: inactivityPauseCount,
+                clips_reviewed_count: perClipEntries.length,
+                avg_seconds_per_clip: avgSecPerClip,
+                per_clip: perClipEntries,
+                session_start: sessionStartIso,
+                session_end: new Date().toISOString(),
+                timing_schema_version: '1.0.0',
+            };
             return data;
         }
 
@@ -3385,6 +3444,7 @@
             if (activeStart !== null) {
                 activeAccum += Date.now() - activeStart;
                 activeStart = null;
+                inactivityPauseCount++; // Sprint V2.0.3 : compteur export
             }
             inactivityHandle = null;
             updateTimerDisplay(); // met à jour l'icône ⏸ immédiatement
@@ -3398,6 +3458,10 @@
             inactivityHandle = setTimeout(onTimerInactive, 60_000);
             clipStartActiveMs = null;
             clipTimes        = [];
+            // Sprint V2.0.3 : reset des compteurs d'export session_timing
+            clipVerdictTimings    = {};
+            inactivityPauseCount  = 0;
+            sessionStartIso       = new Date().toISOString();
             timerInterval    = setInterval(updateTimerDisplay, 1000);
             updateTimerDisplay();
         }
