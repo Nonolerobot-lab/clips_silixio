@@ -1401,9 +1401,10 @@
             const data = buildFeedbackData();
             const filename = 'feedback_' + (MANIFEST.date || 'clips') + '_autosave.json';
             // Fire-and-forget : on ne bloque pas l'UI, on ne montre pas d'erreur
+            // Fix 2026-04-22 : text/plain evite le preflight CORS OPTIONS que Apps Script ne gere pas.
             fetch(APPS_SCRIPT_URL, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify({ filename, content: JSON.stringify(data, null, 2) }),
             }).catch(e => console.warn('Auto-save Drive (silencieux):', e.message));
         }
@@ -1444,9 +1445,11 @@
             const filename = 'feedback_' + (MANIFEST.date || 'clips') + '_beforeunload.json';
             const payload = JSON.stringify({ filename, content: JSON.stringify(data, null, 2) });
             try {
+                // Fix 2026-04-22 : Blob type 'text/plain' pour rester en "simple CORS request"
+                // et eviter le preflight OPTIONS que Google Apps Script ne gere pas.
                 navigator.sendBeacon(
                     APPS_SCRIPT_URL,
-                    new Blob([payload], { type: 'application/json' })
+                    new Blob([payload], { type: 'text/plain;charset=utf-8' })
                 );
             } catch (e) {
                 // silent : beforeunload ne peut pas bloquer
@@ -3075,13 +3078,22 @@
             const statusEl = document.getElementById('driveUploadStatus');
             if (statusEl) { statusEl.textContent = 'Upload Drive...'; statusEl.style.color = '#f39c12'; }
             try {
+                // Fix 2026-04-22 : 'text/plain' = simple CORS request, pas de preflight OPTIONS.
+                // Google Apps Script ne repond pas a OPTIONS -> 'application/json' etait bloque
+                // silencieusement par le navigateur depuis le deploiement (Phase 3.1 bis).
+                // Cote serveur : _normalizePayload lit e.postData.contents quel que soit le Content-Type.
                 const resp = await fetch(APPS_SCRIPT_URL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                     body: JSON.stringify({ filename, content: JSON.stringify(data, null, 2) }),
                 });
                 if (!resp.ok) throw new Error('HTTP ' + resp.status);
                 const result = await resp.json().catch(() => ({}));
+                // Fix 2026-04-22 : Apps Script retourne HTTP 200 meme sur rejet ({status:error}).
+                // Sans ce check, l'UI affichait "Drive OK" sur des payloads rejetes.
+                if (result && result.status && result.status !== 'ok') {
+                    throw new Error(result.message || 'Apps Script status=' + result.status);
+                }
                 if (statusEl) { statusEl.textContent = 'Drive OK'; statusEl.style.color = '#2ecc71'; }
                 console.log('Feedback uploade sur Drive :', result);
             } catch (e) {
