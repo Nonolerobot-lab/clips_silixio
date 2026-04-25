@@ -3,12 +3,11 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 227,
+      "total_clips": 136,
       "streamers": [
         "akiiral2",
         "artskill",
         "asianjeff",
-        "astralsq",
         "aussieantics",
         "buzzftn",
         "clix",
@@ -16,7 +15,6 @@
         "community",
         "cringefn",
         "eomzo",
-        "flickzyv2",
         "flokito_",
         "jolavanille",
         "kalutwick",
@@ -25,11 +23,11 @@
         "kurama_203",
         "laiizenfn",
         "leothecrack",
+        "mariuscow",
         "momsyfnv2",
         "mongraal",
         "mrsavage",
         "nikof",
-        "peterbot",
         "podasai",
         "revenja",
         "rezonfn",
@@ -37,7 +35,29 @@
         "skite",
         "stizo_",
         "vadeal",
+        "wazz",
         "werexeu"
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "total_clips": 47,
+      "streamers": [
+        "astralsq",
+        "aussieantics",
+        "buzzftn",
+        "clix",
+        "coachboop",
+        "cooper",
+        "eomzo",
+        "khanada_",
+        "kirillianfn1",
+        "leothecrack",
+        "muzz",
+        "revenja",
+        "stizo_",
+        "vadeal",
+        "wazz"
       ]
     },
     {
@@ -161,38 +181,7 @@
         "wazz",
         "zetfartv"
       ]
-    },
-    {
-      "date": "2026-04-18",
-      "total_clips": 224,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "clix",
-        "coachboop",
-        "community",
-        "eomzo",
-        "flokito_",
-        "jolavanille",
-        "k1ng",
-        "khanada_",
-        "kurama_203",
-        "leothecrack",
-        "mongraal",
-        "mrsavage",
-        "nikof",
-        "revenja",
-        "rezonfn",
-        "risezd",
-        "skite",
-        "stizo_",
-        "vadeal",
-        "venofn",
-        "wazz",
-        "werexeu"
-      ]
     }
   ],
-  "latest": "2026-04-23"
+  "latest": "2026-04-24"
 }
