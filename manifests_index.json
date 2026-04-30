@@ -1,6 +1,16 @@
 {
   "days": [
     {
+      "date": "2026-04-30",
+      "total_clips": 56,
+      "streamers": [
+        "community",
+        "kurama",
+        "leothecrack",
+        "vadeal"
+      ]
+    },
+    {
       "date": "2026-04-29",
       "total_clips": 165,
       "streamers": [
@@ -136,27 +146,7 @@
         "wazz",
         "xavistars69"
       ]
-    },
-    {
-      "date": "2026-04-24",
-      "total_clips": 49,
-      "streamers": [
-        "asianjeff",
-        "astralsq",
-        "aussieantics",
-        "buzzftn",
-        "clix",
-        "coachboop",
-        "community",
-        "cooper",
-        "eomzo",
-        "khanada_",
-        "kirillianfn1",
-        "revenja",
-        "stizo_",
-        "vadeal"
-      ]
     }
   ],
-  "latest": "2026-04-29"
+  "latest": "2026-04-30"
 }
