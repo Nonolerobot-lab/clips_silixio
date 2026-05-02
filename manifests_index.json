@@ -1,16 +1,6 @@
 {
+  "latest": "2026-04-30",
   "days": [
-    {
-      "date": "2026-05-02",
-      "total_clips": 55,
-      "streamers": [
-        "community",
-        "jolavanille",
-        "leothecrack",
-        "vadeal",
-        "vicotryona"
-      ]
-    },
     {
       "date": "2026-04-30",
       "total_clips": 56,
@@ -133,6 +123,5 @@
         "wazz"
       ]
     }
-  ],
-  "latest": "2026-05-02"
+  ]
 }
