@@ -1,6 +1,50 @@
 {
   "days": [
     {
+      "date": "BACKLOG",
+      "label": "⏳ Clips en retard",
+      "total_clips": 4,
+      "streamers": [
+        "community"
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "total_clips": 191,
+      "streamers": [
+        "artskill",
+        "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "clix",
+        "community",
+        "eomzo",
+        "jannisz",
+        "jolavanille",
+        "jonaxttv",
+        "k1ng",
+        "khanada_",
+        "kirillianfn1",
+        "laiizenfn",
+        "leothecrack",
+        "mongraal",
+        "mrsavage",
+        "muzz",
+        "peterbot",
+        "pixiefnbr1",
+        "podasai",
+        "revenja",
+        "rezonfn",
+        "seyytofn",
+        "shinolafrite",
+        "skite",
+        "somallau",
+        "stizo_",
+        "vadeal",
+        "venofn"
+      ]
+    },
+    {
       "date": "2026-05-01",
       "total_clips": 323,
       "streamers": [
@@ -182,36 +226,7 @@
         "venofn",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-04-27",
-      "total_clips": 81,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "clix",
-        "eomzo",
-        "fnmoneymaker",
-        "jannisz",
-        "jolavanille",
-        "jonaxttv",
-        "khanada_",
-        "kirillianfn1",
-        "kurama_203",
-        "leothecrack",
-        "nikof",
-        "noahreyli",
-        "revenja",
-        "rezonfn",
-        "risezd",
-        "stizo_",
-        "th3iof",
-        "vadeal",
-        "venofn",
-        "werexeu"
-      ]
     }
   ],
-  "latest": "2026-05-01"
+  "latest": "2026-05-02"
 }
