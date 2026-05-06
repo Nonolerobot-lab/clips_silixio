@@ -3,37 +3,62 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 151,
+      "total_clips": 122,
       "streamers": [
-        "artskill",
         "asianjeff",
         "aussieantics",
-        "buzzftn",
         "clix",
         "community",
+        "cringefn",
         "eomzo",
-        "jannisz",
         "jolavanille",
-        "jonaxttv",
         "k1ng",
-        "khanada_",
-        "kirillianfn1",
-        "laiizenfn",
         "leothecrack",
+        "malibuca",
         "mongraal",
         "mrsavage",
-        "muzz",
+        "noahreyli",
         "peterbot",
-        "pixiefnbr1",
+        "pinqeu",
+        "revenja",
+        "rezonfn",
+        "risezd",
+        "skite",
+        "stizo_",
+        "vadeal",
+        "venofn",
+        "vicotryona",
+        "wazz"
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "total_clips": 141,
+      "streamers": [
+        "ajerss",
+        "asianjeff",
+        "aussieantics",
+        "clix",
+        "coachboop",
+        "eomzo",
+        "jolavanille",
+        "k1ng",
+        "khanada_",
+        "kurama",
+        "leothecrack",
+        "malibuca",
+        "mongraal",
+        "mrsavage",
+        "nikof",
+        "noahreyli",
+        "peterbot",
         "podasai",
         "revenja",
         "rezonfn",
-        "seyytofn",
-        "shinolafrite",
-        "skite",
-        "somallau",
         "stizo_",
-        "venofn"
+        "vadeal",
+        "venofn",
+        "vicotryona"
       ]
     },
     {
@@ -228,5 +253,5 @@
       ]
     }
   ],
-  "latest": "2026-05-03"
+  "latest": "2026-05-04"
 }
