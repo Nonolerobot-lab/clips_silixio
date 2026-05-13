@@ -3,7 +3,7 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 152,
+      "total_clips": 225,
       "streamers": [
         "asianjeff",
         "aussieantics",
@@ -12,6 +12,7 @@
         "community",
         "emxxrrr",
         "eomzo",
+        "jolavanille",
         "k1ng",
         "khanada_",
         "kurama",
@@ -22,6 +23,7 @@
         "mongraal",
         "mrsavage",
         "nikof",
+        "noahreyli",
         "pinqeu",
         "podasai",
         "revenja",
@@ -31,6 +33,38 @@
         "shxrkfnbr",
         "stizo_",
         "talmo",
+        "vadeal",
+        "venofn",
+        "vicotryona",
+        "wazz"
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "total_clips": 70,
+      "streamers": [
+        "ajerss",
+        "asianjeff",
+        "aussieantics",
+        "clix",
+        "coachboop",
+        "community",
+        "cooper",
+        "eomzo",
+        "k1ng",
+        "khanada_",
+        "kurama",
+        "leothecrack",
+        "malibuca",
+        "mongraal",
+        "mrsavage",
+        "nikof",
+        "pinqeu",
+        "podasai",
+        "revenja",
+        "rezonfn",
+        "snayzy",
+        "stizo_",
         "vadeal",
         "venofn",
         "vicotryona",
@@ -127,35 +161,7 @@
         "vicotryona",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-05-07",
-      "total_clips": 50,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "clix",
-        "coachboop",
-        "community",
-        "eomzo",
-        "khanada_",
-        "kurama",
-        "kurama_203",
-        "leothecrack",
-        "malibuca",
-        "mongraal",
-        "mrsavage",
-        "peterbot",
-        "podasai",
-        "revenja",
-        "rezonfn",
-        "risezd",
-        "stizo_",
-        "vadeal",
-        "venofn",
-        "vicotryona"
-      ]
     }
   ],
-  "latest": "2026-05-10"
+  "latest": "2026-05-11"
 }
