@@ -1237,6 +1237,10 @@
             <div class="chat-toggle" id="chatToggle" onclick="toggleChat()">
                 &#128172; Chat <span class="shortcut">C</span>
             </div>
+            <!-- Fix 2026-05-14 add-subs-checkbox : swap clip <-> _subs.mp4 (V6.2) -->
+            <div class="chat-toggle" id="subsToggle" onclick="toggleSubs()" title="Afficher la version avec sous-titres FR auto-burnes (Whisper-large-v3, traduit auto les clips EN)">
+                &#127916;&#65039; Subs FR <span class="shortcut">S</span>
+            </div>
             <button class="dl-btn" id="dlFolderBtn" onclick="downloadFolder()" title="T&#233;l&#233;charger tous les clips Top + Bons">
                 &#128230; S&#233;lection <span class="shortcut"></span>
             </button>
@@ -1793,7 +1797,8 @@
                         playerEl.replaceWith(video);
                     }
                     player = document.getElementById('player');
-                    player.src = clip.video_url;
+                    // Fix 2026-05-14 add-subs-checkbox : utilise _subs.mp4 si toggle actif et disponible
+                    player.src = (typeof _getActiveVideoUrl === 'function' ? _getActiveVideoUrl(clip) : null) || clip.video_url;
                 }
                 player.style.display = '';
                 if (clip.thumbnail_url) {
@@ -2187,6 +2192,44 @@
 
             saveProgress();
         }
+
+        // === Fix 2026-05-14 add-subs-checkbox (V6.2 sous-titres FR) ===
+        // Toggle global persisté en localStorage. Quand actif, on essaie de remplacer
+        // player.src par clip.video_url_subs si exposé dans le manifest, sinon on
+        // affiche un toast "indisponible" et on revient au clip original.
+        let _subsEnabled = (function() {
+            try { return localStorage.getItem('silixio_subs_fr') === '1'; } catch (e) { return false; }
+        })();
+        function _getActiveVideoUrl(clip) {
+            if (_subsEnabled && clip && clip.video_url_subs) return clip.video_url_subs;
+            return clip ? clip.video_url : null;
+        }
+        function toggleSubs() {
+            _subsEnabled = !_subsEnabled;
+            try { localStorage.setItem('silixio_subs_fr', _subsEnabled ? '1' : '0'); } catch (e) {}
+            const btn = document.getElementById('subsToggle');
+            if (btn) btn.classList.toggle('active', _subsEnabled);
+            const clip = CLIPS[currentIndex];
+            if (!clip) return;
+            const player = document.getElementById('player');
+            if (player && player.tagName === 'VIDEO') {
+                const target = _getActiveVideoUrl(clip);
+                if (_subsEnabled && !clip.video_url_subs) {
+                    console.warn('[subs] _subs.mp4 indisponible pour ce clip — fallback original');
+                }
+                if (target && player.src !== target) {
+                    const t = player.currentTime || 0;
+                    player.src = target;
+                    player.currentTime = t;
+                    player.play().catch(() => {});
+                }
+            }
+        }
+        // Init au boot : applique l'état persisté sur le toggle visuel
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('subsToggle');
+            if (btn) btn.classList.toggle('active', _subsEnabled);
+        });
 
         // === PRELOAD HELPERS (Sprint 64 + Sprint 73.3 fix) ===
         // Pré-charge la vidéo du clip suivant en arrière-plan pour navigation instantanée.
@@ -3370,6 +3413,7 @@
                 case 'i': case 'I': rateAxis('redundancy', 'duplicate'); break;
                 case 'v': case 'V': openBriefModal(); break;
                 case 'c': case 'C': toggleChat(); break;
+                case 's': case 'S': toggleSubs(); break;
                 case 'd': case 'D': downloadClip(); break;
                 case 'ArrowRight':
                     e.preventDefault();
