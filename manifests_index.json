@@ -3,7 +3,7 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 113,
+      "total_clips": 182,
       "streamers": [
         "asafn",
         "asianjeff",
@@ -17,6 +17,8 @@
         "jolavanille",
         "k1ng",
         "khanada_",
+        "kurama",
+        "kurama_203",
         "leothecrack",
         "malibuca",
         "mongraal",
@@ -27,10 +29,36 @@
         "podasai",
         "revenja",
         "rezonfn",
+        "risezd",
+        "snayzy",
         "stizo_",
         "talmo",
         "vadeal",
         "venofn",
+        "vicotryona",
+        "wazz"
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "total_clips": 60,
+      "streamers": [
+        "asianjeff",
+        "aussieantics",
+        "clix",
+        "coachboop",
+        "community",
+        "fnrax",
+        "khanada_",
+        "leothecrack",
+        "mongraal",
+        "mrsavage",
+        "nikof",
+        "podasai",
+        "revenja",
+        "rezonfn",
+        "stizo_",
+        "vadeal",
         "vicotryona",
         "wazz"
       ]
@@ -185,5 +213,5 @@
       ]
     }
   ],
-  "latest": "2026-05-14"
+  "latest": "2026-05-15"
 }
