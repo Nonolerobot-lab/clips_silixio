@@ -3,7 +3,7 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 144,
+      "total_clips": 203,
       "streamers": [
         "00-21-48",
         "00-50-56",
@@ -45,6 +45,28 @@
         "swizzy281_",
         "vadeal",
         "wazz"
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "total_clips": 47,
+      "streamers": [
+        "asianjeff",
+        "aussieantics",
+        "clix",
+        "coachboop",
+        "emxxrrr",
+        "eomzo",
+        "kurama",
+        "kurama_203",
+        "leothecrack",
+        "mongraal",
+        "mrsavage",
+        "podasai",
+        "revenja",
+        "risezd",
+        "vadeal",
+        "vicotryona"
       ]
     },
     {
@@ -154,5 +176,5 @@
       ]
     }
   ],
-  "latest": "2026-05-24"
+  "latest": "2026-05-25"
 }
