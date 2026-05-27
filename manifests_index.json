@@ -3,11 +3,30 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 69,
+      "total_clips": 144,
       "streamers": [
+        "00-21-48",
+        "00-50-56",
+        "00-53-22",
+        "01-02-37",
+        "01-24-07",
+        "01-53-37",
+        "02-01-10",
+        "02-16-07",
+        "02-21-22",
+        "02-24-37",
+        "02-37-26",
+        "02-49-56",
+        "02-51-07",
+        "02-57-11",
+        "03-03-26",
+        "06-33-03",
+        "07-56-03",
         "aussieantics",
         "clix",
+        "coachboop",
         "community",
+        "emxxrrr",
         "eomzo",
         "jolavanille",
         "khanada_",
@@ -17,10 +36,34 @@
         "leothecrack",
         "mongraal",
         "mrsavage",
+        "nikof",
         "peterbot",
         "podasai",
         "revenja",
+        "risezd",
+        "stizo_",
         "swizzy281_",
+        "vadeal",
+        "wazz"
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "total_clips": 60,
+      "streamers": [
+        "aussieantics",
+        "clix",
+        "coachboop",
+        "community",
+        "emxxrrr",
+        "eomzo",
+        "leothecrack",
+        "mongraal",
+        "mrsavage",
+        "nikof",
+        "revenja",
+        "risezd",
+        "stizo_",
         "vadeal",
         "wazz"
       ]
@@ -109,24 +152,7 @@
         "vicotryona",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-05-20",
-      "total_clips": 42,
-      "streamers": [
-        "aussieantics",
-        "clix",
-        "community",
-        "leothecrack",
-        "merstaach",
-        "mrsavage",
-        "nikof",
-        "revenja",
-        "stizo_",
-        "venofn",
-        "vicotryona"
-      ]
     }
   ],
-  "latest": "2026-05-23"
+  "latest": "2026-05-24"
 }
