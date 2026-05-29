@@ -3,47 +3,42 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 257,
+      "total_clips": 123,
       "streamers": [
-        "00-21-48",
-        "00-50-56",
-        "00-53-22",
-        "01-02-37",
-        "01-24-07",
-        "01-53-37",
-        "02-01-10",
-        "02-16-07",
-        "02-21-22",
-        "02-24-37",
-        "02-37-26",
-        "02-49-56",
-        "02-51-07",
-        "02-57-11",
-        "03-03-26",
-        "06-33-03",
-        "07-56-03",
         "asianjeff",
         "aussieantics",
         "clix",
         "coachboop",
         "community",
-        "emxxrrr",
         "eomzo",
         "jolavanille",
         "khanada_",
-        "kurama",
-        "kurama_203",
         "leothecrack",
+        "malibuca",
         "mongraal",
         "mrsavage",
-        "nikof",
-        "podasai",
         "revenja",
-        "risezd",
+        "rezonfn",
         "stizo_",
-        "swizzy281_",
         "vadeal",
-        "vicotryona",
+        "vicotryona"
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "total_clips": 44,
+      "streamers": [
+        "aussieantics",
+        "clix",
+        "coachboop",
+        "community",
+        "khanada_",
+        "leothecrack",
+        "mongraal",
+        "peterbot",
+        "revenja",
+        "stizo_",
+        "vadeal",
         "wazz"
       ]
     },
@@ -164,31 +159,7 @@
         "vadeal",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-05-22",
-      "total_clips": 65,
-      "streamers": [
-        "aussieantics",
-        "clix",
-        "community",
-        "eomzo",
-        "jolavanille",
-        "khanada_",
-        "kirillianfn1",
-        "kurama",
-        "kurama_203",
-        "leothecrack",
-        "mongraal",
-        "mrsavage",
-        "peterbot",
-        "podasai",
-        "revenja",
-        "swizzy281_",
-        "vadeal",
-        "wazz"
-      ]
     }
   ],
-  "latest": "2026-05-27"
+  "latest": "2026-05-28"
 }
