@@ -3,25 +3,34 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 103,
+      "total_clips": 11,
+      "streamers": [
+        "community"
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "total_clips": 57,
       "streamers": [
         "aussieantics",
         "clix",
         "coachboop",
         "community",
         "eomzo",
-        "kurama_203",
+        "itachi",
         "leothecrack",
         "malibuca",
+        "merstaach",
+        "mongraal",
+        "nass",
         "nikof",
+        "podasai",
         "revenja",
         "shxrkfnbr",
         "stizo_",
-        "swizzy281_",
+        "talmo",
         "vadeal",
-        "vicotryona",
-        "wazz",
-        "zalderias"
+        "wazz"
       ]
     },
     {
@@ -81,60 +90,7 @@
         "vicotryona",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-06-02",
-      "total_clips": 48,
-      "streamers": [
-        "aussieantics",
-        "clix",
-        "coachboop",
-        "community",
-        "eomzo",
-        "gentlemates",
-        "kurama_203",
-        "leothecrack",
-        "revenja",
-        "rezonfn",
-        "stizo_",
-        "swizzy281_",
-        "venofn",
-        "vicotryona",
-        "wazz",
-        "wazzth"
-      ]
-    },
-    {
-      "date": "2026-06-01",
-      "total_clips": 24,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "coachboop",
-        "eomzo",
-        "leothecrack",
-        "revenja",
-        "vadeal",
-        "venofn",
-        "wazz"
-      ]
-    },
-    {
-      "date": "2026-05-31",
-      "total_clips": 43,
-      "streamers": [
-        "aussieantics",
-        "clix",
-        "coachboop",
-        "community",
-        "kurama",
-        "nikof",
-        "vadeal",
-        "venofn",
-        "vicotryona",
-        "wazz"
-      ]
     }
   ],
-  "latest": "2026-06-06"
+  "latest": "2026-06-07"
 }
