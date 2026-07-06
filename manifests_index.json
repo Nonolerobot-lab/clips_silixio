@@ -3,9 +3,46 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 5,
+      "total_clips": 53,
       "streamers": [
-        "community"
+        "00-07-56",
+        "00-35-56",
+        "00-41-11",
+        "00-50-32",
+        "00-56-56",
+        "01-31-56",
+        "01-33-42",
+        "01-36-12",
+        "01-37-57",
+        "02-13-32",
+        "02-40-47",
+        "02-53-17",
+        "03-15-57",
+        "03-16-17",
+        "03-51-47",
+        "04-03-32",
+        "04-44-42",
+        "aussieantics",
+        "clix",
+        "community",
+        "mongraal",
+        "mrsavage",
+        "revenja",
+        "risezd",
+        "stizo_",
+        "vadeal"
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "total_clips": 13,
+      "streamers": [
+        "clix",
+        "community",
+        "gentlemates",
+        "marteen",
+        "mongraal",
+        "stizo_"
       ]
     },
     {
@@ -39,41 +76,7 @@
         "stizo_",
         "vadeal"
       ]
-    },
-    {
-      "date": "2026-06-29",
-      "total_clips": 21,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "coachboop",
-        "eomzo",
-        "gentlemates",
-        "k1ng",
-        "mongraal",
-        "stizo_",
-        "swizzy281_",
-        "wazz"
-      ]
-    },
-    {
-      "date": "2026-06-28",
-      "total_clips": 23,
-      "streamers": [
-        "04-37-34",
-        "05-04-04",
-        "05-08-19",
-        "05-26-49",
-        "aussieantics",
-        "clix",
-        "coachboop",
-        "khanada_",
-        "leothecrack",
-        "mongraal",
-        "muzz",
-        "nikof"
-      ]
     }
   ],
-  "latest": "2026-07-04"
+  "latest": "2026-07-06"
 }
