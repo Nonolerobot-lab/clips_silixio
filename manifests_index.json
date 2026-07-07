@@ -3,7 +3,7 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 53,
+      "total_clips": 59,
       "streamers": [
         "00-07-56",
         "00-35-56",
@@ -19,17 +19,33 @@
         "02-53-17",
         "03-15-57",
         "03-16-17",
+        "03-46-08",
+        "03-48-53",
         "03-51-47",
         "04-03-32",
         "04-44-42",
-        "aussieantics",
         "clix",
         "community",
+        "gentlemates",
+        "marteen",
         "mongraal",
         "mrsavage",
         "revenja",
-        "risezd",
         "stizo_",
+        "vadeal"
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "total_clips": 12,
+      "streamers": [
+        "00-17-22",
+        "04-13-23",
+        "aussieantics",
+        "clix",
+        "mongraal",
+        "mrsavage",
+        "revenja",
         "vadeal"
       ]
     },
@@ -78,5 +94,5 @@
       ]
     }
   ],
-  "latest": "2026-07-06"
+  "latest": "2026-07-07"
 }
