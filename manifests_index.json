@@ -3,16 +3,35 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 21,
+      "total_clips": 52,
       "streamers": [
+        "00-45-40",
+        "01-33-22",
+        "02-11-10",
         "asianjeff",
+        "aussieantics",
         "clix",
+        "coachboop",
         "community",
         "khanada_",
+        "laiizenfn",
         "leothecrack",
+        "mongraal",
         "mrsavage",
+        "nikof",
         "rezonfn",
+        "risezd",
         "talmo"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "total_clips": 16,
+      "streamers": [
+        "asianjeff",
+        "aussieantics",
+        "eomzo",
+        "rezonfn"
       ]
     },
     {
@@ -30,5 +49,5 @@
       ]
     }
   ],
-  "latest": "2026-08-09"
+  "latest": "2026-08-10"
 }
