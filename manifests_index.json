@@ -3,23 +3,25 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 50,
+      "total_clips": 3,
       "streamers": [
-        "00-45-40",
-        "01-33-22",
-        "02-11-10",
-        "asianjeff",
+        "community"
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "total_clips": 22,
+      "streamers": [
+        "00-54-41",
+        "acorn",
         "aussieantics",
-        "clix",
         "coachboop",
-        "community",
-        "eomzo",
-        "laiizenfn",
+        "kurama",
+        "kurama_203",
         "mongraal",
-        "mrsavage",
-        "nikof",
-        "rezonfn",
-        "risezd"
+        "podasai",
+        "stizo_",
+        "venofn"
       ]
     },
     {
@@ -41,21 +43,7 @@
         "eomzo",
         "rezonfn"
       ]
-    },
-    {
-      "date": "2026-08-09",
-      "total_clips": 25,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "clix",
-        "coachboop",
-        "laiizenfn",
-        "mongraal",
-        "rezonfn",
-        "risezd"
-      ]
     }
   ],
-  "latest": "2026-08-11"
+  "latest": "2026-08-16"
 }
