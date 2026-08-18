@@ -1,11 +1,12 @@
 {
   "days": [
     {
-      "date": "BACKLOG",
-      "label": "⏳ Clips en retard",
-      "total_clips": 3,
+      "date": "2026-08-18",
+      "total_clips": 12,
       "streamers": [
-        "community"
+        "clix",
+        "coachboop",
+        "venofn"
       ]
     },
     {
@@ -23,27 +24,7 @@
         "stizo_",
         "venofn"
       ]
-    },
-    {
-      "date": "2026-08-11",
-      "total_clips": 7,
-      "streamers": [
-        "clix",
-        "community",
-        "kurama_203",
-        "risezd"
-      ]
-    },
-    {
-      "date": "2026-08-10",
-      "total_clips": 16,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "eomzo",
-        "rezonfn"
-      ]
     }
   ],
-  "latest": "2026-08-16"
+  "latest": "2026-08-18"
 }
