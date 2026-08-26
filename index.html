@@ -298,11 +298,28 @@
         }
         /* Preference GLOBALE coupee : la video reprend toute la largeur. */
         .chat-video-panel.hidden { display: none; }
-        /* Chat indisponible sur CE clip (45 % des clips du 26/08) : la place
-           reste RESERVEE. Sans ca la video changeait de taille presque un clip
-           sur deux ; sur 109 repetitions, une image stable vaut mieux qu'une
-           image plus grande qui saute. */
-        .chat-video-panel.no-chat { visibility: hidden; }
+        /* Chat indisponible sur CE clip : la place reste RESERVEE, sinon la video
+           changerait de taille d'un clip a l'autre (mesure du 26/08 : 45 % des
+           clips n'ont pas de chat — et ce sera bien plus demain, les Twitch Clips
+           et les talks n'en ont JAMAIS : 0/15 et 0/13). Sur 100+ repetitions, une
+           image stable vaut mieux qu'une image plus grande qui saute.
+           2026-08-26 : la colonne portait un vide MUET, impossible a distinguer
+           d'un chat casse. Elle le dit maintenant. */
+        .chat-video-panel.no-chat > * { visibility: hidden; }
+        .chat-video-panel.no-chat {
+            justify-content: center;
+            border: 1px dashed #2a2a4a;
+            border-radius: 10px;
+        }
+        .chat-video-panel.no-chat::after {
+            content: 'pas de chat pour ce clip';
+            visibility: visible;
+            color: #6a6a8a;
+            font-size: 0.72em;
+            text-align: center;
+            padding: 0 8px;
+            line-height: 1.4;
+        }
         .chat-video-panel .chat-label {
             display: flex;
             align-items: center;
@@ -361,8 +378,21 @@
             border-radius: 4px; font-size: 0.85em; margin-left: 8px;
         }
         .clip-info-overlay .sources { color: #e67e22; font-size: 0.85em; margin-top: 4px; }
-        .clip-info-overlay .text { color: #aaa; font-style: italic; font-size: 0.85em; margin-top: 2px; }
-        .clip-info-overlay .why { color: #7a7aaa; font-size: 0.78em; margin-top: 3px; line-height: 1.4; }
+        /* 2026-08-26 : coupe proprement a 2 lignes avec des points de suspension,
+           au lieu de la barre de defilement (retour PO : « la petite roulette
+           c'est un peu degueu »). Le texte complet reste accessible au survol
+           via l'attribut title, donc rien n'est perdu. */
+        .clip-info-overlay .text {
+            color: #aaa; font-style: italic; font-size: 0.85em; margin-top: 2px;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .clip-info-overlay .why {
+            color: #9a9ab8;   /* etait #7a7aaa : sous le seuil de contraste AA */
+            font-size: 0.78em; margin-top: 3px; line-height: 1.4;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
         /* === Sprint 73.3 : 5 axes qualite editoriale === */
         .axes-row {
@@ -480,9 +510,11 @@
             /* 2026-08-26 : plafonne. Une fois les boutons ramenes de 125 a 49 px
                (align-items: flex-start), ce bloc devenait le poste dominant du
                chrome bas : 110 px mesures a 1920x1080, pour un resume qui se lit
-               en deux lignes. Il defile au besoin plutot que de manger la video. */
-            max-height: 58px;
-            overflow-y: auto;
+               en deux lignes. `overflow: hidden` et NON `auto` : la barre de
+               defilement etait laide et inutile, les deux textes long sont
+               desormais coupes a 2 lignes avec ellipse (cf. .text / .why). */
+            max-height: 66px;
+            overflow: hidden;
         }
         .feedback-with-info .feedback-row {
             flex: 1 1 auto;
@@ -1267,53 +1299,22 @@
              seul moyen d'exprimer "Top mais mal cadre", que les 6 verdicts ne
              savent pas dire. Ils sont juste compactes. -->
         <div class="secondary-rows">
-        <div class="axes-rate-row" id="axesRateRow">
-            <div class="ax-group" title="Qualite du moment detecte">
-                <span class="ax-name">Moment</span>
-                <button class="ax-btn ax-pos" data-axis="moment_quality" data-value="bon"
-                        onclick="rateAxis('moment_quality','bon')"
-                        title="Le moment est bon (raccourci: 7)">
-                    &#128293; bon<span class="ax-shortcut">7</span>
-                </button>
-                <button class="ax-btn ax-neg" data-axis="moment_quality" data-value="mauvais"
-                        onclick="rateAxis('moment_quality','mauvais')"
-                        title="Le moment est faible (raccourci: 8)">
-                    &#128078; faible<span class="ax-shortcut">8</span>
-                </button>
-            </div>
-            <div class="ax-group" title="Qualite de la decoupe (timing, duree, cadrage)">
-                <span class="ax-name">Cut</span>
-                <button class="ax-btn ax-pos" data-axis="cut_quality" data-value="bon"
-                        onclick="rateAxis('cut_quality','bon')"
-                        title="La decoupe est correcte (raccourci: J)">
-                    &#9989; ok<span class="ax-shortcut">J</span>
-                </button>
-                <button class="ax-btn ax-warn" data-axis="cut_quality" data-value="mal_cadre"
-                        onclick="rateAxis('cut_quality','mal_cadre')"
-                        title="La decoupe est mauvaise (raccourci: K)">
-                    &#9986; mal<span class="ax-shortcut">K</span>
-                </button>
-            </div>
-            <div class="ax-group" title="Redondance dans le best-of final">
-                <span class="ax-name">Unique</span>
-                <button class="ax-btn ax-pos" data-axis="redundancy" data-value="unique"
-                        onclick="rateAxis('redundancy','unique')"
-                        title="Clip unique dans le best-of (raccourci: U)">
-                    &#127775; unique<span class="ax-shortcut">U</span>
-                </button>
-                <button class="ax-btn ax-dup" data-axis="redundancy" data-value="duplicate"
-                        onclick="rateAxis('redundancy','duplicate')"
-                        title="Clip redondant / doublon (raccourci: I)">
-                    &#128257; doublon<span class="ax-shortcut">I</span>
-                </button>
-            </div>
-            <!-- 2026-08-26 : phrase d'aide retiree. Rendue a 10,8 px sous
-                 opacity 0.6, elle etait illisible, elle occupait la largeur qui
-                 empeche les deux rangees de tenir sur une ligne, et son contenu
-                 ("optionnels", "remplis automatiquement") apprenait surtout a
-                 ignorer ces boutons. -->
-        </div>
-
+        <!-- 2026-08-26 (decision PO) : les 6 boutons d'AXES sont retires.
+             Mesure sur 714 verdicts reels (21 -> 26 aout) :
+               moment_quality=mauvais  654  (91,6 %)  <- le taux de rejet, pas une saisie
+               cut_quality=mal_cadre     3  (0,4 %)
+               redundancy=duplicate      1  (0,1 %)
+             _applyLegacyAxes() remplit ces axes AUTOMATIQUEMENT depuis le
+             verdict, et le champ censé distinguer le manuel du derive
+             (`axes_explicit`) est renseigne sur 710/714 : il ne distingue rien.
+             Ces boutons n'apportaient donc aucune information que les 6
+             verdicts ne portent deja, pour 35 px de chrome et 6 boutons sur 12.
+             ATTENTION : on ne retire QUE l'interface. `axesFeedback`,
+             `_applyLegacyAxes`, LEGACY_TO_AXES et le bloc `axes_summary` de
+             l'export restent en place — feedback.save_drive_feedback_to_disk
+             les lit cote pipeline (_resolve_verdict fait primer un axe negatif
+             sur le verdict legacy). Le diagnostic de cadrage reste porte par le
+             verdict "Mal cadre" (R) et son sous-menu 1/2/3/4. -->
         <div class="options-row">
             <button class="nav-btn" id="btnPrev" onclick="navigate(-1)">
                 &#8592; Precedent <span class="shortcut">&#8592;</span>
@@ -2100,7 +2101,9 @@
             } else if (clip.streamer) {
                 infoHtml += '<div style="color:#9b59b6;font-size:0.85em;margin-top:2px;">' + escHtml(clip.streamer) + '</div>';
             }
-            if (clip.ai_summary) infoHtml += '<div class="text">' + escHtml(clip.ai_summary) + '</div>';
+            // title : le resume est coupe a 2 lignes en CSS, le survol rend le texte complet.
+            if (clip.ai_summary) infoHtml += '<div class="text" title="' + escHtml(clip.ai_summary) + '">'
+                + escHtml(clip.ai_summary) + '</div>';
             else if (clip.text) infoHtml += '<div class="text">"' + escHtml(clip.text.substring(0, 120)) + '"</div>';
             const peakHintHtml = buildPeakHint(clip);
             if (peakHintHtml) infoHtml += '<div class="peak-meta">' + peakHintHtml + '</div>';
@@ -2499,11 +2502,92 @@
             document.body.removeChild(a);
         }
 
-        function downloadClip() {
+        // 2026-08-26 : le telechargement passait par `clip.drive_url`, l'URL
+        // PUBLIQUE de Drive. Or Drive interpose une page « Google ne peut pas
+        // lancer d'analyse antivirus sur ce fichier » au-dela de 100 Mo, et les
+        // clips livres font 119 Mo de mediane (p90 306 Mo, max 886 Mo) : la page
+        // apparaissait donc presque a chaque clic, avec un « Telecharger quand
+        // meme » a cliquer a la main.
+        //
+        // On passe desormais par le worker Cloudflare — la MEME source que le
+        // lecteur video, donc l'API Drive authentifiee, sans quota public et sans
+        // interstitiel. Le navigateur ignorant l'attribut `download` en
+        // cross-origin, on recupere les octets puis on declenche l'enregistrement
+        // depuis un blob local. La progression est affichee sur le bouton : a
+        // 266 Mo l'operation dure plusieurs dizaines de secondes et sans retour
+        // visuel l'interface semble figee.
+        let _dlInFlight = false;
+
+        async function downloadClip() {
             const clip = CLIPS[currentIndex];
-            if (clip.drive_url) {
+            if (!clip) return;
+            const btn = document.getElementById('dlClipBtn');
+            const label = btn ? btn.innerHTML : '';
+            const restore = () => { if (btn) { btn.innerHTML = label; btn.style.opacity = ''; } };
+
+            // Repli : pas d'URL worker -> ancien comportement (avec interstitiel).
+            if (!clip.video_url) {
+                if (clip.drive_url) {
+                    downloads[getClipStateKey(clip)] = true;
+                    triggerDownload(clip.drive_url, clip.filename);
+                    saveProgress();
+                }
+                return;
+            }
+
+            if (_dlInFlight) return;   // evite 2 telechargements concurrents du meme clip
+            _dlInFlight = true;
+            if (btn) btn.style.opacity = '0.75';
+
+            try {
+                const resp = await fetch(clip.video_url);
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+
+                const total = Number(resp.headers.get('Content-Length')) || 0;
+                const chunks = [];
+                let received = 0;
+                const reader = resp.body.getReader();
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    chunks.push(value);
+                    received += value.length;
+                    if (btn) {
+                        const mb = (received / 1048576).toFixed(0);
+                        btn.innerHTML = total
+                            ? '&#11015; ' + Math.round(100 * received / total) + ' %'
+                            : '&#11015; ' + mb + ' Mo';
+                    }
+                }
+
+                const url = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = clip.filename || 'clip.mp4';
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                // Laisse au navigateur le temps de prendre le blob avant de le liberer.
+                setTimeout(() => URL.revokeObjectURL(url), 60000);
+
                 downloads[getClipStateKey(clip)] = true;
-                triggerDownload(clip.drive_url, clip.filename);
+                saveProgress();
+                if (btn) {
+                    btn.innerHTML = '&#9989; Telecharge';
+                    setTimeout(restore, 1800);
+                }
+            } catch (e) {
+                console.warn('telechargement via worker KO, repli Drive :', e);
+                restore();
+                // Repli explicite : l'interstitiel vaut mieux que rien.
+                if (clip.drive_url) {
+                    downloads[getClipStateKey(clip)] = true;
+                    triggerDownload(clip.drive_url, clip.filename);
+                    saveProgress();
+                }
+            } finally {
+                _dlInFlight = false;
             }
         }
 
@@ -3701,13 +3785,9 @@
                 case 'r': case 'R': showBadFramingSubmenu(); break;
                 case 's': case 'S': rate('not_relevant'); break;
                 case 't': case 'T': rate('duplicate'); break;
-                // Sprint 80 : axes explicites (moment / cut / redundancy)
-                case '7':           rateAxis('moment_quality', 'bon'); break;
-                case '8':           rateAxis('moment_quality', 'mauvais'); break;
-                case 'j': case 'J': rateAxis('cut_quality', 'bon'); break;
-                case 'k': case 'K': rateAxis('cut_quality', 'mal_cadre'); break;
-                case 'u': case 'U': rateAxis('redundancy', 'unique'); break;
-                case 'i': case 'I': rateAxis('redundancy', 'duplicate'); break;
+                // 2026-08-26 : raccourcis 7/8/J/K/U/I retires avec leurs boutons
+                // (cf. le commentaire du bloc axes-rate-row). rateAxis() reste
+                // definie mais n'a plus d'appelant.
                 case 'v': case 'V': openBriefModal(); break;
                 case 'c': case 'C': toggleChat(); break;
                 // 2026-08-26 : `case 's': toggleSubs()` RETIRE d'ici. Il etait
