@@ -40,17 +40,21 @@
             color: #fff;
         }
         .top-bar .counter .current { color: #9b59b6; font-size: 1.3em; }
+        /* 2026-08-26 : l'aplat violet plein est retire. C'etait le seul aplat
+           sature de la page, donc son accent visuel le plus fort — pour l'action
+           la plus rare, et devenue secondaire depuis que l'envoi du feedback est
+           automatique. Contour plutot que remplissage. */
         .top-bar .export-btn {
-            background: #9b59b6;
-            color: #fff;
-            border: none;
-            padding: 6px 16px;
+            background: transparent;
+            color: #b98fd0;
+            border: 1px solid #6d4080;
+            padding: 6px 14px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 0.85em;
             font-weight: 600;
         }
-        .top-bar .export-btn:hover { background: #8e44ad; }
+        .top-bar .export-btn:hover { background: #6d4080; color: #fff; }
 
         /* === PROGRESS BAR === */
         .progress-bar {
@@ -290,7 +294,12 @@
                coutait 19 % de la largeur sur un ecran 1280 et rien sur un
                2560. Le chat lui-meme est quasi gratuit en bande passante
                (mesure : 0,5 a 1,9 Mo contre 43-89 Mo pour le clip). */
-            flex: 0 0 clamp(200px, 16%, 320px);
+            /* 2026-08-26 : 16 % -> 12 %. Avec la colonne d'info a gauche, les
+               DEUX colonnes laterales prenaient 495 px des 1904 et la video
+               redevenait bornee en LARGEUR (donc incapable d'utiliser la hauteur
+               disponible). A 12 % elle redevient bornee en hauteur, ce qui est
+               l'optimum : toute largeur supplementaire serait perdue. */
+            flex: 0 0 clamp(180px, 12%, 260px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -500,6 +509,33 @@
             margin-bottom: 6px;
             flex-wrap: wrap;
         }
+        /* 2026-08-26 : colonne de gauche, a cote de la video. */
+        .info-column {
+            /* Mesure a 1920x1080 : a 274 px (15 %) la video devenait contrainte
+               en LARGEUR et retombait a 44,3 % de l'ecran. L'encart ne fait que
+               ~92 px de haut : il lui faut de la lisibilite, pas de la largeur. */
+            flex: 0 0 clamp(150px, 9%, 190px);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-width: 0;
+            overflow: hidden;
+        }
+        .info-column .clip-info-overlay {
+            max-height: none;          /* la place ne manque plus : texte entier */
+            overflow-y: auto;
+            margin-bottom: 0;
+        }
+        /* Le texte n'est plus coupe a 2 lignes ici : il a la hauteur qu'il veut. */
+        .info-column .clip-info-overlay .text,
+        .info-column .clip-info-overlay .why {
+            display: block;
+            -webkit-line-clamp: unset;
+        }
+        @media (max-width: 1100px) {
+            .info-column { display: none; }   /* trop etroit : la video prime */
+        }
+
         .feedback-with-info .clip-info-overlay {
             flex: 0 1 30%;
             min-width: 260px;
@@ -1145,7 +1181,13 @@
         <button class="veille-toggle-btn" id="veilleToggleBtn" onclick="toggleVeille()" style="display:none;">&#129302; Veille IA</button>
         <button class="veille-toggle-btn" id="bestofToggleBtn" onclick="toggleBestof()" style="display:none;border-color:#2ecc7144;color:#2ecc71;">&#127916; Script Best-of</button>
         <button class="veille-toggle-btn" id="storiesToggleBtn" onclick="toggleStories()" style="display:none;">&#128214; Stories <span id="storiesCount"></span></button>
-        <button class="export-btn" onclick="exportFeedback()">Exporter feedback</button>
+        <!-- 2026-08-26 (decision PO) : renomme. Le transport est devenu
+             automatique (autosave toutes les 20 notes + envoi a la fermeture
+             de l'onglet), donc "Exporter" decrivait une action qui n'est plus
+             la sienne. Ce qu'il fait VRAIMENT et qui reste utile :
+             hideRatedClipsAfterExport() retire les clips deja notes pour
+             permettre le tri par lots. -->
+        <button class="export-btn" onclick="exportFeedback()" title="Retire de la liste les clips deja notes (le feedback part automatiquement, ce bouton ne sert plus a l'envoyer)">Masquer les clips notés</button>
         <span id="driveUploadStatus" style="font-size:0.75em;color:#555;margin-left:8px"></span>
         <!-- Fix 2026-04-09 : indicateur clips masques apres export + toggle restore -->
         <span id="hiddenClipsInfo" style="font-size:0.75em;color:#888;margin-left:12px;display:none;">
@@ -1197,6 +1239,14 @@
     <div class="main" id="mainArea">
         <!-- VIDEO WRAPPER: main video + chat panel side by side -->
         <div class="video-wrapper" id="videoWrapper">
+
+            <!-- 2026-08-26 : colonne de GAUCHE. Elle occupe l'espace mort qui
+                 bordait la video (celle-ci est contrainte en HAUTEUR, donc elle
+                 ne pouvait pas se servir de cette largeur) et rend l'info du clip
+                 lisible sans troncature. -->
+            <div class="info-column" id="infoColumn">
+                <div class="clip-info-overlay" id="clipInfo"></div>
+            </div>
 
             <!-- Main column : video + peak-guide en colonne (Sprint 60 fix) -->
             <div class="main-column">
@@ -1265,8 +1315,12 @@
         <!-- Sprint 60 fix : info clip a gauche + boutons feedback a droite
              pour gagner de la hauteur verticale (la video prend plus de place) -->
         <div class="feedback-with-info">
-            <div class="clip-info-overlay" id="clipInfo"></div>
-            <!-- 5 boutons de feedback -->
+            <!-- 2026-08-26 (retour PO) : l'encart d'info a demenage dans la
+                 colonne de GAUCHE, a cote de la video (cf. #infoColumn). Il y a
+                 la place en hauteur, donc le texte est lisible en entier au lieu
+                 d'etre coupe a deux lignes, et les 6 boutons de verdict se
+                 retrouvent CENTRES sur toute la largeur du bas. -->
+            <!-- 6 boutons de feedback -->
             <div class="feedback-row">
                 <button class="fb-btn fb-top" onclick="rate('top')">
                     &#128293; Top<span class="shortcut">A</span>
@@ -2503,29 +2557,45 @@
         }
 
         // 2026-08-26 : le telechargement passait par `clip.drive_url`, l'URL
-        // PUBLIQUE de Drive. Or Drive interpose une page « Google ne peut pas
-        // lancer d'analyse antivirus sur ce fichier » au-dela de 100 Mo, et les
-        // clips livres font 119 Mo de mediane (p90 306 Mo, max 886 Mo) : la page
-        // apparaissait donc presque a chaque clic, avec un « Telecharger quand
-        // meme » a cliquer a la main.
+        // PUBLIQUE de Drive, qui interpose une page « Google ne peut pas lancer
+        // d'analyse antivirus sur ce fichier » au-dela de 100 Mo. Les clips
+        // livres font 119 Mo de mediane (p90 306 Mo) : la page apparaissait donc
+        // presque a chaque clic, avec un « Telecharger quand meme » a la main.
         //
-        // On passe desormais par le worker Cloudflare — la MEME source que le
-        // lecteur video, donc l'API Drive authentifiee, sans quota public et sans
-        // interstitiel. Le navigateur ignorant l'attribut `download` en
-        // cross-origin, on recupere les octets puis on declenche l'enregistrement
-        // depuis un blob local. La progression est affichee sur le bouton : a
-        // 266 Mo l'operation dure plusieurs dizaines de secondes et sans retour
-        // visuel l'interface semble figee.
-        let _dlInFlight = false;
+        // On passe par le worker Cloudflare — la MEME source que le lecteur,
+        // donc l'API Drive authentifiee, sans quota public ni interstitiel.
+        // Le navigateur ignorant l'attribut `download` en cross-origin, on
+        // recupere les octets puis on declenche l'enregistrement depuis un blob.
+        //
+        // /!\ Ce n'est PAS le telechargement natif idealement voulu : le fichier
+        // n'apparait dans les telechargements qu'a la fin du transfert, et il
+        // transite par la memoire. Le vrai correctif est un en-tete
+        // `Content-Disposition: attachment` cote worker, apres quoi un simple
+        // lien suffira (cf. tools/cloudflare_worker.js et le bloc DL_ATTACHMENT).
+        // Compteur de telechargements EN COURS. Plusieurs peuvent tourner en
+        // parallele (retour PO : « evite, si le DL est long, de ne pas pouvoir
+        // download un autre clip en attendant »).
+        let _dlActive = 0;
+
+        function _refreshDlBtn(flash) {
+            const btn = document.getElementById('dlClipBtn');
+            if (!btn) return;
+            if (flash) {
+                btn.innerHTML = '&#9989; Telecharge';
+                setTimeout(() => _refreshDlBtn(false), 1600);
+                return;
+            }
+            btn.innerHTML = _dlActive > 0
+                ? '&#11015; ' + _dlActive + ' en cours'
+                : '&#128229; Telecharger clip <span class="shortcut">D</span>';
+            btn.style.opacity = _dlActive > 0 ? '0.8' : '';
+        }
 
         async function downloadClip() {
             const clip = CLIPS[currentIndex];
             if (!clip) return;
-            const btn = document.getElementById('dlClipBtn');
-            const label = btn ? btn.innerHTML : '';
-            const restore = () => { if (btn) { btn.innerHTML = label; btn.style.opacity = ''; } };
 
-            // Repli : pas d'URL worker -> ancien comportement (avec interstitiel).
+            // Repli : pas d'URL worker -> ancien comportement (interstitiel Drive).
             if (!clip.video_url) {
                 if (clip.drive_url) {
                     downloads[getClipStateKey(clip)] = true;
@@ -2535,32 +2605,17 @@
                 return;
             }
 
-            if (_dlInFlight) return;   // evite 2 telechargements concurrents du meme clip
-            _dlInFlight = true;
-            if (btn) btn.style.opacity = '0.75';
+            // Pas de garde anti-concurrence : on veut pouvoir en lancer plusieurs.
+            _dlActive++;
+            _refreshDlBtn(false);
+            downloads[getClipStateKey(clip)] = true;
+            saveProgress();
 
             try {
                 const resp = await fetch(clip.video_url);
                 if (!resp.ok) throw new Error('HTTP ' + resp.status);
-
-                const total = Number(resp.headers.get('Content-Length')) || 0;
-                const chunks = [];
-                let received = 0;
-                const reader = resp.body.getReader();
-                while (true) {
-                    const { done, value } = await reader.read();
-                    if (done) break;
-                    chunks.push(value);
-                    received += value.length;
-                    if (btn) {
-                        const mb = (received / 1048576).toFixed(0);
-                        btn.innerHTML = total
-                            ? '&#11015; ' + Math.round(100 * received / total) + ' %'
-                            : '&#11015; ' + mb + ' Mo';
-                    }
-                }
-
-                const url = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
+                const blob = await resp.blob();
+                const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
                 a.download = clip.filename || 'clip.mp4';
@@ -2568,29 +2623,16 @@
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-                // Laisse au navigateur le temps de prendre le blob avant de le liberer.
                 setTimeout(() => URL.revokeObjectURL(url), 60000);
-
-                downloads[getClipStateKey(clip)] = true;
-                saveProgress();
-                if (btn) {
-                    btn.innerHTML = '&#9989; Telecharge';
-                    setTimeout(restore, 1800);
-                }
+                _dlActive = Math.max(0, _dlActive - 1);
+                _refreshDlBtn(true);
             } catch (e) {
                 console.warn('telechargement via worker KO, repli Drive :', e);
-                restore();
-                // Repli explicite : l'interstitiel vaut mieux que rien.
-                if (clip.drive_url) {
-                    downloads[getClipStateKey(clip)] = true;
-                    triggerDownload(clip.drive_url, clip.filename);
-                    saveProgress();
-                }
-            } finally {
-                _dlInFlight = false;
+                _dlActive = Math.max(0, _dlActive - 1);
+                _refreshDlBtn(false);
+                if (clip.drive_url) triggerDownload(clip.drive_url, clip.filename);
             }
         }
-
 
         // === UI UPDATES ===
         const VERDICT_LABELS = {
@@ -3341,7 +3383,7 @@
             const btn = document.querySelector('.export-btn');
             if (btn) {
                 const prevText = btn.textContent;
-                btn.textContent = 'Exporté !';
+                btn.textContent = 'Clips notés masqués';
                 btn.style.background = '#27ae60';
                 setTimeout(() => {
                     btn.textContent = prevText;
