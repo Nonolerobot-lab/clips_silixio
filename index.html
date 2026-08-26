@@ -112,7 +112,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            /* 2026-08-26 : 10px -> 4px. Mesure a 1280x720 : la video n'occupait
+               que 21 % de l'ecran (14 % a 1024x640, ou les boutons prenaient
+               PLUS de surface que le contenu). Chaque pixel de chrome est pris
+               sur l'image que le monteur doit juger. */
+            padding: 4px 8px;
             position: relative;
             min-height: 0;
         }
@@ -121,7 +125,11 @@
         .video-wrapper {
             flex: 1;
             width: 100%;
-            max-width: 1400px;
+            /* 2026-08-26 : le `max-width: 1400px` etait le plafond fautif sur
+               grand ecran. Mesure a 1920x1080 : la video faisait 1242x699 avec
+               678 px de largeur perdue de chaque cote (35 %). Sans le plafond,
+               et avec le chat affiche, elle passe a ~1550x872 (+56 % de
+               surface) — donc afficher le chat ne coute PLUS de video. */
             display: flex;
             gap: 8px;
             align-items: stretch;
@@ -278,15 +286,23 @@
 
         /* === CHAT VIDEO PANEL === */
         .chat-video-panel {
-            width: 260px;
-            flex-shrink: 0;
-            display: flex;       /* visible par defaut */
+            /* 2026-08-26 : largeur en RATIO et non en pixels — un 260px fixe
+               coutait 19 % de la largeur sur un ecran 1280 et rien sur un
+               2560. Le chat lui-meme est quasi gratuit en bande passante
+               (mesure : 0,5 a 1,9 Mo contre 43-89 Mo pour le clip). */
+            flex: 0 0 clamp(200px, 16%, 320px);
+            display: flex;
             flex-direction: column;
             align-items: center;
             gap: 6px;
         }
+        /* Preference GLOBALE coupee : la video reprend toute la largeur. */
         .chat-video-panel.hidden { display: none; }
-        .chat-video-panel.no-chat { display: none; }  /* pas de chat dispo */
+        /* Chat indisponible sur CE clip (45 % des clips du 26/08) : la place
+           reste RESERVEE. Sans ca la video changeait de taille presque un clip
+           sur deux ; sur 109 repetitions, une image stable vaut mieux qu'une
+           image plus grande qui saute. */
+        .chat-video-panel.no-chat { visibility: hidden; }
         .chat-video-panel .chat-label {
             display: flex;
             align-items: center;
@@ -434,7 +450,7 @@
         /* === BOTTOM PANEL === */
         .bottom-panel {
             flex-shrink: 0;
-            padding: 10px 20px 12px;
+            padding: 7px 16px 8px;   /* etait 10/20/12 */
             background: #12122a;
             border-top: 1px solid #2a2a4a;
         }
@@ -445,7 +461,12 @@
         .feedback-with-info {
             display: flex;
             gap: 14px;
-            align-items: stretch;
+            /* 2026-08-26 : `stretch` faisait dicter la hauteur des 6 boutons de
+               verdict par la LONGUEUR DU RESUME IA — mesure : 125 px de haut a
+               tous les viewports, soit 675x125 px de boutons pour une video de
+               92 568 px² a 1024x640. `flex-start` les ramene a ~48 px et rend
+               ces pixels a la video. */
+            align-items: flex-start;
             margin-bottom: 6px;
             flex-wrap: wrap;
         }
@@ -456,6 +477,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            /* 2026-08-26 : plafonne. Une fois les boutons ramenes de 125 a 49 px
+               (align-items: flex-start), ce bloc devenait le poste dominant du
+               chrome bas : 110 px mesures a 1920x1080, pour un resume qui se lit
+               en deux lignes. Il defile au besoin plutot que de manger la video. */
+            max-height: 58px;
+            overflow-y: auto;
         }
         .feedback-with-info .feedback-row {
             flex: 1 1 auto;
@@ -494,10 +521,14 @@
         }
         .fb-btn .shortcut {
             display: block;
-            font-size: 0.65em;
-            color: #666;
-            margin-top: 2px;
-            font-weight: normal;
+            /* 2026-08-26 : etait 0.65em / #666, soit 8,84 px a un contraste de
+               ~2,7:1 (seuil AA = 4,5:1). Dans un outil ou TOUT le rendement
+               repose sur la memoire des touches, l'indice de touche etait le
+               texte le moins lisible de la page. */
+            font-size: 0.8em;
+            color: #c9c9d1;
+            margin-top: 3px;
+            font-weight: 600;
         }
         .fb-btn:hover { transform: translateY(-2px); }
 
@@ -513,15 +544,24 @@
         /* === Sprint 80 : axes-rate row (moment / cut / redundancy) ===
            Rangee compacte sous les verdicts legacy. Chaque axe a 2 boutons
            (+ / -). Les raccourcis legacy (a/z/e/r/s/t) restent actifs. */
+        /* 2026-08-26 : axes + actions sur UNE ligne quand la largeur le permet
+           (elles pesaient 69 px de chrome vertical a elles deux). */
+        .secondary-rows {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px 18px;
+            margin-top: 5px;
+        }
         .axes-rate-row {
             display: flex;
             gap: 10px;
             justify-content: center;
             align-items: center;
-            margin-top: 6px;
             flex-wrap: wrap;
             font-size: 0.75em;
-            color: #8a8ab8;
+            color: #9a9ab8;   /* etait #8a8ab8 */
         }
         .axes-rate-row .ax-group {
             display: flex;
@@ -627,8 +667,8 @@
             justify-content: center;
             gap: 14px;
             margin-top: 6px;
-            font-size: 0.75em;
-            color: #666;
+            font-size: 0.78em;
+            color: #9a9ab8;   /* etait #666 : ~2,7:1, sous le seuil AA */
             flex-wrap: wrap;
         }
         .stats-bar .stat { display: flex; align-items: center; gap: 4px; }
@@ -783,6 +823,12 @@
             line-height: 1.6;
             max-height: 200px;
             overflow-y: auto;
+            /* 2026-08-26 : le `white-space: pre-line` n'existait que sur UNE des
+               deux branches de rendu (celle du plan structure), et la branche
+               VIVANTE est l'autre (le fallback editorial_summary). Les \n
+               etaient donc dans le DOM mais non rendus : tout le brief arrivait
+               en un seul pave illisible. Pose ici, il couvre les deux branches. */
+            white-space: pre-line;
         }
         .editorial-panel.show { display: block; }
         .editorial-panel .brief-title {
@@ -1013,13 +1059,36 @@
         .date-btn.backlog.active { background: #f39c12; color: #1a1005; border-color: #f39c12; }
 
         /* === SESSION TIMER (Sprint 58) === */
-        #sessionTimer {
+        /* 2026-08-26, decision PO : le chronometre de session n'est plus
+           affiche. Il ne l'aidait a decider de rien et mettait le monteur sous
+           minuterie. La MESURE continue de tourner et part dans l'export
+           (bloc `session_timing`) : le PO garde sa baseline, Silixio perd le
+           chronometre. Masquer l'affichage != arreter la mesure. */
+        #sessionTimer { display: none; }
+
+        .stats-bar-compact {
             font-size: 0.78em;
-            font-family: monospace;
-            color: #777;
+            color: #9a9ab8;
             white-space: nowrap;
-            letter-spacing: 0.02em;
             flex-shrink: 0;
+        }
+
+        /* Ecrans bas (portables, ou fenetre a moitie d'ecran) : le chrome du
+           bas GROSSISSAIT quand la fenetre retrecissait (les boutons passaient
+           a la ligne), donc la video fondait — 14 % de l'ecran a 1024x640,
+           moins que les boutons. On compacte au lieu d'empiler. */
+        @media (max-height: 800px) {
+            .bottom-panel { padding: 5px 12px 6px; }
+            .feedback-with-info { gap: 8px; margin-bottom: 3px; }
+            .fb-btn { padding: 6px 4px; font-size: 0.8em; }
+            .stats-bar { margin-top: 3px; }
+            /* 2026-08-26 : PAS de `.clip-info-overlay { display: none }` ici.
+               Essaye puis retiree : (a) la regle ne s'appliquait pas — la base
+               `.feedback-with-info .clip-info-overlay` a deux classes et gagne
+               en specificite ; (b) et c'est tant mieux, ce bloc porte le score,
+               la categorie et le resume, soit ce sur quoi le monteur decide.
+               La compaction ci-dessus suffit : panneau bas mesure a 189 px en
+               1024x640 contre 270 px avant refonte. */
         }
     </style>
 </head>
@@ -1033,7 +1102,15 @@
             <option value="">Tous les streamers</option>
         </select>
         <button class="veille-toggle-btn" id="briefModalBtn" onclick="openBriefModal()" style="display:none;">&#128203; Brief IA</button>
-        <button class="veille-toggle-btn" id="veilleToggleBtn" onclick="toggleVeille()">&#129302; Veille IA <span style="font-size:0.7em;color:#666;">(V)</span></button>
+        <!-- 2026-08-26 : bouton "Veille IA" RETIRE. Il affichait exactement la
+             MEME source que la modal Brief IA (MANIFEST.editorial_summary), et
+             la touche V ouvrait la modal, pas ce panneau : trois comportements
+             pour deux libelles. La vraie veille existe cote pipeline
+             (data/veille_report.json) mais n'est JAMAIS injectee dans le
+             manifest — le bouton mentait depuis le Sprint 42. Le panneau
+             #editorialPanel et toggleVeille() restent en place (plus aucun
+             appelant) le temps de decider si on injecte la vraie veille. -->
+        <button class="veille-toggle-btn" id="veilleToggleBtn" onclick="toggleVeille()" style="display:none;">&#129302; Veille IA</button>
         <button class="veille-toggle-btn" id="bestofToggleBtn" onclick="toggleBestof()" style="display:none;border-color:#2ecc7144;color:#2ecc71;">&#127916; Script Best-of</button>
         <button class="veille-toggle-btn" id="storiesToggleBtn" onclick="toggleStories()" style="display:none;">&#128214; Stories <span id="storiesCount"></span></button>
         <button class="export-btn" onclick="exportFeedback()">Exporter feedback</button>
@@ -1182,6 +1259,14 @@
 
         <!-- Sprint 80 : saisie explicite par axe (moment / cut / redundancy)
              Les raccourcis legacy (a/z/e/r/s/t) restent actifs en surcouche. -->
+        <!-- 2026-08-26 : les deux rangees secondaires (axes explicites + actions)
+             partagent desormais UNE ligne quand la largeur le permet. Mesure a
+             1920x1080 : elles pesaient 35 + 34 = 69 px de chrome vertical, pris
+             sur la video que le monteur doit juger. Les axes ne sont PAS
+             supprimes — ils alimentent _resolve_verdict cote pipeline et sont le
+             seul moyen d'exprimer "Top mais mal cadre", que les 6 verdicts ne
+             savent pas dire. Ils sont juste compactes. -->
+        <div class="secondary-rows">
         <div class="axes-rate-row" id="axesRateRow">
             <div class="ax-group" title="Qualite du moment detecte">
                 <span class="ax-name">Moment</span>
@@ -1222,9 +1307,11 @@
                     &#128257; doublon<span class="ax-shortcut">I</span>
                 </button>
             </div>
-            <span id="axesRateHint" style="opacity:0.6;font-size:0.9em;">
-                Axes explicites (optionnels). Les raccourcis Top/Bon/... remplissent aussi les axes automatiquement.
-            </span>
+            <!-- 2026-08-26 : phrase d'aide retiree. Rendue a 10,8 px sous
+                 opacity 0.6, elle etait illisible, elle occupait la largeur qui
+                 empeche les deux rangees de tenir sur une ligne, et son contenu
+                 ("optionnels", "remplis automatiquement") apprenait surtout a
+                 ignorer ces boutons. -->
         </div>
 
         <div class="options-row">
@@ -1237,10 +1324,15 @@
             <div class="chat-toggle" id="chatToggle" onclick="toggleChat()">
                 &#128172; Chat <span class="shortcut">C</span>
             </div>
-            <!-- Fix 2026-05-14 add-subs-checkbox : swap clip <-> _subs.mp4 (V6.2) -->
-            <div class="chat-toggle" id="subsToggle" onclick="toggleSubs()" title="Afficher la version avec sous-titres FR auto-burnes (Whisper-large-v3, traduit auto les clips EN)">
-                &#127916;&#65039; Subs FR <span class="shortcut">S</span>
-            </div>
+            <!-- 2026-08-26 : bouton "Subs FR" RETIRE. Deux raisons cumulees :
+                 (1) son raccourci annonce `S` etait un mensonge — `case 's'`
+                 etait deja pris par rate('not_relevant') quinze lignes plus
+                 haut dans le meme switch, donc presser S notait "Pas
+                 pertinent" ; (2) il ne pouvait rien faire de toute facon :
+                 `video_url_subs` n'est produit sur AUCUN clip (0/109 le 26/08,
+                 coherent avec SUBTITLES_BURN_ENABLED=false en prod). Le clic
+                 n'emettait qu'un console.warn.
+                 toggleSubs() et _subsEnabled restent en place, sans appelant. -->
             <button class="dl-btn" id="dlFolderBtn" onclick="downloadFolder()" title="T&#233;l&#233;charger tous les clips Top + Bons">
                 &#128230; S&#233;lection <span class="shortcut"></span>
             </button>
@@ -1248,6 +1340,7 @@
                 Suivant &#8594; <span class="shortcut">&#8594;</span>
             </button>
         </div>
+        </div><!-- /.secondary-rows -->
 
         <div class="stats-bar" id="statsBar">
             <div class="stat"><span class="sdot sdot-top"></span><span id="statTop">0</span> top</div>
@@ -1310,6 +1403,25 @@
         let sessionStartIso       = null; // ISO de resetSessionTimer()
         let inactivityPauseCount  = 0;    // nb de basculements actif → pause depuis reset
         let clipVerdictTimings    = {};   // { clipKey: {time_to_verdict_sec, verdict, clip_id, clip_file, streamer} }
+        // 2026-08-26 : index du dernier clip NOTE, pour l'annulation (Retour
+        // arriere). On memorise l'index reel plutot que de deduire currentIndex-1,
+        // qui serait faux des que le monteur navigue a la main.
+        let lastRatedIndex        = null;
+        // 2026-08-26 : preference GLOBALE d'affichage du chat, persistee (meme
+        // motif que _subsEnabled / 'silixio_subs_fr'). Avant, la visibilite
+        // dependait de chatFlags, qui est PAR CLIP : meme en pressant C, il
+        // fallait le refaire sur chacun des 60 clips ayant un chat. C'etait ca,
+        // la vraie friction — pas le toggle lui-meme.
+        // Le chat est desormais AFFICHE PAR DEFAUT (decision PO). Il ne coute
+        // quasi rien en bande passante (mesure : 0,5 a 1,9 Mo contre 43-89 Mo
+        // pour le clip) et plus rien en largeur de video depuis le retrait du
+        // `max-width: 1400px`.
+        let chatDefaultOn = (function() {
+            try {
+                const v = localStorage.getItem('silixio_chat_default');
+                return v === null ? true : v === '1';
+            } catch (e) { return true; }
+        })();
 
         // Sprint 60 : formatte une date ISO "YYYY-MM-DD" en francais lisible
         // "2026-04-08" -> "8 avril 2026"
@@ -1469,7 +1581,17 @@
                 if (saved.axesFeedback)  axesFeedback  = saved.axesFeedback; // Sprint 80
                 if (saved.chatFlags)     chatFlags     = saved.chatFlags;
                 if (saved.exportedClips) exportedClips = saved.exportedClips; // Fix 2026-04-09
-                if (typeof saved.currentIndex === 'number' && saved.currentIndex < TOTAL) {
+                // 2026-08-26 : la garde etait `saved.currentIndex < TOTAL`, or
+                // restoreProgress() est appele AVANT `TOTAL = CLIPS.length`
+                // (il doit l'etre, pour recuperer exportedClips avant le
+                // filtrage). TOTAL valait donc encore 0 : la condition etait
+                // TOUJOURS fausse, l'index jamais restaure, puis saveProgress()
+                // reecrivait 0 par-dessus. Un F5 au clip 70/109 renvoyait au
+                // clip 1 — les verdicts survivaient, la position non.
+                // La validation de borne se fait juste apres le filtrage
+                // (`if (currentIndex >= TOTAL) currentIndex = 0`), donc il n'y
+                // a rien a verifier ici.
+                if (typeof saved.currentIndex === 'number' && saved.currentIndex >= 0) {
                     currentIndex = saved.currentIndex;
                 }
             } catch (e) {
@@ -1871,22 +1993,26 @@
                 }
             }
 
-            // Sprint 35 : chat desactive par defaut (Silixio l'active manuellement si besoin)
+            // 2026-08-26 : le chat suit la preference GLOBALE (chatDefaultOn),
+            // plus le flag par clip. Le CSS mentait depuis le Sprint 35 :
+            // `.chat-video-panel { display: flex; /* visible par defaut */ }`
+            // alors que le JS le masquait systematiquement.
             const chatPanel = document.getElementById('chatPanel');
             const chatPlayer = document.getElementById('chatPlayer');
-            // chatFlags[filename] reste undefined/false par defaut — pas de forcage a true
             const clipKey = getClipStateKey(clip);
-            const chatIsActive = !!(clip.chat_clip_url && chatFlags[clipKey]);
+            const chatIsActive = !!clip.chat_clip_url && chatDefaultOn;
             if (chatIsActive) {
                 _setChatIframe(chatPlayer, clip.chat_clip_url, clip.chat_video_url);
                 chatPanel.classList.remove('hidden', 'no-chat');
-            } else if (clip.chat_clip_url) {
-                // Chat dispo mais masque par Silixio
+            } else if (!chatDefaultOn) {
+                // Chat coupe pour toute la session : la video reprend la largeur.
                 _clearChatIframe(chatPlayer);
                 chatPanel.classList.add('hidden');
                 chatPanel.classList.remove('no-chat');
             } else {
-                // Pas de chat pour ce clip
+                // Preference active mais pas de chat sur CE clip (45 % des clips
+                // du 26/08) : place RESERVEE, sinon la video changerait de taille
+                // presque un clip sur deux.
                 _clearChatIframe(chatPlayer);
                 chatPanel.classList.add('no-chat');
                 chatPanel.classList.remove('hidden');
@@ -1898,6 +2024,19 @@
                 'hype_cast': '\ud83d\udd25 Hype cast', 'drama_debate': '\ud83d\udcac D\u00e9bat',
                 'victory': '\ud83c\udfc6 Victoire', 'funny_talk': '\ud83d\ude04 Dr\u00f4le (hors jeu)',
                 'trash': '\ud83d\udeab Pas int\u00e9ressant',
+                // 2026-08-26 : categories du funnel V6 (le champ etait vide sur
+                // 96/109 clips avant le correctif manifest du meme jour, donc
+                // ces libelles n'avaient jamais servi) + categories des talks,
+                // qui s'affichaient en brut faute d'entree ici.
+                'hype': '\ud83d\udd25 Hype', 'funny': '\ud83d\ude02 Dr\u00f4le',
+                'drama': '\ud83d\udcac Drama', 'react': '\ud83d\ude32 R\u00e9action',
+                'banal': '\ud83d\udca4 Banal', 'clutch': '\ud83c\udfaf Clutch',
+                'vr': '\ud83c\udfc6 Victory Royale', 'fail': '\ud83d\udca5 Fail',
+                'debat': '\ud83d\udcac D\u00e9bat',
+                'talk_inside': '\ud83c\udf99\ufe0f Inside', 'talk_rumeur': '\ud83c\udf99\ufe0f Rumeur',
+                'talk_actu_compet': '\ud83c\udf99\ufe0f Actu comp\u00e9t',
+                'talk_moment_de_vie': '\ud83c\udf99\ufe0f Moment de vie',
+                'talk_avis': '\ud83c\udf99\ufe0f Avis', 'talk_anecdote': '\ud83c\udf99\ufe0f Anecdote',
             };
             const scoreColor = clip.score >= 70 ? '#2ecc71' : clip.score >= 50 ? '#f1c40f' : '#e74c3c';
             const nSources = (clip.sources || []).length;
@@ -1911,6 +2050,33 @@
             infoHtml += '<span class="score" style="color:' + scoreColor + ';">' + Math.round(clip.score || 0) + '</span>';
             infoHtml += badge;
             if (clip.ai_category) infoHtml += '<span class="category">' + (categoryFR[clip.ai_category] || escHtml(clip.ai_category)) + '</span>';
+
+            // 2026-08-26 (demande PO) : experience de mesure du RAPPEL du tri.
+            // A partir de cette run on livre TOUS les Twitch Clips telecharges,
+            // y compris ceux que le tri IA rejetait (CLIPS_ONLY_DELIVER_ALL) —
+            // le total du jour passe de ~110 a ~260 clips. Sans distinction
+            // visuelle, le monteur voit 260 clips indifferencies et la mesure
+            // d'une journee est perdue.
+            // Le cas qui porte l'information est review_ai_keep_original=false :
+            // ce sont les clips que notre IA jetait, donc chaque repechage est un
+            // faux negatif identifie. Il a donc son propre badge, plus visible.
+            if (clip.review_flag === 'twitch_clip_non_trie') {
+                const aiKept = clip.review_ai_keep_original;
+                const why = clip.review_drop_reason
+                    ? 'Motif du rejet IA : ' + String(clip.review_drop_reason)
+                    : 'Twitch Clip livre sans passer le tri IA.';
+                if (aiKept === false) {
+                    infoHtml += '<span title="' + escHtml(why) + '" style="background:#7b241c;'
+                        + 'color:#ffd7d2;padding:2px 8px;border-radius:10px;font-size:0.8em;'
+                        + 'margin-left:6px;font-weight:700;border:1px solid #c0392b;">'
+                        + '🧪 Rejeté par l\'IA</span>';
+                } else {
+                    infoHtml += '<span title="' + escHtml(why) + '" style="background:#1b3a4b;'
+                        + 'color:#bfe3f5;padding:2px 8px;border-radius:10px;font-size:0.8em;'
+                        + 'margin-left:6px;font-weight:600;border:1px solid #2e6b8a;">'
+                        + '🧪 Twitch Clip non trié</span>';
+                }
+            }
             // Sprint 39 : Victory Arc badge
             if (clip.arc_id && clip.arc_label) {
                 infoHtml += '<span style="background:linear-gradient(135deg,#f9a825,#ff8f00);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:bold;">\ud83c\udfc6 ' + escHtml(clip.arc_label) + ' (' + clip.arc_position + ')</span>';
@@ -1970,7 +2136,7 @@
                 chatToggle.classList.remove('active');
             } else {
                 chatToggle.classList.remove('disabled');
-                chatToggle.classList.toggle('active', !!chatFlags[clipKey]);
+                chatToggle.classList.toggle('active', chatDefaultOn);
             }
 
             // Feedback button highlight
@@ -2055,6 +2221,10 @@
                 feedback[clipKey] = value;
                 _applyLegacyAxes(clipKey, value);
                 recordClipVerdictTiming(clipKey, value, clip);
+                // 2026-08-26 : memorise QUEL clip vient d'etre note, pour que
+                // Retour arriere annule le bon. Se fier a currentIndex-1 serait
+                // faux des que le monteur navigue a la main.
+                lastRatedIndex = currentIndex;
             }
 
             updateCurrentFeedback(clipKey);
@@ -2066,7 +2236,10 @@
             // Bug 1 : sauvegarder apres chaque vote
             saveProgress();
 
-            // Auto-avance apres 400ms
+            // Auto-avance. 2026-08-26 : 400 ms -> 120 ms (+ 200 ms -> 100 ms
+            // d'animation de swipe dans navigate). Les 600 ms cumulees coutaient
+            // 65 s par session de 109 clips, 115 s a 192. 120 ms suffisent a
+            // voir le bouton s'allumer.
             if (feedback[clipKey]) {
                 setTimeout(() => {
                     if (currentIndex < TOTAL - 1) {
@@ -2074,7 +2247,37 @@
                     } else {
                         showDone();
                     }
-                }, 400);
+                }, 120);
+            }
+        }
+
+        // 2026-08-26 : ANNULATION. Il n'y en avait aucune : re-presser la meme
+        // touche fait un toggle dans rate(), mais l'auto-avance a deja change de
+        // clip, donc la 2e frappe notait LE SUIVANT. Corriger une erreur
+        // demandait 3 actions et une relecture. A 6,6 % de precision livree, une
+        // erreur de doigt sur un des rares bons clips le perd.
+        function undoLastVerdict() {
+            if (lastRatedIndex === null) return;
+            if (lastRatedIndex < 0 || lastRatedIndex >= TOTAL) { lastRatedIndex = null; return; }
+
+            const target = lastRatedIndex;
+            const clipKey = getClipStateKey(CLIPS[target]);
+            delete feedback[clipKey];
+            _clearAxes(clipKey);
+            // Le chrono du verdict doit repartir a zero, sinon le temps de
+            // decision du 2e verdict serait celui du 1er (fonction idempotente).
+            delete clipVerdictTimings[clipKey];
+            lastRatedIndex = null;
+
+            saveProgress();
+            updateMinimap();
+            updateStats();
+            if (currentIndex === target) {
+                updateCurrentFeedback(clipKey);
+                highlightFeedbackBtn(feedback[clipKey]);
+                refreshAxisButtons(clipKey);
+            } else {
+                loadClip(target);
             }
         }
 
@@ -2124,7 +2327,7 @@
                 setTimeout(() => {
                     wrapper.classList.remove('swipe-left', 'swipe-right');
                     loadClip(next);
-                }, 200);
+                }, 100);   // 2026-08-26 : etait 200 ms (cf. commentaire dans rate)
             } else if (next >= TOTAL) {
                 showDone();
             }
@@ -2172,25 +2375,37 @@
             container.innerHTML = '';
         }
 
+        // 2026-08-26 : bascule la preference GLOBALE, plus le flag par clip.
+        // Une frappe vaut pour toute la session au lieu d'une frappe par clip.
         function toggleChat() {
+            chatDefaultOn = !chatDefaultOn;
+            try {
+                localStorage.setItem('silixio_chat_default', chatDefaultOn ? '1' : '0');
+            } catch (e) {}
+
+            const btn = document.getElementById('chatToggle');
+            if (btn) btn.classList.toggle('active', chatDefaultOn);
+
             const clip = CLIPS[currentIndex];
-            if (!clip.chat_clip_url) return;
-
-            const clipKey = getClipStateKey(clip);
-            chatFlags[clipKey] = !chatFlags[clipKey];
-            document.getElementById('chatToggle').classList.toggle('active', chatFlags[clipKey]);
-
             const chatPanel = document.getElementById('chatPanel');
             const chatPlayer = document.getElementById('chatPlayer');
-            if (chatFlags[clipKey]) {
+            if (!clip) return;
+
+            if (chatDefaultOn && clip.chat_clip_url) {
                 _setChatIframe(chatPlayer, clip.chat_clip_url, clip.chat_video_url);
+                chatPanel.classList.remove('hidden', 'no-chat');
+            } else if (chatDefaultOn) {
+                // Preference active mais pas de chat sur CE clip : la place reste
+                // reservee (classe no-chat = visibility:hidden) pour que la video
+                // ne change pas de taille d'un clip a l'autre.
+                _clearChatIframe(chatPlayer);
+                chatPanel.classList.add('no-chat');
                 chatPanel.classList.remove('hidden');
             } else {
                 _clearChatIframe(chatPlayer);
                 chatPanel.classList.add('hidden');
+                chatPanel.classList.remove('no-chat');
             }
-
-            saveProgress();
         }
 
         // === Fix 2026-05-14 add-subs-checkbox (V6.2 sous-titres FR) ===
@@ -2366,7 +2581,12 @@
             }
         }
         function filterByStreamer() {
-            const val = document.getElementById('streamerFilter').value;
+            const sel = document.getElementById('streamerFilter');
+            // 2026-08-26 : rend le focus au document. Sans ce blur, le <select>
+            // gardait le focus et la frappe suivante pilotait la liste au lieu
+            // de noter le clip (cf. la garde SELECT du handler clavier).
+            if (sel && sel.blur) sel.blur();
+            const val = sel.value;
             if (val === '__community__') {
                 CLIPS = ALL_CLIPS.filter(c => isCommunityClip(c));
             } else if (val) {
@@ -2516,7 +2736,7 @@
             // Sprint 43 : plan editorial agent (brief + download_plan + skip_reasons)
             const plan = MANIFEST.editorial_plan;
             if (plan && plan.editorial_brief) {
-                html += '<div style="margin-bottom:10px;white-space:pre-line;">' + escHtml(plan.editorial_brief) + '</div>';
+                html += '<div style="margin-bottom:10px;white-space:pre-line;">' + renderLightMarkdown(plan.editorial_brief) + '</div>';
 
                 // Download plan avec priorites
                 if (plan.download_plan && plan.download_plan.length > 0) {
@@ -2552,7 +2772,7 @@
                 // Fallback Sprint 42 : resume editorial simple
                 const editorial = MANIFEST.editorial_summary || '';
                 if (editorial) {
-                    html += '<div style="margin-bottom:10px;">' + escHtml(editorial) + '</div>';
+                    html += '<div style="margin-bottom:10px;">' + renderLightMarkdown(editorial) + '</div>';
                 }
             }
 
@@ -2643,7 +2863,7 @@
             if (plan && plan.editorial_brief) {
                 let s = '<div class="bm-section">';
                 s += '<div class="bm-section-title">&#128240; Brief du jour</div>';
-                s += '<div class="bm-text">' + escHtml(plan.editorial_brief) + '</div>';
+                s += '<div class="bm-text">' + renderLightMarkdown(plan.editorial_brief) + '</div>';
                 s += '</div>';
                 sections.push(s);
 
@@ -2684,7 +2904,7 @@
                 // Fallback texte simple
                 let s = '<div class="bm-section">';
                 s += '<div class="bm-section-title">&#128240; Contexte du jour</div>';
-                s += '<div class="bm-text">' + escHtml(MANIFEST.editorial_summary) + '</div>';
+                s += '<div class="bm-text">' + renderLightMarkdown(MANIFEST.editorial_summary) + '</div>';
                 s += '</div>';
                 sections.push(s);
             }
@@ -2707,7 +2927,13 @@
                 const durMin = Math.round(totalDur / 60);
                 s += '<div style="margin-bottom:10px;color:#ddd;">';
                 s += '<strong>' + ALL_CLIPS.length + ' clips</strong>';
-                s += ' &mdash; <span style="color:#888;">Durée estimée : ~' + durMin + ' min de review</span>';
+                // 2026-08-26, decision PO : la "duree estimee de review" n'est
+                // plus affichee. Elle etait la phrase la plus demoralisante de
+                // l'interface, dans une modal qui s'AUTO-OUVRE, et elle etait
+                // fausse : elle sommait `duration || clip_duration || 45`, soit
+                // le temps VIDEO (85 min reelles le 26/08) presente comme un
+                // temps de review. Meme motif que le chronometre de session.
+                // s += ' &mdash; <span style="color:#888;">Durée estimée : ~' + durMin + ' min de review</span>';
                 s += '</div>';
 
                 // Répartition par streamer
@@ -2887,7 +3113,12 @@
                 schema_version: 2,
                 vod_date: MANIFEST.date || '',
                 exported_at: new Date().toISOString(),
-                total_clips: TOTAL,
+                // 2026-08-26 : compte l'ETAT COMPLET, plus la vue filtree.
+                // TOTAL est reduit par filterByStreamer() et par
+                // hideRatedClipsAfterExport() : toute precision calculee sur
+                // l'ancien total_clips etait fausse.
+                total_clips: (ALL_CLIPS || []).length,
+                total_clips_in_view: TOTAL,
                 feedback: {},
                 chat_requests: {},
                 downloads: {},
@@ -2902,7 +3133,13 @@
                     unique: 0, duplicate: 0,
                 },
             };
-            CLIPS.forEach(clip => {
+            // 2026-08-26 : itere ALL_CLIPS et non CLIPS (la vue FILTREE).
+            // Avant : filtrer sur un streamer puis cliquer "Exporter feedback"
+            // ne sortait QUE ce streamer — tous les autres verdicts restaient
+            // dans localStorage et n'apparaissaient dans AUCUN fichier. Effet
+            // de bord voulu : l'export devient cumulatif, donc un seul fichier
+            // suffit au lieu de devoir tous les conserver.
+            (ALL_CLIPS || []).forEach(clip => {
                 const clipKey = getClipStateKey(clip);
                 const fb = feedback[clipKey] || null;
                 // Stocker le verdict + ai_category pour l'auto-tune
@@ -3178,8 +3415,28 @@
                 'fail':         'détection fail',
             };
 
+            // 2026-08-26 : le champ `why` sert a la fois de phrase pour l'humain
+            // ET de code de tracabilite pour la machine. La garde etait
+            // `why.length > 8`, or "p4_disabled" fait 11 caracteres : elle
+            // passait, et 72 des 109 clips du 26/08 affichaient au monteur le nom
+            // d'un knob de config. Pire, cette branche gagnante empechait
+            // d'atteindre l'option 2, qui sait produire une phrase francaise a
+            // partir de score_explanation (present et exploitable).
+            // On filtre donc les valeurs SENTINELLES au lieu de filtrer sur une
+            // longueur. Liste tiree de pipeline/v6_scoring.py.
+            const WHY_SENTINELS = new Set([
+                'p4_disabled',
+                'id_hallucination_fallback',
+                'fallback heuristique (llm down)',
+                'unknown',
+                'n/a',
+            ]);
+            const whyRaw = String(clip.why || '').trim();
+            const whyIsSentinel = WHY_SENTINELS.has(whyRaw.toLowerCase())
+                || /^[a-z0-9_]+$/.test(whyRaw);   // un identifiant, pas une phrase
+
             // Option 1 : champ why du pipeline (déjà une phrase)
-            if (clip.why && clip.why.length > 8) {
+            if (whyRaw && whyRaw.length > 8 && !whyIsSentinel) {
                 // Nettoyage léger : "Source1 (score: X) — mots-cles: Y + Source2..." → compact
                 let w = clip.why;
                 // Remplace les marqueurs techniques par des tirets lisibles
@@ -3281,6 +3538,26 @@
             return div.innerHTML;
         }
 
+        // 2026-08-26 : le brief editorial est produit en MARKDOWN par le
+        // pipeline (`**BRIEF EDITORIAL**`, `**1. EVENEMENTS CLES**`...) et etait
+        // injecte tel quel : le monteur lisait les asterisques, dans la premiere
+        // chose que la page lui montre (la modal s'auto-ouvre une fois par jour).
+        // Rendu minimal, applique APRES escHtml pour ne pas reouvrir de trou XSS
+        // (on ne transforme que des sequences de la chaine DEJA echappee).
+        function renderLightMarkdown(raw) {
+            let h = escHtml(String(raw == null ? '' : raw));
+            // **gras** -> <strong>. Non greedy, et refuse de traverser un saut
+            // de ligne pour ne pas avaler tout le document sur un ** orphelin.
+            h = h.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+            // *italique* (simple asterisque), meme prudence.
+            h = h.replace(/(^|[\s(])\*([^*\n]+)\*(?=[\s.,;:!?)]|$)/g, '$1<em>$2</em>');
+            // Puces "- " ou "* " en debut de ligne -> tiret cadratin lisible.
+            h = h.replace(/^[ \t]*[-*][ \t]+/gm, '— ');
+            // Titres markdown eventuels : on retire les diese, le gras suffit.
+            h = h.replace(/^[ \t]*#{1,6}[ \t]+/gm, '');
+            return h;
+        }
+
         function extractFileId(url) {
             if (!url) return null;
             // Format : /file/d/FILE_ID/
@@ -3376,7 +3653,27 @@
 
         // === KEYBOARD — S-03 : raccourcis remappes a/z/e/r/s/t ===
         document.addEventListener('keydown', (e) => {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            // 2026-08-26 : SELECT ajoute a la garde. Le <select> du filtre
+            // streamer garde le focus apres usage : presser `a` deplacait la
+            // selection vers "aussieantics" (donc onchange -> CLIPS rebati,
+            // currentIndex remis a 0, preload jete) ET notait "Top" sur le clip
+            // affiche. Un geste, deux effets non desires.
+            const tag = e.target && e.target.tagName;
+            if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+
+            // 2026-08-26 : la modal Brief IA s'auto-ouvre une fois par jour et
+            // couvre l'ecran. Sans cette garde, les raccourcis tiraient DERRIERE
+            // elle : une frappe notait, en silence, un clip que le monteur ne
+            // voyait pas. Et rien ne fermait la modal au clavier.
+            const briefOpen = document.getElementById('briefModalOverlay');
+            if (briefOpen && briefOpen.classList.contains('show')) {
+                if (e.key === 'Escape' || e.key === 'v' || e.key === 'V') {
+                    e.preventDefault();
+                    closeBriefModal();
+                }
+                return;
+            }
+
             if (!CLIPS.length) return;
 
             // Fix focus : si la vidéo a le focus (après clic sur player), on le retire
@@ -3413,7 +3710,16 @@
                 case 'i': case 'I': rateAxis('redundancy', 'duplicate'); break;
                 case 'v': case 'V': openBriefModal(); break;
                 case 'c': case 'C': toggleChat(); break;
-                case 's': case 'S': toggleSubs(); break;
+                // 2026-08-26 : `case 's': toggleSubs()` RETIRE d'ici. Il etait
+                // en DOUBLON du `case 's': rate('not_relevant')` quinze lignes
+                // plus haut : en JS la premiere clause gagne, donc cette ligne
+                // etait morte et le bouton "Subs FR (S)" annoncait un raccourci
+                // qui notait "Pas pertinent". Le bouton lui-meme est retire
+                // (video_url_subs n'est produit sur aucun clip).
+                case 'Backspace':
+                    e.preventDefault();
+                    undoLastVerdict();
+                    break;
                 case 'd': case 'D': downloadClip(); break;
                 case 'ArrowRight':
                     e.preventDefault();
