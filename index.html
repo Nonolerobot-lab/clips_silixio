@@ -1373,7 +1373,7 @@
             <button class="nav-btn" id="btnPrev" onclick="navigate(-1)">
                 &#8592; Precedent <span class="shortcut">&#8592;</span>
             </button>
-            <a class="dl-btn" id="dlClipBtn" onclick="downloadClip()">
+            <a class="dl-btn" id="dlClipBtn" onclick="return downloadClip(event)" target="_blank" rel="noopener">
                 &#128229; Telecharger clip <span class="shortcut">D</span>
             </a>
             <div class="chat-toggle" id="chatToggle" onclick="toggleChat()">
@@ -1915,6 +1915,7 @@
 
             currentIndex = idx;
             const clip = CLIPS[idx];
+            _prepareNativeDownload(clip);
             const wrapper = document.getElementById('videoWrapper');
 
             // Ensure video wrapper visible, done hidden
@@ -2546,42 +2547,86 @@
             }
         }
 
-        function triggerDownload(url, filename) {
+        function triggerDownload(url, filename, newTab = false) {
             const a = document.createElement('a');
             a.href = url;
             a.download = filename || '';
+            if (newTab) { a.target = '_blank'; a.rel = 'noopener'; }
             a.style.display = 'none';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
         }
 
-        // 2026-08-26 : le telechargement passait par `clip.drive_url`, l'URL
-        // PUBLIQUE de Drive, qui interpose une page « Google ne peut pas lancer
-        // d'analyse antivirus sur ce fichier » au-dela de 100 Mo. Les clips
-        // livres font 119 Mo de mediane (p90 306 Mo) : la page apparaissait donc
-        // presque a chaque clic, avec un « Telecharger quand meme » a la main.
-        //
-        // On passe par le worker Cloudflare — la MEME source que le lecteur,
-        // donc l'API Drive authentifiee, sans quota public ni interstitiel.
-        // Le navigateur ignorant l'attribut `download` en cross-origin, on
-        // recupere les octets puis on declenche l'enregistrement depuis un blob.
-        //
-        // /!\ Ce n'est PAS le telechargement natif idealement voulu : le fichier
-        // n'apparait dans les telechargements qu'a la fin du transfert, et il
-        // transite par la memoire. Le vrai correctif est un en-tete
-        // `Content-Disposition: attachment` cote worker, apres quoi un simple
-        // lien suffira (cf. tools/cloudflare_worker.js et le bloc DL_ATTACHMENT).
-        // Compteur de telechargements EN COURS. Plusieurs peuvent tourner en
-        // parallele (retour PO : « evite, si le DL est long, de ne pas pouvoir
-        // download un autre clip en attendant »).
+        // 2026-08-31 : laisser le navigateur gerer le transfert des gros MP4.
+        // Le Worker ajoute Content-Disposition: attachment uniquement en mode
+        // download=1 ; le lecteur conserve son URL et son comportement habituel.
+        // Detection en amont du clic : aucun await ne fait perdre le geste utilisateur.
+        // Le repli blob reste disponible tant que le Worker n'est pas deploye.
+        const _dlNativeSupport = new Map();
+        const DL_PROBE_TIMEOUT_MS = 5000;
+
+        function _nativeDownloadUrl(clip) {
+            if (!clip || !clip.video_url) return '';
+            try {
+                const url = new URL(clip.video_url, location.href);
+                if (!['https:', 'http:'].includes(url.protocol)) return '';
+                url.searchParams.set('download', '1');
+                url.searchParams.set('filename', clip.filename || 'clip.mp4');
+                return url.href;
+            } catch (_) { return ''; }
+        }
+
+        function _nativeDownloadKey(url) {
+            const parsed = new URL(url);
+            return parsed.origin + parsed.pathname;
+        }
+
+        async function _prepareNativeDownload(clip) {
+            const btn = document.getElementById('dlClipBtn');
+            btn.removeAttribute('href');
+            const url = _nativeDownloadUrl(clip);
+            if (!url) return;
+            const key = _nativeDownloadKey(url);
+            if (!_dlNativeSupport.has(key)) {
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), DL_PROBE_TIMEOUT_MS);
+                const probe = fetch(url, { method: 'HEAD', signal: controller.signal })
+                    .then(resp => resp.ok && /^attachment(?:;|$)/i.test(resp.headers.get('Content-Disposition') || ''))
+                    .catch(() => false)
+                    .finally(() => clearTimeout(timeout));
+                _dlNativeSupport.set(key, probe);
+            }
+            const supported = await _dlNativeSupport.get(key);
+            _dlNativeSupport.set(key, supported);
+            // Une reponse tardive ne doit pas remplacer le lien du clip suivant.
+            if (supported && CLIPS[currentIndex] === clip) btn.href = url;
+        }
+
+        function downloadClip(event) {
+            const clip = CLIPS[currentIndex];
+            if (!clip) return false;
+            const url = _nativeDownloadUrl(clip);
+            if (url && _dlNativeSupport.get(_nativeDownloadKey(url)) === true) {
+                if (event) event.currentTarget.href = url;
+                else triggerDownload(url, clip.filename, true); // Raccourci D.
+                downloads[getClipStateKey(clip)] = true;
+                saveProgress();
+                _refreshDlBtn(true);
+                return !!event; // Vrai lien : demarrage natif au clic, sans fetch/blob.
+            }
+            _downloadClipBlob(clip);
+            return false;
+        }
+
+        // Repli compatible avec l'ancien Worker, sans bloquer les autres clips.
         let _dlActive = 0;
 
         function _refreshDlBtn(flash) {
             const btn = document.getElementById('dlClipBtn');
             if (!btn) return;
             if (flash) {
-                btn.innerHTML = '&#9989; Telecharge';
+                btn.innerHTML = '&#11015; Enregistrement demande';
                 setTimeout(() => _refreshDlBtn(false), 1600);
                 return;
             }
@@ -2591,15 +2636,12 @@
             btn.style.opacity = _dlActive > 0 ? '0.8' : '';
         }
 
-        async function downloadClip() {
-            const clip = CLIPS[currentIndex];
-            if (!clip) return;
-
+        async function _downloadClipBlob(clip) {
             // Repli : pas d'URL worker -> ancien comportement (interstitiel Drive).
             if (!clip.video_url) {
                 if (clip.drive_url) {
                     downloads[getClipStateKey(clip)] = true;
-                    triggerDownload(clip.drive_url, clip.filename);
+                    triggerDownload(clip.drive_url, clip.filename, true);
                     saveProgress();
                 }
                 return;
@@ -2608,9 +2650,6 @@
             // Pas de garde anti-concurrence : on veut pouvoir en lancer plusieurs.
             _dlActive++;
             _refreshDlBtn(false);
-            downloads[getClipStateKey(clip)] = true;
-            saveProgress();
-
             try {
                 const resp = await fetch(clip.video_url);
                 if (!resp.ok) throw new Error('HTTP ' + resp.status);
@@ -2624,13 +2663,15 @@
                 a.click();
                 document.body.removeChild(a);
                 setTimeout(() => URL.revokeObjectURL(url), 60000);
+                downloads[getClipStateKey(clip)] = true;
+                saveProgress();
                 _dlActive = Math.max(0, _dlActive - 1);
                 _refreshDlBtn(true);
             } catch (e) {
                 console.warn('telechargement via worker KO, repli Drive :', e);
                 _dlActive = Math.max(0, _dlActive - 1);
                 _refreshDlBtn(false);
-                if (clip.drive_url) triggerDownload(clip.drive_url, clip.filename);
+                if (clip.drive_url) triggerDownload(clip.drive_url, clip.filename, true);
             }
         }
 
