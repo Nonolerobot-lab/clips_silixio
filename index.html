@@ -1398,6 +1398,10 @@
         </div><!-- /.secondary-rows -->
 
         <div class="stats-bar" id="statsBar">
+            <!-- 2026-09-01 : etat du prechargement fetch->blob. Rend VISIBLE que
+                 les clips suivants arrivent en RAM pendant le tri (le symptome
+                 « 30 s par clip » ressemblait a une page morte). -->
+            <span id="preloadHint" style="color:#7aa87a;"></span>
             <div class="stat"><span class="sdot sdot-top"></span><span id="statTop">0</span> top</div>
             <div class="stat"><span class="sdot sdot-good"></span><span id="statGood">0</span> bons</div>
             <div class="stat"><span class="sdot sdot-not_interesting"></span><span id="statNotInteresting">0</span> faibles</div>
@@ -1442,7 +1446,8 @@
         let exportedClips = {};   // { filename: true } — clips deja exportes, masques du tri
 
         // === PRELOAD STATE (Sprint 64) ===
-        let _preloaded = null;    // { idx: number, video: HTMLVideoElement } | null
+        // 2026-09-01 : `_preloaded` (element <video> unique) remplace par le
+        // cache blob `_blobCache` — cf. PRELOAD HELPERS plus bas.
 
         // === SESSION TIMER STATE (Sprint 58) ===
         let timerInterval    = null;  // setInterval handle (display refresh)
@@ -1951,30 +1956,30 @@
 
             if (clip.video_url) {
                 // Mode 1 : Cloudflare proxy — video directe dans <video> tag
-                let player;
-                // Sprint 64 : utiliser le clip pré-chargé si disponible (transition instantanée)
-                if (_preloaded && _preloaded.idx === idx) {
-                    player = _preloaded.video;
-                    player.id = 'player';
-                    player.controls = true;
-                    player.autoplay = true;
-                    player.muted = false;
-                    player.playsInline = true;
-                    player.style.cssText = '';
-                    playerEl.replaceWith(player);
-                    _preloaded = null; // consommé
+                // 2026-09-01 : prechargement fetch->blob (cf. _preloadWindow).
+                // L'ancien <video preload=auto> detache ne telechargeait que
+                // quelques Mo (heuristique navigateur) : sur des clips de
+                // ~68 Mo servis a ~1 Mo/s par le worker, la « transition
+                // instantanee » ne l'etait jamais (Silixio, 31/08 : « 30 s
+                // minimum par clip »).
+                if (playerEl.tagName !== 'VIDEO') {
+                    const video = document.createElement('video');
+                    video.id = 'player';
+                    video.controls = true;
+                    video.autoplay = true;
+                    video.preload = 'auto';
+                    video.playsInline = true;
+                    playerEl.replaceWith(video);
+                }
+                const player = document.getElementById('player');
+                const _blobReady = _preloadGetReady(clip.video_url);
+                if (_blobReady) {
+                    player.src = _blobReady;   // deja en RAM : lecture immediate
                 } else {
-                    _clearPreload(); // le pré-chargement ne correspond plus
-                    if (playerEl.tagName !== 'VIDEO') {
-                        const video = document.createElement('video');
-                        video.id = 'player';
-                        video.controls = true;
-                        video.autoplay = true;
-                        video.preload = 'auto';
-                        video.playsInline = true;
-                        playerEl.replaceWith(video);
-                    }
-                    player = document.getElementById('player');
+                    // Pas pret : streaming direct, et on ANNULE un eventuel
+                    // fetch en vol du meme clip — sinon les deux flux se
+                    // partagent le meme tuyau ~1 Mo/s et le player rame.
+                    _preloadAbort(clip.video_url);
                     // Fix 2026-05-14 add-subs-checkbox : utilise _subs.mp4 si toggle actif et disponible
                     player.src = (typeof _getActiveVideoUrl === 'function' ? _getActiveVideoUrl(clip) : null) || clip.video_url;
                 }
@@ -2209,7 +2214,7 @@
             saveProgress();
 
             // Sprint 64 : pré-charger le clip suivant en arrière-plan
-            _preloadNext(idx);
+            _preloadWindow(idx);
         }
 
         // Sprint 80 : mapping verdict legacy -> axes explicites (miroir de
@@ -2504,40 +2509,100 @@
             if (btn) btn.classList.toggle('active', _subsEnabled);
         });
 
-        // === PRELOAD HELPERS (Sprint 64 + Sprint 73.3 fix) ===
-        // Pré-charge la vidéo du clip suivant en arrière-plan pour navigation instantanée.
-        // Sprint 73.3 fix : retire la garde `clipSlug ||` qui empechait le preload des
-        // que le clip avait un slug Twitch. Depuis Phase 4 (2026-04-15), le lecteur
-        // prefere video_url (MP4 Drive) meme en presence d'un slug Twitch — donc
-        // on peut preloader des que video_url est disponible, quel que soit le slug.
-        function _preloadNext(fromIdx) {
-            const nextIdx = fromIdx + 1;
-            if (_preloaded && _preloaded.idx === nextIdx) return;
-            _clearPreload();
-            if (nextIdx >= TOTAL) return;
+        // === PRELOAD HELPERS (2026-09-01, remplace Sprint 64 + 73.3) ===
+        // Mesure du 01/09 : debit reel worker->Drive ~1 Mo/s a froid, clips
+        // livres 68 Mo medians a 11,6 Mbit/s de bitrate -> le streaming ne
+        // peut pas suivre, et l'ancien preload <video preload=auto> ne
+        // telechargeait que quelques Mo (heuristique navigateur). Ici :
+        // fetch COMPLET -> blob en RAM des PRELOAD_AHEAD clips suivants,
+        // fenetre glissante, abort de tout ce qui sort de la fenetre.
+        // Le clip COURANT n'est jamais fetche en double : s'il n'est pas
+        // deja pret au moment de l'afficher, il part en streaming et son
+        // fetch eventuel est annule (cf. loadClip Mode 1).
+        const _blobCache = new Map();   // video_url -> {status, ctrl, blobUrl, bytes}
+        const PRELOAD_AHEAD = 2;        // clips prepares en avance (RAM ~2x70 Mo max)
 
-            const clip = CLIPS[nextIdx];
-            // On ne preload que si video_url est dispo (Mode 1 dans loadClip)
-            // L'iframe Twitch (Mode 2) et l'iframe Drive (Mode 3) ne sont pas preloadables
-            if (!clip.video_url) return;
-
-            const video = document.createElement('video');
-            video.preload = 'auto';
-            video.muted = true;
-            video.src = clip.video_url;
-            // Attacher au DOM caché — les navigateurs ne chargent pas les éléments détachés
-            video.style.cssText = 'position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;z-index:-1;';
-            document.body.appendChild(video);
-
-            _preloaded = { idx: nextIdx, video: video };
+        function _preloadGetReady(url) {
+            const e = _blobCache.get(url);
+            return (e && e.status === 'ready' && e.blobUrl) ? e.blobUrl : null;
         }
 
-        function _clearPreload() {
-            if (!_preloaded) return;
-            _preloaded.video.removeAttribute('src');
-            _preloaded.video.load();
-            if (_preloaded.video.parentNode) _preloaded.video.parentNode.removeChild(_preloaded.video);
-            _preloaded = null;
+        function _preloadAbort(url) {
+            const e = _blobCache.get(url);
+            if (!e) return;
+            if (e.status === 'loading' && e.ctrl) { try { e.ctrl.abort(); } catch (_) {} }
+            if (e.blobUrl) { try { URL.revokeObjectURL(e.blobUrl); } catch (_) {} }
+            _blobCache.delete(url);
+        }
+
+        function _preloadOne(idx) {
+            if (idx < 0 || idx >= TOTAL) return;
+            const clip = CLIPS[idx];
+            // Iframes Twitch/Drive (Modes 2/3) : pas de video_url, pas preloadables.
+            if (!clip || !clip.video_url) return;
+            const url = clip.video_url;
+            if (_blobCache.has(url)) return;
+            const ctrl = new AbortController();
+            const entry = { status: 'loading', ctrl: ctrl, blobUrl: null, bytes: 0 };
+            _blobCache.set(url, entry);
+            fetch(url, { signal: ctrl.signal })
+                .then(resp => { if (!resp.ok) throw new Error('HTTP ' + resp.status); return resp.blob(); })
+                .then(blob => {
+                    if (_blobCache.get(url) !== entry) {
+                        // Evince pendant le telechargement : ne pas fuir le blob.
+                        return;
+                    }
+                    entry.blobUrl = URL.createObjectURL(blob);
+                    entry.bytes = blob.size;
+                    entry.status = 'ready';
+                    entry.ctrl = null;
+                    _updatePreloadHint();
+                })
+                .catch(() => {
+                    // Abort volontaire ou echec reseau : l'entree sort du cache,
+                    // le clip repartira en streaming classique (etat d'avant).
+                    if (_blobCache.get(url) === entry) _blobCache.delete(url);
+                    _updatePreloadHint();
+                });
+        }
+
+        function _preloadWindow(centerIdx) {
+            // Fenetre conservee : blob du clip courant (s'il est pret, il joue)
+            // + les PRELOAD_AHEAD suivants. Tout le reste est aborte/libere —
+            // y compris apres un filtre streamer (les URLs servent de cles,
+            // donc un CLIPS rebati n'invalide que ce qui sort de la fenetre).
+            const keep = new Set();
+            for (let i = centerIdx; i <= centerIdx + PRELOAD_AHEAD && i < TOTAL; i++) {
+                const c = CLIPS[i];
+                if (c && c.video_url) keep.add(c.video_url);
+            }
+            for (const url of Array.from(_blobCache.keys())) {
+                if (!keep.has(url)) _preloadAbort(url);
+            }
+            for (let i = centerIdx + 1; i <= centerIdx + PRELOAD_AHEAD; i++) _preloadOne(i);
+            _updatePreloadHint();
+        }
+
+        function _preloadClearAll() {
+            for (const url of Array.from(_blobCache.keys())) _preloadAbort(url);
+            _updatePreloadHint();
+        }
+
+        function _updatePreloadHint() {
+            const el = document.getElementById('preloadHint');
+            if (!el) return;
+            let ready = 0, loading = 0;
+            _blobCache.forEach(e => {
+                if (e.status === 'ready') ready++;
+                else if (e.status === 'loading') loading++;
+            });
+            if (loading > 0) {
+                el.textContent = '⤓ préchargement…' + (ready > 0 ? ' (' + ready + ' prêt' + (ready > 1 ? 's' : '') + ')' : '');
+            } else if (ready > 0) {
+                el.textContent = '✓ ' + ready + ' clip' + (ready > 1 ? 's' : '') + ' préchargé' + (ready > 1 ? 's' : '');
+            } else {
+                el.textContent = '';
+            }
         }
 
         function downloadChat() {
@@ -2765,7 +2830,7 @@
             CLIPS = CLIPS.filter(c => !exportedClips[getClipStateKey(c)]);
             TOTAL = CLIPS.length;
             currentIndex = 0;
-            _clearPreload(); // Sprint 64 : la liste a changé, le pré-chargement n'est plus valide
+            _preloadClearAll(); // la liste a changé, le pré-chargement n'est plus valide
             // Fix 2026-04-09 : NE PAS reset feedback (sinon les clips notes redeviennent "pas notes"
             // et ne peuvent plus etre masques lors du prochain export)
             document.getElementById('totalNum').textContent = TOTAL;
