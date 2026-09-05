@@ -3,15 +3,18 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 68,
+      "total_clips": 5,
       "streamers": [
-        "ajerss",
+        "community"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "total_clips": 159,
+      "streamers": [
         "asianjeff",
         "aussieantics",
-        "community",
-        "cooper",
-        "cringefn",
-        "jolavanille",
+        "coach_f0x",
         "k1ng",
         "khanada_",
         "kurama_203",
@@ -19,9 +22,9 @@
         "mrsavage",
         "podasai",
         "revenja",
+        "rezonfn",
         "stizo_",
-        "vadeal",
-        "venofn",
+        "wazz",
         "zetfartv"
       ]
     },
@@ -125,66 +128,7 @@
         "stizo_",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-08-29",
-      "total_clips": 168,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "clix",
-        "coachboop",
-        "cringefn",
-        "eomzo",
-        "jannisz",
-        "jolavanille",
-        "k1ng",
-        "khanada_",
-        "kirillianfn1",
-        "kurama",
-        "kurama_203",
-        "laiizenfn",
-        "leothecrack",
-        "merstaach",
-        "muzz",
-        "nikof",
-        "pinqeu",
-        "podasai",
-        "revenja",
-        "rezonfn",
-        "stizo_",
-        "talmo",
-        "zetfartv"
-      ]
-    },
-    {
-      "date": "2026-08-28",
-      "total_clips": 171,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "clix",
-        "cooper",
-        "cringefn",
-        "eomzo",
-        "khanada_",
-        "kirillianfn1",
-        "kurama",
-        "kurama_203",
-        "laiizenfn",
-        "muzz",
-        "noahreyli",
-        "p1ngfnz",
-        "revenja",
-        "rezonfn",
-        "stizo_",
-        "talmo",
-        "venofn",
-        "wazz",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-09-03"
+  "latest": "2026-09-04"
 }
