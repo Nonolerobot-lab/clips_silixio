@@ -1379,6 +1379,13 @@
             <div class="chat-toggle" id="chatToggle" onclick="toggleChat()">
                 &#128172; Chat <span class="shortcut">C</span>
             </div>
+            <!-- 2026-09-05 (PO) : sous-titres FR dynamiques desactivables PAR CLIP.
+                 Actif = version sous-titree (defaut) ; clic = version propre pour CE
+                 clip (memorise, exporte dans le feedback en subs_disabled). Grise
+                 quand le clip n'a pas de version propre (clip FR sans sous-titres). -->
+            <div class="chat-toggle" id="subsClipToggle" onclick="toggleSubsClip()" title="Sous-titres FR : actif = version sous-titree, clic = version sans sous-titres pour ce clip">
+                &#127916; Sous-titres
+            </div>
             <!-- 2026-08-26 : bouton "Subs FR" RETIRE. Deux raisons cumulees :
                  (1) son raccourci annonce `S` etait un mensonge — `case 's'`
                  etait deja pris par rate('not_relevant') quinze lignes plus
@@ -1553,6 +1560,7 @@
             feedback = remapStateKeys(feedback, keyMap);
             axesFeedback = remapStateKeys(axesFeedback, keyMap); // Sprint 80
             chatFlags = remapStateKeys(chatFlags, keyMap);
+            subsOff = remapStateKeys(subsOff, keyMap); // 2026-09-05
             exportedClips = remapStateKeys(exportedClips, keyMap);
             if (window.badFramingDetails) {
                 window.badFramingDetails = remapStateKeys(window.badFramingDetails, keyMap);
@@ -1592,6 +1600,7 @@
                     feedback,
                     axesFeedback, // Sprint 80 : axes explicites
                     chatFlags,
+                    subsOff,       // 2026-09-05 : sous-titres coupes par clip
                     exportedClips, // Fix 2026-04-09 : persiste les clips masques apres export
                 }));
             } catch (e) {
@@ -1640,6 +1649,7 @@
                 if (saved.feedback)      feedback      = saved.feedback;
                 if (saved.axesFeedback)  axesFeedback  = saved.axesFeedback; // Sprint 80
                 if (saved.chatFlags)     chatFlags     = saved.chatFlags;
+                if (saved.subsOff)       subsOff       = saved.subsOff;       // 2026-09-05
                 if (saved.exportedClips) exportedClips = saved.exportedClips; // Fix 2026-04-09
                 // 2026-08-26 : la garde etait `saved.currentIndex < TOTAL`, or
                 // restoreProgress() est appele AVANT `TOTAL = CLIPS.length`
@@ -2138,9 +2148,38 @@
                         + '🧪 Twitch Clip non trié</span>';
                 }
             }
-            // Sprint 39 : Victory Arc badge
+            // 2026-09-05 (GO PO) : talk \u00ab sujet du jour \u00bb \u2014 le brief editorial a
+            // guide la chasse, le clip est en tete de file (review_priority).
+            if (clip.story_topic) {
+                const storyLbl = clip.story_label ? ' \u00b7 ' + escHtml(String(clip.story_label).substring(0, 60)) : '';
+                infoHtml += '<span title="' + escHtml(clip.story_label || 'Sujet du jour (brief editorial)') + '" style="background:#7b1f1f;color:#ffe3e3;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:700;border:1px solid #e74c3c;">\ud83d\udcf0 Actu du jour' + storyLbl + '</span>';
+            }
+            // Sprint 39 : Victory Arc badge \u2014 2026-09-05 : porte aussi le multi-POV
+            // (arc_id \u00ab multipov_<date>_<n> \u00bb : meme moment vu par plusieurs
+            // streamers, clips regroupes cote a cote, libelle deja prefixe).
+            // 2026-09-05 (GO PO) : carte de contexte « qui, quoi, enjeu » du sujet du
+            // jour + liens « suite de » vers les clips des jours precedents sur le meme
+            // sujet (le monteur fait le rappel sans chercher).
+            if (clip.story_context) {
+                infoHtml += '<div style="color:#f5b7b1;font-size:0.82em;margin-top:3px;line-height:1.3;">'
+                    + '📰 <b>Contexte</b> : ' + escHtml(clip.story_context) + '</div>';
+            }
+            if (clip.story_previous && clip.story_previous.length) {
+                const prevLinks = clip.story_previous.map(function (p) {
+                    const lbl = escHtml((p.date || '').slice(5).split('-').reverse().join('/') + ' ' + (p.streamer || ''))
+                        + (p.ai_summary ? ' · ' + escHtml(String(p.ai_summary).substring(0, 60)) : '');
+                    return p.url
+                        ? '<a href="' + escHtml(p.url) + '" target="_blank" rel="noopener" style="color:#f39c12;">' + lbl + '</a>'
+                        : lbl;
+                }).join(' &nbsp;|&nbsp; ');
+                infoHtml += '<div style="color:#f39c12;font-size:0.8em;margin-top:2px;">↩ Suite de : ' + prevLinks + '</div>';
+            }
             if (clip.arc_id && clip.arc_label) {
-                infoHtml += '<span style="background:linear-gradient(135deg,#f9a825,#ff8f00);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:bold;">\ud83c\udfc6 ' + escHtml(clip.arc_label) + ' (' + clip.arc_position + ')</span>';
+                const isMultipov = String(clip.arc_id).indexOf('multipov_') === 0;
+                const arcTitle = isMultipov && clip.multipov_confidence != null
+                    ? 'Meme moment (heure absolue) chez ' + escHtml((clip.multipov_streamers || []).join(', ')) + ' \u00b7 confiance ' + Number(clip.multipov_confidence).toFixed(2)
+                    : '';
+                infoHtml += '<span title="' + arcTitle + '" style="background:linear-gradient(135deg,#f9a825,#ff8f00);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:bold;">' + (isMultipov ? '' : '\ud83c\udfc6 ') + escHtml(clip.arc_label) + ' (' + clip.arc_position + ')</span>';
             }
             // Sprint 42 : lane badge (core=bleu, trend=orange, explore=violet)
             const laneCfg = {core: 'lane-core', trend: 'lane-trend', explore: 'lane-explore'};
@@ -2201,6 +2240,8 @@
                 chatToggle.classList.remove('disabled');
                 chatToggle.classList.toggle('active', chatDefaultOn);
             }
+            // 2026-09-05 (PO) : etat du bouton sous-titres pour CE clip
+            _refreshSubsClipBtn(clip);
 
             // Feedback button highlight
             highlightFeedbackBtn(feedback[clipKey]);
@@ -2478,9 +2519,49 @@
         let _subsEnabled = (function() {
             try { return localStorage.getItem('silixio_subs_fr') === '1'; } catch (e) { return false; }
         })();
+        // 2026-09-05 (PO) : choix PAR CLIP de Silixio — sous-titres coupes sur ce
+        // clip => version propre (video_url_clean, livree a cote de la version
+        // sous-titree qui reste video_url par defaut).
+        let subsOff = {};   // { clipKey: true } — persiste et exporte (subs_disabled)
+        function _subsOffFor(clip) {
+            try { return !!(clip && subsOff[getClipStateKey(clip)]); } catch (e) { return false; }
+        }
         function _getActiveVideoUrl(clip) {
+            if (clip && clip.video_url_clean && _subsOffFor(clip)) return clip.video_url_clean;
             if (_subsEnabled && clip && clip.video_url_subs) return clip.video_url_subs;
             return clip ? clip.video_url : null;
+        }
+        function _activeFilename(clip) {
+            const fn = (clip && clip.filename) || 'clip.mp4';
+            return _subsOffFor(clip) ? fn.replace(/_subs\.mp4$/i, '.mp4') : fn;
+        }
+        function _refreshSubsClipBtn(clip) {
+            const btn = document.getElementById('subsClipToggle');
+            if (!btn) return;
+            const hasClean = !!(clip && clip.video_url_clean);
+            btn.classList.toggle('disabled', !hasClean);
+            btn.classList.toggle('active', hasClean && !_subsOffFor(clip));
+            btn.innerHTML = '&#127916; Sous-titres' + (hasClean ? (_subsOffFor(clip) ? ' : OFF' : ' : ON') : '');
+        }
+        function toggleSubsClip() {
+            const clip = CLIPS[currentIndex];
+            if (!clip || !clip.video_url_clean) return;
+            const key = getClipStateKey(clip);
+            if (subsOff[key]) delete subsOff[key]; else subsOff[key] = true;
+            saveProgress();
+            _refreshSubsClipBtn(clip);
+            const player = document.getElementById('player');
+            if (player && player.tagName === 'VIDEO') {
+                const target = _getActiveVideoUrl(clip);
+                if (target && player.src !== target) {
+                    const t = player.currentTime || 0;
+                    const wasPaused = player.paused;
+                    player.src = target;
+                    player.currentTime = t;
+                    if (!wasPaused) player.play().catch(() => {});
+                }
+            }
+            if (typeof _prepareNativeDownload === 'function') _prepareNativeDownload(clip);
         }
         function toggleSubs() {
             _subsEnabled = !_subsEnabled;
@@ -2632,12 +2713,13 @@
         const DL_PROBE_TIMEOUT_MS = 5000;
 
         function _nativeDownloadUrl(clip) {
-            if (!clip || !clip.video_url) return '';
+            const active = _getActiveVideoUrl(clip);
+            if (!clip || !active) return '';
             try {
-                const url = new URL(clip.video_url, location.href);
+                const url = new URL(active, location.href);
                 if (!['https:', 'http:'].includes(url.protocol)) return '';
                 url.searchParams.set('download', '1');
-                url.searchParams.set('filename', clip.filename || 'clip.mp4');
+                url.searchParams.set('filename', _activeFilename(clip));
                 return url.href;
             } catch (_) { return ''; }
         }
@@ -2716,13 +2798,13 @@
             _dlActive++;
             _refreshDlBtn(false);
             try {
-                const resp = await fetch(clip.video_url);
+                const resp = await fetch(_getActiveVideoUrl(clip) || clip.video_url);
                 if (!resp.ok) throw new Error('HTTP ' + resp.status);
                 const blob = await resp.blob();
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = clip.filename || 'clip.mp4';
+                a.download = _activeFilename(clip);
                 a.style.display = 'none';
                 document.body.appendChild(a);
                 a.click();
@@ -3408,6 +3490,13 @@
                     peak_in_clip_sec: clip.peak_in_clip_sec ?? null,
                     peak_strategy: clip.peak_strategy || null,
                     entry_suggestion_sec: clip.entry_suggestion_sec ?? null,
+                    // 2026-09-05 : mesure des chantiers « sujet du jour » et multi-POV
+                    // (taux de garde des talks actu, des clips regroupes).
+                    story_topic: clip.story_topic || null,
+                    arc_id: clip.arc_id || null,
+                    // 2026-09-05 (PO) : sous-titres FR coupes par Silixio sur ce clip
+                    subs_disabled: !!subsOff[clipKey],
+                    has_subs: !!clip.has_subs,
                     // Sprint 80 : axes explicites (moment_quality / cut_quality / redundancy)
                     moment_quality: mergedAxes.moment_quality || '',
                     cut_quality:    mergedAxes.cut_quality    || '',
