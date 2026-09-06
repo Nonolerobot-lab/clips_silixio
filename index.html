@@ -2181,6 +2181,19 @@
                     : '';
                 infoHtml += '<span title="' + arcTitle + '" style="background:linear-gradient(135deg,#f9a825,#ff8f00);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:bold;">' + (isMultipov ? '' : '\ud83c\udfc6 ') + escHtml(clip.arc_label) + ' (' + clip.arc_position + ')</span>';
             }
+            // 2026-09-05 : pre-marquage multi-POV de la lane chat entier \u2014 pastille
+            // provisoire SEULEMENT si multipov_delivery n'a pas pose d'arc_id definitif.
+            if (!clip.arc_id && clip.arc_id_provisoire) {
+                infoHtml += '<span title="Pre-marquage lane chat (a confirmer a la livraison) \u00b7 ' + escHtml(clip.arc_id_provisoire) + '" style="background:linear-gradient(135deg,#f9a825,#ff8f00);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:bold;">\ud83d\udc40 M\u00eame moment ?</span>';
+            }
+            // 2026-09-06 : bonus « foule viewers » de la lane chat entier — N spectateurs ont
+            // clippe ce moment sur Twitch (verite terrain gratuite), badge discret.
+            if (Number(clip.crowd_clips) > 0) {
+                const nCrowd = Number(clip.crowd_creators) > 0 ? Number(clip.crowd_creators) : Number(clip.crowd_clips);
+                const crowdTitle = Number(clip.crowd_clips) + ' Twitch Clip(s) de viewers sur ce moment'
+                    + (Number(clip.crowd_views) > 0 ? ' · ' + Number(clip.crowd_views) + ' vues' : '');
+                infoHtml += '<span title="' + escHtml(crowdTitle) + '" style="background:rgba(255,202,40,0.15);color:#ffca28;border:1px solid #ffca2855;padding:1px 7px;border-radius:10px;font-size:0.78em;margin-left:6px;">👥 ' + nCrowd + (nCrowd > 1 ? ' viewers' : ' viewer') + '</span>';
+            }
             // Sprint 42 : lane badge (core=bleu, trend=orange, explore=violet)
             const laneCfg = {core: 'lane-core', trend: 'lane-trend', explore: 'lane-explore'};
             if (clip.lane && laneCfg[clip.lane]) {
@@ -2204,6 +2217,8 @@
             if (clip.ai_summary) infoHtml += '<div class="text" title="' + escHtml(clip.ai_summary) + '">'
                 + escHtml(clip.ai_summary) + '</div>';
             else if (clip.text) infoHtml += '<div class="text">"' + escHtml(clip.text.substring(0, 120)) + '"</div>';
+            // 2026-09-05 : titre YouTube propose par la lane chat entier (discret, informatif).
+            if (clip.proposed_title) infoHtml += '<div style="color:#7f8c8d;font-size:0.8em;margin-top:2px;" title="Titre YouTube propose par la lane chat">💡 ' + escHtml(clip.proposed_title) + '</div>';
             const peakHintHtml = buildPeakHint(clip);
             if (peakHintHtml) infoHtml += '<div class="peak-meta">' + peakHintHtml + '</div>';
             // Sprint 57 : explication lisible (remplace score_explanation monospace)
@@ -3494,6 +3509,12 @@
                     // (taux de garde des talks actu, des clips regroupes).
                     story_topic: clip.story_topic || null,
                     arc_id: clip.arc_id || null,
+                    // 2026-09-05 : mesure lane chat entier — titre propose + pre-marquage multi-POV.
+                    proposed_title: clip.proposed_title || null,
+                    arc_id_provisoire: clip.arc_id_provisoire || null,
+                    // 2026-09-06 : mesure du bonus « foule viewers » (taux de garde des clips
+                    // clippes par des viewers vs les autres).
+                    crowd_clips: clip.crowd_clips ?? null,
                     // 2026-09-05 (PO) : sous-titres FR coupes par Silixio sur ce clip
                     subs_disabled: !!subsOff[clipKey],
                     has_subs: !!clip.has_subs,
