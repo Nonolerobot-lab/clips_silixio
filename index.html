@@ -511,10 +511,18 @@
         }
         /* 2026-08-26 : colonne de gauche, a cote de la video. */
         .info-column {
-            /* Mesure a 1920x1080 : a 274 px (15 %) la video devenait contrainte
-               en LARGEUR et retombait a 44,3 % de l'ecran. L'encart ne fait que
-               ~92 px de haut : il lui faut de la lisibilite, pas de la largeur. */
-            flex: 0 0 clamp(150px, 9%, 190px);
+            /* 2026-09-06 (retour PO : « le bloc a gauche est illisible ») :
+               9 % -> 19 %. Mesure sur la capture du PO a 1908x902 : colonne
+               171 px, video 1156x647 bornee en HAUTEUR, donc 325 px de vide de
+               part et d'autre de la video. Sur un ecran 16:9 la video est
+               toujours bornee en hauteur (le chrome vertical ~255 px laisse
+               ~450 px de marge laterale) : cette largeur ne coute rien a
+               l'image. Les 380 px viennent de la meme capture : 19 % de 1908.
+               Depuis le 05/09 l'encart porte la pastille « Actu du jour », la
+               carte de contexte et le titre propose : a 171 px et 10 px de
+               corps, les pastilles se cassaient au milieu et le texte etait
+               illisible. */
+            flex: 0 0 clamp(190px, 19%, 380px);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -525,7 +533,21 @@
             max-height: none;          /* la place ne manque plus : texte entier */
             overflow-y: auto;
             margin-bottom: 0;
+            /* 2026-09-06 : corps 0.8 -> 0.95 em (le `.why` tombait a ~9 px),
+               pastilles posees en grille souple (gap) au lieu d'un flux inline
+               ou chaque pastille se pliait en deux au bord de la colonne. */
+            font-size: 0.95em;
+            line-height: 1.45;
+            padding: 8px 12px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px 6px;
         }
+        .info-column .clip-info-overlay > div { flex: 1 1 100%; }
+        .info-column .clip-info-overlay > span { margin-left: 0 !important; }
+        .info-column .clip-info-overlay .text { font-size: 0.95em; }
+        .info-column .clip-info-overlay .why { font-size: 0.85em; }
         /* Le texte n'est plus coupe a 2 lignes ici : il a la hauteur qu'il veut. */
         .info-column .clip-info-overlay .text,
         .info-column .clip-info-overlay .why {
@@ -2151,8 +2173,14 @@
             // 2026-09-05 (GO PO) : talk \u00ab sujet du jour \u00bb \u2014 le brief editorial a
             // guide la chasse, le clip est en tete de file (review_priority).
             if (clip.story_topic) {
-                const storyLbl = clip.story_label ? ' \u00b7 ' + escHtml(String(clip.story_label).substring(0, 60)) : '';
-                infoHtml += '<span title="' + escHtml(clip.story_label || 'Sujet du jour (brief editorial)') + '" style="background:#7b1f1f;color:#ffe3e3;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:700;border:1px solid #e74c3c;">\ud83d\udcf0 Actu du jour' + storyLbl + '</span>';
+                // 2026-09-06 : la pastille portait les 60 premiers caracteres du
+                // libelle (coupes mi-mot), repetes juste dessous par la carte de
+                // contexte : le meme texte trois fois dans une colonne de 171 px.
+                // Ici le sujet seul (« Pixie »), le libelle complet au survol.
+                const storyFull = String(clip.story_label || '');
+                const storyShort = storyFull.split(/\s[:\u2014\u2013-]\s/)[0].trim().substring(0, 28);
+                const storyLbl = storyShort ? ' \u00b7 ' + escHtml(storyShort) : '';
+                infoHtml += '<span title="' + escHtml(storyFull || 'Sujet du jour (brief editorial)') + '" style="background:#7b1f1f;color:#ffe3e3;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:700;border:1px solid #e74c3c;">\ud83d\udcf0 Actu du jour' + storyLbl + '</span>';
             }
             // Sprint 39 : Victory Arc badge \u2014 2026-09-05 : porte aussi le multi-POV
             // (arc_id \u00ab multipov_<date>_<n> \u00bb : meme moment vu par plusieurs
@@ -3776,6 +3804,12 @@
             const whyRaw = String(clip.why || '').trim();
             const whyIsSentinel = WHY_SENTINELS.has(whyRaw.toLowerCase())
                 || /^[a-z0-9_]+$/.test(whyRaw);   // un identifiant, pas une phrase
+            // 2026-09-06 : pour un clip « sujet du jour », le pipeline ecrit
+            // `why` = « Actu du jour · <libelle> — <resume> » (talk_clips,
+            // clips_judge). La pastille, la carte de contexte et le resume
+            // portent deja ces trois morceaux : cette ligne etait la troisieme
+            // repetition du meme texte dans la colonne de gauche.
+            if (clip.story_topic && /^Actu du jour/i.test(whyRaw)) return null;
 
             // Option 1 : champ why du pipeline (déjà une phrase)
             if (whyRaw && whyRaw.length > 8 && !whyIsSentinel) {
