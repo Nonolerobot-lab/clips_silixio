@@ -3,27 +3,32 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 209,
+      "total_clips": 3,
       "streamers": [
-        "asianjeff",
+        "community"
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "total_clips": 128,
+      "streamers": [
         "aussieantics",
-        "buzzftn",
-        "clement_ttt",
-        "community",
-        "jolavanille",
-        "k1ng",
+        "cringefn",
+        "fnmoneymaker",
+        "idrop74",
         "khanada_",
-        "kirillianfn1",
-        "kurama",
         "kurama_203",
+        "kyzen_",
         "leothecrack",
         "merstaach",
         "mrsavage",
-        "revenja",
-        "stizo_",
-        "venofn",
-        "wazz",
-        "zetfartv"
+        "peterbot",
+        "pixx___",
+        "podasai",
+        "rezonfn",
+        "swizzy281_",
+        "vadeal",
+        "wazz"
       ]
     },
     {
@@ -127,40 +132,7 @@
         "wazz",
         "zetfartv"
       ]
-    },
-    {
-      "date": "2026-09-05",
-      "total_clips": 59,
-      "streamers": [
-        "ajerss",
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "kirillianfn1",
-        "mrsavage",
-        "peterbot"
-      ]
-    },
-    {
-      "date": "2026-09-04",
-      "total_clips": 159,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "coach_f0x",
-        "k1ng",
-        "khanada_",
-        "kurama_203",
-        "leothecrack",
-        "mrsavage",
-        "podasai",
-        "revenja",
-        "rezonfn",
-        "stizo_",
-        "wazz",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-09-10"
+  "latest": "2026-09-11"
 }
