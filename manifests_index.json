@@ -3,7 +3,7 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 321,
+      "total_clips": 385,
       "streamers": [
         "asianjeff",
         "aussieantics",
@@ -29,8 +29,9 @@
     },
     {
       "date": "2026-09-16",
-      "total_clips": 125,
+      "total_clips": 128,
       "streamers": [
+        "acorn",
         "aussieantics",
         "buzzftn",
         "community",
@@ -42,6 +43,7 @@
         "leothecrack",
         "malibuca",
         "mrsavage",
+        "p1ngfnz",
         "podasai",
         "revenja",
         "shxrkfnbr",
