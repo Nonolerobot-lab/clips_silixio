@@ -2200,6 +2200,12 @@
                 infoHtml += '<div style="color:#f5b7b1;font-size:0.82em;margin-top:3px;line-height:1.3;">'
                     + '📰 <b>Contexte</b> : ' + escHtml(clip.story_context) + '</div>';
             }
+            // 2026-09-16 (regle 2, PO) : ligne de contexte « tournoi · round · resultat »
+            // ou mode de jeu, assemblee a la livraison (pipeline/context_line.py).
+            if (clip.context_line) {
+                infoHtml += '<div style="color:#9fb3c8;font-size:0.82em;margin-top:3px;line-height:1.3;" title="Cadre du clip : tournoi, round, resultat du streamer, ou mode de jeu">'
+                    + '🎯 ' + escHtml(clip.context_line) + '</div>';
+            }
             if (clip.story_previous && clip.story_previous.length) {
                 const prevLinks = clip.story_previous.map(function (p) {
                     const lbl = escHtml((p.date || '').slice(5).split('-').reverse().join('/') + ' ' + (p.streamer || ''))
