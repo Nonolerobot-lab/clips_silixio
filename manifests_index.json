@@ -3,33 +3,51 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 397,
+      "total_clips": 321,
       "streamers": [
-        "acorn",
         "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "community",
+        "fnmoneymaker",
+        "jolavanille",
+        "kurama",
+        "kurama_203",
+        "leothecrack",
+        "merstaach",
+        "mrsavage",
+        "nikof",
+        "revenja",
+        "rezonfn",
+        "shxrkfnbr",
+        "stizo_",
+        "talmo",
+        "vadeal",
+        "wazz",
+        "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "total_clips": 125,
+      "streamers": [
         "aussieantics",
         "buzzftn",
         "community",
         "jolavanille",
         "k1ng",
         "khanada_",
-        "kurama",
         "kurama_203",
+        "kyzen_",
         "leothecrack",
         "malibuca",
         "mrsavage",
-        "noahreyli",
-        "p1ngfnz",
-        "pixx___",
         "podasai",
         "revenja",
         "shxrkfnbr",
         "stizo_",
-        "swizzy281_",
-        "vadeal",
-        "venofn",
-        "wazz",
-        "zetfartv"
+        "talmo",
+        "vicotryona"
       ]
     },
     {
@@ -172,29 +190,7 @@
         "talmo",
         "venofn"
       ]
-    },
-    {
-      "date": "2026-09-09",
-      "total_clips": 157,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "clement_ttt",
-        "jolavanille",
-        "k1ng",
-        "khanada_",
-        "kirillianfn1",
-        "kurama",
-        "kurama_203",
-        "leothecrack",
-        "merstaach",
-        "mrsavage",
-        "revenja",
-        "stizo_",
-        "venofn",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-09-15"
+  "latest": "2026-09-16"
 }
