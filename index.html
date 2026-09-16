@@ -1356,7 +1356,7 @@
                 <button class="fb-btn fb-bad_framing" onclick="showBadFramingSubmenu()">
                     &#9986; Mal cadre<span class="shortcut">R</span>
                 </button>
-                <button class="fb-btn fb-not_relevant" onclick="rate('not_relevant')" style="border-color:#e74c3c33;">
+                <button class="fb-btn fb-not_relevant" onclick="showNotRelevantSubmenu()" style="border-color:#e74c3c33;">
                     &#10060; Pas pertinent<span class="shortcut">S</span>
                 </button>
                 <button class="fb-btn fb-duplicate" onclick="rate('duplicate')">
@@ -1584,6 +1584,9 @@
             chatFlags = remapStateKeys(chatFlags, keyMap);
             subsOff = remapStateKeys(subsOff, keyMap); // 2026-09-05
             exportedClips = remapStateKeys(exportedClips, keyMap);
+            if (window.notRelevantDetails) {
+                window.notRelevantDetails = remapStateKeys(window.notRelevantDetails, keyMap);
+            }
             if (window.badFramingDetails) {
                 window.badFramingDetails = remapStateKeys(window.badFramingDetails, keyMap);
             }
@@ -1624,6 +1627,9 @@
                     chatFlags,
                     subsOff,       // 2026-09-05 : sous-titres coupes par clip
                     exportedClips, // Fix 2026-04-09 : persiste les clips masques apres export
+                    // 2026-09-16 : les causes (mal cadre, pas pertinent) survivent a un F5.
+                    badFramingDetails: window.badFramingDetails || {},
+                    notRelevantDetails: window.notRelevantDetails || {},
                 }));
             } catch (e) {
                 console.warn('localStorage save failed:', e);
@@ -1673,6 +1679,8 @@
                 if (saved.chatFlags)     chatFlags     = saved.chatFlags;
                 if (saved.subsOff)       subsOff       = saved.subsOff;       // 2026-09-05
                 if (saved.exportedClips) exportedClips = saved.exportedClips; // Fix 2026-04-09
+                if (saved.badFramingDetails)  window.badFramingDetails  = saved.badFramingDetails;  // 2026-09-16
+                if (saved.notRelevantDetails) window.notRelevantDetails = saved.notRelevantDetails; // 2026-09-16
                 // 2026-08-26 : la garde etait `saved.currentIndex < TOTAL`, or
                 // restoreProgress() est appele AVANT `TOTAL = CLIPS.length`
                 // (il doit l'etre, pour recuperer exportedClips avant le
@@ -2411,6 +2419,9 @@
             const clipKey = getClipStateKey(CLIPS[target]);
             delete feedback[clipKey];
             _clearAxes(clipKey);
+            // 2026-09-16 : une cause sans verdict n'a pas de sens.
+            if (window.notRelevantDetails) delete window.notRelevantDetails[clipKey];
+            if (window.badFramingDetails) delete window.badFramingDetails[clipKey];
             // Le chrono du verdict doit repartir a zero, sinon le temps de
             // decision du 2e verdict serait celui du 1er (fonction idempotente).
             delete clipVerdictTimings[clipKey];
@@ -3016,6 +3027,76 @@
             if (overlay) overlay.remove();
         }
 
+        // === 2026-09-16 (PO) : CAUSE D'UN « PAS PERTINENT » ===
+        // 2 398 « pas pertinent » sans motif sur 2 671 verdicts : le pipeline devine.
+        // Le verdict est pose TOUT DE SUITE (meme vitesse qu'avant si on ferme le
+        // menu), la cause est un tap de plus : 1 rien a l'ecran, 2 deja vu, 3 pas de
+        // son / pas de reaction, 4 pas d'enjeu / incomprehensible sans contexte,
+        // 5 autre, Echap = sans cause. Exportee dans `not_relevant_detail`.
+        let pendingNotRelevant = false;
+        function showNotRelevantSubmenu() {
+            const clip = CLIPS[currentIndex];
+            const clipKey = getClipStateKey(clip);
+            if (feedback[clipKey] === 'not_relevant') {
+                // Re-presser = retirer le verdict (meme toggle que rate()).
+                rate('not_relevant');
+                if (window.notRelevantDetails) delete window.notRelevantDetails[clipKey];
+                saveProgress();
+                return;
+            }
+            feedback[clipKey] = 'not_relevant';
+            _applyLegacyAxes(clipKey, 'not_relevant');
+            recordClipVerdictTiming(clipKey, 'not_relevant', clip);
+            lastRatedIndex = currentIndex;
+            updateCurrentFeedback(clipKey);
+            highlightFeedbackBtn('not_relevant');
+            refreshAxisButtons(clipKey);
+            updateMinimap();
+            updateStats();
+            saveProgress();
+
+            pendingNotRelevant = true;
+            const btn = (label, key, cause) =>
+                '<button onclick="rateNotRelevant(\'' + cause + '\')" style="padding:10px;background:#2a2a4a;color:#ccc;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.9em;text-align:left;">'
+                + label + ' <span style="color:#666;font-size:0.8em;">(' + key + ')</span></button>';
+            const html = '<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);' +
+                'background:#1a1a3a;border:2px solid #e74c3c;border-radius:12px;padding:20px;z-index:100;' +
+                'display:flex;flex-direction:column;gap:8px;min-width:280px;" id="notRelevantMenu">' +
+                '<div style="color:#e74c3c;font-weight:bold;margin-bottom:4px;">Pas pertinent — pourquoi ?</div>' +
+                btn('&#128065; Rien à l’écran', '1', 'rien_a_l_ecran') +
+                btn('&#128257; Déjà vu (même moment, même genre)', '2', 'deja_vu') +
+                btn('&#128263; Pas de son / pas de réaction', '3', 'pas_de_son') +
+                btn('&#10067; Pas d’enjeu / incompréhensible sans contexte', '4', 'pas_d_enjeu') +
+                btn('&#8230; Autre', '5', 'autre') +
+                '<button onclick="rateNotRelevant(null)" style="padding:8px;background:#333;color:#888;border:1px solid #444;border-radius:8px;cursor:pointer;font-size:0.8em;">Sans cause (Echap)</button>' +
+                '</div>';
+            const overlay = document.createElement('div');
+            overlay.id = 'notRelevantOverlay';
+            overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:99;';
+            overlay.onclick = () => rateNotRelevant(null);
+            document.body.appendChild(overlay);
+            overlay.insertAdjacentHTML('afterend', html);
+        }
+        function rateNotRelevant(cause) {
+            const clip = CLIPS[currentIndex];
+            const clipKey = getClipStateKey(clip);
+            if (!window.notRelevantDetails) window.notRelevantDetails = {};
+            if (cause) window.notRelevantDetails[clipKey] = cause;
+            else delete window.notRelevantDetails[clipKey];
+            closeNotRelevantMenu();
+            saveProgress();
+            setTimeout(() => {
+                if (currentIndex < TOTAL - 1) navigate(1); else showDone();
+            }, 120);
+        }
+        function closeNotRelevantMenu() {
+            pendingNotRelevant = false;
+            const menu = document.getElementById('notRelevantMenu');
+            const overlay = document.getElementById('notRelevantOverlay');
+            if (menu) menu.remove();
+            if (overlay) overlay.remove();
+        }
+
         // === Sprint 50 : BESTOF SCRIPT (panneau collapsible) ===
         function renderBestofScript() {
             const panel = document.getElementById('bestofPanel');
@@ -3523,6 +3604,9 @@
                     feedback_key: clipKey,
                     displayed_label: displayedLabel ? displayedLabel.replace(/&#\d+;|\u[0-9a-f]{4}/gi, '').trim() : null,
                     bad_framing_detail: (window.badFramingDetails || {})[clipKey] || null,
+                    // 2026-09-16 (PO) : la cause d'un « pas pertinent », un tap parmi
+                    // rien_a_l_ecran / deja_vu / pas_de_son / pas_d_enjeu / autre.
+                    not_relevant_detail: (window.notRelevantDetails || {})[clipKey] || null,
                     score: clip.score || null,
                     sources: clip.sources || [],
                     ai_category: clip.ai_category || null,
@@ -4058,6 +4142,19 @@
                 document.activeElement.blur();
             }
 
+            // 2026-09-16 : sous-menu « pas pertinent — pourquoi ? » (1 a 5, Echap = sans cause)
+            if (pendingNotRelevant) {
+                switch(e.key) {
+                    case '1': rateNotRelevant('rien_a_l_ecran'); break;
+                    case '2': rateNotRelevant('deja_vu'); break;
+                    case '3': rateNotRelevant('pas_de_son'); break;
+                    case '4': rateNotRelevant('pas_d_enjeu'); break;
+                    case '5': rateNotRelevant('autre'); break;
+                    case 'Escape': rateNotRelevant(null); break;
+                }
+                return;
+            }
+
             // Sous-menu mal cadre : utilise 1/2/3/4 pour eviter le conflit avec a/z/e/r
             if (pendingBadFraming) {
                 switch(e.key) {
@@ -4075,7 +4172,7 @@
                 case 'z': case 'Z': rate('good'); break;
                 case 'e': case 'E': rate('not_interesting'); break;
                 case 'r': case 'R': showBadFramingSubmenu(); break;
-                case 's': case 'S': rate('not_relevant'); break;
+                case 's': case 'S': showNotRelevantSubmenu(); break;
                 case 't': case 'T': rate('duplicate'); break;
                 // 2026-08-26 : raccourcis 7/8/J/K/U/I retires avec leurs boutons
                 // (cf. le commentaire du bloc axes-rate-row). rateAxis() reste
