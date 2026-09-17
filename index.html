@@ -2536,7 +2536,11 @@
                 container.innerHTML = '';
                 const video = document.createElement('video');
                 video.src = chatVideoUrl;
-                video.controls = true;
+                // 2026-09-17 (PO) : PAS de controles natifs sur la video du chat. Elle est
+                // pilotee par le lecteur principal (_attachChatSync : play, pause, seek et
+                // vitesse), donc sa barre ne servait a rien et mangeait le bas du chat —
+                // deja etroit. Le telechargement du chat vit dans le bloc « Telecharger ».
+                video.controls = false;
                 video.autoplay = true;   // S-02 : demarre automatiquement avec le clip principal
                 video.muted = false;
                 video.style.cssText = 'width:100%;height:100%;border-radius:10px;background:#000;display:block;';
