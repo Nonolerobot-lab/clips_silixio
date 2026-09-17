@@ -247,6 +247,20 @@
             opacity: 0.45;
             cursor: default;
         }
+        /* 2026-09-17 (PO) : vitesse de lecture, groupee a droite des actions du pic. */
+        .speed-group {
+            display: inline-flex;
+            gap: 4px;
+            margin-left: auto;
+            padding-left: 10px;
+        }
+        .speed-group .speed-btn { padding: 6px 8px; }
+        .speed-group .speed-btn.active {
+            border-color: #2ecc71;
+            background: rgba(46, 204, 113, 0.18);
+            color: #fff;
+            font-weight: 600;
+        }
         .clip-info-overlay .peak-meta {
             color: #c9c9d1;
             font-size: 0.8em;
@@ -1393,7 +1407,7 @@
              verdict "Mal cadre" (R) et son sous-menu 1/2/3/4. -->
         <div class="options-row">
             <button class="nav-btn" id="btnPrev" onclick="navigate(-1)">
-                &#8592; Precedent <span class="shortcut">&#8592;</span>
+                &#8592; Precedent <span class="shortcut">Maj+&#8592;</span>
             </button>
             <a class="dl-btn" id="dlClipBtn" onclick="return downloadClip(event)" target="_blank" rel="noopener">
                 &#128229; Telecharger clip <span class="shortcut">D</span>
@@ -1421,8 +1435,22 @@
                 &#128230; S&#233;lection <span class="shortcut"></span>
             </button>
             <button class="nav-btn" id="btnNext" onclick="navigate(1)">
-                Suivant &#8594; <span class="shortcut">&#8594;</span>
+                Suivant &#8594; <span class="shortcut">Maj+&#8594;</span>
             </button>
+            <!-- 2026-09-17 (PO) : vitesse de lecture. Trier a 1,25x fait gagner du temps sur
+                 chaque clip ; le choix est memorise d'une session a l'autre et reapplique a
+                 chaque clip. Ici et pas dans le guide du pic, qui est masque sur les clips
+                 sans pastille de pic. -->
+            <span class="speed-group" id="speedGroup" title="Vitesse de lecture (memorisee)">
+                <button class="peak-guide-btn speed-btn" data-speed="1" onclick="setReviewSpeed(1)">1&times;</button>
+                <button class="peak-guide-btn speed-btn" data-speed="1.25" onclick="setReviewSpeed(1.25)">1,25&times;</button>
+                <button class="peak-guide-btn speed-btn" data-speed="1.5" onclick="setReviewSpeed(1.5)">1,5&times;</button>
+                <button class="peak-guide-btn speed-btn" data-speed="2" onclick="setReviewSpeed(2)">2&times;</button>
+            </span>
+            <!-- 2026-09-17 (PO) : les fleches seules avancent/reculent de 3 s DANS le clip. -->
+            <div class="chat-toggle" id="seekHint" title="Fleches gauche/droite : reculer / avancer de 3 s dans le clip" style="cursor:default">
+                &#9193; &#177;3 s <span class="shortcut">&#8592; &#8594;</span>
+            </div>
         </div>
         </div><!-- /.secondary-rows -->
 
@@ -2820,10 +2848,23 @@
                 downloads[getClipStateKey(clip)] = true;
                 saveProgress();
                 _refreshDlBtn(true);
+                _advanceAfterDownload();
                 return !!event; // Vrai lien : demarrage natif au clic, sans fetch/blob.
             }
             _downloadClipBlob(clip);
+            _advanceAfterDownload();
             return false;
+        }
+
+        // 2026-09-17 (PO) : telecharger un clip, c'est le PRENDRE — donc on enchaine sur
+        // le suivant, comme apres un vote. Le telechargement continue en fond (il ne
+        // depend pas du clip affiche) et AUCUN verdict n'est invente : le monteur garde
+        // la main pour noter Top/Bon s'il le veut, ici ou depuis Retour arriere.
+        function _advanceAfterDownload() {
+            setTimeout(() => {
+                if (currentIndex < TOTAL - 1) navigate(1);
+                else showDone();
+            }, 220);
         }
 
         // Repli compatible avec l'ancien Worker, sans bloquer les autres clips.
@@ -4061,8 +4102,57 @@
             mainPlayer.removeEventListener('seeked', _onMainSeeked);
             _chatSyncTarget = null;
         }
+        // === 2026-09-17 (PO) : VITESSE DE LECTURE ===
+        // Le tri se fait souvent a 1,25x. Le choix est memorise dans le navigateur et
+        // reapplique a CHAQUE clip (la balise <video> repart a 1x a chaque source) et a
+        // la video de chat, qui est calee sur le lecteur principal.
+        // Pas des fleches gauche/droite dans le clip (2026-09-17, PO : 2-3 s pour
+        // retrouver le moment fort sans rater la punchline).
+        const SEEK_STEP_SEC = 3;
+
+        let REVIEW_SPEED = 1;
+        try {
+            const _s = parseFloat(localStorage.getItem('reviewSpeed'));
+            if (_s >= 0.5 && _s <= 3) REVIEW_SPEED = _s;
+        } catch (e) { /* stockage indisponible : on reste a 1x */ }
+
+        function _applyReviewSpeed() {
+            const main = document.getElementById('player');
+            if (main && main.tagName === 'VIDEO') main.playbackRate = REVIEW_SPEED;
+            if (_chatSyncTarget) _chatSyncTarget.playbackRate = REVIEW_SPEED;
+        }
+
+        function _highlightSpeedBtns() {
+            document.querySelectorAll('#speedGroup .speed-btn').forEach(b => {
+                b.classList.toggle('active', parseFloat(b.dataset.speed) === REVIEW_SPEED);
+            });
+        }
+
+        function setReviewSpeed(v) {
+            REVIEW_SPEED = v;
+            try { localStorage.setItem('reviewSpeed', String(v)); } catch (e) { /* ignore */ }
+            _applyReviewSpeed();
+            _highlightSpeedBtns();
+        }
+
+        (function _initReviewSpeed() {
+            const main = document.getElementById('player');
+            if (main) {
+                // `loadedmetadata` couvre chaque changement de clip ; `play` rattrape les
+                // navigateurs qui remettent la vitesse a 1 au demarrage de la lecture.
+                main.addEventListener('loadedmetadata', _applyReviewSpeed);
+                main.addEventListener('play', _applyReviewSpeed);
+            }
+            _highlightSpeedBtns();
+        })();
+
         function _onMainPause()  { if (_chatSyncTarget) _chatSyncTarget.pause(); }
-        function _onMainPlay()   { if (_chatSyncTarget) _chatSyncTarget.play().catch(()=>{}); }
+        function _onMainPlay()   {
+            if (_chatSyncTarget) {
+                _chatSyncTarget.playbackRate = REVIEW_SPEED;   // 2026-09-17 : sinon le chat derive
+                _chatSyncTarget.play().catch(()=>{});
+            }
+        }
         function _onMainSeeked() {
             const main = document.getElementById('player');
             if (_chatSyncTarget && main && main.tagName === 'VIDEO') {
@@ -4196,22 +4286,26 @@
                     undoLastVerdict();
                     break;
                 case 'd': case 'D': downloadClip(); break;
+                // 2026-09-17 (PO) : les fleches AVANCENT DANS LE CLIP (3 s), elles ne
+                // changent plus de clip. On passe au suivant en votant (a/z/e/r/s/t) ou
+                // en telechargeant (D) : le geste dit toujours ce qu'on fait du clip.
+                // Maj+fleche garde la navigation clip a clip pour revenir en arriere.
                 case 'ArrowRight':
                     e.preventDefault();
                     if (e.shiftKey) {
-                        const pFwd = document.getElementById('player');
-                        if (pFwd && pFwd.tagName === 'VIDEO') pFwd.currentTime += 5;
-                    } else {
                         navigate(1);
+                    } else {
+                        const pFwd = document.getElementById('player');
+                        if (pFwd && pFwd.tagName === 'VIDEO') pFwd.currentTime += SEEK_STEP_SEC;
                     }
                     break;
                 case 'ArrowLeft':
                     e.preventDefault();
                     if (e.shiftKey) {
-                        const pBwd = document.getElementById('player');
-                        if (pBwd && pBwd.tagName === 'VIDEO') pBwd.currentTime = Math.max(0, pBwd.currentTime - 5);
-                    } else {
                         navigate(-1);
+                    } else {
+                        const pBwd = document.getElementById('player');
+                        if (pBwd && pBwd.tagName === 'VIDEO') pBwd.currentTime = Math.max(0, pBwd.currentTime - SEEK_STEP_SEC);
                     }
                     break;
                 case ' ':
