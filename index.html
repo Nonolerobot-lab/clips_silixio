@@ -247,6 +247,22 @@
             opacity: 0.45;
             cursor: default;
         }
+        /* 2026-09-17 (PO) : telechargement regroupe — « Telecharger : Clip | Chat ». */
+        .dl-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 2px 8px 2px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .dl-group-label {
+            font-size: 0.78em;
+            opacity: 0.75;
+            white-space: nowrap;
+        }
+        .dl-group .dl-btn { margin: 0; }
         /* 2026-09-17 (PO) : vitesse de lecture, groupee a droite des actions du pic. */
         .speed-group {
             display: inline-flex;
@@ -313,7 +329,10 @@
                redevenait bornee en LARGEUR (donc incapable d'utiliser la hauteur
                disponible). A 12 % elle redevient bornee en hauteur, ce qui est
                l'optimum : toute largeur supplementaire serait perdue. */
-            flex: 0 0 clamp(180px, 12%, 260px);
+            /* 2026-09-17 (PO) : 12 % -> 18 % (260 -> 380 px). La video du chat etait
+               illisible a 260 px. La ligne rendue par le retrait de la barre du pic
+               compense une partie de la largeur reprise a la video. */
+            flex: 0 0 clamp(260px, 18%, 380px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1303,27 +1322,16 @@
                     <div class="current-feedback" id="currentFeedback"></div>
                 </div>
 
-                <!-- Peak guide : sous la video, plus en absolute -->
-                <div class="peak-guide" id="peakGuide">
-                    <div class="peak-guide-track">
-                        <div class="peak-guide-entry" id="peakGuideEntry"></div>
-                        <div class="peak-guide-marker" id="peakGuideMarker"></div>
-                    </div>
-                    <div class="peak-guide-meta">
-                        <div class="peak-guide-text" id="peakGuideText"></div>
-                        <div class="peak-guide-actions">
-                            <button class="peak-guide-btn entry" id="peakEntryBtn" onclick="jumpToEntrySuggestion()">Entrée suggérée</button>
-                            <button class="peak-guide-btn" id="peakJumpBtn" onclick="jumpToPeak()">Aller au pic</button>
-                        </div>
-                    </div>
-                </div>
+                <!-- 2026-09-17 (PO) : la barre « repere visuel » est RETIREE. Elle
+                     occupait une ligne entiere sous la video pour redire le pic, deja
+                     affiche dans la colonne de gauche. « Aller au pic » et « Entree
+                     suggeree » vivent maintenant dans la barre d'actions permanente. -->
             </div>
 
             <!-- Chat video panel — visible par defaut si disponible -->
             <div class="chat-video-panel" id="chatPanel">
                 <div class="chat-label">
                     <span>&#128172; Chat Twitch</span>
-                    <button class="dl-chat-btn" id="dlChatBtn" onclick="downloadChat()" title="Telecharger la video chat">&#128229; DL</button>
                 </div>
                 <div id="chatPlayer"></div>
             </div>
@@ -1409,9 +1417,16 @@
             <button class="nav-btn" id="btnPrev" onclick="navigate(-1)">
                 &#8592; Precedent <span class="shortcut">Maj+&#8592;</span>
             </button>
-            <a class="dl-btn" id="dlClipBtn" onclick="return downloadClip(event)" target="_blank" rel="noopener">
-                &#128229; Telecharger clip <span class="shortcut">D</span>
-            </a>
+            <!-- 2026-09-17 (PO) : UN bloc de telechargement, clip et chat cote a cote. -->
+            <div class="dl-group" id="dlGroup">
+                <span class="dl-group-label">&#128229; Telecharger</span>
+                <a class="dl-btn" id="dlClipBtn" onclick="return downloadClip(event)" target="_blank" rel="noopener">
+                    Clip <span class="shortcut">D</span>
+                </a>
+                <button class="dl-btn" id="dlChatBtn" onclick="downloadChat()" title="Telecharger la video du chat">
+                    Chat
+                </button>
+            </div>
             <div class="chat-toggle" id="chatToggle" onclick="toggleChat()">
                 &#128172; Chat <span class="shortcut">C</span>
             </div>
@@ -1431,9 +1446,8 @@
                  coherent avec SUBTITLES_BURN_ENABLED=false en prod). Le clic
                  n'emettait qu'un console.warn.
                  toggleSubs() et _subsEnabled restent en place, sans appelant. -->
-            <button class="dl-btn" id="dlFolderBtn" onclick="downloadFolder()" title="T&#233;l&#233;charger tous les clips Top + Bons">
-                &#128230; S&#233;lection <span class="shortcut"></span>
-            </button>
+            <!-- 2026-09-17 (PO) : bouton « Selection » retire — jamais utilise pour trier.
+                 downloadFolder() reste defini, sans appelant. -->
             <button class="nav-btn" id="btnNext" onclick="navigate(1)">
                 Suivant &#8594; <span class="shortcut">Maj+&#8594;</span>
             </button>
@@ -1447,6 +1461,9 @@
                 <button class="peak-guide-btn speed-btn" data-speed="1.5" onclick="setReviewSpeed(1.5)">1,5&times;</button>
                 <button class="peak-guide-btn speed-btn" data-speed="2" onclick="setReviewSpeed(2)">2&times;</button>
             </span>
+            <!-- 2026-09-17 (PO) : recuperes de la barre du pic supprimee. -->
+            <button class="peak-guide-btn entry" id="peakEntryBtn" onclick="jumpToEntrySuggestion()">Entr&eacute;e sugg&eacute;r&eacute;e</button>
+            <button class="peak-guide-btn" id="peakJumpBtn" onclick="jumpToPeak()">Aller au pic</button>
             <!-- 2026-09-17 (PO) : les fleches seules avancent/reculent de 3 s DANS le clip. -->
             <div class="chat-toggle" id="seekHint" title="Fleches gauche/droite : reculer / avancer de 3 s dans le clip" style="cursor:default">
                 &#9193; &#177;3 s <span class="shortcut">&#8592; &#8594;</span>
@@ -1915,52 +1932,31 @@
             }
         }
 
+        // 2026-09-17 (PO) : la barre « repere visuel » est supprimee. Il ne reste que les
+        // deux boutons de saut, dans la barre d'actions : on les montre quand le clip a un
+        // pic (et une entree suggeree), on les cache sinon. Le texte du pic reste lisible
+        // dans la colonne de gauche, ou il a toujours ete.
         function updatePeakGuide(clip) {
-            const guide = document.getElementById('peakGuide');
-            const marker = document.getElementById('peakGuideMarker');
-            const entry = document.getElementById('peakGuideEntry');
-            const text = document.getElementById('peakGuideText');
             const peakBtn = document.getElementById('peakJumpBtn');
             const entryBtn = document.getElementById('peakEntryBtn');
-
-            if (!guide || !marker || !entry || !text || !peakBtn || !entryBtn) return;
+            if (!peakBtn || !entryBtn) return;
 
             const duration = Number(clip.clip_duration || clip.duration || 0);
             const peak = Number(clip.peak_in_clip_sec);
             const entrySuggestion = clip.entry_suggestion_sec;
             const hasMarker = !!clip.has_peak_marker && duration > 0 && Number.isFinite(peak);
-
-            if (!hasMarker) {
-                guide.classList.remove('show');
-                return;
-            }
-
-            const clampPct = (value) => Math.max(0, Math.min(100, (value / duration) * 100));
-            marker.style.left = clampPct(peak) + '%';
-            const hasEntry = clip.peak_strategy === 'action' && entrySuggestion !== null && entrySuggestion !== undefined;
-            entry.style.display = hasEntry ? 'block' : 'none';
-            if (hasEntry) {
-                entry.style.left = clampPct(Number(entrySuggestion)) + '%';
-            }
+            const hasEntry = hasMarker && clip.peak_strategy === 'action'
+                && entrySuggestion !== null && entrySuggestion !== undefined;
 
             const player = document.getElementById('player');
             const canSeek = !!(player && player.tagName === 'VIDEO');
+
+            peakBtn.style.display = hasMarker ? '' : 'none';
             peakBtn.disabled = !canSeek;
-            entryBtn.disabled = !canSeek;
+            peakBtn.title = hasMarker ? ('Pic a ' + formatClipOffset(peak)) : '';
             entryBtn.style.display = hasEntry ? '' : 'none';
-
-            let summary = '<strong>Pic</strong> à ' + formatClipOffset(peak);
-            if (hasEntry) {
-                summary += ' · entrée suggérée ' + formatClipOffset(entrySuggestion);
-            } else {
-                summary += ' · repère visuel';
-            }
-            if (!canSeek) {
-                summary += ' · saut précis indisponible sur ce lecteur';
-            }
-
-            text.innerHTML = summary;
-            guide.classList.add('show');
+            entryBtn.disabled = !canSeek;
+            entryBtn.title = hasEntry ? ('Entree suggeree a ' + formatClipOffset(entrySuggestion)) : '';
         }
 
         function jumpToPeak() {
@@ -2874,13 +2870,13 @@
             const btn = document.getElementById('dlClipBtn');
             if (!btn) return;
             if (flash) {
-                btn.innerHTML = '&#11015; Enregistrement demande';
+                btn.innerHTML = '&#11015; Enregistre';
                 setTimeout(() => _refreshDlBtn(false), 1600);
                 return;
             }
             btn.innerHTML = _dlActive > 0
                 ? '&#11015; ' + _dlActive + ' en cours'
-                : '&#128229; Telecharger clip <span class="shortcut">D</span>';
+                : 'Clip <span class="shortcut">D</span>';
             btn.style.opacity = _dlActive > 0 ? '0.8' : '';
         }
 
