@@ -3,26 +3,51 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 296,
+      "total_clips": 353,
+      "streamers": [
+        "alibaba_rcm",
+        "artskill",
+        "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "community",
+        "jolavanille",
+        "kurama_203",
+        "leothecrack",
+        "merstaach",
+        "mrsavage",
+        "nikof",
+        "peterbot",
+        "shxrkfnbr",
+        "stizo_",
+        "twekfn",
+        "vicotryona",
+        "waze",
+        "wazz",
+        "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "total_clips": 157,
       "streamers": [
         "alibaba_rcm",
         "asianjeff",
         "aussieantics",
         "buzzftn",
-        "chinoisop",
-        "community",
-        "idrop74",
         "jolavanille",
+        "k1ng",
         "kurama_203",
         "leothecrack",
         "mrsavage",
-        "nikof",
-        "pixx___",
+        "peterbot",
+        "queasy",
         "shxrkfnbr",
-        "swizzy281_",
-        "vicotryona",
-        "wazz",
-        "zetfartv"
+        "talmo",
+        "vadeal",
+        "venofn",
+        "waze",
+        "wazz"
       ]
     },
     {
@@ -162,33 +187,7 @@
         "talmo",
         "vicotryona"
       ]
-    },
-    {
-      "date": "2026-09-15",
-      "total_clips": 241,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "community",
-        "fnmoneymaker",
-        "jolavanille",
-        "kurama",
-        "kurama_203",
-        "leothecrack",
-        "merstaach",
-        "mrsavage",
-        "nikof",
-        "revenja",
-        "rezonfn",
-        "shxrkfnbr",
-        "stizo_",
-        "talmo",
-        "vadeal",
-        "wazz",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-09-21"
+  "latest": "2026-09-22"
 }
