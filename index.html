@@ -1837,6 +1837,48 @@
             applyManifest();
         }
 
+        // 2026-09-23 (decision PO) : note du jour. L'appel Opus du digest note chaque clip
+        // sur 100 (`note_jour`, cle ajoutee au manifest apres la livraison). Si au moins un
+        // clip en porte une, la file suit : review_priority d'abord (tete de file des sujets
+        // du jour, comme avant avec le score), puis note_jour decroissante ; un clip sans
+        // note passe apres les notes de son rang, dans l'ordre du manifest. Les arcs
+        // multi-POV et les sequences (seq_*, dont celles du digest) restent cote a cote,
+        // a la place de leur membre le mieux note, dans l'ordre arc_position (comme
+        // pipeline/multipov_delivery._regroup_adjacent). Sans note_jour : ordre inchange.
+        function hasNoteJour(c) {
+            return typeof c.note_jour === 'number' && isFinite(c.note_jour);
+        }
+        function isGroupedArc(arc) {
+            return arc.indexOf('multipov_') === 0 || arc.indexOf('seq_') === 0;
+        }
+        function orderByNoteJour(clips) {
+            if (!clips.some(hasNoteJour)) return clips;
+            const prio = c => parseInt(c.review_priority, 10) || 0;
+            const sorted = clips.map((c, i) => ({ c, i })).sort((a, b) => {
+                if (prio(b.c) !== prio(a.c)) return prio(b.c) - prio(a.c);
+                const na = hasNoteJour(a.c), nb = hasNoteJour(b.c);
+                if (na !== nb) return na ? -1 : 1;
+                if (na && nb && b.c.note_jour !== a.c.note_jour) return b.c.note_jour - a.c.note_jour;
+                return a.i - b.i;
+            }).map(x => x.c);
+            const byArc = {};
+            sorted.forEach(c => {
+                const arc = String(c.arc_id || '');
+                if (isGroupedArc(arc)) (byArc[arc] = byArc[arc] || []).push(c);
+            });
+            Object.values(byArc).forEach(m => m.sort((a, b) =>
+                (parseInt(a.arc_position, 10) || 0) - (parseInt(b.arc_position, 10) || 0)));
+            const placed = new Set();
+            const out = [];
+            sorted.forEach(c => {
+                if (placed.has(c)) return;
+                const arc = String(c.arc_id || '');
+                const members = isGroupedArc(arc) ? byArc[arc] : [c];
+                members.forEach(m => { if (!placed.has(m)) { placed.add(m); out.push(m); } });
+            });
+            return out;
+        }
+
         // Sprint 51 : Applique MANIFEST courant à l'interface (réinitialisé à chaque changement de jour)
         function applyManifest() {
             // Reinitialiser l'etat (nouveau jour)
@@ -1854,11 +1896,11 @@
                 return;
             }
 
-            ALL_CLIPS = (MANIFEST.clips || []).map(clip => {
+            ALL_CLIPS = orderByNoteJour((MANIFEST.clips || []).map(clip => {
                 const normalized = Object.assign({}, clip);
                 normalized.feedback_key = getClipStateKey(normalized);
                 return normalized;
-            });
+            }));
 
             // Bug 1 : restaurer la progression sauvegardee (clee par date — pas de reset si meme jour)
             // Fix 2026-04-09 : restoreProgress doit etre appele AVANT le filtrage pour recuperer exportedClips
@@ -2172,7 +2214,18 @@
             else if (nSources <= 1) badge = '<span style="color:#f1c40f;font-size:0.85em;margin-left:8px;">\ud83d\udfe1 Signal faible</span>';
 
             let infoHtml = '<span class="timestamp">' + escHtml(clip.timestamp || '') + '</span>';
-            infoHtml += '<span class="score" style="color:' + scoreColor + ';">' + Math.round(clip.score || 0) + '</span>';
+            if (hasNoteJour(clip)) {
+                // 2026-09-23 : la note du jour (Opus, avec le brief et l'historique du
+                // streamer) remplace l'ancienne a l'affichage ; l'ancienne reste en petit.
+                const nj = Math.round(clip.note_jour);
+                const njColor = nj >= 70 ? '#2ecc71' : nj >= 40 ? '#f1c40f' : '#e74c3c';
+                const njTip = 'Note du jour' + (clip.note_jour_raison ? ' : ' + clip.note_jour_raison : '')
+                    + ' (ancienne note : ' + Math.round(clip.score || 0) + ')';
+                infoHtml += '<span class="score" title="' + escHtml(njTip).replace(/"/g, '&quot;') + '" style="color:' + njColor + ';cursor:help;">' + nj + '</span>';
+                infoHtml += '<span title="Ancienne note (lane)" style="color:#7f8c8d;font-size:0.75em;margin-left:4px;">(' + Math.round(clip.score || 0) + ')</span>';
+            } else {
+                infoHtml += '<span class="score" style="color:' + scoreColor + ';">' + Math.round(clip.score || 0) + '</span>';
+            }
             infoHtml += badge;
             if (clip.ai_category) infoHtml += '<span class="category">' + (categoryFR[clip.ai_category] || escHtml(clip.ai_category)) + '</span>';
 
@@ -2240,6 +2293,17 @@
                 }).join(' &nbsp;|&nbsp; ');
                 infoHtml += '<div style="color:#f39c12;font-size:0.8em;margin-top:2px;">↩ Suite de : ' + prevLinks + '</div>';
             }
+            // 2026-09-23 : phase de la lane VOD = plusieurs passages de la VOD recolles dans ce
+            // fichier (pipeline/phase_assembly.py) ; les timecodes VOD sont au survol.
+            if (Array.isArray(clip.phase_segments) && clip.phase_segments.length >= 2) {
+                const _hmsPh = function (t) {
+                    t = Math.max(0, Math.floor(Number(t) || 0));
+                    const h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
+                    return h + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+                };
+                const _segTxt = clip.phase_segments.map(function (sg) { return _hmsPh(sg[0]) + '-' + _hmsPh(sg[1]); }).join(' · ');
+                infoHtml += '<span title="Passages de la VOD recolles : ' + escHtml(_segTxt) + '" style="background:linear-gradient(135deg,#7e57c2,#5e35b1);color:#fff;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:bold;">🎬 Phase · ' + clip.phase_segments.length + ' passages</span>';
+            }
             if (clip.arc_id && clip.arc_label) {
                 const isMultipov = String(clip.arc_id).indexOf('multipov_') === 0;
                 const arcTitle = isMultipov && clip.multipov_confidence != null
@@ -2259,6 +2323,21 @@
                 const crowdTitle = Number(clip.crowd_clips) + ' Twitch Clip(s) de viewers sur ce moment'
                     + (Number(clip.crowd_views) > 0 ? ' · ' + Number(clip.crowd_views) + ' vues' : '');
                 infoHtml += '<span title="' + escHtml(crowdTitle) + '" style="background:rgba(255,202,40,0.15);color:#ffca28;border:1px solid #ffca2855;padding:1px 7px;border-radius:10px;font-size:0.78em;margin-left:6px;">👥 ' + nCrowd + (nCrowd > 1 ? ' viewers' : ' viewer') + '</span>';
+            }
+            // 2026-09-23 (GO PO) : badge « posté par un fan sur TikTok » (pipeline/tiktok_fans.py) —
+            // un fan a coupé et posté ce moment (retrouvé par la voix) ; lien vers son post, et sa
+            // légende dessous : c'est le contexte (« la game de la qualif Div 1 ») qui manquait.
+            if (Number(clip.tiktok_fan_count) > 0) {
+                const tkViews = Number(clip.tiktok_fan_views) || 0;
+                const tkViewsTxt = tkViews >= 1000
+                    ? (Math.round(tkViews / 100) / 10).toLocaleString('fr-FR') + ' k'
+                    : String(tkViews);
+                const tkTitle = Number(clip.tiktok_fan_count) + ' post(s) de fan sur TikTok · le plus vu : @'
+                    + String(clip.tiktok_fan_account || '') + ' · ' + tkViews.toLocaleString('fr-FR') + ' vues';
+                infoHtml += '<a href="' + escHtml(clip.tiktok_fan_url || '#') + '" target="_blank" rel="noopener" title="' + escHtml(tkTitle) + '" style="background:rgba(37,244,238,0.12);color:#25f4ee;border:1px solid #25f4ee55;padding:1px 7px;border-radius:10px;font-size:0.78em;margin-left:6px;text-decoration:none;">📱 Fan TikTok · ' + escHtml(tkViewsTxt) + ' vues</a>';
+                if (clip.tiktok_fan_caption) {
+                    infoHtml += '<div style="color:#8fe9e6;font-size:0.8em;margin-top:2px;line-height:1.3;" title="Légende du post du fan">📱 « ' + escHtml(clip.tiktok_fan_caption) + ' »</div>';
+                }
             }
             // Sprint 42 : lane badge (core=bleu, trend=orange, explore=violet)
             const laneCfg = {core: 'lane-core', trend: 'lane-trend', explore: 'lane-explore'};
@@ -3615,6 +3694,8 @@
                     // rien_a_l_ecran / deja_vu / pas_de_son / pas_d_enjeu / autre.
                     not_relevant_detail: (window.notRelevantDetails || {})[clipKey] || null,
                     score: clip.score || null,
+                    // 2026-09-23 (PO) : note du jour Opus, a comparer a `score` sur les verdicts.
+                    note_jour: hasNoteJour(clip) ? clip.note_jour : null,
                     sources: clip.sources || [],
                     ai_category: clip.ai_category || null,
                     ai_summary: clip.ai_summary || null,
@@ -3634,6 +3715,8 @@
                     // 2026-09-06 : mesure du bonus « foule viewers » (taux de garde des clips
                     // clippes par des viewers vs les autres).
                     crowd_clips: clip.crowd_clips ?? null,
+                    // 2026-09-23 : mesure du badge « posté par un fan sur TikTok ».
+                    tiktok_fan_views: clip.tiktok_fan_views ?? null,
                     // 2026-09-05 (PO) : sous-titres FR coupes par Silixio sur ce clip
                     subs_disabled: !!subsOff[clipKey],
                     has_subs: !!clip.has_subs,
