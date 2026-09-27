@@ -102,9 +102,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1XDo_-xVwHSgJXPF44UoCOOkrkLHc6Pq5/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=18CvOynmzgtWmUivqX0wbjOx8d1PjqUlj&export=download&confirm=t",
       "size_mb": 126.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_5",
+      "arc_position": 7,
+      "arc_label": "Le maillot M8 de Nikof signé par tous les pros",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -147,7 +147,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 88,
+      "note_jour_raison": "Nikof promet le maillot à Vergo si top 5 aux Worlds"
     },
     {
       "filename": "clip_004_01-05-18_score80_v6_funny.mp4",
@@ -281,7 +283,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 74,
+      "note_jour_raison": "Grimz rate Ghonzo puis le fait saluer Revenja, 206 vues"
     },
     {
       "filename": "clip_019_06-10-00_score79_v6_hype.mp4",
@@ -350,9 +354,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1pQE4SZI1J-6P5pTwZ1BMOYGj_LI8J13Z/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1rP2TaT3MHrcl0DRILr_6rrjqA7LnWxNU&export=download&confirm=t",
       "size_mb": 256.8,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_2",
+      "arc_position": 2,
+      "arc_label": "Le tournoi 1v1 à 3K de Léo : BloodX, Boop puis la chute",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -411,7 +415,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 85,
+      "note_jour_raison": "Léo écrase Boop 3-0, Boop cherche des excuses"
     },
     {
       "filename": "clip_014_05-48-30_score77_v6_hype.mp4",
@@ -528,7 +534,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 74,
+      "note_jour_raison": "la chanson des Globals cite Léo, il bascule"
     },
     {
       "filename": "clip_022_02-28-42_score76_v6_talk_subs.mp4",
@@ -680,7 +688,9 @@
           "views": 309,
           "caption": "Mr savage gets mogged by fortnite player#fyp #lacy #mrsavage "
         }
-      ]
+      ],
+      "note_jour": 70,
+      "note_jour_raison": "talk, iDrop lâché par Ghonzo, raid 3444 viewers"
     },
     {
       "filename": "clip_016_01-06-29_score75_v6_talk.mp4",
@@ -785,7 +795,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 43,
+      "note_jour_raison": "talk, débat Clix champion du monde"
     },
     {
       "filename": "clip_026_00-07-40_score75_v6_talk.mp4",
@@ -890,7 +902,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 80,
+      "note_jour_raison": "talk, Peterbot chambre Nikof après le 3v3 perdu"
     },
     {
       "filename": "clip_016_00-05-45_score74_v6_talk.mp4",
@@ -1008,7 +1022,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 52,
+      "note_jour_raison": "talk, Buzz promet le top 8000 FNCS Solo"
     },
     {
       "filename": "clip_028_02-07-00_score74_v6_drama_subs.mp4",
@@ -1113,7 +1129,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 58,
+      "note_jour_raison": "Lacy clashe Pixie puis doit se justifier"
     },
     {
       "filename": "clip_029_02-42-05_score74_v6_talk_subs.mp4",
@@ -1218,7 +1236,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 49,
+      "note_jour_raison": "talk, Savage voit Shark 15 ans gagner"
     },
     {
       "filename": "clip_009_aussieantics_score70_subs.mp4",
@@ -1287,9 +1307,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1HCuoKPlhPXzVHyVAXoPU03jRvWAUo6tb/view",
       "chat_clip_url": "",
       "size_mb": 22.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_1",
+      "arc_position": 5,
+      "arc_label": "Le 3v3 multi-région d'Aussie : l'Europe de Boop gagne",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1322,7 +1342,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 83,
+      "note_jour_raison": "l'Europe de Boop gagne la finale 3v3, sujet du jour"
     },
     {
       "filename": "clip_024_wazz_score60.mp4",
@@ -1427,7 +1449,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 42,
+      "note_jour_raison": "doublon de Pixie qui vise le top 3"
     },
     {
       "filename": "clip_045_aussieantics_score60_subs.mp4",
@@ -1496,9 +1520,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1U5hDC3AjzxfhOtYoDPZDqmVVudvrSpmq/view",
       "chat_clip_url": "",
       "size_mb": 36.5,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_1",
+      "arc_position": 1,
+      "arc_label": "Le 3v3 multi-région d'Aussie : l'Europe de Boop gagne",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1531,7 +1555,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 50,
+      "note_jour_raison": "3v3 multi-région, Kingling renvoie Shark au sol"
     },
     {
       "filename": "clip_047_mrsavage_score60_subs.mp4",
@@ -1653,7 +1679,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 44,
+      "note_jour_raison": "doublon de iDrop lâché par Ghonzo"
     },
     {
       "filename": "clip_055_aussieantics_score60_subs.mp4",
@@ -1721,9 +1749,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1nN3H3JzzkWcLkrAYtYripZFUVWJIvj_x/view",
       "chat_clip_url": "",
       "size_mb": 34.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_1",
+      "arc_position": 4,
+      "arc_label": "Le 3v3 multi-région d'Aussie : l'Europe de Boop gagne",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1756,7 +1784,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 54,
+      "note_jour_raison": "finale 3v3, Shark frôle le clutch sans mats"
     },
     {
       "filename": "clip_054_aussieantics_score60_subs.mp4",
@@ -1825,9 +1855,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1I2wtAFTo7yfBqPsntLQ_pcMhUqEHkorS/view",
       "chat_clip_url": "",
       "size_mb": 32.7,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_1",
+      "arc_position": 2,
+      "arc_label": "Le 3v3 multi-région d'Aussie : l'Europe de Boop gagne",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1860,7 +1890,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 63,
+      "note_jour_raison": "3v3, l'Europe bat les USA et file en finale"
     },
     {
       "filename": "clip_027_wazz_score50.mp4",
@@ -1964,7 +1996,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 52,
+      "note_jour_raison": "talk, format des Worlds expliqué en practice room"
     },
     {
       "filename": "clip_041_wazz_score50.mp4",
@@ -2087,7 +2121,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 47,
+      "note_jour_raison": "talk, rumeur Suzy absent des Worlds"
     },
     {
       "filename": "clip_067_aussieantics_score50_subs.mp4",
@@ -2191,7 +2227,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 57,
+      "note_jour_raison": "talk, coulisses des Worlds, salle sans clim"
     },
     {
       "filename": "clip_001_00-47-00_score95_v6_hype_subs.mp4",
@@ -2321,7 +2359,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 70,
+      "note_jour_raison": "Lacy le traite de remplaçant, Savage gagne au clavier géant"
     },
     {
       "filename": "clip_002_01-01-39_score89_v6_talk.mp4",
@@ -2390,9 +2430,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1kU_0oSVBWH-NLsbyAUdaXjHsYyZ_BkbC/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1LHx9P8grYvaAj9Mz7N098GjrTG_WbW8R&export=download&confirm=t",
       "size_mb": 100.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_6",
+      "arc_position": 2,
+      "arc_label": "HavoK courtise Sky et Scroll en direct",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -2448,7 +2488,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 93,
+      "note_jour_raison": "talk, l'agent de Sky et Scroll confirme la négo HavoK"
     },
     {
       "filename": "clip_002_01-02-55_score89_v6_talk.mp4",
@@ -2563,7 +2605,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 55,
+      "note_jour_raison": "doublon de l'agent de Sky et Scroll"
     },
     {
       "filename": "clip_001_01-20-14_score87_v6_funny.mp4",
@@ -2632,9 +2676,9 @@
       "drive_view_url": "https://drive.google.com/file/d/18m-TUCa5jx4iXn55EH2WSDFQRQlmp3sq/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=12ZhLs908LpNtbOCJnflJvnJw18Lda0fy&export=download&confirm=t",
       "size_mb": 65.9,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_5",
+      "arc_position": 4,
+      "arc_label": "Le maillot M8 de Nikof signé par tous les pros",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -2680,7 +2724,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 64,
+      "note_jour_raison": "Nikof massacre un maillot argentin, chat en furie"
     },
     {
       "filename": "clip_005_06-51-17_score86_v6_hype.mp4",
@@ -2794,7 +2840,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 39,
+      "note_jour_raison": "doublon de la demi perdue contre Chorifletes"
     },
     {
       "filename": "clip_007_02-43-06_score86_v6_funny_subs.mp4",
@@ -2920,7 +2968,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "doublon long du quiz géo"
     },
     {
       "filename": "clip_001_01-06-37_score85_v6_funny.mp4",
@@ -3025,7 +3075,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 30,
+      "note_jour_raison": "doublon de Buzz tué à la pioche"
     },
     {
       "filename": "clip_005_06-45-07_score85_v6_hype.mp4",
@@ -3094,9 +3146,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1XWcopAlcXdtwAxGkKJa6SeUla_g0Ek3z/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1R8-zF2k7sLtUgdiGR035tftNm6yv-W0r&export=download&confirm=t",
       "size_mb": 219.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_2",
+      "arc_position": 3,
+      "arc_label": "Le tournoi 1v1 à 3K de Léo : BloodX, Boop puis la chute",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3155,7 +3207,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 67,
+      "note_jour_raison": "demi à 3K, Léo craque et perd 5-3"
     },
     {
       "filename": "clip_004_02-43-37_score85_v6_funny_subs.mp4",
@@ -3269,7 +3323,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 56,
+      "note_jour_raison": "quiz géo raté, Londres pays, 38 vues"
     },
     {
       "filename": "clip_002_00-57-53_score85_v6_hype_subs.mp4",
@@ -3387,7 +3443,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 43,
+      "note_jour_raison": "doublon du 1v1 Savage contre Lacy"
     },
     {
       "filename": "clip_007_04-18-01_score84_v6_hype.mp4",
@@ -3456,9 +3514,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1N-WIZ1UIKAB_NlGpE0yLw1315o_n9sDc/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1e8tTJy2zgM4A5RSNdnIYysD2NkDgrzHQ&export=download&confirm=t",
       "size_mb": 94.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_2",
+      "arc_position": 1,
+      "arc_label": "Le tournoi 1v1 à 3K de Léo : BloodX, Boop puis la chute",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3517,7 +3575,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 75,
+      "note_jour_raison": "Léo mené 0-2 par BloodX renverse 5-2"
     },
     {
       "filename": "clip_008_06-22-47_score84_v6_hype.mp4",
@@ -3639,7 +3699,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 38,
+      "note_jour_raison": "doublon de Léo contre Boop"
     },
     {
       "filename": "clip_004_00-09-23_score84_v6_funny.mp4",
@@ -3757,7 +3819,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "doublon long du défi Amar"
     },
     {
       "filename": "clip_001_00-28-52_score83_v6_funny.mp4",
@@ -3826,9 +3890,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1oJNvE91sX7d_R_s62FPKDraJVYixwIE_/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1UJ7NrOxA00207ea5Bh5MLKwNCQ5pKbAQ&export=download&confirm=t",
       "size_mb": 64.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_3",
+      "arc_position": 1,
+      "arc_label": "Buzz en Persona5 Cup : roi autoproclamé, morts en série",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3887,7 +3951,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 56,
+      "note_jour_raison": "meurt top 2 puis se proclame roi du solo"
     },
     {
       "filename": "clip_005_02-12-50_score83_v6_talk_subs.mp4",
@@ -3956,9 +4022,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1sLavcxbwc4OWRQwGLwVok8frRQlztbXb/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1Z98WxcvqNn21JWd_cysw39-vhRjMduZ2&export=download&confirm=t",
       "size_mb": 47.9,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_4",
+      "arc_position": 2,
+      "arc_label": "Lacy cuisine Savage sur sa carrière",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3992,7 +4058,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 51,
+      "note_jour_raison": "talk, Savage dit ne plus trouver son niveau"
     },
     {
       "filename": "clip_009_00-55-51_score83_v6_react.mp4",
@@ -4061,9 +4129,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1CbEulJS9ZNagpaZ8wBXUXurYWhpfsZZR/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1Sf1T6GAuu-UcW8XvN66t44BRSZG8WTju&export=download&confirm=t",
       "size_mb": 156.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_5",
+      "arc_position": 2,
+      "arc_label": "Le maillot M8 de Nikof signé par tous les pros",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4106,7 +4174,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 76,
+      "note_jour_raison": "le père de Pollo signe et pronostique les Worlds"
     },
     {
       "filename": "clip_002_00-11-50_score83_v6_funny.mp4",
@@ -4220,7 +4290,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 54,
+      "note_jour_raison": "Nikof défie Amar, cast Sacrebleu"
     },
     {
       "filename": "clip_007_00-16-17_score83_v6_funny.mp4",
@@ -4338,7 +4410,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 43,
+      "note_jour_raison": "doublon long de la calvitie"
     },
     {
       "filename": "clip_003_00-14-07_score82_v6_talk.mp4",
@@ -4453,7 +4527,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 73,
+      "note_jour_raison": "talk, 450 000 pour un trio Shark Peterbot"
     },
     {
       "filename": "clip_003_01-49-33_score82_v6_funny.mp4",
@@ -4572,7 +4648,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 63,
+      "note_jour_raison": "Grimz sabote le maillot de Nikof, pique HavoK"
     },
     {
       "filename": "clip_004_01-04-55_score82_v6_funny.mp4",
@@ -4641,9 +4719,9 @@
       "drive_view_url": "https://drive.google.com/file/d/16pnIi_2xDXEirKpgYgiLO2JTVKCpBJ9j/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=18wQKhdVgAXQ18wmN9sHqtvp0altJK2KE&export=download&confirm=t",
       "size_mb": 89.7,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_3",
+      "arc_position": 5,
+      "arc_label": "Buzz en Persona5 Cup : roi autoproclamé, morts en série",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4686,7 +4764,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 51,
+      "note_jour_raison": "Buzz tué à la pioche, le chat écroulé"
     },
     {
       "filename": "clip_006_02-23-34_score82_v6_talk_subs.mp4",
@@ -4807,7 +4887,9 @@
           "views": 2119,
           "caption": "Lacy asks Mrsavage if he thinks he sold playing with Mongraal #lacy #mrsavage #mongraal"
         }
-      ]
+      ],
+      "note_jour": 41,
+      "note_jour_raison": "doublon court du talk Mongraal"
     },
     {
       "filename": "clip_012_02-24-25_score82_v6_talk_subs.mp4",
@@ -4876,9 +4958,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1RT_zDlUwl_VLcqntWInKZ5C8r8v1HVJf/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1N6RuxGWPjQ1lHe0qBECcB0OSv8QsREBK&export=download&confirm=t",
       "size_mb": 155.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_4",
+      "arc_position": 3,
+      "arc_label": "Lacy cuisine Savage sur sa carrière",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4921,7 +5003,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 57,
+      "note_jour_raison": "talk, Savage révèle que Mongraal a disparu"
     },
     {
       "filename": "clip_012_00-15-01_score82_v6_funny.mp4",
@@ -5026,7 +5110,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 48,
+      "note_jour_raison": "Amar caste en français, Sacrebleu"
     },
     {
       "filename": "clip_004_01-14-12_score81_v6_hype.mp4",
@@ -5144,7 +5230,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 53,
+      "note_jour_raison": "Swizzy arrive enfin, il dormait"
     },
     {
       "filename": "clip_006_00-21-37_score81_v6_hype.mp4",
@@ -5270,7 +5358,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 47,
+      "note_jour_raison": "action WTF avec le pire pompe, clippée 2 fois"
     },
     {
       "filename": "clip_009_03-16-42_score81_v6_funny_subs.mp4",
@@ -5386,7 +5476,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 55,
+      "note_jour_raison": "Lacy président, les éoliennes font du vent"
     },
     {
       "filename": "clip_014_00-17-34_score81_v6_funny_subs.mp4",
@@ -5508,7 +5600,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 37,
+      "note_jour_raison": "doublon long de la danse TikTok"
     },
     {
       "filename": "clip_013_01-10-37_score81_v6_funny.mp4",
@@ -5577,9 +5671,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1f8hixugibgoSOyjMaYcVo2JybTAEo2Ol/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1VRCnHefUZgJIrKrrjRtq9wjU4ra0fJw7&export=download&confirm=t",
       "size_mb": 62.8,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_5",
+      "arc_position": 3,
+      "arc_label": "Le maillot M8 de Nikof signé par tous les pros",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -5613,7 +5707,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 66,
+      "note_jour_raison": "Nikof croit voir un zizi sur le maillot"
     },
     {
       "filename": "clip_001_aussieantics_score80_subs.mp4",
@@ -5716,7 +5812,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 70,
+      "note_jour_raison": "300 fans assiègent des pros, police belge à Anvers"
     },
     {
       "filename": "clip_005_00-08-01_score79_v6_talk.mp4",
@@ -5785,9 +5883,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1aEM5hd3msHUEn1D4Bsq22bU6rdeyp8w5/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1atnTOPeAalpgi_3YNVfKb0kzugVH0C9R&export=download&confirm=t",
       "size_mb": 103.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_6",
+      "arc_position": 1,
+      "arc_label": "HavoK courtise Sky et Scroll en direct",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -5843,7 +5941,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 56,
+      "note_jour_raison": "talk, Sky débarque, le chat HavoK s'emballe"
     },
     {
       "filename": "clip_008_01-48-25_score79_v6_funny.mp4",
@@ -5949,7 +6049,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 41,
+      "note_jour_raison": "doublon du maillot de Nikof saboté"
     },
     {
       "filename": "clip_005_00-49-22_score79_v6_funny.mp4",
@@ -6018,9 +6120,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1pGoRymN26PKSl992nr4GCv70GfJxHAUG/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1RimyVgwCQptHGsEo4VjxzDiMvom6pc_B&export=download&confirm=t",
       "size_mb": 47.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_3",
+      "arc_position": 3,
+      "arc_label": "Buzz en Persona5 Cup : roi autoproclamé, morts en série",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -6066,7 +6168,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 45,
+      "note_jour_raison": "nargue le chat puis meurt, cuisses rouges"
     },
     {
       "filename": "clip_012_02-00-36_score79_v6_talk.mp4",
@@ -6192,7 +6296,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 55,
+      "note_jour_raison": "Léo parie 15K contre Lacy et Fax puis recule"
     },
     {
       "filename": "clip_011_00-31-18_score79_v6_talk.mp4",
@@ -6318,7 +6424,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 64,
+      "note_jour_raison": "talk mercato, Peterbot à plus d'un million"
     },
     {
       "filename": "clip_011_01-35-05_score79_v6_talk_subs.mp4",
@@ -6387,9 +6495,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1RfX_ZUJhD3R2YN4WMhECxVitic48IcnE/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=17yy1QimusweJHec3rfvLd52t4yidkZMS&export=download&confirm=t",
       "size_mb": 28.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_4",
+      "arc_position": 1,
+      "arc_label": "Lacy cuisine Savage sur sa carrière",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -6435,7 +6543,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 50,
+      "note_jour_raison": "talk, Savage avoue qu'il aimerait jouer les Worlds"
     },
     {
       "filename": "clip_010_00-18-36_score79_v6_funny_subs.mp4",
@@ -6540,7 +6650,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 53,
+      "note_jour_raison": "danse TikTok argentine raide de Savage"
     },
     {
       "filename": "clip_004_00-17-50_score79_v6_funny.mp4",
@@ -6645,7 +6757,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 60,
+      "note_jour_raison": "calvitie en live, Nikof finit en Franklin"
     },
     {
       "filename": "clip_005_00-46-48_score79_v6_funny.mp4",
@@ -6771,7 +6885,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 65,
+      "note_jour_raison": "Nikof goûte la Vegemite contre la malédiction M8"
     },
     {
       "filename": "clip_009_01-39-07_score78_v6_funny.mp4",
@@ -6889,7 +7005,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 58,
+      "note_jour_raison": "Pixie vise le top 3, maillot argentin à brûler"
     },
     {
       "filename": "clip_010_00-53-15_score78_v6_funny.mp4",
@@ -6958,9 +7076,9 @@
       "drive_view_url": "https://drive.google.com/file/d/15nIT00Qnf6BP6iN0UVanfVRO79Y8PB3w/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1BlIGp6t7W2_N97uGhXiJguenhAYEpKbE&export=download&confirm=t",
       "size_mb": 175.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_3",
+      "arc_position": 4,
+      "arc_label": "Buzz en Persona5 Cup : roi autoproclamé, morts en série",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -7007,7 +7125,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 49,
+      "note_jour_raison": "promesse de top 1 ratée, clash Floki"
     },
     {
       "filename": "clip_022_01-23-44_score78_v6_funny.mp4",
@@ -7076,9 +7196,9 @@
       "drive_view_url": "https://drive.google.com/file/d/15-wS7ajJIjk82o7KtD9GzZ9TQVgOSmpV/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1VmGIPHIELrwOe3uco45P5qwGxCjbk_CQ&export=download&confirm=t",
       "size_mb": 107.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_5",
+      "arc_position": 5,
+      "arc_label": "Le maillot M8 de Nikof signé par tous les pros",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -7121,7 +7241,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 57,
+      "note_jour_raison": "Veno et Snayzy signent la paix sur le maillot"
     },
     {
       "filename": "clip_010_00-26-20_score77_v6_drama.mp4",
@@ -7236,7 +7358,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 61,
+      "note_jour_raison": "WaZz tacle la practice room devenue content room"
     },
     {
       "filename": "clip_007_00-35-27_score77_v6_funny.mp4",
@@ -7305,9 +7429,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1dQYo6rrA_IUxDxKbDO6xv9ehH3d21toU/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=11WRqJPM7MAAeXSyIAqBHE6Vnmg4QfyS0&export=download&confirm=t",
       "size_mb": 99.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_3",
+      "arc_position": 2,
+      "arc_label": "Buzz en Persona5 Cup : roi autoproclamé, morts en série",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -7362,7 +7486,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 53,
+      "note_jour_raison": "se vante d'un 1v3, tué par Shark et Teny"
     },
     {
       "filename": "clip_015_06-34-22_score77_v6_drama.mp4",
@@ -7467,7 +7593,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 36,
+      "note_jour_raison": "doublon court de l'affaire Inspector Gadget"
     },
     {
       "filename": "clip_007_00-57-12_score77_v6_react.mp4",
@@ -7572,7 +7700,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 50,
+      "note_jour_raison": "doublon du père de Pollo"
     },
     {
       "filename": "clip_008_02-20-18_score77_v6_funny.mp4",
@@ -7677,7 +7807,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 38,
+      "note_jour_raison": "rumeur Valorant, hors sujet Fortnite"
     },
     {
       "filename": "clip_016_00-15-31_score76_v6_talk.mp4",
@@ -7792,7 +7924,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 45,
+      "note_jour_raison": "doublon de la rumeur à 450 000"
     },
     {
       "filename": "clip_009_01-00-35_score76_v6_drama.mp4",
@@ -7910,7 +8044,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 31,
+      "note_jour_raison": "doublon de la mort en edit à 100 PV"
     },
     {
       "filename": "clip_023_00-13-27_score76_v6_funny.mp4",
@@ -8015,7 +8151,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 62,
+      "note_jour_raison": "Léo câline Nocif en le prenant pour sa copine"
     },
     {
       "filename": "clip_014_00-07-58_score76_v6_talk_subs.mp4",
@@ -8120,7 +8258,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "doublon de la négo Rezon Savage"
     },
     {
       "filename": "clip_009_01-07-21_score76_v6_funny.mp4",
@@ -8237,7 +8377,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 72,
+      "note_jour_raison": "Nikof presse tous les pros sans le savoir"
     },
     {
       "filename": "clip_025_00-51-36_score76_v6_funny.mp4",
@@ -8306,9 +8448,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1IprpJze-ioOAjSSOAcvodai__GmfIbTI/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1MmyTgdcyH6H4cj2jKpzpPHVLqEf4_-7a&export=download&confirm=t",
       "size_mb": 62.5,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_5",
+      "arc_position": 1,
+      "arc_label": "Le maillot M8 de Nikof signé par tous les pros",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -8342,7 +8484,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 77,
+      "note_jour_raison": "Asa tue le maillot M8, 50 vues"
     },
     {
       "filename": "clip_012_00-18-45_score75_v6_funny.mp4",
@@ -8447,7 +8591,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 41,
+      "note_jour_raison": "Buzz finit l'échange à la pioche"
     },
     {
       "filename": "clip_028_06-30-58_score75_v6_drama.mp4",
@@ -8565,7 +8711,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 71,
+      "note_jour_raison": "Léo accuse Coach Fox d'être le compte de leaks"
     },
     {
       "filename": "clip_016_02-36-08_score75_v6_drama_subs.mp4",
@@ -8687,7 +8835,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 59,
+      "note_jour_raison": "live interdit en practice room, strats sur leur spot"
     },
     {
       "filename": "clip_018_03-10-02_score75_v6_hype_subs.mp4",
@@ -8804,7 +8954,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 69,
+      "note_jour_raison": "des enfants courent après l'Uber de Savage"
     },
     {
       "filename": "clip_025_00-06-46_score75_v6_talk_subs.mp4",
@@ -8922,7 +9074,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 60,
+      "note_jour_raison": "talk, Rezon veut Savage en FNCS Moyen-Orient, pari 10K"
     },
     {
       "filename": "clip_010_01-35-30_score75_v6_funny.mp4",
@@ -8991,9 +9145,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1fsjGkVyLDPC7a8KZCoQ7eofle464Grz0/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1838Av8vcv2Bt6eIKUvIcS81i_6I0BPu_&export=download&confirm=t",
       "size_mb": 119.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_5",
+      "arc_position": 6,
+      "arc_label": "Le maillot M8 de Nikof signé par tous les pros",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -9039,7 +9193,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 78,
+      "note_jour_raison": "Seyyto et Momsy dévorent le maillot, 117 vues"
     },
     {
       "filename": "clip_027_02-21-08_score74_v6_talk.mp4",
@@ -9144,7 +9300,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 45,
+      "note_jour_raison": "talk, Nikof zappe la solo pour des rendez-vous"
     },
     {
       "filename": "clip_008_asianjeff_score70_subs.mp4",
@@ -9248,7 +9406,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 42,
+      "note_jour_raison": "Victory Royale 10 kills en Icon Cup, 1 vue"
     },
     {
       "filename": "clip_005_aussieantics_score70_subs.mp4",
@@ -9352,7 +9512,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 64,
+      "note_jour_raison": "Aussie doit couper son stream et suivre la police"
     },
     {
       "filename": "clip_003_mrsavage_score70_subs.mp4",
@@ -9474,7 +9636,9 @@
           "views": 217800,
           "caption": "Lacy and Mr Savage Interview Shxrk🤯#lacy #mrsavage #shxrk #fortnite #fyp "
         }
-      ]
+      ],
+      "note_jour": 34,
+      "note_jour_raison": "doublon de l'équipe surprise sur son spot"
     },
     {
       "filename": "clip_007_waze_score70.mp4",
@@ -9577,7 +9741,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "VR sur map snipe, 1 vue"
     },
     {
       "filename": "clip_004_leothecrack_score70.mp4",
@@ -9680,7 +9846,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 32,
+      "note_jour_raison": "doublon court de Léo contre Boop"
     },
     {
       "filename": "clip_010_nikof_score70.mp4",
@@ -9783,7 +9951,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 71,
+      "note_jour_raison": "Firen signe le maillot M8, 492 vues"
     },
     {
       "filename": "clip_015_leothecrack_score60.mp4",
@@ -9886,7 +10056,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 34,
+      "note_jour_raison": "doublon de la victoire contre BloodX"
     },
     {
       "filename": "clip_017_waze_score60.mp4",
@@ -9989,7 +10161,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "snipe à 285 m, map créative, 1 vue"
     },
     {
       "filename": "clip_016_aussieantics_score60_subs.mp4",
@@ -10092,7 +10266,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 44,
+      "note_jour_raison": "punchline crue d'un pro à l'hôtel, 21 vues"
     },
     {
       "filename": "clip_018_kirillianfn1_score60_subs.mp4",
@@ -10196,7 +10372,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 55,
+      "note_jour_raison": "Kirillian, kill en Reload, 50 vues, souvent gardé"
     },
     {
       "filename": "clip_019_aussieantics_score60_subs.mp4",
@@ -10299,7 +10477,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 55,
+      "note_jour_raison": "talk, 120 000 dollars proposés à Bugha, fou rire"
     },
     {
       "filename": "clip_021_mrsavage_score60_subs.mp4",
@@ -10402,7 +10582,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 48,
+      "note_jour_raison": "Savage pioche Lacy et le chambre"
     },
     {
       "filename": "clip_022_mrsavage_score60_subs.mp4",
@@ -10506,7 +10688,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 35,
+      "note_jour_raison": "Savage annonce le jeu adverse et gagne"
     },
     {
       "filename": "clip_025_waze_score60.mp4",
@@ -10609,7 +10793,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 26,
+      "note_jour_raison": "snipe en plein vol au grappin"
     },
     {
       "filename": "clip_023_mrsavage_score60_subs.mp4",
@@ -10712,7 +10898,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 47,
+      "note_jour_raison": "Vico dit que Shark est le patron"
     },
     {
       "filename": "clip_026_kirillianfn1_score60_subs.mp4",
@@ -10816,7 +11004,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 46,
+      "note_jour_raison": "Kirillian enchaîne deux adversaires"
     },
     {
       "filename": "clip_042_aussieantics_score60_subs.mp4",
@@ -10920,7 +11110,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 36,
+      "note_jour_raison": "talk, skin Madison Beer de Pete, anecdotique"
     },
     {
       "filename": "clip_043_aussieantics_score60_subs.mp4",
@@ -11025,7 +11217,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 52,
+      "note_jour_raison": "Faxuty perd 6-4 après avoir mené 4-1"
     },
     {
       "filename": "clip_044_aussieantics_score60_subs.mp4",
@@ -11130,7 +11324,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 50,
+      "note_jour_raison": "Chorifletes remporte le tournoi 1v1 de streamers"
     },
     {
       "filename": "clip_048_mrsavage_score60_subs.mp4",
@@ -11246,7 +11442,9 @@
           "views": 1073,
           "caption": "MrSavage reveals Clix’s OFFLINE Twitch channel apparently makes MORE money than MrSavage's main Twitch channel #xbabyroyalx #clix #lacy #mrsavage #fortnite #for"
         }
-      ]
+      ],
+      "note_jour": 35,
+      "note_jour_raison": "doublon court des éoliennes"
     },
     {
       "filename": "clip_050_aussieantics_score60_subs.mp4",
@@ -11349,7 +11547,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 60,
+      "note_jour_raison": "Boop bat Moda 5-1 au drop shot"
     },
     {
       "filename": "clip_049_aussieantics_score60_subs.mp4",
@@ -11452,7 +11652,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 58,
+      "note_jour_raison": "talk, Aussie juge que les Français déçoivent"
     },
     {
       "filename": "clip_051_aussieantics_score60_subs.mp4",
@@ -11555,7 +11757,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 35,
+      "note_jour_raison": "DYDY bat Fraan, joie des coéquipiers"
     },
     {
       "filename": "clip_052_aussieantics_score60_subs.mp4",
@@ -11660,7 +11864,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 62,
+      "note_jour_raison": "Wazz gagne son 1v1 à 9 PV"
     },
     {
       "filename": "clip_053_aussieantics_score60_subs.mp4",
@@ -11764,7 +11970,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "DJ égalise 2-2 sur deux coups de pompe"
     },
     {
       "filename": "clip_029_stizo__score50.mp4",
@@ -11867,7 +12075,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "Stizo meurt en criant flop, 26 vues"
     },
     {
       "filename": "clip_028_leothecrack_score50.mp4",
@@ -11970,7 +12180,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 42,
+      "note_jour_raison": "IRL coulisses avec Pinq, 92 vues mais 9 s"
     },
     {
       "filename": "clip_031_waze_score50.mp4",
@@ -12073,7 +12285,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "snipe sur cible après un raté"
     },
     {
       "filename": "clip_030_asianjeff_score50_subs.mp4",
@@ -12177,7 +12391,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 30,
+      "note_jour_raison": "insulte un coéquipier, moment banal"
     },
     {
       "filename": "clip_033_leothecrack_score50.mp4",
@@ -12280,7 +12496,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 35,
+      "note_jour_raison": "talk, Léo refuse de s'échauffer, anecdote"
     },
     {
       "filename": "clip_032_rezonfn_score50_subs.mp4",
@@ -12383,7 +12601,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 65,
+      "note_jour_raison": "Shark et Faxuty s'accrochent sur 270k contre 450k"
     },
     {
       "filename": "clip_034_buzzftn_score50.mp4",
@@ -12486,7 +12706,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 33,
+      "note_jour_raison": "doublon du kill à la pioche de Buzz"
     },
     {
       "filename": "clip_035_stizo__score50.mp4",
@@ -12589,7 +12811,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 58,
+      "note_jour_raison": "talk, Stizo enfile le maillot Gameward"
     },
     {
       "filename": "clip_037_waze_score50.mp4",
@@ -12692,7 +12916,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "snipe en réponse sur snowboard"
     },
     {
       "filename": "clip_036_asianjeff_score50_subs.mp4",
@@ -12796,7 +13022,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 38,
+      "note_jour_raison": "mort bête devant un distributeur, 19 vues"
     },
     {
       "filename": "clip_038_alibaba_rcm_score50.mp4",
@@ -12900,7 +13128,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "2e place et cri face caméra, 1 vue"
     },
     {
       "filename": "clip_039_leothecrack_score50.mp4",
@@ -13004,7 +13234,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 39,
+      "note_jour_raison": "photos avec des fans devant l'arène"
     },
     {
       "filename": "clip_040_kirillianfn1_score50.mp4",
@@ -13106,7 +13338,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 50,
+      "note_jour_raison": "edits rapides de Kirillian, 61 vues, muet"
     },
     {
       "filename": "clip_056_nikof_score50.mp4",
@@ -13209,7 +13443,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 33,
+      "note_jour_raison": "doublon de Nikof qui renonce au tournoi"
     },
     {
       "filename": "clip_057_mrsavage_score50_subs.mp4",
@@ -13312,7 +13548,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 41,
+      "note_jour_raison": "fausse stratégie servie à Peterbot"
     },
     {
       "filename": "clip_058_aussieantics_score50_subs.mp4",
@@ -13416,7 +13654,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 33,
+      "note_jour_raison": "talk vague sur des montres et une annonce Epic"
     },
     {
       "filename": "clip_060_aussieantics_score50_subs.mp4",
@@ -13519,7 +13759,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 48,
+      "note_jour_raison": "talk, un pro EU promet un top 15 et clashe"
     },
     {
       "filename": "clip_059_mrsavage_score50_subs.mp4",
@@ -13630,7 +13872,9 @@
           "views": 14400,
           "caption": "Lacy gets mogged by MrSavage🤯😳 @Lacy @MrSavage #lacy #mrsavage #mogged #fortnite #fypシ゚viral "
         }
-      ]
+      ],
+      "note_jour": 45,
+      "note_jour_raison": "Qiro bloque le couloir, Savage l'escalade"
     },
     {
       "filename": "clip_061_mrsavage_score50_subs.mp4",
@@ -13734,7 +13978,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 27,
+      "note_jour_raison": "box fight gagné, 1 vue"
     },
     {
       "filename": "clip_063_mrsavage_score50_subs.mp4",
@@ -13837,7 +14083,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 39,
+      "note_jour_raison": "un fan court à côté du van, redite"
     },
     {
       "filename": "clip_064_aussieantics_score50_subs.mp4",
@@ -13941,7 +14189,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 34,
+      "note_jour_raison": "dégustation de Tim Tam, léger"
     },
     {
       "filename": "clip_068_waze_score50.mp4",
@@ -14044,7 +14294,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "snipe après plusieurs tentatives"
     },
     {
       "filename": "clip_065_aussieantics_score50_subs.mp4",
@@ -14148,7 +14400,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 37,
+      "note_jour_raison": "chambrage d'ex-duos, un pro s'offusque"
     },
     {
       "filename": "clip_066_aussieantics_score50_subs.mp4",
@@ -14217,9 +14471,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1sgDHzgYlroGtRpAhPhJdAxTWHtwY_Th0/view",
       "chat_clip_url": "",
       "size_mb": 34.4,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-09-26_1",
+      "arc_position": 3,
+      "arc_label": "Le 3v3 multi-région d'Aussie : l'Europe de Boop gagne",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -14252,7 +14506,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 46,
+      "note_jour_raison": "3v3, coup de pompe à 119 de Focus"
     },
     {
       "filename": "clip_073_waze_score50.mp4",
@@ -14355,7 +14611,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "snipe sur joueur au sol, redite"
     },
     {
       "filename": "clip_071_aussieantics_score50_subs.mp4",
@@ -14459,7 +14717,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 45,
+      "note_jour_raison": "Nina bat Lacy en 1v1 créatif"
     },
     {
       "filename": "clip_072_aussieantics_score50_subs.mp4",
@@ -14563,7 +14823,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 61,
+      "note_jour_raison": "foule de fans autour de Lacy, redite police"
     },
     {
       "filename": "clip_002_aussieantics_score80_subs.mp4",
@@ -14662,7 +14924,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 25,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_001_wazz_score80.mp4",
@@ -14762,7 +15026,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 26,
+      "note_jour_raison": "sans résumé, Wazz prioritaire du brief"
     },
     {
       "filename": "clip_008_mrsavage_score70_subs.mp4",
@@ -14861,7 +15127,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 16,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_005_buzzftn_score70.mp4",
@@ -14960,7 +15228,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "sans résumé, Buzz rarement gardé"
     },
     {
       "filename": "clip_009_mrsavage_score70_subs.mp4",
@@ -15059,7 +15329,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_004_aussieantics_score70_subs.mp4",
@@ -15158,7 +15430,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_006_waze_score70.mp4",
@@ -15257,7 +15531,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "sans résumé, Waze jamais gardé"
     },
     {
       "filename": "clip_007_asianjeff_score70_subs.mp4",
@@ -15356,7 +15632,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "sans résumé, clip Twitch à vérifier"
     },
     {
       "filename": "clip_010_aussieantics_score70_subs.mp4",
@@ -15455,7 +15733,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 23,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_011_aussieantics_score70_subs.mp4",
@@ -15554,7 +15834,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_013_mrsavage_score60_subs.mp4",
@@ -15653,7 +15935,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_017_leothecrack_score60.mp4",
@@ -15752,7 +16036,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 26,
+      "note_jour_raison": "sans résumé, Léo prioritaire du brief"
     },
     {
       "filename": "clip_018_buzzftn_score60.mp4",
@@ -15851,7 +16137,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "sans résumé, Buzz rarement gardé"
     },
     {
       "filename": "clip_015_rezonfn_score60_subs.mp4",
@@ -15950,7 +16238,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "sans résumé, Rezon peu gardé"
     },
     {
       "filename": "clip_019_waze_score60.mp4",
@@ -16049,7 +16339,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "sans résumé, Waze jamais gardé"
     },
     {
       "filename": "clip_020_alibaba_rcm_score60.mp4",
@@ -16148,7 +16440,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "sans résumé, streamer rarement gardé"
     },
     {
       "filename": "clip_021_leothecrack_score60.mp4",
@@ -16247,7 +16541,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 25,
+      "note_jour_raison": "sans résumé, Léo prioritaire du brief"
     },
     {
       "filename": "clip_023_nikof_score60.mp4",
@@ -16346,7 +16642,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 36,
+      "note_jour_raison": "sans résumé mais Nikof souvent gardé"
     },
     {
       "filename": "clip_022_kirillianfn1_score60_subs.mp4",
@@ -16445,7 +16743,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 38,
+      "note_jour_raison": "sans résumé mais Kirillian très souvent gardé"
     },
     {
       "filename": "clip_024_mrsavage_score60_subs.mp4",
@@ -16544,7 +16844,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_025_leothecrack_score60.mp4",
@@ -16643,7 +16945,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "sans résumé, Léo prioritaire du brief"
     },
     {
       "filename": "clip_028_nikof_score50.mp4",
@@ -16742,7 +17046,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 35,
+      "note_jour_raison": "sans résumé mais Nikof souvent gardé"
     },
     {
       "filename": "clip_026_waze_score60.mp4",
@@ -16841,7 +17147,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "sans résumé, Waze jamais gardé"
     },
     {
       "filename": "clip_029_wazz_score50.mp4",
@@ -16941,7 +17249,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 25,
+      "note_jour_raison": "sans résumé, Wazz prioritaire du brief"
     },
     {
       "filename": "clip_027_kirillianfn1_score60_subs.mp4",
@@ -17040,7 +17350,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 37,
+      "note_jour_raison": "sans résumé mais Kirillian très souvent gardé"
     },
     {
       "filename": "clip_031_leothecrack_score50.mp4",
@@ -17139,7 +17451,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 23,
+      "note_jour_raison": "sans résumé, Léo prioritaire du brief"
     },
     {
       "filename": "clip_030_rezonfn_score50_subs.mp4",
@@ -17238,7 +17552,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "sans résumé, Rezon peu gardé"
     },
     {
       "filename": "clip_033_stizo__score50.mp4",
@@ -17337,7 +17653,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 29,
+      "note_jour_raison": "sans résumé, Stizo souvent gardé"
     },
     {
       "filename": "clip_032_venofn_score50_subs.mp4",
@@ -17436,7 +17754,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 20,
+      "note_jour_raison": "sans résumé, Veno peu livré"
     },
     {
       "filename": "clip_035_waze_score50.mp4",
@@ -17535,7 +17855,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "sans résumé, Waze jamais gardé"
     },
     {
       "filename": "clip_036_alibaba_rcm_score50.mp4",
@@ -17634,7 +17956,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "sans résumé, streamer rarement gardé"
     },
     {
       "filename": "clip_034_asianjeff_score50_subs.mp4",
@@ -17733,7 +18057,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 16,
+      "note_jour_raison": "sans résumé, clip Twitch à vérifier"
     },
     {
       "filename": "clip_038_kirillianfn1_score50.mp4",
@@ -17832,7 +18158,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 36,
+      "note_jour_raison": "sans résumé mais Kirillian très souvent gardé"
     },
     {
       "filename": "clip_039_nikof_score50.mp4",
@@ -17931,7 +18259,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 34,
+      "note_jour_raison": "sans résumé mais Nikof souvent gardé"
     },
     {
       "filename": "clip_042_leothecrack_score50.mp4",
@@ -18030,7 +18360,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "sans résumé, Léo prioritaire du brief"
     },
     {
       "filename": "clip_040_nikof_score50.mp4",
@@ -18129,7 +18461,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 33,
+      "note_jour_raison": "sans résumé mais Nikof souvent gardé"
     },
     {
       "filename": "clip_037_k1ng_score50_subs.mp4",
@@ -18228,7 +18562,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "sans résumé, k1ng peu gardé"
     },
     {
       "filename": "clip_043_stizo__score50.mp4",
@@ -18327,7 +18663,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 28,
+      "note_jour_raison": "sans résumé, Stizo souvent gardé"
     },
     {
       "filename": "clip_044_waze_score50.mp4",
@@ -18426,7 +18764,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "sans résumé, Waze jamais gardé"
     },
     {
       "filename": "clip_045_wazz_score40.mp4",
@@ -18526,7 +18866,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : WaZz"
+      "editorial_context": "Dans best-of Dentoz recemment : WaZz",
+      "note_jour": 24,
+      "note_jour_raison": "sans résumé, Wazz prioritaire du brief"
     },
     {
       "filename": "clip_046_rezonfn_score40_subs.mp4",
@@ -18625,7 +18967,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "sans résumé, Rezon peu gardé"
     },
     {
       "filename": "clip_049_mrsavage_score60_subs.mp4",
@@ -18724,7 +19068,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_050_mrsavage_score60_subs.mp4",
@@ -18823,7 +19169,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_051_mrsavage_score60_subs.mp4",
@@ -18922,7 +19270,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_056_aussieantics_score60_subs.mp4",
@@ -19021,7 +19371,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 21,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_057_aussieantics_score60_subs.mp4",
@@ -19120,7 +19472,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 20,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_058_aussieantics_score60_subs.mp4",
@@ -19219,7 +19573,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 19,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_059_aussieantics_score60_subs.mp4",
@@ -19318,7 +19674,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_061_aussieantics_score50_subs.mp4",
@@ -19417,7 +19775,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_062_aussieantics_score50_subs.mp4",
@@ -19516,7 +19876,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 16,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_062_mrsavage_score50_subs.mp4",
@@ -19615,7 +19977,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_064_nikof_score50.mp4",
@@ -19714,7 +20078,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 32,
+      "note_jour_raison": "sans résumé mais Nikof souvent gardé"
     },
     {
       "filename": "clip_060_mrsavage_score50_subs.mp4",
@@ -19813,7 +20179,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_065_nikof_score50.mp4",
@@ -19912,7 +20280,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 31,
+      "note_jour_raison": "sans résumé mais Nikof souvent gardé"
     },
     {
       "filename": "clip_066_nikof_score50.mp4",
@@ -20011,7 +20381,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 30,
+      "note_jour_raison": "sans résumé mais Nikof souvent gardé"
     },
     {
       "filename": "clip_067_nikof_score50.mp4",
@@ -20110,7 +20482,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 29,
+      "note_jour_raison": "sans résumé mais Nikof souvent gardé"
     },
     {
       "filename": "clip_068_nikof_score50.mp4",
@@ -20209,7 +20583,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 28,
+      "note_jour_raison": "sans résumé mais Nikof souvent gardé"
     },
     {
       "filename": "clip_070_mrsavage_score50_subs.mp4",
@@ -20308,7 +20684,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_072_waze_score50.mp4",
@@ -20407,7 +20785,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "sans résumé, Waze jamais gardé"
     },
     {
       "filename": "clip_069_mrsavage_score50_subs.mp4",
@@ -20506,7 +20886,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "sans résumé, Savage rarement gardé"
     },
     {
       "filename": "clip_070_aussieantics_score50_subs.mp4",
@@ -20605,7 +20987,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "sans résumé, streamer au taux de garde correct"
     },
     {
       "filename": "clip_073_nikof_score40.mp4",
@@ -20704,7 +21088,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 27,
+      "note_jour_raison": "sans résumé mais Nikof souvent gardé"
     },
     {
       "filename": "clip_074_waze_score40.mp4",
@@ -20803,7 +21189,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 1,
+      "note_jour_raison": "sans résumé, Waze jamais gardé"
     }
   ]
 }
