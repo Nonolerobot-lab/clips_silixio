@@ -33,6 +33,26 @@
       ]
     },
     {
+      "date": "2026-09-26",
+      "total_clips": 194,
+      "streamers": [
+        "alibaba_rcm",
+        "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "k1ng",
+        "kirillianfn1",
+        "leothecrack",
+        "mrsavage",
+        "nikof",
+        "rezonfn",
+        "stizo_",
+        "venofn",
+        "waze",
+        "wazz"
+      ]
+    },
+    {
       "date": "2026-09-24",
       "total_clips": 206,
       "streamers": [
@@ -69,5 +89,5 @@
       ]
     }
   ],
-  "latest": "2026-09-24"
+  "latest": "2026-09-26"
 }
