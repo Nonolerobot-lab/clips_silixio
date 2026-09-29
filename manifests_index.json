@@ -33,6 +33,31 @@
       ]
     },
     {
+      "date": "2026-09-29",
+      "total_clips": 73,
+      "streamers": [
+        "akiiral2",
+        "asianjeff",
+        "buzzftn",
+        "community",
+        "jolavanille",
+        "khanada_",
+        "leothecrack",
+        "momsyfnv2",
+        "mrsavage",
+        "nikof",
+        "pixiefnbr1",
+        "rezonfn",
+        "snayzy",
+        "snayzyy",
+        "stizo_",
+        "swizzy281_",
+        "vadeal",
+        "waze",
+        "wazz"
+      ]
+    },
+    {
       "date": "2026-09-28",
       "total_clips": 140,
       "streamers": [
@@ -125,5 +150,5 @@
       ]
     }
   ],
-  "latest": "2026-09-28"
+  "latest": "2026-09-29"
 }
