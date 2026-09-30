@@ -2078,16 +2078,21 @@
                     playerEl.replaceWith(video);
                 }
                 const player = document.getElementById('player');
-                const _blobReady = _preloadGetReady(clip.video_url);
+                // 2026-09-30 : le prechargement est cle par l'URL ACTIVE (version
+                // sous-titree, propre ou _subs) : avant, il cherchait video_url
+                // et jouait la mauvaise version quand Silixio avait coupe les
+                // sous-titres du clip.
+                const _activeUrl = _preloadUrlOf(clip) || clip.video_url;
+                const _blobReady = _preloadGetReady(_activeUrl);
                 if (_blobReady) {
                     player.src = _blobReady;   // deja en RAM : lecture immediate
                 } else {
                     // Pas pret : streaming direct, et on ANNULE un eventuel
                     // fetch en vol du meme clip — sinon les deux flux se
                     // partagent le meme tuyau ~1 Mo/s et le player rame.
-                    _preloadAbort(clip.video_url);
+                    _preloadAbort(_activeUrl);
                     // Fix 2026-05-14 add-subs-checkbox : utilise _subs.mp4 si toggle actif et disponible
-                    player.src = (typeof _getActiveVideoUrl === 'function' ? _getActiveVideoUrl(clip) : null) || clip.video_url;
+                    player.src = _activeUrl;
                 }
                 player.style.display = '';
                 if (clip.thumbnail_url) {
@@ -2780,13 +2785,34 @@
         // livres 68 Mo medians a 11,6 Mbit/s de bitrate -> le streaming ne
         // peut pas suivre, et l'ancien preload <video preload=auto> ne
         // telechargeait que quelques Mo (heuristique navigateur). Ici :
-        // fetch COMPLET -> blob en RAM des PRELOAD_AHEAD clips suivants,
-        // fenetre glissante, abort de tout ce qui sort de la fenetre.
+        // fetch COMPLET -> blob en RAM, fenetre glissante, abort de tout ce
+        // qui sort de la fenetre.
+        // 2026-09-30 (retour de Silixio : « les clips s'arretent toutes les
+        // secondes pendant 10 s ») : Drive sert CHAQUE requete a un debit
+        // aleatoire (~40 % a 10-20 Mo/s, ~60 % a 0,3-0,7 Mo/s, mesure le
+        // 30/09 en direct sur l'API Drive, Cloudflare hors de cause) alors
+        // qu'un clip demande 0,4-1,2 Mo/s. Deux clips d'avance ne suffisaient
+        // plus : la fenetre se remplit maintenant JUSQU'A UN BUDGET EN OCTETS
+        // (PRELOAD_BUDGET_MB, ~25-30 clips de 36 Mo, 3-4 clips de 300 Mo),
+        // dans l'ordre de lecture, PRELOAD_CONCURRENCY telechargements a la
+        // fois pour que le clip suivant passe toujours en premier.
         // Le clip COURANT n'est jamais fetche en double : s'il n'est pas
         // deja pret au moment de l'afficher, il part en streaming et son
         // fetch eventuel est annule (cf. loadClip Mode 1).
-        const _blobCache = new Map();   // video_url -> {status, ctrl, blobUrl, bytes}
-        const PRELOAD_AHEAD = 2;        // clips prepares en avance (RAM ~2x70 Mo max)
+        const _blobCache = new Map();   // url active -> {status, ctrl, blobUrl, bytes}
+        const PRELOAD_BUDGET_MB = 1024; // octets max prepares en avance (RAM/disque du navigateur)
+        const PRELOAD_CONCURRENCY = 3;  // telechargements simultanes (le plus proche d'abord)
+        const PRELOAD_DEFAULT_MB = 40;  // poids suppose si le manifest n'a pas size_mb
+        const PRELOAD_MAX_FAILS = 2;    // echecs reseau toleres avant d'abandonner une URL
+        let _preloadOrder = [];         // URLs a precharger, par ordre de lecture
+        const _preloadFails = new Map();
+
+        // Version reellement lue par le player (sous-titree / propre / _subs) :
+        // c'est elle qu'on precharge, sinon le blob pret n'est pas le bon fichier.
+        function _preloadUrlOf(clip) {
+            if (!clip) return null;
+            return (typeof _getActiveVideoUrl === 'function' ? _getActiveVideoUrl(clip) : null) || clip.video_url || null;
+        }
 
         function _preloadGetReady(url) {
             const e = _blobCache.get(url);
@@ -2801,13 +2827,7 @@
             _blobCache.delete(url);
         }
 
-        function _preloadOne(idx) {
-            if (idx < 0 || idx >= TOTAL) return;
-            const clip = CLIPS[idx];
-            // Iframes Twitch/Drive (Modes 2/3) : pas de video_url, pas preloadables.
-            if (!clip || !clip.video_url) return;
-            const url = clip.video_url;
-            if (_blobCache.has(url)) return;
+        function _preloadStart(url) {
             const ctrl = new AbortController();
             const entry = { status: 'loading', ctrl: ctrl, blobUrl: null, bytes: 0 };
             _blobCache.set(url, entry);
@@ -2822,34 +2842,71 @@
                     entry.bytes = blob.size;
                     entry.status = 'ready';
                     entry.ctrl = null;
-                    _updatePreloadHint();
+                    _preloadPump();
                 })
                 .catch(() => {
-                    // Abort volontaire ou echec reseau : l'entree sort du cache,
-                    // le clip repartira en streaming classique (etat d'avant).
-                    if (_blobCache.get(url) === entry) _blobCache.delete(url);
-                    _updatePreloadHint();
+                    // Abort volontaire (l'entree n'est deja plus la) ou echec
+                    // reseau : l'entree sort du cache, le clip repartira en
+                    // streaming classique (etat d'avant). Un echec reel est
+                    // compte pour ne pas reboucler sur une URL cassee (404...).
+                    if (_blobCache.get(url) === entry) {
+                        _blobCache.delete(url);
+                        _preloadFails.set(url, (_preloadFails.get(url) || 0) + 1);
+                    }
+                    _preloadPump();
                 });
+        }
+
+        // Lance les telechargements manquants, dans l'ordre de lecture, sans
+        // depasser PRELOAD_CONCURRENCY : le clip suivant n'est jamais ralenti
+        // par des clips plus lointains.
+        function _preloadPump() {
+            let loading = 0;
+            _blobCache.forEach(e => { if (e.status === 'loading') loading++; });
+            for (const url of _preloadOrder) {
+                if (loading >= PRELOAD_CONCURRENCY) break;
+                if (_blobCache.has(url)) continue;                       // en cours ou pret
+                if ((_preloadFails.get(url) || 0) >= PRELOAD_MAX_FAILS) continue;
+                _preloadStart(url);
+                loading++;
+            }
+            _updatePreloadHint();
         }
 
         function _preloadWindow(centerIdx) {
             // Fenetre conservee : blob du clip courant (s'il est pret, il joue)
-            // + les PRELOAD_AHEAD suivants. Tout le reste est aborte/libere —
-            // y compris apres un filtre streamer (les URLs servent de cles,
-            // donc un CLIPS rebati n'invalide que ce qui sort de la fenetre).
+            // + les clips suivants jusqu'a PRELOAD_BUDGET_MB (le premier est
+            // toujours pris, meme s'il depasse le budget). Tout le reste est
+            // aborte/libere — y compris apres un filtre streamer (les URLs
+            // servent de cles, donc un CLIPS rebati n'invalide que ce qui sort
+            // de la fenetre).
             const keep = new Set();
-            for (let i = centerIdx; i <= centerIdx + PRELOAD_AHEAD && i < TOTAL; i++) {
+            const order = [];
+            const cur = _preloadUrlOf(CLIPS[centerIdx]);
+            if (cur) keep.add(cur);
+            let left = PRELOAD_BUDGET_MB;
+            for (let i = centerIdx + 1; i < TOTAL; i++) {
                 const c = CLIPS[i];
-                if (c && c.video_url) keep.add(c.video_url);
+                // Iframes Twitch/Drive (Modes 2/3) : pas de video_url, pas preloadables.
+                if (!c || !c.video_url) continue;
+                const url = _preloadUrlOf(c);
+                if (!url || keep.has(url)) continue;
+                const mb = c.size_mb > 0 ? c.size_mb : PRELOAD_DEFAULT_MB;
+                if (order.length > 0 && mb > left) break;   // ordre de lecture respecte
+                left -= mb;
+                keep.add(url);
+                order.push(url);
             }
+            _preloadOrder = order;
             for (const url of Array.from(_blobCache.keys())) {
                 if (!keep.has(url)) _preloadAbort(url);
             }
-            for (let i = centerIdx + 1; i <= centerIdx + PRELOAD_AHEAD; i++) _preloadOne(i);
-            _updatePreloadHint();
+            _preloadPump();
         }
 
         function _preloadClearAll() {
+            _preloadOrder = [];
+            _preloadFails.clear();
             for (const url of Array.from(_blobCache.keys())) _preloadAbort(url);
             _updatePreloadHint();
         }
@@ -2857,15 +2914,16 @@
         function _updatePreloadHint() {
             const el = document.getElementById('preloadHint');
             if (!el) return;
-            let ready = 0, loading = 0;
+            let ready = 0, loading = 0, bytes = 0;
             _blobCache.forEach(e => {
-                if (e.status === 'ready') ready++;
+                if (e.status === 'ready') { ready++; bytes += e.bytes || 0; }
                 else if (e.status === 'loading') loading++;
             });
+            const mo = bytes > 0 ? ' (' + Math.round(bytes / 1048576) + ' Mo)' : '';
             if (loading > 0) {
-                el.textContent = '⤓ préchargement…' + (ready > 0 ? ' (' + ready + ' prêt' + (ready > 1 ? 's' : '') + ')' : '');
+                el.textContent = '⤓ préchargement…' + (ready > 0 ? ' (' + ready + ' prêt' + (ready > 1 ? 's' : '') + mo + ')' : '');
             } else if (ready > 0) {
-                el.textContent = '✓ ' + ready + ' clip' + (ready > 1 ? 's' : '') + ' préchargé' + (ready > 1 ? 's' : '');
+                el.textContent = '✓ ' + ready + ' clip' + (ready > 1 ? 's' : '') + ' préchargé' + (ready > 1 ? 's' : '') + mo;
             } else {
                 el.textContent = '';
             }
