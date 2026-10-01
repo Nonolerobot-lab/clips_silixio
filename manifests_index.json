@@ -33,6 +33,31 @@
       ]
     },
     {
+      "date": "2026-10-01",
+      "total_clips": 85,
+      "streamers": [
+        "asianjeff",
+        "aussieantics",
+        "cooper",
+        "kurama_203",
+        "leothecrack",
+        "leothecrackfn",
+        "mrsavage",
+        "nikof",
+        "pixiefnbr1",
+        "queasy",
+        "revenja",
+        "scrollszn",
+        "shxrkfnbr",
+        "snayzy",
+        "stizo_",
+        "vadeal",
+        "venofn",
+        "waze",
+        "wazz"
+      ]
+    },
+    {
       "date": "2026-09-30",
       "total_clips": 93,
       "streamers": [
@@ -139,24 +164,7 @@
         "waze",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-09-24",
-      "total_clips": 206,
-      "streamers": [
-        "alibaba_rcm",
-        "aussieantics",
-        "kurama_203",
-        "leothecrack",
-        "mrsavage",
-        "nikof",
-        "podasai",
-        "rezonfn",
-        "waze",
-        "wazz",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-09-30"
+  "latest": "2026-10-01"
 }
