@@ -1,6 +1,34 @@
 {
   "days": [
     {
+      "date": "2026-10-04",
+      "total_clips": 145,
+      "streamers": [
+        "akiiral2",
+        "alibaba_rcm",
+        "artskillfn",
+        "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "community",
+        "fortnitefraactu",
+        "jolavanille",
+        "k1ng",
+        "khanada_",
+        "leothecrack",
+        "momsyfnv2",
+        "mrsavage",
+        "nikof",
+        "pixiefnbr1",
+        "podasai",
+        "revenja",
+        "snayzy",
+        "stizo_",
+        "vadeal",
+        "wazz"
+      ]
+    },
+    {
       "date": "2026-10-03",
       "total_clips": 113,
       "streamers": [
@@ -150,23 +178,7 @@
         "vadeal",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-09-27",
-      "total_clips": 134,
-      "streamers": [
-        "alibaba_rcm",
-        "aussieantics",
-        "jolavanille",
-        "kirillianfn1",
-        "leothecrack",
-        "mrsavage",
-        "nikof",
-        "rezonfn",
-        "vadeal",
-        "wazz"
-      ]
     }
   ],
-  "latest": "2026-10-03"
+  "latest": "2026-10-04"
 }
