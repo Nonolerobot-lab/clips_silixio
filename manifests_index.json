@@ -1,6 +1,31 @@
 {
   "days": [
     {
+      "date": "2026-10-06",
+      "total_clips": 94,
+      "streamers": [
+        "artskill",
+        "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "jolavanille",
+        "khanada_",
+        "kurama_203",
+        "leothecrack",
+        "momsyfnv2",
+        "mrsavage",
+        "nikof",
+        "peterbot",
+        "podasai",
+        "rzpruzen",
+        "snayzy",
+        "stizo_",
+        "vadeal",
+        "venofn",
+        "wazz"
+      ]
+    },
+    {
       "date": "2026-10-05",
       "total_clips": 142,
       "streamers": [
@@ -158,32 +183,7 @@
         "vadeal",
         "waze"
       ]
-    },
-    {
-      "date": "2026-09-29",
-      "total_clips": 73,
-      "streamers": [
-        "akiiral2",
-        "asianjeff",
-        "buzzftn",
-        "community",
-        "jolavanille",
-        "khanada_",
-        "leothecrack",
-        "momsyfnv2",
-        "mrsavage",
-        "nikof",
-        "pixiefnbr1",
-        "rezonfn",
-        "snayzy",
-        "snayzyy",
-        "stizo_",
-        "swizzy281_",
-        "vadeal",
-        "waze",
-        "wazz"
-      ]
     }
   ],
-  "latest": "2026-10-05"
+  "latest": "2026-10-06"
 }
