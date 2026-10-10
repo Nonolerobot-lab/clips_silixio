@@ -1,6 +1,25 @@
 {
   "days": [
     {
+      "date": "2026-10-10",
+      "total_clips": 51,
+      "streamers": [
+        "alibaba_rcm",
+        "aussieantics",
+        "buzzftn",
+        "jolavanille",
+        "kurama_203",
+        "leothecrack",
+        "mrsavage",
+        "noahreyli",
+        "queasy",
+        "revenja",
+        "solary magl",
+        "venofn",
+        "zetfartv"
+      ]
+    },
+    {
       "date": "2026-10-09",
       "total_clips": 146,
       "streamers": [
@@ -134,5 +153,5 @@
       ]
     }
   ],
-  "latest": "2026-10-09"
+  "latest": "2026-10-10"
 }
