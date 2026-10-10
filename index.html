@@ -1157,6 +1157,33 @@
             flex-wrap: wrap;
         }
         .date-picker.show { display: flex; }
+        /* 2026-10-09 (GO PO) : redacteur en chef. 3 titres de video proposes pour le jour
+           (cle `redacteur` du manifest, intelligence/redacteur.py), sous le selecteur de dates.
+           Absent du manifest = bandeau masque. */
+        .redacteur-bar {
+            display: none;
+            padding: 6px 20px 8px;
+            background: #14142e;
+            border-bottom: 1px solid #2a2a4a;
+            flex-shrink: 0;
+            font-size: 0.82em;
+            color: #c9c9e8;
+        }
+        .redacteur-bar.show { display: block; }
+        .redacteur-head { color: #9b9bc0; margin-bottom: 4px; }
+        .redacteur-head b { color: #f1c40f; }
+        .redacteur-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 3px 0; }
+        .redacteur-titre { font-weight: 700; color: #fff; letter-spacing: 0.2px; }
+        .redacteur-copy {
+            background: #1a1a3a; color: #9b9bc0; border: 1px solid #2a2a5a; border-radius: 6px;
+            padding: 1px 8px; font-size: 0.9em; cursor: pointer;
+        }
+        .redacteur-copy:hover { border-color: #9b59b6; color: #e0e0e0; }
+        .redacteur-src {
+            color: #f39c12; cursor: pointer; text-decoration: underline dotted; font-size: 0.92em;
+        }
+        .redacteur-src.missing { color: #777; cursor: default; text-decoration: none; }
+        .redacteur-msg { color: #e67e22; font-size: 0.9em; margin-left: 6px; }
         .date-btn {
             background: #1a1a3a;
             color: #9b9bc0;
@@ -1253,6 +1280,9 @@
 
     <!-- Sprint 51 : DATE PICKER multi-jours -->
     <div class="date-picker" id="datePicker"></div>
+
+    <!-- 2026-10-09 (GO PO) : redacteur en chef — 3 titres proposes pour la video du jour -->
+    <div class="redacteur-bar" id="redacteurBar"></div>
 
     <!-- PROGRESS -->
     <div class="progress-bar">
@@ -1887,6 +1917,7 @@
             axesFeedback = {}; // Sprint 80 : axes explicites
             chatFlags = {};
             exportedClips = {}; // Fix 2026-04-09 : reset puis restore depuis localStorage
+            renderRedacteur(); // 2026-10-09 : bandeau des 3 titres (masque si cle absente)
 
             if (!MANIFEST.clips || MANIFEST.clips.length === 0) {
                 showMessage(
@@ -1943,6 +1974,73 @@
             resetSessionTimer();
 
             loadClip(currentIndex);
+        }
+
+        // 2026-10-09 (GO PO) : redacteur en chef. MANIFEST.redacteur = {sujet_du_jour, titres:
+        // [{titre, accroche_1: {clip_id, pourquoi, streamer, existe}, accroche_2, angle}], ...}.
+        // Un bouton copier par titre, les deux clips sources cliquables (saut au clip).
+        function renderRedacteur() {
+            const bar = document.getElementById('redacteurBar');
+            if (!bar) return;
+            const r = MANIFEST && MANIFEST.redacteur;
+            const titres = (r && Array.isArray(r.titres)) ? r.titres : [];
+            if (!titres.length) { bar.classList.remove('show'); bar.innerHTML = ''; return; }
+            let html = '<div class="redacteur-head">&#128240; <b>Titres proposés</b> pour la vidéo du jour'
+                + (r.sujet_du_jour ? ' &middot; ' + escHtml(r.sujet_du_jour) : '')
+                + '<span class="redacteur-msg" id="redacteurMsg"></span></div>';
+            titres.forEach(function (t, i) {
+                const srcs = ['accroche_1', 'accroche_2'].map(function (k) {
+                    const a = t[k] || {};
+                    const lbl = escHtml((a.streamer || '?') + (a.pourquoi ? ' · ' + String(a.pourquoi).substring(0, 70) : ''));
+                    if (a.existe === false || !a.clip_id) {
+                        return '<span class="redacteur-src missing" title="Clip introuvable dans ce jour">' + lbl + '</span>';
+                    }
+                    return '<span class="redacteur-src" data-clip="' + escHtml(a.clip_id) + '" title="Aller au clip">' + lbl + '</span>';
+                }).join(' &nbsp;+&nbsp; ');
+                html += '<div class="redacteur-row">'
+                    + '<span class="redacteur-titre">' + (i + 1) + '. ' + escHtml(t.titre || '') + '</span>'
+                    + '<button class="redacteur-copy" data-idx="' + i + '" title="Copier le titre">Copier</button>'
+                    + '<span>' + srcs + '</span></div>';
+            });
+            bar.innerHTML = html;
+            bar.classList.add('show');
+            bar.querySelectorAll('.redacteur-copy').forEach(function (btn) {
+                btn.onclick = function () {
+                    const t = titres[parseInt(btn.dataset.idx, 10)] || {};
+                    const done = function () { btn.textContent = 'Copié'; setTimeout(function () { btn.textContent = 'Copier'; }, 1500); };
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(t.titre || '').then(done, function () { btn.textContent = 'Copie impossible'; });
+                    } else {
+                        btn.textContent = 'Copie impossible';
+                    }
+                    btn.blur();
+                };
+            });
+            bar.querySelectorAll('.redacteur-src[data-clip]').forEach(function (el) {
+                el.onclick = function () { jumpToClipId(el.dataset.clip); };
+            });
+        }
+
+        // Saut a un clip du jour par son clip_id. Un filtre streamer actif est leve d'abord ;
+        // un clip deja trie et masque ne peut plus etre affiche (message dans le bandeau).
+        function jumpToClipId(id) {
+            const msg = document.getElementById('redacteurMsg');
+            if (msg) msg.textContent = '';
+            const find = function () {
+                return CLIPS.findIndex(function (c) { return c.clip_id === id || getClipStateKey(c) === id; });
+            };
+            let idx = find();
+            const sel = document.getElementById('streamerFilter');
+            if (idx < 0 && sel && sel.value) {
+                sel.value = '';
+                filterByStreamer();
+                idx = find();
+            }
+            if (idx < 0) {
+                if (msg) msg.textContent = 'Clip déjà trié et masqué (bouton « Réafficher »)';
+                return;
+            }
+            loadClip(idx);
         }
 
         function showMessage(title, text) {
