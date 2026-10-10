@@ -6175,5 +6175,61 @@
       "note_jour": 30,
       "note_jour_raison": "Clutch de Tokes en box fight, streamer sans historique"
     }
-  ]
+  ],
+  "redacteur": {
+    "sujet_du_jour": "Pas de clip Nikof dans le pool, donc la reconstruction M8 ne peut pas porter le titre : on prend le croustillant (Buzz accuse les pros FR de macros) et le mercato évoqué par Leo, adossés aux perfs de la Street Fighter Cup (skin Chun-Li, duo Leo/Akiira).",
+    "titres": [
+      {
+        "titre": "BUZZ ACCUSE LES PROS DE MACROS ? 😡 ZETFAR ARRACHE LE SKIN CHUN-LI 🏆",
+        "accroche_1": {
+          "clip_id": "v6_cl_7719__buzzftn_1010",
+          "pourquoi": "Buzz cite X-Swiss et Floki comme utilisateurs de macros et dit que seuls Kurama et lui sont clean : accusation non vérifiée, donc en question.",
+          "existe": true,
+          "streamer": "buzzftn"
+        },
+        "accroche_2": {
+          "clip_id": "v6_cl_8320__zetfartv_1010",
+          "pourquoi": "ZetFar finit à 524 points pour un cutoff à 505 et débloque le skin à la dernière game, classement final à l'écran.",
+          "existe": true,
+          "streamer": "zetfartv"
+        },
+        "angle": "croustillant"
+      },
+      {
+        "titre": "XP42 RAFLE TOUS LES TRIOS ? 🤔 LEO ET AKIIRA FONT 40 KILLS 🤯",
+        "accroche_1": {
+          "clip_id": "CrunchyEnjoyableSmoothieBrainSlug-hRDVf6f9zqpEPZKn",
+          "pourquoi": "Leo plaisante sur un mercato où XP42 prendrait les meilleurs trios et en enverrait chez M8, Falcon ou Vox : rumeur non confirmée par le brief, donc en question.",
+          "existe": true,
+          "streamer": "leothecrack"
+        },
+        "accroche_2": {
+          "clip_id": "co_LightTenderAniseTinyFace-nBjEDRAYxK_9JFru__leothecrack_1010",
+          "pourquoi": "Leo et Akiira finissent top 1 à 40 kills en Reload Cash Cup, Akiira étant au cœur du dossier M8 du jour.",
+          "existe": true,
+          "streamer": "leothecrack"
+        },
+        "angle": "actu"
+      },
+      {
+        "titre": "BUZZ FAIT TOP 1 POUR 5 SUBS 🥳 JOLAVANILLE MUET EN PLEIN FIGHT 🤣",
+        "accroche_1": {
+          "clip_id": "v6_cl_3099__buzzftn_1010",
+          "pourquoi": "Un viewer promet 5 subs si top 1, Buzz gagne la game et chante « Le lion est mort ce soir ».",
+          "existe": true,
+          "streamer": "buzzftn"
+        },
+        "accroche_2": {
+          "clip_id": "AffluentCrepuscularWoodpeckerBlargNaut-aSbatO51Vp5s7tv-",
+          "pourquoi": "Jolavanille découvre qu'il était muet depuis le début, panique en fight et meurt sous les rires du chat.",
+          "existe": true,
+          "streamer": "jolavanille"
+        },
+        "angle": "performance"
+      }
+    ],
+    "a_eviter": "Les 3 derniers titres ont déjà fait les départs M8, le cheat de Shxrk et « LE CLUTCH DE … » : pas de « DÉPARTS CHEZ M8 », pas de cheat frontal affirmé, pas de Nikof en tête d'affiche sans clip de lui dans le pool.",
+    "modele": "claude-fable-5-1",
+    "genere_le": "2026-10-10T07:10:26"
+  }
 }
