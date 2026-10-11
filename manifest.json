@@ -17842,5 +17842,61 @@
       "note_jour": 20,
       "note_jour_raison": "Kill isolé d'Akiira en game 1, sans enjeu"
     }
-  ]
+  ],
+  "redacteur": {
+    "sujet_du_jour": "L'actu bascule des départs M8 vers un résultat : Akiira, que Nikof ne prolongeait que d'un mois, se qualifie en Grande Finale FNCS Solo (premier Français) ; on l'accroche via les têtes d'affiche qui réagissent (Nikof, Jo, WaZz) et on garde le mercato M8 en question.",
+    "titres": [
+      {
+        "titre": "LE PREMIER FRANÇAIS EN GRANDE FINALE 🏆 SHXRK LE PROCHAIN M8 ? 🤔",
+        "accroche_1": {
+          "clip_id": "v6_cl_294__jolavanille_1011",
+          "pourquoi": "Jo suit en direct la dernière game d'Akiira, chapitre 3:52 « Premier Français qualifié en Grande Finale » ; le top 1 castré par Nikof est dans v6_cl_7675__nikof_1011 pour le montage.",
+          "existe": true,
+          "streamer": "jolavanille"
+        },
+        "accroche_2": {
+          "clip_id": "v6_cl_5445__nikof_1011",
+          "pourquoi": "Nikof défend Shark et laisse entendre que son recrutement est en cours : info non confirmée, donc en question.",
+          "existe": true,
+          "streamer": "nikof"
+        },
+        "angle": "actu"
+      },
+      {
+        "titre": "NIKOF PROLONGE AKIIRA D'UN MOIS ? 🤔 FORTNITE OUBLIE PIXIE EN FAST TRACK 😡",
+        "accroche_1": {
+          "clip_id": "v6_cl_6872__nikof_1011",
+          "pourquoi": "Nikof annonce qu'Akiira, sans contrat, est prolongé d'un mois pour être payé : contraste fort avec sa qualification le lendemain.",
+          "existe": true,
+          "streamer": "nikof"
+        },
+        "accroche_2": {
+          "clip_id": "v6_cl_4692__wazz_1011",
+          "pourquoi": "Pixie dans le top 8 mais le jeu ne le fait pas entrer dans la game 3, WaZz explose et lance ses viewers sur Epic, pas de remake.",
+          "existe": true,
+          "streamer": "wazz"
+        },
+        "angle": "croustillant"
+      },
+      {
+        "titre": "SHXRK HUMILIÉ : « C'EST PETERBOT ? » 🤯 NIKOF LEAK L'EVENT DE SA COPINE 🤣",
+        "accroche_1": {
+          "clip_id": "v6_cl_15004__nikof_1011",
+          "pourquoi": "Nikof réagit au clip où Akiira détruit Shark et Demus en 3v3 pendant que l'équipe adverse croit jouer contre Peterbot (version castée chez Leo : v6_cl_14404__leothecrack_1011).",
+          "existe": true,
+          "streamer": "nikof"
+        },
+        "accroche_2": {
+          "clip_id": "v6_cl_24329__nikof_1011",
+          "pourquoi": "Kalina apporte le repas et Nikof leak encore le sport de son event (« bientôt dans l'escalade »), en jurant que c'est sorti tout seul.",
+          "existe": true,
+          "streamer": "nikof"
+        },
+        "angle": "croustillant"
+      }
+    ],
+    "a_eviter": "Les départs chez M8, le cheat de Shxrk (08/10) et le clutch de Pixie (09/10) viennent d'être faits : ne pas retitrer sur un départ M8 ni sur un clutch Pixie, et ne pas mettre Akiira seul en tête de titre.",
+    "modele": "claude-fable-5-1",
+    "genere_le": "2026-10-11T07:58:33"
+  }
 }
