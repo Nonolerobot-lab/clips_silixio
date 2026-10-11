@@ -113,9 +113,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1kew67aYW4tWr53KQJusJyLMupLjnFkFu/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1mmzg0a_5cBShHSM_upHCWfZqDmL6arWF&export=download&confirm=t",
       "size_mb": 332.8,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_1",
+      "arc_position": 3,
+      "arc_label": "La qualif d'Akiira vue par Nikof",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -208,7 +208,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 96,
+      "note_jour_raison": "Akiira top 1, qualifié en Grande Finale, cast Nikof"
     },
     {
       "filename": "clip_001_01-18-12_score94_v6_drama.mp4",
@@ -277,9 +279,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1va8hWeFNQYmMRK6KNTvR6pzOMrMQSn4Q/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1BKEMnFUq7BfbluRIMxBWieVTYd8Oa2Tx&export=download&confirm=t",
       "size_mb": 308.5,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_4",
+      "arc_position": 1,
+      "arc_label": "Pixie oublié par Fortnite puis qualifié",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -366,7 +368,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 80,
+      "note_jour_raison": "Pixie bloqué hors de la game 3, WaZz explose"
     },
     {
       "filename": "clip_002_01-59-51_score93_v6_hype.mp4",
@@ -435,9 +439,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1ArPUcXTxRE2Rp5_FXxRVzB1lZYW5ZMhk/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1CQ6WjYnj13LyinFqrHTHXuDfpgn0emYf&export=download&confirm=t",
       "size_mb": 320.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_4",
+      "arc_position": 2,
+      "arc_label": "Pixie oublié par Fortnite puis qualifié",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -528,7 +532,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 84,
+      "note_jour_raison": "Pixie qualifié en Grande Finale avec trois games"
     },
     {
       "filename": "clip_002_03-17-22_score92_v6_vr.mp4",
@@ -597,9 +603,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1HNgnIL76VdrzzaLLo63d9XY6epGbYGAu/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1SGXUxCHtRumDFKyGbxc6_tbnl6Og4Y7Q&export=download&confirm=t",
       "size_mb": 226.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_2",
+      "arc_position": 2,
+      "arc_label": "Akiira double top 1 en cast chez Leo",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -712,7 +718,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 86,
+      "note_jour_raison": "Leo explose, deux Français en Grande Finale"
     },
     {
       "filename": "clip_005_nikof_score90.mp4",
@@ -843,7 +851,9 @@
           "views": 6700,
           "caption": "Akiira détruit Shark sous les yeux de Nikof 🤩🤩 #nikof #m8 #gentlemates #leothecrack #podasai "
         }
-      ]
+      ],
+      "note_jour": 58,
+      "note_jour_raison": "Nikof explose sur un Top 1 d'Akiira, doublon"
     },
     {
       "filename": "clip_007_01-54-32_score89_v6_talk.mp4",
@@ -968,7 +978,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 90,
+      "note_jour_raison": "Talk, Akiira sans contrat prolongé d'un mois"
     },
     {
       "filename": "clip_001_01-05-57_score89_v6_react.mp4",
@@ -1133,7 +1145,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 62,
+      "note_jour_raison": "Buzz panique puis Akiira qualifié, doublon de la qualif"
     },
     {
       "filename": "clip_012_02-11-13_score86_v6_vr.mp4",
@@ -1202,9 +1216,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1PsTxD1Lk4OqGhSxdaOIcedhMFdBCJdmw/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1KVsVa5HwqeorM_Gd0N0u_lwW5BysCzMH&export=download&confirm=t",
       "size_mb": 387.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_2",
+      "arc_position": 1,
+      "arc_label": "Akiira double top 1 en cast chez Leo",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1317,7 +1331,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 66,
+      "note_jour_raison": "Game 2 d'Akiira castée par Leo, doublon Nikof"
     },
     {
       "filename": "clip_009_01-14-58_score86_v6_vr.mp4",
@@ -1386,9 +1402,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1pKj_OoRlnhNaPQW-uoxWv5bd_9uM1xLE/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1E6PUX_6Yt7Vpj0yz-lHHraL5RW6Dw-Mn&export=download&confirm=t",
       "size_mb": 306.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_1",
+      "arc_position": 1,
+      "arc_label": "La qualif d'Akiira vue par Nikof",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1466,7 +1482,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 85,
+      "note_jour_raison": "Akiira tue Kurama, prend son stuff et gagne la game"
     },
     {
       "filename": "clip_015_01-26-00_score84_v6_hype.mp4",
@@ -1535,9 +1553,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1cmoLFDrmRvZFZcQ3WYig-QbZTbw8TO0v/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=12Wr9UqoVkf8kEub1xn7ZPf11t5UHJJb6&export=download&confirm=t",
       "size_mb": 141.8,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_1",
+      "arc_position": 2,
+      "arc_label": "La qualif d'Akiira vue par Nikof",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1595,7 +1613,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 77,
+      "note_jour_raison": "Akiira piège Veri pendant que Nikof est aux toilettes"
     },
     {
       "filename": "clip_005_00-04-54_score84_v6_react.mp4",
@@ -1788,7 +1808,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 63,
+      "note_jour_raison": "Jo suit la qualif d'Akiira en direct, doublon"
     },
     {
       "filename": "clip_023_02-20-54_score83_v6_funny.mp4",
@@ -1857,9 +1879,9 @@
       "drive_view_url": "https://drive.google.com/file/d/16dFp_HiNmDEM9z9W8ZKDxJnIMkVHHnFH/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1RP-9COmT6qyGPN2VZY6rwcopchrjsFuE&export=download&confirm=t",
       "size_mb": 78.8,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_1",
+      "arc_position": 4,
+      "arc_label": "La qualif d'Akiira vue par Nikof",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1913,7 +1935,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 88,
+      "note_jour_raison": "Interview d'Akiira qualifié, nonchalant puis trash sur Snayzy"
     },
     {
       "filename": "clip_024_01-40-05_score82_v6_funny.mp4",
@@ -2041,7 +2065,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 65,
+      "note_jour_raison": "L'œil de Nikof frappe Kurama en plein late"
     },
     {
       "filename": "clip_016_00-38-52_score82_v6_hype.mp4",
@@ -2198,7 +2224,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 50,
+      "note_jour_raison": "Tjino perd le 1v1 final contre Shark"
     },
     {
       "filename": "clip_010_nikof_score80.mp4",
@@ -2323,7 +2351,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 55,
+      "note_jour_raison": "Talk, interview d'Akiira, doublon plus court"
     },
     {
       "filename": "clip_035_05-18-08_score79_v6_hype.mp4",
@@ -2453,7 +2483,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 52,
+      "note_jour_raison": "Vanyak se déconnecte au bon moment et gagne"
     },
     {
       "filename": "clip_021_aussieantics_score70_subs.mp4",
@@ -2578,7 +2610,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 34,
+      "note_jour_raison": "Deuxième Top 1 d'Akiira commenté par Aussie, doublon"
     },
     {
       "filename": "clip_049_nikof_score60.mp4",
@@ -2684,7 +2718,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 42,
+      "note_jour_raison": "Shxrk bat Chino, Nikof : on vit dans son script"
     },
     {
       "filename": "clip_065_nikof_score60.mp4",
@@ -2808,7 +2844,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 55,
+      "note_jour_raison": "Rax qualifié pour le Round 3 du Qualifier"
     },
     {
       "filename": "clip_067_aussieantics_score60_subs.mp4",
@@ -2913,7 +2951,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "Combat de Shark à l'atterrissage, peu lisible"
     },
     {
       "filename": "clip_068_aussieantics_score60_subs.mp4",
@@ -3018,7 +3058,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 26,
+      "note_jour_raison": "Shxrk éliminé par DJ qui danse, déjà qualifié"
     },
     {
       "filename": "clip_069_aussieantics_score60_subs.mp4",
@@ -3143,7 +3185,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 28,
+      "note_jour_raison": "Savage top 3 au Round 2, commenté par Aussie"
     },
     {
       "filename": "clip_003_akiiral2_score90.mp4",
@@ -3252,7 +3296,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 60,
+      "note_jour_raison": "POV Akiira deuxième Top 1, même moment que le clip Nikof"
     },
     {
       "filename": "clip_001_nikof_score100.mp4",
@@ -3362,7 +3408,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 82,
+      "note_jour_raison": "Nikof hurle Akiira qualifié en Grande Finale"
     },
     {
       "filename": "clip_001_dentoz-hjyy_score95_community_pro.mp4",
@@ -3464,7 +3512,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 52,
+      "note_jour_raison": "Clip communauté tryhard de Stizo, lane souvent gardée"
     },
     {
       "filename": "clip_004_leothecrack_score90.mp4",
@@ -3569,7 +3619,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 30,
+      "note_jour_raison": "Clutch d'Izzi commenté par Leo"
     },
     {
       "filename": "clip_006_leothecrack_score90.mp4",
@@ -3673,7 +3725,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 46,
+      "note_jour_raison": "Deuxième Top 1 d'Akiira chez Leo, doublon"
     },
     {
       "filename": "clip_002_leothecrack_score90.mp4",
@@ -3777,7 +3831,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 48,
+      "note_jour_raison": "Leo dit que Kurama a donné la win, doublon"
     },
     {
       "filename": "clip_008_06-45-29_score89_v6_funny.mp4",
@@ -3846,9 +3902,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1IRKq019xSLf-yTuk55ggHFfnvga74K6Q/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1PTAPZrHqog5bTDjBUsQJX0O5oy4UCjC4&export=download&confirm=t",
       "size_mb": 158.5,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_5",
+      "arc_position": 4,
+      "arc_label": "Nikof leak trois fois l'event escalade de Kalina",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3892,7 +3948,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 69,
+      "note_jour_raison": "Kalina apporte le repas, Nikof leak l'escalade"
     },
     {
       "filename": "clip_008_06-49-52_score89_v6_funny.mp4",
@@ -4025,7 +4083,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 51,
+      "note_jour_raison": "Grimz parle 15 minutes dans le vide sur Discord"
     },
     {
       "filename": "clip_003_01-01-13_score88_v6_funny.mp4",
@@ -4094,9 +4154,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1018VPbOAxGqg302zUKuPaFhk0t5hp-_o/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1qDvQunBO-SqTjyPECBajEFN4NVVdEH0H&export=download&confirm=t",
       "size_mb": 296.5,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_7",
+      "arc_position": 2,
+      "arc_label": "La cup catastrophe de Jolavanille",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4175,7 +4235,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 48,
+      "note_jour_raison": "Jo quitte la zone avec la game parfaite"
     },
     {
       "filename": "clip_008_04-00-03_score87_v6_hype.mp4",
@@ -4244,9 +4306,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1YyZllGBkA4nUNoBcIgDRLqCh6aGWeAx0/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=15QbiBxrDLvNhiGNKgxAtnImU0649MaTE&export=download&confirm=t",
       "size_mb": 345.7,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_3",
+      "arc_position": 1,
+      "arc_label": "Akiira, Rax et Sobi contre Shark en token",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4340,7 +4402,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 71,
+      "note_jour_raison": "Akiira, Rax et Sobi humilient Shark en token"
     },
     {
       "filename": "clip_011_02-28-41_score86_v6_funny.mp4",
@@ -4446,7 +4510,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 76,
+      "note_jour_raison": "Akiira avoue avoir joué la qualif en se retenant"
     },
     {
       "filename": "clip_012_05-23-33_score86_v6_hype.mp4",
@@ -4515,9 +4581,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1frUbx5ofndG5XMeUcV-goWQ4YBD2o-gY/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1IOGW3X_OEbmIb68UI-U0IdkfOoJAcWNM&export=download&confirm=t",
       "size_mb": 189.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_6",
+      "arc_position": 2,
+      "arc_label": "Quatre top 1 Havok d'affilée chez WaZz",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4583,7 +4649,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 54,
+      "note_jour_raison": "Swizzy 15 kills, troisième top 1 Havok"
     },
     {
       "filename": "clip_001_00-26-45_score85_v6_vr.mp4",
@@ -4652,9 +4720,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1Gll7p2KPAp2fOmla31rBpJHJJKOBaFZ4/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=15WFQKp-C9xb-cC3lqOgEQmskSo8uELGJ&export=download&confirm=t",
       "size_mb": 322.9,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_10",
+      "arc_position": 1,
+      "arc_label": "ZetFar de platine à diamant",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4768,7 +4836,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 59,
+      "note_jour_raison": "ZetFar annonce top 7, fait top 1 avec 22 kills"
     },
     {
       "filename": "clip_014_05-06-17_score85_v6_funny.mp4",
@@ -4874,7 +4944,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 57,
+      "note_jour_raison": "Faux trio SSP, Snayzy Sobi Podasai"
     },
     {
       "filename": "clip_013_04-38-10_score85_v6_funny.mp4",
@@ -5002,7 +5074,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 62,
+      "note_jour_raison": "Nikof se trompe sur Halloween, Gotaga en Dark Vador"
     },
     {
       "filename": "clip_005_01-53-27_score85_v6_funny.mp4",
@@ -5139,7 +5213,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 58,
+      "note_jour_raison": "Joby 4 kills s'enfuit au bout de la zone"
     },
     {
       "filename": "clip_017_04-44-39_score84_v6_funny.mp4",
@@ -5208,9 +5284,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1ApKJ8HMzMo4ALV-T9deL8T85GUANu0y2/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1yjgAt4HlIFHpVjKfSiE7BpPSNdgikoKk&export=download&confirm=t",
       "size_mb": 83.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_5",
+      "arc_position": 1,
+      "arc_label": "Nikof leak trois fois l'event escalade de Kalina",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -5245,7 +5321,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 61,
+      "note_jour_raison": "Kalina l'attend derrière la porte après le spoil"
     },
     {
       "filename": "clip_021_07-35-25_score84_v6_funny.mp4",
@@ -5314,9 +5392,9 @@
       "drive_view_url": "https://drive.google.com/file/d/16tnjRxz0hklpcdnyUxBqfnvR5vLitL8Z/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1UfS6XSFDjSayx9IKq1vKO5ib0ay4cQQ0&export=download&confirm=t",
       "size_mb": 78.4,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_5",
+      "arc_position": 5,
+      "arc_label": "Nikof leak trois fois l'event escalade de Kalina",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -5373,7 +5451,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 66,
+      "note_jour_raison": "Troisième leak escalade en réagissant à l'annonce"
     },
     {
       "filename": "clip_018_05-35-03_score84_v6_funny.mp4",
@@ -5501,7 +5581,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 51,
+      "note_jour_raison": "Nikof raconte des combats dans la cuisine"
     },
     {
       "filename": "clip_013_05-50-37_score84_v6_funny.mp4",
@@ -5638,7 +5720,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 44,
+      "note_jour_raison": "Swizzy 16 kills meurt à un fight du top 1"
     },
     {
       "filename": "clip_004_01-16-45_score84_v6_hype_subs.mp4",
@@ -5707,9 +5791,9 @@
       "drive_view_url": "https://drive.google.com/file/d/11YvFkUEM_pMaf8-nn0VWIRLZgi-aKGWh/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1m_87Nzx-bwUAuQapxEiJ2MhSwbKAjzRw&export=download&confirm=t",
       "size_mb": 337.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_9",
+      "arc_position": 1,
+      "arc_label": "MrSavage rate la qualif à 2 PV",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -5795,7 +5879,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 46,
+      "note_jour_raison": "MrSavage top 3 à 1 PV, streamer rarement gardé"
     },
     {
       "filename": "clip_015_01-21-46_score83_v6_funny.mp4",
@@ -5944,7 +6030,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 70,
+      "note_jour_raison": "Leo ment à un viewer sorti du coma, très drôle"
     },
     {
       "filename": "clip_015_06-04-04_score83_v6_funny.mp4",
@@ -6068,7 +6156,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 56,
+      "note_jour_raison": "Wox achève son coéquipier iDrop"
     },
     {
       "filename": "clip_014_05-12-02_score83_v6_hype.mp4",
@@ -6137,9 +6227,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1A8YOzei8LAhXbPNAVd7g72BkBCn3sGKK/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1BLhyY7Bj5WvvwW1QMRHjlCk_E4HuEwUJ&export=download&confirm=t",
       "size_mb": 200.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_6",
+      "arc_position": 1,
+      "arc_label": "Quatre top 1 Havok d'affilée chez WaZz",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -6201,7 +6291,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 53,
+      "note_jour_raison": "Wox top 1 avec 9 kills, prédiction passée"
     },
     {
       "filename": "clip_006_04-14-31_score83_v6_funny.mp4",
@@ -6270,9 +6362,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1dtKMmYyVCYNgrNyr6EV2iLs4R_iJtepV/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1BxMZRn965ukGP7qWU51w6HrEdT7_alF2&export=download&confirm=t",
       "size_mb": 249.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_8",
+      "arc_position": 1,
+      "arc_label": "La journée maudite de Buzz en Ranked Cup",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -6343,7 +6435,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 60,
+      "note_jour_raison": "Buzz rate un kill à 4 HP et meurt"
     },
     {
       "filename": "clip_011_01-40-39_score83_v6_drama.mp4",
@@ -6412,9 +6506,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1RiV8JzEJ1E5gZ_9vi5Y0Gvj4FXOBDTTn/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1-OPEpoPMt_ZxRXCLNjc4qvythS3715C3&export=download&confirm=t",
       "size_mb": 297.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_7",
+      "arc_position": 4,
+      "arc_label": "La cup catastrophe de Jolavanille",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -6493,7 +6587,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 45,
+      "note_jour_raison": "Jo meurt au premier fight, mauvaise foi"
     },
     {
       "filename": "clip_018_05-37-01_score82_v6_hype.mp4",
@@ -6562,9 +6658,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1xqeAcZgQOQ33zejcyHzVfKKodQVWHvZt/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=185yjY_X1MYHdJcqRWbxPLh-KeSiGffzR&export=download&confirm=t",
       "size_mb": 183.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_6",
+      "arc_position": 3,
+      "arc_label": "Quatre top 1 Havok d'affilée chez WaZz",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -6638,7 +6734,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 47,
+      "note_jour_raison": "iDrop top 1, quatre Havok gagnent leur game"
     },
     {
       "filename": "clip_008_01-32-37_score82_v6_funny.mp4",
@@ -6763,7 +6861,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 66,
+      "note_jour_raison": "Joby sent la qualif et meurt deux secondes après"
     },
     {
       "filename": "clip_014_00-35-46_score82_v6_funny.mp4",
@@ -6832,9 +6932,9 @@
       "drive_view_url": "https://drive.google.com/file/d/18UCROdssHsClU0P9CLcl8lwoY3brr4IY/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=10wo2YlH0BisgUotzJiAogLOEZAI5l_Vc&export=download&confirm=t",
       "size_mb": 281.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_7",
+      "arc_position": 1,
+      "arc_label": "La cup catastrophe de Jolavanille",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -6913,7 +7013,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 50,
+      "note_jour_raison": "Jo entend des bruits imaginaires, meurt en sneak"
     },
     {
       "filename": "clip_018_04-23-52_score81_v6_hype.mp4",
@@ -6982,9 +7084,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1R3ZsEoFkUrke7TQLc_DOqm42jBuyWi0u/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=19EOi8tE4e1c6Dsr18_2x4ysgYi26lwYg&export=download&confirm=t",
       "size_mb": 271.9,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_3",
+      "arc_position": 2,
+      "arc_label": "Akiira, Rax et Sobi contre Shark en token",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -7070,7 +7172,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 62,
+      "note_jour_raison": "Remontada en token, Ghost démoli, Shark rage"
     },
     {
       "filename": "clip_007_01-03-07_score81_v6_vr.mp4",
@@ -7139,9 +7243,9 @@
       "drive_view_url": "https://drive.google.com/file/d/19Mah0FbDGO-8DIhV3z4gqZiw9uSjk1wj/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1AgNnZk6J-dBZRUZGMZhkb1NhIsP3Z4Jv&export=download&confirm=t",
       "size_mb": 342.8,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_10",
+      "arc_position": 2,
+      "arc_label": "ZetFar de platine à diamant",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -7239,7 +7343,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 46,
+      "note_jour_raison": "ZetFar passe diamant en squad"
     },
     {
       "filename": "clip_029_06-36-07_score81_v6_funny.mp4",
@@ -7371,7 +7477,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 56,
+      "note_jour_raison": "Nikof se surcote contre Rax et Snayzy"
     },
     {
       "filename": "clip_028_06-06-14_score81_v6_funny.mp4",
@@ -7440,9 +7548,9 @@
       "drive_view_url": "https://drive.google.com/file/d/15CZN-w1XsDR2IaFrvr4LRuMFzzGjeFA-/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=12F1cFbMaHkrkUJN9nn5NlGON9rAhKXCB&export=download&confirm=t",
       "size_mb": 240.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_5",
+      "arc_position": 3,
+      "arc_label": "Nikof leak trois fois l'event escalade de Kalina",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -7490,7 +7598,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 49,
+      "note_jour_raison": "Nikof renvoie Kalina vers son agent"
     },
     {
       "filename": "clip_025_01-30-45_score81_v6_funny.mp4",
@@ -7605,7 +7715,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 68,
+      "note_jour_raison": "Nikof laisse entendre le recrutement de Shark"
     },
     {
       "filename": "clip_008_01-41-40_score81_v6_hype_subs.mp4",
@@ -7674,9 +7786,9 @@
       "drive_view_url": "https://drive.google.com/file/d/19RSLF-zjFjz75OrIp9yBzpY9Ie2kba30/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1hcaSFMIrQi1o5U2gB_Xi1aYuyGh2wMzc&export=download&confirm=t",
       "size_mb": 338.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_9",
+      "arc_position": 2,
+      "arc_label": "MrSavage rate la qualif à 2 PV",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -7758,7 +7870,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 38,
+      "note_jour_raison": "Deuxième top 3 de MrSavage, peu de moment fort"
     },
     {
       "filename": "clip_009_05-18-06_score81_v6_drama.mp4",
@@ -7827,9 +7941,9 @@
       "drive_view_url": "https://drive.google.com/file/d/19Z8BoqhszwZClMyJyqH3ejUEK6RhBK5m/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1X9CZm6ULVmrvy7bXwYrz4ftAgn7KURL3&export=download&confirm=t",
       "size_mb": 106.5,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_8",
+      "arc_position": 3,
+      "arc_label": "La journée maudite de Buzz en Ranked Cup",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -7892,7 +8006,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 64,
+      "note_jour_raison": "Lag, mort, Buzz coupe le stream en pleine FNCS"
     },
     {
       "filename": "clip_007_nikof_score80.mp4",
@@ -7997,7 +8113,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 60,
+      "note_jour_raison": "Sneak kill d'Akiira depuis un buisson, 56 vues"
     },
     {
       "filename": "clip_009_akiiral2_score80.mp4",
@@ -8101,7 +8219,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 65,
+      "note_jour_raison": "Victory Royale d'Akiira en boxfight au Fast Track, POV"
     },
     {
       "filename": "clip_011_mrsavage_score80_subs.mp4",
@@ -8206,7 +8326,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 34,
+      "note_jour_raison": "MrSavage hurle quand Shxrk rate le titre"
     },
     {
       "filename": "clip_008_mrsavage_score80_subs.mp4",
@@ -8311,7 +8433,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 30,
+      "note_jour_raison": "Shxrk gagne un 4v1, MrSavage réagit"
     },
     {
       "filename": "clip_001_finfida_score80_twitter_2108935750230430170.mp4",
@@ -8415,7 +8539,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 55,
+      "note_jour_raison": "Top 1 qualificatif d'Akiira repris de Twitter, 200 vues"
     },
     {
       "filename": "clip_011_03-01-10_score80_v6_drama.mp4",
@@ -8483,9 +8609,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1eMpu8v9x9vxc9F2cWEzrlAmtpYvk3AC-/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1vWTICncMP4Ogy4VD-92ELJNmU8jHr082&export=download&confirm=t",
       "size_mb": 37.8,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_9",
+      "arc_position": 3,
+      "arc_label": "MrSavage rate la qualif à 2 PV",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -8529,7 +8655,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 50,
+      "note_jour_raison": "Mort à 2 PV, écran noir, qualif perdue"
     },
     {
       "filename": "clip_010_02-13-16_score80_v6_hype_subs.mp4",
@@ -8635,7 +8763,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 41,
+      "note_jour_raison": "5 kills puis trade cruel, 30 vues"
     },
     {
       "filename": "clip_011_04-41-16_score80_v6_drama.mp4",
@@ -8704,9 +8834,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1zclI8bEUajB4YMzVFjcSVnK43POKVSiG/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1ff5Bk_8C7JOk6vHglc9Kj2GDByrtiJ_u&export=download&confirm=t",
       "size_mb": 120.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_8",
+      "arc_position": 2,
+      "arc_label": "La journée maudite de Buzz en Ranked Cup",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -8760,7 +8890,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 62,
+      "note_jour_raison": "Pompe qui ne tire pas, Buzz menace d'arrêter Fortnite"
     },
     {
       "filename": "clip_021_04-50-01_score79_v6_drama.mp4",
@@ -8829,9 +8961,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1uBT8pxQ3E5gtNzs0aheosIB_fx0wsE80/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1bchphjo7Zy6doaxRKMgTRZjnf-DIKOeX&export=download&confirm=t",
       "size_mb": 184.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_3",
+      "arc_position": 3,
+      "arc_label": "Akiira, Rax et Sobi contre Shark en token",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -8909,7 +9041,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 58,
+      "note_jour_raison": "Shark rage puis gagne, Leo perd tout"
     },
     {
       "filename": "clip_009_00-41-34_score79_v6_talk.mp4",
@@ -9033,7 +9167,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 42,
+      "note_jour_raison": "Talk, ZetFar explique pourquoi il cache son visage"
     },
     {
       "filename": "clip_031_01-53-11_score79_v6_funny.mp4",
@@ -9139,7 +9275,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 60,
+      "note_jour_raison": "Nikof invente un joueur Toto, troll mercato"
     },
     {
       "filename": "clip_032_04-10-03_score79_v6_react.mp4",
@@ -9263,7 +9401,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 66,
+      "note_jour_raison": "Akiira humilie Shark en token, pris pour Peterbot"
     },
     {
       "filename": "clip_036_05-55-17_score79_v6_funny.mp4",
@@ -9332,9 +9472,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1rqlvMcn_NpMw0sTbk8cK3UR_dtNFiXvv/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1u79GerFnKKfwbiZRS6Wj6QzBMDI0zMIR&export=download&confirm=t",
       "size_mb": 88.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_5",
+      "arc_position": 2,
+      "arc_label": "Nikof leak trois fois l'event escalade de Kalina",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -9369,7 +9509,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 54,
+      "note_jour_raison": "Kalina prend le cast et cherche un sponsor"
     },
     {
       "filename": "clip_037_06-43-20_score79_v6_funny.mp4",
@@ -9482,7 +9624,9 @@
           "views": 5822,
           "caption": "Nikof parle à Rax comme si c’était son petit chien 🤣🤣 #nikof #m8 #gentlemates "
         }
-      ]
+      ],
+      "note_jour": 58,
+      "note_jour_raison": "Partie de Risk le soir de l'invasion de l'Ukraine"
     },
     {
       "filename": "clip_020_02-36-19_score79_v6_funny.mp4",
@@ -9635,7 +9779,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 52,
+      "note_jour_raison": "Polo rage et coupe son micro, WaZz gagne"
     },
     {
       "filename": "clip_024_04-50-13_score79_v6_hype.mp4",
@@ -9746,7 +9892,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 57,
+      "note_jour_raison": "Swizzy élimine son propre mate de trio"
     },
     {
       "filename": "clip_020_01-21-20_score79_v6_funny.mp4",
@@ -9815,9 +9963,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1xQfGAo7jFNxS9stN4xacLmYgwNfIAjPt/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=151PlP2Att-q36kFecihV27BlVl4LZcz9&export=download&confirm=t",
       "size_mb": 329.7,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-11_7",
+      "arc_position": 3,
+      "arc_label": "La cup catastrophe de Jolavanille",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -9904,7 +10052,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 42,
+      "note_jour_raison": "Jo et son coach confondent droite et gauche"
     },
     {
       "filename": "clip_038_01-56-32_score78_v6_talk.mp4",
@@ -10036,7 +10186,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 79,
+      "note_jour_raison": "Talk, stratégie mercato M8, Vanyak payé en crypto"
     },
     {
       "filename": "clip_012_00-31-55_score78_v6_funny.mp4",
@@ -10157,7 +10309,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 56,
+      "note_jour_raison": "Clément fait payer sa copine en 50-50, anecdote drôle"
     },
     {
       "filename": "clip_001_buzzftn_score75_fan.mp4",
@@ -10268,7 +10422,9 @@
       "video_url_clean": "",
       "drive_url_clean": "",
       "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1SYYIPOlvqYvi5qoB4pf-hsqLWkOB7bEe",
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 20,
+      "note_jour_raison": "Repost TikTok de Jolavanille, lane peu gardée"
     },
     {
       "filename": "clip_023_aussieantics_score70_subs.mp4",
@@ -10374,7 +10530,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 27,
+      "note_jour_raison": "Bugha soupçonné de teaming avec Kraez"
     },
     {
       "filename": "clip_022_aussieantics_score70_subs.mp4",
@@ -10479,7 +10637,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "Clip de 11 s sur Bugha teaming, doublon"
     },
     {
       "filename": "clip_012_nikof_score70.mp4",
@@ -10584,7 +10744,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "Œil de Nikof sur Kurama, doublon"
     },
     {
       "filename": "clip_014_wazz_score70.mp4",
@@ -10688,7 +10850,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 47,
+      "note_jour_raison": "WaZz s'indigne de joueurs bloqués, doublon Pixie"
     },
     {
       "filename": "clip_016_podasai_score70.mp4",
@@ -10793,7 +10957,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 50,
+      "note_jour_raison": "Podasai Top 1 au Round 2, coaché par Seyyto"
     },
     {
       "filename": "clip_015_aussieantics_score70_subs.mp4",
@@ -10897,7 +11063,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 30,
+      "note_jour_raison": "AussieAntics commente un Top 1 d'Akiira, doublon"
     },
     {
       "filename": "clip_013_leothecrack_score70.mp4",
@@ -11002,7 +11170,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 38,
+      "note_jour_raison": "Rax edits face à Shxrk en token, Leo hurle"
     },
     {
       "filename": "clip_018_wazz_score70.mp4",
@@ -11107,7 +11277,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 30,
+      "note_jour_raison": "Top 1 de Wox, court et peu commenté"
     },
     {
       "filename": "clip_019_wazz_score70.mp4",
@@ -11213,7 +11385,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 33,
+      "note_jour_raison": "Doublon Wox achève iDrop"
     },
     {
       "filename": "clip_020_aussieantics_score70_subs.mp4",
@@ -11318,7 +11492,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "Shark gagne avec 7 kills, fin maladroite"
     },
     {
       "filename": "clip_017_leothecrack_score70.mp4",
@@ -11423,7 +11599,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 44,
+      "note_jour_raison": "Akiira gagne un 1v3 en token chez Leo"
     },
     {
       "filename": "clip_043_leothecrack_score70.mp4",
@@ -11528,7 +11706,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 36,
+      "note_jour_raison": "Rax détruit Ghost en token, doublon"
     },
     {
       "filename": "clip_040_nikof_score70.mp4",
@@ -11633,7 +11813,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 48,
+      "note_jour_raison": "Nikof voit en Rax l'élu"
     },
     {
       "filename": "clip_041_nikof_score70.mp4",
@@ -11738,7 +11920,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "Top 1 malin de Vanyak commenté par Nikof"
     },
     {
       "filename": "clip_042_nikof_score70.mp4",
@@ -11843,7 +12027,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 43,
+      "note_jour_raison": "Doublon du leak escalade au repas"
     },
     {
       "filename": "clip_039_nikof_score70.mp4",
@@ -11948,7 +12134,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 67,
+      "note_jour_raison": "Talk, Nikof juge Momsy sous-payé"
     },
     {
       "filename": "clip_044_leothecrack_score70.mp4",
@@ -12053,7 +12241,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 39,
+      "note_jour_raison": "Akiira enchaîne contre Shxrk, doublon token"
     },
     {
       "filename": "clip_045_leothecrack_score70.mp4",
@@ -12158,7 +12348,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "Akiira fait danser Ghost, punchline de Leo"
     },
     {
       "filename": "clip_047_leothecrack_score70.mp4",
@@ -12263,7 +12455,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 42,
+      "note_jour_raison": "Akiira élimine Shxrk, Leo crie oh mon dieu"
     },
     {
       "filename": "clip_048_aussieantics_score70_subs.mp4",
@@ -12369,7 +12563,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 21,
+      "note_jour_raison": "Peterbot 36 kills, clip long en anglais"
     },
     {
       "filename": "clip_002_fortnitefraactu_score70_twitter_2108921614423458010.mp4",
@@ -12469,7 +12665,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "Tweet Top 1 game 2 d'Akiira, doublon"
     },
     {
       "filename": "clip_006_akiiral2_score70_tournament.mp4",
@@ -12571,7 +12769,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 78,
+      "note_jour_raison": "POV Akiira Top 1 game 4, celui de la qualif"
     },
     {
       "filename": "clip_005_akiiral2_score66_tournament.mp4",
@@ -12673,7 +12873,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 72,
+      "note_jour_raison": "POV Akiira gagne la game 2 en finissant Shxrk"
     },
     {
       "filename": "clip_004_akiiral2_score66_tournament.mp4",
@@ -12775,7 +12977,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 68,
+      "note_jour_raison": "Akiira élimine Kurama, duel M8 au Fast Track"
     },
     {
       "filename": "clip_024_mrsavage_score60_subs.mp4",
@@ -12880,7 +13084,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 28,
+      "note_jour_raison": "MrSavage traite un joueur de pire du lobby"
     },
     {
       "filename": "clip_026_jolavanille_score60.mp4",
@@ -12986,7 +13192,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 35,
+      "note_jour_raison": "Doublon court de Jo en vadrouille dans la zone"
     },
     {
       "filename": "clip_025_vadeal_score60.mp4",
@@ -13090,7 +13298,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 59,
+      "note_jour_raison": "Vadeal enferme T3eny et se qualifie, 51 vues"
     },
     {
       "filename": "clip_027_wazz_score60.mp4",
@@ -13196,7 +13406,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 26,
+      "note_jour_raison": "1v1 de Swizzy sans dénouement clair"
     },
     {
       "filename": "clip_028_buzzftn_score60.mp4",
@@ -13302,7 +13514,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 30,
+      "note_jour_raison": "Doublon court du je la sens la qualif"
     },
     {
       "filename": "clip_029_momsyfnv2_score60.mp4",
@@ -13407,7 +13621,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 33,
+      "note_jour_raison": "Momsy bloqué dans le décor puis meurt"
     },
     {
       "filename": "clip_030_stizo__score60.mp4",
@@ -13512,7 +13728,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 28,
+      "note_jour_raison": "Tylio Top 1 casté par Stizo, 27 s"
     },
     {
       "filename": "clip_031_artskill_score60.mp4",
@@ -13617,7 +13835,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "Artskill meurt et coupe le stream, 2 vues"
     },
     {
       "filename": "clip_036_buzzftn_score60.mp4",
@@ -13723,7 +13943,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 32,
+      "note_jour_raison": "Doublon court du kill à 4 PV raté"
     },
     {
       "filename": "clip_034_jolavanille_score60.mp4",
@@ -13829,7 +14051,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 25,
+      "note_jour_raison": "Doublon droite gauche avec le coach"
     },
     {
       "filename": "clip_035_buzzftn_score60.mp4",
@@ -13935,7 +14159,9 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Pixie"
+      "editorial_context": "Dans best-of Dentoz recemment : Pixie",
+      "note_jour": 40,
+      "note_jour_raison": "Jo panique en zone, coaché par Buzz"
     },
     {
       "filename": "clip_033_harmonyglitch_score60.mp4",
@@ -14039,7 +14265,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "HarmonyGlitch meurt dans la zone, sans historique"
     },
     {
       "filename": "clip_037_stizo__score60.mp4",
@@ -14144,7 +14372,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 27,
+      "note_jour_raison": "Kills de Bastos castés par Stizo"
     },
     {
       "filename": "clip_032_k1ng_score60_subs.mp4",
@@ -14248,7 +14478,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 36,
+      "note_jour_raison": "K1ng meurt d'une chute, 403 vues"
     },
     {
       "filename": "clip_038_k1ng_score60.mp4",
@@ -14351,7 +14583,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "Victory Royale muette de 14 s"
     },
     {
       "filename": "clip_050_leothecrack_score60.mp4",
@@ -14456,7 +14690,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 37,
+      "note_jour_raison": "Akiira détruit Shxrk en token, 12 s"
     },
     {
       "filename": "clip_052_leothecrack_score60.mp4",
@@ -14561,7 +14797,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 45,
+      "note_jour_raison": "Talk, Leo pronostique les trios FNCS"
     },
     {
       "filename": "clip_053_nikof_score60.mp4",
@@ -14666,7 +14904,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 89,
+      "note_jour_raison": "Talk, Nikof annonce Fernandinho et Bimbo à M8"
     },
     {
       "filename": "clip_054_nikof_score60.mp4",
@@ -14771,7 +15011,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 50,
+      "note_jour_raison": "Talk, titre FNCS d'un joueur signé non annoncé"
     },
     {
       "filename": "clip_051_aussieantics_score60_subs.mp4",
@@ -14877,7 +15119,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "Shark bat Chino, déjà couvert par Nikof"
     },
     {
       "filename": "clip_056_nikof_score60.mp4",
@@ -14994,7 +15238,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 42,
+      "note_jour_raison": "Menace de leak d'adresse puis Rax insulte le lobby"
     },
     {
       "filename": "clip_057_nikof_score60.mp4",
@@ -15099,7 +15345,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 50,
+      "note_jour_raison": "Rax insulte en espagnol, Nikof inquiet"
     },
     {
       "filename": "clip_055_nikof_score60.mp4",
@@ -15216,7 +15464,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 35,
+      "note_jour_raison": "Nikof charrie Kalina après le leak, doublon"
     },
     {
       "filename": "clip_058_nikof_score60.mp4",
@@ -15333,7 +15583,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 45,
+      "note_jour_raison": "Rax tue son partenaire de token"
     },
     {
       "filename": "clip_059_nikof_score60.mp4",
@@ -15438,7 +15690,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 41,
+      "note_jour_raison": "Rax à 14 kills au Qualifier"
     },
     {
       "filename": "clip_060_nikof_score60.mp4",
@@ -15543,7 +15797,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 39,
+      "note_jour_raison": "Nikof raconte le leak escalade, doublon"
     },
     {
       "filename": "clip_062_nikof_score60.mp4",
@@ -15648,7 +15904,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 31,
+      "note_jour_raison": "Doublon cuisine et 1m90"
     },
     {
       "filename": "clip_063_nikof_score60.mp4",
@@ -15753,7 +16011,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 38,
+      "note_jour_raison": "Rax finit 2e à 8 HP, Nikof hurle"
     },
     {
       "filename": "clip_064_nikof_score60.mp4",
@@ -15858,7 +16118,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 35,
+      "note_jour_raison": "Doublon 30 rounds à Snayzy"
     },
     {
       "filename": "clip_061_nikof_score60.mp4",
@@ -15963,7 +16225,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 44,
+      "note_jour_raison": "Faux trio M8 2026, doublon troll"
     },
     {
       "filename": "clip_066_leothecrack_score60.mp4",
@@ -16081,7 +16345,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 34,
+      "note_jour_raison": "Rax edits en token, doublon"
     },
     {
       "filename": "clip_070_aussieantics_score60_subs.mp4",
@@ -16186,7 +16452,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "Richie rate un tir contre Cynix, hors scène FR"
     },
     {
       "filename": "clip_071_aussieantics_score60_subs.mp4",
@@ -16292,7 +16560,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "Pollo gagne un 1v1v1, hors scène FR"
     },
     {
       "filename": "clip_072_aussieantics_score60_subs.mp4",
@@ -16397,7 +16667,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "Scare gagne contre Clixxie, sans lien avec le jour"
     },
     {
       "filename": "clip_073_aussieantics_score60_subs.mp4",
@@ -16502,7 +16774,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 32,
+      "note_jour_raison": "Savage élimine Luna, chat qui explose, 34 vues"
     },
     {
       "filename": "clip_074_aussieantics_score60_subs.mp4",
@@ -16607,7 +16881,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 16,
+      "note_jour_raison": "Aussie se moque de Muzz, blague anglophone"
     },
     {
       "filename": "clip_075_aussieantics_score60_subs.mp4",
@@ -16713,7 +16989,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "PureBX qualifié à 5 points, élimine Yuz"
     },
     {
       "filename": "clip_076_aussieantics_score60_subs.mp4",
@@ -16819,7 +17097,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "Tir de Reet en token, 14 s sans contexte"
     },
     {
       "filename": "clip_077_aussieantics_score60_subs.mp4",
@@ -16925,7 +17205,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "Aussie crie devant un endgame, rien à montrer"
     },
     {
       "filename": "clip_078_aussieantics_score60_subs.mp4",
@@ -17030,7 +17312,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 23,
+      "note_jour_raison": "Peterbot élimine un joueur AFK"
     },
     {
       "filename": "clip_079_aussieantics_score60_subs.mp4",
@@ -17135,7 +17419,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 20,
+      "note_jour_raison": "Peterbot à 26 kills, doublon de la même game"
     },
     {
       "filename": "clip_080_aussieantics_score60_subs.mp4",
@@ -17240,7 +17526,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 29,
+      "note_jour_raison": "Peterbot record de points FNCS Solo"
     },
     {
       "filename": "clip_003_akiiral2_score60_tournament.mp4",
@@ -17342,7 +17630,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 19,
+      "note_jour_raison": "Kill isolé d'Akiira en game 2"
     },
     {
       "filename": "clip_001_akiiral2_score60_tournament.mp4",
@@ -17444,7 +17734,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "Kill isolé d'Akiira en game 1, rien de marquant"
     },
     {
       "filename": "clip_002_akiiral2_score60_tournament.mp4",
@@ -17546,7 +17838,9 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 20,
+      "note_jour_raison": "Kill isolé d'Akiira en game 1, sans enjeu"
     }
   ]
 }
