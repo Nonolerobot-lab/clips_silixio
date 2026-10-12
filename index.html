@@ -1428,10 +1428,13 @@
                  la place en hauteur, donc le texte est lisible en entier au lieu
                  d'etre coupe a deux lignes, et les 6 boutons de verdict se
                  retrouvent CENTRES sur toute la largeur du bas. -->
-            <!-- 6 boutons de feedback -->
+            <!-- 6 boutons de feedback. 2026-10-12 (GO PO) : « Top » (0 clic sur 1 541 verdicts)
+                 devient « 💎 Pépite » = clip a mettre de cote pour un best-of a long terme
+                 (streamer / saison). La valeur stockee reste `top` ; le pipeline la copie sur le
+                 Drive dans Pépites/<saison>/<streamer>/ (pipeline/pepites.py). -->
             <div class="feedback-row">
-                <button class="fb-btn fb-top" onclick="rate('top')">
-                    &#128293; Top<span class="shortcut">A</span>
+                <button class="fb-btn fb-top" onclick="rate('top')" title="À garder pour un best-of (streamer / saison)">
+                    &#128142; Pépite<span class="shortcut">A</span>
                 </button>
                 <button class="fb-btn fb-good" onclick="rate('good')">
                     &#9989; Bon<span class="shortcut">Z</span>
@@ -1551,7 +1554,7 @@
                  les clips suivants arrivent en RAM pendant le tri (le symptome
                  « 30 s par clip » ressemblait a une page morte). -->
             <span id="preloadHint" style="color:#7aa87a;"></span>
-            <div class="stat"><span class="sdot sdot-top"></span><span id="statTop">0</span> top</div>
+            <div class="stat"><span class="sdot sdot-top"></span><span id="statTop">0</span> pépites</div>
             <div class="stat"><span class="sdot sdot-good"></span><span id="statGood">0</span> bons</div>
             <div class="stat"><span class="sdot sdot-not_interesting"></span><span id="statNotInteresting">0</span> faibles</div>
             <div class="stat"><span class="sdot sdot-bad_framing"></span><span id="statBadFraming">0</span> mal cadres</div>
@@ -3502,7 +3505,7 @@
 
         // === UI UPDATES ===
         const VERDICT_LABELS = {
-            top:             '&#128293; Top',
+            top:             '&#128142; P\u00e9pite',
             good:            '&#9989; Bon',
             not_interesting: '&#128564; Moment faible',
             bad_framing:     '&#9986; Mal cadr\u00e9',
@@ -4099,7 +4102,7 @@
                 '<span style="font-size:1.3em;color:' + (precision >= 60 ? '#2ecc71' : '#f1c40f') + ';">' +
                     good_total + '/' + vals.length + ' bons (' + precision + '% de pr\u00e9cision)' +
                 '</span><br>' +
-                '&#128293; Top : ' + count('top') + ' &nbsp;|&nbsp; ' +
+                '&#128142; P\u00e9pites : ' + count('top') + ' &nbsp;|&nbsp; ' +
                 '&#9989; Bons : ' + count('good') + '<br>' +
                 '&#128564; Moments faibles : ' + count('not_interesting') + ' &nbsp;|&nbsp; ' +
                 '&#10060; Pas pertinents : ' + count('not_relevant') + ' &nbsp;|&nbsp; ' +
@@ -4716,7 +4719,7 @@
             });
             const targets = selection.length > 0 ? selection : CLIPS;
             const label = selection.length > 0
-                ? `${selection.length} clips Top/Bons`
+                ? `${selection.length} clips P\u00e9pites/Bons`
                 : `tous les ${targets.length} clips`;
             const downloadable = targets.filter(c => c.drive_url);
 
