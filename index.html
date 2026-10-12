@@ -448,6 +448,16 @@
             border-radius: 4px; padding: 1px 8px; font-size: 0.85em; text-decoration: none; cursor: pointer;
         }
         .clip-info-overlay .card-details-toggle:hover { border-color: #9b59b6; color: #e0e0e0; }
+        /* 2026-10-12 (GO PO) : carte en 4 lignes (note·type·streamer, contexte, description,
+           reperes de montage), une ligne chacune (2 max si la colonne est etroite), gris ; seules la note et la pastille
+           multi-POV gardent une couleur. */
+        .clip-info-overlay .card-l1 { font-size: 1.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .clip-info-overlay .card-line {
+            color: #9aa3ad; font-size: 0.82em; margin-top: 2px; line-height: 1.3;
+            /* colonne etroite (~260 px) : 2 lignes max plutot que de perdre la fin */
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .clip-info-overlay .card-pills { margin-top: 1px; }
 
         /* === Sprint 73.3 : 5 axes qualite editoriale === */
         .axes-row {
@@ -2445,89 +2455,124 @@
                 'talk_actu_compet': '\ud83c\udf99\ufe0f Actu comp\u00e9t',
                 'talk_moment_de_vie': '\ud83c\udf99\ufe0f Moment de vie',
                 'talk_avis': '\ud83c\udf99\ufe0f Avis', 'talk_anecdote': '\ud83c\udf99\ufe0f Anecdote',
+                'talk': '\ud83c\udf99\ufe0f Talk',  // 2026-10-12 (GO PO) : categorie des talks au manifest
             };
+            // 2026-10-12 (GO PO) : CARTE EN 4 LIGNES, deux couleurs seulement. Retour PO : « plein
+            // de couleurs dans tous les sens pour des choses pas faciles a comprendre », des
+            // signaux internes du pipeline presentes comme de l'info pour le monteur, et une
+            // ligne 🎯 parfois fausse (le tournoi de context_line vient du calendrier, pas du
+            // clip). En compact, toujours dans cet ordre :
+            //   1. note · type · streamer  (seule la note est coloree, seuils 45 / 25)
+            //   2. contexte : « Actu du jour · … » et/ou « Sequence 2/3 · … » (gris) — ou rien
+            //   3. description (redacteur, a defaut resume IA, a defaut texte)
+            //   4. reperes de montage : pic, evenements HUD (3 max, les plus proches du pic),
+            //      duree sequence / condense (gris) — ou rien
+            // puis une rangee de petites pastilles : multi-POV en BLEU (seule autre couleur, elle
+            // change la decision), fan TikTok / foule >= 3 / passages en GRIS. Tout le reste
+            // (ancienne note, verdicts IA, context_line, suite de, chapitres, pourquoi, ids...)
+            // passe dans « details ». Aucune donnee ni cle d'export n'est retiree.
+            const CARD_GRIS = '#9aa3ad';
+            const PILL_GRIS = 'background:rgba(255,255,255,0.06);color:#aab2bd;border:1px solid #ffffff22;padding:1px 7px;border-radius:10px;font-size:0.78em;margin:3px 6px 0 0;display:inline-block;text-decoration:none;';
+            const PILL_BLEU = 'background:rgba(52,152,219,0.18);color:#5dade2;border:1px solid #3498db88;padding:1px 7px;border-radius:10px;font-size:0.78em;margin:3px 6px 0 0;display:inline-block;font-weight:700;';
+            const DET_GRIS = 'color:' + CARD_GRIS + ';font-size:0.8em;margin-top:2px;line-height:1.3;';
             const scoreColor = clip.score >= 70 ? '#2ecc71' : clip.score >= 50 ? '#f1c40f' : '#e74c3c';
             const nSources = (clip.sources || []).length;
             const hasTwitchClips = (clip.sources || []).includes('twitch_clips');
-            let badge = '';
-            if (hasTwitchClips) badge = '<span style="color:#2ecc71;font-size:0.85em;margin-left:8px;">\ud83d\udfe2 Clipp\u00e9 par les viewers</span>';
-            else if (nSources >= 3) badge = '<span style="color:#2ecc71;font-size:0.85em;margin-left:8px;">\ud83d\udfe2 Confirm\u00e9</span>';
-            else if (nSources <= 1) badge = '<span style="color:#f1c40f;font-size:0.85em;margin-left:8px;">\ud83d\udfe1 Signal faible</span>';
-
-            let infoHtml = '<span class="timestamp">' + escHtml(clip.timestamp || '') + '</span>';
-            // 2026-10-12 (GO PO) : ce qui n'est pas indispensable au tri va dans detailsHtml,
-            // derriere « details ▸ » (voir l'assemblage en bas de la fonction).
             let detailsHtml = '';
+            let pillsHtml = '';
+
+            // --- Ligne 1 : note · type · streamer ---
+            let noteHtml;
             if (hasNoteJour(clip)) {
-                // 2026-09-23 : la note du jour remplace l'ancienne a l'affichage ; l'ancienne
-                // reste en petit. 2026-10-12 (GO PO) : note Fable = chances de garde, seuils
-                // 45 / 25 (noteJourColor), tooltip « Chances que Silixio garde : N % — raison ».
+                // 2026-09-23 : la note du jour remplace l'ancienne a l'affichage. 2026-10-12 (GO
+                // PO) : note Fable = chances de garde, seuils 45 / 25 (noteJourColor), tooltip
+                // « Chances que Silixio garde : N % — raison » ; l'ancienne note passe en details.
                 const nj = Math.round(clip.note_jour);
-                const njColor = noteJourColor(nj);
                 const njTip = 'Chances que Silixio garde : ' + nj + ' %'
                     + (clip.note_jour_raison ? ' — ' + clip.note_jour_raison : '')
                     + ' (' + noteJourLibelle(nj) + ' ; ancienne note : ' + Math.round(clip.score || 0) + ')';
-                infoHtml += '<span class="score" title="' + escHtml(njTip).replace(/"/g, '&quot;') + '" style="color:' + njColor + ';cursor:help;">' + nj + '<span style="font-size:0.7em;font-weight:normal;"> %</span></span>';
-                infoHtml += '<span title="Ancienne note (lane)" style="color:#7f8c8d;font-size:0.75em;margin-left:4px;">(' + Math.round(clip.score || 0) + ')</span>';
+                noteHtml = '<span class="score" title="' + escHtml(njTip).replace(/"/g, '&quot;') + '" style="color:' + noteJourColor(nj) + ';cursor:help;margin-left:0;">' + nj + '<span style="font-size:0.7em;font-weight:normal;"> %</span></span>';
+                detailsHtml += '<div style="' + DET_GRIS + '">Ancienne note (lane) : ' + Math.round(clip.score || 0) + '</div>';
             } else {
-                infoHtml += '<span class="score" style="color:' + scoreColor + ';">' + Math.round(clip.score || 0) + '</span>';
+                noteHtml = '<span class="score" style="color:' + scoreColor + ';margin-left:0;">' + Math.round(clip.score || 0) + '</span>';
             }
-            infoHtml += badge;
-            if (clip.ai_category) infoHtml += '<span class="category">' + (categoryFR[clip.ai_category] || escHtml(clip.ai_category)) + '</span>';
+            const catKey = clip.peak_category || clip.ai_category || '';
+            const l1Parts = [];
+            if (catKey) l1Parts.push(categoryFR[catKey] || escHtml(catKey));
+            if (isCommunityClip(clip)) {
+                l1Parts.push(escHtml(clip.community_source_streamer || clip.streamer || '') + ' (commu)');
+            } else if (clip.streamer) {
+                l1Parts.push(escHtml(clip.streamer));
+            }
+            let infoHtml = '<div class="card-l1">' + noteHtml
+                + (l1Parts.length ? '<span style="color:' + CARD_GRIS + ';"> · ' + l1Parts.join(' · ') + '</span>' : '')
+                + '</div>';
 
-            // 2026-08-26 (demande PO) : experience de mesure du RAPPEL du tri.
-            // A partir de cette run on livre TOUS les Twitch Clips telecharges,
-            // y compris ceux que le tri IA rejetait (CLIPS_ONLY_DELIVER_ALL) —
-            // le total du jour passe de ~110 a ~260 clips. Sans distinction
-            // visuelle, le monteur voit 260 clips indifferencies et la mesure
-            // d'une journee est perdue.
-            // Le cas qui porte l'information est review_ai_keep_original=false :
-            // ce sont les clips que notre IA jetait, donc chaque repechage est un
-            // faux negatif identifie. Il a donc son propre badge, plus visible.
+            // Details : reperes internes d'avant (horodatage VOD, signaux, verdicts IA, lane).
+            if (clip.timestamp) detailsHtml += '<div style="' + DET_GRIS + '">⏱ ' + escHtml(clip.timestamp) + ' dans la VOD</div>';
+            if (hasTwitchClips) detailsHtml += '<div style="' + DET_GRIS + '">Clippé par les viewers</div>';
+            else if (nSources >= 3) detailsHtml += '<div style="' + DET_GRIS + '">Confirmé par ' + nSources + ' signaux</div>';
+            else if (nSources <= 1) detailsHtml += '<div style="' + DET_GRIS + '">Signal faible</div>';
+            // 2026-08-26 (demande PO) : mesure du rappel du tri (Twitch Clips livres sans tri IA) ;
+            // review_ai_keep_original=false = clip que l'IA jetait. 2026-10-12 : en details, gris.
             if (clip.review_flag === 'twitch_clip_non_trie') {
-                const aiKept = clip.review_ai_keep_original;
                 const why = clip.review_drop_reason
                     ? 'Motif du rejet IA : ' + String(clip.review_drop_reason)
                     : 'Twitch Clip livre sans passer le tri IA.';
-                if (aiKept === false) {
-                    infoHtml += '<span title="' + escHtml(why) + '" style="background:#7b241c;'
-                        + 'color:#ffd7d2;padding:2px 8px;border-radius:10px;font-size:0.8em;'
-                        + 'margin-left:6px;font-weight:700;border:1px solid #c0392b;">'
-                        + '🧪 Rejeté par l\'IA</span>';
-                } else {
-                    infoHtml += '<span title="' + escHtml(why) + '" style="background:#1b3a4b;'
-                        + 'color:#bfe3f5;padding:2px 8px;border-radius:10px;font-size:0.8em;'
-                        + 'margin-left:6px;font-weight:600;border:1px solid #2e6b8a;">'
-                        + '🧪 Twitch Clip non trié</span>';
-                }
+                detailsHtml += '<div style="' + DET_GRIS + '" title="' + escHtml(why) + '">🧪 '
+                    + (clip.review_ai_keep_original === false ? 'Rejeté par l\'IA' : 'Twitch Clip non trié') + '</div>';
             }
-            // 2026-09-05 (GO PO) : talk \u00ab sujet du jour \u00bb \u2014 le brief editorial a
-            // guide la chasse, le clip est en tete de file (review_priority).
-            if (clip.story_topic) {
-                // 2026-09-06 : la pastille portait les 60 premiers caracteres du
-                // libelle (coupes mi-mot), repetes juste dessous par la carte de
-                // contexte : le meme texte trois fois dans une colonne de 171 px.
-                // Ici le sujet seul (« Pixie »), le libelle complet au survol.
+            const laneCfg = {core: 'lane-core', trend: 'lane-trend', explore: 'lane-explore'};
+            if (clip.lane && laneCfg[clip.lane]) {
+                detailsHtml += '<span class="lane-badge ' + laneCfg[clip.lane] + '">' + escHtml(clip.lane) + '</span>';
+            }
+            if (isCommunityClip(clip)) {
+                const communityType = String(clip.community_type || 'pro').toUpperCase();
+                const bits = ['COMMU ' + communityType];
+                if (clip.contributor_pseudo) bits.push(String(clip.contributor_pseudo));
+                if (clip.community_categorie) bits.push(String(clip.community_categorie));
+                if (clip.community_source_followers) bits.push(Math.round(clip.community_source_followers).toLocaleString('fr-FR') + ' followers');
+                detailsHtml += '<div style="' + DET_GRIS + '">' + escHtml(bits.join(' · ')) + '</div>';
+            }
+
+            // --- Ligne 2 : contexte (actu du jour, sequence) ---
+            const l2Parts = [];
+            const l2Tips = [];
+            if (clip.story_topic || clip.story_label) {
+                // 2026-09-05 (GO PO) : sujet du jour du brief editorial. Libelle lisible = le
+                // sujet seul (« Rax », « FNCS Solo Qualifier 2 EU, Round 3 »), complet au survol.
                 const storyFull = String(clip.story_label || '');
-                const storyShort = storyFull.split(/\s[:\u2014\u2013-]\s/)[0].trim().substring(0, 28);
-                const storyLbl = storyShort ? ' \u00b7 ' + escHtml(storyShort) : '';
-                infoHtml += '<span title="' + escHtml(storyFull || 'Sujet du jour (brief editorial)') + '" style="background:#7b1f1f;color:#ffe3e3;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:700;border:1px solid #e74c3c;">\ud83d\udcf0 Actu du jour' + storyLbl + '</span>';
+                let storyShort = storyFull.split(/\s[:—–-]\s/)[0].replace(/\s*\(.*$/, '').trim();
+                if (storyShort.length > 40) storyShort = storyShort.substring(0, 40).replace(/\s+\S*$/, '') + '…';
+                l2Parts.push('📰 Actu du jour' + (storyShort ? ' · ' + escHtml(storyShort) : ''));
+                l2Tips.push(storyFull || 'Sujet du jour (brief éditorial)');
             }
-            // Sprint 39 : Victory Arc badge \u2014 2026-09-05 : porte aussi le multi-POV
-            // (arc_id \u00ab multipov_<date>_<n> \u00bb : meme moment vu par plusieurs
-            // streamers, clips regroupes cote a cote, libelle deja prefixe).
-            // 2026-09-05 (GO PO) : carte de contexte « qui, quoi, enjeu » du sujet du
-            // jour + liens « suite de » vers les clips des jours precedents sur le meme
-            // sujet (le monteur fait le rappel sans chercher).
+            const isMultipov = !!clip.arc_id && String(clip.arc_id).indexOf('multipov_') === 0;
+            if (clip.arc_id && clip.arc_label && !isMultipov) {
+                // Sequence du redacteur (seq_digest_*) ou arc : position / nombre de membres du jour.
+                const pool = (typeof ALL_CLIPS !== 'undefined' && ALL_CLIPS.length) ? ALL_CLIPS : CLIPS;
+                const nArc = pool.filter(function (c) { return c.arc_id === clip.arc_id; }).length;
+                const pos = clip.arc_position ? String(clip.arc_position) + (nArc > 1 ? '/' + nArc : '') : '';
+                l2Parts.push('Séquence' + (pos ? ' ' + escHtml(pos) : '') + ' · ' + escHtml(clip.arc_label));
+                l2Tips.push('Séquence ' + pos + ' : ' + clip.arc_label);
+            }
+            if (l2Parts.length) {
+                infoHtml += '<div class="card-line" title="' + escHtml(l2Tips.join(' — ')) + '">' + l2Parts.join(' · ') + '</div>';
+            }
+            // 2026-09-05 (GO PO) : carte de contexte « qui, quoi, enjeu » du sujet du jour.
             if (clip.story_context) {
-                detailsHtml += '<div style="color:#f5b7b1;font-size:0.82em;margin-top:3px;line-height:1.3;">'
-                    + '📰 <b>Contexte</b> : ' + escHtml(clip.story_context) + '</div>';
+                detailsHtml += '<div style="' + DET_GRIS + '">📰 <b>Contexte</b> : ' + escHtml(clip.story_context) + '</div>';
             }
-            // 2026-09-16 (regle 2, PO) : ligne de contexte « tournoi · round · resultat »
-            // ou mode de jeu, assemblee a la livraison (pipeline/context_line.py).
+            // 2026-09-16 (regle 2) : context_line = « tournoi · round · resultat » + HUD. 2026-10-12
+            // (GO PO) : le tournoi vient du CALENDRIER (faux sur un clip d'un autre tournoi) — en
+            // details seulement, la partie HUD a part (elle est deja dans la ligne 4).
+            if (clip.hud_event_line) {
+                detailsHtml += '<div style="' + DET_GRIS + '">🎯 Écran (HUD) : ' + escHtml(clip.hud_event_line) + '</div>';
+            }
             if (clip.context_line) {
-                infoHtml += '<div style="color:#9fb3c8;font-size:0.82em;margin-top:3px;line-height:1.3;" title="Cadre du clip : tournoi, round, resultat du streamer, ou mode de jeu">'
-                    + '🎯 ' + escHtml(clip.context_line) + '</div>';
+                let ctxCal = String(clip.context_line);
+                if (clip.hud_event_line) ctxCal = ctxCal.replace(String(clip.hud_event_line), '').replace(/[\s·]+$/, '').trim();
+                if (ctxCal) detailsHtml += '<div style="' + DET_GRIS + '" title="Vient du calendrier des tournois du jour, pas de l\'image du clip">📅 Tournoi du jour (calendrier, pas forcément ce clip) : ' + escHtml(ctxCal) + '</div>';
             }
             if (clip.story_previous && clip.story_previous.length) {
                 const prevLinks = clip.story_previous.map(function (p) {
@@ -2539,76 +2584,11 @@
                 }).join(' &nbsp;|&nbsp; ');
                 detailsHtml += '<div style="color:#f39c12;font-size:0.8em;margin-top:2px;">↩ Suite de : ' + prevLinks + '</div>';
             }
-            // 2026-09-23 : phase de la lane VOD = plusieurs passages de la VOD recolles dans ce
-            // fichier (pipeline/phase_assembly.py) ; les timecodes VOD sont au survol.
-            if (Array.isArray(clip.phase_segments) && clip.phase_segments.length >= 2) {
-                const _hmsPh = function (t) {
-                    t = Math.max(0, Math.floor(Number(t) || 0));
-                    const h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
-                    return h + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
-                };
-                const _segTxt = clip.phase_segments.map(function (sg) { return _hmsPh(sg[0]) + '-' + _hmsPh(sg[1]); }).join(' · ');
-                infoHtml += '<span title="Passages de la VOD recolles : ' + escHtml(_segTxt) + '" style="background:linear-gradient(135deg,#7e57c2,#5e35b1);color:#fff;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:bold;">🎬 Phase · ' + clip.phase_segments.length + ' passages</span>';
-            }
-            if (clip.arc_id && clip.arc_label) {
-                const isMultipov = String(clip.arc_id).indexOf('multipov_') === 0;
-                const arcTitle = isMultipov && clip.multipov_confidence != null
-                    ? 'Meme moment (heure absolue) chez ' + escHtml((clip.multipov_streamers || []).join(', ')) + ' \u00b7 confiance ' + Number(clip.multipov_confidence).toFixed(2)
-                    : '';
-                infoHtml += '<span title="' + arcTitle + '" style="background:linear-gradient(135deg,#f9a825,#ff8f00);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:bold;">' + (isMultipov ? '' : '\ud83c\udfc6 ') + escHtml(clip.arc_label) + ' (' + clip.arc_position + ')</span>';
-            }
-            // 2026-09-05 : pre-marquage multi-POV de la lane chat entier \u2014 pastille
-            // provisoire SEULEMENT si multipov_delivery n'a pas pose d'arc_id definitif.
-            if (!clip.arc_id && clip.arc_id_provisoire) {
-                infoHtml += '<span title="Pre-marquage lane chat (a confirmer a la livraison) \u00b7 ' + escHtml(clip.arc_id_provisoire) + '" style="background:linear-gradient(135deg,#f9a825,#ff8f00);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8em;margin-left:6px;font-weight:bold;">\ud83d\udc40 M\u00eame moment ?</span>';
-            }
-            // 2026-09-06 : bonus « foule viewers » de la lane chat entier — N spectateurs ont
-            // clippe ce moment sur Twitch (verite terrain gratuite), badge discret.
-            if (Number(clip.crowd_clips) > 0) {
-                const nCrowd = Number(clip.crowd_creators) > 0 ? Number(clip.crowd_creators) : Number(clip.crowd_clips);
-                const crowdTitle = Number(clip.crowd_clips) + ' Twitch Clip(s) de viewers sur ce moment'
-                    + (Number(clip.crowd_views) > 0 ? ' · ' + Number(clip.crowd_views) + ' vues' : '');
-                infoHtml += '<span title="' + escHtml(crowdTitle) + '" style="background:rgba(255,202,40,0.15);color:#ffca28;border:1px solid #ffca2855;padding:1px 7px;border-radius:10px;font-size:0.78em;margin-left:6px;">👥 ' + nCrowd + (nCrowd > 1 ? ' viewers' : ' viewer') + '</span>';
-            }
-            // 2026-09-23 (GO PO) : badge « posté par un fan sur TikTok » (pipeline/tiktok_fans.py) —
-            // un fan a coupé et posté ce moment (retrouvé par la voix) ; lien vers son post, et sa
-            // légende dessous : c'est le contexte (« la game de la qualif Div 1 ») qui manquait.
-            if (Number(clip.tiktok_fan_count) > 0) {
-                const tkViews = Number(clip.tiktok_fan_views) || 0;
-                const tkViewsTxt = tkViews >= 1000
-                    ? (Math.round(tkViews / 100) / 10).toLocaleString('fr-FR') + ' k'
-                    : String(tkViews);
-                const tkTitle = Number(clip.tiktok_fan_count) + ' post(s) de fan sur TikTok · le plus vu : @'
-                    + String(clip.tiktok_fan_account || '') + ' · ' + tkViews.toLocaleString('fr-FR') + ' vues';
-                infoHtml += '<a href="' + escHtml(clip.tiktok_fan_url || '#') + '" target="_blank" rel="noopener" title="' + escHtml(tkTitle) + '" style="background:rgba(37,244,238,0.12);color:#25f4ee;border:1px solid #25f4ee55;padding:1px 7px;border-radius:10px;font-size:0.78em;margin-left:6px;text-decoration:none;">📱 Fan TikTok · ' + escHtml(tkViewsTxt) + ' vues</a>';
-                if (clip.tiktok_fan_caption) {
-                    detailsHtml += '<div style="color:#8fe9e6;font-size:0.8em;margin-top:2px;line-height:1.3;" title="Légende du post du fan">📱 « ' + escHtml(clip.tiktok_fan_caption) + ' »</div>';
-                }
-            }
-            // Sprint 42 : lane badge (core=bleu, trend=orange, explore=violet)
-            const laneCfg = {core: 'lane-core', trend: 'lane-trend', explore: 'lane-explore'};
-            if (clip.lane && laneCfg[clip.lane]) {
-                infoHtml += '<span class="lane-badge ' + laneCfg[clip.lane] + '">' + escHtml(clip.lane) + '</span>';
-            }
-            // Sprint 59 : badge source (COMMU PRO/OWN = clip communautaire, sinon streamer normal)
-            if (isCommunityClip(clip)) {
-                const communityPseudo = clip.contributor_pseudo ? ' · ' + escHtml(clip.contributor_pseudo) : '';
-                const communitycat    = clip.community_categorie ? ' <span style="color:#888;font-size:0.9em">(' + escHtml(clip.community_categorie) + ')</span>' : '';
-                const communityType = String(clip.community_type || 'pro').toUpperCase();
-                const sourceStreamer = clip.community_source_streamer ? ' · ' + escHtml(clip.community_source_streamer) : '';
-                const followerText = clip.community_source_followers ? ' (' + Math.round(clip.community_source_followers).toLocaleString('fr-FR') + ' followers)' : '';
-                infoHtml += '<div style="margin-top:3px;">'
-                          + '<span style="background:rgba(155,89,182,0.2);color:#9b59b6;border:1px solid #9b59b644;padding:1px 7px;border-radius:4px;font-size:0.75em;font-weight:700;letter-spacing:0.04em;margin-right:6px;">COMMU ' + escHtml(communityType) + '</span>'
-                          + '<span style="color:#9b59b6;font-size:0.85em;">' + communityPseudo + communitycat + sourceStreamer + followerText + '</span>'
-                          + '</div>';
-            } else if (clip.streamer) {
-                infoHtml += '<div style="color:#9b59b6;font-size:0.85em;margin-top:2px;">' + escHtml(clip.streamer) + '</div>';
-            }
-            // 2026-10-11 (GO PO) : description du redacteur en chef (ce qu'on voit a l'ecran, d'apres
-            // la planche du clip). 2026-10-12 (GO PO) : UNE seule description en compact — celle
-            // du redacteur, a defaut le resume IA, a defaut le texte ; les autres (redondantes :
-            // la carte montrait la meme chose trois fois) passent dans « details ».
-            // title : le resume est coupe a 2 lignes en CSS, le survol rend le texte complet.
+
+            // --- Ligne 3 : description ---
+            // 2026-10-11 (GO PO) : description du redacteur en chef ; a defaut le resume IA, a
+            // defaut le texte ; les autres (redondantes) en details. Coupee a 2 lignes, complete
+            // au survol.
             const descRedac = clip.redacteur_description
                 ? '<div class="text" title="Description du rédacteur en chef : ' + escHtml(clip.redacteur_description) + '">&#9997;&#65039; ' + escHtml(clip.redacteur_description) + '</div>'
                 : '';
@@ -2619,8 +2599,83 @@
             if (descRedac) { infoHtml += descRedac; detailsHtml += descSummary + descText; }
             else if (descSummary) { infoHtml += descSummary; detailsHtml += descText; }
             else infoHtml += descText;
-            // 2026-10-01 (PO) : chapitres d'une phase — ce qu'on voit dans chaque passage, timecode
-            // du fichier cliquable (saute la video a ce passage). Une ligne, discrete.
+
+            // --- Ligne 4 : reperes de montage ---
+            const l4Parts = [];
+            const peakSec = (clip.has_peak_marker && clip.peak_in_clip_sec !== undefined && clip.peak_in_clip_sec !== null)
+                ? Number(clip.peak_in_clip_sec) : null;
+            if (peakSec !== null && isFinite(peakSec)) l4Parts.push('Pic ' + escHtml(formatClipOffset(peakSec)));
+            if (Array.isArray(clip.hud_events) && clip.hud_events.length) {
+                const HUD_FR = {elim: 'Élimination', victoire: 'Victoire', mort: 'Mort', fin: 'Fin de partie'};
+                const evs = clip.hud_events.filter(function (e) { return e && HUD_FR[e.type] && isFinite(Number(e.t)); });
+                const ref = (peakSec !== null && isFinite(peakSec)) ? peakSec : null;
+                const kept = (ref === null ? evs.slice(0, 3)
+                    : evs.slice().sort(function (a, b) { return Math.abs(Number(a.t) - ref) - Math.abs(Number(b.t) - ref); }).slice(0, 3))
+                    .sort(function (a, b) { return Number(a.t) - Number(b.t); });
+                kept.forEach(function (e) { l4Parts.push(HUD_FR[e.type] + ' ' + escHtml(formatClipOffset(e.t))); });
+            }
+            if (clip.teaser_url) {
+                const seqLen = Number(clip.duration || clip.duration_sec || clip.seq_span_sec) || 0;
+                l4Parts.push('Séquence ' + escHtml(_formatMinSec(seqLen))
+                    + (Number(clip.teaser_duration_sec) > 0 ? ' · condensé ' + Math.round(Number(clip.teaser_duration_sec)) + ' s' : ''));
+            }
+            if (l4Parts.length) {
+                infoHtml += '<div class="card-line" title="Repères de montage (temps du fichier'
+                    + (clip.teaser_url ? ' de la séquence entière' : '') + ')">' + l4Parts.join(' · ') + '</div>';
+            }
+
+            // --- Pastilles : multi-POV en bleu, le reste en gris ---
+            if (isMultipov && clip.arc_label) {
+                // 2026-09-05 : meme moment vu par plusieurs streamers (arc_label deja prefixe
+                // « 👀 Meme moment · a + b »), clips regroupes cote a cote.
+                const mpTitle = 'Même moment (heure absolue) chez ' + (clip.multipov_streamers || []).join(', ')
+                    + (clip.multipov_confidence != null ? ' · confiance ' + Number(clip.multipov_confidence).toFixed(2) : '')
+                    + (clip.arc_position ? ' · ' + clip.arc_position : '');
+                pillsHtml += '<span title="' + escHtml(mpTitle) + '" style="' + PILL_BLEU + '">' + escHtml(clip.arc_label) + '</span>';
+            } else if (!clip.arc_id && clip.arc_id_provisoire) {
+                // 2026-09-05 : pre-marquage multi-POV de la lane chat (a confirmer a la livraison).
+                pillsHtml += '<span title="Pré-marquage lane chat (à confirmer à la livraison) · ' + escHtml(clip.arc_id_provisoire) + '" style="' + PILL_BLEU + '">👀 Même moment ?</span>';
+            }
+            // 2026-09-23 (GO PO) : un fan a coupe et poste ce moment sur TikTok ; sa legende au
+            // survol et en details.
+            if (Number(clip.tiktok_fan_count) > 0) {
+                const tkViews = Number(clip.tiktok_fan_views) || 0;
+                const tkViewsTxt = tkViews >= 1000
+                    ? (Math.round(tkViews / 100) / 10).toLocaleString('fr-FR') + ' k'
+                    : String(tkViews);
+                const tkTitle = Number(clip.tiktok_fan_count) + ' post(s) de fan sur TikTok · le plus vu : @'
+                    + String(clip.tiktok_fan_account || '') + ' · ' + tkViews.toLocaleString('fr-FR') + ' vues'
+                    + (clip.tiktok_fan_caption ? ' · « ' + String(clip.tiktok_fan_caption) + ' »' : '');
+                pillsHtml += '<a href="' + escHtml(clip.tiktok_fan_url || '#') + '" target="_blank" rel="noopener" title="' + escHtml(tkTitle) + '" style="' + PILL_GRIS + '">📱 Fan TikTok · ' + escHtml(tkViewsTxt) + ' vues</a>';
+                if (clip.tiktok_fan_caption) {
+                    detailsHtml += '<div style="' + DET_GRIS + '" title="Légende du post du fan">📱 « ' + escHtml(clip.tiktok_fan_caption) + ' »</div>';
+                }
+            }
+            // 2026-09-06 : foule viewers (N spectateurs ont clippe ce moment). 2026-10-12 (GO PO) :
+            // pastille seulement a partir de CROWD_PILL_MIN viewers, en dessous en details.
+            const CROWD_PILL_MIN = 3;
+            if (Number(clip.crowd_clips) > 0) {
+                const nCrowd = Number(clip.crowd_creators) > 0 ? Number(clip.crowd_creators) : Number(clip.crowd_clips);
+                const crowdTitle = Number(clip.crowd_clips) + ' Twitch Clip(s) de viewers sur ce moment'
+                    + (Number(clip.crowd_views) > 0 ? ' · ' + Number(clip.crowd_views) + ' vues' : '');
+                const crowdTxt = '👥 ' + nCrowd + (nCrowd > 1 ? ' viewers ont clippé ce moment' : ' viewer a clippé ce moment');
+                if (nCrowd >= CROWD_PILL_MIN) pillsHtml += '<span title="' + escHtml(crowdTitle) + '" style="' + PILL_GRIS + '">' + crowdTxt + '</span>';
+                else detailsHtml += '<div style="' + DET_GRIS + '" title="' + escHtml(crowdTitle) + '">' + crowdTxt + '</div>';
+            }
+            // 2026-09-23 : phase = plusieurs passages de la VOD recolles ; timecodes VOD au survol.
+            if (Array.isArray(clip.phase_segments) && clip.phase_segments.length >= 2) {
+                const _hmsPh = function (t) {
+                    t = Math.max(0, Math.floor(Number(t) || 0));
+                    const h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
+                    return h + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+                };
+                const _segTxt = clip.phase_segments.map(function (sg) { return _hmsPh(sg[0]) + '-' + _hmsPh(sg[1]); }).join(' · ');
+                pillsHtml += '<span title="Passages de la VOD recollés : ' + escHtml(_segTxt) + '" style="' + PILL_GRIS + '">🎬 ' + clip.phase_segments.length + ' passages</span>';
+            }
+            if (pillsHtml) infoHtml += '<div class="card-pills">' + pillsHtml + '</div>';
+
+            // --- Details (suite) ---
+            // 2026-10-01 (PO) : chapitres d'une phase, timecode du fichier cliquable.
             if (Array.isArray(clip.phase_chapters) && clip.phase_chapters.length >= 2) {
                 const chaps = clip.phase_chapters.map(function (ch) {
                     const t = Math.max(0, Number(ch[0]) || 0);
@@ -2630,11 +2685,9 @@
                 }).join(' <span style="color:#5e5873;">·</span> ');
                 detailsHtml += '<div style="color:#b39ddb;font-size:0.8em;margin-top:3px;line-height:1.35;" title="Ce qu\'on voit dans chaque passage (clic = la video saute au passage)">🎬 ' + chaps + '</div>';
             }
-            // 2026-09-05 : titre YouTube propose par la lane chat entier (discret, informatif).
+            // 2026-09-05 : titre YouTube propose par la lane chat entier.
             if (clip.proposed_title) detailsHtml += '<div style="color:#7f8c8d;font-size:0.8em;margin-top:2px;" title="Titre YouTube propose par la lane chat">💡 ' + escHtml(clip.proposed_title) + '</div>';
-            // 2026-09-19 (GO PO) : dedup inter-lanes a la livraison (pipeline/lane_dedup.py) —
-            // le meme moment livre par d'autres lanes (talk, lane chat, Twitch Clip) n'est plus
-            // dans la file : ses versions sont attachees ici, repliees, un lien video chacune.
+            // 2026-09-19 (GO PO) : dedup inter-lanes — les autres versions du meme moment.
             if (Array.isArray(clip.other_versions) && clip.other_versions.length) {
                 const nOv = clip.other_versions.length;
                 const ovItems = clip.other_versions.map(function (v) {
@@ -2651,7 +2704,7 @@
                     + ovItems + '</details>';
             }
             const peakHintHtml = buildPeakHint(clip);
-            if (peakHintHtml) infoHtml += '<div class="peak-meta">' + peakHintHtml + '</div>';
+            if (peakHintHtml) detailsHtml += '<div class="peak-meta">' + peakHintHtml + '</div>';
             // Sprint 57 : explication lisible (remplace score_explanation monospace)
             const whyHtml = buildClipExplanation(clip);
             if (whyHtml) detailsHtml += '<div class="why">' + whyHtml + '</div>';
