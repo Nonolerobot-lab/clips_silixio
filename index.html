@@ -263,6 +263,9 @@
             white-space: nowrap;
         }
         .dl-group .dl-btn { margin: 0; }
+        /* 2026-10-11 (GO PO) : sequences en deux fichiers — le bouton Clip donne la version
+           entiere, ce petit lien le condense (masque pour les autres clips). */
+        .dl-group .dl-mini { font-size: 0.72em; opacity: 0.8; padding: 4px 8px; }
         /* 2026-09-17 (PO) : vitesse de lecture, groupee a droite des actions du pic. */
         .speed-group {
             display: inline-flex;
@@ -1184,6 +1187,17 @@
         }
         .redacteur-src.missing { color: #777; cursor: default; text-decoration: none; }
         .redacteur-msg { color: #e67e22; font-size: 0.9em; margin-left: 6px; }
+        /* 2026-10-11 (GO PO) : plan de video du redacteur unique (cle `redacteur.plan`), replie
+           sous les 3 titres ; chaque clip de l'ossature saute au clip (meme mecanisme que les
+           clips sources des titres). */
+        .redacteur-plan { margin-top: 4px; }
+        .redacteur-plan summary { cursor: pointer; color: #9b9bc0; }
+        .redacteur-plan summary b { color: #f1c40f; }
+        .redacteur-plan ol { margin: 4px 0 2px 20px; padding: 0; }
+        .redacteur-plan li { margin: 2px 0; }
+        .redacteur-plan .plan-role { color: #f1c40f; font-weight: 700; }
+        .redacteur-plan .plan-garder { color: #8fd18f; }
+        .redacteur-plan .plan-note { color: #9b9bc0; margin-top: 2px; }
         .date-btn {
             background: #1a1a3a;
             color: #9b9bc0;
@@ -1453,6 +1467,11 @@
                 <a class="dl-btn" id="dlClipBtn" onclick="return downloadClip(event)" target="_blank" rel="noopener">
                     Clip <span class="shortcut">D</span>
                 </a>
+                <!-- 2026-10-11 (GO PO) : sequence = le bouton Clip donne la VERSION ENTIERE (montage) ;
+                     ce lien donne le condense (30-60 s). Masque quand le clip n'a pas de condense. -->
+                <a class="dl-btn dl-mini" id="dlTeaserBtn" onclick="return downloadTeaser(event)" href="#" style="display:none" title="Telecharger le condense (30-60 s autour du pic)">
+                    condens&eacute;
+                </a>
                 <button class="dl-btn" id="dlChatBtn" onclick="downloadChat()" title="Telecharger la video du chat">
                     Chat
                 </button>
@@ -1466,6 +1485,12 @@
                  quand le clip n'a pas de version propre (clip FR sans sous-titres). -->
             <div class="chat-toggle" id="subsClipToggle" onclick="toggleSubsClip()" title="Sous-titres FR : actif = version sous-titree, clic = version sans sous-titres pour ce clip">
                 &#127916; Sous-titres
+            </div>
+            <!-- 2026-10-11 (GO PO) : sequences en deux fichiers. Le lecteur joue le CONDENSE (leger,
+                 il charge vite) ; ce bouton bascule sur la VERSION ENTIERE (« Sequence entiere · 6 min 05 »)
+                 et retour. Masque pour les clips sans condense. -->
+            <div class="chat-toggle" id="seqFullToggle" onclick="toggleSeqFull()" style="display:none" title="Condense pour trier, version entiere pour monter : clic = basculer">
+                &#127902; S&eacute;quence enti&egrave;re
             </div>
             <!-- 2026-08-26 : bouton "Subs FR" RETIRE. Deux raisons cumulees :
                  (1) son raccourci annonce `S` etait un mensonge — `case 's'`
@@ -1658,6 +1683,7 @@
             axesFeedback = remapStateKeys(axesFeedback, keyMap); // Sprint 80
             chatFlags = remapStateKeys(chatFlags, keyMap);
             subsOff = remapStateKeys(subsOff, keyMap); // 2026-09-05
+            seqDlVariant = remapStateKeys(seqDlVariant, keyMap); // 2026-10-11
             exportedClips = remapStateKeys(exportedClips, keyMap);
             if (window.notRelevantDetails) {
                 window.notRelevantDetails = remapStateKeys(window.notRelevantDetails, keyMap);
@@ -1701,6 +1727,7 @@
                     axesFeedback, // Sprint 80 : axes explicites
                     chatFlags,
                     subsOff,       // 2026-09-05 : sous-titres coupes par clip
+                    seqDlVariant,  // 2026-10-11 : version de sequence telechargee (entiere / condense)
                     exportedClips, // Fix 2026-04-09 : persiste les clips masques apres export
                     // 2026-09-16 : les causes (mal cadre, pas pertinent) survivent a un F5.
                     badFramingDetails: window.badFramingDetails || {},
@@ -1753,6 +1780,7 @@
                 if (saved.axesFeedback)  axesFeedback  = saved.axesFeedback; // Sprint 80
                 if (saved.chatFlags)     chatFlags     = saved.chatFlags;
                 if (saved.subsOff)       subsOff       = saved.subsOff;       // 2026-09-05
+                if (saved.seqDlVariant)  seqDlVariant  = saved.seqDlVariant;  // 2026-10-11
                 if (saved.exportedClips) exportedClips = saved.exportedClips; // Fix 2026-04-09
                 if (saved.badFramingDetails)  window.badFramingDetails  = saved.badFramingDetails;  // 2026-09-16
                 if (saved.notRelevantDetails) window.notRelevantDetails = saved.notRelevantDetails; // 2026-09-16
@@ -2002,6 +2030,42 @@
                     + '<button class="redacteur-copy" data-idx="' + i + '" title="Copier le titre">Copier</button>'
                     + '<span>' + srcs + '</span></div>';
             });
+            // 2026-10-11 (GO PO) : plan de video du titre retenu (redacteur unique, cle `plan`),
+            // replie par defaut : titre retenu, duree cible, ossature « role · streamer · pourquoi ·
+            // a garder » (clic = saut au clip), reponse du titre vers la minute N, remplissage.
+            const plan = r.plan || {};
+            const oss = Array.isArray(plan.ossature) ? plan.ossature : [];
+            const planSrc = function (e) {
+                const lbl = escHtml(String(e.streamer || '?'));
+                if (e.existe === false || !e.clip_id) {
+                    return '<span class="redacteur-src missing" title="Clip introuvable dans ce jour">' + lbl + '</span>';
+                }
+                return '<span class="redacteur-src" data-clip="' + escHtml(e.clip_id) + '" title="Aller au clip">' + lbl + '</span>';
+            };
+            if (oss.length) {
+                html += '<details class="redacteur-plan"><summary>&#127916; <b>Plan de la vidéo</b>'
+                    + (plan.titre ? ' &middot; ' + escHtml(plan.titre) : '')
+                    + (plan.duree_cible_min ? ' &middot; ~' + escHtml(String(plan.duree_cible_min)) + ' min' : '')
+                    + ' &middot; ' + oss.length + ' clips</summary><ol>';
+                const roleLbl = { montee: 'montée', reponse: 'réponse' };
+                oss.forEach(function (e) {
+                    html += '<li><span class="plan-role">' + escHtml(String(roleLbl[e.role] || e.role || '?')) + '</span> &middot; '
+                        + planSrc(e)
+                        + (e.pourquoi ? ' &middot; ' + escHtml(String(e.pourquoi)) : '')
+                        + (e.a_garder ? ' &middot; <span class="plan-garder">à garder : ' + escHtml(String(e.a_garder)) + '</span>' : '')
+                        + '</li>';
+                });
+                html += '</ol>';
+                const rep = plan.reponse_du_titre || {};
+                if (rep.minute_cible !== null && rep.minute_cible !== undefined) {
+                    html += '<div class="plan-note">Réponse du titre vers la minute ' + escHtml(String(rep.minute_cible))
+                        + (rep.clip_id ? ' &middot; ' + planSrc(rep) : '') + '</div>';
+                }
+                if (plan.remplissage) {
+                    html += '<div class="plan-note">Remplissage : ' + escHtml(String(plan.remplissage)) + '</div>';
+                }
+                html += '</details>';
+            }
             bar.innerHTML = html;
             bar.classList.add('show');
             bar.querySelectorAll('.redacteur-copy').forEach(function (btn) {
@@ -2073,13 +2137,14 @@
         }
 
         // 2026-10-01 : clic sur un timecode de chapitre d'une phase = la video saute au passage
-        // (capture : avant tout autre gestionnaire de la fiche).
+        // (capture : avant tout autre gestionnaire de la fiche). 2026-10-11 : les chapitres sont
+        // en temps de la version entiere — sur le condense, on y bascule d'abord.
         document.addEventListener('click', function (e) {
             const a = e.target && e.target.closest ? e.target.closest('.phase-chap') : null;
             if (!a) return;
             e.preventDefault();
             e.stopPropagation();
-            seekPlayerToClipOffset(Number(a.getAttribute('data-t')) || 0);
+            _seekFullVersion(Number(a.getAttribute('data-t')) || 0);
         }, true);
 
         // 2026-09-17 (PO) : la barre « repere visuel » est supprimee. Il ne reste que les
@@ -2094,7 +2159,10 @@
             const duration = Number(clip.clip_duration || clip.duration || 0);
             const peak = Number(clip.peak_in_clip_sec);
             const entrySuggestion = clip.entry_suggestion_sec;
-            const hasMarker = !!clip.has_peak_marker && duration > 0 && Number.isFinite(peak);
+            // 2026-10-11 (GO PO) : la pastille pic vaut pour la version entiere d'une sequence ;
+            // sur le condense (le pic y est vers 20 s), pas de saut.
+            const onTeaser = typeof _seqOnTeaser === 'function' && _seqOnTeaser(clip);
+            const hasMarker = !onTeaser && !!clip.has_peak_marker && duration > 0 && Number.isFinite(peak);
             const hasEntry = hasMarker && clip.peak_strategy === 'action'
                 && entrySuggestion !== null && entrySuggestion !== undefined;
 
@@ -2112,6 +2180,7 @@
         function jumpToPeak() {
             const clip = CLIPS[currentIndex];
             if (!clip || clip.peak_in_clip_sec === undefined || clip.peak_in_clip_sec === null) return;
+            if (typeof _seqOnTeaser === 'function' && _seqOnTeaser(clip)) return;  // 2026-10-11 : version entiere seulement
             seekPlayerToClipOffset(clip.peak_in_clip_sec);
         }
 
@@ -2220,8 +2289,10 @@
                     if (code === 1) return; // ignore les abort (changement de src, navigation)
                     if (!_retried && (code === 2 || code === 4)) {
                         _retried = true;
-                        const sep = clip.video_url.includes('?') ? '&' : '?';
-                        player.src = clip.video_url + sep + '_r=1';
+                        // 2026-10-11 : on relance la version JOUEE (condense d'une sequence compris).
+                        const _src = _getPlayerUrl(clip) || clip.video_url;
+                        const sep = _src.includes('?') ? '&' : '?';
+                        player.src = _src + sep + '_r=1';
                         player.play().catch(() => {});
                         return;
                     }
@@ -2471,6 +2542,10 @@
             } else if (clip.streamer) {
                 infoHtml += '<div style="color:#9b59b6;font-size:0.85em;margin-top:2px;">' + escHtml(clip.streamer) + '</div>';
             }
+            // 2026-10-11 (GO PO) : description du redacteur en chef (ce qu'on voit a l'ecran, d'apres
+            // la planche du clip), au-dessus du resume, meme style discret.
+            if (clip.redacteur_description) infoHtml += '<div class="text" title="Description du rédacteur en chef : '
+                + escHtml(clip.redacteur_description) + '">&#9997;&#65039; ' + escHtml(clip.redacteur_description) + '</div>';
             // title : le resume est coupe a 2 lignes en CSS, le survol rend le texte complet.
             if (clip.ai_summary) infoHtml += '<div class="text" title="' + escHtml(clip.ai_summary) + '">'
                 + escHtml(clip.ai_summary) + '</div>';
@@ -2544,6 +2619,9 @@
             }
             // 2026-09-05 (PO) : etat du bouton sous-titres pour CE clip
             _refreshSubsClipBtn(clip);
+            // 2026-10-11 (GO PO) : sequence — bouton « Sequence entiere » + lien « condense »
+            _refreshSeqBtn(clip);
+            _refreshTeaserDlBtn(clip);
 
             // Feedback button highlight
             highlightFeedbackBtn(feedback[clipKey]);
@@ -2861,7 +2939,9 @@
             _refreshSubsClipBtn(clip);
             const player = document.getElementById('player');
             if (player && player.tagName === 'VIDEO') {
-                const target = _getActiveVideoUrl(clip);
+                // 2026-10-11 : la version JOUEE (condense d'une sequence ou clip), pas forcement
+                // celle du telechargement.
+                const target = _getPlayerUrl(clip);
                 if (target && player.src !== target) {
                     const t = player.currentTime || 0;
                     const wasPaused = player.paused;
@@ -2871,6 +2951,89 @@
                 }
             }
             if (typeof _prepareNativeDownload === 'function') _prepareNativeDownload(clip);
+        }
+
+        // === 2026-10-11 (GO PO) : SEQUENCES EN DEUX FICHIERS ===
+        // Une sequence porte un CONDENSE (teaser_url, 30-60 s autour du pic) : c'est lui que le
+        // lecteur joue par defaut (leger, il charge vite). Le bouton « Sequence entiere » bascule
+        // sur la version entiere (video_url, celle du telechargement) et retour ; un clic sur un
+        // chapitre y bascule puis saute au passage ; la pastille pic ne vaut que sur la version
+        // entiere. Le chat livre est celui de la version entiere : sur le condense, il est cale
+        // avec teaser_offset_sec. seqDlVariant = ce que Silixio telecharge (seq_download_variant).
+        let seqFull = {};       // { clipKey: true } — version entiere choisie (session)
+        let seqDlVariant = {};  // { clipKey: 'entiere' | 'condense' } — persiste et exporte
+        function _hasTeaser(clip) { return !!(clip && clip.teaser_url); }
+        function _seqOnTeaser(clip) {
+            try { return _hasTeaser(clip) && !seqFull[getClipStateKey(clip)]; } catch (e) { return false; }
+        }
+        // URL que le LECTEUR joue ; le telechargement garde _getActiveVideoUrl (version entiere).
+        function _getPlayerUrl(clip) {
+            if (_seqOnTeaser(clip)) {
+                return (_subsOffFor(clip) && clip.teaser_url_clean) ? clip.teaser_url_clean : clip.teaser_url;
+            }
+            return _getActiveVideoUrl(clip);
+        }
+        function _formatMinSec(sec) {
+            const t = Math.max(0, Math.round(Number(sec) || 0));
+            return Math.floor(t / 60) + ' min ' + String(t % 60).padStart(2, '0');
+        }
+        function _refreshSeqBtn(clip) {
+            const btn = document.getElementById('seqFullToggle');
+            if (!btn) return;
+            if (!_hasTeaser(clip)) { btn.style.display = 'none'; return; }
+            btn.style.display = '';
+            const onTeaser = _seqOnTeaser(clip);
+            btn.classList.toggle('active', !onTeaser);
+            btn.innerHTML = onTeaser
+                ? '&#127902; S&eacute;quence enti&egrave;re &middot; ' + _formatMinSec(clip.duration || clip.duration_sec)
+                : '&#127902; Condens&eacute; &middot; ' + _formatMinSec(clip.teaser_duration_sec);
+        }
+        function _refreshTeaserDlBtn(clip) {
+            const a = document.getElementById('dlTeaserBtn');
+            if (a) a.style.display = _hasTeaser(clip) ? '' : 'none';
+        }
+        // Nouvelle source du lecteur (blob precharge s'il est pret, sinon streaming), depart a startAt.
+        function _switchPlayerSource(clip, startAt) {
+            const player = document.getElementById('player');
+            if (!player || player.tagName !== 'VIDEO') return false;
+            const target = _getPlayerUrl(clip);
+            if (!target) return false;
+            const ready = _preloadGetReady(target);
+            if (!ready) _preloadAbort(target);
+            player.src = ready || target;
+            const t = Math.max(0, Number(startAt) || 0);
+            if (t > 0) {
+                player.addEventListener('loadedmetadata', function () {
+                    try { player.currentTime = t; } catch (e) { /* lecteur pas pret : depart a 0 */ }
+                }, { once: true });
+            }
+            player.play().catch(() => {});
+            return true;
+        }
+        function toggleSeqFull() {
+            const clip = CLIPS[currentIndex];
+            if (!_hasTeaser(clip)) return;
+            const key = getClipStateKey(clip);
+            if (seqFull[key]) delete seqFull[key]; else seqFull[key] = true;
+            _switchPlayerSource(clip, 0);
+            _refreshSeqBtn(clip);
+            updatePeakGuide(clip);
+        }
+        // Chapitre (temps de la version entiere) : bascule sur elle si besoin, puis saute.
+        function _seekFullVersion(sec) {
+            const clip = CLIPS[currentIndex];
+            if (_seqOnTeaser(clip)) {
+                seqFull[getClipStateKey(clip)] = true;
+                _switchPlayerSource(clip, sec);
+                _refreshSeqBtn(clip);
+                updatePeakGuide(clip);
+                return true;
+            }
+            return seekPlayerToClipOffset(sec);
+        }
+        // Le chat livre est celui de la version entiere : sur le condense, il est decale.
+        function _chatOffsetFor(clip) {
+            return _seqOnTeaser(clip) ? (Number(clip.teaser_offset_sec) || 0) : 0;
         }
         function toggleSubs() {
             _subsEnabled = !_subsEnabled;
@@ -2926,11 +3089,23 @@
         let _preloadOrder = [];         // URLs a precharger, par ordre de lecture
         const _preloadFails = new Map();
 
-        // Version reellement lue par le player (sous-titree / propre / _subs) :
-        // c'est elle qu'on precharge, sinon le blob pret n'est pas le bon fichier.
+        // Version reellement lue par le player (sous-titree / propre / _subs ; condense d'une
+        // sequence depuis le 2026-10-11) : c'est elle qu'on precharge, sinon le blob pret n'est
+        // pas le bon fichier.
         function _preloadUrlOf(clip) {
             if (!clip) return null;
-            return (typeof _getActiveVideoUrl === 'function' ? _getActiveVideoUrl(clip) : null) || clip.video_url || null;
+            return (typeof _getPlayerUrl === 'function' ? _getPlayerUrl(clip) : null) || clip.video_url || null;
+        }
+
+        // 2026-10-11 : un clip de sequence se precharge par son CONDENSE (~1 min), pas par la
+        // version entiere (size_mb, ~300 Mo) : poids estime au plafond de debit des livrables.
+        const PRELOAD_TEASER_MB_PER_SEC = 1.25;  // 10 Mbit/s (V6_DELIVER_MAXRATE_MBPS)
+        const PRELOAD_TEASER_DEFAULT_SEC = 60;   // duree supposee si le manifest ne la donne pas
+        function _preloadSizeMb(c) {
+            if (typeof _seqOnTeaser === 'function' && _seqOnTeaser(c)) {
+                return (Number(c.teaser_duration_sec) || PRELOAD_TEASER_DEFAULT_SEC) * PRELOAD_TEASER_MB_PER_SEC;
+            }
+            return c.size_mb > 0 ? c.size_mb : PRELOAD_DEFAULT_MB;
         }
 
         function _preloadGetReady(url) {
@@ -3010,7 +3185,7 @@
                 if (!c || !c.video_url) continue;
                 const url = _preloadUrlOf(c);
                 if (!url || keep.has(url)) continue;
-                const mb = c.size_mb > 0 ? c.size_mb : PRELOAD_DEFAULT_MB;
+                const mb = _preloadSizeMb(c);
                 if (order.length > 0 && mb > left) break;   // ordre de lecture respecte
                 left -= mb;
                 keep.add(url);
@@ -3112,6 +3287,43 @@
             if (supported && CLIPS[currentIndex] === clip) btn.href = url;
         }
 
+        // 2026-10-11 (GO PO) : sequences en deux fichiers. Le bouton Clip donne la VERSION
+        // ENTIERE (montage) ; le petit lien « condense » donne le condense. seqDlVariant garde ce
+        // qui a ete pris ('entiere' l'emporte), exporte dans le feedback (seq_download_variant).
+        function _noteSeqDownload(clip, variant) {
+            if (!clip || !clip.teaser_url || typeof seqDlVariant === 'undefined') return;
+            const key = getClipStateKey(clip);
+            if (variant === 'entiere' || !seqDlVariant[key]) seqDlVariant[key] = variant;
+        }
+
+        function _teaserFilename(clip) {
+            const base = ((clip && clip.filename) || 'clip.mp4').replace(/(_subs)?\.mp4$/i, '');
+            return base + '_condense.mp4';
+        }
+
+        function downloadTeaser(event) {
+            if (event && event.preventDefault) event.preventDefault();
+            const clip = CLIPS[currentIndex];
+            if (!clip || !clip.teaser_url) return false;
+            const active = (typeof _subsOffFor === 'function' && _subsOffFor(clip) && clip.teaser_url_clean)
+                ? clip.teaser_url_clean : clip.teaser_url;
+            let url = clip.teaser_drive_url || active;
+            try {
+                // Meme Worker que le clip : s'il sert les telechargements nommes, on s'en sert.
+                const u = new URL(active, location.href);
+                if (_dlNativeSupport.get(_nativeDownloadKey(u.href)) === true) {
+                    u.searchParams.set('download', '1');
+                    u.searchParams.set('filename', _teaserFilename(clip));
+                    url = u.href;
+                }
+            } catch (_) { /* URL illisible : lien Drive */ }
+            triggerDownload(url, _teaserFilename(clip), true);
+            downloads[getClipStateKey(clip)] = true;
+            _noteSeqDownload(clip, 'condense');
+            saveProgress();
+            return false;
+        }
+
         function downloadClip(event) {
             const clip = CLIPS[currentIndex];
             if (!clip) return false;
@@ -3120,6 +3332,7 @@
                 if (event) event.currentTarget.href = url;
                 else triggerDownload(url, clip.filename, true); // Raccourci D.
                 downloads[getClipStateKey(clip)] = true;
+                _noteSeqDownload(clip, 'entiere');
                 saveProgress();
                 _refreshDlBtn(true);
                 _advanceAfterDownload();
@@ -3163,6 +3376,7 @@
             if (!clip.video_url) {
                 if (clip.drive_url) {
                     downloads[getClipStateKey(clip)] = true;
+                    _noteSeqDownload(clip, 'entiere');
                     triggerDownload(clip.drive_url, clip.filename, true);
                     saveProgress();
                 }
@@ -3186,6 +3400,7 @@
                 document.body.removeChild(a);
                 setTimeout(() => URL.revokeObjectURL(url), 60000);
                 downloads[getClipStateKey(clip)] = true;
+                _noteSeqDownload(clip, 'entiere');
                 saveProgress();
                 _dlActive = Math.max(0, _dlActive - 1);
                 _refreshDlBtn(true);
@@ -3897,6 +4112,9 @@
                     // 2026-09-05 (PO) : sous-titres FR coupes par Silixio sur ce clip
                     subs_disabled: !!subsOff[clipKey],
                     has_subs: !!clip.has_subs,
+                    // 2026-10-11 (GO PO) : sequence en deux fichiers — ce que Silixio a telecharge
+                    // ('entiere' l'emporte sur 'condense') ; null hors sequence ou sans telechargement.
+                    seq_download_variant: seqDlVariant[clipKey] || null,
                     // Sprint 80 : axes explicites (moment_quality / cut_quality / redundancy)
                     moment_quality: mergedAxes.moment_quality || '',
                     cut_quality:    mergedAxes.cut_quality    || '',
@@ -4112,6 +4330,8 @@
             if (!hasMarker || peak === undefined || peak === null) return null;
 
             let txt = '&#127919; Pic à <strong>' + escHtml(formatClipOffset(peak)) + '</strong>';
+            // 2026-10-11 : sequence = ce temps est celui de la version entiere, pas du condense.
+            if (clip.teaser_url) txt += ' de la séquence entière';
             if (clip.peak_strategy === 'action' &&
                     clip.entry_suggestion_sec !== undefined &&
                     clip.entry_suggestion_sec !== null) {
@@ -4314,13 +4534,30 @@
             mainPlayer.addEventListener('pause',  _onMainPause);
             mainPlayer.addEventListener('play',   _onMainPlay);
             mainPlayer.addEventListener('seeked', _onMainSeeked);
+            // 2026-10-11 : chat de la version entiere cale sur le condense (et apres bascule).
+            mainPlayer.addEventListener('loadedmetadata', _syncChatNow);
+            chatVideo.addEventListener('loadedmetadata', _syncChatNow);
         }
         function _detachChatSync(mainPlayer) {
             if (!mainPlayer) return;
             mainPlayer.removeEventListener('pause',  _onMainPause);
             mainPlayer.removeEventListener('play',   _onMainPlay);
             mainPlayer.removeEventListener('seeked', _onMainSeeked);
+            mainPlayer.removeEventListener('loadedmetadata', _syncChatNow);
             _chatSyncTarget = null;
+        }
+        // 2026-10-11 (GO PO) : recale le chat sur le lecteur, decalage du condense compris
+        // (le chat livre est celui de la version entiere d'une sequence).
+        const CHAT_RESYNC_TOLERANCE_SEC = 0.5;
+        function _syncChatNow() {
+            const main = document.getElementById('player');
+            if (!_chatSyncTarget || !main || main.tagName !== 'VIDEO') return;
+            const want = (main.currentTime || 0) + _chatOffsetFor(CLIPS[currentIndex]);
+            try {
+                if (Math.abs((_chatSyncTarget.currentTime || 0) - want) > CHAT_RESYNC_TOLERANCE_SEC) {
+                    _chatSyncTarget.currentTime = want;
+                }
+            } catch (e) { /* chat pas encore pret : recale a son loadedmetadata */ }
         }
         // === 2026-09-17 (PO) : VITESSE DE LECTURE ===
         // Le tri se fait souvent a 1,25x. Le choix est memorise dans le navigateur et
@@ -4370,13 +4607,14 @@
         function _onMainPlay()   {
             if (_chatSyncTarget) {
                 _chatSyncTarget.playbackRate = REVIEW_SPEED;   // 2026-09-17 : sinon le chat derive
+                _syncChatNow();                                // 2026-10-11 : condense = chat decale
                 _chatSyncTarget.play().catch(()=>{});
             }
         }
         function _onMainSeeked() {
             const main = document.getElementById('player');
             if (_chatSyncTarget && main && main.tagName === 'VIDEO') {
-                _chatSyncTarget.currentTime = main.currentTime;
+                _chatSyncTarget.currentTime = main.currentTime + _chatOffsetFor(CLIPS[currentIndex]);
             }
         }
 
