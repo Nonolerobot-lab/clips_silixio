@@ -1,6 +1,27 @@
 {
   "days": [
     {
+      "date": "2026-10-14",
+      "total_clips": 69,
+      "streamers": [
+        "akiiral2",
+        "asianjeff",
+        "aussieantics",
+        "community",
+        "jolavanille",
+        "kirillianfn1",
+        "kurama_203",
+        "leothecrack",
+        "mrsavage",
+        "noahreyli",
+        "podasai",
+        "revenja",
+        "stizo_",
+        "venofn",
+        "zetfartv"
+      ]
+    },
+    {
       "date": "2026-10-13",
       "total_clips": 146,
       "streamers": [
@@ -132,26 +153,7 @@
         "venofn",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-10-07",
-      "total_clips": 74,
-      "streamers": [
-        "asianjeff",
-        "buzzftn",
-        "jolavanille",
-        "khanada_",
-        "leothecrack",
-        "momsyfnv2",
-        "mrsavage",
-        "nikof",
-        "snayzy",
-        "stizo_",
-        "vadeal",
-        "venofn",
-        "wazz"
-      ]
     }
   ],
-  "latest": "2026-10-13"
+  "latest": "2026-10-14"
 }
