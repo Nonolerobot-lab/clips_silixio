@@ -1,6 +1,48 @@
 {
   "days": [
     {
+      "date": "BACKLOG",
+      "label": "⏳ Clips en retard",
+      "total_clips": 387,
+      "streamers": [
+        "akiiral2",
+        "alibaba_rcm",
+        "artskill",
+        "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "community",
+        "flickzyv2",
+        "harmonyglitch",
+        "jannisz",
+        "jolavanille",
+        "k1ng",
+        "khanada_",
+        "kirillianfn1",
+        "kurama_203",
+        "leothecrack",
+        "momsyfnv2",
+        "mrsavage",
+        "nikof",
+        "noahreyli",
+        "peterbot",
+        "pixiefnbr1",
+        "podasai",
+        "queasy",
+        "revenja",
+        "rezonfn",
+        "rythmillezto",
+        "shxrkfnbr",
+        "snayzy",
+        "solary magl",
+        "stizo_",
+        "vadeal",
+        "venofn",
+        "wazz",
+        "zetfartv"
+      ]
+    },
+    {
       "date": "2026-10-15",
       "total_clips": 71,
       "streamers": [
