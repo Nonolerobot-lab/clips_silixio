@@ -1989,6 +1989,9 @@
 
         // Sprint 51 : Applique MANIFEST courant à l'interface (réinitialisé à chaque changement de jour)
         function applyManifest() {
+            // 2026-10-15 : ferme la mesure d'usage de l'edito du jour precedent (avant le reset
+            // du chrono, ses temps actifs en dependent).
+            editoEndSession();
             // Reinitialiser l'etat (nouveau jour)
             currentIndex = 0;
             feedback = {};
@@ -2050,6 +2053,7 @@
 
             // Sprint 58 : reset + démarrage du chrono pour cette session
             resetSessionTimer();
+            editoStartSession(); // 2026-10-15 : mesure d'usage de l'edito (edito_usage)
 
             loadClip(currentIndex);
         }
@@ -2081,7 +2085,7 @@
                     if (a.existe === false || !a.clip_id) {
                         return '<span class="redacteur-src missing" title="Clip introuvable dans ce jour">' + lbl + '</span>';
                     }
-                    return '<span class="redacteur-src" data-clip="' + escHtml(a.clip_id) + '" title="Aller au clip">' + lbl + '</span>';
+                    return '<span class="redacteur-src" data-clip="' + escHtml(a.clip_id) + '" data-src="titre" title="Aller au clip">' + lbl + '</span>';
                 }).join(' &nbsp;+&nbsp; ');
                 html += '<div class="redacteur-row">'
                     + '<span class="redacteur-titre">' + (i + 1) + '. ' + escHtml(t.titre || '') + '</span>'
@@ -2093,12 +2097,12 @@
             // a garder » (clic = saut au clip), reponse du titre vers la minute N, remplissage.
             const plan = r.plan || {};
             const oss = Array.isArray(plan.ossature) ? plan.ossature : [];
-            const planSrc = function (e) {
+            const planSrc = function (e, src) {
                 const lbl = escHtml(String(e.streamer || '?'));
                 if (e.existe === false || !e.clip_id) {
                     return '<span class="redacteur-src missing" title="Clip introuvable dans ce jour">' + lbl + '</span>';
                 }
-                return '<span class="redacteur-src" data-clip="' + escHtml(e.clip_id) + '" title="Aller au clip">' + lbl + '</span>';
+                return '<span class="redacteur-src" data-clip="' + escHtml(e.clip_id) + '" data-src="' + (src || 'plan') + '" title="Aller au clip">' + lbl + '</span>';
             };
             if (oss.length) {
                 html += '<details class="redacteur-plan"><summary>&#127916; <b>Plan de la vidéo</b>'
@@ -2117,7 +2121,7 @@
                 const rep = plan.reponse_du_titre || {};
                 if (rep.minute_cible !== null && rep.minute_cible !== undefined) {
                     html += '<div class="plan-note">Réponse du titre vers la minute ' + escHtml(String(rep.minute_cible))
-                        + (rep.clip_id ? ' &middot; ' + planSrc(rep) : '') + '</div>';
+                        + (rep.clip_id ? ' &middot; ' + planSrc(rep, 'reponse') : '') + '</div>';
                 }
                 if (plan.remplissage) {
                     html += '<div class="plan-note">Remplissage : ' + escHtml(String(plan.remplissage)) + '</div>';
@@ -2134,9 +2138,14 @@
                 bar.classList.toggle('collapsed', now);
                 tg.textContent = now ? 'afficher' : 'réduire';
                 try { localStorage.setItem('reviewRedacteurCollapsed', now ? '1' : '0'); } catch (e) { /* prive */ }
+                editoBandeau(!now); // 2026-10-15 : mesure d'usage de l'edito
             };
+            // 2026-10-15 : ouverture / fermeture du plan (mesure d'usage de l'edito).
+            const planEl = bar.querySelector('.redacteur-plan');
+            if (planEl) planEl.addEventListener('toggle', function () { editoPlan(planEl.open); });
             bar.querySelectorAll('.redacteur-copy').forEach(function (btn) {
                 btn.onclick = function () {
+                    editoCompte('titres_copies');
                     const t = titres[parseInt(btn.dataset.idx, 10)] || {};
                     const done = function () { btn.textContent = 'Copié'; setTimeout(function () { btn.textContent = 'Copier'; }, 1500); };
                     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -2148,13 +2157,15 @@
                 };
             });
             bar.querySelectorAll('.redacteur-src[data-clip]').forEach(function (el) {
-                el.onclick = function () { jumpToClipId(el.dataset.clip); };
+                el.onclick = function () { jumpToClipId(el.dataset.clip, el.dataset.src); };
             });
         }
 
         // Saut a un clip du jour par son clip_id. Un filtre streamer actif est leve d'abord ;
         // un clip deja trie et masque ne peut plus etre affiche (message dans le bandeau).
-        function jumpToClipId(id) {
+        // 2026-10-15 : `source` (titre / plan / reponse) = d'ou vient le clic, compte dans
+        // edito_usage.
+        function jumpToClipId(id, source) {
             const msg = document.getElementById('redacteurMsg');
             if (msg) msg.textContent = '';
             const find = function () {
@@ -2169,10 +2180,290 @@
             }
             if (idx < 0) {
                 if (msg) msg.textContent = 'Clip déjà trié et masqué (bouton « Réafficher »)';
+                editoClic(source, id, false);
                 return;
             }
+            editoClic(source, id, true);
+            editoNextVia = source || 'bandeau';
             loadClip(idx);
         }
+
+        // === USAGE DE L'EDITO (2026-10-15) ===
+        // Silixio se sert-il de l'edito Fable (bandeau titres + plan, descriptions de carte,
+        // file triee par note) ? Au 15/10 personne ne le savait : la page ne loguait rien.
+        // Compteurs PAR SESSION (= un chargement de jour), memorises par date dans
+        // localStorage (clips_silixio_edito_<date>) pour qu'un export porte toutes les sessions
+        // du jour, exportes sous la cle `edito_usage` du feedback (nouvelle cle, aucune autre
+        // touchee). Temps = temps ACTIF (getActiveMs, hors pauses), comme session_timing.
+        //   bandeau     : ouvert au chargement, ouvertures / fermetures, temps actif ouvert
+        //   plan        : ouvertures du « Plan de la video », temps actif visible
+        //   clics_clip  : clic sur un clip du bandeau (source titre / plan / reponse)
+        //   descriptions: cartes vues avec une description Fable, survols >= 0,8 s
+        //   visites     : ordre reel de visionnage, rang = place dans la file de la page
+        //                 (tri par note Fable), via = suivant / precedent / saut / minimap /
+        //                 titre / plan / reponse / histoire / liste / annulation / debut
+        //   ordre       : les memes visites comptees par via + % vu dans l'ordre de la page
+        const EDITO_SCHEMA = 'edito_usage.1';
+        const EDITO_MAX_SESSIONS = 10;      // sessions gardees par jour (les plus recentes)
+        const EDITO_MAX_VISITES = 600;      // visites detaillees par session (compteurs au-dela)
+        const EDITO_MAX_CLICS = 200;
+        const EDITO_SURVOL_MIN_MS = 800;    // en dessous : passage de souris, pas une lecture
+        const EDITO_SURVOL_MAX_MS = 20000;  // au-dessus : souris posee la, plafonnee
+        // Jours gardes en localStorage : chaque export part sur le Drive, inutile de garder
+        // plus ; sans purge, ces cles grossiraient jusqu'au quota (~5 Mo) et feraient echouer
+        // la sauvegarde des verdicts (saveProgress).
+        const EDITO_MAX_JOURS = 14;
+        let editoSession = null;       // session courante (objet exporte tel quel)
+        let editoPast = [];            // sessions precedentes du meme jour (localStorage)
+        let editoKey = null;           // cle localStorage du jour de la session courante
+        let editoBarOpen = false;      // bandeau affiche et deplie
+        let editoPlanOpen = false;     // <details> du plan ouvert
+        let editoBandeauSince = null;  // getActiveMs() a l'ouverture du bandeau, null si ferme
+        let editoPlanSince = null;     // idem, plan visible (plan ouvert ET bandeau deplie)
+        let editoDescSince = null;     // Date.now() a l'entree de la souris sur la description
+        let editoNextVia = null;       // origine du prochain loadClip (titre, plan, minimap...)
+        let editoLastKey = null;       // cle du dernier clip vu
+        let editoDescSeen = {};        // clips a description Fable deja vus dans la session
+
+        function editoSec(ms) { return Math.round(ms / 100) / 10; }
+
+        function editoSave() {
+            if (!editoSession || !editoKey) return;
+            try {
+                localStorage.setItem(editoKey, JSON.stringify({ sessions: editoSessions() }));
+            } catch (e) { /* stockage plein ou prive : la session courante part quand meme a l'export */ }
+        }
+
+        // Ne garde que les EDITO_MAX_JOURS jours les plus recents (cles triees par date).
+        function editoPurge() {
+            try {
+                const keys = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const k = localStorage.key(i);
+                    if (k && k.indexOf('clips_silixio_edito_') === 0 && k !== editoKey) keys.push(k);
+                }
+                keys.sort().slice(0, Math.max(0, keys.length - (EDITO_MAX_JOURS - 1)))
+                    .forEach(k => localStorage.removeItem(k));
+            } catch (e) { /* stockage indisponible : rien a purger */ }
+        }
+
+        // Ouvre une session de mesure : appele par applyManifest APRES resetSessionTimer().
+        function editoStartSession() {
+            editoKey = 'clips_silixio_edito_' + (MANIFEST ? (MANIFEST.date || 'default') : 'default');
+            editoPurge();
+            editoPast = [];
+            try {
+                const saved = JSON.parse(localStorage.getItem(editoKey) || 'null');
+                if (saved && Array.isArray(saved.sessions)) editoPast = saved.sessions;
+            } catch (e) { /* illisible : on repart de zero */ }
+            const r = (MANIFEST && MANIFEST.redacteur) || {};
+            const clips = ALL_CLIPS || [];
+            const bar = document.getElementById('redacteurBar');
+            const shown = !!(bar && bar.classList.contains('show'));
+            editoBarOpen = shown && !bar.classList.contains('collapsed');
+            editoPlanOpen = false;
+            editoBandeauSince = null;
+            editoPlanSince = null;
+            editoDescSince = null;
+            editoNextVia = 'debut';
+            editoLastKey = null;
+            editoDescSeen = {};
+            editoSession = {
+                session_start: new Date().toISOString(),
+                derniere_activite: null,
+                session_actif_sec: 0,
+                edito: {
+                    titres: Array.isArray(r.titres) ? r.titres.length : 0,
+                    plan_clips: (r.plan && Array.isArray(r.plan.ossature)) ? r.plan.ossature.length : 0,
+                    descriptions: clips.filter(c => !!c.redacteur_description).length,
+                    notes_fable: clips.filter(hasNoteJour).length,
+                    clips: clips.length,
+                    tri_note_fable: clips.some(hasNoteJour),
+                },
+                bandeau: {
+                    present: shown,
+                    ouvert_au_chargement: editoBarOpen,
+                    ouvertures: 0,
+                    fermetures: 0,
+                    ouvert_actif_sec: 0,
+                },
+                plan: {
+                    present: !!(bar && bar.querySelector('.redacteur-plan')),
+                    ouvertures: 0,
+                    visible_actif_sec: 0,
+                },
+                titres_copies: 0,
+                clics_clip: [],
+                descriptions: { cartes_vues: 0, survols: 0, survol_sec: 0 },
+                details_ouvertures: 0,
+                visites: [],
+                visites_hors_cap: 0,
+                ordre: {},
+            };
+            editoSegments();
+            editoSave();
+        }
+
+        // Ferme la session courante (changement de jour) : appele au debut d'applyManifest,
+        // AVANT resetSessionTimer(), tant que les temps actifs sont encore ceux de la session.
+        function editoEndSession() {
+            if (!editoSession) return;
+            editoBarOpen = false;
+            editoPlanOpen = false;
+            editoSegments();
+            editoSave();
+            editoSession = null;
+        }
+
+        // Accumule le temps actif des segments bandeau / plan qui se ferment, ouvre les autres.
+        function editoSegments() {
+            if (!editoSession) return;
+            const now = getActiveMs();
+            const planVisible = editoBarOpen && editoPlanOpen;
+            if (editoBandeauSince !== null && !editoBarOpen) {
+                editoSession.bandeau.ouvert_actif_sec = editoSec(
+                    editoSession.bandeau.ouvert_actif_sec * 1000 + (now - editoBandeauSince));
+                editoBandeauSince = null;
+            } else if (editoBandeauSince === null && editoBarOpen) {
+                editoBandeauSince = now;
+            }
+            if (editoPlanSince !== null && !planVisible) {
+                editoSession.plan.visible_actif_sec = editoSec(
+                    editoSession.plan.visible_actif_sec * 1000 + (now - editoPlanSince));
+                editoPlanSince = null;
+            } else if (editoPlanSince === null && planVisible) {
+                editoPlanSince = now;
+            }
+        }
+
+        function editoBandeau(open) {
+            if (!editoSession) return;
+            editoSession.bandeau[open ? 'ouvertures' : 'fermetures']++;
+            editoBarOpen = !!open;
+            editoSegments();
+            editoSave();
+        }
+
+        function editoPlan(open) {
+            if (!editoSession) return;
+            if (open) editoSession.plan.ouvertures++;
+            editoPlanOpen = !!open;
+            editoSegments();
+            editoSave();
+        }
+
+        function editoCompte(champ) {
+            if (!editoSession) return;
+            editoSession[champ] = (editoSession[champ] || 0) + 1;
+            editoSave();
+        }
+
+        function editoClic(source, clipId, trouve) {
+            if (!editoSession || editoSession.clics_clip.length >= EDITO_MAX_CLICS) return;
+            const rang = (ALL_CLIPS || []).findIndex(c => c.clip_id === clipId || getClipStateKey(c) === clipId);
+            editoSession.clics_clip.push({
+                source: source || 'bandeau',
+                clip_id: clipId,
+                rang: rang >= 0 ? rang + 1 : null,
+                trouve: !!trouve,
+                t_sec: editoSec(getActiveMs()),
+            });
+            editoSave();
+        }
+
+        // Une visite = un clip affiche (loadClip). Re-afficher le meme clip ne compte pas.
+        function editoVisite(clip, idx) {
+            const via = editoNextVia;
+            editoNextVia = null;
+            if (!editoSession || !clip) return;
+            const key = getClipStateKey(clip);
+            if (key === editoLastKey) return;
+            let how = via;
+            if (!how) {
+                if (editoLastKey === null) how = 'debut';
+                else if (idx > 0 && getClipStateKey(CLIPS[idx - 1]) === editoLastKey) how = 'suivant';
+                else if (idx + 1 < CLIPS.length && getClipStateKey(CLIPS[idx + 1]) === editoLastKey) how = 'precedent';
+                else how = 'saut';
+            }
+            editoLastKey = key;
+            editoSession.ordre[how] = (editoSession.ordre[how] || 0) + 1;
+            if (clip.redacteur_description && !editoDescSeen[key]) {
+                editoDescSeen[key] = true;
+                editoSession.descriptions.cartes_vues++;
+            }
+            if (editoSession.visites.length >= EDITO_MAX_VISITES) {
+                editoSession.visites_hors_cap++;
+            } else {
+                const rang = (ALL_CLIPS || []).indexOf(clip);
+                editoSession.visites.push({
+                    rang: rang >= 0 ? rang + 1 : null,
+                    clip_id: getClipRef(clip),
+                    via: how,
+                    t_sec: editoSec(getActiveMs()),
+                });
+            }
+            editoSave();
+        }
+
+        // Verdict pose sur le clip affiche : rattache a sa derniere visite (ordre des verdicts).
+        function editoVerdict(clip, verdict) {
+            if (!editoSession || !clip) return;
+            const last = editoSession.visites[editoSession.visites.length - 1];
+            if (last && last.clip_id === getClipRef(clip) && !last.verdict) last.verdict = verdict;
+        }
+
+        function editoDescEnter() { editoDescSince = Date.now(); }
+        function editoDescLeave() {
+            if (!editoSession || editoDescSince === null) return;
+            const ms = Date.now() - editoDescSince;
+            editoDescSince = null;
+            if (ms < EDITO_SURVOL_MIN_MS) return;
+            editoSession.descriptions.survols++;
+            editoSession.descriptions.survol_sec = editoSec(
+                editoSession.descriptions.survol_sec * 1000 + Math.min(ms, EDITO_SURVOL_MAX_MS));
+            editoSave();
+        }
+
+        // Instantane de la session courante SANS la modifier : segments encore ouverts comptes
+        // jusqu'a maintenant, part des visites faites dans l'ordre de la page.
+        function editoSnapshot() {
+            const s = JSON.parse(JSON.stringify(editoSession));
+            const now = getActiveMs();
+            if (editoBandeauSince !== null) {
+                s.bandeau.ouvert_actif_sec = editoSec(s.bandeau.ouvert_actif_sec * 1000 + (now - editoBandeauSince));
+            }
+            if (editoPlanSince !== null) {
+                s.plan.visible_actif_sec = editoSec(s.plan.visible_actif_sec * 1000 + (now - editoPlanSince));
+            }
+            s.session_actif_sec = Math.round(now / 1000);
+            s.derniere_activite = new Date().toISOString();
+            const o = s.ordre || {};
+            const transitions = Object.keys(o).filter(k => k !== 'debut').reduce((n, k) => n + o[k], 0);
+            s.ordre_resume = {
+                visites: Object.values(o).reduce((n, v) => n + v, 0),
+                transitions: transitions,
+                pct_dans_l_ordre: transitions ? Math.round(100 * (o.suivant || 0) / transitions) : null,
+                pct_depuis_edito: transitions
+                    ? Math.round(100 * ((o.titre || 0) + (o.plan || 0) + (o.reponse || 0)) / transitions) : null,
+            };
+            return s;
+        }
+
+        function editoSessions() {
+            const all = editoPast.concat(editoSession ? [editoSnapshot()] : []);
+            return all.slice(-EDITO_MAX_SESSIONS);
+        }
+
+        function buildEditoUsage() {
+            return {
+                schema: EDITO_SCHEMA,
+                vod_date: (MANIFEST && MANIFEST.date) || '',
+                sessions: editoSessions(),
+            };
+        }
+
+        window.addEventListener('beforeunload', editoSave);
+        // === FIN USAGE DE L'EDITO ===
 
         function showMessage(title, text) {
             document.getElementById('videoWrapper').style.display = 'none';
@@ -2270,6 +2561,7 @@
 
             currentIndex = idx;
             const clip = CLIPS[idx];
+            editoVisite(clip, idx); // 2026-10-15 : ordre reel de visionnage (edito_usage)
             _prepareNativeDownload(clip);
             const wrapper = document.getElementById('videoWrapper');
 
@@ -2590,7 +2882,7 @@
             // defaut le texte ; les autres (redondantes) en details. Coupee a 2 lignes, complete
             // au survol.
             const descRedac = clip.redacteur_description
-                ? '<div class="text" title="Description du rédacteur en chef : ' + escHtml(clip.redacteur_description) + '">&#9997;&#65039; ' + escHtml(clip.redacteur_description) + '</div>'
+                ? '<div class="text" data-edito="desc" title="Description du rédacteur en chef :' + escHtml(clip.redacteur_description) + '">&#9997;&#65039; ' + escHtml(clip.redacteur_description) + '</div>'
                 : '';
             const descSummary = clip.ai_summary
                 ? '<div class="text" title="' + escHtml(clip.ai_summary) + '">' + escHtml(clip.ai_summary) + '</div>'
@@ -2730,10 +3022,14 @@
             const infoEl = document.getElementById('clipInfo');
             infoEl.innerHTML = infoHtml;
             infoEl.classList.toggle('compact', !cardDetailsOpen);
+            // 2026-10-15 : survol de la description Fable (mesure d'usage de l'edito).
+            const descEl = infoEl.querySelector('[data-edito="desc"]');
+            if (descEl) { descEl.onmouseenter = editoDescEnter; descEl.onmouseleave = editoDescLeave; }
             const cardToggle = document.getElementById('cardDetailsToggle');
             if (cardToggle) cardToggle.onclick = function (ev) {
                 ev.preventDefault();
                 cardDetailsOpen = !cardDetailsOpen;
+                if (cardDetailsOpen) editoCompte('details_ouvertures');
                 infoEl.classList.toggle('compact', !cardDetailsOpen);
                 cardToggle.textContent = cardDetailsOpen ? 'détails ▾' : 'détails ▸';
                 try { localStorage.setItem('reviewCardDetails', cardDetailsOpen ? '1' : '0'); } catch (err) { /* prive */ }
@@ -2849,6 +3145,7 @@
                 feedback[clipKey] = value;
                 _applyLegacyAxes(clipKey, value);
                 recordClipVerdictTiming(clipKey, value, clip);
+                editoVerdict(clip, value); // 2026-10-15 : verdict rattache a sa visite
                 // 2026-08-26 : memorise QUEL clip vient d'etre note, pour que
                 // Retour arriere annule le bon. Se fier a currentIndex-1 serait
                 // faux des que le monteur navigue a la main.
@@ -2908,6 +3205,7 @@
                 highlightFeedbackBtn(feedback[clipKey]);
                 refreshAxisButtons(clipKey);
             } else {
+                editoNextVia = 'annulation';
                 loadClip(target);
             }
         }
@@ -3652,6 +3950,7 @@
             document.getElementById('totalNum').textContent = TOTAL;
             buildMinimap();
             updateStats();
+            editoNextVia = 'liste';
             loadClip(0);
         }
 
@@ -3906,7 +4205,7 @@
             const idx = CLIPS.findIndex(c =>
                 c.clip_id === clipRef || c.feedback_key === clipRef || c.filename === clipRef
             );
-            if (idx >= 0) loadClip(idx);
+            if (idx >= 0) { editoNextVia = 'histoire'; loadClip(idx); }
         }
 
         // === Sprint 56 : BRIEF IA MODAL ===
@@ -4091,7 +4390,7 @@
                 const dot = document.createElement('div');
                 dot.className = 'dot';
                 dot.title = 'Clip ' + (i + 1) + ' — ' + (CLIPS[i].streamer || '') + ' ' + (CLIPS[i].timestamp || '');
-                dot.onclick = () => loadClip(i);
+                dot.onclick = () => { editoNextVia = 'minimap'; loadClip(i); };
                 mm.appendChild(dot);
             }
         }
@@ -4319,6 +4618,9 @@
                 session_end: new Date().toISOString(),
                 timing_schema_version: '1.0.0',
             };
+            // 2026-10-15 : usage de l'edito Fable (bandeau, plan, descriptions, ordre de
+            // visionnage), par session du jour. Nouvelle cle, cf. « USAGE DE L'EDITO ».
+            data.edito_usage = buildEditoUsage();
             return data;
         }
 
@@ -4401,6 +4703,7 @@
             buildMinimap();
             updateStats();
             updateHiddenClipsIndicator();
+            editoNextVia = 'liste';
             loadClip(currentIndex);
             saveProgress();
         }
@@ -4433,6 +4736,7 @@
             buildMinimap();
             updateStats();
             updateHiddenClipsIndicator();
+            editoNextVia = 'liste';
             loadClip(0);
             saveProgress();
         }
