@@ -3,7 +3,7 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 722,
+      "total_clips": 768,
       "streamers": [
         "akiiral2",
         "artskill",
@@ -13,21 +13,22 @@
         "community",
         "flickzyv2",
         "fortnitefraactu",
-        "jannisz",
+        "idrop74",
         "jolavanille",
         "k1ng",
         "khanada_",
         "kirillianfn1",
         "kurama_203",
         "leothecrack",
+        "mariuscow",
         "momsyfnv2",
         "mrsavage",
         "nikof",
         "noahreyli",
         "peterbot",
-        "pixiefnbr1",
         "pixx___",
         "podasai",
+        "rax",
         "revenja",
         "rezonfn",
         "risezd",
@@ -35,6 +36,7 @@
         "shxrkfnbr",
         "snayzy",
         "stizo_",
+        "tjino9",
         "vadeal",
         "vanyak3kk",
         "venofn",
@@ -42,6 +44,29 @@
         "waze",
         "wazz",
         "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "total_clips": 157,
+      "streamers": [
+        "akiiral2",
+        "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "flickzyv2",
+        "jannisz",
+        "jolavanille",
+        "joniibuca 1x",
+        "leothecrack",
+        "mrsavage",
+        "noahreyli",
+        "peterbot",
+        "snayzy",
+        "snayzyy",
+        "stizo_",
+        "vadeal",
+        "wazz"
       ]
     },
     {
@@ -169,38 +194,7 @@
         "venofn",
         "zetfartv"
       ]
-    },
-    {
-      "date": "2026-10-13",
-      "total_clips": 146,
-      "streamers": [
-        "akiiral2",
-        "artskill",
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "flickzyv2",
-        "jannisz",
-        "jolavanille",
-        "k1ng",
-        "khanada_",
-        "kurama_203",
-        "leothecrack",
-        "momsyfnv2",
-        "mrsavage",
-        "nikof",
-        "noahreyli",
-        "peterbot",
-        "pixiefnbr1",
-        "podasai",
-        "revenja",
-        "shxrkfnbr",
-        "snayzy",
-        "vadeal",
-        "venofn",
-        "wazz"
-      ]
     }
   ],
-  "latest": "2026-10-19"
+  "latest": "2026-10-20"
 }
