@@ -3,7 +3,7 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 836,
+      "total_clips": 620,
       "streamers": [
         "akiiral2",
         "artskill",
@@ -27,24 +27,48 @@
         "nikof",
         "noahreyli",
         "peterbot",
-        "pixx___",
         "podasai",
         "rax",
-        "rezonfn",
         "risezd",
-        "shadoxx_",
         "shxrkfnbr",
         "snayzy",
         "snayzyy",
         "stizo_",
         "tjino9",
         "vadeal",
-        "vanyak3kk",
         "venofn",
         "vicotryona",
-        "waze",
         "wazz",
         "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "total_clips": 79,
+      "streamers": [
+        "akiiral2",
+        "asianjeff",
+        "aussieantics",
+        "community",
+        "harmonyglitch",
+        "k1ng",
+        "khanada_",
+        "kirillianfn1",
+        "kurama_203",
+        "lyost frost",
+        "mightyzzr",
+        "mrsavage",
+        "nikof",
+        "noahreyli",
+        "revenja",
+        "risezd",
+        "shxrkfnbr",
+        "stizo_",
+        "talmo",
+        "vadeal",
+        "vanyak3kk",
+        "venofn",
+        "waze"
       ]
     },
     {
@@ -181,23 +205,7 @@
         "stizo_",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-10-15",
-      "total_clips": 71,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "jolavanille",
-        "leothecrack",
-        "momsyfnv2",
-        "noahreyli",
-        "shadoxx_",
-        "shxrkfnbr",
-        "venofn"
-      ]
     }
   ],
-  "latest": "2026-10-21"
+  "latest": "2026-10-22"
 }
