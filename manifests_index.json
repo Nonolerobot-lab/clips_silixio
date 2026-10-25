@@ -3,21 +3,21 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 413,
+      "total_clips": 403,
       "streamers": [
         "akiiral2",
-        "artskill",
         "asianjeff",
         "aussieantics",
         "buzzftn",
-        "community",
         "flickzyv2",
-        "fortnitefraactu",
+        "gentlemates",
         "idrop74",
         "jannisz",
         "jolavanille",
         "joniibuca 1x",
         "k1ng",
+        "khanada_",
+        "kirillianfn1",
         "kurama_203",
         "leothecrack",
         "mariuscow",
@@ -25,18 +25,44 @@
         "nikof",
         "noahreyli",
         "peterbot",
-        "podasai",
         "rax",
+        "rezonfn",
+        "risezd",
         "shxrkfnbr",
         "snayzy",
         "snayzyy",
         "stizo_",
+        "talmo",
         "tjino9",
         "vadeal",
         "venofn",
-        "vicotryona",
         "wazz",
         "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "total_clips": 103,
+      "streamers": [
+        "akiiral2",
+        "alibaba_rcm",
+        "buzzftn",
+        "community",
+        "flickzyv2",
+        "fortnitefraactu",
+        "jolavanille",
+        "k1ng",
+        "kurama_203",
+        "leothecrack",
+        "mrsavage",
+        "nikof",
+        "noahreyli",
+        "pixiefnbr1",
+        "revenja",
+        "shxrkfnbr",
+        "venofn",
+        "waze",
+        "wazz"
       ]
     },
     {
@@ -161,49 +187,7 @@
         "wazz",
         "zetfartv"
       ]
-    },
-    {
-      "date": "2026-10-18",
-      "total_clips": 165,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "community",
-        "jolavanille",
-        "leothecrack",
-        "nikof",
-        "peterbot",
-        "pixx___",
-        "rezonfn",
-        "shxrkfnbr",
-        "vanyak3kk",
-        "waze",
-        "wazz",
-        "zetfartv"
-      ]
-    },
-    {
-      "date": "2026-10-17",
-      "total_clips": 104,
-      "streamers": [
-        "artskill",
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "community",
-        "fortnitefraactu",
-        "jolavanille",
-        "kurama_203",
-        "leothecrack",
-        "peterbot",
-        "podasai",
-        "shxrkfnbr",
-        "vadeal",
-        "venofn",
-        "vicotryona"
-      ]
     }
   ],
-  "latest": "2026-10-23"
+  "latest": "2026-10-25"
 }
