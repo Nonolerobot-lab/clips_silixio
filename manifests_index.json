@@ -3,15 +3,17 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 403,
+      "total_clips": 314,
       "streamers": [
         "akiiral2",
+        "alibaba_rcm",
         "asianjeff",
         "aussieantics",
         "buzzftn",
+        "community",
         "flickzyv2",
+        "fortnitefraactu",
         "gentlemates",
-        "idrop74",
         "jannisz",
         "jolavanille",
         "joniibuca 1x",
@@ -20,23 +22,46 @@
         "kirillianfn1",
         "kurama_203",
         "leothecrack",
-        "mariuscow",
         "mrsavage",
         "nikof",
         "noahreyli",
         "peterbot",
-        "rax",
+        "pixiefnbr1",
+        "revenja",
         "rezonfn",
         "risezd",
         "shxrkfnbr",
-        "snayzy",
         "snayzyy",
         "stizo_",
         "talmo",
-        "tjino9",
         "vadeal",
         "venofn",
-        "wazz",
+        "waze",
+        "wazz"
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "total_clips": 80,
+      "streamers": [
+        "alibaba_rcm",
+        "artskill",
+        "buzzftn",
+        "community",
+        "floki",
+        "inoxtagsama",
+        "jannisz",
+        "jolavanille",
+        "k1ng",
+        "kirillianfn1",
+        "kurama_203",
+        "leothecrack",
+        "nikof",
+        "podasai",
+        "shxrkfnbr",
+        "vadeal",
+        "venofn",
+        "waze",
         "zetfartv"
       ]
     },
@@ -163,31 +188,7 @@
         "vadeal",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-10-19",
-      "total_clips": 192,
-      "streamers": [
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "idrop74",
-        "jolavanille",
-        "k1ng",
-        "kurama_203",
-        "leothecrack",
-        "mariuscow",
-        "mrsavage",
-        "nikof",
-        "rax",
-        "shxrkfnbr",
-        "snayzy",
-        "stizo_",
-        "tjino9",
-        "wazz",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-10-25"
+  "latest": "2026-10-26"
 }
