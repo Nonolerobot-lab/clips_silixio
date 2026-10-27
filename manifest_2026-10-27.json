@@ -102,9 +102,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1Z52FenrPXkPsdIXzSU7Cgyx_Z7Qne-qv/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1HR4SUAL0NpBEQhAOOH0E9kKNimEa3OXQ&export=download&confirm=t",
       "size_mb": 229.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_1",
+      "arc_position": 3,
+      "arc_label": "Les M8 en Grande Finale FNCS Solo jour 1 chez Nikof",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -180,7 +180,10 @@
           "views": 7954,
           "caption": "Le pire top 1 de l’histoire des finales FNCS la pire meta 😱😱 #nikof #m8 #gentlemates #leothecrack #podasai "
         }
-      ]
+      ],
+      "note_jour": 78,
+      "note_jour_raison": "top 1 Vanyak sans balles casté Nikof, tiktok 8k",
+      "redacteur_description": "Seul M8 encore en vie, Vanyak arrive en fin de partie avec 5 balles et zéro matériau et décroche quand même la victoire. Nikof hurle et le chat spamme no enemies."
     },
     {
       "filename": "clip_002_03-53-52_score91_v6_hype.mp4",
@@ -249,9 +252,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1J9MD0dTew13ZkjtnLiFZr4QTY1fukrPn/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=19ppnbVDVEGMQMOrwmPjSpW1FNqBH-ZNS&export=download&confirm=t",
       "size_mb": 156.4,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_1",
+      "arc_position": 6,
+      "arc_label": "Les M8 en Grande Finale FNCS Solo jour 1 chez Nikof",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -340,7 +343,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 66,
+      "note_jour_raison": "Vanyak monstre top 4 puis 2e du classement",
+      "redacteur_description": "Dans la dernière game, Vanyak enchaîne les kills jusqu'au top 4 et Nikof hurle que c'est un monstre. Au classement il est 2e derrière Malibuca, présent dans le chat."
     },
     {
       "filename": "clip_001_02-23-22_score89_v6_hype_subs.mp4",
@@ -525,7 +531,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "Shark win 7 kills, Savage hurle",
+      "redacteur_description": "Shxrk sort de nulle part en fin de game 4, gagne avec 7 kills et Savage hurle big fucking shark. Classement affiché ensuite."
     },
     {
       "filename": "clip_002_05-25-01_score88_v6_hype.mp4",
@@ -594,9 +603,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1E1CBYAFta-d2BtMpiNfbpXc07cu5bERh/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=15bcsIlfEb8-B2lf-GIdYsNwetDrAMZNT&export=download&confirm=t",
       "size_mb": 264.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_2",
+      "arc_position": 6,
+      "arc_label": "Le jour 1 de Shxrk en Grande Finale vu par Léo",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -704,7 +713,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 36,
+      "note_jour_raison": "Tjino win et classement jour 1 chez Léo",
+      "redacteur_description": "Albana tient la fin de zone, Shark tombe, puis Léo pousse les Français jusqu'à la win de Tjino. Il lit le classement : Malibuca 1er, Vanyak 2e, Shark 3e."
     },
     {
       "filename": "clip_006_04-15-59_score87_v6_vr.mp4",
@@ -773,9 +785,9 @@
       "drive_view_url": "https://drive.google.com/file/d/19-qQ8DsnZhZJZ85rkVSwsfyKj2ViyGED/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=13bj9c6vjVncngYQm_eDM9VzV3iJ6NW0Z&export=download&confirm=t",
       "size_mb": 79.9,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_2",
+      "arc_position": 3,
+      "arc_label": "Le jour 1 de Shxrk en Grande Finale vu par Léo",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -873,7 +885,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 55,
+      "note_jour_raison": "Léo supplie puis Shark top 1, chat en W",
+      "redacteur_description": "Après trois games vides, Léo supplie Shark de se lâcher et Shark arrache le top 1 en fin de game. Le chat explose en W et crie is back."
     },
     {
       "filename": "clip_008_04-50-30_score86_v6_hype.mp4",
@@ -942,9 +957,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1oKloq25PPvlD5HLW8tDNferTh1aFnSI9/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1wIi-GiV4tEaIAeDP3Bqp4a-J3jooutYg&export=download&confirm=t",
       "size_mb": 179.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_2",
+      "arc_position": 4,
+      "arc_label": "Le jour 1 de Shxrk en Grande Finale vu par Léo",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1026,7 +1041,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 42,
+      "note_jour_raison": "Shark joue le back to back, Scroll vole la win",
+      "redacteur_description": "Malibuca survit grâce à un refresh, Shark enchaîne les kills dont Rax et joue un deuxième top 1 d'affilée. Scroll lui vole la win et Shark remonte 2e à 19 points."
     },
     {
       "filename": "clip_005_01-38-24_score85_v6_hype_subs.mp4",
@@ -1178,7 +1196,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 16,
+      "note_jour_raison": "Savage réagit au top 1 Vanyak 5 balles",
+      "redacteur_description": "Savage explose sur un kill de Shxrk, rage quand Focus tombe, puis voit Vanyak gagner avec 5 balles et sans matériaux. Il crie cancel EU."
     },
     {
       "filename": "clip_008_03-18-54_score84_v6_hype_subs.mp4",
@@ -1349,7 +1370,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "dernière game, Tjino win, Savage long",
+      "redacteur_description": "Moneymaker se fait détruire par Shxrk qui tombe ensuite contre iDrop, puis Tjino remporte la dernière game. Malibuca finit avec 50 points d'avance."
     },
     {
       "filename": "clip_007_02-55-55_score83_v6_drama.mp4",
@@ -1418,9 +1442,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1xT9ShdYO-talw4XDLNWdQTqhKhMj2knY/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1WIMADRkisAvPCrhnJZaVuI2JXRmKAFVX&export=download&confirm=t",
       "size_mb": 305.4,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_3",
+      "arc_position": 5,
+      "arc_label": "Les HavoK en Grande Finale jour 1 avec Wazz",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1530,7 +1554,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "Wox focus, chat en rage, Shark encore",
+      "redacteur_description": "iDrop marque ses premiers points, Grimz rêve Wox champion, puis Wox meurt sous un focus et le chat enrage. Shark enchaîne et Wox retombe 7e."
     },
     {
       "filename": "clip_008_02-22-08_score82_v6_hype.mp4",
@@ -1599,9 +1626,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1yeciK9o_2F6R8LnSxXWZqDq1NXxYmUbJ/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1lAOz9BYFubCI2Q7aQZYs92aCsTvqjwXh&export=download&confirm=t",
       "size_mb": 305.7,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_3",
+      "arc_position": 4,
+      "arc_label": "Les HavoK en Grande Finale jour 1 avec Wazz",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1731,7 +1758,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 37,
+      "note_jour_raison": "Pablo survit, Wox top 4 remonte 4e",
+      "redacteur_description": "Pablo survit à un fight improbable contre Darm, Tjino meurt sur un tick de zone, puis Wox finit top 4 avec 4 kills. Malgré le top 1 de Shark, Wox remonte 4e."
     },
     {
       "filename": "clip_009_01-42-51_score81_v6_drama.mp4",
@@ -1875,7 +1905,10 @@
           "views": 3227,
           "caption": "Vico trash Shark le meilleur joueur du monde pour rien 😱😱 #nikof #m8 #gentlemates #leothecrack #podasai "
         }
-      ]
+      ],
+      "note_jour": 45,
+      "note_jour_raison": "tweet BIG sur Shxrk, Nikof traite le CM de gamin",
+      "redacteur_description": "BIG tweete que Shxrk a autant de points que Vico qui ne joue pas, Nikof traite le CM de gamin puis avoue que ça l'a fait rire. Tweet à l'écran."
     },
     {
       "filename": "clip_014_03-20-10_score81_v6_vr.mp4",
@@ -1944,9 +1977,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1VjI0QPai1x25xPluOcywEeNSGoyLbSkS/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1aydL2zagKZdtdtKvdjvNOWZJ4DM_J_TG&export=download&confirm=t",
       "size_mb": 211.8,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_2",
+      "arc_position": 2,
+      "arc_label": "Le jour 1 de Shxrk en Grande Finale vu par Léo",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -2026,7 +2059,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 44,
+      "note_jour_raison": "Shark premiers points puis Vanyak win chez Léo",
+      "redacteur_description": "Shark marque enfin ses premiers points, Veri tue Focus, puis Vanyak gagne la game sans munitions. Léo hurle et le chat parle du pire top 1."
     },
     {
       "filename": "clip_006_nikof_score80.mp4",
@@ -2138,7 +2174,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "Vanyak monstre 60 secondes, même moment que c148",
+      "redacteur_description": "Vanyak enchaîne les duels jusqu'au top 4 et dépasse 200 points, Nikof hurle que c'est un monstre. Le chat écrit goat."
     },
     {
       "filename": "clip_007_nikof_score80.mp4",
@@ -2250,7 +2289,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 28,
+      "note_jour_raison": "Boubou is back, classement, fin de c148",
+      "redacteur_description": "Nikof découvre Vanyak deuxième au classement du jour 1 et crie Boubou is back, puis liste Rax 33e, Akira 41e, Kurama 84e. Le chat spamme Vanyabubu."
     },
     {
       "filename": "clip_019_08-20-07_score80_v6_react.mp4",
@@ -2386,7 +2428,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "Clix humilie VicterV au spawn, cast Léo",
+      "redacteur_description": "Clix et VicterV se disputent le même spawn en finale NA, Clix gagne et l'insulte au micro. Léo explique ensuite le tweet zero points Vick."
     },
     {
       "filename": "clip_018_05-15-47_score80_v6_drama.mp4",
@@ -2455,9 +2500,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1jlNXTOg0RxPx1LDoRY6uM9eB60SKFvtW/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1g5LAJc253EFPdZN8SHjW9pbkHOWZgQNA&export=download&confirm=t",
       "size_mb": 169.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_2",
+      "arc_position": 5,
+      "arc_label": "Le jour 1 de Shxrk en Grande Finale vu par Léo",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -2530,7 +2575,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "Shark tué par iDrop, chat spoile, Léo chante",
+      "redacteur_description": "Des fans Havok spoilent la mort de Shark par iDrop et le chat réclame des bans. Léo chante Allo maman puis interdit de trasher Havok ou M8."
     },
     {
       "filename": "clip_017_00-41-10_score80_v6_hype_subs.mp4",
@@ -2691,7 +2739,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "favoris tombent, Zynox win, Savage 8 pour cent",
+      "redacteur_description": "Sky, Shxrk, Pixie et Rax tombent en deux zones et Savage réclame l'annulation de la FNCS, puis Zynox gagne la game 1 avec 8 kills. Victory Royale à l'écran."
     },
     {
       "filename": "clip_018_02-48-35_score80_v6_hype_subs.mp4",
@@ -2864,7 +2915,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "Shark top 3, Scroll win, Savage long",
+      "redacteur_description": "Moneymaker supplie Savage d'annuler un pari, Savage soupçonne Focus d'avoir le menu admin, puis Shxrk fait top 3 et Scroll gagne. Classement Malibuca premier."
     },
     {
       "filename": "clip_021_07-09-12_score79_v6_drama.mp4",
@@ -3037,7 +3091,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "drama Clix VicterV expliqué, long, NA",
+      "redacteur_description": "Léo explique le drama Clix VicterV sur un spawn et traite Clix de lâche, puis suit le duel sur des serveurs qui lag. La tempête finit le joueur."
     },
     {
       "filename": "clip_020_04-18-15_score79_v6_talk.mp4",
@@ -3182,7 +3239,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "pari 50 euros top 1 19 kills, talk",
+      "redacteur_description": "Léo affirme que Shark va faire un top 1 à 19 kills et révèle un pari de 50 euros avec Zeki, sous les moqueries. Il avoue que ce niveau est un de ses rêves."
     },
     {
       "filename": "clip_017_01-51-59_score78_v6_funny.mp4",
@@ -3251,9 +3311,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1ISE_QtOk-mk6lnrnhLKuS4NneMPGAoDS/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1gAKtCas4gJjLeMk6E8gGaGigL2QJtiBH&export=download&confirm=t",
       "size_mb": 206.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_3",
+      "arc_position": 3,
+      "arc_label": "Les HavoK en Grande Finale jour 1 avec Wazz",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3346,7 +3406,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 30,
+      "note_jour_raison": "cinq Havok même ville, Tjino explose, Vanyak win",
+      "redacteur_description": "Cinq joueurs HavoK atterrissent dans la même ville, Wox garde quatre pommes et Tjino meurt sur son propre Sonic. Vanyak gagne sans balles et Wazz n'en revient pas."
     },
     {
       "filename": "clip_017_02-44-23_score78_v6_hype.mp4",
@@ -3482,7 +3545,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 35,
+      "note_jour_raison": "Shxrk se réveille après le tweet BIG",
+      "redacteur_description": "Moqué par BIG deux games plus tôt, Shxrk enchaîne une deuxième grosse partie et remonte dans le top. Snayzy lâche qu'il n'a pas kiffé le tweet."
     },
     {
       "filename": "clip_025_06-26-36_score78_v6_talk.mp4",
@@ -3631,7 +3697,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "réponse à Matrek sur le team up, talk",
+      "redacteur_description": "Léo lit le tweet de Matrek qui dénonce le team up puis lui répond dans le chat avec la drop map. Il rappelle que tout le lobby fait pareil."
     },
     {
       "filename": "clip_027_07-28-44_score78_v6_talk.mp4",
@@ -3824,7 +3893,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "Akira debrief vocal top 40, talk",
+      "redacteur_description": "Akiira, en vocal avec Léo, rejette son top 40 sur la soirée en boîte de la veille puis repasse ses morts : rampe ratée, Rax qui le grief. Replay à l'écran."
     },
     {
       "filename": "clip_020_00-21-07_score78_v6_funny_subs.mp4",
@@ -3960,7 +4032,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "clash Vanyak Queasy raconté, Savage 8 pour cent",
+      "redacteur_description": "Savage raconte que Vanyak et Queasy se sont disputés sur Discord pour savoir qui est le plus moche, jusqu'à une cagnotte pour des sourcils. Plateau et gameplay."
     },
     {
       "filename": "clip_020_01-22-00_score77_v6_hype.mp4",
@@ -4029,9 +4104,9 @@
       "drive_view_url": "https://drive.google.com/file/d/17M6mIbHOCb0TW7bxkoBp9hznXX4QRRjd/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1b9fw5mEjjkMJ1YGg0RkgPXcb2LFy3RrT&export=download&confirm=t",
       "size_mb": 210.7,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_3",
+      "arc_position": 2,
+      "arc_label": "Les HavoK en Grande Finale jour 1 avec Wazz",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4145,7 +4220,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 39,
+      "note_jour_raison": "Pixie et Pablo team up sur Marius, Danois top 4 et 5",
+      "redacteur_description": "Pixie et Pablo se retrouvent au même distributeur et éliminent ensemble Marius, alors 3e. Shark meurt de la storm et les Danois finissent 4e et 5e."
     },
     {
       "filename": "clip_022_00-38-15_score75_v6_drama.mp4",
@@ -4214,9 +4292,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1-BhN0fo5czayMMMNeRtVLCoxEBDB-3_m/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1jFImkHq0EMIMH4aJj1A838Q15l4gAjPP&export=download&confirm=t",
       "size_mb": 352.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_3",
+      "arc_position": 1,
+      "arc_label": "Les HavoK en Grande Finale jour 1 avec Wazz",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4342,7 +4420,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 25,
+      "note_jour_raison": "iDrop top 99, Pixie meurt, 9 minutes",
+      "redacteur_description": "iDrop ne passe pas la fenêtre et finit top 99, puis Pixie meurt après un face-à-face avec Shark. Wazz s'inquiète pour le mental d'iDrop."
     },
     {
       "filename": "clip_025_01-22-35_score75_v6_hype_subs.mp4",
@@ -4486,7 +4567,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "Shxrk zéro point, Focus win, Savage peu gardé",
+      "redacteur_description": "Shxrk enchaîne une deuxième game sans point et Vanyak meurt bêtement, puis Focus remporte la game. Le chat chambre le pari de Boop."
     },
     {
       "filename": "clip_008_02-30-30_score75_v6_hype.mp4",
@@ -4655,7 +4739,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 39,
+      "note_jour_raison": "Shxrk top 1 chez Buzz, chat en feu",
+      "redacteur_description": "Enterré après trois games, Shxrk arrive full stuff, prend la hauteur et signe un top 1 qui le remonte au classement. Le chat crie le démon est réveillé."
     },
     {
       "filename": "clip_007_01-56-07_score75_v6_funny.mp4",
@@ -4802,7 +4889,10 @@
           "views": 995,
           "caption": "La puissance HAVOK #fortnite #havok #wazz #zetfar"
         }
-      ]
+      ],
+      "note_jour": 37,
+      "note_jour_raison": "Vanyak top 1 5 balles vu par Buzz, chat wsh",
+      "redacteur_description": "Buzz jure qu'on ne gagne pas avec une AK et 5 balles, puis Vanyak remporte quand même le dernier duel. Le chat hurle wsh et parle du pire top 1."
     },
     {
       "filename": "clip_040_02-52-31_score74_v6_hype.mp4",
@@ -4871,9 +4961,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1NaKdluPaecpsHb6lR9MryBvm1XuWZ9Q7/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=10YtDOP8KvQ2poXC1WFglC4lW-8ZOgVBa&export=download&confirm=t",
       "size_mb": 46.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_2",
+      "arc_position": 1,
+      "arc_label": "Le jour 1 de Shxrk en Grande Finale vu par Léo",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4933,7 +5023,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 20,
+      "note_jour_raison": "Shark galère, Akira top 6, cast moyen",
+      "redacteur_description": "Shark peine entre Matrek et la storm, Akira élimine Rax puis arrache un top 6 sans shield. Léo note que Shark ne joue pas comme d'habitude."
     },
     {
       "filename": "clip_038_00-12-24_score74_v6_talk.mp4",
@@ -5073,7 +5166,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "prédiction Shark 200 points, talk",
+      "redacteur_description": "Léo prédit que Shark va gagner la finale avec 150 à 250 points d'avance. Tier list et photo de Shark à l'écran."
     },
     {
       "filename": "clip_026_00-57-13_score74_v6_talk_subs.mp4",
@@ -5200,7 +5296,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "pronos Boop Savage Malibuca, talk",
+      "redacteur_description": "Après une game, Boop annonce que Malibuca va gagner et Savage rappelle qu'il l'avait mis hors top 10. Plateau officiel à l'écran."
     },
     {
       "filename": "clip_009_00-33-06_score74_v6_hype.mp4",
@@ -5373,7 +5472,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 29,
+      "note_jour_raison": "Akira contre Kurama puis Zynox win, Buzz long",
+      "redacteur_description": "Akiira coincé hors zone affronte Kurama qui l'élimine, puis Shark et Pixie tombent et Zynox gagne la game 1 avec 8 kills. Buzz crie que les anciens s'entretuent."
     },
     {
       "filename": "clip_012_03-17-59_score73_v6_hype.mp4",
@@ -5541,7 +5643,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "dernière game, Shark éteint, Malibuca 1er, long",
+      "redacteur_description": "Buzz jongle entre Ballon d'Or et dernière game, Shark gagne un duel puis se fait éteindre, Tisma rate le top 1 de peu. Malibuca finit en tête avec 50 points d'avance."
     },
     {
       "filename": "clip_018_leothecrack_score70.mp4",
@@ -5666,7 +5771,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 27,
+      "note_jour_raison": "win Tjino 30 secondes, version Wazz meilleure",
+      "redacteur_description": "Tjino gagne la dernière game face à Tisma, Victory Royale à l'écran, et Léo déroule le classement. Le chat écrit HvK on top."
     },
     {
       "filename": "clip_013_leothecrack_score70.mp4",
@@ -5791,7 +5899,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 33,
+      "note_jour_raison": "même moment que le top 1 Shark de Léo",
+      "redacteur_description": "Léo commente le top 1 de Shxrk, Victory Royale à l'écran, et annonce qu'il remonte au classement. Le chat spamme W et primed."
     },
     {
       "filename": "clip_016_nikof_score70.mp4",
@@ -5916,7 +6027,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 31,
+      "note_jour_raison": "même moment Akiira tue Rax, version courte",
+      "redacteur_description": "Nikof hurle quoi quand Akiira élimine son coéquipier Rax et parle d'un cauchemar. Le chat spamme l'oeil de Nikof."
     },
     {
       "filename": "clip_041_nikof_score70.mp4",
@@ -6041,7 +6155,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 26,
+      "note_jour_raison": "même moment tweet BIG, version 60 secondes",
+      "redacteur_description": "Nikof découvre le tweet de BIG qui moque Shark et dit que c'est des gamins. Il regarde ensuite le clip de Rax qui tue Kurama."
     },
     {
       "filename": "clip_042_nikof_score70.mp4",
@@ -6166,7 +6283,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 21,
+      "note_jour_raison": "Rax et Akiira encore face à face, 30 secondes",
+      "redacteur_description": "Rax et Akiira s'affrontent une nouvelle fois et Nikof supplie qu'on débranche le PC à la gaming house. Le chat crie stop."
     },
     {
       "filename": "clip_023_leothecrack_score60.mp4",
@@ -6297,7 +6417,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 29,
+      "note_jour_raison": "Léo outré par le tweet BIG sur Shxrk",
+      "redacteur_description": "Léo découvre un tweet de BIG qui moque Shxrk à égalité de points avec Vico, qui ne joue pas. Il le partage au chat pour le liker en masse."
     },
     {
       "filename": "clip_029_leothecrack_score60.mp4",
@@ -6422,7 +6545,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 23,
+      "note_jour_raison": "win Scroll 30 secondes, déjà dans c081",
+      "redacteur_description": "Scroll gagne la game 5 de la Grande Finale EU, Victory Royale à l'écran, commentée par Léo. Le chat dit que Shark s'est fait terrasser."
     },
     {
       "filename": "clip_020_vadeal_score60_subs.mp4",
@@ -6548,7 +6674,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "Vadeal choqué par la win de Zynox",
+      "redacteur_description": "Vadeal découvre, stupéfait, que Zynox remporte la première game avec 8 kills face à Howly. Le chat écrit krank."
     },
     {
       "filename": "clip_026_risezd_score60_subs.mp4",
@@ -6660,7 +6789,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "Risezd lit un message Peterbot, streamer jamais gardé",
+      "redacteur_description": "Risezd lit le message de Peterbot qui parle d'arrêter après le jour 1 de la finale NA. Écran Twitter."
     },
     {
       "filename": "clip_048_aussieantics_score60_subs.mp4",
@@ -6786,7 +6918,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "rant d'Aussie sur la fenêtre, pas d'action",
+      "redacteur_description": "Après la mort de Shxrk bloqué par une caisse de munitions, AussieAntics s'énerve contre le saut de fenêtre. Replay figé à l'écran."
     },
     {
       "filename": "clip_047_aussieantics_score60_subs.mp4",
@@ -6911,7 +7046,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 23,
+      "note_jour_raison": "top 1 Zynox 8 kills, trop long, Aussie",
+      "redacteur_description": "Zynox gagne la première game de la Grande Finale EU avec 8 kills après avoir été à 1 PV. AussieAntics vérifie ensuite le classement et sa prédiction."
     },
     {
       "filename": "clip_049_aussieantics_score60_subs.mp4",
@@ -7023,7 +7161,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 16,
+      "note_jour_raison": "Malibuca sans mats éliminé par T3eny",
+      "redacteur_description": "Malibuca, à court de matériaux, se fait surprendre et éliminer par T3eny en Grande Finale EU. Le chat crie evil fortnite."
     },
     {
       "filename": "clip_058_aussieantics_score60_subs.mp4",
@@ -7135,7 +7276,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "Vic se vend à Clix, 4-0, trop long",
+      "redacteur_description": "VicterV fait une grosse erreur et se fait tuer par Clix, qui mène 4-0-2 sur leurs duels de spawn. Le chat le traite de sell."
     },
     {
       "filename": "clip_060_nikof_score60.mp4",
@@ -7260,7 +7404,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "Rax pas à la GH, parents, talk",
+      "redacteur_description": "Nikof explique que Rax, mineur, n'est pas à la gaming house parce que ses parents ne pouvaient pas l'accompagner. Drop map à l'écran."
     },
     {
       "filename": "clip_062_nikof_score60.mp4",
@@ -7393,7 +7540,10 @@
           "views": 523,
           "caption": "Nikof et Snayzy trash Shark le meilleur joueur du monde 😱😱 #nikof #m8 #gentlemates #leothecrack #podasai "
         }
-      ]
+      ],
+      "note_jour": 12,
+      "note_jour_raison": "Albana première fille qualifiée, talk",
+      "redacteur_description": "Nikof et Snayzy saluent Albana, première fille d'Europe qualifiée en Grande Finale, et chambrent Shark. Gameplay calme."
     },
     {
       "filename": "clip_063_nikof_score60.mp4",
@@ -7506,7 +7656,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 29,
+      "note_jour_raison": "Vanyak top 7 skyjump refresh, fin de c138",
+      "redacteur_description": "Vanyak enchaîne un saut, un refresh et un gros fight en fin de game avant de tomber top 7. Nikof dit monstrueux et le chat gg."
     },
     {
       "filename": "clip_057_aussieantics_score60_subs.mp4",
@@ -7618,7 +7771,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "win Higgs 1v1 Cooper, finale NA",
+      "redacteur_description": "Higgs gagne son 1v1 contre Cooper et prend la game en finale NA. Le chat crie W Higgs."
     },
     {
       "filename": "clip_055_aussieantics_score60_subs.mp4",
@@ -7731,7 +7887,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "Clix tue Vic encore, 35 vues, NA",
+      "redacteur_description": "Clix lit que VicterV n'a pas de pompe et le tue une nouvelle fois d'entrée de partie. Le chat spamme 2-0 et BANG."
     },
     {
       "filename": "clip_030_mrsavage_score50_subs.mp4",
@@ -7843,7 +8002,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "16 secondes, prédiction Malibuca, doublon c102",
+      "redacteur_description": "Boop dit avoir compris le script, Malibuca gagne le solo FNCS. Savage demande au chat de clipper."
     },
     {
       "filename": "clip_031_kurama_203_score50.mp4",
@@ -7968,7 +8130,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "Kurama éliminé top 64, streamer jamais gardé",
+      "redacteur_description": "Kurama se fait éliminer en Grande Finale EU et finit top 64, écran de fin et lobby. Le chat le voit taper son bureau."
     },
     {
       "filename": "clip_072_aussieantics_score50_subs.mp4",
@@ -8081,7 +8246,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "Clix tue Vic au spawn, drop calc expliqué",
+      "redacteur_description": "Grâce à un calculateur de saut, Clix atterrit avant VicterV et le tue d'entrée de game en finale NA. AussieAntics explique Dropcalc."
     },
     {
       "filename": "clip_076_aussieantics_score50_subs.mp4",
@@ -8193,7 +8361,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "fin de game NA manette, joueurs inconnus",
+      "redacteur_description": "Reet, Muzz et Pump, trois joueurs manette, se disputent la fin de partie en finale NA Central. Le chat soutient Reet."
     },
     {
       "filename": "clip_078_aussieantics_score50_subs.mp4",
@@ -8306,7 +8477,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "lecture classement NA, talk",
+      "redacteur_description": "AussieAntics découvre Curve premier du classement NA et Clix 9e. Tableau à l'écran."
     },
     {
       "filename": "clip_079_leothecrack_score50.mp4",
@@ -8432,7 +8606,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "kill sur Rax 30 secondes, flou",
+      "redacteur_description": "Un joueur français prend le kill sur Rax pendant que Léo encourage Shark au-dessus de la storm. Le chat parle de Werex."
     },
     {
       "filename": "clip_080_leothecrack_score50.mp4",
@@ -8558,7 +8735,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "accusation cheat Focus, 21 secondes",
+      "redacteur_description": "Léo accuse Focus de tricher en voyant un kill improbable au replay. Replay à l'écran, chat sur Squeezie."
     },
     {
       "filename": "clip_001_dentoz-hfbv_score95_community_pro.mp4",
@@ -8667,7 +8847,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "clip commu Clément troll late, commu un tiers gardé",
+      "redacteur_description": "En finale Solo Reload, Clément se bloque volontairement en fin de partie puis rage après sa mort. Écran d'élimination et lobby."
     },
     {
       "filename": "clip_003_03-32-24_score91_v6_vr.mp4",
@@ -8736,9 +8919,9 @@
       "drive_view_url": "https://drive.google.com/file/d/14C-zSBQZkxKVbH_WItvhOx8Z7Q6DNV9g/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1vLgfx7gS-w9r29kKsQeOO-K58K3sF98V&export=download&confirm=t",
       "size_mb": 224.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_3",
+      "arc_position": 6,
+      "arc_label": "Les HavoK en Grande Finale jour 1 avec Wazz",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -8863,7 +9046,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 57,
+      "note_jour_raison": "iDrop tue Shark puis Tjino top 1, Grimz chambré",
+      "redacteur_description": "Grimz quitte le cast à cause de bugs, iDrop élimine Shark et le chat explose, puis Tjino tient la hauteur jusqu'au top 1. Wazz conclut qu'il suffisait que Grimz parte."
     },
     {
       "filename": "clip_003_leothecrack_score90.mp4",
@@ -8975,7 +9161,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 41,
+      "note_jour_raison": "Léo réagit au top 1 Vanyak sans balles",
+      "redacteur_description": "Léo réagit au top 1 improbable de Vanyak, adversaire sans balles fini à la pioche, Victory Royale à l'écran. Le chat hurle de rire et parle du pire top 1."
     },
     {
       "filename": "clip_002_wazz_score90.mp4",
@@ -9087,7 +9276,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "Vanyak top 1 sans balles casté Wazz",
+      "redacteur_description": "Wazz caste Vanyak sans munitions ni matériaux qui remporte un 1v1 surréaliste, Victory Royale à l'écran. Le chat parle du pire 1v1 de l'histoire."
     },
     {
       "filename": "clip_004_wazz_score90.mp4",
@@ -9199,7 +9391,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 49,
+      "note_jour_raison": "Tjino top 1 72 points, Wazz exulte",
+      "redacteur_description": "Tjino arrache un kill décisif puis la Victory Royale de la dernière game, 72 points. Wazz hurle le GOAT et chambre Grimz."
     },
     {
       "filename": "clip_001_nikof_score90_twitter_2114831986875306015_subs.mp4",
@@ -9311,7 +9506,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 44,
+      "note_jour_raison": "Vanyak monstre, 1459 vues, même moment que c148",
+      "redacteur_description": "Nikof s'emballe sur la game de Vanyak qui enchaîne les duels en fin de partie et crie que c'est un putain de monstre. Écran de placement top 4."
     },
     {
       "filename": "clip_003_00-20-30_score90_v6_funny.mp4",
@@ -9429,7 +9627,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 41,
+      "note_jour_raison": "Rax chante Bieber, 51 vues, chat plié",
+      "redacteur_description": "En lançant les caméras de ses joueurs, Nikof tombe sur Rax qui chante Justin Bieber et des vidéos test chez Vanyak. Il coupe avant de se faire bannir."
     },
     {
       "filename": "clip_004_01-25-39_score87_v6_hype.mp4",
@@ -9498,9 +9699,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1HKb4T8BEu-6MITh1LESl9ujriV9P34Tr/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=10lwWIEiwxtIkWp6pwDK8zERX-SXnHIVz&export=download&confirm=t",
       "size_mb": 279.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_1",
+      "arc_position": 2,
+      "arc_label": "Les M8 en Grande Finale FNCS Solo jour 1 chez Nikof",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -9597,7 +9798,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 61,
+      "note_jour_raison": "Rax tue Kurama, Akira tue Rax, Nikof craque",
+      "redacteur_description": "Rax enchaîne les kills mais élimine Kurama, puis Akiira tue Rax et Nikof n'en peut plus. Akiira remonte ensuite jusqu'au top 6 sans soin."
     },
     {
       "filename": "clip_003_02-14-30_score87_v6_hype.mp4",
@@ -9769,7 +9973,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 27,
+      "note_jour_raison": "500 subs, Léo se lève, Shark tombe",
+      "redacteur_description": "Raynor puis Layzix enchaînent les paquets de 50 et 100 subs et Léo crie qu'il ne peut même pas caster. Shark meurt au passage et le train monte à 450 subs."
     },
     {
       "filename": "clip_007_07-42-12_score87_v6_funny.mp4",
@@ -9896,7 +10103,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "clip du daron de Nociff, chat plié",
+      "redacteur_description": "Léo diffuse un clip où Nociff hurle en game pendant que son père surgit, le chat est mort de rire. Nociff raconte les patates à sa porte."
     },
     {
       "filename": "clip_005_03-56-35_score86_v6_funny.mp4",
@@ -10044,7 +10254,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 47,
+      "note_jour_raison": "Kaatsup débarque après le leak, canapé, Nikof lâché",
+      "redacteur_description": "Kaatsup entre dans la pièce après le leak de son événement, Nikof tente le live 24h et condamne un modo à 10 ans de prison. Il conclut que Vanyak est 2e et qu'il dormira sur le canapé."
     },
     {
       "filename": "clip_009_06-44-14_score86_v6_react.mp4",
@@ -10187,7 +10400,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "Kane Ballon d'Or, choc de Léo, hors Fortnite",
+      "redacteur_description": "Léo avait juré Mbappé mais Harry Kane est sacré et il finit par dire que c'est mérité. Le chat explose sur le classement et un leak supposé."
     },
     {
       "filename": "clip_007_02-42-35_score85_v6_funny_subs.mp4",
@@ -10314,7 +10530,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "défi 1000 boop en une minute, anglais",
+      "redacteur_description": "Savage défie Boop de dire boop mille fois en une minute, Boop s'exécute jusqu'à presque s'évanouir. Chronomètre à l'écran."
     },
     {
       "filename": "clip_008_00-29-28_score83_v6_funny.mp4",
@@ -10437,7 +10656,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 34,
+      "note_jour_raison": "silence sur Sky, chat voit M8 Sky, 97 vues",
+      "redacteur_description": "Les casteurs officiels parlent de Sky et Nikof impose le silence pile à ce moment. Le chat y voit la preuve que Sky signe chez M8 et spamme SSP."
     },
     {
       "filename": "clip_013_03-11-40_score83_v6_drama.mp4",
@@ -10568,7 +10790,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 40,
+      "note_jour_raison": "ratio du tweet BIG, CM chambré en anglais",
+      "redacteur_description": "Léo lit le tweet de BIG qui compare Shark à Vico absent, envoie le chat ratio le tweet et répond au CM de BIG en anglais. Le chat colle le lien en boucle."
     },
     {
       "filename": "clip_013_02-25-55_score82_v6_drama_subs.mp4",
@@ -10720,7 +10945,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "Savage répond à Pops et Fax, talk anglais",
+      "redacteur_description": "Le chat apprend à Savage que Pops et Fax l'ont traité de pretty boy trop mou, il répond que Pops mange trop de gâteau. Il démolit le niveau de Fax."
     },
     {
       "filename": "clip_012_00-35-27_score82_v6_funny_subs.mp4",
@@ -10852,7 +11080,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "Savage fête Skyjump qui tue Alba",
+      "redacteur_description": "Savage crie au sexisme quand le cast coupe le micro de Taco, puis fête Skyjump qui élimine Alba, première finaliste EU. Le chat explose en W."
     },
     {
       "filename": "clip_017_08-13-56_score81_v6_funny.mp4",
@@ -10992,7 +11223,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "vidéo d'un joueur qui hurle allo, long",
+      "redacteur_description": "Le vocal montre à Léo la vidéo d'un joueur qui hurle allo sur ses coéquipiers, le chat est plié. Léo raconte l'avoir griefé en cup avec Vanyak."
     },
     {
       "filename": "clip_001_01-13-48_score81_v6_drama.mp4",
@@ -11140,7 +11374,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 21,
+      "note_jour_raison": "clash Buzz Floki 28 ans, dramas Buzz jetés récemment",
+      "redacteur_description": "La vanne sur les 220 viewers de Floki tourne au règlement de comptes et Buzz hurle qu'il a 28 ans et joue avec lui par dépit. Replay où Floki meurt de chute seul."
     },
     {
       "filename": "clip_005_aussieantics_score80_subs.mp4",
@@ -11251,7 +11488,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "Flickzy tue Shxrk game 1, Aussie 10 pour cent",
+      "redacteur_description": "Dès la game 1 de la Grande Finale EU, Flickzy élimine Shxrk et le replay montre la mort. AussieAntics crie et le chat spamme des non."
     },
     {
       "filename": "clip_011_00-07-21_score80_v6_funny.mp4",
@@ -11369,7 +11609,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "cinquième fusée du tweet, Nikof craque",
+      "redacteur_description": "Le chat réclame la cinquième fusée de son tweet et y voit une annonce, Nikof jure que ça ne veut rien dire. Il dit ne plus pouvoir vivre."
     },
     {
       "filename": "clip_012_02-29-00_score80_v6_funny.mp4",
@@ -11500,7 +11743,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "roster Rocket League Kaydop sobre, chat B.I.T.E",
+      "redacteur_description": "Nikof annonce faussement qu'il n'y aura aucune recrue et compose un roster Rocket League avec Itachi, Brawks et Kaydop sobre le matin. Le chat invente la B.I.T.E."
     },
     {
       "filename": "clip_013_00-27-46_score79_v6_funny.mp4",
@@ -11635,7 +11881,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 26,
+      "note_jour_raison": "sonnerie Discord, Snayzy roi de la malice",
+      "redacteur_description": "La sonnerie Discord retentit au pire moment et Nikof accuse Snayzy d'être le roi de la malice. Le chat spamme la malice."
     },
     {
       "filename": "clip_014_03-00-50_score79_v6_funny.mp4",
@@ -11760,7 +12009,10 @@
           "views": 9980,
           "caption": "Le plus gros leak de la vie de Nikof c’est grave 😱😱 #nikof #m8 #gentlemates #leothecrack #podasai "
         }
-      ]
+      ],
+      "note_jour": 43,
+      "note_jour_raison": "leak escalade Kaatsup, tiktok 10k vues",
+      "redacteur_description": "En parlant de Brawks à l'escalade, Nikof dévoile le sport de l'événement de Kaatsup, panique et menace de bannir les clippeurs. Il prévoit déjà le canapé."
     },
     {
       "filename": "clip_015_02-32-47_score78_v6_drama.mp4",
@@ -11829,9 +12081,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1oKtM938ESorJ6yB16X-Gy7N1Ar0vptXu/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1rXMenh5tzPhVQijVZLX4hVacBWoLCAEv&export=download&confirm=t",
       "size_mb": 167.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_1",
+      "arc_position": 4,
+      "arc_label": "Les M8 en Grande Finale FNCS Solo jour 1 chez Nikof",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -11924,7 +12176,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 38,
+      "note_jour_raison": "Rax contre Akira puis Werex, Vanyak top 7",
+      "redacteur_description": "Rax et Akira se retrouvent face à face et Nikof réclame une télécommande, Rax finit tué par Werex. Vanyak gratte un top 7 sous les emotes."
     },
     {
       "filename": "clip_026_07-03-39_score78_v6_talk.mp4",
@@ -12056,7 +12311,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "remerciements 500 subs, sincère mais calme",
+      "redacteur_description": "Léo découvre 50 subs offerts, compte près de 500 subs sur la soirée et remercie sa communauté qui a changé sa vie. Gameplay créatif derrière."
     },
     {
       "filename": "clip_029_07-49-39_score78_v6_talk.mp4",
@@ -12183,7 +12441,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "anecdotes Izzi et bootcamp, vocal talk",
+      "redacteur_description": "Nonoche raconte comment Izzi l'a planté avant une cup pour Momsy, puis le souvenir du bootcamp à 300 de ping. Gameplay créatif derrière."
     },
     {
       "filename": "clip_021_00-25-10_score78_v6_drama_subs.mp4",
@@ -12310,7 +12571,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "Velo lâché, chat dit non, Savage peu gardé",
+      "redacteur_description": "Savage apprend que Velo a été lâché par son équipe et Boop propose de le reprendre en trio. Le chat répond par un mur de non."
     },
     {
       "filename": "clip_001_01-04-21_score77_v6_drama.mp4",
@@ -12502,7 +12766,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "procès du plus nul du trio, Shark coule",
+      "redacteur_description": "Pendant que Shark meurt encore, la vocale se dispute sur qui est le plus nul entre Floki et Kamé et Jo réclame un kick. Le chat rit et dit que Floki a le seum."
     },
     {
       "filename": "clip_031_06-31-09_score77_v6_funny.mp4",
@@ -12641,7 +12908,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "discours Putellas, hors Fortnite",
+      "redacteur_description": "Putellas remporte le Ballon d'Or féminin et enchaîne un discours en trois langues que le chat spamme de zzz. Léo conclut sur les rêves de pro Fortnite."
     },
     {
       "filename": "clip_030_04-30-23_score77_v6_funny.mp4",
@@ -12768,7 +13038,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "corde à linge Squeezie, vocal sans image",
+      "redacteur_description": "Léo raconte le saut de Squeezie sur le ring de catch et le vocal transforme ça en corde à linge. Léo craque de rire."
     },
     {
       "filename": "clip_003_02-51-15_score77_v6_funny.mp4",
@@ -12903,7 +13176,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "débat foot Messi CR7, hors sujet",
+      "redacteur_description": "Jo raconte ses détections au FC Metz puis choisit CR7 et tout le vocal le traite de footix. Gameplay calme derrière."
     },
     {
       "filename": "clip_005_00-44-59_score76_v6_funny.mp4",
@@ -13063,7 +13339,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "Jo rage VPN et boniche, long et hors jeu",
+      "redacteur_description": "Jo pète un câble sur le partage du Ballon d'Or puis lance boniche au pied à Lixium, insultes et menaces de changer de trio. Tapis rouge à l'écran."
     },
     {
       "filename": "clip_018_00-19-24_score76_v6_talk.mp4",
@@ -13181,7 +13460,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "mercato option A B C, chat SSP",
+      "redacteur_description": "Interrogé sur le mercato, Nikof dit qu'une piste se dessine mais que rien n'est fait et lance trois options mystères. Le chat crie SSP."
     },
     {
       "filename": "clip_019_00-47-54_score76_v6_drama.mp4",
@@ -13250,9 +13532,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1ayEkCTn9DwcKRej-aCrCGYmaifeqTSGY/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1dTG8HYJPmKyzOQ3SMrT3EXLmtVxMquMf&export=download&confirm=t",
       "size_mb": 199.9,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_1",
+      "arc_position": 1,
+      "arc_label": "Les M8 en Grande Finale FNCS Solo jour 1 chez Nikof",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -13345,7 +13627,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 46,
+      "note_jour_raison": "Akira meurt storm, Kurama prend le kill, team up",
+      "redacteur_description": "Akiira meurt de la zone dès la première storm et Kurama, à côté, récupère le kill, puis Rax et Kurama tombent. Nikof dresse un bilan amer."
     },
     {
       "filename": "clip_022_03-18-55_score76_v6_hype.mp4",
@@ -13414,9 +13699,9 @@
       "drive_view_url": "https://drive.google.com/file/d/14InDyKHF7CaTWSq1iNCqHdVHnKHv4YgF/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1j2JXP_B9wDjVUNNqNrflsWW8myVzbuPb&export=download&confirm=t",
       "size_mb": 136.9,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-10-27_1",
+      "arc_position": 5,
+      "arc_label": "Les M8 en Grande Finale FNCS Solo jour 1 chez Nikof",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -13476,7 +13761,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 39,
+      "note_jour_raison": "Rax top 4 tué par Shxrk, win Scroll fêtée M8",
+      "redacteur_description": "Kurama tombe, Rax monte jusqu'au top 4 avant que Shxrk l'abatte, puis Scroll gagne et le chat fête un top 1 M8. Clin d'oeil à la rumeur SSP."
     },
     {
       "filename": "clip_034_05-13-24_score76_v6_drama.mp4",
@@ -13603,7 +13891,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "clash Peterbot Ajerss en anglais, Léo traduit",
+      "redacteur_description": "Léo diffuse le clash où Peterbot démonte Ajerss stats à l'appui et le surnomme Mr Overrated. Léo traduit et tranche."
     },
     {
       "filename": "clip_033_00-48-15_score76_v6_drama.mp4",
@@ -13734,7 +14025,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "Rax top 5, accusé de favoritisme, talk",
+      "redacteur_description": "Léo met Rax dans son top 5 et répond sèchement à un viewer qui l'accuse de favoritisme. Drop map à l'écran."
     },
     {
       "filename": "clip_035_06-14-40_score76_v6_drama.mp4",
@@ -13865,7 +14159,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "Léo sur Kane et le Ballon d'Or, hors sujet",
+      "redacteur_description": "Kane reçoit le trophée de meilleur buteur et Léo y voit la preuve que Mbappé aura le Ballon d'Or. Le chat le démonte sur les 73 buts de Kane."
     },
     {
       "filename": "clip_024_01-47-43_score76_v6_funny_subs.mp4",
@@ -13988,7 +14285,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "lapsus douteux de Savage, chat en ???",
+      "redacteur_description": "Savage lâche un lapsus en commentant un kill, panique et change de sujet. Le chat se remplit de points d'interrogation."
     },
     {
       "filename": "clip_006_02-01-09_score76_v6_funny.mp4",
@@ -14106,7 +14406,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "Buzz prononce Canne, footix, hors Fortnite",
+      "redacteur_description": "Buzz demande son prono Ballon d'Or au chat et prononce Kane Canne, le chat le traite de footix. Images de la cérémonie à l'écran."
     },
     {
       "filename": "clip_004_01-29-16_score76_v6_funny.mp4",
@@ -14246,7 +14549,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "chambrage Lixium parfum, long vocal",
+      "redacteur_description": "Lixium partage sa page Google en musique et Jo le complimente sur son style, le vocal le chambre pendant des minutes. Plateau FNCS en fond."
     },
     {
       "filename": "clip_005_01-43-05_score76_v6_funny.mp4",
@@ -14373,7 +14679,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 19,
+      "note_jour_raison": "vocal bourré de Buzz, chat en LUL",
+      "redacteur_description": "Jo fait écouter un vocal que Buzz lui a envoyé ivre à 5h du matin et la phrase fait exploser le chat. Buzz répond avec une variante sur Zazouille."
     },
     {
       "filename": "clip_023_00-10-32_score75_v6_talk.mp4",
@@ -14500,7 +14809,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "seconde vague de départs évoquée, talk",
+      "redacteur_description": "Nikof explique avoir pris toutes les OP de la semaine et, sur une seconde vague de départs, dit qu'il rêve de tout virer pour reconstruire. Il précise qu'il trolle."
     },
     {
       "filename": "clip_037_03-26-18_score75_v6_talk.mp4",
@@ -14636,7 +14948,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "Dylan dyslexique, Seyyto offre un sub, talk",
+      "redacteur_description": "Le chat se moque d'un jeune fan Havok pour une faute, il explique être dys et Seyyto lui offre un sub. Léo fait spammer HVKWIN."
     },
     {
       "filename": "clip_036_01-33-13_score75_v6_drama.mp4",
@@ -14771,7 +15086,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "Léo défend Kane, chat footix, hors sujet",
+      "redacteur_description": "Léo s'indigne qu'on banalise les 61 buts de Kane et dit que Mbappé ne mérite pas le Ballon d'Or. Le chat le traite de footix et il assume."
     },
     {
       "filename": "clip_001_nikof_score75_fan.mp4",
@@ -14888,7 +15206,10 @@
       "teaser_offset_sec": null,
       "seq_long_mode": "",
       "seq_span_sec": null,
-      "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1ows4rZt5jNLsjjwS1PS_9P8IYnH8_jkU"
+      "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1ows4rZt5jNLsjjwS1PS_9P8IYnH8_jkU",
+      "note_jour": 8,
+      "note_jour_raison": "drop map des contests, tiktok fan",
+      "redacteur_description": "Nikof montre la drop map de la finale avec les groupes par nationalité et dit qu'on sait très bien que c'est la solo. Carte à l'écran."
     },
     {
       "filename": "clip_006_01-22-15_score74_v6_funny.mp4",
@@ -15015,7 +15336,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 16,
+      "note_jour_raison": "vanne parfum et mère de Floki, chat LUL",
+      "redacteur_description": "Le pote de Jo raconte que la mère de Floki a adoré son parfum, ce qui lance une guerre de vannes. Le flacon BDK Rouge Smoking finit montré à la cam."
     },
     {
       "filename": "clip_024_00-05-12_score74_v6_hype.mp4",
@@ -15133,7 +15457,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 20,
+      "note_jour_raison": "cri de Nikof au lancement, micro saturé",
+      "redacteur_description": "Le live démarre sur un cri qui sature le micro, Nikof évacue son stress avant la finale. Il dit avoir peur que ça prolonge cette année de merde."
     },
     {
       "filename": "clip_025_02-58-26_score74_v6_funny.mp4",
@@ -15260,7 +15587,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "Snayzy et le Bas les Masques, danse Brawks",
+      "redacteur_description": "Nikof révèle que Snayzy a sorti un Bas les Masques très fluide en soirée, Snayzy jure que tout le monde sait le faire. Ils passent à la danse de Brawks."
     },
     {
       "filename": "clip_039_02-02-42_score74_v6_funny.mp4",
@@ -15396,7 +15726,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 21,
+      "note_jour_raison": "20 subs puis pizza maison montrée en full cam",
+      "redacteur_description": "Choka offre 20 subs puis la mère et la femme de Léo débarquent avec une pizza maison qu'il montre en full cam. Le chat spamme W."
     },
     {
       "filename": "clip_028_01-01-36_score73_v6_funny.mp4",
@@ -15526,7 +15859,10 @@
           "views": 1716,
           "caption": "Un joueur Gentle Mates panique en grande finale et tombe de chute 😭😭 #nikof #m8 #gentlemates #leothecrack #podasai "
         }
-      ]
+      ],
+      "note_jour": 27,
+      "note_jour_raison": "Tidi glisse et meurt, Nikof hallucine, tiktok",
+      "redacteur_description": "En fin de partie, Tidi trébuche, perd ses PV en chute et meurt d'un tick de zone. Nikof et Snayzy n'en reviennent pas et le chat rit."
     },
     {
       "filename": "clip_026_00-52-21_score73_v6_talk.mp4",
@@ -15657,7 +15993,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "Nikof défend la méta double heal, talk",
+      "redacteur_description": "Le chat s'indigne de la méta double soin double rotation et Nikof défend les meilleurs joueurs d'Europe face aux coachs de canapé. Gameplay calme."
     },
     {
       "filename": "clip_015_aussieantics_score70_subs.mp4",
@@ -15768,7 +16107,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 27,
+      "note_jour_raison": "top 1 Vanyak sans balle, mais version Aussie",
+      "redacteur_description": "Vanyak remporte une game de la finale EU sans toucher une seule balle, Victory Royale à l'écran. AussieAntics explique qu'il a failli tout gâcher sans shockwave."
     },
     {
       "filename": "clip_008_aussieantics_score70_subs.mp4",
@@ -15880,7 +16222,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 21,
+      "note_jour_raison": "top 1 Focus casté en anglais, Aussie peu gardé",
+      "redacteur_description": "Focus termine Moneymaker et prend une victoire à 7 kills en Grande Finale EU, écran Victory Royale puis retour sur le plateau. Le chat inonde de W."
     },
     {
       "filename": "clip_009_nikof_score70.mp4",
@@ -15992,7 +16337,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 37,
+      "note_jour_raison": "Rax double kill pompe dont Werex, chat wow",
+      "redacteur_description": "Rax enchaîne deux kills au pompe dans une box, dont Werex, pendant que Nikof suit Akiira qui tue aussi. Le chat crie nice et wow."
     },
     {
       "filename": "clip_017_nikof_score70.mp4",
@@ -16105,7 +16453,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 32,
+      "note_jour_raison": "clutch Akiira top 6 puis mort, fin de c129",
+      "redacteur_description": "Akiira tient le late sans bouclier jusqu'au top 6 avec 4 kills puis meurt d'une balle de pompe. Le chat écrit dommage et gg."
     },
     {
       "filename": "clip_012_wazz_score70.mp4",
@@ -16217,7 +16568,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 44,
+      "note_jour_raison": "iDrop élimine Shxrk 2e, Wazz exulte, Wazz très gardé",
+      "redacteur_description": "Wazz exulte quand iDrop élimine Shxrk, alors 2e du classement, puis craint pour Pablo et Pixie loin de la zone. Le chat spamme W."
     },
     {
       "filename": "clip_011_vadeal_score70_subs.mp4",
@@ -16328,7 +16682,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "Vadeal quitte Fortnite si Pixie gagne, talk",
+      "redacteur_description": "Vadeal jure qu'il arrête Fortnite si Pixie gagne la finale FNCS Solo sans être griefé. Spotlight Pixie à l'écran."
     },
     {
       "filename": "clip_010_akiiral2_score70.mp4",
@@ -16439,7 +16796,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 31,
+      "note_jour_raison": "Akiira tue Rax en finale, clip viewer sans voix",
+      "redacteur_description": "Akiira et Rax se battent en build en pleine Grande Finale FNCS Solo et Akiira finit par éliminer son coéquipier M8. Le chat se moque de Rax et parle de karma."
     },
     {
       "filename": "clip_014_aussieantics_score70_subs.mp4",
@@ -16550,7 +16910,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "bluff de Pablo en tempête, cast anglais",
+      "redacteur_description": "Pablo, à un tick de mourir dans la tempête, bluffe iDrop et gagne le duel. AussieAntics salue le prefire et le chat parle de poker face."
     },
     {
       "filename": "clip_038_aussieantics_score70_subs.mp4",
@@ -16662,7 +17025,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "lecture du classement, talk, rien ne se passe",
+      "redacteur_description": "AussieAntics lit le classement final du jour 1 : Malibuca premier à 250, Vanyak 200, Shxrk 198. Tableau de standings à l'écran."
     },
     {
       "filename": "clip_035_aussieantics_score70_subs.mp4",
@@ -16773,7 +17139,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "kill Shxrk banal, Aussie répète allez Vanya",
+      "redacteur_description": "Shxrk élimine un adversaire en build et récupère ses matériaux pendant que le chat se plaint de l'écran scindé. AussieAntics encourage Vanyak en boucle."
     },
     {
       "filename": "clip_037_aussieantics_score70_subs.mp4",
@@ -16885,7 +17254,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 19,
+      "note_jour_raison": "iDrop tue Shxrk, réaction Aussie, chat choqué",
+      "redacteur_description": "iDrop élimine Shxrk en pleine game 6 de la Grande Finale EU. AussieAntics hallucine sur un OG qui bat le nouveau goat et le chat explose."
     },
     {
       "filename": "clip_039_aussieantics_score70_subs.mp4",
@@ -16997,7 +17369,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "Clix 3-0 sur VicterV, finale NA peu gardée",
+      "redacteur_description": "Clix gagne son duel au spawn contre VicterV avec un 150 au pompe et mène 3-0 sur leurs contests. Le chat spamme BANG."
     },
     {
       "filename": "clip_043_nikof_score70.mp4",
@@ -17109,7 +17484,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "même moment Kaatsup à la webcam",
+      "redacteur_description": "Kaatsup arrive à la webcam de Nikof avec la preuve de son leak, il fait bannir M8 Kaillou pour 10 ans. Le chat réclame le cast NA."
     },
     {
       "filename": "clip_040_aussieantics_score70_subs.mp4",
@@ -17220,7 +17598,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "lecture d'un message Boltz, drama NA sans images",
+      "redacteur_description": "AussieAntics lit à l'écran le message de Boltz qui craque contre Bucke pour une histoire de loot. Il dit comprendre la frustration."
     },
     {
       "filename": "clip_002_inoxtag_score70_twitter_2114804237423218743_subs.mp4",
@@ -17339,7 +17720,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 19,
+      "note_jour_raison": "top 1 Inoxtag Masterkill, sujet à ne pas recycler",
+      "redacteur_description": "Inoxtag ouvre le retour du Masterkill par un top 1 dès la première game, bannière Victoire royale. Extrait Twitter sans voix."
     },
     {
       "filename": "clip_012_tjino9_score66_tournament.mp4",
@@ -17448,7 +17832,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "victoire Tjino en kill feed, version Wazz meilleure",
+      "redacteur_description": "Tjino tient la hauteur, prend le dernier kill et décroche le top 1 à 72 points. Wazz crie let's go et le chat spamme W."
     },
     {
       "filename": "clip_019_akiiral2_score60.mp4",
@@ -17560,7 +17947,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "fin de game Akiira top 6, 5 vues, peu de contexte",
+      "redacteur_description": "Akiira enchaîne un fight en build en fin de partie et termine top 6 de la game. Le chat écrit trop fort puis dommage."
     },
     {
       "filename": "clip_027_wazz_score60.mp4",
@@ -17673,7 +18063,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 20,
+      "note_jour_raison": "fin de game Wox top 4, déjà dans c170",
+      "redacteur_description": "Wox termine top 4 avec des kills en fin de game pendant que Wazz note la grosse game de Malibuca. Le chat spamme Wox le goat."
     },
     {
       "filename": "clip_022_talmo_score60.mp4",
@@ -17785,7 +18178,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "Talmo meurt sur un piège, chat rit",
+      "redacteur_description": "Talmo meurt sur un piège au plafond et regrette ses réflexes de 2018. Écran d'élimination et chat en rires."
     },
     {
       "filename": "clip_021_wazz_score60.mp4",
@@ -17897,7 +18293,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "même moment Pixie tue Marius, 60 secondes",
+      "redacteur_description": "Pixie élimine Marius, 3e du classement, puis s'allie à Pablo en finale. Le chat parle de team up et de trio avant l'heure."
     },
     {
       "filename": "clip_025_snayzy_score60.mp4",
@@ -18008,7 +18407,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 19,
+      "note_jour_raison": "Snayzy explique la technique storm surge, talk",
+      "redacteur_description": "Snayzy raconte la technique découverte avec Headzone : jouer au-dessus de la Storm Surge pour tuer des joueurs figés par le lag. Gameplay créatif."
     },
     {
       "filename": "clip_028_talmo_score60.mp4",
@@ -18120,7 +18522,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 16,
+      "note_jour_raison": "Talmo parle trop et meurt, 14 vues",
+      "redacteur_description": "Talmo dit que le jeu est simple loin de Tilted puis se fait éliminer dans la seconde par un joueur blond. Le chat crie cheh."
     },
     {
       "filename": "clip_024_alibaba_rcm_score60.mp4",
@@ -18233,7 +18638,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "Alibaba rage face cam, streamer rarement gardé",
+      "redacteur_description": "Alibaba hurle face caméra après une défaite et menace de casser son setup, avec un écran noir et un menu derrière lui. Le chat lui dit de jouer à CS2."
     },
     {
       "filename": "clip_051_aussieantics_score60_subs.mp4",
@@ -18346,7 +18754,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "12 secondes, action Calle floue",
+      "redacteur_description": "AussieAntics s'emballe sur une action de Calle pendant que Shxrk enchaîne les kills. Le chat demande un back to back."
     },
     {
       "filename": "clip_045_nikof_score60.mp4",
@@ -18458,7 +18869,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "OP acceptées pour grands projets, talk",
+      "redacteur_description": "Nikof avoue avoir accepté tous les placements de produits de la semaine pour financer de grands projets M8. Full cam à son bureau."
     },
     {
       "filename": "clip_046_aussieantics_score60_subs.mp4",
@@ -18571,7 +18985,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "clip du 2 octobre, hors journée",
+      "redacteur_description": "Victoire à 15 kills dont 10 sur Vergo, Victory Royale à l'écran dans un clip daté du 2 octobre. Le chat parle de reverse curse."
     },
     {
       "filename": "clip_044_aussieantics_score60_subs.mp4",
@@ -18683,7 +19100,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "Tidi meurt de chute, version anglaise courte",
+      "redacteur_description": "Tidi glisse en fin de partie, prend des dégâts de chute et meurt d'un tick de zone. Zynox remporte ensuite la game sous les LOL du chat."
     },
     {
       "filename": "clip_050_aussieantics_score60_subs.mp4",
@@ -18808,7 +19228,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "13 secondes, Sky meurt, trop court",
+      "redacteur_description": "Sky se fait éliminer en hauteur pendant que Vanyak récupère la hauteur avec 5 balles. Le chat répète cant do nathan."
     },
     {
       "filename": "clip_053_aussieantics_score60_subs.mp4",
@@ -18920,7 +19343,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "costume de sa fille, hors jeu",
+      "redacteur_description": "Pendant la fin de game entre Vanyak et Tjino, AussieAntics montre le costume de sa fille. Le chat spamme des emotes bébé."
     },
     {
       "filename": "clip_054_aussieantics_score60_subs.mp4",
@@ -19032,7 +19458,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "anecdote Peterbot pioche, aucune image",
+      "redacteur_description": "AussieAntics raconte que Peterbot cassait les builds d'échauffement des autres pros au Pro-Am puis les fixait. Plan sur un joueur sur scène."
     },
     {
       "filename": "clip_052_aussieantics_score60_subs.mp4",
@@ -19156,7 +19585,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 21,
+      "note_jour_raison": "win Scroll castée Aussie, Léo a mieux",
+      "redacteur_description": "Scroll remporte la game 5 de la finale EU après un tir de Demus et Shxrk remonte 2e. Le chat félicite Scroll."
     },
     {
       "filename": "clip_061_nikof_score60.mp4",
@@ -19268,7 +19700,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 30,
+      "note_jour_raison": "webcams M8 en délire, même moment que c122",
+      "redacteur_description": "Avant la game, Nikof lance les POV de ses joueurs : Rax sous Justin Bieber, vidéos test absurdes chez Vanyak. Le chat explose de rire."
     },
     {
       "filename": "clip_056_aussieantics_score60_subs.mp4",
@@ -19381,7 +19816,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "Pollo survit à une embuscade, moment flou",
+      "redacteur_description": "Pollo survit à un lurk puis retourne la situation en finale NA. AussieAntics répète comment il a survécu."
     },
     {
       "filename": "clip_066_nikof_score60.mp4",
@@ -19500,7 +19938,10 @@
           "views": 2746,
           "caption": "Nikof trash Merstach qui ne perf plus du tout 😱😱 #nikof #m8 #gentlemates #leothecrack #podasai "
         }
-      ]
+      ],
+      "note_jour": 15,
+      "note_jour_raison": "analyse Merstach millionnaire, talk",
+      "redacteur_description": "Nikof analyse la chute de Merstach, déjà millionnaire et qui aurait perdu l'envie de grind. Gameplay de rotation en Sonic."
     },
     {
       "filename": "clip_064_nikof_score60.mp4",
@@ -19612,7 +20053,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 23,
+      "note_jour_raison": "même moment que le leak c142",
+      "redacteur_description": "Nikof réalise qu'il a dévoilé Brawks comme invité de l'event escalade de Kalina et parle des conséquences. Il menace de bannir le premier qui clippe."
     },
     {
       "filename": "clip_059_aussieantics_score60_subs.mp4",
@@ -19725,7 +20169,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "Pollo surprend Peterbot, NA peu gardée",
+      "redacteur_description": "Pollo surprend Peterbot en hauteur en fin de game NA et Doxy monte à la shockwave. AussieAntics craint d'avoir maudit Pollo."
     },
     {
       "filename": "clip_065_nikof_score60.mp4",
@@ -19838,7 +20285,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 23,
+      "note_jour_raison": "sous la capote, Snayzy, chat en vrille",
+      "redacteur_description": "Snayzy lâche il y en a sous la capote en plein cast et Nikof part en vrille. Le chat demande à Kaatsup de tweeter."
     },
     {
       "filename": "clip_003_fortnitefraactu_score60_twitter_2114817700874600563_subs.mp4",
@@ -19945,7 +20395,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "tweet Masterkill Inoxtag, pas de Fortnite",
+      "redacteur_description": "Extrait Twitter de FortniteFraActu sur le Masterkill avec Inoxtag et un pari à 850 euros. Plateau Masterkill, aucune action en jeu."
     },
     {
       "filename": "clip_002_idrop74_score60_tournament.mp4",
@@ -20054,7 +20507,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "kill iDrop sans réaction du cast",
+      "redacteur_description": "iDrop élimine un joueur pendant que Wazz commente la rotation de Pablo boxé près d'un distributeur. Kill feed du replay."
     },
     {
       "filename": "clip_003_idrop74_score60_tournament.mp4",
@@ -20163,7 +20619,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "kill iDrop, Sky dans la feed",
+      "redacteur_description": "iDrop prend un nouveau kill et Wazz note que Sky meurt dans la feed. Le chat écrit iDrop en feu."
     },
     {
       "filename": "clip_006_idrop74_score60_tournament.mp4",
@@ -20272,7 +20731,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "kill iDrop pendant la storm, fin de game",
+      "redacteur_description": "iDrop prend un kill en fin de game pendant que Wazz constate que la game de Pixx est finie. Le chat réclame le classement."
     },
     {
       "filename": "clip_008_tjino9_score60_tournament.mp4",
@@ -20381,7 +20843,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "kill Tjino, Pablo tombe, cast moyen",
+      "redacteur_description": "Tjino récupère un kill et 300 mats pendant que Pablo subit le focus en hauteur. Wazz ne comprend pas comment il survit."
     },
     {
       "filename": "clip_004_idrop74_score60_tournament.mp4",
@@ -20490,7 +20955,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "kill iDrop, Tjino en mal, cast moyen",
+      "redacteur_description": "iDrop récupère un kill pendant que Tjino galère sous la storm, Wazz plaint Tjino. Le chat écrit nice."
     },
     {
       "filename": "clip_001_idrop74_score60_tournament.mp4",
@@ -20599,7 +21067,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "kill feed iDrop, cast Wazz, lane peu gardée",
+      "redacteur_description": "iDrop prend un kill en Grande Finale EU pendant que Wazz relance la même prédiction que la game d'avant. Le chat écrit W idrop."
     },
     {
       "filename": "clip_007_tjino9_score60_tournament.mp4",
@@ -20708,7 +21179,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "kill Tjino, Wox meurt, cast Wazz",
+      "redacteur_description": "Tjino prend un kill pendant que Wazz suit Wox sous la storm et Sky dans la feed. Le chat écrit Nice tjino."
     },
     {
       "filename": "clip_005_idrop74_score60_tournament.mp4",
@@ -20817,7 +21291,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "cinquième kill iDrop, Wazz dit en pétard",
+      "redacteur_description": "iDrop signe son cinquième kill de la game et Wazz dit que ça le remet en confiance. Le chat parle de remontada."
     },
     {
       "filename": "clip_009_tjino9_score60_tournament.mp4",
@@ -20926,7 +21403,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "kill Tjino sur Kenrop, Akira tue Rax",
+      "redacteur_description": "Tjino prend un kill sur Kenrop pour la deuxième game de suite pendant que Wazz note qu'Akira tue Rax. Le chat réclame la POV de Wox."
     },
     {
       "filename": "clip_010_tjino9_score60_tournament.mp4",
@@ -21035,7 +21515,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "kill Tjino top 24, kill feed",
+      "redacteur_description": "Tjino inbox un joueur et récupère un kill en fin de partie pendant que Wazz réclame un refresh. Le chat spamme le drapeau danois."
     },
     {
       "filename": "clip_011_tjino9_score60_tournament.mp4",
@@ -21144,7 +21627,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "kill Tjino sur Salvator, hauteur",
+      "redacteur_description": "Tjino, 500 mats en main, prend le kill sur Salvator en hauteur dans la dernière game. Wazz dit perdre ses mots."
     },
     {
       "filename": "clip_034_mrsavage_score50_subs.mp4",
@@ -21257,7 +21743,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "fin de game Focus commentée Savage, 27 secondes",
+      "redacteur_description": "Savage commente le 1v1 Focus Moneymaker qui finit en Victory Royale pour Focus. Le chat écrit W focus."
     },
     {
       "filename": "clip_032_asianjeff_score50_subs.mp4",
@@ -21368,7 +21857,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "AsianJeff pas qualifié, menus, streamer jamais gardé",
+      "redacteur_description": "Dans le lobby deux minutes avant la finale, AsianJeff réalise qu'il ne s'est jamais qualifié la semaine passée. Il reste dans les menus et le répète en boucle."
     },
     {
       "filename": "clip_033_deckzee_score50.mp4",
@@ -21479,7 +21971,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "7 secondes de build, streamer inconnu",
+      "redacteur_description": "Deckzee enchaîne une séquence de build rapide et élimine un adversaire en sept secondes. Le chat le compare à Peterbot."
     },
     {
       "filename": "clip_068_aussieantics_score50_subs.mp4",
@@ -21592,7 +22087,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "deux joueurs B-Glory se gênent, anecdotique",
+      "redacteur_description": "Deux joueurs de la même orga B-Glory se tirent dessus en pleine finale et Alba marque ses premiers points. Le chat note qu'elle a plus de points que Shxrk."
     },
     {
       "filename": "clip_067_leothecrack_score50.mp4",
@@ -21704,7 +22202,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "Meli coache Hydra, 30 secondes, talk",
+      "redacteur_description": "Léo affirme que Meli coache Hydra hors du jeu et un invité n'y croit pas. Compte à rebours avant la game."
     },
     {
       "filename": "clip_070_aussieantics_score50_subs.mp4",
@@ -21817,7 +22318,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "Kreg survit, sub bomb, moment confus",
+      "redacteur_description": "Kreg bloque les balles et survit à un fight de fin de partie pendant qu'un viewer offre 20 subs. AussieAntics dit être tendu."
     },
     {
       "filename": "clip_071_aussieantics_score50_subs.mp4",
@@ -21930,7 +22434,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "bug de file Clix, lobby, peu visuel",
+      "redacteur_description": "Bloqué par un bug de file d'attente, Clix doit être invité par Bucke pour rejoindre la finale NA. Le chat spamme W Bucke."
     },
     {
       "filename": "clip_069_aussieantics_score50_subs.mp4",
@@ -22042,7 +22549,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "Malibuca passe premier, Aussie ne trouve pas Shxrk",
+      "redacteur_description": "En fin de game, Malibuca chasse en hauteur et passe premier pendant que Focus meurt dans la tempête. AussieAntics cherche Shxrk à l'écran."
     },
     {
       "filename": "clip_075_aussieantics_score50_subs.mp4",
@@ -22154,7 +22664,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "Peterbot à zéro point, Kirillian le tue",
+      "redacteur_description": "Kirillian élimine Peterbot, qui reste à zéro point après deux games de la finale NA. AussieAntics parle d'un début brutal."
     },
     {
       "filename": "clip_074_aussieantics_score50_subs.mp4",
@@ -22267,7 +22780,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "Jynxzi découvre Bucke pro, vocal anglais",
+      "redacteur_description": "En regardant la finale NA, Jynxzi avoue qu'il ne savait pas que Bucke était un vrai pro. AussieAntics rit et le chat spamme BUCKE."
     },
     {
       "filename": "clip_077_aussieantics_score50_subs.mp4",
@@ -22380,7 +22896,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "débat Bucke Boltz, aucune action",
+      "redacteur_description": "AussieAntics explique les deux côtés du clash entre Bucke et Boltz sur le partage de coffres. Replay en fond."
     },
     {
       "filename": "clip_073_aussieantics_score50_subs.mp4",
@@ -22492,7 +23011,212 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "avis sur la saison One Piece, talk",
+      "redacteur_description": "AussieAntics confirme que la prochaine mini-saison sera sur l'anime et One Piece et donne son avis. Gameplay calme derrière."
     }
-  ]
+  ],
+  "redacteur": {
+    "sujet_du_jour": "Le jour 1 de la Grande Finale FNCS Solo vu des casts français : le top 1 absurde de Vanyak sans balles chez Nikof et la pique de BIG contre Shxrk que Léo fait ratio, avant un jour 2 où tout se joue ce soir.",
+    "titres": [
+      {
+        "titre": "LE PIRE TOP 1 DES FNCS CHOQUE NIKOF 🤣 BIG SE MOQUE DE SHXRK ? 😡",
+        "accroche_1": {
+          "clip_id": "v6_cl_7775__nikof_1027",
+          "pourquoi": "Vanyak gagne une game de Grande Finale avec 5 balles et zéro mat, Nikof hurle et le chat parle du pire top 1 de l'histoire",
+          "existe": true,
+          "streamer": "nikof"
+        },
+        "accroche_2": {
+          "clip_id": "v6_cl_11500__leothecrack_1027",
+          "pourquoi": "BIG tweete que Shxrk a autant de points que Vico qui ne joue pas, Léo lance le ratio et chambre le CM",
+          "existe": true,
+          "streamer": "leothecrack"
+        },
+        "angle": "actu"
+      },
+      {
+        "titre": "LES M8 S'ENTRETUENT EN FINALE 😭 LE RETOUR DE SHXRK CHOQUE LÉO 🤯",
+        "accroche_1": {
+          "clip_id": "v6_cl_5139__nikof_1027",
+          "pourquoi": "Rax tue Kurama puis Akiira tue Rax dans la même game, Nikof crie au cauchemar",
+          "existe": true,
+          "streamer": "nikof"
+        },
+        "accroche_2": {
+          "clip_id": "v6_cl_15359__leothecrack_1027",
+          "pourquoi": "Après trois games à zéro, Shxrk arrache un top 1 et Léo explose en Shark is back",
+          "existe": true,
+          "streamer": "leothecrack"
+        },
+        "angle": "performance"
+      },
+      {
+        "titre": "NIKOF LEAK L'EVENT DE KAATSUP 😱 LÉO EXPLOSE À 500 SUBS 🤩",
+        "accroche_1": {
+          "clip_id": "v6_cl_10850__nikof_1027",
+          "pourquoi": "Nikof dévoile l'escalade et Brawks pour l'événement de Kaatsup, qui débarque ensuite dans la pièce",
+          "existe": true,
+          "streamer": "nikof"
+        },
+        "accroche_2": {
+          "clip_id": "v6_cl_8070__leothecrack_1027",
+          "pourquoi": "Raynor et Layzix enchaînent les paquets de subs, Léo se lève à 450 subs en plein cast",
+          "existe": true,
+          "streamer": "leothecrack"
+        },
+        "angle": "croustillant"
+      }
+    ],
+    "a_eviter": "Les derniers titres ont déjà utilisé Nikof leak, ce joueur M8 choque Snayzy, le retour de la trio et le clutch : ne pas refaire un titre de leak ou de choc générique, et ne rien affirmer sur le vainqueur final tant que le jour 2 n'est pas joué.",
+    "modele": "claude-fable-5-1",
+    "genere_le": "2026-10-27T08:33:29",
+    "plan": {
+      "titre_index": 1,
+      "titre": "LE PIRE TOP 1 DES FNCS CHOQUE NIKOF 🤣 BIG SE MOQUE DE SHXRK ? 😡",
+      "duree_cible_min": 15,
+      "ossature": [
+        {
+          "position": 1,
+          "clip_id": "v6_cl_7775__nikof_1027",
+          "streamer": "nikof",
+          "existe": true,
+          "role": "ouverture",
+          "pourquoi": "L'accroche 1 : Vanyak à 5 balles et zéro mat qui gagne, Nikof et le chat en folie dès les premières secondes",
+          "a_garder": "2:31-4:55"
+        },
+        {
+          "position": 2,
+          "clip_id": "v6_cl_2874__nikof_1027",
+          "streamer": "nikof",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "On remonte au début de soirée : Akiira meurt de la storm et c'est Kurama qui prend le kill, le chat crie au team up",
+          "a_garder": "0:09-1:10, 2:49-3:50"
+        },
+        {
+          "position": 3,
+          "clip_id": "v6_cl_5139__nikof_1027",
+          "streamer": "nikof",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Rax tue Kurama puis Akiira tue Rax, Nikof craque, puis le clutch top 6 d'Akiira",
+          "a_garder": "1:32-3:10, 4:47-6:10"
+        },
+        {
+          "position": 4,
+          "clip_id": "v6_cl_1230__nikof_1027",
+          "streamer": "nikof",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Respiration drôle : Rax chante Justin Bieber sur sa POV, Nikof coupe avant de se faire bannir",
+          "a_garder": "0:00-1:00"
+        },
+        {
+          "position": 5,
+          "clip_id": "v6_cl_11500__leothecrack_1027",
+          "streamer": "leothecrack",
+          "existe": true,
+          "role": "reponse",
+          "pourquoi": "La réponse du titre : le tweet de BIG sur Shxrk et Vico, Léo lance le ratio et répond au CM",
+          "a_garder": "0:08-2:40"
+        },
+        {
+          "position": 6,
+          "clip_id": "v6_cl_15359__leothecrack_1027",
+          "streamer": "leothecrack",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "La réponse de Shxrk en jeu : Léo le supplie puis il arrache le top 1, chat en W",
+          "a_garder": "0:10-2:00"
+        },
+        {
+          "position": 7,
+          "clip_id": "v6_cl_14032__nikof_1027",
+          "streamer": "nikof",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Vanyak monstre jusqu'au top 4, puis le classement : Vanyak 2e derrière Malibuca présent dans le chat",
+          "a_garder": "0:10-1:40, 3:12-4:24"
+        },
+        {
+          "position": 8,
+          "clip_id": "v6_cl_14195__nikof_1027",
+          "streamer": "nikof",
+          "existe": true,
+          "role": "chute",
+          "pourquoi": "Kaatsup débarque après le leak, Nikof lâché par Snayzy, il finira sur le canapé mais Vanyak est top 2",
+          "a_garder": "0:12-1:20, 3:53-5:03"
+        }
+      ],
+      "reponse_du_titre": {
+        "clip_id": "v6_cl_11500__leothecrack_1027",
+        "streamer": "leothecrack",
+        "existe": true,
+        "minute_cible": 9.0
+      },
+      "remplissage": "Entre les blocs, les meilleures notes de Wazz et de Léo sur la même soirée : Tjino top 1 et iDrop qui élimine Shxrk chez Wazz, Shxrk qui joue le back to back chez Léo, et le leak de l'escalade de Nikof juste avant la chute."
+    },
+    "miniature": {
+      "source": "fable",
+      "titre": "LE PIRE TOP 1 DES FNCS CHOQUE NIKOF 🤣 BIG SE MOQUE DE SHXRK ? 😡",
+      "gauche": {
+        "clip_id": "v6_cl_441__nikof_1027",
+        "streamer": "nikof",
+        "texte": "LE PIRE TOP 1 DES FNCS CHOQUE NIKOF",
+        "punchline": "LE PIRE TOP 1 DES FNCS CHOQUE NIKOF",
+        "emoji": "🤣",
+        "expression": "jaw dropped in disbelief, eyes wide, one hand half raised, laughing",
+        "scene": "Fortnite endgame on a purple storm sky, lone player on a wooden ramp with an empty assault rifle, Victory Royale banner visible",
+        "palette": [
+          "electric purple",
+          "neon green",
+          "white"
+        ],
+        "planche_case": 10,
+        "seconde": 43.91,
+        "seconde_source": "planche",
+        "ce_quon_voit": "Nikof de face en full cam, casquette et casque, bouche ouverte, lumière chaude derrière"
+      },
+      "droite": {
+        "clip_id": "v6_cl_7362__leothecrack_1027",
+        "streamer": "leothecrack",
+        "texte": "BIG SE MOQUE DE SHXRK ?",
+        "punchline": "BIG SE MOQUE DE SHXRK ?",
+        "emoji": "😡",
+        "expression": "annoyed frown, lips pressed, eyebrows raised, pointing sideways at a phone",
+        "scene": "a smartphone screen showing a tweet with a shark emoji next to a crossed-out zero, dark esports stage lights in the background",
+        "palette": [
+          "royal blue",
+          "cream",
+          "gold"
+        ],
+        "planche_case": 16,
+        "seconde": 116.82,
+        "seconde_source": "planche",
+        "ce_quon_voit": "Léo de face en full cam, casque sur les oreilles, chambre sombre, visage net"
+      },
+      "element_jeu": {
+        "clip_id": "co_EnjoyableWrongPresidentMoreCowbell-YZSiV5aBcCuV5QQM__wazz_1027",
+        "streamer": "wazz",
+        "planche_case": 15,
+        "seconde": 34.62,
+        "description": "bannière Victory Royale au-dessus de Vanyak sur la montagne"
+      },
+      "idee_creative": "À gauche, Nikof hallucine devant un écran Victory Royale avec un compteur de munitions à 5 bien lisible. À droite, Léo brandit un téléphone où l'on devine un tweet barré, avec Shxrk en petit encadré à côté de lui, puisque le pipeline joint sa photo.",
+      "visage_manquant": "",
+      "idees_de_repli": [
+        "Gauche : Nikof et Snayzy côte à côte avec le classement Malibuca 1er, Vanyak 2e en surimpression.",
+        "Droite : Shxrk sur scène en Grande Finale avec son écran Victory Royale, Léo en petit médaillon qui crie."
+      ],
+      "ambiance": "Lumière chaude de bureau à gauche contre néons bleus de scène FNCS à droite, émotion dominante : incrédulité amusée puis colère.",
+      "a_eviter": "Pas d'écran de lobby ni de tableau de classement illisible, pas deux fois la même expression de choc, pas de Malibuca au premier plan puisqu'il n'est pas dans le titre.",
+      "assets_demandes": [
+        "Bannière Victory Royale (actuelle)",
+        "Emblème FNCS",
+        "Fusil d'assaut MK-Seven"
+      ]
+    }
+  }
 }
