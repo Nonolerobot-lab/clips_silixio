@@ -40,6 +40,31 @@
       ]
     },
     {
+      "date": "2026-10-29",
+      "total_clips": 138,
+      "streamers": [
+        "alibaba_rcm",
+        "aussieantics",
+        "buzzftn",
+        "gotaga",
+        "gw tylio7",
+        "jolavanille",
+        "kurama_203",
+        "leothecrack",
+        "mb kuruma",
+        "nikof",
+        "nvk suires",
+        "podasai",
+        "queasy",
+        "revenja",
+        "rezonfn",
+        "risezd",
+        "stizo_",
+        "talmo",
+        "wazz"
+      ]
+    },
+    {
       "date": "2026-10-28",
       "total_clips": 175,
       "streamers": [
@@ -163,36 +188,7 @@
         "venofn",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-10-22",
-      "total_clips": 79,
-      "streamers": [
-        "akiiral2",
-        "asianjeff",
-        "aussieantics",
-        "community",
-        "harmonyglitch",
-        "k1ng",
-        "khanada_",
-        "kirillianfn1",
-        "kurama_203",
-        "lyost frost",
-        "mightyzzr",
-        "mrsavage",
-        "nikof",
-        "noahreyli",
-        "revenja",
-        "risezd",
-        "shxrkfnbr",
-        "stizo_",
-        "talmo",
-        "vadeal",
-        "vanyak3kk",
-        "venofn",
-        "waze"
-      ]
     }
   ],
-  "latest": "2026-10-28"
+  "latest": "2026-10-29"
 }
