@@ -3,7 +3,7 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 277,
+      "total_clips": 183,
       "streamers": [
         "akiiral2",
         "alibaba_rcm",
@@ -13,12 +13,10 @@
         "flickzyv2",
         "floki",
         "fortnitefraactu",
-        "gentlemates",
         "inoxtagsama",
         "jannisz",
         "jolavanille",
         "k1ng",
-        "khanada_",
         "kirillianfn1",
         "kurama_203",
         "leothecrack",
@@ -28,15 +26,35 @@
         "pixiefnbr1",
         "podasai",
         "revenja",
-        "rezonfn",
-        "risezd",
         "shxrkfnbr",
-        "talmo",
         "vadeal",
         "venofn",
         "waze",
         "wazz",
         "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "total_clips": 99,
+      "streamers": [
+        "akiiral2",
+        "alibaba_rcm",
+        "aussieantics",
+        "buzzftn",
+        "community",
+        "izziftn",
+        "kurama_203",
+        "leothecrack",
+        "lyost chechensky",
+        "mrsavage",
+        "revenja",
+        "risezd",
+        "shxrkfnbr",
+        "talmo",
+        "venofn",
+        "waze",
+        "wazz"
       ]
     },
     {
@@ -164,31 +182,7 @@
         "waze",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-10-23",
-      "total_clips": 144,
-      "streamers": [
-        "akiiral2",
-        "buzzftn",
-        "gentlemates",
-        "k1ng",
-        "khanada_",
-        "kirillianfn1",
-        "kurama_203",
-        "leothecrack",
-        "mrsavage",
-        "noahreyli",
-        "podasai",
-        "rezonfn",
-        "risezd",
-        "snayzy",
-        "stizo_",
-        "talmo",
-        "venofn",
-        "wazz"
-      ]
     }
   ],
-  "latest": "2026-10-29"
+  "latest": "2026-10-30"
 }
