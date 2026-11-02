@@ -3,38 +3,53 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 201,
+      "total_clips": 139,
       "streamers": [
+        "acorn",
         "akiiral2",
         "alibaba_rcm",
-        "artskill",
         "aussieantics",
         "buzzftn",
         "community",
-        "floki",
         "gentlemates",
-        "inoxtagsama",
         "izziftn",
-        "jannisz",
-        "jolavanille",
-        "k1ng",
-        "kirillianfn1",
         "kurama_203",
         "leothecrack",
         "lyost chechensky",
         "mrsavage",
-        "nikof",
-        "podasai",
+        "pixiefnbr1",
         "revenja",
         "risezd",
         "shxrkfnbr",
         "stizo_",
         "talmo",
-        "vadeal",
         "venofn",
         "waze",
-        "wazz",
-        "zetfartv"
+        "wazz"
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "total_clips": 69,
+      "streamers": [
+        "acorn",
+        "artskill",
+        "aussieantics",
+        "buzzftn",
+        "community",
+        "izziftn",
+        "jolavanille",
+        "k1ng",
+        "khanada_",
+        "kurama_203",
+        "leothecrack",
+        "mrsavage",
+        "revenja",
+        "rezonfn",
+        "risezd",
+        "stizo_",
+        "talmo",
+        "venofn"
       ]
     },
     {
@@ -167,32 +182,7 @@
         "vadeal",
         "wazz"
       ]
-    },
-    {
-      "date": "2026-10-26",
-      "total_clips": 80,
-      "streamers": [
-        "alibaba_rcm",
-        "artskill",
-        "buzzftn",
-        "community",
-        "floki",
-        "inoxtagsama",
-        "jannisz",
-        "jolavanille",
-        "k1ng",
-        "kirillianfn1",
-        "kurama_203",
-        "leothecrack",
-        "nikof",
-        "podasai",
-        "shxrkfnbr",
-        "vadeal",
-        "venofn",
-        "waze",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-11-01"
+  "latest": "2026-11-02"
 }
