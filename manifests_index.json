@@ -1,6 +1,31 @@
 {
   "days": [
     {
+      "date": "2026-11-03",
+      "total_clips": 88,
+      "streamers": [
+        "acorn",
+        "artskill",
+        "asianjeff",
+        "aussieantics",
+        "deckzee",
+        "izziftn",
+        "k1ng",
+        "khanada_",
+        "kurama_203",
+        "leothecrack",
+        "mrsavage",
+        "nikof",
+        "pixiefnbr1",
+        "revenja",
+        "shxrkfnbr",
+        "stizo_",
+        "talmo",
+        "venofn",
+        "zetfartv"
+      ]
+    },
+    {
       "date": "2026-11-02",
       "total_clips": 69,
       "streamers": [
@@ -25,5 +50,5 @@
       ]
     }
   ],
-  "latest": "2026-11-02"
+  "latest": "2026-11-03"
 }
