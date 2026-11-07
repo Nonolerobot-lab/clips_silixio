@@ -2058,6 +2058,26 @@
             loadClip(currentIndex);
         }
 
+        // 2026-11-05 (GO PO) : le plan de la video passe sur les cartes. Replie dans le bandeau,
+        // Silixio ne l'ouvrait jamais (0 ouverture sur 20 sessions, mesure edito_usage) alors qu'il
+        // passe sur chaque clip. L'ordre de la page ne change pas (tri par note Fable).
+        const PLAN_ROLE_LABELS = { montee: 'montée', reponse: 'réponse' };
+        function planEntry(clip) {
+            const plan = MANIFEST && MANIFEST.redacteur && MANIFEST.redacteur.plan;
+            const oss = (plan && Array.isArray(plan.ossature)) ? plan.ossature : [];
+            const i = oss.findIndex(function (e) {
+                return e && e.clip_id && (e.clip_id === clip.clip_id || e.clip_id === clip.feedback_key);
+            });
+            if (i < 0) return null;
+            const e = oss[i];
+            return {
+                numero: Number(e.position) || i + 1,
+                total: oss.length,
+                role: String(PLAN_ROLE_LABELS[e.role] || e.role || ''),
+                pourquoi: String(e.pourquoi || ''),
+            };
+        }
+
         // 2026-10-09 (GO PO) : redacteur en chef. MANIFEST.redacteur = {sujet_du_jour, titres:
         // [{titre, accroche_1: {clip_id, pourquoi, streamer, existe}, accroche_2, angle}], ...}.
         // Un bouton copier par titre, les deux clips sources cliquables (saut au clip).
@@ -2109,9 +2129,8 @@
                     + (plan.titre ? ' &middot; ' + escHtml(plan.titre) : '')
                     + (plan.duree_cible_min ? ' &middot; ~' + escHtml(String(plan.duree_cible_min)) + ' min' : '')
                     + ' &middot; ' + oss.length + ' clips</summary><ol>';
-                const roleLbl = { montee: 'montée', reponse: 'réponse' };
                 oss.forEach(function (e) {
-                    html += '<li><span class="plan-role">' + escHtml(String(roleLbl[e.role] || e.role || '?')) + '</span> &middot; '
+                    html += '<li><span class="plan-role">' + escHtml(String(PLAN_ROLE_LABELS[e.role] || e.role || '?')) + '</span> &middot; '
                         + planSrc(e)
                         + (e.pourquoi ? ' &middot; ' + escHtml(String(e.pourquoi)) : '')
                         + (e.a_garder ? ' &middot; <span class="plan-garder">à garder : ' + escHtml(String(e.a_garder)) + '</span>' : '')
@@ -2759,8 +2778,8 @@
             //   3. description (redacteur, a defaut resume IA, a defaut texte)
             //   4. reperes de montage : pic, evenements HUD (3 max, les plus proches du pic),
             //      duree sequence / condense (gris) — ou rien
-            // puis une rangee de petites pastilles : multi-POV en BLEU (seule autre couleur, elle
-            // change la decision), fan TikTok / foule >= 3 / passages en GRIS. Tout le reste
+            // puis une rangee de petites pastilles : plan de la video et multi-POV en BLEU (seule
+            // autre couleur, ils changent la decision), fan TikTok / foule >= 3 / passages en GRIS. Tout le reste
             // (ancienne note, verdicts IA, context_line, suite de, chapitres, pourquoi, ids...)
             // passe dans « details ». Aucune donnee ni cle d'export n'est retiree.
             const CARD_GRIS = '#9aa3ad';
@@ -2916,7 +2935,15 @@
                     + (clip.teaser_url ? ' de la séquence entière' : '') + ')">' + l4Parts.join(' · ') + '</div>';
             }
 
-            // --- Pastilles : multi-POV en bleu, le reste en gris ---
+            // --- Pastilles : plan et multi-POV en bleu, le reste en gris ---
+            const planClip = planEntry(clip);
+            if (planClip) {
+                const planTitle = 'Plan de la vidéo : n° ' + planClip.numero + ' sur ' + planClip.total
+                    + (planClip.pourquoi ? ' · ' + planClip.pourquoi : '');
+                pillsHtml += '<span title="' + escHtml(planTitle) + '" style="' + PILL_BLEU + '">🎬 N° ' + planClip.numero + ' du plan'
+                    + (planClip.role ? ' · ' + escHtml(planClip.role) : '') + '</span>';
+                if (planClip.pourquoi) detailsHtml += '<div style="' + DET_GRIS + '">🎬 Plan : ' + escHtml(planClip.pourquoi) + '</div>';
+            }
             if (isMultipov && clip.arc_label) {
                 // 2026-09-05 : meme moment vu par plusieurs streamers (arc_label deja prefixe
                 // « 👀 Meme moment · a + b »), clips regroupes cote a cote.
