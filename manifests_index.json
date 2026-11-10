@@ -3,11 +3,12 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 167,
+      "total_clips": 325,
       "streamers": [
         "acorn",
         "akiiral2",
         "artskill",
+        "asianjeff",
         "aussieantics",
         "buzzftn",
         "clement wau",
@@ -21,15 +22,52 @@
         "khanada_",
         "kurama_203",
         "leothecrack",
+        "matrekftn",
         "mrsavage",
         "nikof",
         "revenja",
         "rezonfn",
+        "risezd",
+        "shxrkfnbr",
         "stizo_",
+        "talmo",
+        "th3iof",
         "vadeal",
         "venofn",
+        "waze",
         "wazz",
         "xset imbausagett",
+        "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "total_clips": 156,
+      "streamers": [
+        "acorn",
+        "ajerss",
+        "akiiral2",
+        "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "cringefn",
+        "jolavanille",
+        "k1ng",
+        "khanada_",
+        "kurama_203",
+        "leothecrack",
+        "mrsavage",
+        "noahreyli",
+        "peterbot",
+        "revenja",
+        "rezonfn",
+        "shxrkfnbr",
+        "snayzy",
+        "talmo",
+        "vadeal",
+        "vanyak3kk",
+        "venofn",
+        "wazz",
         "zetfartv"
       ]
     },
@@ -166,32 +204,7 @@
         "venofn",
         "waze"
       ]
-    },
-    {
-      "date": "2026-11-03",
-      "total_clips": 88,
-      "streamers": [
-        "acorn",
-        "artskill",
-        "asianjeff",
-        "aussieantics",
-        "deckzee",
-        "izziftn",
-        "k1ng",
-        "khanada_",
-        "kurama_203",
-        "leothecrack",
-        "mrsavage",
-        "nikof",
-        "pixiefnbr1",
-        "revenja",
-        "shxrkfnbr",
-        "stizo_",
-        "talmo",
-        "venofn",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-11-09"
+  "latest": "2026-11-10"
 }
