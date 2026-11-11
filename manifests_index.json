@@ -3,19 +3,16 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 325,
+      "total_clips": 313,
       "streamers": [
         "acorn",
+        "ajerss",
         "akiiral2",
-        "artskill",
         "asianjeff",
         "aussieantics",
         "buzzftn",
-        "clement wau",
         "community",
-        "csn annak",
-        "dantepuaza",
-        "darkosftn",
+        "cringefn",
         "fortnitefraactu",
         "jolavanille",
         "k1ng",
@@ -25,19 +22,43 @@
         "matrekftn",
         "mrsavage",
         "nikof",
+        "noahreyli",
+        "peterbot",
         "revenja",
         "rezonfn",
         "risezd",
         "shxrkfnbr",
+        "snayzy",
         "stizo_",
         "talmo",
         "th3iof",
         "vadeal",
+        "vanyak3kk",
         "venofn",
         "waze",
         "wazz",
-        "xset imbausagett",
         "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "total_clips": 47,
+      "streamers": [
+        "ajerss",
+        "akiiral2",
+        "artskill",
+        "asianjeff",
+        "aussieantics",
+        "buzzftn",
+        "community",
+        "khanada_",
+        "kurama_203",
+        "leothecrack",
+        "mrsavage",
+        "peterbot",
+        "stizo_",
+        "talmo",
+        "wazz"
       ]
     },
     {
@@ -181,30 +202,7 @@
         "waze",
         "zetfartv"
       ]
-    },
-    {
-      "date": "2026-11-04",
-      "total_clips": 130,
-      "streamers": [
-        "acorn",
-        "akiiral2",
-        "artskill",
-        "aussieantics",
-        "buzzftn",
-        "community",
-        "izziftn",
-        "jolavanille",
-        "leothecrack",
-        "mrsavage",
-        "risezd",
-        "rocky",
-        "snayzy",
-        "stizo_",
-        "talmo",
-        "venofn",
-        "waze"
-      ]
     }
   ],
-  "latest": "2026-11-10"
+  "latest": "2026-11-11"
 }
