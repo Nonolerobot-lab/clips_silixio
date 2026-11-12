@@ -3,11 +3,12 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 313,
+      "total_clips": 360,
       "streamers": [
         "acorn",
         "ajerss",
         "akiiral2",
+        "artskill",
         "asianjeff",
         "aussieantics",
         "buzzftn",
@@ -38,6 +39,26 @@
         "waze",
         "wazz",
         "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "total_clips": 51,
+      "streamers": [
+        "acorn",
+        "ajerss",
+        "asianjeff",
+        "aussieantics",
+        "community",
+        "harmonyglitch",
+        "khanada_",
+        "lyost wterex",
+        "mrsavage",
+        "peterbot",
+        "risezd",
+        "stizo_",
+        "talmo",
+        "venofn"
       ]
     },
     {
@@ -176,33 +197,7 @@
         "wazz",
         "zetfartv"
       ]
-    },
-    {
-      "date": "2026-11-05",
-      "total_clips": 118,
-      "streamers": [
-        "acorn",
-        "akiiral2",
-        "alibaba_rcm",
-        "artskill",
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "jolavanille",
-        "leothecrack",
-        "mrsavage",
-        "noahreyli",
-        "peterbot",
-        "pixiefnbr1",
-        "podasai",
-        "risezd",
-        "stizo_",
-        "talmo",
-        "venofn",
-        "waze",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-11-11"
+  "latest": "2026-11-12"
 }
