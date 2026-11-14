@@ -155,7 +155,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "Annonce du squad en lobby, talk, déjà traitée",
+      "redacteur_description": "Léo annonce son squad avec Chap, Izzi et Nociff pour la cup dans dix jours et promet d'arrêter s'il ne fait pas de cash."
     },
     {
       "filename": "clip_022_00-21-29_score74_v6_talk.mp4",
@@ -291,7 +294,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "talk classement et tests de trios",
+      "redacteur_description": "Léo explique que Nociff, Izzi et Seyyto n'ont pas joué leur finale à cause de 300 de ping, puis s'emballe sur le niveau de Chap."
     },
     {
       "filename": "clip_011_leothecrack_score60.mp4",
@@ -403,7 +409,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "Même moment que le jeu tu as tort, classé talk",
+      "redacteur_description": "Extrait du jeu tu as tort : Nociff répond qu'il est locked avec Seyyto jusqu'en 2028, le chat rit."
     },
     {
       "filename": "clip_001_dentoz-b63s_score95_community_pro.mp4",
@@ -512,7 +521,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "Clip commu tryhard de Stizo, sans résumé ni voix",
+      "redacteur_description": "Clip envoyé par la communauté : Stizo, cam à l'écran, enchaîne des fights sur un bateau pirate avant un retour au bus."
     },
     {
       "filename": "clip_004_01-53-40_score88_v6_vr.mp4",
@@ -581,9 +593,9 @@
       "drive_view_url": "https://drive.google.com/file/d/13PMiRnE_rRGKrNwFd_xK8KhUAMOR9AQO/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1K_EGIXb58rXiMnr-CMGznZZvqUMOaiRv&export=download&confirm=t",
       "size_mb": 321.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_1",
+      "arc_position": 4,
+      "arc_label": "BUZZ ET WEREX : DU CLUTCH AU SKIN RATÉ",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -689,7 +701,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 74,
+      "note_jour_raison": "Top 1 clutch de Werex, vr Buzz, chat en W",
+      "redacteur_description": "Werex reste bloqué dans un edit et Buzz le réanime trois fois sous les rires du chat ; Werex finit par clutcher la game pour le top 1 et le chat spamme W."
     },
     {
       "filename": "clip_001_00-09-16_score86_v6_talk.mp4",
@@ -758,9 +773,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1xT21m_K1dynLegKiXkn13nBh68rgx8tl/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1YAUj4COifIWWt2yR4cv5NBDKO8PhZCxm&export=download&confirm=t",
       "size_mb": 191.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_4",
+      "arc_position": 1,
+      "arc_label": "LÉO LEAK : AKIIRA LÂCHÉ PUIS LA CONFIRMATION",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -837,7 +852,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "Leak fort mais talk de 6 minutes en lobby",
+      "redacteur_description": "Dans le lobby, Léo annonce que JannisZ a lâché Akiira pour Flickzy et que Cr1nge et Twi récupèrent Momsy, puis dessine la tournante des trios."
     },
     {
       "filename": "clip_001_00-23-39_score86_v6_vr.mp4",
@@ -906,9 +924,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1CBTkrHFIXAk1YX8N_NZ0S2SvPR2vFDiQ/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1nrC-pOk06C114ZZuWVAjONpFIzMCdybf&export=download&confirm=t",
       "size_mb": 256.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_3",
+      "arc_position": 1,
+      "arc_label": "JO : TOP 1 PUIS LA RAGE EN CUP ONE PIECE",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1002,7 +1020,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 69,
+      "note_jour_raison": "Top 1 de Jo, chat unanime contre lui, pic 2,9",
+      "redacteur_description": "Jo accuse Clément de lui voler un kill et jure sur sa mère qu'il le tuait ; tout le chat répond non, puis il enchaîne jusqu'au top 1."
     },
     {
       "filename": "clip_005_02-30-59_score86_v6_hype.mp4",
@@ -1070,9 +1091,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1CM1DrP7kmniBA7TQQ_Jd5OdsieyXx4U5/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=12Qlj7z7qFeiJ1iW61Q6qEeJkYf8lIw-t&export=download&confirm=t",
       "size_mb": 266.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_1",
+      "arc_position": 5,
+      "arc_label": "BUZZ ET WEREX : DU CLUTCH AU SKIN RATÉ",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1194,7 +1215,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 57,
+      "note_jour_raison": "Werex enchaîne les clutchs, Buzz caste, 427 points",
+      "redacteur_description": "Werex enchaîne les clutchs pendant que Buzz commente comme un caster ; Buzz meurt avec 1000 mats et Werex finit seul pour monter à 427 points."
     },
     {
       "filename": "clip_003_01-47-29_score85_v6_hype.mp4",
@@ -1402,7 +1426,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 47,
+      "note_jour_raison": "Top 1 à 34 kills, Chap éliminé, puis chute",
+      "redacteur_description": "Avec Izzi, Léo fait un top 1 à 34 kills et élimine Chap et d'autres pros, puis un mauvais call et des morts full mats leur coûtent la box."
     },
     {
       "filename": "clip_009_01-10-57_score84_v6_talk.mp4",
@@ -1471,9 +1498,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1_wdhlV5tF4OIrQ1sbKy_4SIk2p4ekBbt/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1cu8ZTTBCbOC9BZ5fki4wPcep_cSw4WDH&export=download&confirm=t",
       "size_mb": 83.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_4",
+      "arc_position": 2,
+      "arc_label": "LÉO LEAK : AKIIRA LÂCHÉ PUIS LA CONFIRMATION",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1550,7 +1577,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "Akiira confirme son trio en vocal, mais talk",
+      "redacteur_description": "En vocal chez Léo, Akiira confirme qu'il jouera avec Skyjump et Savage et qu'il ne retournera pas avec JannisZ."
     },
     {
       "filename": "clip_002_00-06-13_score84_v6_vr.mp4",
@@ -1619,9 +1649,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1RUr3p-5ymZAx59FQjvD88TzrPpvM4oaS/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1Si43vOv0icTU0j_80yqD3jrjthSADxPF&export=download&confirm=t",
       "size_mb": 154.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_2",
+      "arc_position": 1,
+      "arc_label": "ZETFAR : TOP 1 À 31 KILLS PUIS LA BOX RATÉE",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1726,7 +1756,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 51,
+      "note_jour_raison": "Top 1 à 31 kills de ZetFar, chat en GG",
+      "redacteur_description": "ZetFar joue la première game de la cup skin sans soin, place un gros snipe et finit top 1 à 31 kills avec VicVic."
     },
     {
       "filename": "clip_010_00-33-49_score83_v6_funny.mp4",
@@ -1898,7 +1931,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 19,
+      "note_jour_raison": "Léo perd son token puis prend 5-0, long",
+      "redacteur_description": "Léo provoque Baxo en 1v1 token et perd de peu, relance en 2v2 et prend un 5-0 avant de devoir payer."
     },
     {
       "filename": "clip_014_03-53-12_score82_v6_funny.mp4",
@@ -2074,7 +2110,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "Débat absurde très cru, 5 minutes",
+      "redacteur_description": "Léo et Nociff s'enferment dans un débat absurde et cru ; le chat donne raison à Nociff et Izzi écoute, sidéré."
     },
     {
       "filename": "clip_007_03-09-19_score82_v6_drama.mp4",
@@ -2143,9 +2182,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1te07jteSHi-eUO9bOqRTldbaBvQy05b9/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1nprjKvRL64AgDQxxLVbvaqfDVodaQN-P&export=download&confirm=t",
       "size_mb": 207.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_1",
+      "arc_position": 6,
+      "arc_label": "BUZZ ET WEREX : DU CLUTCH AU SKIN RATÉ",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -2231,7 +2270,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 54,
+      "note_jour_raison": "Skin fêté puis 258e, chute nette, lobby de Rax",
+      "redacteur_description": "Dernière game dans le lobby de Rax : Buzz fête le skin à 460 points, puis le chat lui apprend qu'il est 258e et ne l'a pas."
     },
     {
       "filename": "clip_004_02-44-20_score82_v6_drama.mp4",
@@ -2300,9 +2342,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1228Bi0Oy2a1d8U2FNZO2ipT-3dDRR8V3/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1O8M-S-nSUnuoyB7HK5HbHniZS6JXwY0y&export=download&confirm=t",
       "size_mb": 320.5,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_2",
+      "arc_position": 4,
+      "arc_label": "ZETFAR : TOP 1 À 31 KILLS PUIS LA BOX RATÉE",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -2387,7 +2429,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 23,
+      "note_jour_raison": "Skin et box ratés à 15 points, 8 minutes",
+      "redacteur_description": "En dernière game, ZetFar tombe vite et VicVic se cache ; la zone part sur l'eau et ils finissent à 404 points, sous la barre du skin et de la box."
     },
     {
       "filename": "clip_002_00-40-23_score81_v6_drama.mp4",
@@ -2456,9 +2501,9 @@
       "drive_view_url": "https://drive.google.com/file/d/16oXX4Smjw6KBiRXlRfeX-DuoD7gRoO3W/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1j1-CLck2-DmBNqcUfxZAgau_-IUjpjW8&export=download&confirm=t",
       "size_mb": 143.9,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_3",
+      "arc_position": 2,
+      "arc_label": "JO : TOP 1 PUIS LA RAGE EN CUP ONE PIECE",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -2532,7 +2577,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 43,
+      "note_jour_raison": "Jo promet un top 1, meurt, rage, chat jubile",
+      "redacteur_description": "Jo se proclame légende et promet le top 1, se fait éliminer dans la foulée, hurle et accuse son skin avant de partir sur Kick."
     },
     {
       "filename": "clip_001_shxrkfnbr_score80.mp4",
@@ -2643,7 +2691,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 39,
+      "note_jour_raison": "Shxrk gardé 45 %, top 1 au minigun, mais daté",
+      "redacteur_description": "Shxrk termine la partie au minigun puis à la pioche et décroche la Victory Royale ; le chat s'emballe."
     },
     {
       "filename": "clip_002_buzzftn_score80.mp4",
@@ -2756,7 +2807,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 9,
+      "note_jour_raison": "Même moment que la game clutch de Werex, version courte",
+      "redacteur_description": "Fin de la game en cup skin : écran Victoire Royale pour le duo Buzz et Werex, chat rempli de W."
     },
     {
       "filename": "clip_003_mrsavage_score80_subs.mp4",
@@ -2868,7 +2922,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "MrSavage gardé 3 %, clip du 9 novembre",
+      "redacteur_description": "MrSavage, en équipe avec Akiira, place des tirs à distance ; son chat crie à la triche et réclame le clip."
     },
     {
       "filename": "clip_007_02-31-53_score80_v6_hype.mp4",
@@ -2937,9 +2994,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1UcKOHvGtHMuZEcD9ugQ2AtQlT2Wg6j6Q/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1uH6MB12GCcl_ea1b6veY4-JzGxCoL0KP&export=download&confirm=t",
       "size_mb": 239.5,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_2",
+      "arc_position": 3,
+      "arc_label": "ZETFAR : TOP 1 À 31 KILLS PUIS LA BOX RATÉE",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3012,7 +3069,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 20,
+      "note_jour_raison": "Clutch de VicVic jusqu'au top 3, pic 2,7",
+      "redacteur_description": "ZetFar meurt avec la fronde mythique ; VicVic, seul, enchaîne les replis jusqu'au top 3 et ZetFar calcule qu'il faut un top 6."
     },
     {
       "filename": "clip_017_00-24-34_score79_v6_talk.mp4",
@@ -3130,7 +3190,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "Avis Poda contre Vanyak, talk en lobby",
+      "redacteur_description": "Léo soutient que Poda est aujourd'hui meilleur que Vanyak ; le chat conteste et il insiste."
     },
     {
       "filename": "clip_018_04-03-16_score79_v6_funny.mp4",
@@ -3278,7 +3341,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "Jeu tu as tort, drôle mais long",
+      "redacteur_description": "Léo et Nociff jouent à se contredire ; Nociff répond qu'il est locked avec Seyyto jusqu'en 2028 et le chat éclate de rire."
     },
     {
       "filename": "clip_010_00-59-26_score79_v6_funny.mp4",
@@ -3402,7 +3468,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 11,
+      "note_jour_raison": "Partage d'écran raté, surtout du lobby",
+      "redacteur_description": "Le chat réclame le clip de la mort de Floki ; Buzz rate son partage d'écran et le chat le noie sous les Montre."
     },
     {
       "filename": "clip_011_02-13-04_score79_v6_drama.mp4",
@@ -3570,7 +3639,10 @@
           "caption": "Le clip de l’année il met la balle de sa vie et se fait détruire 🤣🤣 #nikof #m8 #gentlemates #havok #jolavanille "
         }
       ],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 26,
+      "note_jour_raison": "Buzz déconcentré par Floki, rage, 10 000 vues TikTok",
+      "redacteur_description": "Floki et Clément parasitent le vocal pendant que le chat imite leur zozotement ; Buzz rage, s'en prend à Werex puis se dit indéconcentrable."
     },
     {
       "filename": "clip_008_00-32-41_score78_v6_funny.mp4",
@@ -3639,9 +3711,9 @@
       "drive_view_url": "https://drive.google.com/file/d/19ChpRu_2b2byJc0f1WjWEWbBc5m7WhJS/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=11rjj-OiqcW11_knXTzbP6UPwxlfTEfBu&export=download&confirm=t",
       "size_mb": 206.5,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_2",
+      "arc_position": 2,
+      "arc_label": "ZETFAR : TOP 1 À 31 KILLS PUIS LA BOX RATÉE",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3722,7 +3794,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 25,
+      "note_jour_raison": "Désintégré en l'air, chat réclame un short",
+      "redacteur_description": "Pris en sandwich, ZetFar survit et met de gros dégâts, puis deux joueurs postés près de la faille le tuent en plein vol."
     },
     {
       "filename": "clip_012_01-35-50_score76_v6_funny.mp4",
@@ -3841,7 +3916,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 24,
+      "note_jour_raison": "Fou rire court sur Floki, plus gros pic audio",
+      "redacteur_description": "Buzz ouvre le stream de Floki, se moque de son col roulé et de sa taille, et part en fou rire."
     },
     {
       "filename": "clip_010_01-33-17_score76_v6_drama.mp4",
@@ -3985,7 +4063,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "Longue game pour une mort, drama ZetFar",
+      "redacteur_description": "ZetFar et VicVic se font encercler dans le seul bâtiment de la zone ; tué d'un coup, ZetFar se traite de pire joueur."
     },
     {
       "filename": "clip_021_01-27-05_score75_v6_talk.mp4",
@@ -4108,7 +4189,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "Anecdote de collège, talk",
+      "redacteur_description": "Léo raconte qu'il défendait un élève harcelé au collège jusqu'au jour où celui-ci l'a accusé de vol."
     },
     {
       "filename": "clip_013_02-55-34_score75_v6_funny.mp4",
@@ -4245,7 +4329,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 27,
+      "note_jour_raison": "Clash Buzz Floki, saucisse, plus gros pic de chat",
+      "redacteur_description": "Floki dit que Buzz s'est fait carry ; Buzz retourne la pique, regarde Floki mourir en direct et lui fait répéter saucisse."
     },
     {
       "filename": "clip_011_02-41-22_score75_v6_talk.mp4",
@@ -4372,7 +4459,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "Face reveal évoqué, talk en lobby",
+      "redacteur_description": "ZetFar explique qu'il pensait se montrer cette fin d'année mais que le confort de l'anonymat l'emporte."
     },
     {
       "filename": "clip_001_buzzftn_score75_fan.mp4",
@@ -4490,7 +4580,10 @@
       "seq_long_mode": "",
       "seq_span_sec": null,
       "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1--JIHQBH5O5HdlLwQON2A5RAh37C7W9O",
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 1,
+      "note_jour_raison": "tiktok_fan jamais gardé, lobby",
+      "redacteur_description": "Dans le lobby, Buzz lance la dernière game et annonce au chat qu'il sera dans la même partie que Rax."
     },
     {
       "filename": "clip_002_zetfartv_score75_fan.mp4",
@@ -4607,7 +4700,10 @@
       "teaser_offset_sec": null,
       "seq_long_mode": "",
       "seq_span_sec": null,
-      "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1xHiGsFRC8v6VAEBlq2XQviJ76Vs_E7Vd"
+      "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1xHiGsFRC8v6VAEBlq2XQviJ76Vs_E7Vd",
+      "note_jour": 1,
+      "note_jour_raison": "tiktok_fan jamais gardé, lobby de la veille",
+      "redacteur_description": "Dans le lobby, ZetFar regrette une mort due à un changement de mécanique oublié."
     },
     {
       "filename": "clip_014_01-11-14_score74_v6_drama.mp4",
@@ -4676,9 +4772,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1ipnGWlJPuJ-JE0H2PRyJpZRwgv6VgJ-p/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1hrHlytuCt-ROAISv6Z2aXq0go23mnxxC&export=download&confirm=t",
       "size_mb": 162.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_1",
+      "arc_position": 3,
+      "arc_label": "BUZZ ET WEREX : DU CLUTCH AU SKIN RATÉ",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -4748,7 +4844,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 21,
+      "note_jour_raison": "Cri sur le knock puis chat qui démonte Buzz",
+      "redacteur_description": "Buzz hurle de joie sur un knock puis se fait sauter dessus ; le chat le démonte et il ordonne à Werex de se taire."
     },
     {
       "filename": "clip_012_01-47-53_score74_v6_drama.mp4",
@@ -4875,7 +4974,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "Mort depuis un buisson, rage courte",
+      "redacteur_description": "ZetFar se fait tirer dessus depuis un buisson, son objet de repli ne sort pas et il hurle avant de s'en vouloir."
     },
     {
       "filename": "clip_023_03-50-58_score73_v6_talk.mp4",
@@ -5002,7 +5104,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "Aveu de complexe, talk",
+      "redacteur_description": "Après une vidéo de la trend Peterbot is better than you, Léo avoue qu'il vit mal qu'on le trouve nul."
     },
     {
       "filename": "clip_024_01-23-37_score72_v6_funny.mp4",
@@ -5150,7 +5255,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "Débat GTA 6 en 30 FPS, hors sujet",
+      "redacteur_description": "Le vocal de Léo se dispute sur GTA 6 en 30 FPS ; un pote passe son PC en 30 FPS pour tester et tout le monde craque."
     },
     {
       "filename": "clip_015_03-02-42_score72_v6_funny.mp4",
@@ -5283,7 +5391,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 12,
+      "note_jour_raison": "Blague du zozotement qui se répète",
+      "redacteur_description": "Un sub imite le zozotement de Floki ; un nouveau viewer demande si c'est un RP et Buzz confirme en riant."
     },
     {
       "filename": "clip_016_00-16-32_score71_v6_hype.mp4",
@@ -5352,9 +5463,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1YKbqRhxkAuOjGBkBvivfP81bHcRA9SBh/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1cIZlmJgIuo_6yzcpfjGn2Px8OT2_LbfW&export=download&confirm=t",
       "size_mb": 273.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_1",
+      "arc_position": 1,
+      "arc_label": "BUZZ ET WEREX : DU CLUTCH AU SKIN RATÉ",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -5464,7 +5575,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 17,
+      "note_jour_raison": "Début de cup de Buzz, 6 minutes, fin sneakée",
+      "redacteur_description": "Buzz lance la cup avec Werex, enchaîne les fights, tombe à 1 PV puis se fait sneaker ; ils sortent à 92 points."
     },
     {
       "filename": "clip_014_02-02-38_score71_v6_hype.mp4",
@@ -5624,7 +5738,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "Bot allié qui fait les kills, fin en mort",
+      "redacteur_description": "ZetFar recrute un bot en pleine cup, le bot fait les kills, puis deux équipes éliminent ZetFar."
     },
     {
       "filename": "clip_025_01-09-22_score70_v6_talk.mp4",
@@ -5751,7 +5868,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 1,
+      "note_jour_raison": "Hors Fortnite, talk MMA",
+      "redacteur_description": "Léo réagit à la condamnation d'Usman Nurmagomedov à six mois de prison et le chat le corrige sur les faits."
     },
     {
       "filename": "clip_005_jolavanille_score70.mp4",
@@ -5864,7 +5984,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 12,
+      "note_jour_raison": "Même moment que le top 1 de Jo, extrait court",
+      "redacteur_description": "Jolavanille jure sur sa mère qu'il allait tuer l'adversaire et le chat répond non en masse."
     },
     {
       "filename": "clip_006_zetfartv_score70.mp4",
@@ -5977,7 +6100,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "Même top 1 à 31 kills, extrait d'après-game",
+      "redacteur_description": "Juste après la victoire, ZetFar savoure le top 1 à 31 kills et fait le point à 127 points."
     },
     {
       "filename": "clip_004_alibaba_rcm_score70.mp4",
@@ -6088,7 +6214,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "Alibaba jamais gardé, annonce face cam sans transcription",
+      "redacteur_description": "Alibaba, face caméra, annonce que l'anglais devient sa langue principale en stream ; le chat français proteste."
     },
     {
       "filename": "clip_007_buzzftn_score70.mp4",
@@ -6201,7 +6330,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 8,
+      "note_jour_raison": "Même moment que la game des clutchs, extrait court",
+      "redacteur_description": "Werex gagne un fight en cup skin, Buzz le félicite à grands cris et le chat envoie des W."
     },
     {
       "filename": "clip_020_00-10-54_score70_v6_funny.mp4",
@@ -6346,7 +6478,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 14,
+      "note_jour_raison": "Échauffement de Buzz contre Clément, long, chat calme",
+      "redacteur_description": "À l'échauffement, Buzz chambre Clément à chaque round de 1v1 ; Clément lui rappelle qu'il n'a jamais eu le skin."
     },
     {
       "filename": "clip_021_00-39-26_score70_v6_funny.mp4",
@@ -6487,7 +6622,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 13,
+      "note_jour_raison": "Snipe puis lobby, pari burger, peu d'action",
+      "redacteur_description": "Buzz se fait sniper en rotation, découvre qu'ils sont 859e et promet deux burgers à Werex en cas de top 10."
     },
     {
       "filename": "clip_022_00-43-17_score70_v6_hype.mp4",
@@ -6556,9 +6694,9 @@
       "drive_view_url": "https://drive.google.com/file/d/10lBBXwMo-tCRyEl0mB33gO6YNadmTSq0/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1x8Trg3nLjxsR80RkG0REqDYFTNDQ5XBA&export=download&confirm=t",
       "size_mb": 197.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-14_1",
+      "arc_position": 2,
+      "arc_label": "BUZZ ET WEREX : DU CLUTCH AU SKIN RATÉ",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -6664,7 +6802,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 18,
+      "note_jour_raison": "4 kills de Buzz puis re-mort, pic de chat faible",
+      "redacteur_description": "Buzz enchaîne quatre kills aux côtés de Werex et le chat le trouve métamorphosé, puis il meurt face à un joueur à huit kills."
     },
     {
       "filename": "clip_023_00-49-22_score70_v6_drama.mp4",
@@ -6817,7 +6958,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 10,
+      "note_jour_raison": "Accusation de cheat de Buzz, chat plat",
+      "redacteur_description": "Buzz réclame une Victory Royale, fait des kills en ville puis meurt et accuse ses adversaires de tricher."
     },
     {
       "filename": "clip_027_02-27-21_score70_v6_drama.mp4",
@@ -6945,7 +7089,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 15,
+      "note_jour_raison": "Mort et plainte du vendredi soir, 600e",
+      "redacteur_description": "Buzz meurt, accuse Werex d'avoir ouvert au-dessus de lui puis se lamente sur sa soirée gâchée, classé autour de la 600e place."
     },
     {
       "filename": "clip_026_01-33-44_score70_v6_funny.mp4",
@@ -7098,7 +7245,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 16,
+      "note_jour_raison": "Buzz avoue être nul, long, cam visible au début",
+      "redacteur_description": "Backstab après backstab, Buzz décrète que la cup n'est pas faite pour lui et avoue que le skin se joue sur un coup de chance."
     },
     {
       "filename": "clip_016_02-00-04_score70_v6_talk.mp4",
@@ -7216,7 +7366,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "talk sur le retour en trio avec Wise",
+      "redacteur_description": "ZetFar annonce son retour en div cups en trio avec Wise et cherche un fragger."
     },
     {
       "filename": "clip_009_alibaba_rcm_score60.mp4",
@@ -7328,7 +7481,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "Alibaba 0 sur 7, kill banal, 2 vues",
+      "redacteur_description": "Alibaba repère un adversaire, le tue en build fight et hurle au chat de clipper."
     },
     {
       "filename": "clip_013_talmo_score60.mp4",
@@ -7440,7 +7596,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 29,
+      "note_jour_raison": "Faux espoir de jeton chez Talmo, format déjà gardé",
+      "redacteur_description": "En chasse au jeton pirate, Talmo croit l'avoir dans un coffre, s'emballe puis déchante ; le chat compatit en riant."
     },
     {
       "filename": "clip_008_stizo__score60.mp4",
@@ -7552,7 +7711,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 33,
+      "note_jour_raison": "Stizo meurt en lisant le chat, court, 116 vues",
+      "redacteur_description": "Stizo meurt dans la tempête parce qu'il lisait un message et s'énerve contre lui-même, cam à l'écran."
     },
     {
       "filename": "clip_010_zetfartv_score60.mp4",
@@ -7663,7 +7825,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "Même mort que le clip de la faille",
+      "redacteur_description": "ZetFar se fait éliminer en l'air à la sortie d'une faille et refuse d'accepter la mort."
     },
     {
       "filename": "clip_014_vanyak3kk_score60.mp4",
@@ -7774,7 +7939,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "Vanyak 0 sur 2, clip du 7 novembre",
+      "redacteur_description": "Vanyak remporte un fight final en build pendant une cup ; son chat russe explose et l'écran de points s'affiche."
     },
     {
       "filename": "clip_012_buzzftn_score60.mp4",
@@ -7886,7 +8054,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 22,
+      "note_jour_raison": "Mort à 1000 mats, chat moqueur, déjà dans la game clutch",
+      "redacteur_description": "Buzz meurt en cup avec 1000 matériaux en poche ; le chat se moque et le traite de pire IGL."
     },
     {
       "filename": "clip_015_talmo_score60.mp4",
@@ -7997,7 +8168,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "1v1 gagné par Talmo, cri, sans transcription",
+      "redacteur_description": "Talmo gagne un 1v1 de build fight et pousse un long cri de soulagement, cam à l'écran."
     },
     {
       "filename": "clip_001_systormy_score60_twitter_2121286981414277355_subs.mp4",
@@ -8109,7 +8283,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "Vieux clip ressorti de Twitter, planche incomplète",
+      "redacteur_description": "Ancien clip d'un trio : décompte 3, 2, 1, go, puis un grand non en plein build fight."
     },
     {
       "filename": "clip_003_dentoz-u3zn_score55_community_own.mp4",
@@ -8218,7 +8395,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "Gameplay d'abonné en créatif, sans contexte",
+      "redacteur_description": "Un abonné enchaîne builds et edits sur une map créative, sans commentaire."
     },
     {
       "filename": "clip_019_khanada__score50_subs.mp4",
@@ -8330,7 +8510,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "Mercato NA de Khanada, parlé, 2 vues",
+      "redacteur_description": "Khanada explique en jouant que Queasy l'a lâché, que Cooper a été écarté et qu'il rejouera avec Visuals."
     },
     {
       "filename": "clip_022_alibaba_rcm_score50.mp4",
@@ -8441,7 +8624,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "Alibaba rate ses tirs, aucun pic, toujours jeté",
+      "redacteur_description": "Alibaba rate ses tirs, meurt et se prend la tête devant l'écran de fin de partie."
     },
     {
       "filename": "clip_016_alibaba_rcm_score50.mp4",
@@ -8553,7 +8739,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "Rage d'Alibaba, type de clip toujours jeté",
+      "redacteur_description": "Alibaba se fait laser en box fight et explose de rage, puis l'écran passe sur une fenêtre de compte Epic."
     },
     {
       "filename": "clip_020_acorn_score50_subs.mp4",
@@ -8664,7 +8853,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "Acorn jamais gardé, clip anglais à 1 vue, sans cam",
+      "redacteur_description": "Acorn panique en plein fight, crie de fuir en boucle, tente un 2v3 dans ses builds puis se fait éliminer."
     },
     {
       "filename": "clip_018_rzpruzen_score50.mp4",
@@ -8775,7 +8967,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "Streamer inconnu, sans cam ni transcription",
+      "redacteur_description": "Rzpruzen se fait éliminer dans la tempête par un joueur qu'il reconnaît et l'accuse de tricher."
     },
     {
       "filename": "clip_017_risezd_score50_subs.mp4",
@@ -8887,7 +9082,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "Bug de reboot NA, planche à moitié noire",
+      "redacteur_description": "Risezd reboot Jynxzi, qui reste bloqué sur un écran noir et peste contre le jeu."
     },
     {
       "filename": "clip_021_kirillianfn1_score50_subs.mp4",
@@ -8999,7 +9197,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "Kirillian peu connu, réaction à un 203",
+      "redacteur_description": "Kirillian voit un adversaire prendre 203 dégâts d'un coup en build fight et réagit, surpris."
     },
     {
       "filename": "clip_023_risezd_score50_subs.mp4",
@@ -9110,7 +9311,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "Risezd peu gardé, Peterbot tombe, 2 vues",
+      "redacteur_description": "En 2v2 pour un token, Peterbot meurt en tombant et Risezd le traite d'horrible ; le chat rit."
     },
     {
       "filename": "clip_024_khanada__score50_subs.mp4",
@@ -9222,7 +9426,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "Khanada parle d'Acorn, pas de moment",
+      "redacteur_description": "Khanada explique calmement pourquoi Acorn ne veut plus jouer avec lui et dit qu'il se débrouillera seul."
     },
     {
       "filename": "clip_025_khanada__score50_subs.mp4",
@@ -9333,7 +9540,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 1,
+      "note_jour_raison": "talk NA sur l'Océanie, 2 vues",
+      "redacteur_description": "Khanada se moque d'un viewer qui vante le niveau de l'Océanie et affirme qu'il gagnerait là-bas."
     },
     {
       "filename": "clip_026_vadeal_score40_subs.mp4",
@@ -9445,7 +9655,284 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "Vadeal chante, chat allemand quasi vide",
+      "redacteur_description": "Vadeal, d'ordinaire silencieux, chante à pleine voix en courant dans la partie."
     }
-  ]
+  ],
+  "redacteur": {
+    "sujet_du_jour": "La cup skin One Piece vue par les têtes d'affiche, avec Buzz et Werex en fil rouge : c'est le seul sujet porté par des clips de jeu bien notés, alors que le leak sur Akiira n'existe qu'en talk et que le Heat 1 de Rax n'a aucun clip.",
+    "titres": [
+      {
+        "titre": "BUZZ AURA-T-IL LE SKIN AVEC WEREX ? 🤔 LÉO DÉTRUIT CHAP EN CUP 🤯",
+        "accroche_1": {
+          "clip_id": "v6_cl_6820__buzzftn_1114",
+          "pourquoi": "Werex clutch le top 1 pour Buzz et relance la course au skin, tranchée dans le clip de la dernière game.",
+          "existe": true,
+          "streamer": "buzzftn"
+        },
+        "accroche_2": {
+          "clip_id": "v6_cl_6450__leothecrack_1114",
+          "pourquoi": "Léo et Izzi font top 1 à 34 kills et sortent Chap, son futur coéquipier de squad.",
+          "existe": true,
+          "streamer": "leothecrack"
+        },
+        "angle": "actu"
+      },
+      {
+        "titre": "LÉO LEAK LE DROP D'AKIIRA ? 😱 JOLAVANILLE JURE SUR SA MÈRE 🤣",
+        "accroche_1": {
+          "clip_id": "v6_cl_556__leothecrack_1114",
+          "pourquoi": "Léo affirme que JannisZ a lâché Akiira pour Flickzy ; info non officielle, donc en question.",
+          "existe": true,
+          "streamer": "leothecrack"
+        },
+        "accroche_2": {
+          "clip_id": "v6_cl_1419__jolavanille_1114",
+          "pourquoi": "Jo jure sur sa mère qu'il tuait l'adversaire et tout le chat lui répond non.",
+          "existe": true,
+          "streamer": "jolavanille"
+        },
+        "angle": "croustillant"
+      },
+      {
+        "titre": "ZETFAR FAIT TOP 1 À 31 KILLS 🤩 SHXRK TERMINE AU MINIGUN 🤯",
+        "accroche_1": {
+          "clip_id": "v6_cl_374__zetfartv_1114",
+          "pourquoi": "Top 1 à 31 kills dès la première game de la cup skin, lu à l'écran.",
+          "existe": true,
+          "streamer": "zetfartv"
+        },
+        "accroche_2": {
+          "clip_id": "co_TangibleExquisiteDragonPrimeMe-UsF5_uyr7qJU-PPq__shxrkfnbr_1114",
+          "pourquoi": "Shxrk finit sa game au minigun et à la pioche pour la Victory Royale.",
+          "existe": true,
+          "streamer": "shxrkfnbr"
+        },
+        "angle": "performance"
+      }
+    ],
+    "a_eviter": "Ne pas refaire le jeton pirate, les récaps FNCS Solo, BUZZ À SON PRIME du 12/11 ni le face reveal de ZetFar déjà titré le 01/09.",
+    "modele": "claude-fable-5-2",
+    "genere_le": "2026-11-14T07:18:34",
+    "plan": {
+      "titre_index": 1,
+      "titre": "BUZZ AURA-T-IL LE SKIN AVEC WEREX ? 🤔 LÉO DÉTRUIT CHAP EN CUP 🤯",
+      "duree_cible_min": 15,
+      "ossature": [
+        {
+          "position": 1,
+          "clip_id": "v6_cl_6820__buzzftn_1114",
+          "streamer": "buzzftn",
+          "existe": true,
+          "role": "ouverture",
+          "pourquoi": "Werex coincé dans un edit puis clutch du top 1 : drôle, lisible sans contexte, et pose la question du skin."
+        },
+        {
+          "position": 2,
+          "clip_id": "v6_cl_1419__jolavanille_1114",
+          "streamer": "jolavanille",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Deuxième tête d'affiche sur la même cup, le chat contre Jo puis top 1."
+        },
+        {
+          "position": 3,
+          "clip_id": "v6_cl_6450__leothecrack_1114",
+          "streamer": "leothecrack",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Accroche 2 du titre : Léo à 34 kills qui sort Chap."
+        },
+        {
+          "position": 4,
+          "clip_id": "v6_cl_4274__buzzftn_1114",
+          "streamer": "buzzftn",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Retour chez Buzz : le chat le démonte, la tension monte avec Werex."
+        },
+        {
+          "position": 5,
+          "clip_id": "co_TriumphantFurryWebHassaanChop-CJMXoAXaB4yzESBy__stizo_1114",
+          "streamer": "stizo_",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Respiration courte : Stizo meurt en lisant son chat."
+        },
+        {
+          "position": 6,
+          "clip_id": "v6_cl_374__zetfartv_1114",
+          "streamer": "zetfartv",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "ZetFar entre dans la course avec un top 1 à 31 kills."
+        },
+        {
+          "position": 7,
+          "clip_id": "v6_cl_9059__buzzftn_1114",
+          "streamer": "buzzftn",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Werex porte le duo à 427 points, le skin redevient possible."
+        },
+        {
+          "position": 8,
+          "clip_id": "v6_cl_2423__jolavanille_1114",
+          "streamer": "jolavanille",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Jo promet le top 1 et s'effondre : la cup commence à faire des victimes."
+        },
+        {
+          "position": 9,
+          "clip_id": "co_RichMagnificentRavenTooSpicy-uhmi3D0TmOYSMWZv__talmo_1114",
+          "streamer": "talmo",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Faux espoir court de Talmo sur le jeton, dans le thème de la récompense ratée."
+        },
+        {
+          "position": 10,
+          "clip_id": "v6_cl_10534__buzzftn_1114",
+          "streamer": "buzzftn",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Floki chambre Buzz juste avant la dernière game, le pic de chat de la soirée."
+        },
+        {
+          "position": 11,
+          "clip_id": "v6_cl_11359__buzzftn_1114",
+          "streamer": "buzzftn",
+          "existe": true,
+          "role": "reponse",
+          "pourquoi": "La réponse au titre : skin fêté à 460 points, puis 258e, pas de skin."
+        },
+        {
+          "position": 12,
+          "clip_id": "co_TangibleExquisiteDragonPrimeMe-UsF5_uyr7qJU-PPq__shxrkfnbr_1114",
+          "streamer": "shxrkfnbr",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Coup de frais après la chute de Buzz : Shxrk gagne au minigun."
+        },
+        {
+          "position": 13,
+          "clip_id": "v6_cl_1961__zetfartv_1114",
+          "streamer": "zetfartv",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "ZetFar tué en plein vol, le moment que son chat voulait en short."
+        },
+        {
+          "position": 14,
+          "clip_id": "v6_cl_5750__buzzftn_1114",
+          "streamer": "buzzftn",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Fou rire court de Buzz sur le col roulé de Floki."
+        },
+        {
+          "position": 15,
+          "clip_id": "v6_cl_2030__leothecrack_1114",
+          "streamer": "leothecrack",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Léo perd son token puis prend 5-0 : l'envers de son top 1."
+        },
+        {
+          "position": 16,
+          "clip_id": "v6_cl_7984__buzzftn_1114",
+          "streamer": "buzzftn",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Buzz déconcentré par Floki et Clément, dernier gros moment de rage."
+        },
+        {
+          "position": 17,
+          "clip_id": "community_dentoz-b63s",
+          "streamer": "community",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Clip commu de Stizo en jeu, pour varier avant la fin."
+        },
+        {
+          "position": 18,
+          "clip_id": "v6_cl_9861__zetfartv_1114",
+          "streamer": "zetfartv",
+          "existe": true,
+          "role": "chute",
+          "pourquoi": "ZetFar rate lui aussi skin et box à 15 points : la fin amère qui fait écho au titre."
+        }
+      ],
+      "reponse_du_titre": {
+        "clip_id": "v6_cl_11359__buzzftn_1114",
+        "streamer": "buzzftn",
+        "existe": true,
+        "minute_cible": 9.0
+      },
+      "remplissage": "Les autres games de Buzz avec Werex (début de cup, les 4 kills) et le clutch de VicVic chez ZetFar, coupés court."
+    },
+    "miniature": {
+      "source": "fable",
+      "titre": "BUZZ AURA-T-IL LE SKIN AVEC WEREX ? 🤔 LÉO DÉTRUIT CHAP EN CUP 🤯",
+      "gauche": {
+        "clip_id": "v6_cl_7984__buzzftn_1114",
+        "streamer": "buzzftn",
+        "texte": "BUZZ AURA-T-IL LE SKIN AVEC WEREX ?",
+        "punchline": "ON A LE SKIN ?",
+        "emoji": "🤔",
+        "expression": "hopeful doubtful look, eyebrows raised, slight tense smile",
+        "scene": "Fortnite tropical island endgame with a pirate ship in the background, bright daylight",
+        "palette": [
+          "turquoise",
+          "hot pink",
+          "white"
+        ],
+        "planche_case": 2,
+        "seconde": 28.48,
+        "seconde_source": "planche",
+        "ce_quon_voit": "Petite webcam de Buzz en haut à gauche pendant la game, visage de face"
+      },
+      "droite": {
+        "clip_id": "v6_cl_6450__leothecrack_1114",
+        "streamer": "leothecrack",
+        "texte": "LÉO DÉTRUIT CHAP EN CUP",
+        "punchline": "DÉSOLÉ CHAP !",
+        "emoji": "🤯",
+        "expression": "cheeky proud grin, chin slightly up, eyes wide",
+        "scene": "Fortnite build fight on a high ramp, an eliminated opponent dropping loot on the ground",
+        "palette": [
+          "deep navy",
+          "orange",
+          "cream"
+        ],
+        "planche_case": 6,
+        "seconde": 115.12,
+        "seconde_source": "planche",
+        "ce_quon_voit": "Léo en webcam à droite de l'écran, dans le lobby de la cup, casque sur la tête"
+      },
+      "element_jeu": {
+        "clip_id": "AmazingObliqueYogurtTinyFace-6JsnM3aaGLUVdxZK",
+        "streamer": "buzzftn",
+        "planche_case": 12,
+        "seconde": 20.0,
+        "description": "bannière Victoire Royale du top 1 de Buzz et Werex"
+      },
+      "idee_creative": "Les deux webcams sont petites dans les clips du jour : s'appuyer sur les photos de Buzz et de Léo jointes par le pipeline. Côté Buzz, le skin One Piece de la cup posé entre lui et la bannière de victoire, comme une récompense pas encore acquise.",
+      "visage_manquant": "",
+      "idees_de_repli": [
+        "Gauche Jolavanille (cam du top 1) avec JE LE TUE !!, droite Léo inchangé",
+        "Gauche Buzz inchangé, droite ZetFar remplacé par son skin rayé et 31 KILLS faute de visage"
+      ],
+      "ambiance": "Lumière vive de plage tropicale, suspense amusé à gauche, fierté moqueuse à droite",
+      "a_eviter": "Un écran de lobby ou de classement, deux sourires identiques, un coffre ou le jeton pirate",
+      "assets_demandes": [
+        "Bannière Victory Royale (actuelle)",
+        "Médaille d'élimination (or)",
+        "skin Baggy One Piece"
+      ]
+    }
+  }
 }
