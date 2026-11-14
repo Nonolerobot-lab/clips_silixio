@@ -3,7 +3,7 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 253,
+      "total_clips": 391,
       "streamers": [
         "acorn",
         "ajerss",
@@ -21,11 +21,14 @@
         "kurama_203",
         "leothecrack",
         "lyost wterex",
+        "momsyfnv2",
         "mrsavage",
         "noahreyli",
         "peterbot",
+        "revenja",
         "rezonfn",
         "risezd",
+        "seyytofn",
         "shxrkfnbr",
         "snayzy",
         "stizo_",
@@ -34,6 +37,30 @@
         "vanyak3kk",
         "venofn",
         "wazz",
+        "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "total_clips": 71,
+      "streamers": [
+        "acorn",
+        "alibaba_rcm",
+        "buzzftn",
+        "community",
+        "jolavanille",
+        "khanada_",
+        "kirillianfn1",
+        "leothecrack",
+        "mrsavage",
+        "risezd",
+        "rzpruzen",
+        "shxrkfnbr",
+        "stizo_",
+        "sy stormy",
+        "talmo",
+        "vadeal",
+        "vanyak3kk",
         "zetfartv"
       ]
     },
@@ -195,30 +222,7 @@
         "xset imbausagett",
         "zetfartv"
       ]
-    },
-    {
-      "date": "2026-11-07",
-      "total_clips": 55,
-      "streamers": [
-        "alibaba_rcm",
-        "aussieantics",
-        "buzzftn",
-        "community",
-        "flickzyv2",
-        "fnmoneymaker",
-        "k1ng",
-        "khanada_",
-        "kurama_203",
-        "mrsavage",
-        "p1ngfnz",
-        "podasai",
-        "risezd",
-        "talmo",
-        "waze",
-        "wazz",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-11-13"
+  "latest": "2026-11-14"
 }
