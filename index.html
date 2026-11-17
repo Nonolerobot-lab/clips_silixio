@@ -247,6 +247,9 @@
             opacity: 0.45;
             cursor: default;
         }
+        /* 2026-11-16 (GO PO) : bouton du prechargement en lot, vert comme la ligne d'etat. */
+        #preloadAllBtn { border-color: #7aa87a; color: #bfe3bf; font-weight: 600; }
+        #preloadAllBtn:hover:not(:disabled) { background: rgba(122, 168, 122, 0.18); color: #fff; }
         /* 2026-09-17 (PO) : telechargement regroupe — « Telecharger : Clip | Chat ». */
         .dl-group {
             display: inline-flex;
@@ -1562,7 +1565,11 @@
         <div class="stats-bar" id="statsBar">
             <!-- 2026-09-01 : etat du prechargement fetch->blob. Rend VISIBLE que
                  les clips suivants arrivent en RAM pendant le tri (le symptome
-                 « 30 s par clip » ressemblait a une page morte). -->
+                 « 30 s par clip » ressemblait a une page morte).
+                 2026-11-16 (GO PO) : bouton « Tout precharger » (jour) / « Precharger les N
+                 suivants » (onglet En retard) : un lot sur le disque du navigateur, cf. PRECHARGEMENT.
+                 Masque sans Cache API (repli RAM, fenetre automatique seule). -->
+            <button class="peak-guide-btn" id="preloadAllBtn" onclick="preloadAllToggle()" style="display:none;"></button>
             <span id="preloadHint" style="color:#7aa87a;"></span>
             <div class="stat"><span class="sdot sdot-top"></span><span id="statTop">0</span> pépites</div>
             <div class="stat"><span class="sdot sdot-good"></span><span id="statGood">0</span> bons</div>
@@ -1998,6 +2005,7 @@
             axesFeedback = {}; // Sprint 80 : axes explicites
             chatFlags = {};
             exportedClips = {}; // Fix 2026-04-09 : reset puis restore depuis localStorage
+            _preloadClearAll(); // 2026-11-16 : autre liste (jour / En retard) : file et lot repartent de zero, le disque reste
             renderRedacteur(); // 2026-10-09 : bandeau des 3 titres (masque si cle absente)
 
             if (!MANIFEST.clips || MANIFEST.clips.length === 0) {
@@ -2638,17 +2646,10 @@
                 // et jouait la mauvaise version quand Silixio avait coupe les
                 // sous-titres du clip.
                 const _activeUrl = _preloadUrlOf(clip) || clip.video_url;
-                const _blobReady = _preloadGetReady(_activeUrl);
-                if (_blobReady) {
-                    player.src = _blobReady;   // deja en RAM : lecture immediate
-                } else {
-                    // Pas pret : streaming direct, et on ANNULE un eventuel
-                    // fetch en vol du meme clip — sinon les deux flux se
-                    // partagent le meme tuyau ~1 Mo/s et le player rame.
-                    _preloadAbort(_activeUrl);
-                    // Fix 2026-05-14 add-subs-checkbox : utilise _subs.mp4 si toggle actif et disponible
-                    player.src = _activeUrl;
-                }
+                // 2026-11-16 : fichier precharge (disque ou RAM) s'il est pret ; sinon streaming
+                // AVEC PRIORITE : les prechargements se mettent en pause (rien n'est jete, avant
+                // le telechargement entame du clip etait annule et repartait de zero).
+                _playerSetSource(player, _activeUrl);
                 player.style.display = '';
                 if (clip.thumbnail_url) {
                     player.poster = clip.thumbnail_url;
@@ -3467,9 +3468,7 @@
             if (!player || player.tagName !== 'VIDEO') return false;
             const target = _getPlayerUrl(clip);
             if (!target) return false;
-            const ready = _preloadGetReady(target);
-            if (!ready) _preloadAbort(target);
-            player.src = ready || target;
+            _playerSetSource(player, target);   // 2026-11-16 : fichier precharge ou streaming prioritaire
             const t = Math.max(0, Number(startAt) || 0);
             if (t > 0) {
                 player.addEventListener('loadedmetadata', function () {
@@ -3531,36 +3530,73 @@
             if (btn) btn.classList.toggle('active', _subsEnabled);
         });
 
-        // === PRELOAD HELPERS (2026-09-01, remplace Sprint 64 + 73.3) ===
-        // Mesure du 01/09 : debit reel worker->Drive ~1 Mo/s a froid, clips
-        // livres 68 Mo medians a 11,6 Mbit/s de bitrate -> le streaming ne
-        // peut pas suivre, et l'ancien preload <video preload=auto> ne
-        // telechargeait que quelques Mo (heuristique navigateur). Ici :
-        // fetch COMPLET -> blob en RAM, fenetre glissante, abort de tout ce
-        // qui sort de la fenetre.
-        // 2026-09-30 (retour de Silixio : « les clips s'arretent toutes les
-        // secondes pendant 10 s ») : Drive sert CHAQUE requete a un debit
-        // aleatoire (~40 % a 10-20 Mo/s, ~60 % a 0,3-0,7 Mo/s, mesure le
-        // 30/09 en direct sur l'API Drive, Cloudflare hors de cause) alors
-        // qu'un clip demande 0,4-1,2 Mo/s. Deux clips d'avance ne suffisaient
-        // plus : la fenetre se remplit maintenant JUSQU'A UN BUDGET EN OCTETS
-        // (PRELOAD_BUDGET_MB, ~25-30 clips de 36 Mo, 3-4 clips de 300 Mo),
-        // dans l'ordre de lecture, PRELOAD_CONCURRENCY telechargements a la
-        // fois pour que le clip suivant passe toujours en premier.
-        // Le clip COURANT n'est jamais fetche en double : s'il n'est pas
-        // deja pret au moment de l'afficher, il part en streaming et son
-        // fetch eventuel est annule (cf. loadClip Mode 1).
-        const _blobCache = new Map();   // url active -> {status, ctrl, blobUrl, bytes}
-        const PRELOAD_BUDGET_MB = 1024; // octets max prepares en avance (RAM/disque du navigateur)
-        const PRELOAD_CONCURRENCY = 3;  // telechargements simultanes (le plus proche d'abord)
-        const PRELOAD_DEFAULT_MB = 40;  // poids suppose si le manifest n'a pas size_mb
-        const PRELOAD_MAX_FAILS = 2;    // echecs reseau toleres avant d'abandonner une URL
-        let _preloadOrder = [];         // URLs a precharger, par ordre de lecture
+        // === PRECHARGEMENT (2026-09-01 ; disque, priorite au clip regarde et bouton le 2026-11-16) ===
+        // 2026-09-01 : fetch COMPLET -> blob en RAM (l'ancien <video preload=auto> ne
+        // telechargeait que quelques Mo). 2026-09-30 (« les clips s'arretent toutes les secondes
+        // pendant 10 s ») : Drive sert chaque requete a un debit aleatoire, la fenetre se remplit
+        // jusqu'a PRELOAD_BUDGET_MB, PRELOAD_CONCURRENCY telechargements a la fois.
+        // 2026-11-16 (Silixio, 15/11 : « 1 h a charger 1 s », GO PO) — mesure du 16/11 : proxy +
+        // Drive rapides depuis PC1 (32/32 a 10-35 Mo/s), fichiers stables (~55 Mo par clip joue),
+        // mais Silixio passe 2-3 s par clip (mediane edito_usage) : aucune fenetre glissante ne
+        // suit, et un clip affiche pas encore pret etait JETE puis relu en streaming pendant que
+        // 3 prechargements gardaient la ligne (un quart du debit pour le clip regarde). Donc :
+        //   1. les fichiers vont sur le DISQUE du navigateur (Cache API) et plus en RAM : un lot
+        //      de 150 clips (~8 Go) tient. Sans Cache API : RAM, comme avant (pas de bouton) ;
+        //   2. PRIORITE AU CLIP REGARDE : s'il part en streaming, tous les prechargements se
+        //      mettent en PAUSE (rien n'est jete) tant qu'il a moins de PRIORITY_RESUME_SEC
+        //      d'avance, et s'y remettent des qu'il retombe sous PRIORITY_PAUSE_SEC ;
+        //   3. bouton « Tout precharger » (un jour) / « Precharger les N suivants » (onglet « En
+        //      retard », ou jour trop gros) : un lot d'au plus PRELOAD_LOT_MAX_CLIPS clips,
+        //      borne par la place disque. Le clip regarde passe toujours avant le lot.
+        // Le disque garde les clips PRELOAD_DISK_TTL_DAYS jours, PRELOAD_DISK_MAX_MB au plus (les
+        // plus anciens partent d'abord). Mesure de la lecture : cle lecture_usage du feedback.
+        const PRELOAD_BUDGET_MB = 1024;      // fenetre automatique : Mo prepares d'avance
+        const PRELOAD_CONCURRENCY = 3;       // telechargements simultanes (le plus proche d'abord)
+        const PRELOAD_DEFAULT_MB = 40;       // poids suppose si le manifest n'a pas size_mb
+        const PRELOAD_MAX_FAILS = 3;         // echecs toleres avant d'abandonner une URL
+        const PRELOAD_LOT_MAX_CLIPS = 150;   // bouton : clips a telecharger par lot (un jour ~145)
+        const PRELOAD_LOT_MAX_MB = 9216;     // bouton : poids max d'un lot (~9 Go)
+        const PRELOAD_DISK_MAX_MB = 12288;   // disque : au-dela, les clips les plus anciens partent
+        const PRELOAD_DISK_MARGIN_MB = 2048; // disque : place laissee libre dans le quota du navigateur
+        const PRELOAD_DISK_TTL_DAYS = 3;     // disque : un clip precharge est efface apres 3 jours
+        const PRELOAD_CACHE_NAME = 'clips-preload-v1';
+        const PRIORITY_PAUSE_SEC = 3;        // clip regarde en streaming : < 3 s d'avance -> pause
+        const PRIORITY_RESUME_SEC = 6;       // ... >= 6 s d'avance (Chrome en vise ~10) -> reprise
+        const PRIORITY_CHECK_MS = 500;
+        const PRELOAD_HINT_MS = 1000;        // rafraichissement de la ligne d'etat pendant un telechargement
+        const LECTURE_DEBITS_MAX = 100;      // debits gardes pour lecture_usage
+        const LECTURE_ATTENTE_MIN_SEC = 0.5; // attente du lecteur comptee a partir de 0,5 s
+
+        const _blobCache = new Map();   // url -> {status:'loading'|'ready', ctrl, blobUrl, bytes, t0, pausedMs}
+        let _preloadOrder = [];         // URLs a precharger, par ordre de priorite
         const _preloadFails = new Map();
+        const _diskIndex = new Map();   // url -> {at, mb} : clips complets sur le disque
+        let _diskCache = null;          // Cache API ouverte ; null = RAM seulement
+        let _diskFull = false;          // quota atteint : plus de lot, la fenetre repasse en RAM
+        let _diskBootDone = false;
+        let _preloadLot = null;         // lot du bouton : {set, todo: [url], mb}
+        let _lotStarting = false;
+        let _preloadGate = null;        // {p, r} : prechargements en pause (clip regarde prioritaire)
+        let _focus = null;              // clip regarde en streaming : {player, timer, onWaiting}
+        let _playToken = 0;             // derniere demande de source (reponse disque tardive ignoree)
+        let _playingDiskBlob = null;    // {url, blobUrl} : fichier disque dans le lecteur (un seul)
+        let _hintTimer = null;
+        let _hintNote = '';
+
+        // Mesure de la lecture (cle lecture_usage, nouvelle) : d'ou vient chaque clip affiche,
+        // les attentes du lecteur, le debit de chaque telechargement (par flux : la ligne en
+        // porte jusqu'a PRELOAD_CONCURRENCY a la fois). Bimodal = Drive ; bas partout = la ligne.
+        const _lecture = {
+            schema: 'lecture_usage.1', debut: new Date().toISOString(),
+            disque_plein: false, lots: 0, pauses_priorite: 0,
+            clips_disque: 0, clips_ram: 0, clips_streaming: 0,
+            attentes: 0, attente_sec: 0, attente_max_sec: 0,
+            telechargements: 0, mo_telecharges: 0, debits_mo_s: [],
+        };
 
         // Version reellement lue par le player (sous-titree / propre / _subs ; condense d'une
-        // sequence depuis le 2026-10-11) : c'est elle qu'on precharge, sinon le blob pret n'est
-        // pas le bon fichier.
+        // sequence depuis le 2026-10-11) : c'est elle qu'on precharge, sinon le fichier pret n'est
+        // pas le bon.
         function _preloadUrlOf(clip) {
             if (!clip) return null;
             return (typeof _getPlayerUrl === 'function' ? _getPlayerUrl(clip) : null) || clip.video_url || null;
@@ -3577,11 +3613,79 @@
             return c.size_mb > 0 ? c.size_mb : PRELOAD_DEFAULT_MB;
         }
 
-        function _preloadGetReady(url) {
+        // --- Disque : ouverture, index, menage ---
+        function _diskOpen() {
+            const secure = (typeof isSecureContext === 'undefined') || isSecureContext;
+            if (typeof caches === 'undefined' || !caches || !secure) {
+                _diskBootDone = true;
+                return Promise.resolve();
+            }
+            return caches.open(PRELOAD_CACHE_NAME).then(async cache => {
+                const now = Date.now();
+                const ttlMs = PRELOAD_DISK_TTL_DAYS * 86400000;
+                for (const req of await cache.keys()) {
+                    const r = await cache.match(req);
+                    const at = r ? (Number(r.headers.get('X-Preload-At')) || 0) : 0;
+                    if (!r || now - at > ttlMs) { await cache.delete(req); continue; }
+                    _diskIndex.set(req.url, { at: at, mb: (Number(r.headers.get('X-Preload-Bytes')) || 0) / 1048576 });
+                }
+                _diskCache = cache;
+            }).catch(() => { _diskCache = null; })
+              .then(() => { _diskBootDone = true; _preloadPump(); });
+        }
+        const _diskBoot = _diskOpen();
+
+        async function _diskFreeMb() {
+            try {
+                if (typeof navigator !== 'undefined' && navigator.storage && navigator.storage.estimate) {
+                    const est = await navigator.storage.estimate();
+                    if (est && est.quota) return (est.quota - (est.usage || 0)) / 1048576 - PRELOAD_DISK_MARGIN_MB;
+                }
+            } catch (e) { /* estimation indisponible : plafonds du lot seulement */ }
+            return Infinity;
+        }
+
+        // Plafond disque : efface les clips les plus anciens hors de ce qui est voulu (fenetre,
+        // lot, clip affiche, extraKeep) jusqu'a laisser needMb sous PRELOAD_DISK_MAX_MB.
+        let _diskTrimming = false;
+        async function _diskTrim(needMb, extraKeep) {
+            if (!_diskCache || _diskTrimming) return;
+            let used = 0;
+            _diskIndex.forEach(d => { used += d.mb; });
+            if (used + needMb <= PRELOAD_DISK_MAX_MB) return;
+            _diskTrimming = true;
+            try {
+                const keep = new Set(_preloadOrder);
+                if (_preloadLot) _preloadLot.set.forEach(u => keep.add(u));
+                if (extraKeep) extraKeep.forEach(u => keep.add(u));
+                const cur = _preloadUrlOf(CLIPS[currentIndex]);
+                if (cur) keep.add(cur);
+                if (_playingDiskBlob) keep.add(_playingDiskBlob.url);
+                const old = Array.from(_diskIndex.entries())
+                    .filter(e => !keep.has(e[0]))
+                    .sort((a, b) => a[1].at - b[1].at);
+                for (const [url, d] of old) {
+                    if (used + needMb <= PRELOAD_DISK_MAX_MB) break;
+                    try { await _diskCache.delete(url); } catch (e) { /* deja parti */ }
+                    _diskIndex.delete(url);
+                    used -= d.mb;
+                }
+            } finally {
+                _diskTrimming = false;
+            }
+        }
+
+        // --- Etat d'un clip ---
+        function _preloadGetReady(url) {   // blob RAM pret : lecture immediate
             const e = _blobCache.get(url);
             return (e && e.status === 'ready' && e.blobUrl) ? e.blobUrl : null;
         }
 
+        function _preloadIsReady(url) {
+            return _diskIndex.has(url) || !!_preloadGetReady(url);
+        }
+
+        // Annule un telechargement en cours / libere un blob RAM. Le disque n'est pas touche.
         function _preloadAbort(url) {
             const e = _blobCache.get(url);
             if (!e) return;
@@ -3590,77 +3694,246 @@
             _blobCache.delete(url);
         }
 
+        // --- Priorite au clip regarde : pause / reprise de TOUS les prechargements ---
+        function _preloadGatePause() {
+            if (_preloadGate) return;
+            let r;
+            const p = new Promise(res => { r = res; });
+            _preloadGate = { p: p, r: r };
+            _lecture.pauses_priorite++;
+            _updatePreloadHint();
+        }
+
+        function _preloadGateResume() {
+            if (!_preloadGate) return;
+            const g = _preloadGate;
+            _preloadGate = null;
+            g.r();
+            _preloadPump();
+        }
+
+        // Compte les octets et retient le flux tant que la porte est fermee : le navigateur
+        // cesse alors de lire la connexion (contre-pression), rien de ce qui est arrive n'est perdu.
+        function _preloadCounter(entry, signal) {
+            const aborted = new Promise(res => signal.addEventListener('abort', res, { once: true }));
+            return new TransformStream({
+                async transform(chunk, ctl) {
+                    if (_preloadGate) {
+                        const w0 = Date.now();
+                        while (_preloadGate && !signal.aborted) await Promise.race([_preloadGate.p, aborted]);
+                        entry.pausedMs += Date.now() - w0;
+                    }
+                    if (signal.aborted) throw new DOMException('Prechargement annule', 'AbortError');
+                    entry.bytes += chunk.byteLength;
+                    ctl.enqueue(chunk);
+                    _preloadHintSoon();
+                },
+            });
+        }
+
+        function _bufferedAhead(player) {
+            try {
+                const t = player.currentTime;
+                const b = player.buffered;
+                for (let i = 0; i < b.length; i++) {
+                    if (b.start(i) <= t + 0.5 && b.end(i) > t) return b.end(i) - t;
+                }
+            } catch (e) { /* lecteur pas pret */ }
+            return 0;
+        }
+
+        function _bufferedToEnd(player) {
+            const d = player.duration;
+            return isFinite(d) && d > 0 && _bufferedAhead(player) >= d - player.currentTime - 0.5;
+        }
+
+        function _priorityStop() {
+            if (_focus) {
+                clearInterval(_focus.timer);
+                _focus.player.removeEventListener('waiting', _focus.onWaiting);
+                _focus = null;
+            }
+            _preloadGateResume();
+        }
+
+        // Clip affiche pas encore pret : streaming, et la ligne lui revient tant qu'il a peu
+        // d'avance (lecteur en pause ou clip entierement charge : les prechargements reprennent).
+        function _playerStream(player, url) {
+            player.src = url;
+            _lecture.clips_streaming++;
+            const check = () => {
+                if (!_focus || _focus.player !== player) return;
+                if (player.isConnected === false || player.error || _bufferedToEnd(player)) { _priorityStop(); return; }
+                if (player.paused) { _preloadGateResume(); return; }
+                const ahead = _bufferedAhead(player);
+                if (ahead < PRIORITY_PAUSE_SEC) _preloadGatePause();
+                else if (ahead >= PRIORITY_RESUME_SEC) _preloadGateResume();
+            };
+            _focus = { player: player, onWaiting: () => _preloadGatePause(), timer: setInterval(check, PRIORITY_CHECK_MS) };
+            player.addEventListener('waiting', _focus.onWaiting);
+            _preloadGatePause();   // depart : toute la ligne pour le clip regarde
+        }
+
+        // Fichier disque du clip -> URL jouable (un seul blob disque vivant a la fois).
+        async function _preloadPlayable(url, token) {
+            const ram = _preloadGetReady(url);
+            if (ram) return ram;
+            if (!_diskCache || !_diskIndex.has(url)) return null;
+            if (_playingDiskBlob && _playingDiskBlob.url === url) return _playingDiskBlob.blobUrl;
+            try {
+                const r = await _diskCache.match(url);
+                if (!r) { _diskIndex.delete(url); return null; }
+                const blobUrl = URL.createObjectURL(await r.blob());
+                if (token !== _playToken) { URL.revokeObjectURL(blobUrl); return null; }
+                if (_playingDiskBlob) { try { URL.revokeObjectURL(_playingDiskBlob.blobUrl); } catch (e) {} }
+                _playingDiskBlob = { url: url, blobUrl: blobUrl };
+                return blobUrl;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        // Source du lecteur : fichier precharge (RAM ou disque) s'il existe, sinon streaming
+        // avec priorite. Une reponse disque arrivee apres un autre changement de clip est ignoree.
+        function _playerSetSource(player, url) {
+            const token = ++_playToken;
+            _priorityStop();
+            _lectureHook(player);
+            const ram = _preloadGetReady(url);
+            if (ram) {
+                player.src = ram;
+                _lecture.clips_ram++;
+                return;
+            }
+            const diskPending = !_diskBootDone && typeof caches !== 'undefined';
+            if (!_diskIndex.has(url) && !diskPending) {
+                _playerStream(player, url);
+                return;
+            }
+            // Lecture du disque (quelques ms) : on vide le lecteur pour ne pas relancer le clip d'avant.
+            try { player.pause(); player.removeAttribute('src'); player.load(); } catch (e) { /* lecteur factice */ }
+            _diskBoot.then(() => _preloadPlayable(url, token)).then(blobUrl => {
+                if (token !== _playToken) return;
+                if (blobUrl) {
+                    player.src = blobUrl;
+                    _lecture.clips_disque++;
+                } else {
+                    _playerStream(player, url);
+                }
+                const p = player.play && player.play();
+                if (p && p.catch) p.catch(() => {});
+            });
+        }
+
+        // --- Telechargements ---
         function _preloadStart(url) {
             const ctrl = new AbortController();
-            const entry = { status: 'loading', ctrl: ctrl, blobUrl: null, bytes: 0 };
+            const entry = { status: 'loading', ctrl: ctrl, blobUrl: null, bytes: 0, t0: Date.now(), pausedMs: 0 };
             _blobCache.set(url, entry);
+            const cache = (_diskCache && !_diskFull) ? _diskCache : null;
             fetch(url, { signal: ctrl.signal })
-                .then(resp => { if (!resp.ok) throw new Error('HTTP ' + resp.status); return resp.blob(); })
-                .then(blob => {
-                    if (_blobCache.get(url) !== entry) {
-                        // Evince pendant le telechargement : ne pas fuir le blob.
-                        return;
+                .then(resp => {
+                    if (!resp.ok || !resp.body) throw new Error('HTTP ' + resp.status);
+                    const body = resp.body.pipeThrough(_preloadCounter(entry, ctrl.signal));
+                    if (!cache) return new Response(body).blob().then(blob => ({ blob: blob }));
+                    const headers = {
+                        'Content-Type': resp.headers.get('Content-Type') || 'video/mp4',
+                        'X-Preload-At': String(Date.now()),
+                        'X-Preload-Bytes': resp.headers.get('Content-Length') || '0',
+                    };
+                    return cache.put(url, new Response(body, { headers: headers })).then(() => ({ disk: true }));
+                })
+                .then(res => {
+                    _lectureDownload(entry);
+                    if (res.disk) {
+                        // Meme evince entre-temps, le fichier complet reste utilisable.
+                        _diskIndex.set(url, { at: Date.now(), mb: entry.bytes / 1048576 });
+                        _diskTrim(0);
                     }
-                    entry.blobUrl = URL.createObjectURL(blob);
-                    entry.bytes = blob.size;
-                    entry.status = 'ready';
-                    entry.ctrl = null;
+                    if (_blobCache.get(url) !== entry) return;
+                    if (res.disk) {
+                        _blobCache.delete(url);
+                    } else {
+                        entry.blobUrl = URL.createObjectURL(res.blob);
+                        entry.status = 'ready';
+                        entry.ctrl = null;
+                    }
                     _preloadPump();
                 })
-                .catch(() => {
-                    // Abort volontaire (l'entree n'est deja plus la) ou echec
-                    // reseau : l'entree sort du cache, le clip repartira en
-                    // streaming classique (etat d'avant). Un echec reel est
-                    // compte pour ne pas reboucler sur une URL cassee (404...).
-                    if (_blobCache.get(url) === entry) {
-                        _blobCache.delete(url);
-                        _preloadFails.set(url, (_preloadFails.get(url) || 0) + 1);
+                .catch(err => {
+                    if (_blobCache.get(url) !== entry) { _preloadPump(); return; }   // annule volontairement
+                    _blobCache.delete(url);
+                    if (err && err.name === 'QuotaExceededError') {
+                        // Disque plein : plus de lot (il finirait en RAM), la fenetre repasse en RAM.
+                        _diskFull = true;
+                        _lecture.disque_plein = true;
+                        _preloadLot = null;
+                        _preloadWindow(currentIndex);
+                        return;
                     }
+                    _preloadFails.set(url, (_preloadFails.get(url) || 0) + 1);
                     _preloadPump();
                 });
         }
 
-        // Lance les telechargements manquants, dans l'ordre de lecture, sans
-        // depasser PRELOAD_CONCURRENCY : le clip suivant n'est jamais ralenti
-        // par des clips plus lointains.
+        // Lance les telechargements manquants, dans l'ordre, sans depasser PRELOAD_CONCURRENCY.
+        // Rien ne demarre pendant que le clip regarde a la priorite.
         function _preloadPump() {
-            let loading = 0;
-            _blobCache.forEach(e => { if (e.status === 'loading') loading++; });
-            for (const url of _preloadOrder) {
-                if (loading >= PRELOAD_CONCURRENCY) break;
-                if (_blobCache.has(url)) continue;                       // en cours ou pret
-                if ((_preloadFails.get(url) || 0) >= PRELOAD_MAX_FAILS) continue;
-                _preloadStart(url);
-                loading++;
+            if (!_diskBootDone) return;   // _diskOpen relance la pompe une fois l'index disque lu
+            if (!_preloadGate) {
+                let loading = 0;
+                _blobCache.forEach(e => { if (e.status === 'loading') loading++; });
+                for (const url of _preloadOrder) {
+                    if (loading >= PRELOAD_CONCURRENCY) break;
+                    if (_blobCache.has(url) || _diskIndex.has(url)) continue;   // en cours ou pret
+                    if ((_preloadFails.get(url) || 0) >= PRELOAD_MAX_FAILS) continue;
+                    _preloadStart(url);
+                    loading++;
+                }
             }
             _updatePreloadHint();
+            _refreshPreloadAllBtn();
         }
 
         function _preloadWindow(centerIdx) {
-            // Fenetre conservee : blob du clip courant (s'il est pret, il joue)
-            // + les clips suivants jusqu'a PRELOAD_BUDGET_MB (le premier est
-            // toujours pris, meme s'il depasse le budget). Tout le reste est
-            // aborte/libere — y compris apres un filtre streamer (les URLs
-            // servent de cles, donc un CLIPS rebati n'invalide que ce qui sort
-            // de la fenetre).
-            const keep = new Set();
+            // Ordre : fenetre automatique (clips suivants jusqu'a PRELOAD_BUDGET_MB, le premier
+            // toujours pris), puis le lot du bouton (ses clips a partir d'ici, puis ceux deja
+            // passes). Le clip affiche n'est jamais mis en file (il est en streaming ou pret) mais
+            // son telechargement entame est garde. Le reste en cours est annule ; le disque reste.
             const order = [];
+            const seen = new Set();
             const cur = _preloadUrlOf(CLIPS[centerIdx]);
-            if (cur) keep.add(cur);
+            if (cur) seen.add(cur);
             let left = PRELOAD_BUDGET_MB;
             for (let i = centerIdx + 1; i < TOTAL; i++) {
                 const c = CLIPS[i];
-                // Iframes Twitch/Drive (Modes 2/3) : pas de video_url, pas preloadables.
+                // Iframes Twitch/Drive (Modes 2/3) : pas de video_url, pas prechargeables.
                 if (!c || !c.video_url) continue;
                 const url = _preloadUrlOf(c);
-                if (!url || keep.has(url)) continue;
+                if (!url || seen.has(url)) continue;
                 const mb = _preloadSizeMb(c);
                 if (order.length > 0 && mb > left) break;   // ordre de lecture respecte
                 left -= mb;
-                keep.add(url);
+                seen.add(url);
                 order.push(url);
             }
+            if (_preloadLot) {
+                const ahead = [];
+                const behind = [];
+                for (let i = 0; i < TOTAL; i++) {
+                    const url = _preloadUrlOf(CLIPS[i]);
+                    if (!url || seen.has(url) || !_preloadLot.set.has(url)) continue;
+                    seen.add(url);
+                    (i > centerIdx ? ahead : behind).push(url);
+                }
+                order.push(...ahead, ...behind);
+                // Le clip affiche (lu en streaming, le navigateur n'en garde que ~10 s) passe en
+                // dernier : sans lui le lot ne finirait jamais tant que Silixio reste dessus.
+                if (cur && _preloadLot.set.has(cur) && !_preloadIsReady(cur)) order.push(cur);
+            }
             _preloadOrder = order;
+            const keep = new Set(order);
+            if (cur) keep.add(cur);
             for (const url of Array.from(_blobCache.keys())) {
                 if (!keep.has(url)) _preloadAbort(url);
             }
@@ -3670,26 +3943,196 @@
         function _preloadClearAll() {
             _preloadOrder = [];
             _preloadFails.clear();
+            _preloadLot = null;
             for (const url of Array.from(_blobCache.keys())) _preloadAbort(url);
             _updatePreloadHint();
+            _refreshPreloadAllBtn();
+        }
+
+        // --- Bouton « Tout precharger » / « Precharger les N suivants » ---
+        // Lot a partir du clip idx : clips pas encore notes, dans l'ordre de lecture ; ceux deja
+        // prets en font partie sans compter. Bornes : PRELOAD_LOT_MAX_CLIPS clips a telecharger,
+        // PRELOAD_LOT_MAX_MB et freeMb (place disque).
+        function _preloadLotPlan(idx, freeMb) {
+            const set = new Set();
+            const todo = [];
+            let mb = 0;
+            let more = false;
+            const capMb = Math.min(PRELOAD_LOT_MAX_MB, freeMb);
+            for (let i = Math.max(0, idx); i < TOTAL; i++) {
+                const c = CLIPS[i];
+                if (!c || !c.video_url || feedback[getClipStateKey(c)]) continue;
+                const url = _preloadUrlOf(c);
+                if (!url || set.has(url)) continue;
+                if (_preloadIsReady(url)) { set.add(url); continue; }
+                const cmb = _preloadSizeMb(c);
+                if (todo.length >= PRELOAD_LOT_MAX_CLIPS || mb + cmb > capMb) { more = true; break; }
+                set.add(url);
+                todo.push(url);
+                mb += cmb;
+            }
+            return { set: set, todo: todo, mb: mb, more: more };
+        }
+
+        function _preloadLotStatus() {
+            if (!_preloadLot) return null;
+            let ready = 0;
+            let mbDone = 0;
+            _preloadLot.todo.forEach(url => {
+                const d = _diskIndex.get(url);
+                const e = _blobCache.get(url);
+                if (d) { ready++; mbDone += d.mb; }
+                else if (e && e.status === 'ready') { ready++; mbDone += e.bytes / 1048576; }
+                else if (e) mbDone += e.bytes / 1048576;
+            });
+            return { ready: ready, total: _preloadLot.todo.length, mbDone: mbDone, mb: _preloadLot.mb };
+        }
+
+        async function preloadAllToggle() {
+            try { if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); } catch (e) {}
+            if (_lotStarting) return;
+            const st = _preloadLotStatus();
+            if (st && st.ready < st.total) {          // lot en cours : « Arreter »
+                _preloadLot = null;
+                _hintNote = '';
+                _preloadWindow(currentIndex);
+                return;
+            }
+            _lotStarting = true;
+            try {
+                let plan = _preloadLotPlan(currentIndex, Infinity);
+                if (!plan.todo.length) return;
+                await _diskTrim(plan.mb, plan.set);
+                const freeMb = await _diskFreeMb();
+                const limiteDisque = plan.mb > freeMb;
+                if (limiteDisque) plan = _preloadLotPlan(currentIndex, Math.max(0, freeMb));
+                if (!plan.todo.length) {
+                    _hintNote = 'Pas assez de place sur le disque pour précharger';
+                    return;
+                }
+                _hintNote = '';
+                _preloadLot = { set: plan.set, todo: plan.todo, mb: plan.mb, limiteDisque: limiteDisque };
+                _lecture.lots++;
+                _preloadWindow(currentIndex);
+            } finally {
+                _lotStarting = false;
+                _updatePreloadHint();
+                _refreshPreloadAllBtn();
+            }
+        }
+
+        function _fmtGo(mb) {
+            return mb >= 1000 ? (mb / 1024).toFixed(1).replace('.', ',') + ' Go' : Math.round(mb) + ' Mo';
+        }
+
+        function _refreshPreloadAllBtn() {
+            const btn = document.getElementById('preloadAllBtn');
+            if (!btn) return;
+            if (!_diskCache || !TOTAL) { btn.style.display = 'none'; return; }
+            btn.style.display = '';
+            if (_diskFull) {
+                btn.disabled = true;
+                btn.textContent = '⚠ Disque plein : préchargement limité';
+                return;
+            }
+            const st = _preloadLotStatus();
+            if (st && st.ready < st.total) {
+                btn.disabled = false;
+                btn.textContent = '⏹ Arrêter le préchargement';
+                btn.title = 'Les clips déjà préchargés restent prêts';
+                return;
+            }
+            const plan = _preloadLotPlan(currentIndex, Infinity);
+            if (!plan.todo.length) {
+                btn.disabled = true;
+                btn.textContent = '✓ Tout est préchargé';
+                btn.title = '';
+                return;
+            }
+            const enRetard = !!(MANIFEST && MANIFEST.date === 'BACKLOG');
+            btn.disabled = false;
+            btn.textContent = (plan.more || enRetard
+                ? '⤓ Précharger les ' + plan.todo.length + ' suivants'
+                : '⤓ Tout précharger · ' + plan.todo.length + ' clips') + ' · ' + _fmtGo(plan.mb);
+            btn.title = 'Télécharge les clips à l’avance sur cet ordinateur : ensuite chaque clip démarre tout de suite. '
+                + 'Le clip affiché passe toujours en premier.';
+        }
+
+        // --- Ligne d'etat ---
+        function _preloadHintSoon() {
+            if (_hintTimer) return;
+            _hintTimer = setTimeout(() => { _hintTimer = null; _updatePreloadHint(); }, PRELOAD_HINT_MS);
         }
 
         function _updatePreloadHint() {
             const el = document.getElementById('preloadHint');
             if (!el) return;
-            let ready = 0, loading = 0, bytes = 0;
-            _blobCache.forEach(e => {
-                if (e.status === 'ready') { ready++; bytes += e.bytes || 0; }
-                else if (e.status === 'loading') loading++;
-            });
-            const mo = bytes > 0 ? ' (' + Math.round(bytes / 1048576) + ' Mo)' : '';
-            if (loading > 0) {
-                el.textContent = '⤓ préchargement…' + (ready > 0 ? ' (' + ready + ' prêt' + (ready > 1 ? 's' : '') + mo + ')' : '');
+            const pause = _preloadGate ? ' · en pause : le clip affiché d’abord' : '';
+            const st = _preloadLotStatus();
+            if (st) {
+                const fini = st.ready >= st.total;
+                // Poids du lot = estimation du manifest : fini, on affiche le poids reel.
+                el.textContent = (fini ? '✓ ' : '⤓ ') + st.ready + '/' + st.total + ' prêts · '
+                    + (fini ? _fmtGo(st.mbDone) : _fmtGo(Math.min(st.mbDone, st.mb)) + ' / ' + _fmtGo(st.mb))
+                    + (_preloadLot.limiteDisque ? ' (limité par la place disque)' : '') + (fini ? '' : pause);
+                return;
+            }
+            let ready = 0;
+            let loading = 0;
+            _preloadOrder.forEach(u => { if (_preloadIsReady(u)) ready++; else if (_blobCache.has(u)) loading++; });
+            const prets = ready + ' prêt' + (ready > 1 ? 's' : '');
+            if (_hintNote) {
+                el.textContent = _hintNote;
+            } else if (loading > 0) {
+                el.textContent = '⤓ préchargement…' + (ready > 0 ? ' (' + prets + ')' : '') + pause;
             } else if (ready > 0) {
-                el.textContent = '✓ ' + ready + ' clip' + (ready > 1 ? 's' : '') + ' préchargé' + (ready > 1 ? 's' : '') + mo;
+                el.textContent = '✓ ' + ready + ' clip' + (ready > 1 ? 's' : '') + ' préchargé' + (ready > 1 ? 's' : '');
             } else {
                 el.textContent = '';
             }
+        }
+
+        // --- Mesure (lecture_usage) ---
+        function _lectureHook(player) {
+            if (!player || player._lectureHooked || !player.addEventListener) return;
+            player._lectureHooked = true;
+            let w0 = null;
+            const fin = () => {
+                if (w0 === null) return;
+                const s = (Date.now() - w0) / 1000;
+                w0 = null;
+                if (s < LECTURE_ATTENTE_MIN_SEC) return;   // le « waiting » de chaque demarrage
+                _lecture.attentes++;
+                _lecture.attente_sec += s;
+                if (s > _lecture.attente_max_sec) _lecture.attente_max_sec = s;
+            };
+            player.addEventListener('waiting', () => { if (w0 === null) w0 = Date.now(); });
+            player.addEventListener('playing', fin);
+            player.addEventListener('loadstart', fin);   // clip quitte pendant l'attente : elle compte
+        }
+
+        function _lectureDownload(entry) {
+            const mo = entry.bytes / 1048576;
+            const sec = Math.max(0.001, (Date.now() - entry.t0 - entry.pausedMs) / 1000);
+            _lecture.telechargements++;
+            _lecture.mo_telecharges += mo;
+            if (mo >= 1 && _lecture.debits_mo_s.length < LECTURE_DEBITS_MAX) {
+                _lecture.debits_mo_s.push(Math.round(mo / sec * 10) / 10);
+            }
+        }
+
+        function buildLectureUsage() {
+            const d = _lecture.debits_mo_s.slice().sort((a, b) => a - b);
+            const q = p => (d.length ? d[Math.min(d.length - 1, Math.floor(p * d.length))] : null);
+            return Object.assign({}, _lecture, {
+                cache_disque: !!_diskCache,
+                mo_telecharges: Math.round(_lecture.mo_telecharges),
+                attente_sec: Math.round(_lecture.attente_sec * 10) / 10,
+                attente_max_sec: Math.round(_lecture.attente_max_sec * 10) / 10,
+                debit_median_mo_s: q(0.5),
+                debit_p10_mo_s: q(0.1),
+                debits_mo_s: _lecture.debits_mo_s.slice(),
+            });
         }
 
         function downloadChat() {
@@ -4648,6 +5091,9 @@
             // 2026-10-15 : usage de l'edito Fable (bandeau, plan, descriptions, ordre de
             // visionnage), par session du jour. Nouvelle cle, cf. « USAGE DE L'EDITO ».
             data.edito_usage = buildEditoUsage();
+            // 2026-11-16 : mesure de la lecture (source de chaque clip, attentes du lecteur, debit
+            // des telechargements). Nouvelle cle, cf. PRECHARGEMENT.
+            if (typeof buildLectureUsage === 'function') data.lecture_usage = buildLectureUsage();
             return data;
         }
 
