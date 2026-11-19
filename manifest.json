@@ -152,7 +152,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Nikof"
+      "editorial_context": "Dans best-of Dentoz recemment : Nikof",
+      "note_jour": 72,
+      "note_jour_raison": "top 1 qualificatif d'Akiira casté par Nikof, chat en GG",
+      "redacteur_description": "Akiira gagne le 1v1 final et la Victory Royale s'affiche. Nikof hurle qu'il a été terrifié et annonce la grande finale, où Akiira rejoint Rax."
     },
     {
       "filename": "clip_002_shxrkfnbr_score80.mp4",
@@ -263,7 +266,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 46,
+      "note_jour_raison": "Shxrk souvent gardé, VR à gros kills, clip d'octobre",
+      "redacteur_description": "Shxrk enchaîne les fights en build dans une partie publique et décroche la Victory Royale avec une trentaine de kills. Le chat explose en W et OMG."
     },
     {
       "filename": "clip_001_01-41-38_score77_v6_vr.mp4",
@@ -332,9 +338,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1hC85zcsY0r4JIsOp7hpKIe3i2HbvAeC5/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1eBl62VLWuAhieN5Gg3DWRkVzkOTljgVt&export=download&confirm=t",
       "size_mb": 261.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-19_1",
+      "arc_position": 3,
+      "arc_label": "ZETFAR ET SES ABONNÉS : LE ZOO PUIS LES TOP 1",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -427,7 +433,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "même top 1 que le clip court, version longue",
+      "redacteur_description": "ZetFar meurt, reste bloqué sur un écran noir et se dispute pour 10 secondes de réanimation. La squad revient et gagne le 2v1v1 final contre un solo très fort."
     },
     {
       "filename": "clip_001_jolavanille_score75_fan.mp4",
@@ -545,7 +554,10 @@
       "seq_long_mode": "",
       "seq_span_sec": null,
       "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1_95KdPXVN7YFjAn1OtVpd_6A1U_WSRkD",
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 2,
+      "note_jour_raison": "TikTok de fan, catégorie jamais gardée, moment du 16/11",
+      "redacteur_description": "Jolavanille joue une cup et lance des blagues grasses sur son stuff pendant que le chat vote la prédiction."
     },
     {
       "filename": "clip_002_leothecrack_score75_fan.mp4",
@@ -663,7 +675,10 @@
       "seq_long_mode": "",
       "seq_span_sec": null,
       "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1NMTzer4nZ54n3gR-VsmF-LGyEGtRTX5R",
-      "editorial_context": "Dans best-of Dentoz recemment : Buzz"
+      "editorial_context": "Dans best-of Dentoz recemment : Buzz",
+      "note_jour": 1,
+      "note_jour_raison": "TikTok de fan, discussion business sans rapport avec le jeu",
+      "redacteur_description": "Leo, en créatif, explique la rentabilité des partenariats de marques et estime le tarif d'un TikTok de Matos."
     },
     {
       "filename": "clip_002_00-51-34_score73_v6_funny.mp4",
@@ -732,9 +747,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1g9YFq-VX9v7hYrbWozjd-QjmlKgHvhZ9/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=1ZddZHyvFAjqxa_AQR54Sb2JKjfLXCExt&export=download&confirm=t",
       "size_mb": 285.7,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-19_1",
+      "arc_position": 2,
+      "arc_label": "ZETFAR ET SES ABONNÉS : LE ZOO PUIS LES TOP 1",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -803,7 +818,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "sketch des cris d'animaux, drôle mais 6 minutes",
+      "redacteur_description": "Pour avoir Semko en ami, un abonné doit imiter des animaux et Semko lit une liste interminable. La squad débat du bruit de la fourmi et Semko fait la mouette."
     },
     {
       "filename": "clip_003_03-07-32_score72_v6_talk.mp4",
@@ -935,7 +953,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "talk de ZetFar sur ses heures de travail, ton posé",
+      "redacteur_description": "Un viewer demande à ZetFar s'il a une vie hors des jeux. Il détaille ses 80 à 90 heures de contenu par semaine en ouvrant des coffres."
     },
     {
       "filename": "clip_005_risezd_score70_subs.mp4",
@@ -1046,7 +1067,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "Victory Royale en trio, mais Risezd rarement gardé",
+      "redacteur_description": "Risezd coache son trio dans un endgame en build, ils éliminent la dernière équipe et la Victory Royale s'affiche. Il se proclame meilleur coach du monde."
     },
     {
       "filename": "clip_003_zetfartv_score70.mp4",
@@ -1114,9 +1138,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1mBLHJuYiF5oxCRh74QDpr3X4UGD4J3HC/view",
       "chat_clip_url": "",
       "size_mb": 24.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-19_1",
+      "arc_position": 1,
+      "arc_label": "ZETFAR ET SES ABONNÉS : LE ZOO PUIS LES TOP 1",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1157,7 +1181,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 31,
+      "note_jour_raison": "Victoire Royale de ZetFar, réaction à l'erreur adverse, court",
+      "redacteur_description": "ZetFar ne comprend pas ce que fait le dernier adversaire, le termine et la Victoire Royale s'affiche. Il enchaîne sur une discussion de pull avec son mate."
     },
     {
       "filename": "clip_004_khanada__score70_subs.mp4",
@@ -1225,9 +1252,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1Dvk58ZeegCyuEFXwfbI49l2bA6N4kIHd/view",
       "chat_clip_url": "",
       "size_mb": 36.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-19_2",
+      "arc_position": 1,
+      "arc_label": "KHANADA SE QUALIFIE PUIS VEND SA GAME",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1268,7 +1295,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "Khanada hurle et finit 3e, chat en W, anglophone",
+      "redacteur_description": "Khanada crie NO NO NOOO dans le dernier cercle et termine 3e. Le chat spamme des W et annonce sa qualification."
     },
     {
       "filename": "clip_006_zetfartv_score70.mp4",
@@ -1379,7 +1409,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 28,
+      "note_jour_raison": "top 1 de ZetFar contre un solo fort, version courte",
+      "redacteur_description": "ZetFar et son duo traquent un joueur solo coriace dans une maison, le tuent et remportent la partie."
     },
     {
       "filename": "clip_004_03-02-25_score70_v6_vr.mp4",
@@ -1448,9 +1481,9 @@
       "drive_view_url": "https://drive.google.com/file/d/100eDQCNScxbqPeFso5giZytRDrIgF_nU/view",
       "chat_clip_url": "https://drive.usercontent.google.com/download?id=19RJr5hTt_PepustlWZSaFEIReAgvSTKb&export=download&confirm=t",
       "size_mb": 155.1,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-19_1",
+      "arc_position": 4,
+      "arc_label": "ZETFAR ET SES ABONNÉS : LE ZOO PUIS LES TOP 1",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1523,7 +1556,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 21,
+      "note_jour_raison": "top 1 de la squad après la mort de ZetFar",
+      "redacteur_description": "ZetFar prend un headshot et s'énerve, puis Radic et Semko gagnent le dernier combat. La Victoire Royale tombe et ZetFar crie de joie."
     },
     {
       "filename": "clip_005_03-41-59_score70_v6_talk.mp4",
@@ -1663,7 +1699,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "cours de probabilités sur le jeton, talk de 6 minutes",
+      "redacteur_description": "ZetFar annonce sa vidéo sur le jeton pirate et calcule les probabilités avec Semko pendant qu'il ouvre des coffres. Une partie du chat sature."
     },
     {
       "filename": "clip_007_talmo_score60.mp4",
@@ -1776,7 +1815,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Nikof"
+      "editorial_context": "Dans best-of Dentoz recemment : Nikof",
+      "note_jour": 16,
+      "note_jour_raison": "action de Talmo puis auto-analyse, webcam nette, 1 vue",
+      "redacteur_description": "Talmo place une feinte de soin avec un Slurp en plein fight, puis explique que c'est une des meilleures fakes de sa vie."
     },
     {
       "filename": "clip_008_leothecrack_score60.mp4",
@@ -1887,7 +1929,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "Leo parle de GTA 6 devant un navigateur, pas de jeu",
+      "redacteur_description": "Leo, devant une page de navigateur, explique que son live sera court et parle de son plan raté pour jouer à GTA 6 en avance."
     },
     {
       "filename": "clip_011_talmo_score60.mp4",
@@ -2000,7 +2045,10 @@
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
       "tiktok_fan_posts": [],
-      "editorial_context": "Dans best-of Dentoz recemment : Nikof"
+      "editorial_context": "Dans best-of Dentoz recemment : Nikof",
+      "note_jour": 6,
+      "note_jour_raison": "même clash du viewer Ilan déjà jeté hier",
+      "redacteur_description": "Talmo s'en prend au viewer Ilan77350 dont le pseudo est un nom de streamer suivi d'un code postal, et le traite de troll."
     },
     {
       "filename": "clip_009_khanada__score60_subs.mp4",
@@ -2069,9 +2117,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1bBljz_ErG46b_0eQocQdixdSLNPs_8GO/view",
       "chat_clip_url": "",
       "size_mb": 36.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-19_2",
+      "arc_position": 2,
+      "arc_label": "KHANADA SE QUALIFIE PUIS VEND SA GAME",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -2112,7 +2160,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "fail lisible de Khanada, chat moqueur, mais 1 vue",
+      "redacteur_description": "Khanada se trompe de côté dans un fight et meurt avec le meilleur loot. Le chat se moque et parle de sell."
     },
     {
       "filename": "clip_012_peterbot_score60_subs.mp4",
@@ -2223,7 +2274,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "talk en lobby sur les orgs, catégorie jamais gardée",
+      "redacteur_description": "Depuis le lobby, Peterbot explique que les orgs quittent Fortnite parce qu'Epic ne les soutient pas, contrairement à Valorant."
     },
     {
       "filename": "clip_013_peterbot_score60_subs.mp4",
@@ -2334,7 +2388,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "drama scrim en anglais, Peterbot drama toujours jeté",
+      "redacteur_description": "Peterbot annonce vouloir faire bannir Josh Riley des scrims pour l'avoir griefé, puis demande à Fizz de ne pas le griefer à son tour."
     },
     {
       "filename": "clip_001_starxo_score50_twitter_2123129812252307900.mp4",
@@ -2445,7 +2502,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "teaser officiel M8 sans streamer, sujet keynote jamais gardé",
+      "redacteur_description": "Teaser Gentle Mates : montage d'images de victoires esport puis carton Jour -7 annonçant la keynote du 25 novembre à 20h."
     },
     {
       "filename": "clip_014_asianjeff_score50_subs.mp4",
@@ -2556,7 +2616,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 1,
+      "note_jour_raison": "AsianJeff jamais gardé, bavardage en anglais hors sujet",
+      "redacteur_description": "AsianJeff, en créatif, chambre Kozid sur son rencard avec Kanari et parle de stream muscu et de GTA 6."
     },
     {
       "filename": "clip_015_stizo__score50.mp4",
@@ -2667,7 +2730,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "anecdote de Stizo sans transcription ni action de jeu",
+      "redacteur_description": "Stizo raconte en jouant une galère de toilettes dans le métro puis une pinte payée 17 euros au Trocadéro."
     },
     {
       "filename": "clip_016_revenja_score50.mp4",
@@ -2779,7 +2845,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "Revenja très gardé, réaction à chaud sur une surprise",
+      "redacteur_description": "Revenja caste un 1v1 de son format maison : Sam Sam se fait sortir 2-0 par un joueur random du Discord et Revenja enchaîne les aïe aïe aïe."
     },
     {
       "filename": "clip_018_zetfartv_score50.mp4",
@@ -2890,7 +2959,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 1,
+      "note_jour_raison": "talk de ZetFar qui répond au chat, rien ne se passe",
+      "redacteur_description": "ZetFar répond au chat en jouant : il dit que streamer est une aubaine, remercie des bits et parle d'une casquette à dédicacer."
     },
     {
       "filename": "clip_017_peterbot_score50_subs.mp4",
@@ -3002,7 +3074,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "même moment déjà jeté hier chez Peterbot",
+      "redacteur_description": "Après une remarque d'un ami en vocal, Peterbot coupe sa facecam. Le chat enchaîne les points d'interrogation."
     },
     {
       "filename": "clip_020_leothecrack_score50.mp4",
@@ -3113,7 +3188,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "cast de token par Leo, sujet jeté hier, 6 vues",
+      "redacteur_description": "Leo caste un token où Zarbeh enchaîne les mouvements en build, avec des oh my god en vocal anglais. Le chat salue Zarbeh et Ghost."
     },
     {
       "filename": "clip_021_khanada__score50_subs.mp4",
@@ -3224,7 +3302,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "fight de trio confus qui finit en élimination, chat vide",
+      "redacteur_description": "Khanada se bat en trio dans une maison en guidant son coéquipier, puis l'escouade se fait éliminer et l'écran de points s'affiche."
     },
     {
       "filename": "clip_019_artskill_score50.mp4",
@@ -3336,7 +3417,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "talk mercato d'Artskill, 15 vues, catégorie quasi jamais gardée",
+      "redacteur_description": "Artskill, en créatif, raconte que coach Jean lui a proposé un trio avec des joueurs qu'il coache. Le chat demande de qui il s'agit."
     },
     {
       "filename": "clip_022_peterbot_score50_subs.mp4",
@@ -3447,7 +3531,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "talk giveaway et paris en anglais, sans action",
+      "redacteur_description": "Peterbot discute en créatif d'un giveaway et de paris avec Th0masHD et conclut qu'il construit son propre empire."
     },
     {
       "filename": "clip_027_peterbot_score50.mp4",
@@ -3558,7 +3645,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "long fight muet qui finit par la mort de Peterbot",
+      "redacteur_description": "Peterbot enchaîne un long combat en build avant d'être éliminé, sans parler."
     },
     {
       "filename": "clip_025_peterbot_score50.mp4",
@@ -3669,7 +3759,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "fight muet de Peterbot, image saturée, peu lisible",
+      "redacteur_description": "Peterbot enchaîne un combat rapide en build dans la tempête et élimine un adversaire, sans commentaire."
     },
     {
       "filename": "clip_024_khanada__score50_subs.mp4",
@@ -3738,9 +3831,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1FULgVA7wEL-LXt1-7-ZUj0067Ljr_YOp/view",
       "chat_clip_url": "",
       "size_mb": 35.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-19_2",
+      "arc_position": 3,
+      "arc_label": "KHANADA SE QUALIFIE PUIS VEND SA GAME",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3781,7 +3874,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "mort de fin de game, réaction calme, chat en nt",
+      "redacteur_description": "Khanada se fait éliminer en fin de partie, lâche No way et regrette de ne pas avoir eu l'overshield. Le chat répond nt."
     },
     {
       "filename": "clip_028_peterbot_score50_subs.mp4",
@@ -3892,7 +3988,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "Peterbot crie sur un kill, mais sans enjeu clair",
+      "redacteur_description": "Peterbot se bat en build dans une zone serrée et achève un adversaire en répétant qu'il est mort."
     },
     {
       "filename": "clip_029_peterbot_score50.mp4",
@@ -4002,7 +4101,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "kill propre de Peterbot, court, muet, peu de vues",
+      "redacteur_description": "Peterbot domine un combat en build contre Ryder et l'élimine dans sa base, sans dire un mot."
     },
     {
       "filename": "clip_023_artskill_score50.mp4",
@@ -4113,7 +4215,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "box fight crié d'Artskill, hype sans enjeu, 7 vues",
+      "redacteur_description": "Artskill enchaîne un long box fight en build et edit contre plusieurs adversaires en criant tout le long, webcam visible en haut à gauche."
     },
     {
       "filename": "clip_026_peterbot_score50_subs.mp4",
@@ -4224,7 +4329,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "moquerie sur une photo, humour interne anglophone",
+      "redacteur_description": "Peterbot affiche une photo de Velo à côté de MrSavage et la commente. Le chat se déchaîne en moqueries."
     },
     {
       "filename": "clip_031_peterbot_score50_subs.mp4",
@@ -4336,7 +4444,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "box fight créatif court, planche à moitié noire",
+      "redacteur_description": "Peterbot gagne un box fight serré contre Curve en créatif et lâche un commentaire bref."
     },
     {
       "filename": "clip_030_peterbot_score50_subs.mp4",
@@ -4459,7 +4570,268 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "talk de 15 s sur GTA 6, rien à monter",
+      "redacteur_description": "Pendant le saut du bus, Peterbot annonce au chat qu'il jouera à GTA 6 en stream après les Grand Finals."
     }
-  ]
+  ],
+  "redacteur": {
+    "sujet_du_jour": "La France en grande finale du FNCS Solo Reload, portée par le top 1 d'Akiira casté par Nikof : c'est le seul clip du matin relié à l'actu du brief, complété par les performances de Shxrk et de ZetFar faute de clip sur Havok.",
+    "titres": [
+      {
+        "titre": "NIKOF TERRIFIÉ PAR LE TOP 1 D'AKIIRA 🏆 SHXRK DÉTRUIT TOUT LE LOBBY 🤯",
+        "accroche_1": {
+          "clip_id": "co_AttractiveLitigiousRatPanicBasket-nZM5MVAmhtpzZ33c__nikof_1119",
+          "pourquoi": "Nikof crie qu'Akiira l'a terrifié et annonce la grande finale : l'actu des finalistes français.",
+          "existe": true,
+          "streamer": "nikof"
+        },
+        "accroche_2": {
+          "clip_id": "co_BlindingDepressedSpindleOpieOP-WeJlD90dufNFehKd__shxrkfnbr_1119",
+          "pourquoi": "Shxrk termine sa partie en Victory Royale avec une trentaine de kills, chat en délire.",
+          "existe": true,
+          "streamer": "shxrkfnbr"
+        },
+        "angle": "actu"
+      },
+      {
+        "titre": "J-7 AVANT LA KEYNOTE M8 🤩 ZETFAR CHOQUÉ PAR SON DERNIER ADVERSAIRE 😱",
+        "accroche_1": {
+          "clip_id": "co_v6_tw_2123129812252307900__starxo_1119",
+          "pourquoi": "Teaser officiel Gentle Mates : keynote le 25 novembre à 20h, fil M8 du brief.",
+          "existe": true,
+          "streamer": "starxo"
+        },
+        "accroche_2": {
+          "clip_id": "co_ElatedStupidKangarooDatBoi-gZMZGa9Q4Obxp8Fx__zetfartv_1119",
+          "pourquoi": "ZetFar répète qu'est-ce qu'il fait devant l'erreur du dernier joueur avant sa Victoire Royale.",
+          "existe": true,
+          "streamer": "zetfartv"
+        },
+        "angle": "actu"
+      },
+      {
+        "titre": "PETERBOT VEUT FAIRE BANNIR UN JOUEUR 😡 REVENJA CHOQUÉ PAR UN INCONNU 🤣",
+        "accroche_1": {
+          "clip_id": "co_EmpathicPiercingCheesecakeGingerPower-rNfV4MLCoSjqJyZe__peterbot_1119",
+          "pourquoi": "Peterbot dit en stream qu'il va faire bannir Josh Riley des scrims pour grief.",
+          "existe": true,
+          "streamer": "peterbot"
+        },
+        "accroche_2": {
+          "clip_id": "co_DelightfulAbstruseSlothFailFish-_RbILHemxjAu3Rdf__revenja_1119",
+          "pourquoi": "Revenja voit Sam Sam se faire sortir 2-0 par un joueur random du Discord.",
+          "existe": true,
+          "streamer": "revenja"
+        },
+        "angle": "croustillant"
+      }
+    ],
+    "a_eviter": "Ne pas refaire A SON PRIME (utilisé le 12/11 et le 18/11) ni un titre jeton, et ne pas ouvrir sur Jolavanille ou Buzz qui ont porté les derniers titres sans clip fort aujourd'hui.",
+    "modele": "claude-fable-5-2",
+    "genere_le": "2026-11-19T06:37:37",
+    "plan": {
+      "titre_index": 1,
+      "titre": "NIKOF TERRIFIÉ PAR LE TOP 1 D'AKIIRA 🏆 SHXRK DÉTRUIT TOUT LE LOBBY 🤯",
+      "duree_cible_min": 15,
+      "ossature": [
+        {
+          "position": 1,
+          "clip_id": "co_AttractiveLitigiousRatPanicBasket-nZM5MVAmhtpzZ33c__nikof_1119",
+          "streamer": "nikof",
+          "existe": true,
+          "role": "ouverture",
+          "pourquoi": "Top 1 et cri de Nikof dès les premières secondes, enjeu dit à voix haute : grande finale."
+        },
+        {
+          "position": 2,
+          "clip_id": "co_DelightfulAbstruseSlothFailFish-_RbILHemxjAu3Rdf__revenja_1119",
+          "streamer": "revenja",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Autre caster, autre surprise : Revenja voit le favori tomber face à un inconnu."
+        },
+        {
+          "position": 3,
+          "clip_id": "co_ElatedStupidKangarooDatBoi-gZMZGa9Q4Obxp8Fx__zetfartv_1119",
+          "streamer": "zetfartv",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Première Victoire Royale de ZetFar, courte et lisible, qui lance son bloc."
+        },
+        {
+          "position": 4,
+          "clip_id": "co_BrightSavoryChoughMVGame-yvBYwzHdUusYhG2y__talmo_1119",
+          "streamer": "talmo",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Respiration : Talmo savoure sa feinte au Slurp, face cam nette."
+        },
+        {
+          "position": 5,
+          "clip_id": "v6_cl_3094__zetfartv_1119",
+          "streamer": "zetfartv",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Le sketch des animaux installe la squad de ZetFar et Semko avant leurs top 1."
+        },
+        {
+          "position": 6,
+          "clip_id": "co_SleepyTenderCaterpillarPRChase-8k3wLPNcADJDTDgm__artskill_1119",
+          "streamer": "artskill",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Box fight crié d'Artskill pour relancer le rythme après le passage vocal."
+        },
+        {
+          "position": 7,
+          "clip_id": "co_SecretiveFancyFungusPoooound-RANvpEgYlKPINR3B__zetfartv_1119",
+          "streamer": "zetfartv",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Version courte du top 1 de ZetFar contre le solo coriace, préférée à la longue."
+        },
+        {
+          "position": 8,
+          "clip_id": "co_AffluentSpikyElkBigBrother-br1JvQqBXTtYMXUO__khanada_1119",
+          "streamer": "khanada_",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Khanada hurle dans le dernier cercle et se qualifie : tension côté NA."
+        },
+        {
+          "position": 9,
+          "clip_id": "co_CorrectPlausibleFlamingoSeemsGood-zZMRGjL-0WSlBFDV__khanada_1119",
+          "streamer": "khanada_",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Contrepoint immédiat : le même Khanada meurt bêtement avec le meilleur loot."
+        },
+        {
+          "position": 10,
+          "clip_id": "co_BlindingDepressedSpindleOpieOP-WeJlD90dufNFehKd__shxrkfnbr_1119",
+          "streamer": "shxrkfnbr",
+          "existe": true,
+          "role": "reponse",
+          "pourquoi": "L'accroche 2 du titre : la partie à une trentaine de kills de Shxrk, placée vers 60 %."
+        },
+        {
+          "position": 11,
+          "clip_id": "ElegantHotSandstormPanicBasket-zM7ZRZNdWL-PH6hJ",
+          "streamer": "peterbot",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Kill éclair de Peterbot, 17 secondes, dans la foulée de la démonstration de Shxrk."
+        },
+        {
+          "position": 12,
+          "clip_id": "co_RefinedInnocentOctopusHeyGirl-YMG0mn3WMmA5M48G__risezd_1119",
+          "streamer": "risezd",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Victory Royale du trio de Risezd, qui se proclame meilleur coach du monde."
+        },
+        {
+          "position": 13,
+          "clip_id": "co_BenevolentPleasantSnoodDancingBanana-H1DL7tpJ1BNAkLrC__peterbot_1119",
+          "streamer": "peterbot",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Peterbot crie sur son kill, dernier clip de pure mécanique."
+        },
+        {
+          "position": 14,
+          "clip_id": "co_DullVainYogurtBrokeBack-AsSjDQKzyBMLz_Jp__stizo_1119",
+          "streamer": "stizo_",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Fait entrer Stizo avec une anecdote courte avant le final."
+        },
+        {
+          "position": 15,
+          "clip_id": "co_TentativeStrangeTomatoPeoplesChamp-iULA8M360tPeO6GT__leothecrack_1119",
+          "streamer": "leothecrack",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Fait entrer Léo en caster sur le token de Zarbeh, dernier pic avant la chute."
+        },
+        {
+          "position": 16,
+          "clip_id": "v6_cl_10945__zetfartv_1119",
+          "streamer": "zetfartv",
+          "existe": true,
+          "role": "chute",
+          "pourquoi": "ZetFar mort regarde sa squad arracher le top 1 et finit sur un cri de joie."
+        }
+      ],
+      "reponse_du_titre": {
+        "clip_id": "co_BlindingDepressedSpindleOpieOP-WeJlD90dufNFehKd__shxrkfnbr_1119",
+        "streamer": "shxrkfnbr",
+        "existe": true,
+        "minute_cible": 9.0
+      },
+      "remplissage": "Peu de réserve ce matin : compléter avec la version longue du top 1 de ZetFar et les autres fights de Peterbot, ou reprendre des clips gardés la veille sur le LCQ si la vidéo est trop courte."
+    },
+    "miniature": {
+      "source": "fable",
+      "titre": "NIKOF TERRIFIÉ PAR LE TOP 1 D'AKIIRA 🏆 SHXRK DÉTRUIT TOUT LE LOBBY 🤯",
+      "gauche": {
+        "clip_id": "co_AttractiveLitigiousRatPanicBasket-nZM5MVAmhtpzZ33c__nikof_1119",
+        "streamer": "nikof",
+        "texte": "NIKOF TERRIFIÉ PAR LE TOP 1 D'AKIIRA",
+        "punchline": "IL M'A TERRIFIÉ !!",
+        "emoji": "🏆",
+        "expression": "shouting with relief and joy, mouth wide open, eyes wide, leaning toward the camera",
+        "scene": "Fortnite endgame inside the purple storm, Victory Royale banner visible above a player standing in a wooden build",
+        "palette": [
+          "violet",
+          "hot pink",
+          "white"
+        ],
+        "planche_case": 13,
+        "seconde": 43.63,
+        "seconde_source": "planche",
+        "ce_quon_voit": "Petite webcam de Nikof en haut à gauche, casque sur la tête, pendant le 1v1 final d'Akiira dans la tempête"
+      },
+      "droite": {
+        "clip_id": "co_BlindingDepressedSpindleOpieOP-WeJlD90dufNFehKd__shxrkfnbr_1119",
+        "streamer": "shxrkfnbr",
+        "texte": "SHXRK DÉTRUIT TOUT LE LOBBY",
+        "punchline": "30 KILLS ?!",
+        "emoji": "🤯",
+        "expression": "calm confident smirk, eyes focused straight ahead, chin slightly raised",
+        "scene": "bright daytime Fortnite build fight, tall wooden and metal towers under a clear blue sky, eliminated players' loot scattered on the ground",
+        "palette": [
+          "sky blue",
+          "orange",
+          "cream"
+        ],
+        "planche_case": 14,
+        "seconde": 47.27,
+        "seconde_source": "planche",
+        "ce_quon_voit": "Skin clair de Shxrk dans ses builds au moment où la bannière Victory Royale apparaît, aucune webcam à l'écran"
+      },
+      "element_jeu": {
+        "clip_id": "co_AttractiveLitigiousRatPanicBasket-nZM5MVAmhtpzZ33c__nikof_1119",
+        "streamer": "nikof",
+        "planche_case": 14,
+        "seconde": 47.27,
+        "description": "bannière Victory Royale à l'écran après le 1v1 final d'Akiira"
+      },
+      "idee_creative": "Le clip de Shxrk n'a pas de webcam : il faut sa photo, posée devant ses builds en plein jour avec une rangée de médailles d'élimination à côté de lui. À gauche, la cam de Nikof est petite : agrandir son visage et placer Akiira à côté de lui devant la bannière de victoire.",
+      "visage_manquant": "shxrk",
+      "idees_de_repli": [
+        "Gauche Nikof qui crie avec Akiira et la couronne de la victoire, droite ZetFar remplacé par son écran Victoire Royale et le texte IL FAIT QUOI ?",
+        "Gauche Akiira seul avec le graphique #1 et l'emblème FNCS, droite le skin de Shxrk entouré de médailles d'élimination"
+      ],
+      "ambiance": "Gauche sombre et électrique dans le violet de la tempête, joie explosive ; droite lumineuse en plein jour, domination tranquille.",
+      "a_eviter": "Pas d'écran de lobby ni de tableau de scores, pas deux visages qui crient, pas de logo Havok ni de chiffre de kills trop précis à gauche.",
+      "assets_demandes": [
+        "Bannière Victory Royale (actuelle)",
+        "Médaille d'élimination (or)",
+        "Emblème FNCS"
+      ]
+    }
+  }
 }
