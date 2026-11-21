@@ -38,6 +38,27 @@
       ]
     },
     {
+      "date": "2026-11-21",
+      "total_clips": 43,
+      "streamers": [
+        "acorn",
+        "buzzftn",
+        "community",
+        "fortnitefraactu",
+        "harmonyglitch",
+        "jolavanille",
+        "khanada_",
+        "leothecrack",
+        "nikof",
+        "noahreyli",
+        "peterbot",
+        "podasai",
+        "shxrkfnbr",
+        "talmo",
+        "venofn"
+      ]
+    },
+    {
       "date": "2026-11-20",
       "total_clips": 99,
       "streamers": [
@@ -179,31 +200,7 @@
         "wazz",
         "zetfartv"
       ]
-    },
-    {
-      "date": "2026-11-14",
-      "total_clips": 71,
-      "streamers": [
-        "acorn",
-        "alibaba_rcm",
-        "buzzftn",
-        "community",
-        "jolavanille",
-        "khanada_",
-        "kirillianfn1",
-        "leothecrack",
-        "mrsavage",
-        "risezd",
-        "rzpruzen",
-        "shxrkfnbr",
-        "stizo_",
-        "sy stormy",
-        "talmo",
-        "vadeal",
-        "vanyak3kk",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-11-20"
+  "latest": "2026-11-21"
 }
