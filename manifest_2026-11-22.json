@@ -138,7 +138,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 28,
+      "note_jour_raison": "clip communauté tryhard de Stizo, lane très gardée",
+      "redacteur_description": "Clip envoyé par la communauté depuis le stream de Stizo : un fight en extérieur au milieu de plusieurs joueurs, avec explosions en fin de séquence. Pas de voix transcrite."
     },
     {
       "filename": "clip_002_dentoz-7wq9_score95_community_pro.mp4",
@@ -247,7 +250,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 31,
+      "note_jour_raison": "clip communauté de Stizo, action en build lisible",
+      "redacteur_description": "Clip envoyé par la communauté depuis le stream de Stizo : une phase de build et de tirs en hauteur pendant une game à points, avec les commentaires de Stizo en sous-titres."
     },
     {
       "filename": "clip_002_aussieantics_score90_subs.mp4",
@@ -315,9 +321,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1BT0mgPIQ8BVAGgbP1FuDZg0tYe-LX6Ya/view",
       "chat_clip_url": "",
       "size_mb": 34.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-22_2",
+      "arc_position": 1,
+      "arc_label": "La remontée de Peterbot stoppée par Sphinx",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -358,7 +364,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "survie folle de Peterbot, même game que la version Snayzy",
+      "redacteur_description": "Peterbot survit de justesse en fin de zone et gagne la game avec 10 kills en finale NAC. Le chat d'Aussie explose en WTF et en W."
     },
     {
       "filename": "clip_001_aussieantics_score90_subs.mp4",
@@ -474,7 +483,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 23,
+      "note_jour_raison": "top 1 de l'inconnu Jaus, mais doublon de la version Snayzy",
+      "redacteur_description": "Sur le stream d'AussieAntics, Jaus enchaîne quatre kills en quelques secondes et prend la Victory Royale en finale NAC. Le chat anglophone demande qui est ce joueur."
     },
     {
       "filename": "clip_008_snayzy_score80.mp4",
@@ -590,7 +602,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 62,
+      "note_jour_raison": "inconnu Jaus top 1, Snayzy au cast, chat qui explose",
+      "redacteur_description": "En finale FNCS Reload NAC, Jaus enchaîne les kills et décroche la Victory Royale pendant le cast de Snayzy. Les casteurs du broadcast restent bouche bée et le chat demande qui est ce joueur."
     },
     {
       "filename": "clip_003_revenja_score80.mp4",
@@ -702,7 +717,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "prono de Revenja, talk, doublon de la version Twitter",
+      "redacteur_description": "Avant la finale NAC, Revenja remplit son prono devant la carte : Sphinx top 1, Peterbot top 2. Écran fixe avec une petite cam."
     },
     {
       "filename": "clip_005_aussieantics_score80_subs.mp4",
@@ -770,9 +788,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1cTGLl-JI1tRVgh4AK7uCefVJvC8QpsH-/view",
       "chat_clip_url": "",
       "size_mb": 36.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-22_2",
+      "arc_position": 2,
+      "arc_label": "La remontée de Peterbot stoppée par Sphinx",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -813,7 +831,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "react Aussie 2 vues, Pollo meurt, enjeu peu lisible seul",
+      "redacteur_description": "Pollo se fait éliminer en fin de partie et Aussie comprend en direct que Sphinx va gagner la finale NAC. Le chat se partage entre déception pour Pollo et GG Sphinx."
     },
     {
       "filename": "clip_004_snayzy_score80.mp4",
@@ -882,9 +903,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1oLioflyYmvmiwFIqXf36EQBygRnK8SSH/view",
       "chat_clip_url": "",
       "size_mb": 64.4,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-22_1",
+      "arc_position": 1,
+      "arc_label": "Snayzy caste la finale NAC : Pollo, Pump puis Peterbot",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -925,7 +946,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 39,
+      "note_jour_raison": "top 1 de Pollo casté par Snayzy, chat M8 en feu",
+      "redacteur_description": "Snayzy caste la fin de la game 1 de la finale NAC : Pollo tient le high au lance-roquettes et prend le top 1. Le chat spamme M8 Pollo et les emotes de Nikof."
     },
     {
       "filename": "clip_006_aussieantics_score80_subs.mp4",
@@ -993,9 +1017,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1NjZYgVXwTGs5T5l6FzAQ3xM4b1oiZOlP/view",
       "chat_clip_url": "",
       "size_mb": 39.6,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-22_2",
+      "arc_position": 3,
+      "arc_label": "La remontée de Peterbot stoppée par Sphinx",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1036,7 +1060,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 19,
+      "note_jour_raison": "dénouement de la finale NAC, Sphinx sacré, react peu gardé",
+      "redacteur_description": "Dernière game de la finale NAC : Muz échoue à deux kills du titre pendant qu'Aussie retient son souffle. Sphinx est champion et les deux casteurs du broadcast apparaissent à l'écran."
     },
     {
       "filename": "clip_007_revenja_score80.mp4",
@@ -1148,7 +1175,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 43,
+      "note_jour_raison": "Revenja hurle sur l'inconnu Jaus, sujet du jour, streamer gardé",
+      "redacteur_description": "Revenja découvre Jaus, qui monte à 7 kills, élimine tout le monde et prend la Victory Royale. Il crie que personne ne le connaît et le chat demande à le recruter."
     },
     {
       "filename": "clip_009_snayzy_score80.mp4",
@@ -1217,9 +1247,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1ifpjs2lpO1Q0ANU8WH1z_TY9LTzvjHiN/view",
       "chat_clip_url": "",
       "size_mb": 69.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-22_1",
+      "arc_position": 2,
+      "arc_label": "Snayzy caste la finale NAC : Pollo, Pump puis Peterbot",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -1260,7 +1290,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 54,
+      "note_jour_raison": "top 1 à 10 kills de Peterbot, Snayzy n'y croit pas",
+      "redacteur_description": "Peterbot tue un adversaire en tombant, se soigne à la limite et gagne la game avec 10 kills. Snayzy répète comment c'est possible et le chat est mort de rire."
     },
     {
       "filename": "clip_001_leothecrack_score75_fan.mp4",
@@ -1377,7 +1410,10 @@
       "teaser_offset_sec": null,
       "seq_long_mode": "",
       "seq_span_sec": null,
-      "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1qpCkb7QixPWBwanfD-apf7fsUSr1ewpA"
+      "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1qpCkb7QixPWBwanfD-apf7fsUSr1ewpA",
+      "note_jour": 0,
+      "note_jour_raison": "TikTok de fan sur GTA 6, lane jamais gardée",
+      "redacteur_description": "Leo joue à GTA 6, meurt et découvre qu'il a perdu environ deux heures de progression. Il fouille ensuite ses sauvegardes."
     },
     {
       "filename": "clip_002_zetfartv_score75_fan.mp4",
@@ -1494,7 +1530,10 @@
       "teaser_offset_sec": null,
       "seq_long_mode": "",
       "seq_span_sec": null,
-      "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1beb01oJ7-adyAsZHWCv7h8WkMgnTZ3SB"
+      "chat_video_url": "https://clips-proxy.contactdentoz.workers.dev/?id=1beb01oJ7-adyAsZHWCv7h8WkMgnTZ3SB",
+      "note_jour": 0,
+      "note_jour_raison": "TikTok de fan sur GTA 6, hors Fortnite",
+      "redacteur_description": "ZetFar pilote un hydravion dans GTA 6, vole à l'envers et précise qu'il joue sur PS5 Pro."
     },
     {
       "filename": "clip_001_revenja_score70_twitter_2124275757455212566_subs.mp4",
@@ -1606,7 +1645,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 21,
+      "note_jour_raison": "prono Sphinx de Revenja, actu du brief, mais talk",
+      "redacteur_description": "Version Twitter du prono de Revenja : il inscrit Sphinx top 1 et Peterbot top 2 avant la finale NAC, que Sphinx a ensuite gagnée. Écran de carte fixe, petite cam."
     },
     {
       "filename": "clip_010_aussieantics_score70_subs.mp4",
@@ -1718,7 +1760,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 1,
+      "note_jour_raison": "talk en anglais sur Pollo chez M8, catégorie jamais gardée",
+      "redacteur_description": "Pendant une game, Aussie remarque que Pollo n'a pas changé de pseudo et soupçonne une arrivée chez Gentle Mates avant la keynote."
     },
     {
       "filename": "clip_011_snayzy_score70.mp4",
@@ -1830,7 +1875,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "talk face cam sur l'invitation à la keynote M8",
+      "redacteur_description": "Face caméra, Snayzy raconte que Nikof lui a proposé une invitation en loge pour la keynote Gentle Mates. Le chat le soupçonne de cacher l'arrivée de Pollo."
     },
     {
       "filename": "clip_020_aussieantics_score70_subs.mp4",
@@ -1942,7 +1990,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 16,
+      "note_jour_raison": "top 1 de Pollo game 1, version Snayzy plus parlante",
+      "redacteur_description": "Pollo gagne la game 1 de la finale NAC en gardant son overshield, vu depuis le stream d'Aussie. Le chat spamme W et le surnom du poulet."
     },
     {
       "filename": "clip_021_aussieantics_score70_subs.mp4",
@@ -2054,7 +2105,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "Victory Royale de Muz en finale NAC, vr Aussie classique",
+      "redacteur_description": "Muz remporte la game 7 de la finale NAC, bannière Victory Royale à l'écran. Aussie commente la zone et le chat salue les 51 points d'avance du leader."
     },
     {
       "filename": "clip_023_aussieantics_score70_subs.mp4",
@@ -2165,7 +2219,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "écran de classement fixe, tweet de Pollo, rien à monter",
+      "redacteur_description": "Après la finale, Aussie reste sur le classement et évoque le tweet énervé de Pollo. L'image ne montre qu'un tableau et sa petite cam."
     },
     {
       "filename": "clip_014_leothecrack_score60.mp4",
@@ -2277,7 +2334,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 1,
+      "note_jour_raison": "talk de Leo sur Peterbot et Pollo, pas de moment",
+      "redacteur_description": "Pendant la finale NAC, Leo explique que Peterbot n'est plus le favori et place Pollo dans le top 3 mondial. Le chat débat."
     },
     {
       "filename": "clip_012_khanada__score60_subs.mp4",
@@ -2389,7 +2449,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "Khanada clashe Clix, rivalité déjà gardée, mais lobby fixe",
+      "redacteur_description": "Depuis le lobby, Khanada répond aux moqueries de Clix sur sa mort dans la tempête : Clix n'a même pas atteint la finale. L'image reste sur le skin au lobby avec sa petite cam."
     },
     {
       "filename": "clip_015_noahreyli_score60_subs.mp4",
@@ -2501,7 +2564,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "rage de Noahreyli puis excuse, 4 vues, sans chat",
+      "redacteur_description": "Noahreyli meurt en box fight, insulte violemment son coéquipier puis s'excuse aussitôt. L'écran Try Again s'affiche."
     },
     {
       "filename": "clip_013_snayzy_score60.mp4",
@@ -2569,9 +2635,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1u7AU6hS_MxbPW2HgjU3mLo0HtIbOQFe2/view",
       "chat_clip_url": "",
       "size_mb": 67.3,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-22_1",
+      "arc_position": 3,
+      "arc_label": "Snayzy caste la finale NAC : Pollo, Pump puis Peterbot",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -2612,7 +2678,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 20,
+      "note_jour_raison": "Pollo perd le 1v1 final, chat déçu, pas de voix",
+      "redacteur_description": "Pollo arrive en duel final d'une game de la finale NAC, mais Pump lui prend le top 1. Le chat de Snayzy enchaîne les non et les dommage."
     },
     {
       "filename": "clip_025_aussieantics_score60_subs.mp4",
@@ -2723,7 +2792,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "Clix fait des pompes, hors jeu, humour anglophone",
+      "redacteur_description": "Clix fait 25 pompes devant sa caméra pendant la finale. Aussie note sa forme puis le chambre sur son cardio."
     },
     {
       "filename": "clip_024_aussieantics_score60_subs.mp4",
@@ -2835,7 +2907,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "Peterbot perd un fight en game 2, react sans suite",
+      "redacteur_description": "Peterbot perd un combat contre Aeird en game 2 de la finale NAC. Aussie ne comprend pas pourquoi il n'a pas rechargé."
     },
     {
       "filename": "clip_026_aussieantics_score60_subs.mp4",
@@ -2945,7 +3020,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "Peterbot tue Curve à la descente, début du comeback",
+      "redacteur_description": "En replay, Peterbot touche Curve au pompe à la descente et l'élimine. Aussie y voit le début de son comeback et le chat s'enflamme."
     },
     {
       "filename": "clip_027_aussieantics_score60_subs.mp4",
@@ -3057,7 +3135,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "blague sur Thanksgiving en vocal, incompréhensible pour le public FR",
+      "redacteur_description": "En call pendant la finale, Bucke peine à expliquer l'origine de Thanksgiving. Le chat d'Aussie se moque."
     },
     {
       "filename": "clip_028_aussieantics_score60_subs.mp4",
@@ -3126,9 +3207,9 @@
       "drive_view_url": "https://drive.google.com/file/d/17DtTJq5HsrWj__sphU-09D3FDgVIG5Mw/view",
       "chat_clip_url": "",
       "size_mb": 10.7,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-22_2",
+      "arc_position": 4,
+      "arc_label": "La remontée de Peterbot stoppée par Sphinx",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3169,7 +3250,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "kill propre de Peterbot, court et sans enjeu",
+      "redacteur_description": "Peterbot surprend un adversaire derrière un mur et l'élimine. Aussie salue une action très fluide."
     },
     {
       "filename": "clip_030_aussieantics_score60_subs.mp4",
@@ -3238,9 +3322,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1OhKGRjgD-hJx-fAnaXp2giGyZJw6xd1d/view",
       "chat_clip_url": "",
       "size_mb": 54.5,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-22_2",
+      "arc_position": 5,
+      "arc_label": "La remontée de Peterbot stoppée par Sphinx",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3281,7 +3365,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "Peterbot remonte puis Sphinx le tue, pic de chat net",
+      "redacteur_description": "Peterbot enchaîne les kills pour revenir dans la finale NAC avant de tomber face à Sphinx. Le chat d'Aussie le compare à Thanos."
     },
     {
       "filename": "clip_029_aussieantics_score60_subs.mp4",
@@ -3350,9 +3437,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1KJ_yRphHAlvaLiJp6E8CF76xh9Ja3bAV/view",
       "chat_clip_url": "",
       "size_mb": 36.2,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-22_2",
+      "arc_position": 6,
+      "arc_label": "La remontée de Peterbot stoppée par Sphinx",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -3405,7 +3492,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "Peterbot élimine Diego, 30 s, élan du comeback",
+      "redacteur_description": "Peterbot rate un edit puis met Diego à terre en finale NAC. Aussie le sent en pleine forme et le chat spamme run from it."
     },
     {
       "filename": "clip_016_risezd_score50_subs.mp4",
@@ -3516,7 +3606,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "anecdote casino en anglais au lobby, streamer peu gardé",
+      "redacteur_description": "Au lobby, Risezd raconte à Trainwreckstv qu'il a misé gros au baccara et presque tout perdu. Le chat rit."
     },
     {
       "filename": "clip_017_revenja_score50.mp4",
@@ -3628,7 +3721,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "vanne de Revenja à Darkos, humour limite, peu de chat",
+      "redacteur_description": "Pendant le cast, Revenja chambre Darkos sur l'expression côté obscur et le traite de raciste en riant. Le chat demande le clip."
     },
     {
       "filename": "clip_018_leothecrack_score50.mp4",
@@ -3739,7 +3835,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 25,
+      "note_jour_raison": "Leo caste Peterbot en FR, chat peter is back",
+      "redacteur_description": "Leo commente en français la fin d'une game de la finale NAC : Sphinx prend la sickness et Peterbot signe un gros kill sur la hauteur. Le chat écrit que Peter est de retour."
     },
     {
       "filename": "clip_019_risezd_score50_subs.mp4",
@@ -3850,7 +3949,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "react Risezd à un top 2, enjeu extérieur à la scène",
+      "redacteur_description": "Risezd regarde Fear finir deuxième pour la deuxième fois d'affilée et rappelle les 50 000 dollars promis en cas de victoire."
     },
     {
       "filename": "clip_032_snayzy_score50.mp4",
@@ -3961,7 +4063,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 1,
+      "note_jour_raison": "talk devant le classement, calcul de points",
+      "redacteur_description": "Devant le classement, Snayzy explique que Peterbot peut encore revenir s'il refait une game à 110 points."
     },
     {
       "filename": "clip_036_snayzy_score50.mp4",
@@ -4072,7 +4177,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "soupçon de team up, 70 s d'analyse, chat pas convaincu",
+      "redacteur_description": "Snayzy revoit une action où Peterbot ne combat pas Josh et se demande s'il y a eu team up. Le chat répond qu'il l'avait déjà tué plus tôt."
     },
     {
       "filename": "clip_033_aussieantics_score50_subs.mp4",
@@ -4184,7 +4292,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "fin de game serrée, doublon de la version Snayzy",
+      "redacteur_description": "Pollo arrive dans le dernier carré d'une game de la finale NAC, mais Pump gagne depuis la hauteur. Aussie hurle pendant le heal off."
     },
     {
       "filename": "clip_031_aussieantics_score50_subs.mp4",
@@ -4295,7 +4406,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 0,
+      "note_jour_raison": "talk en anglais sur la méta Reload, aucun moment",
+      "redacteur_description": "Aussie s'agace contre les développeurs : pour lui, la méta du mode Reload empêche de se battre."
     },
     {
       "filename": "clip_035_snayzy_score50.mp4",
@@ -4407,7 +4521,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "vanne de Snayzy sur sa routine, légère, peu de chat",
+      "redacteur_description": "Interrogé sur sa routine Fortnite, Snayzy répond qu'il se lève et ne lance pas le jeu, pendant que la finale tourne à l'écran."
     },
     {
       "filename": "clip_034_aussieantics_score50_subs.mp4",
@@ -4519,7 +4636,268 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "écran Winners Jason Bourne, gag court sans action",
+      "redacteur_description": "L'écran Winners du broadcast affiche Peterbot sous le pseudo Jason Bourne. Aussie parle d'une victoire très brouillonne et le chat rit du pseudo."
     }
-  ]
+  ],
+  "redacteur": {
+    "sujet_du_jour": "La finale FNCS Solo Reload NAC vue par les casteurs français (Snayzy, Revenja, Leo), parce que c'est la seule matière du matin et qu'aucun clip ni résultat sourcé de la finale EU n'est arrivé.",
+    "titres": [
+      {
+        "titre": "SNAYZY CHOQUÉ PAR UN INCONNU EN FINALE FNCS 😱 LEO CASTE LE RETOUR DE PETERBOT 🤩",
+        "accroche_1": {
+          "clip_id": "co_LazyFuriousLarkPogChamp-iseB_ShQh_wnJaJl__snayzy_1122",
+          "pourquoi": "Jaus, inconnu, enchaîne les kills et fait top 1 pendant le cast de Snayzy, le chat demande qui c'est",
+          "existe": true,
+          "streamer": "snayzy"
+        },
+        "accroche_2": {
+          "clip_id": "co_SavoryBenevolentKoalaBleedPurple-564SlRdPXrvPzvKK__leothecrack_1122",
+          "pourquoi": "Leo caste le gros kill de Peterbot sur la hauteur, son chat écrit peter is back",
+          "existe": true,
+          "streamer": "leothecrack"
+        },
+        "angle": "performance"
+      },
+      {
+        "titre": "POLLO CHEZ M8 ? 🤔 REVENJA AVAIT ANNONCÉ LE CHAMPION 🏆",
+        "accroche_1": {
+          "clip_id": "co_CrowdedOddJamRaccAttack-MNhBlVngV4QZn8xy__snayzy_1122",
+          "pourquoi": "top 1 de Pollo casté par Snayzy, le chat spamme M8 Pollo ; rien d'officiel, d'où la question",
+          "existe": true,
+          "streamer": "snayzy"
+        },
+        "accroche_2": {
+          "clip_id": "co_v6_tw_2124275757455212566__revenja_1122",
+          "pourquoi": "Revenja inscrit Sphinx top 1 avant la cup et Sphinx gagne, confirmé par le brief",
+          "existe": true,
+          "streamer": "revenja_"
+        },
+        "angle": "actu"
+      },
+      {
+        "titre": "SNAYZY HALLUCINE : PETERBOT GAGNE À 10 KILLS 🤯 KHANADA RÈGLE SES COMPTES AVEC CLIX 😡",
+        "accroche_1": {
+          "clip_id": "co_PunchyHungryPancakeDatSheffy-vhIvox5Y8sGATZQS__snayzy_1122",
+          "pourquoi": "Peterbot survit à la limite et prend le top 1 à 10 kills, Snayzy répète comment c'est possible",
+          "existe": true,
+          "streamer": "snayzy"
+        },
+        "accroche_2": {
+          "clip_id": "co_TacitRelentlessCarrotTBTacoLeft-w6owz3sMJuoyFXTG__khanada_1122",
+          "pourquoi": "Khanada répond à Clix : il n'a même pas atteint la finale",
+          "existe": true,
+          "streamer": "khanada_"
+        },
+        "angle": "croustillant"
+      }
+    ],
+    "a_eviter": "Ne pas refaire un recap solo ni les derniers qualifiés, déjà publiés trois fois en novembre, ni l'histoire de Ghonzo ou de Havok ; ne pas annoncer de résultat de la finale EU non sourcé.",
+    "modele": "claude-fable-5-2",
+    "genere_le": "2026-11-22T06:32:59",
+    "plan": {
+      "titre_index": 1,
+      "titre": "SNAYZY CHOQUÉ PAR UN INCONNU EN FINALE FNCS 😱 LEO CASTE LE RETOUR DE PETERBOT 🤩",
+      "duree_cible_min": 15,
+      "ossature": [
+        {
+          "position": 1,
+          "clip_id": "co_LazyFuriousLarkPogChamp-iseB_ShQh_wnJaJl__snayzy_1122",
+          "streamer": "snayzy",
+          "existe": true,
+          "role": "ouverture",
+          "pourquoi": "L'inconnu qui gagne une game de finale FNCS se comprend sans contexte, et c'est l'accroche 1."
+        },
+        {
+          "position": 2,
+          "clip_id": "co_FrigidElegantWrenchPJSugar-XfY0PiUTGX9u8hqK__revenja_1122",
+          "streamer": "revenja",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Le même choc vu par Revenja, avec la réplique personne ne le connaît."
+        },
+        {
+          "position": 3,
+          "clip_id": "co_CrowdedOddJamRaccAttack-MNhBlVngV4QZn8xy__snayzy_1122",
+          "streamer": "snayzy",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Retour au début de la finale : Pollo prend la game 1, le chat le voit déjà chez M8."
+        },
+        {
+          "position": 4,
+          "clip_id": "co_ColdAmazingRutabagaDatSheffy-kk0ssb9W9e2fn1AK__snayzy_1122",
+          "streamer": "snayzy",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Pollo rate le doublé de peu, transition vers la lutte pour le titre."
+        },
+        {
+          "position": 5,
+          "clip_id": "co_TacitRelentlessCarrotTBTacoLeft-w6owz3sMJuoyFXTG__khanada_1122",
+          "streamer": "khanada_",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Respiration clash : Khanada répond à Clix pendant la finale."
+        },
+        {
+          "position": 6,
+          "clip_id": "community_dentoz-7wq9",
+          "streamer": "community",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Clip communauté tryhard, lane que Silixio garde souvent, pour casser le cast."
+        },
+        {
+          "position": 7,
+          "clip_id": "co_MagnificentDependableAardvarkDoggo-FADnPqfcEiXWQWDi__aussieantics_1122",
+          "streamer": "aussieantics",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Peterbot tue Curve à la descente : le comeback démarre."
+        },
+        {
+          "position": 8,
+          "clip_id": "co_FancyTangiblePassionfruitTakeNRG-rfHaWBKgbpin4aXu__aussieantics_1122",
+          "streamer": "aussieantics",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Muz gagne la game 7, la course au titre se resserre."
+        },
+        {
+          "position": 9,
+          "clip_id": "co_PunchyHungryPancakeDatSheffy-vhIvox5Y8sGATZQS__snayzy_1122",
+          "streamer": "snayzy",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Le top 1 à 10 kills de Peterbot casté par Snayzy, pic de la vidéo."
+        },
+        {
+          "position": 10,
+          "clip_id": "co_SavoryBenevolentKoalaBleedPurple-564SlRdPXrvPzvKK__leothecrack_1122",
+          "streamer": "leothecrack",
+          "existe": true,
+          "role": "reponse",
+          "pourquoi": "Leo caste le retour de Peterbot : c'est l'accroche 2, placée vers 60 %."
+        },
+        {
+          "position": 11,
+          "clip_id": "OnerousThankfulSkirretGOWSkull-AsJ3-UbWCpl4l0JU",
+          "streamer": "aussieantics",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Peterbot continue sur sa lancée et élimine Diego."
+        },
+        {
+          "position": 12,
+          "clip_id": "co_CrepuscularRacyRedpandaTwitchRaid-9xnjqmYXhUD2DNVI__aussieantics_1122",
+          "streamer": "aussieantics",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "La remontée s'arrête : Sphinx élimine Peterbot."
+        },
+        {
+          "position": 13,
+          "clip_id": "co_PlacidSlickWalrusUncleNox-WFG8Wbb_ijFC8iy___noahreyli_1122",
+          "streamer": "noahreyli",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Rage courte de Noahreyli, un streamer de plus et une pause humour."
+        },
+        {
+          "position": 14,
+          "clip_id": "community_dentoz-ddns",
+          "streamer": "community",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Deuxième clip communauté avant le dénouement."
+        },
+        {
+          "position": 15,
+          "clip_id": "co_ComfortableRamshackleSquidRuleFive-Z0tciWW2qnOaCk19__aussieantics_1122",
+          "streamer": "aussieantics",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Pollo tombe, Aussie comprend que Sphinx va gagner."
+        },
+        {
+          "position": 16,
+          "clip_id": "co_GiftedBoxyWebAMPTropPunch-cmfXwNDHi-dYOLz5__aussieantics_1122",
+          "streamer": "aussieantics",
+          "existe": true,
+          "role": "chute",
+          "pourquoi": "Muz échoue à deux kills, Sphinx est champion : fin sur le suspense et le sacre."
+        }
+      ],
+      "reponse_du_titre": {
+        "clip_id": "co_SavoryBenevolentKoalaBleedPurple-564SlRdPXrvPzvKK__leothecrack_1122",
+        "streamer": "leothecrack",
+        "existe": true,
+        "minute_cible": 9.0
+      },
+      "remplissage": "Compléter avec les autres angles Aussie du comeback de Peterbot (c002, c013) et la vanne de Revenja à Darkos (c028) ; annoncer la PlayStation Cup de lundi en fin de vidéo."
+    },
+    "miniature": {
+      "source": "fable",
+      "titre": "SNAYZY CHOQUÉ PAR UN INCONNU EN FINALE FNCS 😱 LEO CASTE LE RETOUR DE PETERBOT 🤩",
+      "gauche": {
+        "clip_id": "co_BashfulAffluentOkapiKappaRoss-o50I2xhltAkmmblF__snayzy_1122",
+        "streamer": "snayzy",
+        "texte": "SNAYZY CHOQUÉ PAR UN INCONNU EN FINALE FNCS",
+        "punchline": "C'EST QUI LUI ?!",
+        "emoji": "😱",
+        "expression": "stunned disbelief, eyebrows raised, mouth slightly open, leaning toward the camera",
+        "scene": "Fortnite Reload endgame in a purple storm, an anonymous player standing on top of a build with the Victory Royale banner visible",
+        "palette": [
+          "electric blue",
+          "violet",
+          "white"
+        ],
+        "planche_case": 6,
+        "seconde": 11.12,
+        "seconde_source": "planche",
+        "ce_quon_voit": "Snayzy en cam plein écran, de face, casque sur la tête, néons bleus derrière lui"
+      },
+      "droite": {
+        "clip_id": "co_SavoryBenevolentKoalaBleedPurple-564SlRdPXrvPzvKK__leothecrack_1122",
+        "streamer": "leothecrack",
+        "texte": "LEO CASTE LE RETOUR DE PETERBOT",
+        "punchline": "PETER IS BACK",
+        "emoji": "🤩",
+        "expression": "impressed grin, eyes wide, slight nod of approval",
+        "scene": "Fortnite high-ground build fight at dusk, a player in a light blue skin landing a shotgun shot from a wooden ramp",
+        "palette": [
+          "warm orange",
+          "gold",
+          "black"
+        ],
+        "planche_case": 5,
+        "seconde": 7.27,
+        "seconde_source": "planche",
+        "ce_quon_voit": "Petite cam de Leo en haut à droite, cheveux sombres, par-dessus un fight de Peterbot en hauteur"
+      },
+      "element_jeu": {
+        "clip_id": "co_LazyFuriousLarkPogChamp-iseB_ShQh_wnJaJl__snayzy_1122",
+        "streamer": "snayzy",
+        "planche_case": 16,
+        "seconde": 27.0,
+        "description": "écran du broadcast avec le grand 1 Victory Royale de Jaus"
+      },
+      "idee_creative": "Côté Leo, sa cam est trop petite et sombre dans les clips du jour : utiliser une photo de lui devant un fight en hauteur avec un skin clair qui tire au pompe. Côté Snayzy, un joueur sans nom reconnaissable, de dos sur un build, avec un point d'interrogation dans le pseudo au-dessus de sa tête.",
+      "visage_manquant": "leothecrack",
+      "idees_de_repli": [
+        "Snayzy à gauche avec C'EST QUI LUI ?!, Revenja à droite (cam de c027) avec PERSONNE LE CONNAÎT",
+        "Snayzy à gauche, à droite l'écran Winners du broadcast (c017) avec IL REVIENT !"
+      ],
+      "ambiance": "Lumière néon froide à gauche pour la stupeur, lumière chaude dorée à droite pour l'admiration.",
+      "a_eviter": "Pas d'écran de classement ni de lobby, pas deux fois la même bouche ouverte, pas de logo M8 ni de mention de la finale EU.",
+      "assets_demandes": [
+        "Bannière Victory Royale (actuelle)",
+        "Emblème FNCS",
+        "Médaille d'élimination (or)"
+      ]
+    }
+  }
 }
