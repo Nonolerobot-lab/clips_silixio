@@ -3,9 +3,8 @@
     {
       "date": "BACKLOG",
       "label": "⏳ Clips en retard",
-      "total_clips": 332,
+      "total_clips": 158,
       "streamers": [
-        "acorn",
         "akiiral2",
         "alibaba_rcm",
         "artskill",
@@ -15,16 +14,13 @@
         "community",
         "cooper",
         "fortnitefraactu",
-        "harmonyglitch",
         "jolavanille",
         "khanada_",
         "kurama_203",
         "leothecrack",
         "mrsavage",
         "nikof",
-        "noahreyli",
         "peterbot",
-        "podasai",
         "revenja",
         "risezd",
         "shxrkfnbr",
@@ -35,7 +31,34 @@
         "vadeal",
         "venofn",
         "wazz",
-        "zagou",
+        "zetfartv"
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "total_clips": 194,
+      "streamers": [
+        "akiiral2",
+        "artskill",
+        "aussieantics",
+        "buzzftn",
+        "community",
+        "jobz buzz",
+        "jolavanille",
+        "k1ng",
+        "kurama_203",
+        "leothecrack",
+        "loonayyy",
+        "lyost weren",
+        "mrsavage",
+        "nikof",
+        "podasai",
+        "revenja",
+        "rezonfn",
+        "stizo_",
+        "vadeal",
+        "vanyak3kk",
+        "wazz",
         "zetfartv"
       ]
     },
@@ -170,30 +193,7 @@
         "wazz",
         "zetfartv"
       ]
-    },
-    {
-      "date": "2026-11-16",
-      "total_clips": 131,
-      "streamers": [
-        "akiiral2",
-        "asianjeff",
-        "aussieantics",
-        "buzzftn",
-        "community",
-        "jolavanille",
-        "khanada_",
-        "leothecrack",
-        "mrsavage",
-        "nikof",
-        "revenja",
-        "shxrkfnbr",
-        "stizo_",
-        "venofn",
-        "wazz",
-        "zagou",
-        "zetfartv"
-      ]
     }
   ],
-  "latest": "2026-11-22"
+  "latest": "2026-11-23"
 }
