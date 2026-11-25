@@ -146,7 +146,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 21,
+      "note_jour_raison": "Revenja sur les cheaters en PS Cup, pic faible",
+      "redacteur_description": "Revenja regarde une rediffusion de la PlayStation Cup Zéro Build et soupçonne des tricheurs dans le lobby ; le chat accuse plusieurs joueurs."
     },
     {
       "filename": "clip_025_revenja_score50.mp4",
@@ -258,7 +261,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 24,
+      "note_jour_raison": "Revenja met une musique sur un joueur caché, gag visuel",
+      "redacteur_description": "Revenja suit un joueur accroupi sous un ponton en fin de PlayStation Cup et pose une musique épique dessus. Le chat chambre Nxlsinhio et finit par des GG."
     },
     {
       "filename": "clip_001_dentoz-bbma_score95_community_pro.mp4",
@@ -367,7 +373,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 28,
+      "note_jour_raison": "clip commu tryhard issu de Stizo, catégorie bien gardée",
+      "redacteur_description": "Clip envoyé par la communauté depuis le live de Stizo : une action en jeu avec un skin vert en plein air, puis retour au menu et au classement."
     },
     {
       "filename": "clip_002_dentoz-bqvs_score95_community_pro.mp4",
@@ -476,7 +485,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 23,
+      "note_jour_raison": "clip commu tryhard, moitié du clip sur des écrans de menu",
+      "redacteur_description": "Clip envoyé par la communauté depuis le live de Stizo : un fight en extérieur, puis l'écran de fin de partie et le classement de la cup."
     },
     {
       "filename": "clip_005_kurama_203_score80.mp4",
@@ -545,9 +557,9 @@
       "drive_view_url": "https://drive.google.com/file/d/1KLKjS4eFa3ILf000jbjIMP9u2ejzxX7D/view",
       "chat_clip_url": "",
       "size_mb": 24.0,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-25_1",
+      "arc_position": 2,
+      "arc_label": "KURAMA ENCHAINE LES TOP 1 EN PLAYSTATION CUP NA",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -588,7 +600,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 49,
+      "note_jour_raison": "deuxième top 1 de Kurama en PS Cup, même histoire",
+      "redacteur_description": "Kurama décroche une deuxième Victory Royale en PlayStation Cup NA, puis s'étonne des scores à 580 points au classement. Le chat enchaîne les GG."
     },
     {
       "filename": "clip_004_peterbot_score80_subs.mp4",
@@ -699,7 +714,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 27,
+      "note_jour_raison": "635 vues, squad de Peterbot qui écrase une équipe",
+      "redacteur_description": "En fin de partie, Peterbot et sa squad descendent sur une équipe au sol, l'éliminent dans un fight très serré et ramassent les chug jugs."
     },
     {
       "filename": "clip_001_kurama_203_score80.mp4",
@@ -768,9 +786,9 @@
       "drive_view_url": "https://drive.google.com/file/d/12ipSPObV0EfLwCp90UcaiV4sVvMPE93S/view",
       "chat_clip_url": "",
       "size_mb": 28.4,
-      "arc_id": null,
-      "arc_position": 0,
-      "arc_label": "",
+      "arc_id": "seq_digest_2026-11-25_1",
+      "arc_position": 1,
+      "arc_label": "KURAMA ENCHAINE LES TOP 1 EN PLAYSTATION CUP NA",
       "review_flag": "",
       "review_ai_keep_original": null,
       "review_drop_reason": "",
@@ -811,7 +829,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 66,
+      "note_jour_raison": "top 1 de Kurama en PS Cup NA, actu du jour",
+      "redacteur_description": "Kurama tient la hauteur dans la dernière zone de la PlayStation Cup NA et hurle sur sa Victory Royale. Le chat spamme les emotes nikofWIN."
     },
     {
       "filename": "clip_002_leothecrack_score80.mp4",
@@ -923,7 +944,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 47,
+      "note_jour_raison": "Leo cash en squad, chat énorme, sujet déjà traité hier",
+      "redacteur_description": "Leo observe son coéquipier en plein heal-off, la squad prend la Victory Royale et il hurle que sa carrière pro est relancée. Le chat est noyé de W."
     },
     {
       "filename": "clip_003_revenja_score80.mp4",
@@ -1034,7 +1058,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 30,
+      "note_jour_raison": "soupçon de team-up en PS Cup, Nxlsinhio répond dans le chat",
+      "redacteur_description": "Revenja repasse au ralenti une action de PlayStation Cup où un joueur épargne Nxlsinhio à 20 PV. Dans le chat, Nxlsinhio dit avoir crash et les viewers crient au team-up."
     },
     {
       "filename": "clip_001_00-03-04_score74_v6_funny_subs.mp4",
@@ -1230,7 +1257,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 12,
+      "note_jour_raison": "MrSavage très peu gardé, 8 minutes en anglais",
+      "redacteur_description": "Le chat de MrSavage spamme pour qu'il joue avec Vampi ; il ouvre son tracker, refuse l'entretien d'embauche réclamé et rappelle qu'il a déjà donné sa parole à Asa."
     },
     {
       "filename": "clip_004_00-30-56_score71_v6_drama_subs.mp4",
@@ -1374,7 +1404,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 5,
+      "note_jour_raison": "drama anglophone sur X, chat tiède, MrSavage rarement gardé",
+      "redacteur_description": "MrSavage dénonce la négativité de sa communauté envers Asa, découvre qu'Asa et Vampi se répondent sur X à cause de lui et lit les tweets entre deux parties."
     },
     {
       "filename": "clip_008_akiiral2_score70.mp4",
@@ -1485,7 +1518,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 44,
+      "note_jour_raison": "solo clutch de Tylio en top 1, chat qui explose",
+      "redacteur_description": "Sur le live d'Akiira, Tylio est observé seul en fin de zone et arrache la Victory Royale. Le chat enchaîne les wtf et salue le solo clutch."
     },
     {
       "filename": "clip_007_khanada__score70_subs.mp4",
@@ -1597,7 +1633,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 25,
+      "note_jour_raison": "Khanada hurle sur Faxuty en endgame, chat impressionné",
+      "redacteur_description": "En spectateur, Khanada voit Faxuty enchaîner les éliminations en hauteur en fin de partie et crie qu'il s'est mis à voler. Le chat dit ne l'avoir jamais vu jouer comme ça."
     },
     {
       "filename": "clip_006_stizo__score70.mp4",
@@ -1709,7 +1748,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 33,
+      "note_jour_raison": "anecdote drôle de Stizo, chat en fou rire, streamer gardé",
+      "redacteur_description": "En pleine partie, Stizo lit le message d'un abonné piégé par un troll, qui lui souhaite bon rétablissement pour une prétendue infection. Le chat explose de rire et dénonce le coupable."
     },
     {
       "filename": "clip_009_risezd_score70_subs.mp4",
@@ -1820,7 +1862,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 15,
+      "note_jour_raison": "top 2 avec Trainwreckstv, chat hilare mais clip ancien",
+      "redacteur_description": "Rise, éliminé, guide Trainwreckstv à la voix dans le duel final ; celui-ci perd et l'équipe finit deuxième, pendant que le chat rit."
     },
     {
       "filename": "clip_010_khanada__score70_subs.mp4",
@@ -1932,7 +1977,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 36,
+      "note_jour_raison": "top 1 Khanada et Peterbot, punchline sur les 50 dollars",
+      "redacteur_description": "Khanada hurle après une Victory Royale en squad avec Peterbot, puis lance au lobby que ce n'est pas une question d'argent mais d'héritage, pour 50 dollars. Le chat spamme les W."
     },
     {
       "filename": "clip_017_risezd_score60_subs.mp4",
@@ -2044,7 +2092,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 13,
+      "note_jour_raison": "clash en anglais avec Clix, Risezd rarement gardé",
+      "redacteur_description": "En pleine partie, Rise et Harry chambrent Clix sur son argent ; Clix s'énerve en vocal et les insulte tous les deux."
     },
     {
       "filename": "clip_018_khanada__score60_subs.mp4",
@@ -2156,7 +2207,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 4,
+      "note_jour_raison": "talk face caméra en anglais, déménagement en Virginie",
+      "redacteur_description": "Face caméra, Khanada annonce son départ pour la Virginie dans une maison de douze chambres partagée avec d'autres pros, dont Sphinx, Higgs et Curve."
     },
     {
       "filename": "clip_011_khanada__score60_subs.mp4",
@@ -2267,7 +2321,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 20,
+      "note_jour_raison": "même fin de game que Faxuty, chat presque vide",
+      "redacteur_description": "Khanada et Faxuty mettent des dégâts en hauteur en fin de partie malgré zéro matériaux, puis retour au menu avec une qualification saluée par le chat."
     },
     {
       "filename": "clip_014_aussieantics_score60_subs.mp4",
@@ -2379,7 +2436,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 2,
+      "note_jour_raison": "talk anglophone posé, catégorie jamais gardée",
+      "redacteur_description": "AussieAntics explique qu'il préfère encourager tout le monde plutôt que suivre la toxicité de la scène, pendant la victoire de Higgs, Curve et Craze et l'affichage du classement."
     },
     {
       "filename": "clip_016_peterbot_score60_subs.mp4",
@@ -2491,7 +2551,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 19,
+      "note_jour_raison": "2v2 créatif de Peterbot, sans enjeu ni chat",
+      "redacteur_description": "Peterbot gagne un round de 2v2 sur map créative sous les cris de son duo, puis reprend la hauteur au round suivant et traite un adversaire de lâche."
     },
     {
       "filename": "clip_013_venofn_score60_subs.mp4",
@@ -2604,7 +2667,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 11,
+      "note_jour_raison": "recadrage en anglais dans le lobby, rien à l'écran",
+      "redacteur_description": "Dans le lobby, Veno recadre son coéquipier Harry après une défaite, lui répète de se taire et de fragger, et lui demande d'admettre ses erreurs."
     },
     {
       "filename": "clip_012_vadeal_score60_subs.mp4",
@@ -2716,7 +2782,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 10,
+      "note_jour_raison": "sketch en allemand du 17, streamer peu gardé",
+      "redacteur_description": "Filmé en salle gaming, Vadeal vérifie son délai de stream pendant qu'une personne vient taper la nuque d'un collègue derrière lui, puis la caméra de la salle s'affiche."
     },
     {
       "filename": "clip_019_stizo__score50.mp4",
@@ -2827,7 +2896,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 6,
+      "note_jour_raison": "talk d'annonce de soirée, catégorie jamais gardée",
+      "redacteur_description": "Stizo annonce une soirée avec la révélation du maillot 2027 et un invité au cast, pendant qu'il joue puis parcourt ses onglets."
     },
     {
       "filename": "clip_021_peterbot_score50.mp4",
@@ -2938,7 +3010,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 22,
+      "note_jour_raison": "créatif de Peterbot du 17, format déjà gardé",
+      "redacteur_description": "Peterbot enchaîne edits et tirs sur une map créative jusqu'à l'élimination de son adversaire, pendant que le chat réagit et réclame Rapid."
     },
     {
       "filename": "clip_020_khanada__score50_subs.mp4",
@@ -3050,7 +3125,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 18,
+      "note_jour_raison": "13 secondes, chat quasi muet, action peu lisible",
+      "redacteur_description": "Khanada joue un combat rapproché en squad avec Peterbot et annonce 150 de dégâts sur un adversaire avant de se retrouver en difficulté."
     },
     {
       "filename": "clip_022_aussieantics_score50_subs.mp4",
@@ -3162,7 +3240,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 16,
+      "note_jour_raison": "react anglophone sur 50 dollars, Aussie peu gardé en react",
+      "redacteur_description": "AussieAntics regarde la Victory Royale d'un joueur qui fête très fort un gain d'environ 50 dollars. Le chat se moque gentiment de la célébration."
     },
     {
       "filename": "clip_024_mrsavage_score50_subs.mp4",
@@ -3275,7 +3356,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 9,
+      "note_jour_raison": "mort rapide de MrSavage, aucun pic de chat",
+      "redacteur_description": "MrSavage défend sa box en trio contre plusieurs joueurs, se fait éliminer très vite et s'agace pendant que ses coéquipiers enchaînent les calls."
     },
     {
       "filename": "clip_023_vadeal_score50_subs.mp4",
@@ -3387,7 +3471,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 8,
+      "note_jour_raison": "rage en allemand, chat vide",
+      "redacteur_description": "Vadeal, sans matériaux, se fait éliminer dans une maison en plein fight de squad et crie sur ses coéquipiers pour une info non donnée."
     },
     {
       "filename": "clip_026_peterbot_score50_subs.mp4",
@@ -3499,7 +3586,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 3,
+      "note_jour_raison": "talk en créatif, discussion sur 50 dollars",
+      "redacteur_description": "En s'entraînant sur une map créative, Peterbot et ses coéquipiers reviennent sur leur victoire à 50 dollars gagnée d'en bas avec Faxuty."
     },
     {
       "filename": "clip_029_risezd_score50_subs.mp4",
@@ -3611,7 +3701,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 1,
+      "note_jour_raison": "phrase très crue, écran Discord, inmontable",
+      "redacteur_description": "Sur un écran Discord, Sudo lâche une phrase très crue sur un autre joueur après s'être fait traiter de white boy ; Rise et le vocal sont sidérés."
     },
     {
       "filename": "clip_030_peterbot_score50_subs.mp4",
@@ -3723,7 +3816,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 17,
+      "note_jour_raison": "round de 2v2 gagné, court et sans réaction",
+      "redacteur_description": "Peterbot élimine son dernier adversaire au corps à corps et gagne le round de 2v2 pendant que son duo l'encourage ; le tableau des rounds s'affiche."
     },
     {
       "filename": "clip_027_jannisz_score50_subs.mp4",
@@ -3834,7 +3930,10 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 7,
+      "note_jour_raison": "streamer inconnu de la page, rage courte sans chat",
+      "redacteur_description": "JannisZ perd un combat en Reload, dit que c'est le pire jeu du monde et quitte la partie pour revenir au lobby."
     },
     {
       "filename": "clip_028_noahreyli_score50_subs.mp4",
@@ -3945,7 +4044,267 @@
       "tiktok_fan_url": "",
       "tiktok_fan_account": "",
       "tiktok_fan_caption": "",
-      "tiktok_fan_posts": []
+      "tiktok_fan_posts": [],
+      "note_jour": 14,
+      "note_jour_raison": "12 secondes, mort sans contexte ni chat",
+      "redacteur_description": "NoahReyli se fait éliminer en fin de partie, crie de surprise, puis la caméra passe sur un coéquipier et l'équipe finit neuvième."
     }
-  ]
+  ],
+  "redacteur": {
+    "sujet_du_jour": "Kurama rebondit après Gentle Mates avec deux top 1 en PlayStation Cup NA, seule matière francophone forte du matin, adossée au soupçon de team-up que Revenja décortique sur la PS Cup Zéro Build.",
+    "titres": [
+      {
+        "titre": "KURAMA DOUBLE TOP 1 EN PS CUP NA 🏆 UN TEAM UP EN PLAYSTATION CUP ? 🤔",
+        "accroche_1": {
+          "clip_id": "co_MiniatureOilyZucchiniBloodTrail-_adjfuEMMGtfHJNX__kurama203_1125",
+          "pourquoi": "Victory Royale de Kurama en PS Cup NA, l'actu du jour après son départ de M8",
+          "existe": true,
+          "streamer": "kurama_203"
+        },
+        "accroche_2": {
+          "clip_id": "co_BoredAgreeableBadgerDoubleRainbow--TL_b3bXQdqHA3Td__revenja_1125",
+          "pourquoi": "Revenja montre un joueur épargné à 20 PV ; soupçon non prouvé, donc en question",
+          "existe": true,
+          "streamer": "revenja"
+        },
+        "angle": "actu"
+      },
+      {
+        "titre": "REVENJA : DES CHEATERS EN PLAYSTATION CUP ? 😡 TYLIO CHOQUE LE CHAT D'AKIIRA 🤯",
+        "accroche_1": {
+          "clip_id": "LuckyCreativeGorillaMoreCowbell-Ya_1DTWvYiIzapmR",
+          "pourquoi": "Revenja soupçonne des tricheurs dans le lobby de la PS Cup Zéro Build",
+          "existe": true,
+          "streamer": "revenja"
+        },
+        "accroche_2": {
+          "clip_id": "co_GorgeousLaconicGuanacoSpicyBoy-HX8gy2jFvAF8K2FG__akiiral2_1125",
+          "pourquoi": "solo clutch de Tylio en Victory Royale sur le live d'Akiira, chat en wtf",
+          "existe": true,
+          "streamer": "akiiral2"
+        },
+        "angle": "croustillant"
+      },
+      {
+        "titre": "LEO HURLE SUR SA VICTOIRE EN SQUAD 🥳 KHANADA ET PETERBOT FETENT 50$ 🤣",
+        "accroche_1": {
+          "clip_id": "co_KitschyBombasticFlyLitty-huVdwgpcrLLAbnMB__leothecrack_1125",
+          "pourquoi": "Victory Royale en squad, Leo crie que sa carrière pro est relancée",
+          "existe": true,
+          "streamer": "leothecrack"
+        },
+        "accroche_2": {
+          "clip_id": "co_TangibleStrangeSalmonNinjaGrumpy-WV3gfk0C7yPXeOjH__khanada_1125",
+          "pourquoi": "Khanada fête un top 1 à 50 dollars avec Peterbot : pas l'argent, l'héritage",
+          "existe": true,
+          "streamer": "khanada_"
+        },
+        "angle": "performance"
+      }
+    ],
+    "a_eviter": "Ne pas refaire le départ de Kurama expliqué par Nikof ni LEO CASH APRES 3 ANS du 24/11, ni un nouveau titre leak M8 sans annonce officielle de la keynote.",
+    "modele": "claude-fable-5-2",
+    "genere_le": "2026-11-25T07:16:12",
+    "plan": {
+      "titre_index": 1,
+      "titre": "KURAMA DOUBLE TOP 1 EN PS CUP NA 🏆 UN TEAM UP EN PLAYSTATION CUP ? 🤔",
+      "duree_cible_min": 15,
+      "ossature": [
+        {
+          "position": 1,
+          "clip_id": "co_MiniatureOilyZucchiniBloodTrail-_adjfuEMMGtfHJNX__kurama203_1125",
+          "streamer": "kurama_203",
+          "existe": true,
+          "role": "ouverture",
+          "pourquoi": "Top 1 hurlé de Kurama en PS Cup NA : accroche 1, se comprend sans contexte"
+        },
+        {
+          "position": 2,
+          "clip_id": "co_InventiveAverageDolphin4Head-lflBEe4XBzouUGVu__kurama203_1125",
+          "streamer": "kurama_203",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Deuxième top 1 dans la même cup, confirme le titre et montre le classement"
+        },
+        {
+          "position": 3,
+          "clip_id": "co_GorgeousLaconicGuanacoSpicyBoy-HX8gy2jFvAF8K2FG__akiiral2_1125",
+          "streamer": "akiiral2",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Autre Victory Royale francophone, solo clutch de Tylio avec un chat en feu"
+        },
+        {
+          "position": 4,
+          "clip_id": "community_dentoz-bbma",
+          "streamer": "community",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Clip commu court pour respirer entre deux top 1"
+        },
+        {
+          "position": 5,
+          "clip_id": "co_KitschyBombasticFlyLitty-huVdwgpcrLLAbnMB__leothecrack_1125",
+          "streamer": "leothecrack",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Leo explose sur sa victoire en squad, plus gros chat du matin"
+        },
+        {
+          "position": 6,
+          "clip_id": "co_ZanyCrunchyWrenAMPTropPunch-Cg5-HC3Mbs-jPaXm__stizo_1125",
+          "streamer": "stizo_",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Pause rire avec l'anecdote de Stizo avant le bloc anglophone"
+        },
+        {
+          "position": 7,
+          "clip_id": "co_LovelyCrispySandpiperStoneLightning-UZhI28-UTFM8r8Gg__peterbot_1125",
+          "streamer": "peterbot",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Clip le plus vu du matin, la squad de Peterbot écrase une équipe"
+        },
+        {
+          "position": 8,
+          "clip_id": "co_HumbleAbstemiousSnakeEleGiggle-XDKo-oeSSE9_10zr__khanada_1125",
+          "streamer": "khanada_",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Début de la fin de game de Khanada et Faxuty, amène le clip suivant"
+        },
+        {
+          "position": 9,
+          "clip_id": "co_ImpartialGoldenBibimbapRedCoat-zOMD0AuweSxWup3r__khanada_1125",
+          "streamer": "khanada_",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Khanada hurle sur Faxuty, suite directe du clip précédent"
+        },
+        {
+          "position": 10,
+          "clip_id": "LuckyCreativeGorillaMoreCowbell-Ya_1DTWvYiIzapmR",
+          "streamer": "revenja",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "Revenja pose le doute sur les cheaters en PS Cup, installe la question du titre"
+        },
+        {
+          "position": 11,
+          "clip_id": "co_BoredAgreeableBadgerDoubleRainbow--TL_b3bXQdqHA3Td__revenja_1125",
+          "streamer": "revenja",
+          "existe": true,
+          "role": "reponse",
+          "pourquoi": "Le ralenti du joueur épargné à 20 PV et la défense de Nxlsinhio dans le chat"
+        },
+        {
+          "position": 12,
+          "clip_id": "WildFriendlyAsteriskBCouch-Fhud5RRQyt4DeR1y",
+          "streamer": "revenja",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Chute légère du bloc PS Cup avec la musique épique sur le joueur caché"
+        },
+        {
+          "position": 13,
+          "clip_id": "community_dentoz-bqvs",
+          "streamer": "community",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "Second clip commu pour varier les visages"
+        },
+        {
+          "position": 14,
+          "clip_id": "BlueBashfulKumquatKeyboardCat-eBxF0kmr-GSuskiS",
+          "streamer": "peterbot",
+          "existe": true,
+          "role": "liant",
+          "pourquoi": "13 secondes de mécanique pure de Peterbot, relance le rythme"
+        },
+        {
+          "position": 15,
+          "clip_id": "SassyAntediluvianAdminSaltBae-GfEaExZTZzoMeMn7",
+          "streamer": "peterbot",
+          "existe": true,
+          "role": "montee",
+          "pourquoi": "2v2 de Peterbot sous les cris, prépare la fin avec le même groupe"
+        },
+        {
+          "position": 16,
+          "clip_id": "co_TangibleStrangeSalmonNinjaGrumpy-WV3gfk0C7yPXeOjH__khanada_1125",
+          "streamer": "khanada_",
+          "existe": true,
+          "role": "chute",
+          "pourquoi": "Victoire criée et punchline sur l'héritage pour 50 dollars : fin sur un sourire"
+        }
+      ],
+      "reponse_du_titre": {
+        "clip_id": "co_BoredAgreeableBadgerDoubleRainbow--TL_b3bXQdqHA3Td__revenja_1125",
+        "streamer": "revenja",
+        "existe": true,
+        "minute_cible": 9.0
+      },
+      "remplissage": "Compléter avec les clips de la keynote M8 et de Nikof s'ils arrivent au montage, sinon avec les autres fins de game de Khanada et Peterbot."
+    },
+    "miniature": {
+      "source": "fable",
+      "titre": "KURAMA DOUBLE TOP 1 EN PS CUP NA 🏆 UN TEAM UP EN PLAYSTATION CUP ? 🤔",
+      "gauche": {
+        "clip_id": "co_MiniatureOilyZucchiniBloodTrail-_adjfuEMMGtfHJNX__kurama203_1125",
+        "streamer": "kurama_203",
+        "texte": "KURAMA DOUBLE TOP 1 EN PS CUP NA",
+        "punchline": "ENCORE TOP 1 !!",
+        "emoji": "🏆",
+        "expression": "shouting with joy, mouth open, eyes wide, leaning toward the camera",
+        "scene": "Fortnite endgame high ground made of wooden builds, Victory Royale banner visible, purple storm sky",
+        "palette": [
+          "deep purple",
+          "gold",
+          "white"
+        ],
+        "planche_case": 16,
+        "seconde": 21.83,
+        "seconde_source": "planche",
+        "ce_quon_voit": "Bannière Victory Royale à l'écran, skin de Kurama de dos, aucune webcam visible"
+      },
+      "droite": {
+        "clip_id": "co_BoredAgreeableBadgerDoubleRainbow--TL_b3bXQdqHA3Td__revenja_1125",
+        "streamer": "revenja",
+        "texte": "UN TEAM UP EN PLAYSTATION CUP ?",
+        "punchline": "IL L'EPARGNE ?",
+        "emoji": "🤔",
+        "expression": "suspicious squint, one eyebrow raised, lips pressed, leaning slightly forward",
+        "scene": "Fortnite zero build beach, one player aiming at a low-health opponent without shooting, turquoise water behind",
+        "palette": [
+          "teal",
+          "orange",
+          "black"
+        ],
+        "planche_case": 1,
+        "seconde": 0.0,
+        "seconde_source": "planche",
+        "ce_quon_voit": "Petite webcam de Revenja à gauche de l'écran, de face avec casque, sur fond de jeu"
+      },
+      "element_jeu": {
+        "clip_id": "co_MiniatureOilyZucchiniBloodTrail-_adjfuEMMGtfHJNX__kurama203_1125",
+        "streamer": "kurama_203",
+        "planche_case": 16,
+        "seconde": 21.83,
+        "description": "écran Victory Royale de Kurama en PS Cup NA"
+      },
+      "idee_creative": "Aucun visage de Kurama dans ses clips du jour : utiliser une photo de lui, criant de joie devant sa Victory Royale avec une couronne posée à côté. À droite, Revenja regarde de travers deux joueurs face à face qui ne se tirent pas dessus sur la plage.",
+      "visage_manquant": "kurama",
+      "idees_de_repli": [
+        "Gauche : Leo en webcam (c014, case 3) criant sa victoire en squad, droite inchangée avec Revenja",
+        "Gauche : Kurama en photo avec le classement à 580 points derrière lui, droite : Revenja pointant l'écran du ralenti"
+      ],
+      "ambiance": "Lumière vive et contrastée, joie franche à gauche, soupçon froid à droite",
+      "a_eviter": "Pas d'écran de lobby ni de classement illisible, pas deux visages qui crient, aucun logo Gentle Mates sur Kurama",
+      "assets_demandes": [
+        "Couronne de la victoire",
+        "Bannière Victory Royale (actuelle)"
+      ]
+    }
+  }
 }
